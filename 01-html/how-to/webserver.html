@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Embedded Web Servers :: Spring Boot</title>
+    <link rel="prev" href="properties-and-configuration.html">
+    <link rel="next" href="spring-mvc.html">
+    <meta name="generator" content="Antora 3.2.0-alpha.10">
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="stylesheet" href="../_/css/vendor/search.css">
+    <link rel="stylesheet" href="../_/css/vendor/page-search.css">
+    <link rel="stylesheet" href="../_/css/vendor/asciidoctor-tabs.css">
+
+    <meta name="antora-ui-version" content="v0.4.21"> 
+    <meta name="version" content="4.0.0">
+    <meta name="generation" content="">
+    <meta name="versioned-url" content="undefined/undefined/how-to/webserver.html">
+    <meta name="component" content="boot">
+    <meta name="latest-version" content="false">
+    <link rel="icon" href="../_/img/favicon.ico" type="image/vnd.microsoft.icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img
+          id="springlogo"
+          class="block"
+          src="../_/img/spring-logo.svg"
+          alt="Spring"
+        />
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Why Spring</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.io/why-spring"
+            >Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/microservices"
+            >Microservices</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/reactive"
+            >Reactive</a>
+            <a class="navbar-item" href="https://spring.io/event-driven">Event
+              Driven</a>
+            <a class="navbar-item" href="https://spring.io/cloud">Cloud</a>
+            <a class="navbar-item" href="https://spring.io/web-applications">Web
+              Applications</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/serverless"
+            >Serverless</a>
+            <a class="navbar-item" href="https://spring.io/batch">Batch</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/quickstart"
+            >Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px">
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects"
+            >Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-boot"
+            >Spring Boot</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-framework"
+            >Spring Framework</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-cloud"
+            >Spring Cloud</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-cloud-dataflow"
+            >Spring Cloud Data Flow</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-data"
+            >Spring Data</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-integration"
+            >Spring Integration</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-batch"
+            >Spring Batch</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-security"
+            >Spring Security</a>
+            <a
+              class="navbar-item navbar-item-special"
+              href="https://spring.io/projects"
+            >View all projects</a>
+            <li class="navbar-item navbar-item-special-3">DEVELOPMENT TOOLS</li>
+            <a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+            <a
+              class="navbar-item navbar-item-special-2"
+              href="https://start.spring.io"
+            >Spring Initializr
+              <svg
+                class="external-link-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+              ><polyline
+                  points="15 10.94 15 15 1 15 1 1 5.06 1"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></polyline><polyline
+                  points="8.93 1 15 1 15 7.07"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></polyline><line
+                  x1="15"
+                  y1="1"
+                  x2="8"
+                  y2="8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line></svg></a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.academy/courses"
+            >Courses</a>
+            <a
+              class="navbar-item"
+              href="https://spring.academy/learning-path"
+            >Get Certified</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg">
+            <a class="navbar-item" href="https://spring.io/solutions">Overview</a>
+            <a class="navbar-item" href="https://spring.io/support">Spring Runtime</a>
+            <a class="navbar-item" href="https://spring.io/consulting">Spring Consulting</a>
+            <a class="navbar-item" href="https://spring.academy/teams">Spring Academy For Teams</a>
+            <a class="navbar-item" href="https://spring.io/security">Security Advisories</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.io/community"
+            >Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input
+        type="checkbox"
+        type="checkbox"
+        id="switch-theme-checkbox"
+        name="switch-theme-checkbox"
+      />
+      <span class="icon"><svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="moon"
+          class="svg-inline--fa fa-moon moon"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512"
+        ><path
+            fill="currentColor"
+            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+          ></path>
+        </svg>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="sun"
+          class="svg-inline--fa fa-sun sun"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        ><path
+            fill="currentColor"
+            d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"
+          ></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context">
+  <span class="title">Spring Boot</span>
+  <span class="version">4.0.0</span>
+  <button class="browse-version" id="browse-version">
+    <svg
+      height="24px"
+      id="Layer_1"
+      style="enable-background:new 0 0 512 512;"
+      version="1.1"
+      viewBox="0 0 512 512"
+      width="24px"
+      xml:space="preserve"
+    ><g><path
+          d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"
+        ></path><path
+          d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"
+        ></path><path
+          d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"
+        ></path></g></svg>
+  </button>
+  </div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home"  href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book"  href="../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question"  href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-server"  href="../system-requirements.html">System Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-gift"  href="../installing.html">Installing Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-rocket"  href="../upgrading.html">Upgrading Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../tutorial/first-application/index.html">Developing Your First Spring Boot Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/using/index.html">Developing with Spring Boot</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/build-systems.html">Build Systems</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/structuring-your-code.html">Structuring Your Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/configuration-classes.html">Configuration Classes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/auto-configuration.html">Auto-configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/spring-beans-and-dependency-injection.html">Spring Beans and Dependency Injection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/using-the-springbootapplication-annotation.html">Using the @SpringBootApplication Annotation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/running-your-application.html">Running Your Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/devtools.html">Developer Tools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/using/packaging-for-production.html">Packaging Your Application for Production</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/features/index.html">Core Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/spring-application.html">SpringApplication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/external-config.html">Externalized Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/profiles.html">Profiles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/internationalization.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/aop.html">Aspect-Oriented Programming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/json.html">JSON</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/task-execution-and-scheduling.html">Task Execution and Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/dev-services.html">Development-time Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/developing-auto-configuration.html">Creating Your Own Auto-configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/kotlin.html">Kotlin Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/features/ssl.html">SSL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/web/index.html">Web</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/servlet.html">Servlet Web Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/reactive.html">Reactive Web Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/graceful-shutdown.html">Graceful Shutdown</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/spring-security.html">Spring Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/spring-session.html">Spring Session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/spring-graphql.html">Spring for GraphQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/web/spring-hateoas.html">Spring HATEOAS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/data/index.html">Data</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/data/sql.html">SQL Databases</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/data/nosql.html">Working with NoSQL Technologies</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/io/index.html">IO</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/caching.html">Caching</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/spring-batch.html">Spring Batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/quartz.html">Quartz Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/email.html">Sending Email</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/rest-client.html">Calling REST Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/webservices.html">Web Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/io/jta.html">Distributed Transactions With JTA</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/messaging/index.html">Messaging</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/jms.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/amqp.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/kafka.html">Apache Kafka Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/pulsar.html">Apache Pulsar Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/rsocket.html">RSocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/spring-integration.html">Spring Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/messaging/websockets.html">WebSockets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/testing/index.html">Testing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/test-modules.html">Test Modules</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/test-scope-dependencies.html">Test Scope Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/spring-applications.html">Testing Spring Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/spring-boot-applications.html">Testing Spring Boot Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/testcontainers.html">Testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/testing/test-utilities.html">Test Utilities</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/packaging/index.html">Packaging Spring Boot Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/packaging/efficient.html">Efficient Deployments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/packaging/aot-cache.html">AOT Cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/packaging/aot.html">Ahead-of-Time Processing With the JVM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/packaging/native-image/index.html">GraalVM Native Images</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../reference/packaging/native-image/introducing-graalvm-native-images.html">Introducing GraalVM Native Images</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../reference/packaging/native-image/advanced-topics.html">Advanced Native Images Topics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/packaging/checkpoint-restore.html">Checkpoint and Restore With the JVM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/packaging/container-images/index.html">Container Images</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../reference/packaging/container-images/efficient-images.html">Efficient Container Images</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../reference/packaging/container-images/dockerfiles.html">Dockerfiles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../reference/packaging/container-images/cloud-native-buildpacks.html">Cloud Native Buildpacks</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../reference/actuator/index.html">Production-ready Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/enabling.html">Enabling Production-ready Features</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/endpoints.html">Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/monitoring.html">Monitoring and Management Over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/jmx.html">Monitoring and Management over JMX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/loggers.html">Loggers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/metrics.html">Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/tracing.html">Tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/auditing.html">Auditing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/http-exchanges.html">Recording HTTP Exchanges</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/process-monitoring.html">Process Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../reference/actuator/cloud-foundry.html">Cloud Foundry Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="index.html">How-to Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="application.html">Spring Boot Application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="properties-and-configuration.html">Properties and Configuration</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link"  href="webserver.html">Embedded Web Servers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="spring-mvc.html">Spring MVC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="jersey.html">Jersey</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="http-clients.html">HTTP Clients</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="data-access.html">Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="data-initialization.html">Database Initialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="nosql.html">NoSQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="messaging.html">Messaging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="batch.html">Batch Applications</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="actuator.html">Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="hotswapping.html">Hot Swapping</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="build.html">Build</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="native-image/index.html">GraalVM Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="native-image/developing-your-first-application.html">Developing Your First GraalVM Native Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="native-image/testing-native-applications.html">Testing GraalVM Native Images</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="aot-cache.html">AOT Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="deployment/index.html">Deploying Spring Boot Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="deployment/traditional-deployment.html">Traditional Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="deployment/cloud.html">Deploying to the Cloud</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="deployment/installing.html">Installing Spring Boot Applications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="docker-compose.html">Docker Compose</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../build-tool-plugin/index.html">Build Tool Plugins</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../maven-plugin/index.html">Maven Plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/using.html">Using the Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/goals.html">Goals</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/packaging.html">Packaging Executable Archives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/build-image.html">Packaging OCI Images</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/run.html">Running your Application with Maven</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/integration-tests.html">Running Integration Tests</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/build-info.html">Integrating with Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../maven-plugin/help.html">Help Information</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../gradle-plugin/index.html">Gradle Plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/managing-dependencies.html">Managing Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/packaging.html">Packaging Executable Archives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/packaging-oci-image.html">Packaging OCI Images</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/publishing.html">Publishing your Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/running.html">Running your Application with Gradle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/integrating-with-actuator.html">Integrating with Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../gradle-plugin/reacting.html">Reacting to Other Plugins</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../build-tool-plugin/antlib.html">Spring Boot AntLib Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../build-tool-plugin/other-build-systems.html">Supporting Other Build Systems</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../cli/installation.html">Installing the CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../cli/using-the-cli.html">Using the CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Rest APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../api/rest/actuator/index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/auditevents.html">Audit Events (<code>auditevents</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/conditions.html">Conditions Evaluation Report (<code>conditions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/configprops.html">Configuration Properties (<code>configprops</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/heapdump.html">Heap Dump (<code>heapdump</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/httpexchanges.html">HTTP Exchanges (<code>httpexchanges</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/integrationgraph.html">Spring Integration Graph (<code>integrationgraph</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/logfile.html">Log File (<code>logfile</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/sbom.html">Software Bill of Materials (<code>sbom</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/scheduledtasks.html">Scheduled Tasks (<code>scheduledtasks</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/startup.html">Application Startup (<code>startup</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../api/rest/actuator/threaddump.html">Thread Dump (<code>threaddump</code>)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../api/java/index.html">Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../gradle-plugin/api/java/index.html">Gradle Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../maven-plugin/api/java/index.html">Maven Plugin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../api/kotlin/index.html">Spring Boot</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../specification/configuration-metadata/index.html">Configuration Metadata</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/configuration-metadata/format.html">Metadata Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/configuration-metadata/manual-hints.html">Providing Manual Hints</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/configuration-metadata/annotation-processor.html">Generating Your Own Metadata by Using the Annotation Processor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../specification/executable-jar/index.html">The Executable Jar Format</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/nested-jars.html">Nested JARs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/jarfile-class.html">Spring Boot&#8217;s &#8220;NestedJarFile&#8221; Class</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/launching.html">Launching Executable Jars</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/property-launcher.html">PropertiesLauncher Features</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/restrictions.html">Executable Jar Restrictions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../specification/executable-jar/alternatives.html">Alternative Single Jar Solutions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../appendix/application-properties/index.html">Common Application Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../appendix/deprecated-application-properties/index.html">Deprecated Application Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/index.html">Auto-configuration Classes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../appendix/test-auto-configuration/index.html">Test Auto-configuration Annotations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/test-auto-configuration/slices.html">Test Slices</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../appendix/dependency-versions/index.html">Dependency Versions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/dependency-versions/coordinates.html">Managed Dependency Coordinates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../appendix/dependency-versions/properties.html">Version Properties</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button id="nav-toggle-2" class="nav-toggle"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button id="nav-toggle-1" class="nav-toggle"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div
+      class="toc"
+      data-title="Embedded Web Servers"
+      data-levels="2"
+    >
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links">
+        <a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/how-to/pages/webserver.adoc">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+          ><path
+              d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"
+            ></path></svg>
+          Edit this Page
+        </a>
+        <a href="https://github.com/doc2401/spring-boot" title="GitHub">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="512px"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 512 512"
+            width="512px"
+          ><style type="text/css"><![CDATA[
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} ]]></style><g><path
+                class="st0"
+                d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"
+              ></path></g></svg>
+          GitHub Project
+        </a>
+        <a href="https://stackoverflow.com/tags/spring-boot">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path
+              d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"
+            ></path></svg>
+          Stack Overflow
+        </a>
+    </div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container">
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+    <ul>
+      <li id="copy-url" title="Copy versioned URL"></li>
+      <li><a href="../index.html">Spring Boot</a></li>
+      <li><a href="index.html">How-to Guides</a></li>
+      <li><a href="webserver.html">Embedded Web Servers</a></li>
+    </ul>
+  </nav>
+</div><h1 id="page-title" class="page">Embedded Web Servers</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each Spring Boot web application includes an embedded web server.
+This feature leads to a number of how-to questions, including how to change the embedded server and how to configure the embedded server.
+This section answers those questions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.use-another"><a class="anchor" href="#howto.webserver.use-another"></a>Use Another Web Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many Spring Boot starters include default embedded containers.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For servlet stack applications, the <code>spring-boot-starter-web</code> includes Tomcat by including <code>spring-boot-starter-tomcat</code>, but you can use <code>spring-boot-starter-jetty</code> instead.</p>
+</li>
+<li>
+<p>For reactive stack applications, the <code>spring-boot-starter-webflux</code> includes  Reactor Netty by including <code>spring-boot-starter-reactor-netty</code>, but you can use <code>spring-boot-starter-tomcat</code> or <code>spring-boot-starter-jetty</code> instead.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When switching to a different HTTP server, you need to swap the default dependencies for those that you need instead.
+To help with this process, Spring Boot provides a separate starter for each of the supported HTTP servers.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows how to exclude Tomcat and include Jetty for Spring MVC:</p>
+</div>
+<div id="_tabs_1" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_1_maven" class="tab">
+<p>Maven</p>
+</li>
+<li id="_tabs_1_gradle" class="tab">
+<p>Gradle</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_1_maven--panel" class="tabpanel" aria-labelledby="_tabs_1_maven">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-webmvc&lt;/artifactId&gt;
+	&lt;exclusions&gt;
+		&lt;!-- Exclude the Tomcat dependency --&gt;
+		&lt;exclusion&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+		&lt;/exclusion&gt;
+	&lt;/exclusions&gt;
+&lt;/dependency&gt;
+&lt;!-- Use Jetty instead --&gt;
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-jetty&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_1_gradle--panel" class="tabpanel" aria-labelledby="_tabs_1_gradle">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-webmvc') {
+		// Exclude the Tomcat dependency
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+	}
+	// Use Jetty instead
+	implementation "org.springframework.boot:spring-boot-starter-jetty"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are creating a war file, you can use a similar approach, but you must indicate provided dependencies:</p>
+</div>
+<div id="_tabs_2" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_2_maven" class="tab">
+<p>Maven</p>
+</li>
+<li id="_tabs_2_gradle" class="tab">
+<p>Gradle</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_2_maven--panel" class="tabpanel" aria-labelledby="_tabs_2_maven">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-webmvc&lt;/artifactId&gt;
+	&lt;exclusions&gt;
+		&lt;!-- Exclude the Tomcat dependency --&gt;
+		&lt;exclusion&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+		&lt;/exclusion&gt;
+	&lt;/exclusions&gt;
+&lt;/dependency&gt;
+&lt;!-- Use Jetty instead --&gt;
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-jetty&lt;/artifactId&gt;
+	&lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_2_gradle--panel" class="tabpanel" aria-labelledby="_tabs_2_gradle">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-webmvc') {
+		// Exclude the Tomcat dependency
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+	}
+	// Use Jetty instead
+	implementation "org.springframework.boot:spring-boot-starter-jetty"
+	providedRuntime "org.springframework.boot:spring-boot-starter-jetty-runtime"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.disable"><a class="anchor" href="#howto.webserver.disable"></a>Disabling the Web Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your classpath contains the necessary bits to start a web server, Spring Boot will automatically start it.
+To disable this behavior configure the <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html" class="apiref"><code>WebApplicationType</code></a> in your <code>application.properties</code>, as shown in the following example:</p>
+</div>
+<div id="_tabs_3" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_3_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_3_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_3_properties--panel" class="tabpanel" aria-labelledby="_tabs_3_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.main.web-application-type=none</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_3_yaml--panel" class="tabpanel" aria-labelledby="_tabs_3_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  main:
+    web-application-type: "none"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.change-port"><a class="anchor" href="#howto.webserver.change-port"></a>Change the HTTP Port</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a standalone application, the main HTTP port defaults to <code>8080</code> but can be set with <code>server.port</code> (for example, in <code>application.properties</code> or as a System property).
+Thanks to relaxed binding of <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html" class="apiref"><code>Environment</code></a> values, you can also use <code>SERVER_PORT</code> (for example, as an OS environment variable).</p>
+</div>
+<div class="paragraph">
+<p>To switch off the HTTP endpoints completely but still create a <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/WebApplicationContext.html" class="apiref"><code>WebApplicationContext</code></a>, use <code>server.port=-1</code> (doing so is sometimes useful for testing).</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="../reference/web/servlet.html#web.servlet.embedded-container.customizing" class="xref page">Customizing Embedded Servlet Containers</a> in the &#8216;Spring Boot Features&#8217; section, or the <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html" class="apiref"><code>ServerProperties</code></a> class.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.use-random-port"><a class="anchor" href="#howto.webserver.use-random-port"></a>Use a Random Unassigned HTTP Port</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To scan for a free port (using OS natives to prevent clashes) use <code>server.port=0</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.discover-port"><a class="anchor" href="#howto.webserver.discover-port"></a>Discover the HTTP Port at Runtime</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can access the port the server is running on from log output or from the <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/context/WebServerApplicationContext.html" class="apiref"><code>WebServerApplicationContext</code></a> through its <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServer.html" class="apiref"><code>WebServer</code></a>.
+The best way to get that and be sure it has been initialized is to add a <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" class="apiref"><code>@Bean</code></a> of type <code>ApplicationListener&lt;WebServerInitializedEvent&gt;</code> and pull the container out of the event when it is published.</p>
+</div>
+<div class="paragraph">
+<p>Tests that use <code>@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)</code> can also inject the actual port into a field by using the <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/test/web/server/LocalServerPort.html" class="apiref"><code>@LocalServerPort</code></a> annotation, as shown in the following example:</p>
+</div>
+<div id="_tabs_4" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_4_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_4_kotlin" class="tab">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_4_java--panel" class="tabpanel" aria-labelledby="_tabs_4_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.server.LocalServerPort;
+
+</span><span class="fold-block">@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class MyWebIntegrationTests {
+
+	@LocalServerPort
+	int port;
+
+	// ...
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_4_kotlin--panel" class="tabpanel" aria-labelledby="_tabs_4_kotlin">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
+import org.springframework.boot.test.web.server.LocalServerPort
+
+</span><span class="fold-block">@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class MyWebIntegrationTests {
+
+	@LocalServerPort
+	var port = 0
+
+	// ...
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/test/web/server/LocalServerPort.html" class="apiref"><code>@LocalServerPort</code></a> is a meta-annotation for <code>@Value("${local.server.port}")</code>.
+Do not try to inject the port in a regular application.
+As we just saw, the value is set only after the container has been initialized.
+Contrary to a test, application code callbacks are processed early (before the value is actually available).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.enable-response-compression"><a class="anchor" href="#howto.webserver.enable-response-compression"></a>Enable HTTP Response Compression</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTTP response compression is supported by Jetty, Tomcat and Reactor Netty.
+It can be enabled in <code>application.properties</code>, as follows:</p>
+</div>
+<div id="_tabs_5" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_5_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_5_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_5_properties--panel" class="tabpanel" aria-labelledby="_tabs_5_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.compression.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_5_yaml--panel" class="tabpanel" aria-labelledby="_tabs_5_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  compression:
+    enabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, responses must be at least 2048 bytes in length for compression to be performed.
+You can configure this behavior by setting the <code>server.compression.min-response-size</code> property.</p>
+</div>
+<div class="paragraph">
+<p>By default, responses are compressed only if their content type is one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>text/html</code></p>
+</li>
+<li>
+<p><code>text/xml</code></p>
+</li>
+<li>
+<p><code>text/plain</code></p>
+</li>
+<li>
+<p><code>text/css</code></p>
+</li>
+<li>
+<p><code>text/javascript</code></p>
+</li>
+<li>
+<p><code>application/javascript</code></p>
+</li>
+<li>
+<p><code>application/json</code></p>
+</li>
+<li>
+<p><code>application/xml</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can configure this behavior by setting the <code>server.compression.mime-types</code> property.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.configure-ssl"><a class="anchor" href="#howto.webserver.configure-ssl"></a>Configure SSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SSL can be configured declaratively by setting the various <code>server.ssl.*</code> properties, typically in <code>application.properties</code> or <code>application.yaml</code>.
+See <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html" class="apiref"><code>Ssl</code></a> for details of all of the supported properties.</p>
+</div>
+<div class="paragraph">
+<p>The following example shows setting SSL properties using a Java KeyStore file:</p>
+</div>
+<div id="_tabs_6" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_6_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_6_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_6_properties--panel" class="tabpanel" aria-labelledby="_tabs_6_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.port=8443
+server.ssl.key-store=classpath:keystore.jks
+server.ssl.key-store-password=secret
+server.ssl.key-password=another-secret</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_6_yaml--panel" class="tabpanel" aria-labelledby="_tabs_6_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  port: 8443
+  ssl:
+    key-store: "classpath:keystore.jks"
+    key-store-password: "secret"
+    key-password: "another-secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Using configuration such as the preceding example means the application no longer supports a plain HTTP connector at port 8080.
+Spring Boot does not support the configuration of both an HTTP connector and an HTTPS connector through <code>application.properties</code>.
+If you want to have both, you need to configure one of them programmatically.
+We recommend using <code>application.properties</code> to configure HTTPS, as the HTTP connector is the easier of the two to configure programmatically.</p>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-ssl.pem-files"><a class="anchor" href="#howto.webserver.configure-ssl.pem-files"></a>Using PEM-encoded files</h3>
+<div class="paragraph">
+<p>You can use PEM-encoded files instead of Java KeyStore files.
+You should use PKCS#8 key files wherever possible.
+PEM-encoded PKCS#8 key files start with a <code>-----BEGIN PRIVATE KEY-----</code> or <code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> header.</p>
+</div>
+<div class="paragraph">
+<p>If you have files in other formats, e.g., PKCS#1 (<code>-----BEGIN RSA PRIVATE KEY-----</code>) or SEC 1 (<code>-----BEGIN EC PRIVATE KEY-----</code>), you can convert them to PKCS#8 using OpenSSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">openssl pkcs8 -topk8 -nocrypt -in &lt;input file&gt; -out &lt;output file&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following example shows setting SSL properties using PEM-encoded certificate and private key files:</p>
+</div>
+<div id="_tabs_7" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_7_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_7_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_7_properties--panel" class="tabpanel" aria-labelledby="_tabs_7_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.port=8443
+server.ssl.certificate=classpath:my-cert.crt
+server.ssl.certificate-private-key=classpath:my-cert.key
+server.ssl.trust-certificate=classpath:ca-cert.crt</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_7_yaml--panel" class="tabpanel" aria-labelledby="_tabs_7_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  port: 8443
+  ssl:
+    certificate: "classpath:my-cert.crt"
+    certificate-private-key: "classpath:my-cert.key"
+    trust-certificate: "classpath:ca-cert.crt"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-ssl.bundles"><a class="anchor" href="#howto.webserver.configure-ssl.bundles"></a>Using SSL Bundles</h3>
+<div class="paragraph">
+<p>Alternatively, the SSL trust material can be configured in an <a href="../reference/features/ssl.html" class="xref page">SSL bundle</a> and applied to the web server as shown in this example:</p>
+</div>
+<div id="_tabs_8" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_8_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_8_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_8_properties--panel" class="tabpanel" aria-labelledby="_tabs_8_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.port=8443
+server.ssl.bundle=example</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_8_yaml--panel" class="tabpanel" aria-labelledby="_tabs_8_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  port: 8443
+  ssl:
+    bundle: "example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>server.ssl.bundle</code> property can not be combined with the discrete Java KeyStore or PEM property options under <code>server.ssl</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>server.ssl.ciphers</code>, <code>server.ssl.enabled-protocols</code>, <code>server.ssl.protocol</code> properties are also ignored when using a bundle.
+These properties should instead be defined using <code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> properties.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-ssl.sni"><a class="anchor" href="#howto.webserver.configure-ssl.sni"></a>Configure Server Name Indication</h3>
+<div class="paragraph">
+<p>Tomcat, and Netty can be configured to use unique SSL trust material for individual host names to support Server Name Indication (SNI).
+SNI configuration is not supported with Jetty, but Jetty can <a href="https://eclipse.dev/jetty/documentation/jetty-12/operations-guide/index.html#og-protocols-ssl-sni">automatically set up SNI</a> if multiple certificates are provided to it.</p>
+</div>
+<div class="paragraph">
+<p>Assuming <a href="../reference/features/ssl.html" class="xref page">SSL bundles</a> named <code>web</code>, <code>web-alt1</code>, and <code>web-alt2</code> have been configured, the following configuration can be used to assign each bundle to a host name served by the embedded web server:</p>
+</div>
+<div id="_tabs_9" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_9_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_9_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_9_properties--panel" class="tabpanel" aria-labelledby="_tabs_9_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.port=8443
+server.ssl.bundle=web
+server.ssl.server-name-bundles[0].server-name=alt1.example.com
+server.ssl.server-name-bundles[0].bundle=web-alt1
+server.ssl.server-name-bundles[1].server-name=alt2.example.com
+server.ssl.server-name-bundles[1].bundle=web-alt2</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_9_yaml--panel" class="tabpanel" aria-labelledby="_tabs_9_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  port: 8443
+  ssl:
+    bundle: "web"
+    server-name-bundles:
+      - server-name: "alt1.example.com"
+        bundle: "web-alt1"
+      - server-name: "alt2.example.com"
+        bundle: "web-alt2"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The bundle specified with <code>server.ssl.bundle</code> will be used for the default host, and for any client that does support SNI.
+This default bundle must be configured if any <code>server.ssl.server-name-bundles</code> are configured.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.configure-http2"><a class="anchor" href="#howto.webserver.configure-http2"></a>Configure HTTP/2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can enable HTTP/2 support in your Spring Boot application with the <code>server.http2.enabled</code> configuration property.
+Both <code>h2</code> (HTTP/2 over TLS) and <code>h2c</code> (HTTP/2 over TCP) are supported.
+To use <code>h2</code>, SSL must also be enabled.
+When SSL is not enabled, <code>h2c</code> will be used.
+You may, for example, want to use <code>h2c</code> when your application is <a href="#howto.webserver.use-behind-a-proxy-server">running behind a proxy server</a> that is performing TLS termination.</p>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-http2.tomcat"><a class="anchor" href="#howto.webserver.configure-http2.tomcat"></a>HTTP/2 With Tomcat</h3>
+<div class="paragraph">
+<p>Spring Boot ships by default with Tomcat 11.0.x which supports <code>h2c</code> and <code>h2</code> out of the box.
+Alternatively, you can use <code>libtcnative</code> for <code>h2</code> support if the library and its dependencies are installed on the host operating system.</p>
+</div>
+<div class="paragraph">
+<p>The library directory must be made available, if not already, to the JVM library path.
+You can do so with a JVM argument such as <code>-Djava.library.path=/usr/local/opt/tomcat-native/lib</code>.
+More on this in the <a href="https://tomcat.apache.org/tomcat-11.0-doc/apr.html">official Tomcat documentation</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-http2.jetty"><a class="anchor" href="#howto.webserver.configure-http2.jetty"></a>HTTP/2 With Jetty</h3>
+<div class="paragraph">
+<p>For HTTP/2 support, Jetty requires the additional <code>org.eclipse.jetty.http2:jetty-http2-server</code> dependency.
+To use <code>h2c</code> no other dependencies are required.
+To use <code>h2</code>, you also need to choose one of the following dependencies, depending on your deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>org.eclipse.jetty:jetty-alpn-java-server</code> to use the JDK built-in support</p>
+</li>
+<li>
+<p><code>org.eclipse.jetty:jetty-alpn-conscrypt-server</code> and the <a href="https://www.conscrypt.org/">Conscrypt library</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.configure-http2.netty"><a class="anchor" href="#howto.webserver.configure-http2.netty"></a>HTTP/2 With Reactor Netty</h3>
+<div class="paragraph">
+<p>The <code>spring-boot-webflux-starter</code> is using by default Reactor Netty as a server.
+Reactor Netty supports <code>h2c</code> and <code>h2</code> out of the box.
+For optimal runtime performance, this server also supports <code>h2</code> with native libraries.
+To enable that, your application needs to have an additional dependency.</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot manages the version for the <code>io.netty:netty-tcnative-boringssl-static</code> "uber jar", containing native libraries for all platforms.
+Developers can choose to import only the required dependencies using a classifier (see <a href="https://netty.io/wiki/forked-tomcat-native.html">the Netty official documentation</a>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.configure"><a class="anchor" href="#howto.webserver.configure"></a>Configure the Web Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Generally, you should first consider using one of the many available configuration keys and customize your web server by adding new entries in your <code>application.properties</code> or <code>application.yaml</code> file.
+See <a href="properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties" class="xref page">Discover Built-in Options for External Properties</a>).
+The <code>server.*</code> namespace is quite useful here, and it includes namespaces like <code>server.tomcat.*</code>, <code>server.jetty.*</code> and others, for server-specific features.
+See the list of <a href="../appendix/application-properties/index.html" class="xref page">Common Application Properties</a>.</p>
+</div>
+<div class="paragraph">
+<p>The previous sections covered already many common use cases, such as compression, SSL or HTTP/2.
+However, if a configuration key does not exist for your use case, you should then look at <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServerFactoryCustomizer.html" class="apiref"><code>WebServerFactoryCustomizer</code></a>.
+You can declare such a component and get access to the server factory relevant to your choice: you should select the variant for the chosen Server (Tomcat, Jetty, Reactor Netty) and the chosen web stack (servlet or reactive).</p>
+</div>
+<div class="paragraph">
+<p>The example below is for Tomcat with the <code>spring-boot-starter-web</code> (servlet stack):</p>
+</div>
+<div id="_tabs_10" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_10_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_10_kotlin" class="tab">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_10_java--panel" class="tabpanel" aria-labelledby="_tabs_10_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyTomcatWebServerCustomizer implements WebServerFactoryCustomizer&lt;TomcatServletWebServerFactory&gt; {
+
+	@Override
+	public void customize(TomcatServletWebServerFactory factory) {
+		// customize the factory here
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_10_kotlin--panel" class="tabpanel" aria-labelledby="_tabs_10_kotlin">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory
+import org.springframework.boot.web.server.WebServerFactoryCustomizer
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyTomcatWebServerCustomizer : WebServerFactoryCustomizer&lt;TomcatServletWebServerFactory&gt; {
+
+	override fun customize(factory: TomcatServletWebServerFactory) {
+		// customize the factory here
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Spring Boot uses that infrastructure internally to auto-configure the server.
+Auto-configured <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServerFactoryCustomizer.html" class="apiref"><code>WebServerFactoryCustomizer</code></a> beans have an order of <code>0</code> and will be processed before any user-defined customizers, unless it has an explicit order that states otherwise.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once you have got access to a <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServerFactory.html" class="apiref"><code>WebServerFactory</code></a> using the customizer, you can use it to configure specific parts, like connectors, server resources, or the server itself - all using server-specific APIs.</p>
+</div>
+<div class="paragraph">
+<p>In addition Spring Boot provides:</p>
+</div>
+<table id="howto-configure-webserver-customizers" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Server</th>
+<th class="tableblock halign-left valign-top">Servlet stack</th>
+<th class="tableblock halign-left valign-top">Reactive stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tomcat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/tomcat/TomcatServletWebServerFactory.html" class="apiref"><code>TomcatServletWebServerFactory</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/tomcat/TomcatReactiveWebServerFactory.html" class="apiref"><code>TomcatReactiveWebServerFactory</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jetty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/jetty/JettyServletWebServerFactory.html" class="apiref"><code>JettyServletWebServerFactory</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/jetty/JettyReactiveWebServerFactory.html" class="apiref"><code>JettyReactiveWebServerFactory</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reactor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/netty/NettyReactiveWebServerFactory.html" class="apiref"><code>NettyReactiveWebServerFactory</code></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>As a last resort, you can also declare your own <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServerFactory.html" class="apiref"><code>WebServerFactory</code></a> bean, which will override the one provided by Spring Boot.
+When you do so, auto-configured customizers are still applied on your custom factory, so use that option carefully.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.add-servlet-filter-listener"><a class="anchor" href="#howto.webserver.add-servlet-filter-listener"></a>Add a Servlet, Filter, or Listener to an Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a servlet stack application, that is with the <code>spring-boot-starter-web</code>, there are two ways to add <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html" class="apiref"><code>Servlet</code></a>, <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html" class="apiref"><code>Filter</code></a>, <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html" class="apiref"><code>ServletContextListener</code></a>, and the other listeners supported by the Servlet API to your application:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#howto.webserver.add-servlet-filter-listener.spring-bean">Add a Servlet, Filter, or Listener by Using a Spring Bean</a></p>
+</li>
+<li>
+<p><a href="#howto.webserver.add-servlet-filter-listener.using-scanning">Add Servlets, Filters, and Listeners by Using Classpath Scanning</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.add-servlet-filter-listener.spring-bean"><a class="anchor" href="#howto.webserver.add-servlet-filter-listener.spring-bean"></a>Add a Servlet, Filter, or Listener by Using a Spring Bean</h3>
+<div class="paragraph">
+<p>To add a <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html" class="apiref"><code>Servlet</code></a>, <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html" class="apiref"><code>Filter</code></a>, or servlet <code>*Listener</code> by using a Spring bean, you must provide a <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" class="apiref"><code>@Bean</code></a> definition for it.
+Doing so can be very useful when you want to inject configuration or dependencies.
+However, you must be very careful that they do not cause eager initialization of too many other beans, because they have to be installed in the container very early in the application lifecycle.
+(For example, it is not a good idea to have them depend on your <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html" class="apiref"><code>DataSource</code></a> or JPA configuration.)
+You can work around such restrictions by initializing the beans lazily when first used instead of on initialization.</p>
+</div>
+<div class="paragraph">
+<p>In the case of filters and servlets, you can also add mappings and init parameters by adding a <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/FilterRegistrationBean.html" class="apiref"><code>FilterRegistrationBean</code></a> or a <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/ServletRegistrationBean.html" class="apiref"><code>ServletRegistrationBean</code></a> instead of or in addition to the underlying component.
+You can also use <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/ServletRegistration.html" class="apiref"><code>@ServletRegistration</code></a> and <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/FilterRegistration.html" class="apiref"><code>@FilterRegistration</code></a> as an annotation-based alternative to <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/ServletRegistrationBean.html" class="apiref"><code>ServletRegistrationBean</code></a> and <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/FilterRegistrationBean.html" class="apiref"><code>FilterRegistrationBean</code></a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If no <code>dispatcherType</code> is specified on a filter registration, <code>REQUEST</code> is used.
+This aligns with the servlet specification&#8217;s default dispatcher type.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Like any other Spring bean, you can define the order of servlet filter beans; please make sure to check the <a href="../reference/web/servlet.html#web.servlet.embedded-container.servlets-filters-listeners.beans" class="xref page">Registering Servlets, Filters, and Listeners as Spring Beans</a> section.</p>
+</div>
+<div class="sect3">
+<h4 id="howto.webserver.add-servlet-filter-listener.spring-bean.disable"><a class="anchor" href="#howto.webserver.add-servlet-filter-listener.spring-bean.disable"></a>Disable Registration of a Servlet or Filter</h4>
+<div class="paragraph">
+<p>As <a href="#howto.webserver.add-servlet-filter-listener.spring-bean">described earlier</a>, any <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html" class="apiref"><code>Servlet</code></a> or <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html" class="apiref"><code>Filter</code></a> beans are registered with the servlet container automatically.
+To disable registration of a particular <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html" class="apiref"><code>Filter</code></a> or <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html" class="apiref"><code>Servlet</code></a> bean, create a registration bean for it and mark it as disabled, as shown in the following example:</p>
+</div>
+<div id="_tabs_11" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_11_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_11_kotlin" class="tab">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_11_java--panel" class="tabpanel" aria-labelledby="_tabs_11_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyFilterConfiguration {
+
+	@Bean
+	public FilterRegistrationBean&lt;MyFilter&gt; registration(MyFilter filter) {
+		FilterRegistrationBean&lt;MyFilter&gt; registration = new FilterRegistrationBean&lt;&gt;(filter);
+		registration.setEnabled(false);
+		return registration;
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_11_kotlin--panel" class="tabpanel" aria-labelledby="_tabs_11_kotlin">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.web.servlet.FilterRegistrationBean
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyFilterConfiguration {
+
+	@Bean
+	fun registration(filter: MyFilter): FilterRegistrationBean&lt;MyFilter&gt; {
+		val registration = FilterRegistrationBean(filter)
+		registration.isEnabled = false
+		return registration
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.add-servlet-filter-listener.using-scanning"><a class="anchor" href="#howto.webserver.add-servlet-filter-listener.using-scanning"></a>Add Servlets, Filters, and Listeners by Using Classpath Scanning</h3>
+<div class="paragraph">
+<p><a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/annotation/WebServlet.html" class="apiref"><code>@WebServlet</code></a>, <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/annotation/WebFilter.html" class="apiref"><code>@WebFilter</code></a>, and <a href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/annotation/WebListener.html" class="apiref"><code>@WebListener</code></a> annotated classes can be automatically registered with an embedded servlet container by annotating a <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html" class="apiref"><code>@Configuration</code></a> class with <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/ServletComponentScan.html" class="apiref"><code>@ServletComponentScan</code></a> and specifying the package(s) containing the components that you want to register.
+By default, <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/ServletComponentScan.html" class="apiref"><code>@ServletComponentScan</code></a> scans from the package of the annotated class.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.configure-access-logs"><a class="anchor" href="#howto.webserver.configure-access-logs"></a>Configure Access Logging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Access logs can be configured for Tomcat and Jetty through their respective namespaces.</p>
+</div>
+<div class="paragraph">
+<p>For instance, the following settings log access on Tomcat with a <a href="https://tomcat.apache.org/tomcat-11.0-doc/config/valve.html#Access_Logging">custom pattern</a>.</p>
+</div>
+<div id="_tabs_12" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_12_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_12_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_12_properties--panel" class="tabpanel" aria-labelledby="_tabs_12_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.tomcat.basedir=my-tomcat
+server.tomcat.accesslog.enabled=true
+server.tomcat.accesslog.pattern=%t %a %r %s (%D microseconds)</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_12_yaml--panel" class="tabpanel" aria-labelledby="_tabs_12_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  tomcat:
+    basedir: "my-tomcat"
+    accesslog:
+      enabled: true
+      pattern: "%t %a %r %s (%D microseconds)"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The default location for logs is a <code>logs</code> directory relative to the Tomcat base directory.
+By default, the <code>logs</code> directory is a temporary directory, so you may want to fix Tomcat&#8217;s base directory or use an absolute path for the logs.
+In the preceding example, the logs are available in <code>my-tomcat/logs</code> relative to the working directory of the application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Finally, access logging for Jetty can also be configured as follows:</p>
+</div>
+<div id="_tabs_13" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_13_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_13_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_13_properties--panel" class="tabpanel" aria-labelledby="_tabs_13_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.jetty.accesslog.enabled=true
+server.jetty.accesslog.filename=/var/log/jetty-access.log</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_13_yaml--panel" class="tabpanel" aria-labelledby="_tabs_13_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  jetty:
+    accesslog:
+      enabled: true
+      filename: "/var/log/jetty-access.log"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, logs are redirected to <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#err" class="apiref"><code>System.err</code></a>.
+For more details, see the Jetty documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.use-behind-a-proxy-server"><a class="anchor" href="#howto.webserver.use-behind-a-proxy-server"></a>Running Behind a Front-end Proxy Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your application is running behind a proxy, a load-balancer or in the cloud, the request information (like the host, port, scheme&#8230;&#8203;) might change along the way.
+Your application may be running on <code>10.10.10.10:8080</code>, but HTTP clients should only see <code>example.org</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://tools.ietf.org/html/rfc7239">RFC7239 "Forwarded Headers"</a> defines the <code>Forwarded</code> HTTP header; proxies can use this header to provide information about the original request.
+You can configure your application to read those headers and automatically use that information when creating links and sending them to clients in HTTP 302 responses, JSON documents or HTML pages.
+There are also non-standard headers, like <code>X-Forwarded-Host</code>, <code>X-Forwarded-Port</code>, <code>X-Forwarded-Proto</code>, <code>X-Forwarded-Ssl</code>, and <code>X-Forwarded-Prefix</code>.</p>
+</div>
+<div class="paragraph">
+<p>If the proxy adds the commonly used <code>X-Forwarded-For</code> and <code>X-Forwarded-Proto</code> headers, setting <code>server.forward-headers-strategy</code> to <code>NATIVE</code> is enough to support those.
+With this option, the Web servers themselves natively support this feature; you can check their specific documentation to learn about specific behavior.</p>
+</div>
+<div class="paragraph">
+<p>If this is not enough, Spring Framework provides a <a href="https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/filters.html#filters-forwarded-headers">ForwardedHeaderFilter</a> for the servlet stack and a <a href="https://docs.spring.io/spring-framework/reference/7.0/web/webflux/reactive-spring.html#webflux-forwarded-headers">ForwardedHeaderTransformer</a> for the reactive stack.
+You can use them in your application by setting <code>server.forward-headers-strategy</code> to <code>FRAMEWORK</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you are using Tomcat and terminating SSL at the proxy, <code>server.tomcat.redirect-context-root</code> should be set to <code>false</code>.
+This allows the <code>X-Forwarded-Proto</code> header to be honored before any redirects are performed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If your application runs <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cloud/CloudPlatform.html#enum-constant-summary" class="apiref">in a supported Cloud Platform</a>, the <code>server.forward-headers-strategy</code> property defaults to <code>NATIVE</code>.
+In all other instances, it defaults to <code>NONE</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="howto.webserver.use-behind-a-proxy-server.tomcat"><a class="anchor" href="#howto.webserver.use-behind-a-proxy-server.tomcat"></a>Customize Tomcat&#8217;s Proxy Configuration</h3>
+<div class="paragraph">
+<p>If you use Tomcat, you can additionally configure the names of the headers used to carry &#8220;forwarded&#8221; information, as shown in the following example:</p>
+</div>
+<div id="_tabs_14" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_14_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_14_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_14_properties--panel" class="tabpanel" aria-labelledby="_tabs_14_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.tomcat.remoteip.remote-ip-header=x-your-remote-ip-header
+server.tomcat.remoteip.protocol-header=x-your-protocol-header</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_14_yaml--panel" class="tabpanel" aria-labelledby="_tabs_14_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  tomcat:
+    remoteip:
+      remote-ip-header: "x-your-remote-ip-header"
+      protocol-header: "x-your-protocol-header"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Tomcat is also configured with a regular expression that matches internal proxies that are to be trusted.
+See the <a href="../appendix/application-properties/index.html#application-properties.server.server.tomcat.remoteip.internal-proxies" class="xref page"><code>server.tomcat.remoteip.internal-proxies</code> entry in the appendix</a> for its default value.
+You can customize the valve&#8217;s configuration by adding an entry to <code>application.properties</code>, as shown in the following example:</p>
+</div>
+<div id="_tabs_15" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_15_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_15_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_15_properties--panel" class="tabpanel" aria-labelledby="_tabs_15_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.tomcat.remoteip.internal-proxies=192\.168\.\d{1,3}\.\d{1,3}</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_15_yaml--panel" class="tabpanel" aria-labelledby="_tabs_15_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  tomcat:
+    remoteip:
+      internal-proxies: "192\\.168\\.\\d{1,3}\\.\\d{1,3}"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can trust all proxies by setting the <code>internal-proxies</code> to empty (but do not do so in production).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can take complete control of the configuration of Tomcat&#8217;s <a href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/valves/RemoteIpValve.html" class="apiref"><code>RemoteIpValve</code></a> by switching the automatic one off (to do so, set <code>server.forward-headers-strategy=NONE</code>) and adding a new valve instance using a <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServerFactoryCustomizer.html" class="apiref"><code>WebServerFactoryCustomizer</code></a> bean.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.enable-multiple-connectors-in-tomcat"><a class="anchor" href="#howto.webserver.enable-multiple-connectors-in-tomcat"></a>Enable Multiple Connectors with Tomcat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add an <a href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/connector/Connector.html" class="apiref"><code>Connector</code></a> to the <a href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/embedded/tomcat/TomcatServletWebServerFactory.html" class="apiref"><code>TomcatServletWebServerFactory</code></a>, which can allow multiple connectors, including HTTP and HTTPS connectors, as shown in the following example:</p>
+</div>
+<div id="_tabs_16" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_16_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_16_kotlin" class="tab">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_16_java--panel" class="tabpanel" aria-labelledby="_tabs_16_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.apache.catalina.connector.Connector;
+
+import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyTomcatConfiguration {
+
+	@Bean
+	public WebServerFactoryCustomizer&lt;TomcatServletWebServerFactory&gt; connectorCustomizer() {
+		return (tomcat) -&gt; tomcat.addAdditionalConnectors(createConnector());
+	}
+
+	private Connector createConnector() {
+		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+		connector.setPort(8081);
+		return connector;
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_16_kotlin--panel" class="tabpanel" aria-labelledby="_tabs_16_kotlin">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.apache.catalina.connector.Connector
+import org.springframework.boot.web.server.WebServerFactoryCustomizer
+import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyTomcatConfiguration {
+
+	@Bean
+	fun connectorCustomizer(): WebServerFactoryCustomizer&lt;TomcatServletWebServerFactory&gt; {
+		return WebServerFactoryCustomizer { tomcat: TomcatServletWebServerFactory -&gt;
+			tomcat.addAdditionalConnectors(createConnector())
+		}
+	}
+
+	private fun createConnector(): Connector {
+		val connector = Connector("org.apache.coyote.http11.Http11NioProtocol")
+		connector.port = 8081
+		return connector
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.enable-tomcat-mbean-registry"><a class="anchor" href="#howto.webserver.enable-tomcat-mbean-registry"></a>Enable Tomcat&#8217;s MBean Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Embedded Tomcat&#8217;s MBean registry is disabled by default.
+This minimizes Tomcat&#8217;s memory footprint.
+If you want to use Tomcat&#8217;s MBeans, for example so that they can be used by Micrometer to expose metrics, you must use the <code>server.tomcat.mbeanregistry.enabled</code> property to do so, as shown in the following example:</p>
+</div>
+<div id="_tabs_17" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_17_properties" class="tab">
+<p>Properties</p>
+</li>
+<li id="_tabs_17_yaml" class="tab">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_17_properties--panel" class="tabpanel" aria-labelledby="_tabs_17_properties">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">server.tomcat.mbeanregistry.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_17_yaml--panel" class="tabpanel" aria-labelledby="_tabs_17_yaml">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">server:
+  tomcat:
+    mbeanregistry:
+      enabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="howto.webserver.create-websocket-endpoints-using-serverendpoint"><a class="anchor" href="#howto.webserver.create-websocket-endpoints-using-serverendpoint"></a>Create WebSocket Endpoints Using @ServerEndpoint</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to use <a href="https://jakarta.ee/specifications/websocket/2.2/apidocs/server/jakarta/websocket/server/ServerEndpoint.html" class="apiref"><code>@ServerEndpoint</code></a> in a Spring Boot application that used an embedded container, you must declare a single <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/socket/server/standard/ServerEndpointExporter.html" class="apiref"><code>ServerEndpointExporter</code></a> <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" class="apiref"><code>@Bean</code></a>, as shown in the following example:</p>
+</div>
+<div id="_tabs_18" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_18_java" class="tab">
+<p>Java</p>
+</li>
+<li id="_tabs_18_kotlin" class="tab">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_18_java--panel" class="tabpanel" aria-labelledby="_tabs_18_java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyWebSocketConfiguration {
+
+	@Bean
+	public ServerEndpointExporter serverEndpointExporter() {
+		return new ServerEndpointExporter();
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div id="_tabs_18_kotlin--panel" class="tabpanel" aria-labelledby="_tabs_18_kotlin">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.web.socket.server.standard.ServerEndpointExporter
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyWebSocketConfiguration {
+
+	@Bean
+	fun serverEndpointExporter(): ServerEndpointExporter {
+		return ServerEndpointExporter()
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The bean shown in the preceding example registers any <a href="https://jakarta.ee/specifications/websocket/2.2/apidocs/server/jakarta/websocket/server/ServerEndpoint.html" class="apiref"><code>@ServerEndpoint</code></a> annotated beans with the underlying WebSocket container.
+When deployed to a standalone servlet container, this role is performed by a servlet container initializer, and the <a href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/socket/server/standard/ServerEndpointExporter.html" class="apiref"><code>ServerEndpointExporter</code></a> bean is not required.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="properties-and-configuration.html">Properties and Configuration</a></span>
+  <span class="next"><a href="spring-mvc.html">Spring MVC</a></span>
+</nav>
+</article>  </div>
+</main>
+<div class="modal micromodal-slide" id="modal-versions" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+            <main class="modal__content" id="modal-versions-content">
+              <button data-micromodal-close class="modal-versions-close">
+                <svg width="28px" height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"/></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div>
+                          <a class="title" href="../index.html">Spring Boot</a>
+                        </div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>
+    Related Spring Documentation
+    <ul class="projects-list">
+        <li>
+<a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  Spring Cloud
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  Spring Data
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-modulith/reference/">
+  Spring Modulith
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a>
+</li>
+    </ul>
+  </li
+  <li><a href="../spring-projects.html">All Docs...</a></li>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img id="springlogo" src="../_/img/spring-logo.svg" alt="Spring">
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br /><a href="https://www.vmware.com/help/legal.html">Terms of Use</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">Privacy</a> • <a href="https://spring.io/trademarks">Trademark Guidelines</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">Thank you</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">Your California Privacy Rights</a> • <a class="ot-sdk-show-settings">Cookie Settings</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra&trade;, and Apache Geode&trade; are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java&trade;, Java&trade; SE, Java&trade; EE, and OpenJDK&trade; are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.</p>
+    </div>
+    <div id="social-icons" class="flex jc-between">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle class="cls-1" cx="20" cy="20" r="20"/><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"/></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.93 75.93"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"/></g><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"/></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.93 75.93"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"/><path id="Twitter-2" data-name="Twitter" class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z"/></svg></a>
+    </div>
+</footer>
+<script src="../_/js/vendor/import.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script async src="../_/js/vendor/asciidoctor-tabs.js" data-sync-storage-key="docs:preferred-tab"></script>
+  </body>
+</html>

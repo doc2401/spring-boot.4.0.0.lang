@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Thread Dump (threaddump) :: Spring Boot</title>
+    <link rel="prev" href="startup.html">
+    <link rel="next" href="../../java/index.html">
+    <meta name="generator" content="Antora 3.2.0-alpha.10">
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/search.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/page-search.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/asciidoctor-tabs.css">
+
+    <meta name="antora-ui-version" content="v0.4.21"> 
+    <meta name="version" content="4.0.0">
+    <meta name="generation" content="">
+    <meta name="versioned-url" content="undefined/undefined/api/rest/actuator/threaddump.html">
+    <meta name="component" content="boot">
+    <meta name="latest-version" content="false">
+    <link rel="icon" href="../../../_/img/favicon.ico" type="image/vnd.microsoft.icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img
+          id="springlogo"
+          class="block"
+          src="../../../_/img/spring-logo.svg"
+          alt="Spring"
+        />
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Why Spring</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.io/why-spring"
+            >Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/microservices"
+            >Microservices</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/reactive"
+            >Reactive</a>
+            <a class="navbar-item" href="https://spring.io/event-driven">Event
+              Driven</a>
+            <a class="navbar-item" href="https://spring.io/cloud">Cloud</a>
+            <a class="navbar-item" href="https://spring.io/web-applications">Web
+              Applications</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/serverless"
+            >Serverless</a>
+            <a class="navbar-item" href="https://spring.io/batch">Batch</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/quickstart"
+            >Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px">
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects"
+            >Overview</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-boot"
+            >Spring Boot</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-framework"
+            >Spring Framework</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-cloud"
+            >Spring Cloud</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-cloud-dataflow"
+            >Spring Cloud Data Flow</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-data"
+            >Spring Data</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-integration"
+            >Spring Integration</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-batch"
+            >Spring Batch</a>
+            <a
+              class="navbar-item"
+              href="https://spring.io/projects/spring-security"
+            >Spring Security</a>
+            <a
+              class="navbar-item navbar-item-special"
+              href="https://spring.io/projects"
+            >View all projects</a>
+            <li class="navbar-item navbar-item-special-3">DEVELOPMENT TOOLS</li>
+            <a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+            <a
+              class="navbar-item navbar-item-special-2"
+              href="https://start.spring.io"
+            >Spring Initializr
+              <svg
+                class="external-link-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+              ><polyline
+                  points="15 10.94 15 15 1 15 1 1 5.06 1"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></polyline><polyline
+                  points="8.93 1 15 1 15 7.07"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></polyline><line
+                  x1="15"
+                  y1="1"
+                  x2="8"
+                  y2="8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line></svg></a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.academy/courses"
+            >Courses</a>
+            <a
+              class="navbar-item"
+              href="https://spring.academy/learning-path"
+            >Get Certified</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg">
+            <a class="navbar-item" href="https://spring.io/solutions">Overview</a>
+            <a class="navbar-item" href="https://spring.io/support">Spring Runtime</a>
+            <a class="navbar-item" href="https://spring.io/consulting">Spring Consulting</a>
+            <a class="navbar-item" href="https://spring.academy/teams">Spring Academy For Teams</a>
+            <a class="navbar-item" href="https://spring.io/security">Security Advisories</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="https://spring.io/community"
+            >Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input
+        type="checkbox"
+        type="checkbox"
+        id="switch-theme-checkbox"
+        name="switch-theme-checkbox"
+      />
+      <span class="icon"><svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="moon"
+          class="svg-inline--fa fa-moon moon"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512"
+        ><path
+            fill="currentColor"
+            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+          ></path>
+        </svg>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="sun"
+          class="svg-inline--fa fa-sun sun"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        ><path
+            fill="currentColor"
+            d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"
+          ></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context">
+  <span class="title">Spring Boot</span>
+  <span class="version">4.0.0</span>
+  <button class="browse-version" id="browse-version">
+    <svg
+      height="24px"
+      id="Layer_1"
+      style="enable-background:new 0 0 512 512;"
+      version="1.1"
+      viewBox="0 0 512 512"
+      width="24px"
+      xml:space="preserve"
+    ><g><path
+          d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"
+        ></path><path
+          d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"
+        ></path><path
+          d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"
+        ></path></g></svg>
+  </button>
+  </div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home"  href="../../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book"  href="../../../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question"  href="../../../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-server"  href="../../../system-requirements.html">System Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-gift"  href="../../../installing.html">Installing Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-rocket"  href="../../../upgrading.html">Upgrading Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../tutorial/first-application/index.html">Developing Your First Spring Boot Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/using/index.html">Developing with Spring Boot</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/build-systems.html">Build Systems</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/structuring-your-code.html">Structuring Your Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/configuration-classes.html">Configuration Classes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/auto-configuration.html">Auto-configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/spring-beans-and-dependency-injection.html">Spring Beans and Dependency Injection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/using-the-springbootapplication-annotation.html">Using the @SpringBootApplication Annotation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/running-your-application.html">Running Your Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/devtools.html">Developer Tools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/using/packaging-for-production.html">Packaging Your Application for Production</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/features/index.html">Core Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/spring-application.html">SpringApplication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/external-config.html">Externalized Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/profiles.html">Profiles</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/internationalization.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/aop.html">Aspect-Oriented Programming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/json.html">JSON</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/task-execution-and-scheduling.html">Task Execution and Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/dev-services.html">Development-time Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/developing-auto-configuration.html">Creating Your Own Auto-configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/kotlin.html">Kotlin Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/features/ssl.html">SSL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/web/index.html">Web</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/servlet.html">Servlet Web Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/reactive.html">Reactive Web Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/graceful-shutdown.html">Graceful Shutdown</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/spring-security.html">Spring Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/spring-session.html">Spring Session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/spring-graphql.html">Spring for GraphQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/web/spring-hateoas.html">Spring HATEOAS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/data/index.html">Data</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/data/sql.html">SQL Databases</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/data/nosql.html">Working with NoSQL Technologies</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/io/index.html">IO</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/caching.html">Caching</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/spring-batch.html">Spring Batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/quartz.html">Quartz Scheduler</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/email.html">Sending Email</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/rest-client.html">Calling REST Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/webservices.html">Web Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/io/jta.html">Distributed Transactions With JTA</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/messaging/index.html">Messaging</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/jms.html">JMS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/amqp.html">AMQP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/kafka.html">Apache Kafka Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/pulsar.html">Apache Pulsar Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/rsocket.html">RSocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/spring-integration.html">Spring Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/messaging/websockets.html">WebSockets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/testing/index.html">Testing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/test-modules.html">Test Modules</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/test-scope-dependencies.html">Test Scope Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/spring-applications.html">Testing Spring Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/spring-boot-applications.html">Testing Spring Boot Applications</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/testcontainers.html">Testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/testing/test-utilities.html">Test Utilities</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/packaging/index.html">Packaging Spring Boot Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/packaging/efficient.html">Efficient Deployments</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/packaging/aot-cache.html">AOT Cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/packaging/aot.html">Ahead-of-Time Processing With the JVM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/packaging/native-image/index.html">GraalVM Native Images</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../../../reference/packaging/native-image/introducing-graalvm-native-images.html">Introducing GraalVM Native Images</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../../../reference/packaging/native-image/advanced-topics.html">Advanced Native Images Topics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/packaging/checkpoint-restore.html">Checkpoint and Restore With the JVM</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/packaging/container-images/index.html">Container Images</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../../../reference/packaging/container-images/efficient-images.html">Efficient Container Images</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../../../reference/packaging/container-images/dockerfiles.html">Dockerfiles</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link"  href="../../../reference/packaging/container-images/cloud-native-buildpacks.html">Cloud Native Buildpacks</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../reference/actuator/index.html">Production-ready Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/enabling.html">Enabling Production-ready Features</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/endpoints.html">Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/monitoring.html">Monitoring and Management Over HTTP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/jmx.html">Monitoring and Management over JMX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/loggers.html">Loggers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/metrics.html">Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/tracing.html">Tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/auditing.html">Auditing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/http-exchanges.html">Recording HTTP Exchanges</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/process-monitoring.html">Process Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../reference/actuator/cloud-foundry.html">Cloud Foundry Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../how-to/index.html">How-to Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/application.html">Spring Boot Application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/properties-and-configuration.html">Properties and Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/webserver.html">Embedded Web Servers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/spring-mvc.html">Spring MVC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/jersey.html">Jersey</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/http-clients.html">HTTP Clients</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/logging.html">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/data-access.html">Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/data-initialization.html">Database Initialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/nosql.html">NoSQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/messaging.html">Messaging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/batch.html">Batch Applications</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/actuator.html">Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/hotswapping.html">Hot Swapping</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/build.html">Build</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../how-to/native-image/index.html">GraalVM Native Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../how-to/native-image/developing-your-first-application.html">Developing Your First GraalVM Native Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../how-to/native-image/testing-native-applications.html">Testing GraalVM Native Images</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/aot-cache.html">AOT Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../how-to/deployment/index.html">Deploying Spring Boot Applications</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../how-to/deployment/traditional-deployment.html">Traditional Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../how-to/deployment/cloud.html">Deploying to the Cloud</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../how-to/deployment/installing.html">Installing Spring Boot Applications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../how-to/docker-compose.html">Docker Compose</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../build-tool-plugin/index.html">Build Tool Plugins</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../maven-plugin/index.html">Maven Plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/using.html">Using the Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/goals.html">Goals</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/packaging.html">Packaging Executable Archives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/build-image.html">Packaging OCI Images</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/run.html">Running your Application with Maven</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/integration-tests.html">Running Integration Tests</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/build-info.html">Integrating with Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../maven-plugin/help.html">Help Information</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../gradle-plugin/index.html">Gradle Plugin</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/managing-dependencies.html">Managing Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/packaging.html">Packaging Executable Archives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/packaging-oci-image.html">Packaging OCI Images</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/publishing.html">Publishing your Application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/running.html">Running your Application with Gradle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/aot.html">Ahead-of-Time Processing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/integrating-with-actuator.html">Integrating with Actuator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../gradle-plugin/reacting.html">Reacting to Other Plugins</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../build-tool-plugin/antlib.html">Spring Boot AntLib Module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../build-tool-plugin/other-build-systems.html">Supporting Other Build Systems</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../cli/installation.html">Installing the CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../cli/using-the-cli.html">Using the CLI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Rest APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="auditevents.html">Audit Events (<code>auditevents</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="conditions.html">Conditions Evaluation Report (<code>conditions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="configprops.html">Configuration Properties (<code>configprops</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="heapdump.html">Heap Dump (<code>heapdump</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="httpexchanges.html">HTTP Exchanges (<code>httpexchanges</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="integrationgraph.html">Spring Integration Graph (<code>integrationgraph</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="logfile.html">Log File (<code>logfile</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="sbom.html">Software Bill of Materials (<code>sbom</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="scheduledtasks.html">Scheduled Tasks (<code>scheduledtasks</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="startup.html">Application Startup (<code>startup</code>)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link"  href="threaddump.html">Thread Dump (<code>threaddump</code>)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../../java/index.html">Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../../../gradle-plugin/api/java/index.html">Gradle Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../../../maven-plugin/api/java/index.html">Maven Plugin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link link-external"  target="_blank" href="../../kotlin/index.html">Spring Boot</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specifications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../specification/configuration-metadata/index.html">Configuration Metadata</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/configuration-metadata/format.html">Metadata Format</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/configuration-metadata/manual-hints.html">Providing Manual Hints</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/configuration-metadata/annotation-processor.html">Generating Your Own Metadata by Using the Annotation Processor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../specification/executable-jar/index.html">The Executable Jar Format</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/nested-jars.html">Nested JARs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/jarfile-class.html">Spring Boot&#8217;s &#8220;NestedJarFile&#8221; Class</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/launching.html">Launching Executable Jars</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/property-launcher.html">PropertiesLauncher Features</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/restrictions.html">Executable Jar Restrictions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../specification/executable-jar/alternatives.html">Alternative Single Jar Solutions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../appendix/application-properties/index.html">Common Application Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link"  href="../../../appendix/deprecated-application-properties/index.html">Deprecated Application Properties</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/index.html">Auto-configuration Classes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../appendix/test-auto-configuration/index.html">Test Auto-configuration Annotations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/test-auto-configuration/slices.html">Test Slices</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link"  href="../../../appendix/dependency-versions/index.html">Dependency Versions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/dependency-versions/coordinates.html">Managed Dependency Coordinates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link"  href="../../../appendix/dependency-versions/properties.html">Version Properties</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button id="nav-toggle-2" class="nav-toggle"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button id="nav-toggle-1" class="nav-toggle"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div
+      class="toc"
+      data-title="Thread Dump (threaddump)"
+      data-levels="2"
+    >
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links">
+        <a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/build/generated/docs/antora-dependencies-source/actuator-rest-api/modules/api/pages/rest/actuator/threaddump.adoc">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+          ><path
+              d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"
+            ></path></svg>
+          Edit this Page
+        </a>
+        <a href="https://github.com/doc2401/spring-boot" title="GitHub">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="512px"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 512 512"
+            width="512px"
+          ><style type="text/css"><![CDATA[
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} ]]></style><g><path
+                class="st0"
+                d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"
+              ></path></g></svg>
+          GitHub Project
+        </a>
+        <a href="https://stackoverflow.com/tags/spring-boot">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path
+              d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"
+            ></path></svg>
+          Stack Overflow
+        </a>
+    </div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container">
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+    <ul>
+      <li id="copy-url" title="Copy versioned URL"></li>
+      <li><a href="../../../index.html">Spring Boot</a></li>
+      <li>Rest APIs</li>
+      <li><a href="index.html">Actuator</a></li>
+      <li><a href="threaddump.html">Thread Dump (<code>threaddump</code>)</a></li>
+    </ul>
+  </nav>
+</div><h1 id="page-title" class="page">Thread Dump (<code>threaddump</code>)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>threaddump</code> endpoint provides a thread dump from the application&#8217;s JVM.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="threaddump.retrieving-json"><a class="anchor" href="#threaddump.retrieving-json"></a>Retrieving the Thread Dump as JSON</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To retrieve the thread dump as JSON, make a <code>GET</code> request to <code>/actuator/threaddump</code> with an appropriate <code>Accept</code> header, as shown in the following curl-based example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/actuator/threaddump' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting response is similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 46434
+
+{
+  "threads" : [ {
+    "blockedCount" : 20,
+    "blockedTime" : -1,
+    "daemon" : false,
+    "inNative" : false,
+    "lockOwnerId" : -1,
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ],
+    "priority" : 5,
+    "stackTrace" : [ {
+      "className" : "sun.management.ThreadImpl",
+      "fileName" : "ThreadImpl.java",
+      "lineNumber" : -2,
+      "methodName" : "dumpThreads0",
+      "moduleName" : "java.management",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : true
+    }, {
+      "className" : "sun.management.ThreadImpl",
+      "fileName" : "ThreadImpl.java",
+      "lineNumber" : 505,
+      "methodName" : "dumpAllThreads",
+      "moduleName" : "java.management",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "sun.management.ThreadImpl",
+      "fileName" : "ThreadImpl.java",
+      "lineNumber" : 493,
+      "methodName" : "dumpAllThreads",
+      "moduleName" : "java.management",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.actuate.management.ThreadDumpEndpoint",
+      "fileName" : "ThreadDumpEndpoint.java",
+      "lineNumber" : 52,
+      "methodName" : "getFormattedThreadDump",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.actuate.management.ThreadDumpEndpoint",
+      "fileName" : "ThreadDumpEndpoint.java",
+      "lineNumber" : 43,
+      "methodName" : "threadDump",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.DirectMethodHandle$Holder",
+      "fileName" : "DirectMethodHandle$Holder",
+      "lineNumber" : -1,
+      "methodName" : "invokeVirtual",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$MH/0x0000000007044400",
+      "fileName" : "LambdaForm$MH",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.Invokers$Holder",
+      "fileName" : "Invokers$Holder",
+      "lineNumber" : -1,
+      "methodName" : "invokeExact_MT",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 154,
+      "methodName" : "invokeImpl",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 104,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.reflect.Method",
+      "fileName" : "Method.java",
+      "lineNumber" : 565,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.util.ReflectionUtils",
+      "fileName" : "ReflectionUtils.java",
+      "lineNumber" : 281,
+      "methodName" : "invokeMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker",
+      "fileName" : "ReflectiveOperationInvoker.java",
+      "lineNumber" : 76,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation",
+      "fileName" : "AbstractDiscoveredOperation.java",
+      "lineNumber" : 62,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.webmvc.actuate.endpoint.web.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter",
+      "fileName" : "AbstractWebMvcEndpointHandlerMapping.java",
+      "lineNumber" : 333,
+      "methodName" : "handle",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.webmvc.actuate.endpoint.web.AbstractWebMvcEndpointHandlerMapping$OperationHandler",
+      "fileName" : "AbstractWebMvcEndpointHandlerMapping.java",
+      "lineNumber" : 456,
+      "methodName" : "handle",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.DirectMethodHandle$Holder",
+      "fileName" : "DirectMethodHandle$Holder",
+      "lineNumber" : -1,
+      "methodName" : "invokeSpecial",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$MH/0x0000000007063800",
+      "fileName" : "LambdaForm$MH",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$MH/0x0000000007063c00",
+      "fileName" : "LambdaForm$MH",
+      "lineNumber" : -1,
+      "methodName" : "invokeExact_MT",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 156,
+      "methodName" : "invokeImpl",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 104,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.reflect.Method",
+      "fileName" : "Method.java",
+      "lineNumber" : 565,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.method.support.InvocableHandlerMethod",
+      "fileName" : "InvocableHandlerMethod.java",
+      "lineNumber" : 258,
+      "methodName" : "doInvoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.method.support.InvocableHandlerMethod",
+      "fileName" : "InvocableHandlerMethod.java",
+      "lineNumber" : 190,
+      "methodName" : "invokeForRequest",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod",
+      "fileName" : "ServletInvocableHandlerMethod.java",
+      "lineNumber" : 117,
+      "methodName" : "invokeAndHandle",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter",
+      "fileName" : "RequestMappingHandlerAdapter.java",
+      "lineNumber" : 934,
+      "methodName" : "invokeHandlerMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter",
+      "fileName" : "RequestMappingHandlerAdapter.java",
+      "lineNumber" : 853,
+      "methodName" : "handleInternal",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter",
+      "fileName" : "AbstractHandlerMethodAdapter.java",
+      "lineNumber" : 86,
+      "methodName" : "handle",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.DispatcherServlet",
+      "fileName" : "DispatcherServlet.java",
+      "lineNumber" : 963,
+      "methodName" : "doDispatch",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.DispatcherServlet",
+      "fileName" : "DispatcherServlet.java",
+      "lineNumber" : 866,
+      "methodName" : "doService",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.FrameworkServlet",
+      "fileName" : "FrameworkServlet.java",
+      "lineNumber" : 1003,
+      "methodName" : "processRequest",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.FrameworkServlet",
+      "fileName" : "FrameworkServlet.java",
+      "lineNumber" : 892,
+      "methodName" : "doGet",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "jakarta.servlet.http.HttpServlet",
+      "fileName" : "HttpServlet.java",
+      "lineNumber" : 622,
+      "methodName" : "service",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.web.servlet.FrameworkServlet",
+      "fileName" : "FrameworkServlet.java",
+      "lineNumber" : 874,
+      "methodName" : "service",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.TestDispatcherServlet",
+      "fileName" : "TestDispatcherServlet.java",
+      "lineNumber" : 72,
+      "methodName" : "service",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "jakarta.servlet.http.HttpServlet",
+      "fileName" : "HttpServlet.java",
+      "lineNumber" : 710,
+      "methodName" : "service",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.mock.web.MockFilterChain$ServletFilterProxy",
+      "fileName" : "MockFilterChain.java",
+      "lineNumber" : 160,
+      "methodName" : "doFilter",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.mock.web.MockFilterChain",
+      "fileName" : "MockFilterChain.java",
+      "lineNumber" : 127,
+      "methodName" : "doFilter",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.MockMvc",
+      "fileName" : "MockMvc.java",
+      "lineNumber" : 199,
+      "methodName" : "perform",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 386,
+      "methodName" : "getMvcResultOrFailure",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 375,
+      "methodName" : "perform",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 401,
+      "methodName" : "exchange",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 460,
+      "methodName" : "exchange",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 486,
+      "methodName" : "assertThat",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder",
+      "fileName" : "MockMvcTester.java",
+      "lineNumber" : 425,
+      "methodName" : "assertThat",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.assertj.core.api.AssertionsForInterfaceTypes",
+      "fileName" : "AssertionsForInterfaceTypes.java",
+      "lineNumber" : 82,
+      "methodName" : "assertThat",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.assertj.core.api.Assertions",
+      "fileName" : "Assertions.java",
+      "lineNumber" : 3417,
+      "methodName" : "assertThat",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.springframework.boot.actuate.docs.management.ThreadDumpEndpointDocumentationTests",
+      "fileName" : "ThreadDumpEndpointDocumentationTests.java",
+      "lineNumber" : 65,
+      "methodName" : "jsonThreadDump",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$DMH/0x00000000074a2400",
+      "fileName" : "LambdaForm$DMH",
+      "lineNumber" : -1,
+      "methodName" : "invokeVirtual",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$MH/0x0000000007084800",
+      "fileName" : "LambdaForm$MH",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.Invokers$Holder",
+      "fileName" : "Invokers$Holder",
+      "lineNumber" : -1,
+      "methodName" : "invokeExact_MT",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 154,
+      "methodName" : "invokeImpl",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 104,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.reflect.Method",
+      "fileName" : "Method.java",
+      "lineNumber" : 565,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.commons.util.ReflectionUtils",
+      "fileName" : "ReflectionUtils.java",
+      "lineNumber" : 701,
+      "methodName" : "invokeMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.commons.support.ReflectionSupport",
+      "fileName" : "ReflectionSupport.java",
+      "lineNumber" : 502,
+      "methodName" : "invokeMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.support.MethodReflectionUtils",
+      "fileName" : "MethodReflectionUtils.java",
+      "lineNumber" : 45,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.MethodInvocation",
+      "fileName" : "MethodInvocation.java",
+      "lineNumber" : 61,
+      "methodName" : "proceed",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation",
+      "fileName" : "InvocationInterceptorChain.java",
+      "lineNumber" : 124,
+      "methodName" : "proceed",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.extension.TimeoutExtension",
+      "fileName" : "TimeoutExtension.java",
+      "lineNumber" : 163,
+      "methodName" : "intercept",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.extension.TimeoutExtension",
+      "fileName" : "TimeoutExtension.java",
+      "lineNumber" : 148,
+      "methodName" : "interceptTestableMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.extension.TimeoutExtension",
+      "fileName" : "TimeoutExtension.java",
+      "lineNumber" : 86,
+      "methodName" : "interceptTestMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x0000000007127068",
+      "lineNumber" : -1,
+      "methodName" : "apply",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall",
+      "fileName" : "InterceptingExecutableInvoker.java",
+      "lineNumber" : 123,
+      "methodName" : "lambda$ofVoidMethod$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall$$Lambda/0x00000000074ad230",
+      "lineNumber" : -1,
+      "methodName" : "apply",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker",
+      "fileName" : "InterceptingExecutableInvoker.java",
+      "lineNumber" : 105,
+      "methodName" : "lambda$invoke$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$$Lambda/0x00000000074b0000",
+      "lineNumber" : -1,
+      "methodName" : "apply",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation",
+      "fileName" : "InvocationInterceptorChain.java",
+      "lineNumber" : 99,
+      "methodName" : "proceed",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InvocationInterceptorChain",
+      "fileName" : "InvocationInterceptorChain.java",
+      "lineNumber" : 66,
+      "methodName" : "proceed",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InvocationInterceptorChain",
+      "fileName" : "InvocationInterceptorChain.java",
+      "lineNumber" : 47,
+      "methodName" : "chainAndInvoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InvocationInterceptorChain",
+      "fileName" : "InvocationInterceptorChain.java",
+      "lineNumber" : 39,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker",
+      "fileName" : "InterceptingExecutableInvoker.java",
+      "lineNumber" : 104,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker",
+      "fileName" : "InterceptingExecutableInvoker.java",
+      "lineNumber" : 98,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.execution.InterceptingExecutableInvoker",
+      "fileName" : "InterceptingExecutableInvoker.java",
+      "lineNumber" : 71,
+      "methodName" : "invokeVoid",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor",
+      "fileName" : "TestMethodTestDescriptor.java",
+      "lineNumber" : 219,
+      "methodName" : "lambda$invokeTestMethod$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x00000000074c0690",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor",
+      "fileName" : "TestMethodTestDescriptor.java",
+      "lineNumber" : 215,
+      "methodName" : "invokeTestMethod",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor",
+      "fileName" : "TestMethodTestDescriptor.java",
+      "lineNumber" : 157,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor",
+      "fileName" : "TestMethodTestDescriptor.java",
+      "lineNumber" : 70,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 176,
+      "methodName" : "lambda$executeRecursively$2",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 166,
+      "methodName" : "lambda$executeRecursively$1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.Node",
+      "fileName" : "Node.java",
+      "lineNumber" : 138,
+      "methodName" : "around",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 164,
+      "methodName" : "lambda$executeRecursively$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 163,
+      "methodName" : "executeRecursively",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 116,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x0000000007145478",
+      "lineNumber" : -1,
+      "methodName" : "accept",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.util.ArrayList",
+      "fileName" : "ArrayList.java",
+      "lineNumber" : 1604,
+      "methodName" : "forEach",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService",
+      "fileName" : "SameThreadHierarchicalTestExecutorService.java",
+      "lineNumber" : 42,
+      "methodName" : "invokeAll",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 180,
+      "methodName" : "lambda$executeRecursively$2",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 166,
+      "methodName" : "lambda$executeRecursively$1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.Node",
+      "fileName" : "Node.java",
+      "lineNumber" : 138,
+      "methodName" : "around",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 164,
+      "methodName" : "lambda$executeRecursively$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 163,
+      "methodName" : "executeRecursively",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 116,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x0000000007145478",
+      "lineNumber" : -1,
+      "methodName" : "accept",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.util.ArrayList",
+      "fileName" : "ArrayList.java",
+      "lineNumber" : 1604,
+      "methodName" : "forEach",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService",
+      "fileName" : "SameThreadHierarchicalTestExecutorService.java",
+      "lineNumber" : 42,
+      "methodName" : "invokeAll",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 180,
+      "methodName" : "lambda$executeRecursively$2",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 166,
+      "methodName" : "lambda$executeRecursively$1",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.Node",
+      "fileName" : "Node.java",
+      "lineNumber" : 138,
+      "methodName" : "around",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 164,
+      "methodName" : "lambda$executeRecursively$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8",
+      "lineNumber" : -1,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.ThrowableCollector",
+      "fileName" : "ThrowableCollector.java",
+      "lineNumber" : 74,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 163,
+      "methodName" : "executeRecursively",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.NodeTestTask",
+      "fileName" : "NodeTestTask.java",
+      "lineNumber" : 116,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService",
+      "fileName" : "SameThreadHierarchicalTestExecutorService.java",
+      "lineNumber" : 36,
+      "methodName" : "submit",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor",
+      "fileName" : "HierarchicalTestExecutor.java",
+      "lineNumber" : 52,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine",
+      "fileName" : "HierarchicalTestEngine.java",
+      "lineNumber" : 58,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 246,
+      "methodName" : "executeEngine",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 218,
+      "methodName" : "failOrExecuteEngine",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 179,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 108,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 66,
+      "methodName" : "lambda$execute$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator$$Lambda/0x00000000071328a8",
+      "lineNumber" : -1,
+      "methodName" : "accept",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 157,
+      "methodName" : "withInterceptedStreams",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.EngineExecutionOrchestrator",
+      "fileName" : "EngineExecutionOrchestrator.java",
+      "lineNumber" : 65,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.DefaultLauncher",
+      "fileName" : "DefaultLauncher.java",
+      "lineNumber" : 125,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.DefaultLauncher",
+      "fileName" : "DefaultLauncher.java",
+      "lineNumber" : 114,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.DefaultLauncher",
+      "fileName" : "DefaultLauncher.java",
+      "lineNumber" : 93,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.DelegatingLauncher",
+      "fileName" : "DelegatingLauncher.java",
+      "lineNumber" : 48,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.InterceptingLauncher",
+      "fileName" : "InterceptingLauncher.java",
+      "lineNumber" : 41,
+      "methodName" : "lambda$execute$0",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.InterceptingLauncher$$Lambda/0x00000000070a0e20",
+      "lineNumber" : -1,
+      "methodName" : "proceed",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor",
+      "fileName" : "ClasspathAlignmentCheckingLauncherInterceptor.java",
+      "lineNumber" : 25,
+      "methodName" : "intercept",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.InterceptingLauncher",
+      "fileName" : "InterceptingLauncher.java",
+      "lineNumber" : 40,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "org.junit.platform.launcher.core.DelegatingLauncher",
+      "fileName" : "DelegatingLauncher.java",
+      "lineNumber" : 48,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor",
+      "fileName" : "JUnitPlatformTestClassProcessor.java",
+      "lineNumber" : 135,
+      "methodName" : "processAllTestClasses",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor",
+      "fileName" : "JUnitPlatformTestClassProcessor.java",
+      "lineNumber" : 110,
+      "methodName" : "access$000",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor",
+      "fileName" : "JUnitPlatformTestClassProcessor.java",
+      "lineNumber" : 104,
+      "methodName" : "stop",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor",
+      "fileName" : "SuiteTestClassProcessor.java",
+      "lineNumber" : 64,
+      "methodName" : "stop",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$DMH/0x0000000007084000",
+      "fileName" : "LambdaForm$DMH",
+      "lineNumber" : -1,
+      "methodName" : "invokeInterface",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.LambdaForm$MH/0x0000000007084800",
+      "fileName" : "LambdaForm$MH",
+      "lineNumber" : -1,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.invoke.Invokers$Holder",
+      "fileName" : "Invokers$Holder",
+      "lineNumber" : -1,
+      "methodName" : "invokeExact_MT",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 154,
+      "methodName" : "invokeImpl",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.internal.reflect.DirectMethodHandleAccessor",
+      "fileName" : "DirectMethodHandleAccessor.java",
+      "lineNumber" : 104,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.reflect.Method",
+      "fileName" : "Method.java",
+      "lineNumber" : 565,
+      "methodName" : "invoke",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.internal.dispatch.MethodInvocation",
+      "fileName" : "MethodInvocation.java",
+      "lineNumber" : 77,
+      "methodName" : "invokeOn",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.internal.dispatch.ReflectionDispatch",
+      "fileName" : "ReflectionDispatch.java",
+      "lineNumber" : 28,
+      "methodName" : "dispatch",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.internal.dispatch.ReflectionDispatch",
+      "fileName" : "ReflectionDispatch.java",
+      "lineNumber" : 19,
+      "methodName" : "dispatch",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.internal.dispatch.ContextClassLoaderDispatch",
+      "fileName" : "ContextClassLoaderDispatch.java",
+      "lineNumber" : 33,
+      "methodName" : "dispatch",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler",
+      "fileName" : "ProxyDispatchAdapter.java",
+      "lineNumber" : 88,
+      "methodName" : "invoke",
+      "nativeMethod" : false
+    }, {
+      "className" : "jdk.proxy1.$Proxy4",
+      "lineNumber" : -1,
+      "methodName" : "stop",
+      "moduleName" : "jdk.proxy1",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker$3",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 194,
+      "methodName" : "run",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 126,
+      "methodName" : "executeAndMaintainThreadName",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 103,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 63,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.process.internal.worker.child.ActionExecutionWorker",
+      "fileName" : "ActionExecutionWorker.java",
+      "lineNumber" : 56,
+      "methodName" : "execute",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker",
+      "fileName" : "SystemApplicationClassLoaderWorker.java",
+      "lineNumber" : 122,
+      "methodName" : "call",
+      "nativeMethod" : false
+    }, {
+      "className" : "org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker",
+      "fileName" : "SystemApplicationClassLoaderWorker.java",
+      "lineNumber" : 72,
+      "methodName" : "call",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "worker.org.gradle.process.internal.worker.GradleWorkerMain",
+      "fileName" : "GradleWorkerMain.java",
+      "lineNumber" : 69,
+      "methodName" : "run",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "className" : "worker.org.gradle.process.internal.worker.GradleWorkerMain",
+      "fileName" : "GradleWorkerMain.java",
+      "lineNumber" : 74,
+      "methodName" : "main",
+      "nativeMethod" : false
+    } ],
+    "suspended" : false,
+    "threadId" : 3,
+    "threadName" : "Test worker",
+    "threadState" : "RUNNABLE",
+    "waitedCount" : 32,
+    "waitedTime" : -1
+  }, {
+    "blockedCount" : 0,
+    "blockedTime" : -1,
+    "daemon" : true,
+    "inNative" : false,
+    "lockOwnerId" : -1,
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ],
+    "priority" : 10,
+    "stackTrace" : [ {
+      "className" : "java.lang.ref.Reference",
+      "fileName" : "Reference.java",
+      "lineNumber" : -2,
+      "methodName" : "waitForReferencePendingList",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : true
+    }, {
+      "className" : "java.lang.ref.Reference",
+      "fileName" : "Reference.java",
+      "lineNumber" : 246,
+      "methodName" : "processPendingReferences",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.ref.Reference$ReferenceHandler",
+      "fileName" : "Reference.java",
+      "lineNumber" : 208,
+      "methodName" : "run",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    } ],
+    "suspended" : false,
+    "threadId" : 13,
+    "threadName" : "Reference Handler",
+    "threadState" : "RUNNABLE",
+    "waitedCount" : 0,
+    "waitedTime" : -1
+  }, {
+    "blockedCount" : 0,
+    "blockedTime" : -1,
+    "daemon" : true,
+    "inNative" : false,
+    "lockInfo" : {
+      "className" : "java.lang.ref.ReferenceQueue$Lock",
+      "identityHashCode" : 377378204
+    },
+    "lockName" : "java.lang.ref.ReferenceQueue$Lock@167e559c",
+    "lockOwnerId" : -1,
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ],
+    "priority" : 8,
+    "stackTrace" : [ {
+      "className" : "java.lang.Object",
+      "lineNumber" : -2,
+      "methodName" : "wait0",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : true
+    }, {
+      "className" : "java.lang.Object",
+      "lineNumber" : 389,
+      "methodName" : "wait",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.Object",
+      "lineNumber" : 351,
+      "methodName" : "wait",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.ref.ReferenceQueue",
+      "fileName" : "ReferenceQueue.java",
+      "lineNumber" : 137,
+      "methodName" : "remove0",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.ref.ReferenceQueue",
+      "fileName" : "ReferenceQueue.java",
+      "lineNumber" : 215,
+      "methodName" : "remove",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    }, {
+      "className" : "java.lang.ref.Finalizer$FinalizerThread",
+      "fileName" : "Finalizer.java",
+      "lineNumber" : 165,
+      "methodName" : "run",
+      "moduleName" : "java.base",
+      "moduleVersion" : "25.0.1",
+      "nativeMethod" : false
+    } ],
+    "suspended" : false,
+    "threadId" : 14,
+    "threadName" : "Finalizer",
+    "threadState" : "WAITING",
+    "waitedCount" : 1,
+    "waitedTime" : -1
+  } ]
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="threaddump.retrieving-json.response-structure"><a class="anchor" href="#threaddump.retrieving-json.response-structure"></a>Response Structure</h3>
+<div class="paragraph">
+<p>The response contains details of the JVM&#8217;s threads.
+The following table describes the structure of the response:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JVM&#8217;s threads.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].blockedCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of times that the thread has been blocked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].blockedTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time in milliseconds that the thread has spent blocked. -1 if thread contention monitoring is disabled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].daemon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the thread is a daemon thread. Only available on Java 9 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].inNative</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the thread is executing native code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description of the object on which the thread is blocked, if any.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockInfo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object for which the thread is blocked waiting.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockInfo.className</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fully qualified class name of the lock object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockInfo.identityHashCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identity hash code of the lock object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedMonitors</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monitors locked by this thread, if any</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedMonitors.[].className</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class name of the lock object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedMonitors.[].identityHashCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identity hash code of the lock object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedMonitors.[].lockedStackDepth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stack depth where the monitor was locked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedMonitors.[].lockedStackFrame</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stack frame that locked the monitor.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedSynchronizers</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Synchronizers locked by this thread.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedSynchronizers.[].className</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class name of the locked synchronizer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockedSynchronizers.[].identityHashCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identity hash code of the locked synchronizer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockOwnerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the thread that owns the object on which the thread is blocked. <code>-1</code> if the thread is not blocked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].lockOwnerName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the thread that owns the object on which the thread is blocked, if any.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].priority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priority of the thread. Only available on Java 9 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stack trace of the thread.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].classLoaderName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the class loader of the class that contains the execution point identified by this entry, if any. Only available on Java 9 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].className</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the class that contains the execution point identified by this entry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].fileName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the source file that contains the execution point identified by this entry, if any.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].lineNumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line number of the execution point identified by this entry. Negative if unknown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].methodName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the method.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].moduleName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the module that contains the execution point identified by this entry, if any. Only available on Java 9 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].moduleVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of the module that contains the execution point identified by this entry, if any. Only available on Java 9 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].stackTrace.[].nativeMethod</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the execution point is a native method.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].suspended</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether the thread is suspended.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].threadId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the thread.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].threadName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the thread.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].threadState</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State of the thread (<code>NEW</code>, <code>RUNNABLE</code>, <code>BLOCKED</code>, <code>WAITING</code>, <code>TIMED_WAITING</code>, <code>TERMINATED</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].waitedCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of times that the thread has waited for notification.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threads.[].waitedTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time in milliseconds that the thread has spent waiting. -1 if thread contention monitoring is disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="threaddump.retrieving-text"><a class="anchor" href="#threaddump.retrieving-text"></a>Retrieving the Thread Dump as Text</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To retrieve the thread dump as text, make a <code>GET</code> request to <code>/actuator/threaddump</code> that
+accepts <code>text/plain</code>, as shown in the following curl-based example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/actuator/threaddump' -i -X GET \
+    -H 'Accept: text/plain'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting response is similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 28335
+
+2025-11-20 16:33:55
+Full thread dump OpenJDK 64-Bit Server VM (25.0.1+11-LTS mixed mode, sharing):
+
+"Test worker" - Thread t@3
+   java.lang.Thread.State: RUNNABLE
+	at java.management@25.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@25.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:505)
+	at java.management@25.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:493)
+	at app//org.springframework.boot.actuate.management.ThreadDumpEndpoint.getFormattedThreadDump(ThreadDumpEndpoint.java:52)
+	at app//org.springframework.boot.actuate.management.ThreadDumpEndpoint.textThreadDump(ThreadDumpEndpoint.java:48)
+	at java.base@25.0.1/java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(DirectMethodHandle$Holder)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$MH/0x0000000007044400.invoke(LambdaForm$MH)
+	at java.base@25.0.1/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@25.0.1/java.lang.reflect.Method.invoke(Method.java:565)
+	at app//org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at app//org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at app//org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:62)
+	at app//org.springframework.boot.webmvc.actuate.endpoint.web.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:333)
+	at app//org.springframework.boot.webmvc.actuate.endpoint.web.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:456)
+	at java.base@25.0.1/java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(DirectMethodHandle$Holder)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$MH/0x0000000007063800.invoke(LambdaForm$MH)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$MH/0x0000000007063c00.invokeExact_MT(LambdaForm$MH)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:156)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@25.0.1/java.lang.reflect.Method.invoke(Method.java:565)
+	at app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at app//org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at app//org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at app//org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:160)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:127)
+	at app//org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester.getMvcResultOrFailure(MockMvcTester.java:386)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester.perform(MockMvcTester.java:375)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester.exchange(MockMvcTester.java:401)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder.exchange(MockMvcTester.java:460)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder.assertThat(MockMvcTester.java:486)
+	at app//org.springframework.test.web.servlet.assertj.MockMvcTester$MockMvcRequestBuilder.assertThat(MockMvcTester.java:425)
+	at app//org.assertj.core.api.AssertionsForInterfaceTypes.assertThat(AssertionsForInterfaceTypes.java:82)
+	at app//org.assertj.core.api.Assertions.assertThat(Assertions.java:3417)
+	at app//org.springframework.boot.actuate.docs.management.ThreadDumpEndpointDocumentationTests.textThreadDump(ThreadDumpEndpointDocumentationTests.java:180)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$DMH/0x00000000074a2400.invokeVirtual(LambdaForm$DMH)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$MH/0x0000000007084800.invoke(LambdaForm$MH)
+	at java.base@25.0.1/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@25.0.1/java.lang.reflect.Method.invoke(Method.java:565)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701)
+	at app//org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502)
+	at app//org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x0000000007127068.apply(Unknown Source)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall$$Lambda/0x00000000074ad230.apply(Unknown Source)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$$Lambda/0x00000000074b0000.apply(Unknown Source)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x00000000074c0690.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708.invoke(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x0000000007145478.accept(Unknown Source)
+	at java.base@25.0.1/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708.invoke(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x0000000007145478.accept(Unknown Source)
+	at java.base@25.0.1/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144938.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x0000000007144708.invoke(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000000071444d8.execute(Unknown Source)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator$$Lambda/0x00000000071328a8.accept(Unknown Source)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:93)
+	at app//org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at app//org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$0(InterceptingLauncher.java:41)
+	at app//org.junit.platform.launcher.core.InterceptingLauncher$$Lambda/0x00000000070a0e20.proceed(Unknown Source)
+	at app//org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at app//org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:40)
+	at app//org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$DMH/0x0000000007084000.invokeInterface(LambdaForm$DMH)
+	at java.base@25.0.1/java.lang.invoke.LambdaForm$MH/0x0000000007084800.invoke(LambdaForm$MH)
+	at java.base@25.0.1/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
+	at java.base@25.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@25.0.1/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" - Thread t@13
+   java.lang.Thread.State: RUNNABLE
+	at java.base@25.0.1/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@25.0.1/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+	at java.base@25.0.1/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" - Thread t@14
+   java.lang.Thread.State: WAITING
+	at java.base@25.0.1/java.lang.Object.wait0(Native Method)
+	- parking to wait for &lt;167e559c&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.base@25.0.1/java.lang.Object.wait(Unknown Source)
+	at java.base@25.0.1/java.lang.Object.wait(Unknown Source)
+	at java.base@25.0.1/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:137)
+	at java.base@25.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:215)
+	at java.base@25.0.1/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:165)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" - Thread t@15
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" - Thread t@21
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" - Thread t@22
+   java.lang.Thread.State: TIMED_WAITING
+	at java.base@25.0.1/java.lang.Object.wait0(Native Method)
+	- parking to wait for &lt;6b420c8&gt; (a java.lang.ref.ReferenceQueue$Lock)
+	at java.base@25.0.1/java.lang.Object.wait(Unknown Source)
+	at java.base@25.0.1/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:123)
+	at java.base@25.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:201)
+	at java.base@25.0.1/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:146)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+	at java.base@25.0.1/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)
+
+   Locked ownable synchronizers:
+	- None
+
+"/127.0.0.1:56140 to /127.0.0.1:45873 workers" - Thread t@24
+   java.lang.Thread.State: WAITING
+	at java.base@25.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	- parking to wait for &lt;b2bfd65&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.base@25.0.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:369)
+	at java.base@25.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:520)
+	at java.base@25.0.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4364)
+	at java.base@25.0.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:4310)
+	at java.base@25.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1752)
+	at org.gradle.internal.remote.internal.hub.queue.EndPointQueue.take(EndPointQueue.java:49)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:403)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+
+   Locked ownable synchronizers:
+	- Locked &lt;1817d444&gt; (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"/127.0.0.1:56140 to /127.0.0.1:45873 workers Thread 2" - Thread t@25
+   java.lang.Thread.State: WAITING
+	at java.base@25.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	- parking to wait for &lt;1e35e4d9&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.base@25.0.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:369)
+	at java.base@25.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:520)
+	at java.base@25.0.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4364)
+	at java.base@25.0.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:4310)
+	at java.base@25.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1752)
+	at org.gradle.internal.remote.internal.hub.queue.EndPointQueue.take(EndPointQueue.java:49)
+	at org.gradle.internal.remote.internal.hub.MessageHub$ConnectionDispatch.run(MessageHub.java:322)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+
+   Locked ownable synchronizers:
+	- Locked &lt;67d48005&gt; (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"/127.0.0.1:56140 to /127.0.0.1:45873 workers Thread 3" - Thread t@26
+   java.lang.Thread.State: RUNNABLE
+	at java.base@25.0.1/sun.nio.ch.EPoll.wait(Native Method)
+	at java.base@25.0.1/sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:117)
+	at java.base@25.0.1/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
+	- locked &lt;7a838036&gt; (a sun.nio.ch.Util$2)
+	- locked &lt;98243dc&gt; (a sun.nio.ch.EPollSelectorImpl)
+	at java.base@25.0.1/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:147)
+	at org.gradle.internal.remote.internal.inet.SocketConnection$SocketInputStream.read(SocketConnection.java:187)
+	at com.esotericsoftware.kryo.io.Input.fill(Input.java:146)
+	at com.esotericsoftware.kryo.io.Input.require(Input.java:178)
+	at com.esotericsoftware.kryo.io.Input.readByte(Input.java:295)
+	at org.gradle.internal.serialize.kryo.KryoBackedDecoder.readByte(KryoBackedDecoder.java:88)
+	at org.gradle.internal.remote.internal.hub.InterHubMessageSerializer$MessageReader.read(InterHubMessageSerializer.java:64)
+	at org.gradle.internal.remote.internal.hub.InterHubMessageSerializer$MessageReader.read(InterHubMessageSerializer.java:52)
+	at org.gradle.internal.remote.internal.inet.SocketConnection.receive(SocketConnection.java:83)
+	at org.gradle.internal.remote.internal.hub.MessageHub$ConnectionReceive.run(MessageHub.java:270)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+
+   Locked ownable synchronizers:
+	- Locked &lt;59309333&gt; (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+"process reaper" - Thread t@33
+   java.lang.Thread.State: TIMED_WAITING
+	at java.base@25.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	- parking to wait for &lt;38207d19&gt; (a java.util.concurrent.SynchronousQueue$Transferer)
+	at java.base@25.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+	at java.base@25.0.1/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+	at java.base@25.0.1/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+	at java.base@25.0.1/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+	at java.base@25.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+	at java.base@25.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+	at java.base@25.0.1/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" - Thread t@34
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"VirtualThread-unblocker" - Thread t@46
+   java.lang.Thread.State: RUNNABLE
+	at java.base@25.0.1/java.lang.VirtualThread.takeVirtualThreadListToUnblock(Native Method)
+	at java.base@25.0.1/java.lang.VirtualThread.unblockVirtualThreads(VirtualThread.java:1507)
+	at java.base@25.0.1/java.lang.VirtualThread$$Lambda/0x00000000072f2000.run(Unknown Source)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+	at java.base@25.0.1/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)
+
+   Locked ownable synchronizers:
+	- None
+
+"Keep-Alive-Timer" - Thread t@52
+   java.lang.Thread.State: TIMED_WAITING
+	at java.base@25.0.1/java.lang.Thread.sleepNanos0(Native Method)
+	at java.base@25.0.1/java.lang.Thread.sleepNanos(Thread.java:509)
+	at java.base@25.0.1/java.lang.Thread.sleep(Thread.java:540)
+	at java.base@25.0.1/sun.net.www.http.KeepAliveCache.run(KeepAliveCache.java:224)
+	at java.base@25.0.1/java.lang.Thread.runWith(Thread.java:1487)
+	at java.base@25.0.1/java.lang.Thread.run(Thread.java:1474)
+	at java.base@25.0.1/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:148)
+
+   Locked ownable synchronizers:
+	- None</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="startup.html">Application Startup (<code>startup</code>)</a></span>
+  <span class="next"><a href="../../java/index.html">Spring Boot</a></span>
+</nav>
+</article>  </div>
+</main>
+<div class="modal micromodal-slide" id="modal-versions" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+            <main class="modal__content" id="modal-versions-content">
+              <button data-micromodal-close class="modal-versions-close">
+                <svg width="28px" height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"/></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div>
+                          <a class="title" href="../../../index.html">Spring Boot</a>
+                        </div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../../../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>
+    Related Spring Documentation
+    <ul class="projects-list">
+        <li>
+<a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  Spring Cloud
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  Spring Data
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a>
+</li>
+        <li>
+<a class="anchor"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+    <li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+    <li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-modulith/reference/">
+  Spring Modulith
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a>
+</li>
+        <li>
+<a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a>
+</li>
+    </ul>
+  </li
+  <li><a href="../../../spring-projects.html">All Docs...</a></li>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img id="springlogo" src="../../../_/img/spring-logo.svg" alt="Spring">
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br /><a href="https://www.vmware.com/help/legal.html">Terms of Use</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">Privacy</a> • <a href="https://spring.io/trademarks">Trademark Guidelines</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">Thank you</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">Your California Privacy Rights</a> • <a class="ot-sdk-show-settings">Cookie Settings</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra&trade;, and Apache Geode&trade; are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java&trade;, Java&trade; SE, Java&trade; EE, and OpenJDK&trade; are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.</p>
+    </div>
+    <div id="social-icons" class="flex jc-between">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle class="cls-1" cx="20" cy="20" r="20"/><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"/></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.93 75.93"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"/></g><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"/></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.93 75.93"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"/><path id="Twitter-2" data-name="Twitter" class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z"/></svg></a>
+    </div>
+</footer>
+<script src="../../../_/js/vendor/import.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script async src="../../../_/js/vendor/asciidoctor-tabs.js" data-sync-storage-key="docs:preferred-tab"></script>
+  </body>
+</html>
