@@ -1181,7 +1181,7 @@ public class MyProperties {
 </div>
 </div>
 <div class="paragraph">
-<p>上面的示例为 <code>my.properties.name</code>` 和 `<code>my.properties.nested.number</code>` 生成配置属性。如果在 `<code>nested</code>` 字段上没有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html"><code>@NestedConfigurationProperty</code></a>` 注解，则无法在原生镜像中绑定 `<code>my.properties.nested.number</code> 属性。您也可以对 getter 方法添加该注解。</p>
+<p>上面的示例为 <code>my.properties.name</code>` 和 `<code>my.properties.nested.number</code>` 生成配置属性。如果在 `<code>nested</code>` 字段上没有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html"><code>@NestedConfigurationProperty</code></a>` 注解，则无法在原生镜像中绑定 `<code>my.properties.nested.number</code> 属性。您也可以对 getter 方法添加该注解。</p>
 </div>
 <div class="paragraph">
 <p>使用构造函数绑定时，必须用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html"><code>@NestedConfigurationProperty</code></a> 注解该字段：</p>
@@ -1271,7 +1271,7 @@ data class MyPropertiesKotlin(
 <p>您可以保留常规的 JVM 流水线，并在您的 CI/CD 平台上将 JVM 应用程序转换为原生镜像。</p>
 </li>
 <li>
-<p>由于`native-image`<a href="https://github.com/oracle/graal/issues/407">不支持交叉编译</a>，您可以保留一个与操作系统无关的部署工件，稍后将其转换为不同的操作系统架构。</p>
+<p>由于`native-image<a href="https://github.com/oracle/graal/issues/407">不支持交叉编译</a>，您可以保留一个与操作系统无关的部署工件，稍后将其转换为不同的操作系统架构。</p>
 </li>
 </ul>
 </div>
@@ -1496,7 +1496,7 @@ import org.springframework.util.ReflectionUtils;
 <div class="sect2">
 <h3 id="packaging.native-image.advanced.custom-hints.testing"><a class="anchor" href="#packaging.native-image.advanced.custom-hints.testing"></a>测试自定义提示</h3>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/aot/hint/predicate/RuntimeHintsPredicates.html"><code>RuntimeHintsPredicates</code></a>` API 可用于测试您的提示。该 API 提供用于构建 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html"><code>Predicate</code></a>` 的方法，该对象可用于测试 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/aot/hint/RuntimeHints.html"><code>RuntimeHints</code></a>` 实例。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/aot/hint/predicate/RuntimeHintsPredicates.html"><code>RuntimeHintsPredicates</code></a>` API 可用于测试您的提示。该 API 提供用于构建 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html"><code>Predicate</code></a>` 的方法，该对象可用于测试 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/aot/hint/RuntimeHints.html"><code>RuntimeHints</code></a>` 实例。</p>
 </div>
 <div class="paragraph">
 <p>如果您使用 AssertJ，您的测试将如下所示：</p>

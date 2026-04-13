@@ -2258,7 +2258,7 @@ management.humio.metrics.export.tags.bravo=b</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Micrometer 提供了一个默认的 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>`，用于控制如何将具有维度的仪表 ID 映射为扁平化的分层名称。</p>
+<p>Micrometer 提供了一个默认的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>`，用于控制如何将具有维度的仪表 ID 映射为扁平化的分层名称。</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2913,8 +2913,8 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-server.servlet">Spring 框架参考文档</a>。</p>
 </div>
 <div class="paragraph">
-<p>要添加默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.observation</code> 包的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
-要替换默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
+<p>要添加默认标签，请提供一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.observation</code> 包的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
+要替换默认标签，请提供一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -2941,8 +2941,8 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-server.reactive">Spring 框架参考文档</a>。</p>
 </div>
 <div class="paragraph">
-<p>要添加默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.reactive.observation</code> 包的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
-要替换默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
+<p>要添加默认标签，请提供一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.reactive.observation</code> 包的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
+要替换默认标签，请提供一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -3119,7 +3119,7 @@ Cache 的仪器化针对一组基本指标进行了标准化。
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>指标通过缓存的名称和 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a>` 的名称进行标记，后者是从 Bean 名称派生的。</p>
+<p>指标通过缓存的名称和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a>` 的名称进行标记，后者是从 Bean 名称派生的。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -3176,7 +3176,7 @@ Cache 的仪器化针对一组基本指标进行了标准化。
 <p>如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 实例都将使用名为 `<code>hibernate</code> 的指标进行仪器化。</p>
 </div>
 <div class="paragraph">
-<p>指标还通过 `<a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` 的名称进行标记，该名称源自 Bean 名称。</p>
+<p>指标还通过 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` 的名称进行标记，该名称源自 Bean 名称。</p>
 </div>
 <div class="paragraph">
 <p>要启用统计信息，必须将标准 JPA 属性 <code>hibernate.generate_statistics</code> 设置为 <code>true</code>。您可以在自动配置的 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 上启用该功能：</p>
@@ -3252,7 +3252,7 @@ Cache 的仪器化针对一组基本指标进行了标准化。
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>repository</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">源 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 的简单类名。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">源 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 的简单类名。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td>
@@ -3710,8 +3710,8 @@ import org.springframework.context.annotation.Bean
 </div>
 </div>
 <div class="paragraph">
-<p>使用 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 可以确保设置正确的依赖关系，并在获取指标值时使该 Bean 可用。
-如果您发现需要在组件或应用程序之间重复地对一系列指标进行监控，`<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 的实现也会很有用。</p>
+<p>使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 可以确保设置正确的依赖关系，并在获取指标值时使该 Bean 可用。
+如果您发现需要在组件或应用程序之间重复地对一系列指标进行监控，<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 的实现也会很有用。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -3857,8 +3857,8 @@ management.metrics.tags.stack=prod</code></pre>
 <div class="sect2">
 <h3 id="actuator.metrics.customizing.per-meter-properties"><a class="anchor" href="#actuator.metrics.customizing.per-meter-properties"></a>每指标属性</h3>
 <div class="paragraph">
-<p>除了 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a>` Bean 之外，您还可以使用属性按每个仪表应用有限的自定义。
-按仪表的自定义是使用 Spring Boot 的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/metrics/PropertiesMeterFilter.html"><code>PropertiesMeterFilter</code></a>` 应用于任何以给定名称开头的仪表 ID。
+<p>除了 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a>` Bean 之外，您还可以使用属性按每个仪表应用有限的自定义。
+按仪表的自定义是使用 Spring Boot 的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/metrics/PropertiesMeterFilter.html"><code>PropertiesMeterFilter</code></a>` 应用于任何以给定名称开头的仪表 ID。
 以下示例会过滤掉任何 ID 以 `example.remote` 开头的仪表。</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_44">
@@ -3989,7 +3989,7 @@ management.metrics.tags.stack=prod</code></pre>
 <h2 id="actuator.metrics.micrometer-observation"><a class="anchor" href="#actuator.metrics.micrometer-observation"></a>Micrometer 观测集成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>`<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/observation/DefaultMeterObservationHandler.html"><code>DefaultMeterObservationHandler</code></a>` 会自动注册到 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>`，从而为每个完成的观察创建指标。</p>
+<p><a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/observation/DefaultMeterObservationHandler.html"><code>DefaultMeterObservationHandler</code></a>` 会自动注册到 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>`，从而为每个完成的观察创建指标。</p>
 </div>
 </div>
 </div>

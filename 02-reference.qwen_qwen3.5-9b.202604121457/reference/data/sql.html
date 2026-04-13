@@ -1109,7 +1109,7 @@
 <h2 id="data.sql.datasource"><a class="anchor" href="#data.sql.datasource"></a>配置 DataSource</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Java 的 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 接口提供了一种与数据库连接进行交互的标准方法。传统上，`<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 使用 <code>URL</code> 以及一些凭据来建立数据库连接。</p>
+<p>Java 的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 接口提供了一种与数据库连接进行交互的标准方法。传统上，<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 使用 <code>URL</code> 以及一些凭据来建立数据库连接。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1366,9 +1366,9 @@ spring.datasource.tomcat.test-on-borrow=true</code></pre>
 <p>您可以完全绕过该算法，通过设置 <code>spring.datasource.type</code> 属性来指定要使用的连接池。如果您在 Tomcat 容器中运行应用程序，这一点尤为重要，因为 `tomcat-jdbc` 默认已提供。</p>
 </div>
 <div class="paragraph">
-<p>可以使用 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a>` 手动配置额外的连接池。
-如果您定义了自定义的 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` Bean，则不会进行自动配置。
-`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a>` 支持以下连接池：</p>
+<p>可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a>` 手动配置额外的连接池。
+如果您定义了自定义的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` Bean，则不会进行自动配置。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a>` 支持以下连接池：</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1790,8 +1790,8 @@ JPA 查询会根据您的方法名自动创建。
 <p>对于更复杂的查询，您可以使用 Spring Data 的 <a class="apiref" href="https://docs.spring.io/spring-data/jpa/docs/4.0.x/api/org/springframework/data/jpa/repository/Query.html"><code>Query</code></a> 注解来标注您的方法。</p>
 </div>
 <div class="paragraph">
-<p>Spring Data 存储库通常继承自 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html"><code>CrudRepository</code></a>` 接口。
-如果您使用自动配置，将在 `<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>` 中搜索存储库。</p>
+<p>Spring Data 存储库通常继承自 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html"><code>CrudRepository</code></a>` 接口。
+如果您使用自动配置，将在 <a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>` 中搜索存储库。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -2637,7 +2637,7 @@ class MyPostgresR2dbcConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>当存在 `<a class="apiref" href="https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html"><code>ConnectionFactory</code></a>` Bean 时，常规的 JDBC `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 自动配置将不会生效。如果您希望保留 JDBC `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 自动配置，并且能够接受在响应式应用程序中使用阻塞式 JDBC API 的风险，请在您的应用程序中的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类上添加 <code>@Import(DataSourceAutoConfiguration.class)</code> 以重新启用它。</p>
+<p>当存在 <a class="apiref" href="https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html"><code>ConnectionFactory</code></a>` Bean 时，常规的 JDBC <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 自动配置将不会生效。如果您希望保留 JDBC <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 自动配置，并且能够接受在响应式应用程序中使用阻塞式 JDBC API 的风险，请在您的应用程序中的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类上添加 <code>@Import(DataSourceAutoConfiguration.class)</code> 以重新启用它。</p>
 </div>
 <div class="sect2">
 <h3 id="data.sql.r2dbc.embedded"><a class="anchor" href="#data.sql.r2dbc.embedded"></a>嵌入式数据库支持</h3>
@@ -2671,7 +2671,7 @@ class MyPostgresR2dbcConfiguration {
 <div class="sect2">
 <h3 id="data.sql.r2dbc.using-database-client"><a class="anchor" href="#data.sql.r2dbc.using-database-client"></a>使用 DatabaseClient</h3>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html"><code>DatabaseClient</code></a>` 自动配置了一个 Bean，您可以像以下示例中那样直接将其注入到自己的 Bean 中：</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html"><code>DatabaseClient</code></a>` 自动配置了一个 Bean，您可以像以下示例中那样直接将其注入到自己的 Bean 中：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_18">
 <div class="content">
@@ -2746,8 +2746,8 @@ class MyBean(private val databaseClient: DatabaseClient) {
 <p>对于更复杂的查询，您可以使用 Spring Data 的 <a class="apiref" href="https://docs.spring.io/spring-data/r2dbc/docs/4.0.x/api/org/springframework/data/r2dbc/repository/Query.html"><code>@Query</code></a> 注解来标注您的方法。</p>
 </div>
 <div class="paragraph">
-<p>Spring Data 存储库通常继承自 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html"><code>CrudRepository</code></a>` 接口。
-如果您使用自动配置，将在 `<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>` 中搜索存储库。</p>
+<p>Spring Data 存储库通常继承自 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html"><code>CrudRepository</code></a>` 接口。
+如果您使用自动配置，将在 <a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>` 中搜索存储库。</p>
 </div>
 <div class="paragraph">
 <p>以下示例展示了典型的 Spring Data 存储库接口定义：</p>

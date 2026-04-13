@@ -159,7 +159,7 @@ method. By default class will perform the following steps to bootstrap your
 application:
 
 <ul>
-<li>创建适当的 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 实例（取决于您的类路径）</li>
+<li>创建适当的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 实例（取决于您的类路径）</li>
 <li>注册一个 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html" title="class or interface in org.springframework.core.env"><code>CommandLinePropertySource</code></a> 以将命令行参数暴露为 Spring 属性</li>
 <li>刷新应用程序上下文，加载所有单例 Bean。</li>
 <li>触发任何<code>CommandLineRunner</code> 类型的<a href="CommandLineRunner.html" title="interface in org.springframework.boot">Bean</a>。</li>
@@ -191,9 +191,9 @@ public class MyApplication  {
 generally recommended that a single <code>@Configuration</code> class is used to bootstrap
 your application, however, you may also set <a href="#getSources()"><code>sources</code></a> from:
 <ul>
-<li>由 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotatedBeanDefinitionReader.html" title="class or interface in org.springframework.context.annotation"><code>AnnotatedBeanDefinitionReader</code></a>` 加载的完全限定类名</li>
-<li>要由 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.html" title="class or interface in org.springframework.beans.factory.xml"><code>XmlBeanDefinitionReader</code></a>` 加载的 XML 资源位置，或由 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReader.html" title="class or interface in org.springframework.beans.factory.groovy"><code>GroovyBeanDefinitionReader</code></a>` 加载的 Groovy 脚本。</li>
-<li>要被 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html" title="class or interface in org.springframework.context.annotation"><code>ClassPathBeanDefinitionScanner</code></a>` 扫描的包名。</li>
+<li>由 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotatedBeanDefinitionReader.html" title="class or interface in org.springframework.context.annotation"><code>AnnotatedBeanDefinitionReader</code></a>` 加载的完全限定类名</li>
+<li>要由 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.html" title="class or interface in org.springframework.beans.factory.xml"><code>XmlBeanDefinitionReader</code></a>` 加载的 XML 资源位置，或由 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReader.html" title="class or interface in org.springframework.beans.factory.groovy"><code>GroovyBeanDefinitionReader</code></a>` 加载的 Groovy 脚本。</li>
+<li>要被 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html" title="class or interface in org.springframework.context.annotation"><code>ClassPathBeanDefinitionScanner</code></a>` 扫描的包名。</li>
 </ul>
 
 Configuration properties are also bound to the <a href="SpringApplication.html" title="class in org.springframework.boot"><code>SpringApplication</code></a>. This makes it
@@ -307,17 +307,17 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#addInitializers(org.springframework.context.ApplicationContextInitializer...)">addInitializers</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context">ApplicationContextInitializer</a>&lt;?&gt;... initializers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">添加 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 以应用于 Spring `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
+<div class="block">添加 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 以应用于 Spring <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#addListeners(org.springframework.context.ApplicationListener...)">addListeners</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context">ApplicationListener</a>&lt;?&gt;... listeners)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">添加 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context"><code>ApplicationListener</code></a>` 以应用于 `SpringApplication`，并注册到 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
+<div class="block">添加 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context"><code>ApplicationListener</code></a>` 以应用于 `SpringApplication`，并注册到 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#addPrimarySources(java.util.Collection)">addPrimarySources</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util">Collection</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt; additionalPrimarySources)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">向主源添加额外项，这些项将在调用 `<a href="#run(java.lang.String...)"><code>run(String...)</code></a>` 时添加到 `ApplicationContext` 中。</div>
+<div class="block">向主源添加额外项，这些项将在调用 <a href="#run(java.lang.String...)"><code>run(String...)</code></a>` 时添加到 `ApplicationContext` 中。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#afterRefresh(org.springframework.context.ConfigurableApplicationContext,org.springframework.boot.ApplicationArguments)">afterRefresh</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> context,
@@ -328,7 +328,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#applyInitializers(org.springframework.context.ConfigurableApplicationContext)">applyInitializers</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">在刷新上下文之前，应用任何 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 到该上下文。</div>
+<div class="block">在刷新上下文之前，应用任何 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 到该上下文。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#bindToSpringApplication(org.springframework.core.env.ConfigurableEnvironment)">bindToSpringApplication</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html" title="class or interface in org.springframework.core.env">ConfigurableEnvironment</a> environment)</code></div>
@@ -393,7 +393,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics">ApplicationStartup</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getApplicationStartup()">getApplicationStartup</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回用于收集启动指标的 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>`。</div>
+<div class="block">返回用于收集启动指标的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>`。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang">ClassLoader</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getClassLoader()">getClassLoader</a>()</code></div>
@@ -428,12 +428,12 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot">SpringApplicationShutdownHandlers</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a class="member-name-link" href="#getShutdownHandlers()">getShutdownHandlers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">返回一个 `<a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot"><code>SpringApplicationShutdownHandlers</code></a>` 实例，该实例可用于添加或移除在 JVM 关闭之前执行操作的处理器。</div>
+<div class="block">返回一个 <a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot"><code>SpringApplicationShutdownHandlers</code></a>` 实例，该实例可用于添加或移除在 JVM 关闭之前执行操作的处理器。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util">Set</a><wbr/>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getSources()">getSources</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回一个可变集合，包含在调用 `<a href="#run(java.lang.String...)"><code>run(String...)</code></a>` 时将添加到 ApplicationContext 的源。</div>
+<div class="block">返回一个可变集合，包含在调用 <a href="#run(java.lang.String...)"><code>run(String...)</code></a>` 时将添加到 ApplicationContext 的源。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="WebApplicationType.html" title="enum class in org.springframework.boot">WebApplicationType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getWebApplicationType()">getWebApplicationType</a>()</code></div>
@@ -469,7 +469,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#postProcessApplicationContext(org.springframework.context.ConfigurableApplicationContext)">postProcessApplicationContext</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">对 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 应用任何相关的后处理。</div>
+<div class="block">对 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 应用任何相关的后处理。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#refresh(org.springframework.context.ConfigurableApplicationContext)">refresh</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> applicationContext)</code></div>
@@ -531,12 +531,12 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setApplicationStartup(org.springframework.core.metrics.ApplicationStartup)">setApplicationStartup</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics">ApplicationStartup</a> applicationStartup)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">设置 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>` 用于收集启动指标。</div>
+<div class="block">设置 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>` 用于收集启动指标。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setBanner(org.springframework.boot.Banner)">setBanner</a><wbr/>(<a href="Banner.html" title="interface in org.springframework.boot">Banner</a> banner)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">设置 `<a href="Banner.html" title="org.springframework.boot 中的接口"><code>Banner</code></a>` 实例，当未提供静态横幅文件时，将使用该实例打印横幅。</div>
+<div class="block">设置 <a href="Banner.html" title="org.springframework.boot 中的接口"><code>Banner</code></a>` 实例，当未提供静态横幅文件时，将使用该实例打印横幅。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setBannerMode(org.springframework.boot.Banner.Mode)">setBannerMode</a><wbr/>(<a href="Banner.Mode.html" title="enum class in org.springframework.boot">Banner.Mode</a> bannerMode)</code></div>
@@ -768,7 +768,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">void</span> <span class="element-name">configureEnvironment</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html" title="class or interface in org.springframework.core.env">ConfigurableEnvironment</a> environment,
  <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>[] args)</span></div>
-<div class="block">委托给 `<a href="#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a>` 和 `<a href="#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a>` 的模板方法，顺序如上。若要完全控制 Environment 定制，请重写此方法；若要对属性源或配置文件进行细粒度控制，则分别重写上述方法之一。</div>
+<div class="block">委托给 <a href="#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a>` 和 <a href="#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a>` 的模板方法，顺序如上。若要完全控制 Environment 定制，请重写此方法；若要对属性源或配置文件进行细粒度控制，则分别重写上述方法之一。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>environment</code> - 此应用程序的环境</dd>
@@ -863,7 +863,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <h3>postProcessApplicationContext</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">void</span> <span class="element-name">postProcessApplicationContext</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> context)</span></div>
-<div class="block">对 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 应用任何相关的后处理。子类可根据需要应用额外的处理。</div>
+<div class="block">对 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>` 应用任何相关的后处理。子类可根据需要应用额外的处理。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>context</code> - 应用程序上下文</dd>
@@ -876,7 +876,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <h3>applyInitializers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">void</span> <span class="element-name">applyInitializers</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a> context)</span></div>
-<div class="block">在刷新上下文之前，应用任何 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 到该上下文。</div>
+<div class="block">在刷新上下文之前，应用任何 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 到该上下文。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>context</code> - 已配置的 ApplicationContext（尚未刷新）</dd>
@@ -1186,7 +1186,7 @@ sources ("spring.main.sources" - a CSV list) the flag to indicate a web environm
 <h3>setBanner</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setBanner</span><wbr/><span class="parameters">(<a href="Banner.html" title="interface in org.springframework.boot">Banner</a> banner)</span></div>
-<div class="block">设置 `<a href="Banner.html" title="org.springframework.boot 中的接口"><code>Banner</code></a>` 实例，当未提供静态横幅文件时，将使用该实例打印横幅。</div>
+<div class="block">设置 <a href="Banner.html" title="org.springframework.boot 中的接口"><code>Banner</code></a>` 实例，当未提供静态横幅文件时，将使用该实例打印横幅。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>banner</code> - 要使用的 Banner 实例</dd>
@@ -1498,7 +1498,7 @@ can be: a class name, package name, or an XML resource location.
 <h3>addInitializers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">addInitializers</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context">ApplicationContextInitializer</a>&lt;?&gt;... initializers)</span></div>
-<div class="block">添加 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 以应用于 Spring `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
+<div class="block">添加 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html" title="class or interface in org.springframework.context"><code>ApplicationContextInitializer</code></a>` 以应用于 Spring <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>initializers</code> - 要添加的初始化器</dd>
@@ -1537,7 +1537,7 @@ can be: a class name, package name, or an XML resource location.
 <h3>addListeners</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">addListeners</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context">ApplicationListener</a>&lt;?&gt;... listeners)</span></div>
-<div class="block">添加 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context"><code>ApplicationListener</code></a>` 以应用于 `SpringApplication`，并注册到 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
+<div class="block">添加 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context"><code>ApplicationListener</code></a>` 以应用于 `SpringApplication`，并注册到 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>`。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>listeners</code> - 要添加的监听器</dd>
@@ -1563,7 +1563,7 @@ can be: a class name, package name, or an XML resource location.
 <h3>setApplicationStartup</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setApplicationStartup</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics">ApplicationStartup</a> applicationStartup)</span></div>
-<div class="block">设置 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>` 用于收集启动指标。</div>
+<div class="block">设置 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>` 用于收集启动指标。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>applicationStartup</code> - 要使用的应用程序启动配置</dd>
@@ -1578,7 +1578,7 @@ can be: a class name, package name, or an XML resource location.
 <h3>getApplicationStartup</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics">ApplicationStartup</a></span> <span class="element-name">getApplicationStartup</span>()</div>
-<div class="block">返回用于收集启动指标的 `<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>`。</div>
+<div class="block">返回用于收集启动指标的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html" title="class or interface in org.springframework.core.metrics"><code>ApplicationStartup</code></a>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>应用程序启动</dd>
@@ -1623,7 +1623,7 @@ can be: a class name, package name, or an XML resource location.
 <h3>getShutdownHandlers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span> <span class="return-type"><a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot">SpringApplicationShutdownHandlers</a></span> <span class="element-name">getShutdownHandlers</span>()</div>
-<div class="block">返回一个 `<a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot"><code>SpringApplicationShutdownHandlers</code></a>` 实例，该实例可用于添加或移除在 JVM 关闭之前执行操作的处理器。</div>
+<div class="block">返回一个 <a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot"><code>SpringApplicationShutdownHandlers</code></a>` 实例，该实例可用于添加或移除在 JVM 关闭之前执行操作的处理器。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a <a href="SpringApplicationShutdownHandlers.html" title="interface in org.springframework.boot"><code>SpringApplicationShutdownHandlers</code></a> instance</dd>
@@ -1676,7 +1676,7 @@ can be: a class name, package name, or an XML resource location.
 <div class="block">A basic main that can be used to launch an application. This method is useful when
 application sources are defined through a --spring.main.sources command
 line argument.
-<p>大多数开发者将希望定义自己的 `main` 方法，并调用 `<a href="#run(java.lang.Class,java.lang.String...)"><code>run</code></a>` 方法。</p></div>
+<p>大多数开发者将希望定义自己的 `main` 方法，并调用 <a href="#run(java.lang.Class,java.lang.String...)"><code>run</code></a>` 方法。</p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>args</code> - 命令行参数</dd>

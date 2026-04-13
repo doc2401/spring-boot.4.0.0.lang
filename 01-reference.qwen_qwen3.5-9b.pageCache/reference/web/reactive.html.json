@@ -44,7 +44,7 @@
     },
     {
       "source": "For more complete control, you can also define <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a> beans which will be injected into the auto-configured Spring MVC configuration.",
-      "translation": "为了获得更完整的控制，您还可以定义 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>`、`<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a>` 和 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a>` Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。",
+      "translation": "为了获得更完整的控制，您还可以定义 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>`、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a>` Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。",
       "count": 2
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "source": "Configuring codecs for <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html\"><code>HttpMessageReader</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html\"><code>HttpMessageWriter</code></a> instances (described <a href=\"#web.reactive.webflux.httpcodecs\">later in this document</a>).",
-      "translation": "配置用于 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html\"><code>HttpMessageReader</code></a>` 和 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html\"><code>HttpMessageWriter</code></a>` 实例的编解码器（在本文档<a href=\"#web.reactive.webflux.httpcodecs\">稍后描述</a>）。",
+      "translation": "配置用于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html\"><code>HttpMessageReader</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html\"><code>HttpMessageWriter</code></a>` 实例的编解码器（在本文档<a href=\"#web.reactive.webflux.httpcodecs\">稍后描述</a>）。",
       "count": 2
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "source": "Spring Boot provides dedicated configuration properties for codecs, <code>spring.http.codecs.*</code>.\nIt also applies further customization by using <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a> instances.\nFor example, <code>spring.jackson.*</code> configuration keys are applied to the Jackson codec.",
-      "translation": "Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a>` 实例来应用进一步的自定义。例如，`<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。",
+      "translation": "Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a>` 实例来应用进一步的自定义。例如，`<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。",
       "count": 2
     },
     {
@@ -109,12 +109,12 @@
     },
     {
       "source": "Spring Boot provides a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\"><code>WebExceptionHandler</code></a> that handles all errors in a sensible way.\nIts position in the processing order is immediately before the handlers provided by WebFlux, which are considered last.\nFor machine clients, it produces a JSON response with details of the error, the HTTP status, and the exception message.\nFor browser clients, there is a “whitelabel” error handler that renders the same data in HTML format.\nYou can also provide your own HTML templates to display errors (see the <a href=\"#web.reactive.webflux.error-handling.error-pages\">next section</a>).",
-      "translation": "Spring Boot 提供了一个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\"><code>WebExceptionHandler</code></a>`，它以合理的方式处理所有错误。\n它在处理顺序中的位置紧接在 WebFlux 提供的处理器之前，后者被视为最后执行。\n对于机器客户端，它会生成一个包含错误详情、HTTP 状态和异常消息的 JSON 响应。\n对于浏览器客户端，有一个“白标”错误处理器，以 HTML 格式渲染相同的数据。\n您也可以提供自己的 HTML 模板来显示错误（参见<a href=\"#web.reactive.webflux.error-handling.error-pages\">下一节</a>）。",
+      "translation": "Spring Boot 提供了一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\"><code>WebExceptionHandler</code></a>`，它以合理的方式处理所有错误。\n它在处理顺序中的位置紧接在 WebFlux 提供的处理器之前，后者被视为最后执行。\n对于机器客户端，它会生成一个包含错误详情、HTTP 状态和异常消息的 JSON 响应。\n对于浏览器客户端，有一个“白标”错误处理器，以 HTML 格式渲染相同的数据。\n您也可以提供自己的 HTML 模板来显示错误（参见<a href=\"#web.reactive.webflux.error-handling.error-pages\">下一节</a>）。",
       "count": 2
     },
     {
       "source": "To configure Spring WebFlux, you can either use a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html\"><code>WebFluxConfigurer</code></a> bean and override the <code>configureApiVersioning(…​)</code> method, or you can use properties.",
-      "translation": "要配置 Spring WebFlux，您可以使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html\"><code>WebFluxConfigurer</code></a>`  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。",
+      "translation": "要配置 Spring WebFlux，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html\"><code>WebFluxConfigurer</code></a>`  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。",
       "count": 2
     },
     {
@@ -139,17 +139,17 @@
     },
     {
       "source": "This only acts as a fallback for actual index routes defined by the application.\nThe ordering is defined by the order of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html\"><code>HandlerMapping</code></a> beans which is by default the following:",
-      "translation": "这仅作为应用程序定义的真正索引路由的后备方案。排序由 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html\"><code>HandlerMapping</code></a>` 豆的顺序定义，默认顺序如下：",
+      "translation": "这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html\"><code>HandlerMapping</code></a>` 豆的顺序定义，默认顺序如下：",
       "count": 2
     },
     {
       "source": "Endpoints declared with <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\"><code>RouterFunction</code></a> beans",
-      "translation": "使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\"><code>RouterFunction</code></a>` 声明的端点",
+      "translation": "使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\"><code>RouterFunction</code></a>` 声明的端点",
       "count": 2
     },
     {
       "source": "Endpoints declared in <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a> beans",
-      "translation": "在 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a>` 声明的 Bean 中定义的端点",
+      "translation": "在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a>` 声明的 Bean 中定义的端点",
       "count": 2
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "source": "the client instance is built using the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a> bean auto-configured by Spring Boot",
-      "translation": "客户端实例是使用由 Spring Boot 自动配置的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a>` Bean 构建的。",
+      "translation": "客户端实例是使用由 Spring Boot 自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a>` Bean 构建的。",
       "count": 2
     },
     {

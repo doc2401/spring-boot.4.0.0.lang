@@ -1125,7 +1125,7 @@
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Spring Boot 为您创建并预配置了一个原型 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html"><code>WebClient.Builder</code></a>` Bean。强烈建议您在组件中注入它，并使用它来创建 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html"><code>WebClient</code></a>` 实例。Spring Boot 正在配置该构建器以共享 HTTP 资源，并以与服务器端相同的方式反映编解码器的设置（参见 <a class="xref page" href="../web/reactive.html#web.reactive.webflux.httpcodecs">WebFlux HTTP 编解码器自动配置</a>），等等。</p>
+<p>Spring Boot 为您创建并预配置了一个原型 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html"><code>WebClient.Builder</code></a>` Bean。强烈建议您在组件中注入它，并使用它来创建 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html"><code>WebClient</code></a>` 实例。Spring Boot 正在配置该构建器以共享 HTTP 资源，并以与服务器端相同的方式反映编解码器的设置（参见 <a class="xref page" href="../web/reactive.html#web.reactive.webflux.httpcodecs">WebFlux HTTP 编解码器自动配置</a>），等等。</p>
 </div>
 <div class="paragraph">
 <p>以下代码展示了一个典型示例：</p>
@@ -1229,7 +1229,7 @@ class MyService(webClientBuilder: WebClient.Builder) {
 <p>如果您希望覆盖该客户端的选择，您可以定义自己的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/reactive/ClientHttpConnector.html"><code>ClientHttpConnector</code></a> Bean，从而完全控制客户端配置。</p>
 </div>
 <div class="paragraph">
-<p>您可以在 Spring Framework 参考文档中了解有关 `<a href="https://docs.spring.io/spring-framework/reference/7.0/web/webflux-webclient/client-builder.html"><code>WebClient</code></a>` 配置选项的更多信息。</p>
+<p>您可以在 Spring Framework 参考文档中了解有关 <a href="https://docs.spring.io/spring-framework/reference/7.0/web/webflux-webclient/client-builder.html"><code>WebClient</code></a>` 配置选项的更多信息。</p>
 </div>
 </div>
 <div class="sect2">
@@ -1448,10 +1448,10 @@ class MyService(webClientBuilder: WebClient.Builder, ssl: WebClientSsl) {
 <p>如果您的应用程序未使用 Spring WebFlux 或 Project Reactor，我们建议使用<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>来调用远程 REST 服务。</p>
 </div>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 接口提供了一种函数式风格的命令式 API。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 接口提供了一种函数式风格的命令式 API。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 为您创建并预配置了一个原型 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html"><code>RestClient.Builder</code></a>` Bean。强烈建议您在组件中注入该 Bean，并使用它来创建 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 实例。Spring Boot 正在使用该构建器配置 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/converter/autoconfigure/HttpMessageConverters.html"><code>HttpMessageConverters</code></a>` 和适当的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html"><code>ClientHttpRequestFactory</code></a>`。</p>
+<p>Spring Boot 为您创建并预配置了一个原型 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html"><code>RestClient.Builder</code></a>` Bean。强烈建议您在组件中注入该 Bean，并使用它来创建 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 实例。Spring Boot 正在使用该构建器配置 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/converter/autoconfigure/HttpMessageConverters.html"><code>HttpMessageConverters</code></a>` 和适当的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html"><code>ClientHttpRequestFactory</code></a>`。</p>
 </div>
 <div class="paragraph">
 <p>以下代码展示了一个典型示例：</p>
@@ -1549,10 +1549,10 @@ class MyService(restClientBuilder: RestClient.Builder) {
 <div class="sect2">
 <h3 id="io.rest-client.restclient.ssl"><a class="anchor" href="#io.rest-client.restclient.ssl"></a>RestClient SSL 支持</h3>
 <div class="paragraph">
-<p>如果您需要在 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html"><code>ClientHttpRequestFactory</code></a>` 上配置自定义 SSL，该工厂由 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 使用，您可以注入一个 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html"><code>RestClientSsl</code></a>` 实例，并将其与构建器的<code>apply</code>方法一起使用。</p>
+<p>如果您需要在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html"><code>ClientHttpRequestFactory</code></a>` 上配置自定义 SSL，该工厂由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>` 使用，您可以注入一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html"><code>RestClientSsl</code></a>` 实例，并将其与构建器的<code>apply</code>方法一起使用。</p>
 </div>
 <div class="paragraph">
-<p>The `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html"><code>RestClientSsl</code></a>` 接口提供访问您在 <code>application.properties</code>` 或 `<code>application.yaml</code> 文件中定义的任意 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL bundles</a>。</p>
+<p>The <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html"><code>RestClientSsl</code></a>` 接口提供访问您在 <code>application.properties</code>` 或 `<code>application.yaml</code> 文件中定义的任意 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL bundles</a>。</p>
 </div>
 <div class="paragraph">
 <p>以下代码展示了一个典型示例：</p>
@@ -1797,8 +1797,8 @@ class MyService(restTemplateBuilder: RestTemplateBuilder) {
 每个方法调用都会返回一个新的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html"><code>RestTemplateBuilder</code></a>实例，因此自定义仅影响此构建器的使用。</p>
 </div>
 <div class="paragraph">
-<p>若要创建应用程序范围的累加自定义，请使用 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateCustomizer.html"><code>RestTemplateCustomizer</code></a>` Bean。
-所有此类 Bean 都会自动注册到自动配置的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html"><code>RestTemplateBuilder</code></a>`，并应用于使用它构建的任何模板。</p>
+<p>若要创建应用程序范围的累加自定义，请使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateCustomizer.html"><code>RestTemplateCustomizer</code></a>` Bean。
+所有此类 Bean 都会自动注册到自动配置的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html"><code>RestTemplateBuilder</code></a>`，并应用于使用它构建的任何模板。</p>
 </div>
 <div class="paragraph">
 <p>以下示例展示了一个自定义器，它配置除 <code>192.168.0.5</code> 之外的所有主机均使用代理：</p>
@@ -2357,7 +2357,7 @@ fun main(args: Array&lt;String&gt;) {
 <div class="sect2">
 <h3 id="io.rest-client.httpservice.groups"><a class="anchor" href="#io.rest-client.httpservice.groups"></a>服务客户端组</h3>
 <div class="paragraph">
-<p>在 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/annotation/HttpExchange.html"><code>@HttpExchange</code></a>` 注解中硬编码绝对 URL 在生产应用中通常不是最佳选择。相反，您通常希望在代码中为 HTTP Service 客户端指定一个逻辑名称，然后根据该名称从属性中查找 URL。</p>
+<p>在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/annotation/HttpExchange.html"><code>@HttpExchange</code></a>` 注解中硬编码绝对 URL 在生产应用中通常不是最佳选择。相反，您通常希望在代码中为 HTTP Service 客户端指定一个逻辑名称，然后根据该名称从属性中查找 URL。</p>
 </div>
 <div class="paragraph">
 <p>HTTP 服务客户端可以通过将它们注册到命名组中来实现此功能。HTTP 服务组是一组共享共同功能的 HTTP 服务接口集合。</p>
@@ -2377,7 +2377,7 @@ HTTP 服务组不仅可以定义 URL。例如，您的组可以定义连接超�
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>要将 HTTP Service 接口与组关联，在使用 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 时，可以使用 `group` 属性。</p>
+<p>要将 HTTP Service 接口与组关联，在使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 时，可以使用 `group` 属性。</p>
 </div>
 <div class="paragraph">
 <p>例如，如果假设我们上面的示例以这样一种方式组织：`com.example.myclients` 包中的所有 HTTP Service 接口都属于 <code>echo</code> 组。
@@ -2505,7 +2505,7 @@ public class MyApplication {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果同一包中存在多个需要与不同组关联的 HTTP Service 接口，您可以单独列出它们。`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 是可重复注解，其 `types` 属性允许您导入单个类。</p>
+<p>如果同一包中存在多个需要与不同组关联的 HTTP Service 接口，您可以单独列出它们。<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 是可重复注解，其 `types` 属性允许您导入单个类。</p>
 </div>
 <div class="paragraph">
 <p>例如：</p>
@@ -2753,8 +2753,8 @@ class MyHttpServiceGroupConfiguration {
 <div class="sect2">
 <h3 id="io.rest-client.httpservice.advanced-configuration"><a class="anchor" href="#io.rest-client.httpservice.advanced-configuration"></a>高级配置</h3>
 <div class="paragraph">
-<p>除了 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 注解外，Spring Framework 还提供了一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/AbstractHttpServiceRegistrar.html"><code>AbstractHttpServiceRegistrar</code></a>` 类。
-您可以使用 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Import.html"><code>@Import</code></a>` 导入该类的自定义扩展，以执行程序化配置。
+<p>除了 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html"><code>@ImportHttpServices</code></a>` 注解外，Spring Framework 还提供了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/AbstractHttpServiceRegistrar.html"><code>AbstractHttpServiceRegistrar</code></a>` 类。
+您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Import.html"><code>@Import</code></a>` 导入该类的自定义扩展，以执行程序化配置。
 有关更多详细信息，请参阅 <a href="https://docs.spring.io/spring-framework/reference/7.0/integration/rest-clients.html#rest-http-service-client-group-config">Spring Framework 参考文档</a>。</p>
 </div>
 <div class="paragraph">
@@ -2789,7 +2789,7 @@ class MyHttpServiceGroupConfiguration {
 </ul>
 </div>
 <div class="paragraph">
-<p>这些常用设置由 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/HttpClientSettings.html"><code>HttpClientSettings</code></a>` 类表示，该类的实例可以传递给 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/reactive/ClientHttpConnectorBuilder.html"><code>ClientHttpConnectorBuilder</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/ClientHttpRequestFactoryBuilder.html"><code>ClientHttpRequestFactoryBuilder</code></a>` 的 `build(…​)` 方法。</p>
+<p>这些常用设置由 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/HttpClientSettings.html"><code>HttpClientSettings</code></a>` 类表示，该类的实例可以传递给 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/reactive/ClientHttpConnectorBuilder.html"><code>ClientHttpConnectorBuilder</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/ClientHttpRequestFactoryBuilder.html"><code>ClientHttpRequestFactoryBuilder</code></a>` 的 `build(…​)` 方法。</p>
 </div>
 <div class="paragraph">
 <p>如果您想将相同的配置应用于所有自动配置的客户端，可以使用 <code>spring.http.clients</code> 属性来实现：</p>

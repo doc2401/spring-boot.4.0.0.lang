@@ -1104,7 +1104,7 @@
 您可以使用多种外部配置源，包括 Java 属性文件、YAML 文件、环境变量和命令行参数。</p>
 </div>
 <div class="paragraph">
-<p>属性值可以通过使用 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 注解直接注入到您的 Bean 中，该注解通过 Spring 的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 抽象访问；或者可以通过 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` <a href="#features.external-config.typesafe-configuration-properties">绑定到结构化对象</a>。</p>
+<p>属性值可以通过使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 注解直接注入到您的 Bean 中，该注解通过 Spring 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 抽象访问；或者可以通过 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` <a href="#features.external-config.typesafe-configuration-properties">绑定到结构化对象</a>。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 使用一种非常特定的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html"><code>PropertySource</code></a> 顺序，旨在允许对值进行合理的覆盖。
@@ -1119,7 +1119,7 @@
 <p>默认属性（通过设置 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#setDefaultProperties(java.util.Map)"><code>SpringApplication.setDefaultProperties(Map)</code></a> 指定）。</p>
 </li>
 <li>
-<p>在您的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类上使用 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a>` 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code>` 和 `<code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。</p>
+<p>在您的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类上使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a>` 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code>` 和 `<code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。</p>
 </li>
 <li>
 <p>配置数据（例如 <code>application.properties</code> 文件）。</p>
@@ -1159,7 +1159,7 @@
 <p>您的测试上的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/TestPropertySource.html"><code>@TestPropertySource</code></a> 注解。</p>
 </li>
 <li>
-<p>`<a class="xref page" href="../using/devtools.html#using.devtools.globalsettings">Devtools 全局设置属性</a>` 在 devtools 激活时位于 `$HOME/.config/spring-boot` 目录中。</p>
+<p><a class="xref page" href="../using/devtools.html#using.devtools.globalsettings">Devtools 全局设置属性</a>` 在 devtools 激活时位于 `$HOME/.config/spring-boot` 目录中。</p>
 </li>
 </ol>
 </div>
@@ -1218,7 +1218,7 @@
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>为了提供一个具体的示例，假设您开发了一个使用 `name` 属性的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html"><code>@Component</code></a>，如下例所示：</p>
+<p>为了提供一个具体的示例，假设您开发了一个使用 `name` 属性的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html"><code>@Component</code></a>，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1504,7 +1504,7 @@ class MyBean {
 <p>默认情况下，如果指定的配置数据位置不存在，Spring Boot 将抛出 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/config/ConfigDataLocationNotFoundException.html"><code>ConfigDataLocationNotFoundException</code></a>，并且您的应用程序将无法启动。</p>
 </div>
 <div class="paragraph">
-<p>如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code>` 前缀。您可以将此前缀与 `<code>spring.config.location</code>` 和 `<code>spring.config.additional-location</code> 属性一起使用，也可以与 `<a href="#features.external-config.files.importing"><code>spring.config.import</code></a>` 声明一起使用。</p>
+<p>如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code>` 前缀。您可以将此前缀与 `<code>spring.config.location</code>` 和 `<code>spring.config.additional-location</code> 属性一起使用，也可以与 <a href="#features.external-config.files.importing"><code>spring.config.import</code></a>` 声明一起使用。</p>
 </div>
 <div class="paragraph">
 <p>例如，<code>spring.config.import</code> 的值为 <code>optional:file:./myconfig.properties</code> 时，即使缺少 <code>myconfig.properties</code> 文件，您的应用程序也能启动。</p>
@@ -1622,7 +1622,7 @@ class MyBean {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 具有一组默认配置文件（默认为 <code>[default]</code>`），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 `<code>application-default</code> 的属性。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 具有一组默认配置文件（默认为 <code>[default]</code>`），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 `<code>application-default</code> 的属性。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2328,7 +2328,7 @@ spring.config.activate.on-cloud-platform=kubernetes</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>on-cloud-platform</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">必须检测到的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cloud/CloudPlatform.html"><code>CloudPlatform</code></a>`，以使文档处于活动状态。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">必须检测到的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cloud/CloudPlatform.html"><code>CloudPlatform</code></a>`，以使文档处于活动状态。</p></td>
 </tr>
 </tbody>
 </table>
@@ -2484,7 +2484,7 @@ my.servers[1]=another.example.com</code></pre>
 <div class="sect2">
 <h3 id="features.external-config.yaml.directly-loading"><a class="anchor" href="#features.external-config.yaml.directly-loading"></a>直接加载 YAML</h3>
 <div class="paragraph">
-<p>Spring Framework 提供了两个方便使用的类，可用于加载 YAML 文档。`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/YamlPropertiesFactoryBean.html"><code>YamlPropertiesFactoryBean</code></a>` 将 YAML 加载为 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a>`，而 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/YamlMapFactoryBean.html"><code>YamlMapFactoryBean</code></a>` 则将 YAML 加载为 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>`。</p>
+<p>Spring Framework 提供了两个方便使用的类，可用于加载 YAML 文档。<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/YamlPropertiesFactoryBean.html"><code>YamlPropertiesFactoryBean</code></a>` 将 YAML 加载为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a>`，而 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/YamlMapFactoryBean.html"><code>YamlMapFactoryBean</code></a>` 则将 YAML 加载为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>`。</p>
 </div>
 <div class="paragraph">
 <p>您也可以使用<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/env/YamlPropertySourceLoader.html"><code>YamlPropertySourceLoader</code></a>类，如果您想将 YAML 加载为 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html"><code>PropertySource</code></a>。</p>
@@ -2496,7 +2496,7 @@ my.servers[1]=another.example.com</code></pre>
 <h2 id="features.external-config.random-values"><a class="anchor" href="#features.external-config.random-values"></a>配置随机值</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/env/RandomValuePropertySource.html"><code>RandomValuePropertySource</code></a>` 可用于注入随机值（例如，用于密钥或测试用例）。它可以生成整数、长整型、UUID 或字符串，如下例所示：</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/env/RandomValuePropertySource.html"><code>RandomValuePropertySource</code></a>` 可用于注入随机值（例如，用于密钥或测试用例）。它可以生成整数、长整型、UUID 或字符串，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_12">
 <div class="content">
@@ -2906,7 +2906,7 @@ class MyProperties(val enabled: Boolean, val remoteAddress: InetAddress,
 <p>在此配置中，单个参数化构造函数的存在意味着应使用构造函数绑定。这意味着绑定器将找到具有您希望绑定的参数的构造函数。如果您的类有多个构造函数，可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/ConstructorBinding.html"><code>@ConstructorBinding</code></a> 注解来指定用于构造函数绑定的构造函数。</p>
 </div>
 <div class="paragraph">
-<p>若要为一个类禁用构造函数绑定，则参数化构造函数必须标注 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html"><code>@Autowired</code></a>` 或设为 <code>private</code>。
+<p>若要为一个类禁用构造函数绑定，则参数化构造函数必须标注 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html"><code>@Autowired</code></a>` 或设为 <code>private</code>。
 Kotlin 开发人员可以使用空的主构造函数来禁用构造函数绑定。</p>
 </div>
 <div class="paragraph">
@@ -3233,9 +3233,9 @@ class MyApplication</span></code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>我们建议 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 仅处理环境配置，特别是不要从上下文中注入其他 Bean。
-对于特殊情况，可以使用 setter 注入，或使用框架提供的任何 <code>*Aware</code> 接口（例如，如果您需要访问 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html"><code>EnvironmentAware</code></a> 以获取对 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 的访问权限）。
-如果您仍希望通过构造函数注入其他 Bean，则必须将配置属性 Bean 标注为 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html"><code>@Component</code></a>` 并使用基于 JavaBean 的属性绑定。</p>
+<p>我们建议 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 仅处理环境配置，特别是不要从上下文中注入其他 Bean。
+对于特殊情况，可以使用 setter 注入，或使用框架提供的任何 <code>*Aware</code> 接口（例如，如果您需要访问 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html"><code>EnvironmentAware</code></a> 以获取对 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 的访问权限）。
+如果您仍希望通过构造函数注入其他 Bean，则必须将配置属性 Bean 标注为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html"><code>@Component</code></a>` 并使用基于 JavaBean 的属性绑定。</p>
 </div>
 </div>
 <div class="sect2">
@@ -3256,7 +3256,7 @@ class MyApplication</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>要使用 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 配置类，可以像注入任何其他 Bean 一样注入它们，如下面的示例所示：</p>
+<p>要使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 配置类，可以像注入任何其他 Bean 一样注入它们，如下面的示例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_20">
 <div class="content">
@@ -3337,7 +3337,7 @@ class MyService(val properties: MyProperties) {
 <p>除了使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 注解类之外，您还可以在公共的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 方法上使用它。这样做在您希望将属性绑定到不受您控制的第三方组件时特别有用。</p>
 </div>
 <div class="paragraph">
-<p>要从 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 属性配置一个 Bean，请向其 Bean 注册添加 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>`，如下例所示：</p>
+<p>要从 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 属性配置一个 Bean，请向其 Bean 注册添加 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>`，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_21">
 <div class="content">
@@ -3402,7 +3402,7 @@ class ThirdPartyConfiguration {
 常见的有用示例包括使用连字符分隔的环境属性（例如，<code>context-path</code> 绑定到 <code>contextPath</code>），以及大写的环境属性（例如，<code>PORT</code> 绑定到 <code>port</code>）。</p>
 </div>
 <div class="paragraph">
-<p>例如，考虑以下 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 类：</p>
+<p>例如，考虑以下 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 类：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_22">
 <div class="content">
@@ -3548,7 +3548,7 @@ class MyPersonProperties {
 <div class="sect3">
 <h4 id="features.external-config.typesafe-configuration-properties.relaxed-binding.maps"><a class="anchor" href="#features.external-config.typesafe-configuration-properties.relaxed-binding.maps"></a>绑定映射</h4>
 <div class="paragraph">
-<p>绑定到 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code>` 值。如果键未被 `<code>[]</code>` 包围，任何非字母数字、`<code>-</code>` 或 `<code>.</code> 的字符都将被移除。</p>
+<p>绑定到 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code>` 值。如果键未被 `<code>[]</code>` 包围，任何非字母数字、`<code>-</code>` 或 `<code>.</code> 的字符都将被移除。</p>
 </div>
 <div class="paragraph">
 <p>例如，考虑将以下属性绑定到 <code>Map<string,string></string,string></code>：</p>
@@ -3599,7 +3599,7 @@ my.map./key3=value3</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>上面的属性将绑定到一个 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>`，其中 `/key1`、`/key2` 和 `key3` 作为该映射中的键。
+<p>上面的属性将绑定到一个 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>`，其中 `/key1`、`/key2` 和 `key3` 作为该映射中的键。
 由于 `key3` 未被方括号包围，因此已从其上去除了斜杠。</p>
 </div>
 <div class="paragraph">
@@ -3647,10 +3647,10 @@ my.map./key3=value3</code></pre>
 <h4 id="features.external-config.typesafe-configuration-properties.relaxed-binding.maps-from-environment-variables"><a class="anchor" href="#features.external-config.typesafe-configuration-properties.relaxed-binding.maps-from-environment-variables"></a>绑定从环境变量映射</h4>
 <div class="paragraph">
 <p>当 Spring Boot 将环境变量绑定到属性类时，它会在绑定之前将环境变量名转换为小写。
-大多数情况下，这一细节并不重要，除非是绑定到 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性。</p>
+大多数情况下，这一细节并不重要，除非是绑定到 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性。</p>
 </div>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 中的键始终为小写，如下例所示：</p>
+<p><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 中的键始终为小写，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_24">
 <div class="content">
@@ -3822,7 +3822,7 @@ my:
 <p>如果未激活 <code>dev</code>` 配置文件，则 `<code>MyProperties.list</code>` 包含一个先前定义的 `<code>MyPojo</code>` 条目。然而，如果启用了 `<code>dev</code>` 配置文件，`<code>list</code>` <em>仍然</em>仅包含一个条目（名称为 `<code>my another name</code>`，描述为 `<code>null</code>`）。此配置 <em>不会</em>向列表添加第二个 `<code>MyPojo</code> 实例，也不会合并项目。</p>
 </div>
 <div class="paragraph">
-<p>当在多个配置文件中指定了 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html"><code>List</code></a>` 时，仅使用优先级最高的那一个。考虑以下示例：</p>
+<p>当在多个配置文件中指定了 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html"><code>List</code></a>` 时，仅使用优先级最高的那一个。考虑以下示例：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_27">
 <div class="content">
@@ -3876,7 +3876,7 @@ my:
 对于 YAML，可以使用逗号分隔列表或 YAML 列表来完全覆盖列表的内容。</p>
 </div>
 <div class="paragraph">
-<p>对于 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性，您可以绑定来自多个源的值。然而，对于同一属性在多个源中出现的情况，将使用优先级最高的那个。以下示例从 `MyProperties` 中暴露了一个 <code>Map&lt;String, MyPojo&gt;</code>：</p>
+<p>对于 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a>` 属性，您可以绑定来自多个源的值。然而，对于同一属性在多个源中出现的情况，将使用优先级最高的那个。以下示例从 `MyProperties` 中暴露了一个 <code>Map&lt;String, MyPojo&gt;</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_28">
 <div class="content">
@@ -4749,8 +4749,8 @@ class MyProperties {
 <div class="sect2">
 <h3 id="features.external-config.typesafe-configuration-properties.vs-value-annotation"><a class="anchor" href="#features.external-config.typesafe-configuration-properties.vs-value-annotation"></a>@ConfigurationProperties 与 @Value</h3>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 注解是核心容器功能，它不提供与类型安全的配置属性相同的特性。
-下表总结了 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 所支持的功能：</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 注解是核心容器功能，它不提供与类型安全的配置属性相同的特性。
+下表总结了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>` 所支持的功能：</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>

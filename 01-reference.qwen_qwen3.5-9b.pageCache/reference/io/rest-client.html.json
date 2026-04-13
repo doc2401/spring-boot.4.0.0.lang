@@ -49,7 +49,7 @@
     },
     {
       "source": "Spring Boot creates and pre-configures a prototype <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html\"><code>RestClient.Builder</code></a> bean for you.\nIt is strongly advised to inject it in your components and use it to create <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a> instances.\nSpring Boot is configuring that builder with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/converter/autoconfigure/HttpMessageConverters.html\"><code>HttpMessageConverters</code></a> and an appropriate <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a>.",
-      "translation": "Spring Boot 为您创建并预配置了一个原型 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html\"><code>RestClient.Builder</code></a>` Bean。强烈建议您在组件中注入该 Bean，并使用它来创建 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 实例。Spring Boot 正在使用该构建器配置 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/converter/autoconfigure/HttpMessageConverters.html\"><code>HttpMessageConverters</code></a>` 和适当的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a>`。",
+      "translation": "Spring Boot 为您创建并预配置了一个原型 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html\"><code>RestClient.Builder</code></a>` Bean。强烈建议您在组件中注入该 Bean，并使用它来创建 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 实例。Spring Boot 正在使用该构建器配置 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/converter/autoconfigure/HttpMessageConverters.html\"><code>HttpMessageConverters</code></a>` 和适当的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a>`。",
       "count": 2
     },
     {
@@ -74,17 +74,17 @@
     },
     {
       "source": "If you need custom SSL configuration on the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a> used by the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>, you can inject a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a> instance that can be used with the builder’s <code>apply</code> method.",
-      "translation": "如果您需要在 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a>` 上配置自定义 SSL，该工厂由 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 使用，您可以注入一个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a>` 实例，并将其与构建器的<code>apply</code>方法一起使用。",
+      "translation": "如果您需要在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/ClientHttpRequestFactory.html\"><code>ClientHttpRequestFactory</code></a>` 上配置自定义 SSL，该工厂由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 使用，您可以注入一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a>` 实例，并将其与构建器的<code>apply</code>方法一起使用。",
       "count": 2
     },
     {
       "source": "As well as the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a> annotation, Spring Framework also offers an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/AbstractHttpServiceRegistrar.html\"><code>AbstractHttpServiceRegistrar</code></a> class.\nYou can <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Import.html\"><code>@Import</code></a> your own extension of this class to perform programmatic configuration.\nFor more details, see <a href=\"https://docs.spring.io/spring-framework/reference/7.0/integration/rest-clients.html#rest-http-service-client-group-config\">Spring Framework reference documentation</a>.",
-      "translation": "除了 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 注解外，Spring Framework 还提供了一个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/AbstractHttpServiceRegistrar.html\"><code>AbstractHttpServiceRegistrar</code></a>` 类。\n您可以使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Import.html\"><code>@Import</code></a>` 导入该类的自定义扩展，以执行程序化配置。\n有关更多详细信息，请参阅 <a href=\"https://docs.spring.io/spring-framework/reference/7.0/integration/rest-clients.html#rest-http-service-client-group-config\">Spring Framework 参考文档</a>。",
+      "translation": "除了 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 注解外，Spring Framework 还提供了一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/AbstractHttpServiceRegistrar.html\"><code>AbstractHttpServiceRegistrar</code></a>` 类。\n您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Import.html\"><code>@Import</code></a>` 导入该类的自定义扩展，以执行程序化配置。\n有关更多详细信息，请参阅 <a href=\"https://docs.spring.io/spring-framework/reference/7.0/integration/rest-clients.html#rest-http-service-client-group-config\">Spring Framework 参考文档</a>。",
       "count": 2
     },
     {
       "source": "These common settings are represented by the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/HttpClientSettings.html\"><code>HttpClientSettings</code></a> class which can be passed into the <code>build(…​)</code> methods of <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/reactive/ClientHttpConnectorBuilder.html\"><code>ClientHttpConnectorBuilder</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/ClientHttpRequestFactoryBuilder.html\"><code>ClientHttpRequestFactoryBuilder</code></a>.",
-      "translation": "这些常用设置由 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/HttpClientSettings.html\"><code>HttpClientSettings</code></a>` 类表示，该类的实例可以传递给 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/reactive/ClientHttpConnectorBuilder.html\"><code>ClientHttpConnectorBuilder</code></a>` 和 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/ClientHttpRequestFactoryBuilder.html\"><code>ClientHttpRequestFactoryBuilder</code></a>` 的 `build(…​)` 方法。",
+      "translation": "这些常用设置由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/HttpClientSettings.html\"><code>HttpClientSettings</code></a>` 类表示，该类的实例可以传递给 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/reactive/ClientHttpConnectorBuilder.html\"><code>ClientHttpConnectorBuilder</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/http/client/ClientHttpRequestFactoryBuilder.html\"><code>ClientHttpRequestFactoryBuilder</code></a>` 的 `build(…​)` 方法。",
       "count": 2
     },
     {
@@ -109,7 +109,7 @@
     },
     {
       "source": "Spring Boot creates and pre-configures a prototype <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a> bean for you.\nIt is strongly advised to inject it in your components and use it to create <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html\"><code>WebClient</code></a> instances.\nSpring Boot is configuring that builder to share HTTP resources and reflect codecs setup in the same fashion as the server ones (see <a class=\"xref page\" href=\"../web/reactive.html#web.reactive.webflux.httpcodecs\">WebFlux HTTP codecs auto-configuration</a>), and more.",
-      "translation": "Spring Boot 为您创建并预配置了一个原型 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a>` Bean。强烈建议您在组件中注入它，并使用它来创建 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html\"><code>WebClient</code></a>` 实例。Spring Boot 正在配置该构建器以共享 HTTP 资源，并以与服务器端相同的方式反映编解码器的设置（参见 <a class=\"xref page\" href=\"../web/reactive.html#web.reactive.webflux.httpcodecs\">WebFlux HTTP 编解码器自动配置</a>），等等。",
+      "translation": "Spring Boot 为您创建并预配置了一个原型 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html\"><code>WebClient.Builder</code></a>` Bean。强烈建议您在组件中注入它，并使用它来创建 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html\"><code>WebClient</code></a>` 实例。Spring Boot 正在配置该构建器以共享 HTTP 资源，并以与服务器端相同的方式反映编解码器的设置（参见 <a class=\"xref page\" href=\"../web/reactive.html#web.reactive.webflux.httpcodecs\">WebFlux HTTP 编解码器自动配置</a>），等等。",
       "count": 2
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a> interface provides access to any <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL bundles</a> that you have defined in your <code>application.properties</code> or <code>application.yaml</code> file.",
-      "translation": "The `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a>` 接口提供访问您在 <code>application.properties</code>` 或 `<code>application.yaml</code> 文件中定义的任意 <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL bundles</a>。",
+      "translation": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/restclient/autoconfigure/RestClientSsl.html\"><code>RestClientSsl</code></a>` 接口提供访问您在 <code>application.properties</code>` 或 `<code>application.yaml</code> 文件中定义的任意 <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL bundles</a>。",
       "count": 2
     },
     {
@@ -174,7 +174,7 @@
     },
     {
       "source": "To make an application-wide, additive customization, use a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateCustomizer.html\"><code>RestTemplateCustomizer</code></a> bean.\nAll such beans are automatically registered with the auto-configured <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html\"><code>RestTemplateBuilder</code></a> and are applied to any templates that are built with it.",
-      "translation": "若要创建应用程序范围的累加自定义，请使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateCustomizer.html\"><code>RestTemplateCustomizer</code></a>` Bean。\n所有此类 Bean 都会自动注册到自动配置的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html\"><code>RestTemplateBuilder</code></a>`，并应用于使用它构建的任何模板。",
+      "translation": "若要创建应用程序范围的累加自定义，请使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateCustomizer.html\"><code>RestTemplateCustomizer</code></a>` Bean。\n所有此类 Bean 都会自动注册到自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html\"><code>RestTemplateBuilder</code></a>`，并应用于使用它构建的任何模板。",
       "count": 2
     },
     {
@@ -219,12 +219,12 @@
     },
     {
       "source": "To associate an HTTP Service interface with a group when using <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a> you can use the <code>group</code> attribute.",
-      "translation": "要将 HTTP Service 接口与组关联，在使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 时，可以使用 `group` 属性。",
+      "translation": "要将 HTTP Service 接口与组关联，在使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 时，可以使用 `group` 属性。",
       "count": 2
     },
     {
       "source": "If you have multiple HTTP Service interfaces in the same package that need to be associated with different groups you can list them individually.\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a> is repeatable and the <code>types</code> attributes allows you to import individual classes.",
-      "translation": "如果同一包中存在多个需要与不同组关联的 HTTP Service 接口，您可以单独列出它们。`<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 是可重复注解，其 `types` 属性允许您导入单个类。",
+      "translation": "如果同一包中存在多个需要与不同组关联的 HTTP Service 接口，您可以单独列出它们。<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/registry/ImportHttpServices.html\"><code>@ImportHttpServices</code></a>` 是可重复注解，其 `types` 属性允许您导入单个类。",
       "count": 2
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "source": "You can learn more about the <a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webflux-webclient/client-builder.html\"><code>WebClient</code> configuration options in the Spring Framework reference documentation</a>.",
-      "translation": "您可以在 Spring Framework 参考文档中了解有关 `<a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webflux-webclient/client-builder.html\"><code>WebClient</code></a>` 配置选项的更多信息。",
+      "translation": "您可以在 Spring Framework 参考文档中了解有关 <a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webflux-webclient/client-builder.html\"><code>WebClient</code></a>` 配置选项的更多信息。",
       "count": 2
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a> interface provides a functional style imperative API.",
-      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 接口提供了一种函数式风格的命令式 API。",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html\"><code>RestClient</code></a>` 接口提供了一种函数式风格的命令式 API。",
       "count": 2
     },
     {
@@ -279,7 +279,7 @@
     },
     {
       "source": "Hard-coding absolute URLs in <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/annotation/HttpExchange.html\"><code>@HttpExchange</code></a> annotations is often not ideal in production applications.\nInstead, you will typically want to give the HTTP Service client a logical name in your code, and then lookup a URL from a property based on that name.",
-      "translation": "在 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/annotation/HttpExchange.html\"><code>@HttpExchange</code></a>` 注解中硬编码绝对 URL 在生产应用中通常不是最佳选择。相反，您通常希望在代码中为 HTTP Service 客户端指定一个逻辑名称，然后根据该名称从属性中查找 URL。",
+      "translation": "在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/service/annotation/HttpExchange.html\"><code>@HttpExchange</code></a>` 注解中硬编码绝对 URL 在生产应用中通常不是最佳选择。相反，您通常希望在代码中为 HTTP Service 客户端指定一个逻辑名称，然后根据该名称从属性中查找 URL。",
       "count": 2
     },
     {

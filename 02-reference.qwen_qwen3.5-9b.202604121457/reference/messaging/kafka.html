@@ -1294,11 +1294,11 @@ class MyBean {
 </div>
 </div>
 <div class="paragraph">
-<p>如果定义了 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/transaction/KafkaTransactionManager.html"><code>KafkaTransactionManager</code></a>`  Bean，它将自动关联到容器工厂。同样地，如果定义了 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/adapter/RecordFilterStrategy.html"><code>RecordFilterStrategy</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/CommonErrorHandler.html"><code>CommonErrorHandler</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/AfterRollbackProcessor.html"><code>AfterRollbackProcessor</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/ConsumerAwareRebalanceListener.html"><code>ConsumerAwareRebalanceListener</code></a>` Bean，它将自动关联到默认工厂。</p>
+<p>如果定义了 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/transaction/KafkaTransactionManager.html"><code>KafkaTransactionManager</code></a>`  Bean，它将自动关联到容器工厂。同样地，如果定义了 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/adapter/RecordFilterStrategy.html"><code>RecordFilterStrategy</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/CommonErrorHandler.html"><code>CommonErrorHandler</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/AfterRollbackProcessor.html"><code>AfterRollbackProcessor</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/listener/ConsumerAwareRebalanceListener.html"><code>ConsumerAwareRebalanceListener</code></a>` Bean，它将自动关联到默认工厂。</p>
 </div>
 <div class="paragraph">
-<p>根据监听器类型，默认工厂会关联一个 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/RecordMessageConverter.html"><code>RecordMessageConverter</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/BatchMessageConverter.html"><code>BatchMessageConverter</code></a>` Bean。
-如果批处理监听器仅存在一个 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/RecordMessageConverter.html"><code>RecordMessageConverter</code></a>` Bean，则将其包装在 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/BatchMessageConverter.html"><code>BatchMessageConverter</code></a>` 中。</p>
+<p>根据监听器类型，默认工厂会关联一个 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/RecordMessageConverter.html"><code>RecordMessageConverter</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/BatchMessageConverter.html"><code>BatchMessageConverter</code></a>` Bean。
+如果批处理监听器仅存在一个 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/RecordMessageConverter.html"><code>RecordMessageConverter</code></a>` Bean，则将其包装在 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/converter/BatchMessageConverter.html"><code>BatchMessageConverter</code></a>` 中。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1586,7 +1586,7 @@ spring.kafka.producer.properties[spring.json.add.type.headers]=false</code></pre
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring for Apache Kafka 提供了一种方便的方式来使用嵌入式 Apache Kafka 代理测试项目。
-要使用此功能，请使用来自 `spring-kafka-test` 模块的 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/test/context/EmbeddedKafka.html"><code>@EmbeddedKafka</code></a>` 注解测试类。
+要使用此功能，请使用来自 `spring-kafka-test` 模块的 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/test/context/EmbeddedKafka.html"><code>@EmbeddedKafka</code></a>` 注解测试类。
 有关更多信息，请参阅 Spring for Apache Kafka <a href="https://docs.spring.io/spring-kafka/reference/4.0/testing.html#ekb">参考手册</a>。</p>
 </div>
 <div class="paragraph">
@@ -1635,7 +1635,7 @@ spring.kafka.producer.properties[spring.json.add.type.headers]=false</code></pre
 <div class="ulist">
 <ul>
 <li>
-<p>在 `<a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/test/context/EmbeddedKafka.html"><code>@EmbeddedKafka</code></a>` 注解上配置属性名称：</p>
+<p>在 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/test/context/EmbeddedKafka.html"><code>@EmbeddedKafka</code></a>` 注解上配置属性名称：</p>
 </li>
 </ul>
 </div>

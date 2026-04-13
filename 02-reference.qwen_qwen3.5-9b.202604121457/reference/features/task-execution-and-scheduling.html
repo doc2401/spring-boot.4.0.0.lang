@@ -1098,9 +1098,9 @@
 </ul>
 </nav></div><h1 class="page" id="page-title">任务执行与调度</h1>
 <div class="paragraph">
-<p>如果上下文中没有 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a>` Bean，Spring Boot 会自动配置一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>`。
-当启用虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code>` 设置为 `<code>true</code>）时，这将是一个使用虚拟线程的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html"><code>SimpleAsyncTaskExecutor</code></a>`。
-否则，它将是一个具有合理默认值的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html"><code>ThreadPoolTaskExecutor</code></a>`。</p>
+<p>如果上下文中没有 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a>` Bean，Spring Boot 会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>`。
+当启用虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code>` 设置为 `<code>true</code>）时，这将是一个使用虚拟线程的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html"><code>SimpleAsyncTaskExecutor</code></a>`。
+否则，它将是一个具有合理默认值的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html"><code>ThreadPoolTaskExecutor</code></a>`。</p>
 </div>
 <div class="paragraph">
 <p>除非定义了自定义的<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a>bean，否则自动配置的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>用于以下集成：</p>
@@ -1108,7 +1108,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>使用 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a>` 执行异步任务，除非定义了类型为 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a>` 的 Bean。</p>
+<p>使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a>` 执行异步任务，除非定义了类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a>` 的 Bean。</p>
 </li>
 <li>
 <p>Spring for GraphQL 中异步处理控制器方法的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Callable.html"><code>Callable</code></a> 返回值。</p>
@@ -1560,7 +1560,7 @@ class MyTaskExecutorConfiguration {
 <p>异步任务执行（<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a>），除非存在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a>  Bean。</p>
 </li>
 <li>
-<p>Spring for GraphQL 对控制器方法中 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Callable.html"><code>Callable</code></a>` 返回值的异步处理。</p>
+<p>Spring for GraphQL 对控制器方法中 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Callable.html"><code>Callable</code></a>` 返回值的异步处理。</p>
 </li>
 <li>
 <p>Spring MVC 的异步请求处理。</p>
@@ -1697,8 +1697,8 @@ spring.task.scheduling.pool.size=2</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>如果需创建自定义执行器或调度器，上下文中将提供 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/ThreadPoolTaskExecutorBuilder.html"><code>ThreadPoolTaskExecutorBuilder</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskExecutorBuilder.html"><code>SimpleAsyncTaskExecutorBuilder</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/ThreadPoolTaskSchedulerBuilder.html"><code>ThreadPoolTaskSchedulerBuilder</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskSchedulerBuilder.html"><code>SimpleAsyncTaskSchedulerBuilder</code></a>` bean。
-`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskExecutorBuilder.html"><code>SimpleAsyncTaskExecutorBuilder</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskSchedulerBuilder.html"><code>SimpleAsyncTaskSchedulerBuilder</code></a>` bean 会自动配置为使用虚拟线程（如果已启用，即使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code> 设置为 `<code>true</code>）。</p>
+<p>如果需创建自定义执行器或调度器，上下文中将提供 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/ThreadPoolTaskExecutorBuilder.html"><code>ThreadPoolTaskExecutorBuilder</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskExecutorBuilder.html"><code>SimpleAsyncTaskExecutorBuilder</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/ThreadPoolTaskSchedulerBuilder.html"><code>ThreadPoolTaskSchedulerBuilder</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskSchedulerBuilder.html"><code>SimpleAsyncTaskSchedulerBuilder</code></a>` bean。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskExecutorBuilder.html"><code>SimpleAsyncTaskExecutorBuilder</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/task/SimpleAsyncTaskSchedulerBuilder.html"><code>SimpleAsyncTaskSchedulerBuilder</code></a>` bean 会自动配置为使用虚拟线程（如果已启用，即使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code> 设置为 `<code>true</code>）。</p>
 </div>
 <nav class="pagination"><span class="prev"><a href="json.html">JSON</a></span>
 <span class="next"><a href="dev-services.html">开发时服务</a></span></nav>

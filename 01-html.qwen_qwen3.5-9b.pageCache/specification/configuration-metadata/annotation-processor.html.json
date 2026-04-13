@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "If the class has a single parameterized constructor, one property is created per constructor parameter, unless the constructor is annotated with <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>.\nIf the class has a constructor explicitly annotated with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/ConstructorBinding.html\"><code>@ConstructorBinding</code></a>, one property is created per constructor parameter for that constructor.\nOtherwise, properties are discovered through the presence of standard getters and setters with special handling for collection and map types (that is detected even if only a getter is present).\nThe annotation processor also supports the use of the <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Data.html\"><code>@Data</code></a>, <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Value.html\"><code>@Value</code></a>, <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Getter.html\"><code>@Getter</code></a>, and <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Setter.html\"><code>@Setter</code></a> lombok annotations.",
-      "translation": "如果该类具有单个参数化构造函数，除非该构造函数被标注为 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>`，否则将为每个构造函数参数创建一个属性。\n如果该类具有一个显式标注为 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/ConstructorBinding.html\"><code>@ConstructorBinding</code></a>` 的构造函数，则为此构造函数的每个参数创建一个属性。\n否则，将通过标准 getter 和 setter 的存在来发现属性，并对集合和 Map 类型进行特殊处理（即使仅存在 getter 也能检测到）。\n注解处理器还支持使用 lombok 注解 `<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Data.html\"><code>@Data</code></a>`、`<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Value.html\"><code>@Value</code></a>`、`<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Getter.html\"><code>@Getter</code></a>` 和 `<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Setter.html\"><code>@Setter</code></a>`。",
+      "translation": "如果该类具有单个参数化构造函数，除非该构造函数被标注为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>`，否则将为每个构造函数参数创建一个属性。\n如果该类具有一个显式标注为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/ConstructorBinding.html\"><code>@ConstructorBinding</code></a>` 的构造函数，则为此构造函数的每个参数创建一个属性。\n否则，将通过标准 getter 和 setter 的存在来发现属性，并对集合和 Map 类型进行特殊处理（即使仅存在 getter 也能检测到）。\n注解处理器还支持使用 lombok 注解 <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Data.html\"><code>@Data</code></a>`、<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Value.html\"><code>@Value</code></a>`、<a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Getter.html\"><code>@Getter</code></a>` 和 <a class=\"apiref\" href=\"https://projectlombok.org/api/lombok/Setter.html\"><code>@Setter</code></a>`。",
       "count": 2
     },
     {
@@ -34,12 +34,12 @@
     },
     {
       "source": "If a type located in another module is used in a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>-annotated type, some metadata elements cannot be discovered automatically.\nReusing the example above, if <code>Host</code> is located in another module, full metadata is not available as the annotation processor does not have access to the source of <code>Host</code>.",
-      "translation": "如果另一个模块中的类型被用于 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的类型中，则无法自动发现某些元数据元素。\n重新使用上面的示例，如果 `Host` 位于另一个模块中，则无法获取完整的元数据，因为注解处理器无法访问 `Host` 的源代码。",
+      "translation": "如果另一个模块中的类型被用于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的类型中，则无法自动发现某些元数据元素。\n重新使用上面的示例，如果 `Host` 位于另一个模块中，则无法获取完整的元数据，因为注解处理器无法访问 `Host` 的源代码。",
       "count": 2
     },
     {
       "source": "You can easily generate your own configuration metadata file from items annotated with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a> by using the <code>spring-boot-configuration-processor</code> jar.\nThe jar includes a Java annotation processor which is invoked as your project is compiled.",
-      "translation": "您可以使用 `spring-boot-configuration-processor` jar 文件，轻松生成由带有 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的项目项生成的自定义配置元数据文件。\n该 jar 文件包含一个 Java 注解处理器，在项目编译时会被调用。",
+      "translation": "您可以使用 `spring-boot-configuration-processor` jar 文件，轻松生成由带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的项目项生成的自定义配置元数据文件。\n该 jar 文件包含一个 Java 注解处理器，在项目编译时会被调用。",
       "count": 2
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "source": "Spring Boot’s configuration file handling is quite flexible, and it is often the case that properties may exist that are not bound to a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a> bean.\nYou may also need to tune some attributes of an existing key or to ignore the key altogether.\nTo support such cases and let you provide custom \"hints\", the annotation processor automatically merges items from <code>META-INF/additional-spring-configuration-metadata.json</code> into the main metadata file.",
-      "translation": "Spring Boot 的配置文件处理非常灵活，通常情况下可能存在一些未绑定到 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>`  Bean 的属性。\n您可能还需要调整现有键的一些属性，或者完全忽略该键。\n为了支持此类情况并让您提供自定义“提示”，注解处理器会自动将 <code>META-INF/additional-spring-configuration-metadata.json</code> 中的项合并到主元数据文件中。",
+      "translation": "Spring Boot 的配置文件处理非常灵活，通常情况下可能存在一些未绑定到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>`  Bean 的属性。\n您可能还需要调整现有键的一些属性，或者完全忽略该键。\n为了支持此类情况并让您提供自定义“提示”，注解处理器会自动将 <code>META-INF/additional-spring-configuration-metadata.json</code> 中的项合并到主元数据文件中。",
       "count": 2
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "source": "You can also annotate a parent class located in another module that a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>-annotated type extends from.",
-      "translation": "您还可以注解位于另一个模块中的父类，该父类被一个带有 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的类型继承。",
+      "translation": "您还可以注解位于另一个模块中的父类，该父类被一个带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>` 注解的类型继承。",
       "count": 2
     },
     {

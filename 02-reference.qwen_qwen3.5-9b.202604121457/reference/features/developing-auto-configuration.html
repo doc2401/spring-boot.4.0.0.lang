@@ -1247,10 +1247,10 @@ com.mycorp.libx.autoconfigure.LibXWebAutoConfiguration</code></pre>
 <div class="sect2">
 <h3 id="features.developing-auto-configuration.condition-annotations.class-conditions"><a class="anchor" href="#features.developing-auto-configuration.condition-annotations.class-conditions"></a>类条件</h3>
 <div class="paragraph">
-<p>`@ConditionalOnClass` 和 `@ConditionalOnMissingClass` 注解允许根据特定类的存在或缺失情况来包含 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类。由于注解元数据是使用 <a href="https://asm.ow2.io/">ASM</a> 解析的，因此您可以使用 `value` 属性引用真实类，即使该类实际上并未出现在运行中的应用类路径中。如果您更喜欢通过 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html"><code>String</code></a>` 值指定类名，也可以使用 `name` 属性。</p>
+<p>`@ConditionalOnClass` 和 `@ConditionalOnMissingClass` 注解允许根据特定类的存在或缺失情况来包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类。由于注解元数据是使用 <a href="https://asm.ow2.io/">ASM</a> 解析的，因此您可以使用 `value` 属性引用真实类，即使该类实际上并未出现在运行中的应用类路径中。如果您更喜欢通过 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html"><code>String</code></a>` 值指定类名，也可以使用 `name` 属性。</p>
 </div>
 <div class="paragraph">
-<p>此机制不适用于 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 方法，因为通常返回类型是条件的目标：在方法的条件应用之前，JVM 将已加载该类并可能处理了方法引用；如果该类不存在，这些方法引用将会失败。</p>
+<p>此机制不适用于 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 方法，因为通常返回类型是条件的目标：在方法的条件应用之前，JVM 将已加载该类并可能处理了方法引用；如果该类不存在，这些方法引用将会失败。</p>
 </div>
 <div class="paragraph">
 <p>为处理此场景，可以使用单独的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>类来隔离条件，如下例所示：</p>
@@ -1344,10 +1344,10 @@ class MyAutoConfiguration {
 <div class="sect2">
 <h3 id="features.developing-auto-configuration.condition-annotations.bean-conditions"><a class="anchor" href="#features.developing-auto-configuration.condition-annotations.bean-conditions"></a>Bean 条件</h3>
 <div class="paragraph">
-<p>`@ConditionalOnBean` 和 `@ConditionalOnMissingBean` 注解允许根据特定 bean 的存在或缺失来包含一个 bean。您可以使用 `value` 属性按类型指定 bean，或使用 `name` 属性按名称指定 bean。`search` 属性允许您限制在搜索 bean 时应考虑的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 层次结构。</p>
+<p>`@ConditionalOnBean` 和 `@ConditionalOnMissingBean` 注解允许根据特定 bean 的存在或缺失来包含一个 bean。您可以使用 `value` 属性按类型指定 bean，或使用 `name` 属性按名称指定 bean。`search` 属性允许您限制在搜索 bean 时应考虑的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 层次结构。</p>
 </div>
 <div class="paragraph">
-<p>当放置在 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 方法上时，目标类型默认为该方法的返回类型，如下例所示：</p>
+<p>当放置在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 方法上时，目标类型默认为该方法的返回类型，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_2">
 <div class="content">
@@ -1404,7 +1404,7 @@ class MyAutoConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>在前面的示例中，如果 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 中尚未包含类型为 <code>SomeService</code> 的 bean，则将会创建 <code>someService</code> bean。</p>
+<p>在前面的示例中，如果 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 中尚未包含类型为 <code>SomeService</code> 的 bean，则将会创建 <code>someService</code> bean。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1447,7 +1447,7 @@ class MyAutoConfiguration {
 <div class="sect2">
 <h3 id="features.developing-auto-configuration.condition-annotations.property-conditions"><a class="anchor" href="#features.developing-auto-configuration.condition-annotations.property-annotations"></a>属性条件</h3>
 <div class="paragraph">
-<p>`@ConditionalOnProperty` 注解允许根据 Spring Environment 属性包含配置。使用 `prefix` 和 `name` 属性来指定要检查的属性。默认情况下，任何存在且不等于 `false` 的属性都会匹配。还有一个专门的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnBooleanProperty.html"><code>@ConditionalOnBooleanProperty</code></a>` 注解专门用于布尔属性。对于这两个注解，您还可以通过使用 `havingValue` 和 `matchIfMissing` 属性创建更高级的检查。</p>
+<p>`@ConditionalOnProperty` 注解允许根据 Spring Environment 属性包含配置。使用 `prefix` 和 `name` 属性来指定要检查的属性。默认情况下，任何存在且不等于 `false` 的属性都会匹配。还有一个专门的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnBooleanProperty.html"><code>@ConditionalOnBooleanProperty</code></a>` 注解专门用于布尔属性。对于这两个注解，您还可以通过使用 `havingValue` 和 `matchIfMissing` 属性创建更高级的检查。</p>
 </div>
 <div class="paragraph">
 <p>如果 <code>name</code> 属性中给出了多个名称，则所有属性都必须通过测试，条件才能匹配。</p>
@@ -1462,9 +1462,9 @@ class MyAutoConfiguration {
 <div class="sect2">
 <h3 id="features.developing-auto-configuration.condition-annotations.web-application-conditions"><a class="anchor" href="#features.developing-auto-configuration.condition-annotations.web-application-conditions"></a>Web 应用程序条件</h3>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnWebApplication.html"><code>@ConditionalOnWebApplication</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnNotWebApplication.html"><code>@ConditionalOnNotWebApplication</code></a>` 注解允许根据应用程序是否为 Web 应用程序来包含配置。
-基于 Servlet 的 Web 应用程序是指任何使用 Spring `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/WebApplicationContext.html"><code>WebApplicationContext</code></a>`、定义 `session` 作用域或具有 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebEnvironment.html"><code>ConfigurableWebEnvironment</code></a>` 的应用程序。
-响应式 Web 应用程序是指任何使用 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ReactiveWebApplicationContext.html"><code>ReactiveWebApplicationContext</code></a>` 或具有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ConfigurableReactiveWebEnvironment.html"><code>ConfigurableReactiveWebEnvironment</code></a>` 的应用程序。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnWebApplication.html"><code>@ConditionalOnWebApplication</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnNotWebApplication.html"><code>@ConditionalOnNotWebApplication</code></a>` 注解允许根据应用程序是否为 Web 应用程序来包含配置。
+基于 Servlet 的 Web 应用程序是指任何使用 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/WebApplicationContext.html"><code>WebApplicationContext</code></a>`、定义 `session` 作用域或具有 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebEnvironment.html"><code>ConfigurableWebEnvironment</code></a>` 的应用程序。
+响应式 Web 应用程序是指任何使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ReactiveWebApplicationContext.html"><code>ReactiveWebApplicationContext</code></a>` 或具有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ConfigurableReactiveWebEnvironment.html"><code>ConfigurableReactiveWebEnvironment</code></a>` 的应用程序。</p>
 </div>
 <div class="paragraph">
 <p>`@ConditionalOnWarDeployment` 和 `@ConditionalOnNotWarDeployment` 注解允许根据应用程序是否为部署到 Servlet 容器的传统 WAR 应用程序来包含配置。对于使用嵌入式 Web 服务器运行的应用程序，此条件将不匹配。</p>

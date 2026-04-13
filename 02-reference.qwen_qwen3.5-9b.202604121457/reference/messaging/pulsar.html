@@ -1310,7 +1310,7 @@ class MyBean(private val pulsarTemplate: PulsarTemplate&lt;String&gt;) {
 </div>
 </div>
 <div class="paragraph">
-<p>`PulsarTemplate` 依赖 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarProducerFactory.html"><code>PulsarProducerFactory</code></a>` 来创建底层的 Pulsar 生产者。
+<p>`PulsarTemplate` 依赖 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarProducerFactory.html"><code>PulsarProducerFactory</code></a>` 来创建底层的 Pulsar 生产者。
 Spring Boot 自动配置也提供了该生产者工厂，默认情况下会缓存其创建的生产者。
 您可以通过指定任何以 <code>spring.pulsar.producer.*</code>` 和 `<code>spring.pulsar.producer.cache.*</code> 为前缀的应用程序属性来配置生产者工厂和缓存设置。</p>
 </div>
@@ -1318,7 +1318,7 @@ Spring Boot 自动配置也提供了该生产者工厂，默认情况下会缓�
 <p>如果您需要对生产者工厂配置拥有更多控制权，请考虑注册一个或多个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/ProducerBuilderCustomizer.html"><code>ProducerBuilderCustomizer</code></a> Bean。这些自定义器将应用于所有创建的生产者。此外，您也可以在使用 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/ProducerBuilderCustomizer.html"><code>ProducerBuilderCustomizer</code></a> 发送消息时传入该自定义器，以仅影响当前生产者。</p>
 </div>
 <div class="paragraph">
-<p>如果您需要更精细地控制发送的消息，可以在发送消息时传入一个 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/TypedMessageBuilderCustomizer.html"><code>TypedMessageBuilderCustomizer</code></a>`。</p>
+<p>如果您需要更精细地控制发送的消息，可以在发送消息时传入一个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/TypedMessageBuilderCustomizer.html"><code>TypedMessageBuilderCustomizer</code></a>`。</p>
 </div>
 </div>
 </div>
@@ -1452,7 +1452,7 @@ class MyBean {
 </div>
 </div>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarReader.html"><code>@PulsarReader</code></a>` 依赖于一个 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarReaderFactory.html"><code>PulsarReaderFactory</code></a>` 来创建底层的 Pulsar 读取器。Spring Boot 自动配置提供了该读取器工厂，可以通过设置任何以 <code>spring.pulsar.reader.*</code> 为前缀的应用程序属性来自定义它。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarReader.html"><code>@PulsarReader</code></a>` 依赖于一个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarReaderFactory.html"><code>PulsarReaderFactory</code></a>` 来创建底层的 Pulsar 读取器。Spring Boot 自动配置提供了该读取器工厂，可以通过设置任何以 <code>spring.pulsar.reader.*</code> 为前缀的应用程序属性来自定义它。</p>
 </div>
 <div class="paragraph">
 <p>如果您需要对读取器工厂的配置拥有更多控制权，请考虑注册一个或多个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/ReaderBuilderCustomizer.html"><code>ReaderBuilderCustomizer</code></a> Bean。这些自定义器将应用于工厂创建的所有读取器，因此也适用于所有 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarReader.html"><code>@PulsarReader</code></a> 实例。您还可以通过设置 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarReader.html"><code>@PulsarReader</code></a> 注解的 <code>readerCustomizer</code> 属性来自定义单个监听器。</p>
@@ -1485,13 +1485,13 @@ class MyBean {
 <div class="ulist">
 <ul>
 <li>
-<p>配置一个 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/transaction/PulsarTransactionManager.html"><code>PulsarTransactionManager</code></a>`  Bean。</p>
+<p>配置一个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/transaction/PulsarTransactionManager.html"><code>PulsarTransactionManager</code></a>`  Bean。</p>
 </li>
 <li>
-<p>为 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarTemplate.html"><code>PulsarTemplate</code></a>` 启用事务支持</p>
+<p>为 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarTemplate.html"><code>PulsarTemplate</code></a>` 启用事务支持</p>
 </li>
 <li>
-<p>为 `<a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarListener.html"><code>@PulsarListener</code></a>` 方法启用事务支持</p>
+<p>为 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarListener.html"><code>@PulsarListener</code></a>` 方法启用事务支持</p>
 </li>
 </ul>
 </div>

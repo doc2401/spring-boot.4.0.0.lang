@@ -1144,7 +1144,7 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 <p>Spring Boot 自动配置会尽力“做正确的事”，但有时会出现问题，且难以判断原因。</p>
 </div>
 <div class="paragraph">
-<p>有一个非常实用的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionEvaluationReport.html"><code>ConditionEvaluationReport</code></a>` 存在于任何 Spring Boot `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 中。
+<p>有一个非常实用的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionEvaluationReport.html"><code>ConditionEvaluationReport</code></a>` 存在于任何 Spring Boot <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 中。
 如果您启用 <code>DEBUG</code>` 日志输出，就可以查看它。
 如果您使用 `<code>spring-boot-actuator</code>`（参见 <a class="xref page" href="actuator.html">Actuator</a> 部分），还有一个 `<code>conditions</code> 端点以 JSON 格式渲染该报告。
 使用该端点来调试应用程序，查看 Spring Boot 在运行时添加了哪些功能（以及未添加哪些功能）。</p>
@@ -1161,9 +1161,9 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 对于已启用 actuator 的运行中应用程序，查看 `<code>conditions</code>` 端点（`<code>/actuator/conditions</code> 或等价的 JMX 端点）以获取相同的信息。</p>
 </li>
 <li>
-<p>查找带有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 注解的类（例如 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a>`），并从该类中读取可用的外部配置选项。
-`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 注解具有一个 <code>name</code>` 属性，该属性作为外部属性的前缀。
-因此，`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a>` 具有 `<code>prefix="server"</code>`，其配置属性为 `<code>server.port</code>`、`<code>server.address</code>` 等。
+<p>查找带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 注解的类（例如 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a>`），并从该类中读取可用的外部配置选项。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 注解具有一个 <code>name</code>` 属性，该属性作为外部属性的前缀。
+因此，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a>` 具有 `<code>prefix="server"</code>`，其配置属性为 `<code>server.port</code>`、`<code>server.address</code>` 等。
 在启用了 actuator 的正在运行的应用程序中，查看 `<code>configprops</code> 端点。</p>
 </li>
 <li>
@@ -1173,7 +1173,7 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 <p>查找直接绑定到<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a>注解。</p>
 </li>
 <li>
-<p>查找 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnExpression.html"><code>@ConditionalOnExpression</code></a>` 注解，这些注解会根据 SpEL 表达式开启或关闭功能，这些表达式通常使用从 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 解析的占位符进行求值。</p>
+<p>查找 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionalOnExpression.html"><code>@ConditionalOnExpression</code></a>` 注解，这些注解会根据 SpEL 表达式开启或关闭功能，这些表达式通常使用从 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>` 解析的占位符进行求值。</p>
 </li>
 </ul>
 </div>
@@ -1183,7 +1183,7 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 <h2 id="howto.application.customize-the-environment-or-application-context"><a class="anchor" href="#howto.application.customize-the-environment-or-application-context"></a>在环境或 ApplicationContext 启动之前进行自定义</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a>` 包含 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html"><code>ApplicationListener</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html"><code>ApplicationContextInitializer</code></a>` 实现，用于对上下文或环境应用自定义配置。
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a>` 包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html"><code>ApplicationListener</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html"><code>ApplicationContextInitializer</code></a>` 实现，用于对上下文或环境应用自定义配置。
 Spring Boot 会从 <code>META-INF/spring.factories</code> 加载多种此类自定义配置以供内部使用。
 注册额外自定义配置的方法不止一种：</p>
 </div>
@@ -1198,7 +1198,7 @@ Spring Boot 会从 <code>META-INF/spring.factories</code> 加载多种此类自�
 </ul>
 </div>
 <div class="paragraph">
-<p>`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a>` 会向监听器发送一些特殊的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/event/ApplicationEvents.html"><code>ApplicationEvents</code></a>`（甚至在上下文创建之前），然后还会注册用于接收由 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 发布的事件的监听器。
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a>` 会向监听器发送一些特殊的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/event/ApplicationEvents.html"><code>ApplicationEvents</code></a>`（甚至在上下文创建之前），然后还会注册用于接收由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>` 发布的事件的监听器。
 请参阅“Spring Boot 功能”部分中的 <a class="xref page" href="../reference/features/spring-application.html#features.spring-application.application-events-and-listeners">Application Events and Listeners</a> 以获取完整列表。</p>
 </div>
 <div class="paragraph">

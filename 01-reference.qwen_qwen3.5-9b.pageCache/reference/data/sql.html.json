@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Spring Data repositories usually extend from the <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a> interfaces.\nIf you use auto-configuration, the <a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">auto-configuration packages</a> are searched for repositories.",
-      "translation": "Spring Data 存储库通常继承自 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a>` 或 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a>` 接口。\n如果您使用自动配置，将在 `<a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">自动配置包</a>` 中搜索存储库。",
+      "translation": "Spring Data 存储库通常继承自 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a>` 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a>` 接口。\n如果您使用自动配置，将在 <a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">自动配置包</a>` 中搜索存储库。",
       "count": 3
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "source": "When a <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> bean is available, the regular JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> auto-configuration backs off.\nIf you want to retain the JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> auto-configuration, and are comfortable with the risk of using the blocking JDBC API in a reactive application, add <code>@Import(DataSourceAutoConfiguration.class)</code> on a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> class in your application to re-enable it.",
-      "translation": "当存在 `<a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a>` Bean 时，常规的 JDBC `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置将不会生效。如果您希望保留 JDBC `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置，并且能够接受在响应式应用程序中使用阻塞式 JDBC API 的风险，请在您的应用程序中的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a>` 类上添加 <code>@Import(DataSourceAutoConfiguration.class)</code> 以重新启用它。",
+      "translation": "当存在 <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a>` Bean 时，常规的 JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置将不会生效。如果您希望保留 JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置，并且能够接受在响应式应用程序中使用阻塞式 JDBC API 的风险，请在您的应用程序中的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a>` 类上添加 <code>@Import(DataSourceAutoConfiguration.class)</code> 以重新启用它。",
       "count": 2
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "source": "Additional connection pools can always be configured manually, using <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>.\nIf you define your own <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> bean, auto-configuration does not occur.\nThe following connection pools are supported by <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>:",
-      "translation": "可以使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 手动配置额外的连接池。\n如果您定义了自定义的 `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` Bean，则不会进行自动配置。\n`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 支持以下连接池：",
+      "translation": "可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 手动配置额外的连接池。\n如果您定义了自定义的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` Bean，则不会进行自动配置。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 支持以下连接池：",
       "count": 2
     },
     {
@@ -79,7 +79,7 @@
     },
     {
       "source": "Java’s <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> interface provides a standard method of working with database connections.\nTraditionally, a <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> uses a <code>URL</code> along with some credentials to establish a database connection.",
-      "translation": "Java 的 `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 接口提供了一种与数据库连接进行交互的标准方法。传统上，`<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 使用 <code>URL</code> 以及一些凭据来建立数据库连接。",
+      "translation": "Java 的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 接口提供了一种与数据库连接进行交互的标准方法。传统上，<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 使用 <code>URL</code> 以及一些凭据来建立数据库连接。",
       "count": 2
     },
     {
@@ -264,7 +264,7 @@
     },
     {
       "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html\"><code>DatabaseClient</code></a> bean is auto-configured, and you can autowire it directly into your own beans, as shown in the following example:",
-      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html\"><code>DatabaseClient</code></a>` 自动配置了一个 Bean，您可以像以下示例中那样直接将其注入到自己的 Bean 中：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html\"><code>DatabaseClient</code></a>` 自动配置了一个 Bean，您可以像以下示例中那样直接将其注入到自己的 Bean 中：",
       "count": 2
     },
     {

@@ -1328,7 +1328,7 @@ Jedis 不支持 master/replica。
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果您添加自己的任何自动配置类型的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它将替换默认值（除非是 `<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/core/RedisTemplate.html"><code>RedisTemplate</code></a>` 的情况，此时排除是基于 bean 名称 `redisTemplate`，而不是其类型）。</p>
+<p>如果您添加自己的任何自动配置类型的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它将替换默认值（除非是 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/core/RedisTemplate.html"><code>RedisTemplate</code></a>` 的情况，此时排除是基于 bean 名称 `redisTemplate`，而不是其类型）。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下，如果类路径中包含 <code>commons-pool2</code>，则会自动配置连接池工厂。</p>
@@ -2218,10 +2218,10 @@ spring.elasticsearch.restclient.sniffer.delay-after-failure=30s</code></pre>
 <div class="sect3">
 <h4 id="data.nosql.elasticsearch.connecting-using-rest.javaapiclient"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest.javaapiclient"></a>使用 ElasticsearchClient 连接到 Elasticsearch</h4>
 <div class="paragraph">
-<p>如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 `<code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean。</p>
+<p>如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 `<code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean。</p>
 </div>
 <div class="paragraph">
-<p>`ElasticsearchClient` 使用依赖于前述 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a>` 的传输层。因此，可以以前述描述的属性来配置 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>`。此外，您可以定义一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/Rest5ClientOptions.html"><code>Rest5ClientOptions</code></a>` Bean 以进一步控制传输层的行为。</p>
+<p>`ElasticsearchClient` 使用依赖于前述 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a>` 的传输层。因此，可以以前述描述的属性来配置 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>`。此外，您可以定义一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/Rest5ClientOptions.html"><code>Rest5ClientOptions</code></a>` Bean 以进一步控制传输层的行为。</p>
 </div>
 </div>
 <div class="sect3">
@@ -2238,7 +2238,7 @@ spring.elasticsearch.restclient.sniffer.delay-after-failure=30s</code></pre>
 <div class="sect2">
 <h3 id="data.nosql.elasticsearch.connecting-using-spring-data"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-spring-data"></a>使用 Spring Data 连接 Elasticsearch</h3>
 <div class="paragraph">
-<p>要连接到 Elasticsearch，必须定义一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean，该 Bean 由 Spring Boot 自动配置或由应用程序手动提供（参见前面的章节）。有了此配置，就可以像注入任何其他 Spring Bean 一样注入一个 `<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ElasticsearchTemplate.html"><code>ElasticsearchTemplate</code></a>`，如下面的示例所示：</p>
+<p>要连接到 Elasticsearch，必须定义一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean，该 Bean 由 Spring Boot 自动配置或由应用程序手动提供（参见前面的章节）。有了此配置，就可以像注入任何其他 Spring Bean 一样注入一个 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ElasticsearchTemplate.html"><code>ElasticsearchTemplate</code></a>`，如下面的示例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_19">
 <div class="content">
@@ -2896,7 +2896,7 @@ spring.couchbase.env.ssl.bundle=example</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>以下示例展示了如何注入一个 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a>` 类型的 Bean：</p>
+<p>以下示例展示了如何注入一个 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a>` 类型的 Bean：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_31">
 <div class="content">
@@ -2962,13 +2962,13 @@ class MyBean(private val template: CouchbaseTemplate) {
 <div class="ulist">
 <ul>
 <li>
-<p>一个名为 `couchbaseMappingContext` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/mapping/CouchbaseMappingContext.html"><code>CouchbaseMappingContext</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+<p>一个名为 `couchbaseMappingContext` 的 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/mapping/CouchbaseMappingContext.html"><code>CouchbaseMappingContext</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
 </li>
 <li>
-<p>一个名为 `couchbaseCustomConversions` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/convert/CustomConversions.html"><code>CustomConversions</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+<p>一个名为 `couchbaseCustomConversions` 的 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/convert/CustomConversions.html"><code>CustomConversions</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
 </li>
 <li>
-<p>一个名为 `couchbaseTemplate` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+<p>一个名为 `couchbaseTemplate` 的 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
 </li>
 </ul>
 </div>
@@ -3088,7 +3088,7 @@ spring.ldap.password=secret</code></pre>
 <p>如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code>` 和 `<code>spring.ldap.base-environment</code> 属性。</p>
 </div>
 <div class="paragraph">
-<p>`LdapContextSource` 会根据这些设置进行自动配置。如果存在 `DirContextAuthenticationStrategy` Bean，它将与自动配置的 `LdapContextSource` 关联。如果您需要对其进行自定义（例如使用 `PooledContextSource`），仍然可以注入自动配置的 `LdapContextSource`。请确保将自定义的 `ContextSource` 标记为 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a>`，以便自动配置的 `<a class="apiref" href="https://docs.spring.io/spring-ldap/docs/4.0.x/api/org/springframework/ldap/core/LdapTemplate.html"><code>LdapTemplate</code></a>` 使用它。</p>
+<p>`LdapContextSource` 会根据这些设置进行自动配置。如果存在 `DirContextAuthenticationStrategy` Bean，它将与自动配置的 `LdapContextSource` 关联。如果您需要对其进行自定义（例如使用 `PooledContextSource`），仍然可以注入自动配置的 `LdapContextSource`。请确保将自定义的 `ContextSource` 标记为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a>`，以便自动配置的 <a class="apiref" href="https://docs.spring.io/spring-ldap/docs/4.0.x/api/org/springframework/ldap/core/LdapTemplate.html"><code>LdapTemplate</code></a>` 使用它。</p>
 </div>
 </div>
 <div class="sect2">
