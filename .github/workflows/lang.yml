@@ -1,10 +1,10 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Language‌ content to Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["lang"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,6 +33,30 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build localized pages
+        run: |
+          if [ -f config.json ]; then
+            jq -c '.pages[]' config.json | while read -r item; do
+              url=$(echo "$item" | jq -r '.url')
+              clean_url="${url%/}"
+              
+              echo "Processing URL directory: $clean_url"
+              mkdir -p "$clean_url"
+              
+              # Iterate through the path array
+              echo "$item" | jq -r '.path[]' | while read -r src_path; do
+                clean_path="${src_path%/}"
+                if [ -d "$clean_path" ]; then
+                  echo "  -> Copying $clean_path/* to $clean_url/"
+                  cp -a "$clean_path"/. "$clean_url"/
+                else
+                  echo "  -> Warning: Source path $clean_path not found!"
+                fi
+              done
+            done
+          else
+            echo "config.json not found."
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
