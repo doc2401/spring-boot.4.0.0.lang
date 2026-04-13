@@ -1,0 +1,646 @@
+{
+  "created_at": "2026-04-12 20:22:08",
+  "updated_at": "2026-04-13 00:21:53",
+  "stats": {
+    "total_entries": 126,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 248,
+    "entries_with_hits": 126,
+    "entries_without_hits": 0,
+    "hit_rate": 1.9682539682539681,
+    "usage_percentage": 0.0126
+  },
+  "items": [
+    {
+      "source": "See <a class=\"xref page\" href=\"../reference/features/profiles.html\">Profiles</a> in the “Spring Boot Features” section for more information.",
+      "translation": "有关更多信息，请参阅“Spring Boot 功能”部分中的<a class=\"xref page\" href=\"../reference/features/profiles.html\">Profiles</a>。",
+      "count": 3
+    },
+    {
+      "source": "The appendix includes an <a class=\"xref page\" href=\"../appendix/application-properties/index.html\"><code>application.properties</code></a> example with a list of the most common properties supported by Spring Boot.\nThe definitive list comes from searching the source code for <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> annotations as well as the occasional use of <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/Binder.html\"><code>Binder</code></a>.\nFor more about the exact ordering of loading properties, see <a class=\"xref page\" href=\"../reference/features/external-config.html\">Externalized Configuration</a>.",
+      "translation": "附录包含一个 `<a class=\"xref page\" href=\"../appendix/application-properties/index.html\"><code>application.properties</code></a>` 示例，列出了 Spring Boot 支持的最常见属性。\n权威列表来自搜索源代码中的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> 注解，以及偶尔使用的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/Binder.html\"><code>Binder</code></a>。\n有关属性加载确切顺序的更多信息，请参阅 <a class=\"xref page\" href=\"../reference/features/external-config.html\">外部化配置</a>。",
+      "count": 2
+    },
+    {
+      "source": "Create a file called <code>application.yaml</code> and put it in the root of your classpath.\nThen add <code>snakeyaml</code> to your dependencies (Maven coordinates <code>org.yaml:snakeyaml</code>, already included if you use the <code>spring-boot-starter</code>).\nA YAML file is parsed to a Java <code>Map&lt;String,Object&gt;</code> (like a JSON object), and Spring Boot flattens the map so that it is one level deep and has period-separated keys, as many people are used to with <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html\"><code>Properties</code></a> files in Java.",
+      "translation": "创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 `<code>snakeyaml</code>`（Maven 坐标为 `<code>org.yaml:snakeyaml</code>`，如果您使用 `<code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java `<code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html\"><code>Properties</code></a>` 文件一样。",
+      "count": 2
+    },
+    {
+      "source": "The Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> has an API for this, but you would normally set a System property (<code>spring.profiles.active</code>) or an OS environment variable (<code>SPRING_PROFILES_ACTIVE</code>).\nAlso, you can launch your application with a <code>-D</code> argument (remember to put it before the main class or jar archive), as follows:",
+      "translation": "Spring 的<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>提供了此功能的 API，但通常情况下，您会设置一个系统属性（<code>spring.profiles.active</code>）或操作系统环境变量（<code>SPRING_PROFILES_ACTIVE</code>）。此外，您还可以使用 <code>-D</code> 参数启动应用程序（请记住将其放在主类或 jar 归档之前），如下所示：",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> has bean property setters, so you can use its Java API as you create the application to modify its behavior.\nAlternatively, you can externalize the configuration by setting properties in <code>spring.main.*</code>.\nFor example, in <code>application.properties</code>, you might have the following settings:",
+      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。\n或者，您可以通过在 <code>spring.main.*</code>` 中设置属性来外部化配置。\n例如，在 `<code>application.properties</code> 中，您可能会有以下设置：",
+      "count": 2
+    },
+    {
+      "source": "<code>spring.config.location</code> (<code>SPRING_CONFIG_LOCATION</code>): The file to load (such as a classpath resource or a URL).\nA separate <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> property source is set up for this document and it can be overridden by system properties, environment variables, or the command line.",
+      "translation": "<code>spring.config.location</code> (<code>SPRING_CONFIG_LOCATION</code>): 要加载的文件（例如类路径资源或 URL）。\n为此文档设置了一个单独的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性源，它可以被系统属性、环境变量或命令行覆盖。",
+      "count": 2
+    },
+    {
+      "source": "Or to <code>sources(…​)</code> method of a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>:",
+      "translation": "或到 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>` 的 `sources(…​)` 方法：",
+      "count": 2
+    },
+    {
+      "source": "By default, properties from different sources are added to the Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> in a defined order (see <a class=\"xref page\" href=\"../reference/features/external-config.html\">Externalized Configuration</a> in the “Spring Boot Features” section for the exact order).",
+      "translation": "默认情况下，来自不同来源的属性按定义顺序添加到 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中（有关确切顺序，请参阅“Spring Boot 功能”部分中的<a class=\"xref page\" href=\"../reference/features/external-config.html\">外部化配置</a>）。",
+      "count": 2
+    },
+    {
+      "source": "<code>spring.config.name</code> (<code>SPRING_CONFIG_NAME</code>): Defaults to <code>application</code> as the root of the file name.",
+      "translation": "<code>spring.config.name</code> (<code>SPRING_CONFIG_NAME</code>)：默认为 <code>application</code>，作为文件名的根。",
+      "count": 2
+    },
+    {
+      "source": "Some people like to use (for example) <code>--port=9000</code> instead of <code>--server.port=9000</code> to set configuration properties on the command line.\nYou can enable this behavior by using placeholders in <code>application.properties</code>, as shown in the following example:",
+      "translation": "有些人喜欢使用（例如）`--port=9000` 而不是 `--server.port=9000` 在命令行中设置配置属性。您可以通过在 `application.properties` 中使用占位符来启用此行为，如下面的示例所示：",
+      "count": 2
+    },
+    {
+      "source": "The default profile is a profile that is enabled if no profile is active.\nBy default, the name of the default profile is <code>default</code>, but it could be changed using a System property (<code>spring.profiles.default</code>) or an OS environment variable (<code>SPRING_PROFILES_DEFAULT</code>).",
+      "translation": "默认配置文件是在没有活动配置文件时启用的配置文件。默认情况下，默认配置文件的名称为 <code>default</code>，但可以通过系统属性（<code>spring.profiles.default</code>）或操作系统环境变量（<code>SPRING_PROFILES_DEFAULT</code>）进行更改。",
+      "count": 2
+    },
+    {
+      "source": "A running application with the Actuator features has a <code>configprops</code> endpoint that shows all the bound and bindable properties available through <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a>.",
+      "translation": "带有 Actuator 功能的运行中应用程序具有一个 <code>configprops</code> 端点，该端点显示通过 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html\"><code>@ConfigurationProperties</code></a> 可用的所有已绑定和可绑定属性。",
+      "count": 2
+    },
+    {
+      "source": "You can automatically expand properties in the Maven project by using resource filtering.\nIf you use the <code>spring-boot-starter-parent</code>, you can then refer to your Maven ‘project properties’ with <code>@..@</code> placeholders, as shown in the following example:",
+      "translation": "您可以使用资源过滤自动展开 Maven 项目中的属性。如果您使用了 <code>spring-boot-starter-parent</code>`，则可以像以下示例中所示的那样，使用 `<code>@..@</code> 占位符来引用您的 Maven“项目属性”：",
+      "count": 2
+    },
+    {
+      "source": "If you do not use the starter parent, you need to include the following  element inside the <code>&lt;build/&gt;</code> element of your <code>pom.xml</code>:",
+      "translation": "如果您不使用启动器父项目，需要在您的 <code>pom.xml</code>` 中的 `<code>&lt;build/&gt;</code> 元素内包含以下元素：",
+      "count": 2
+    },
+    {
+      "source": "Properties defined in external configuration override and replace the values specified with the Java API, with the notable exception of the primary sources.\nPrimary sources are those provided to the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> constructor:",
+      "translation": "外部配置中定义的属性会覆盖并替换通过 Java API 指定的值，主要来源除外。主要来源是指提供给 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 构造器的内容：",
+      "count": 2
+    },
+    {
+      "source": "The actual application will show the banner (as overridden by configuration) and use three sources for the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>.\nThe application sources are:",
+      "translation": "实际应用程序将显示横幅（由配置覆盖），并使用三个来源获取<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>。\n应用程序的来源是：",
+      "count": 2
+    },
+    {
+      "source": "If a document contains a <code>spring.config.activate.on-profile</code> key, then the profiles value (a comma-separated list of profiles or a profile expression) is fed into the Spring <code>Environment.acceptsProfiles()</code> method.\nIf the profile expression matches, then that document is included in the final merge (otherwise, it is not), as shown in the following example:",
+      "translation": "如果文档包含 <code>spring.config.activate.on-profile</code>` 键，则配置文件值（逗号分隔的配置文件列表或配置文件表达式）将传入 Spring 的 `<code>Environment.acceptsProfiles()</code> 方法。如果配置文件表达式匹配，则该文档会被包含在最终合并中（否则不会被包含），如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "You also need to include the following element inside <code>&lt;plugins/&gt;</code>:",
+      "translation": "您还需要在 <code>&lt;plugins/&gt;</code> 元素中包含以下内容：",
+      "count": 2
+    },
+    {
+      "source": "You can automatically expand properties from the Gradle project by configuring the Java plugin’s <code>processResources</code> task to do so, as shown in the following example:",
+      "translation": "您可以通过配置 Java 插件的 <code>processResources</code> 任务来自动从 Gradle 项目中扩展属性，示例如下：",
+      "count": 2
+    },
+    {
+      "source": "<code>MyApplication</code> (from the code)",
+      "translation": "<code>MyApplication</code>（来自代码）",
+      "count": 2
+    },
+    {
+      "source": "<code>MyDatabaseConfig</code> (from the external config)",
+      "translation": "<code>MyDatabaseConfig</code>（来自外部配置）",
+      "count": 2
+    },
+    {
+      "source": "<code>MyJmsConfig</code>(from the external config)",
+      "translation": "`MyJmsConfig`(来自外部配置)",
+      "count": 2
+    },
+    {
+      "source": "No matter what you set in the environment, Spring Boot always loads <code>application.properties</code> as described above.\nBy default, if YAML is used, then files with the ‘.yaml’ and ‘.yml’ extensions are also added to the list.",
+      "translation": "无论您在环境中设置什么，Spring Boot 始终如上所述加载 <code>application.properties</code>。默认情况下，如果使用 YAML，则还会将扩展名为 `.yaml` 和 `.yml` 的文件添加到列表中。",
+      "count": 2
+    },
+    {
+      "source": "The preceding example YAML corresponds to the following <code>application.properties</code> file:",
+      "translation": "前面的示例 YAML 对应于以下 <code>application.properties</code> 文件：",
+      "count": 2
+    },
+    {
+      "source": "See <a class=\"xref page\" href=\"../reference/features/external-config.html#features.external-config.yaml\">Working With YAML</a> in the “Spring Boot Features” section for more information about YAML.",
+      "translation": "有关 YAML 的更多信息，请参阅“Spring Boot 功能”部分中的<a class=\"xref page\" href=\"../reference/features/external-config.html#features.external-config.yaml\">使用 YAML</a>。",
+      "count": 2
+    },
+    {
+      "source": "In Spring Boot, you can also set the active profile in <code>application.properties</code>, as shown in the following example:",
+      "translation": "在 Spring Boot 中，您还可以在<code>application.properties</code>中设置激活的配置文件，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "A value set this way is replaced by the System property or environment variable setting but not by the <code>SpringApplicationBuilder.profiles()</code> method.\nThus, the latter Java API can be used to augment the profiles without changing the defaults.",
+      "translation": "这样设置的值集会被系统属性或环境变量设置所替换，但不会被 <code>SpringApplicationBuilder.profiles()</code> 方法替换。因此，可以使用后者 Java API 来增强配置文件，而无需更改默认设置。",
+      "count": 2
+    },
+    {
+      "source": "In Spring Boot, you can also set the default profile name in <code>application.properties</code>, as shown in the following example:",
+      "translation": "在 Spring Boot 中，您还可以在<code>application.properties</code>中设置默认配置文件名称，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot supports multi-document YAML and Properties files (see <a class=\"xref page\" href=\"../reference/features/external-config.html#features.external-config.files.multi-document\">Working With Multi-Document Files</a> for details) which can be activated conditionally based on the active profiles.",
+      "translation": "Spring Boot 支持多文档 YAML 和 Properties 文件（有关详细信息，请参阅<a class=\"xref page\" href=\"../reference/features/external-config.html#features.external-config.files.multi-document\">使用多文档文件</a>），这些文件可以根据激活的 Profile 有条件地激活。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot binds external properties from <code>application.properties</code> (or YAML files and other places) into an application at runtime.\nThere is not (and technically cannot be) an exhaustive list of all supported properties in a single location, because contributions can come from additional jar files on your classpath.",
+      "translation": "Spring Boot 在运行时将来自 <code>application.properties</code>（或 YAML 文件及其他位置）的外部属性绑定到应用程序中。由于贡献可能来自类路径上的其他 JAR 文件，因此无法在任何单一位置列出所有支持的属性（技术上也不可能做到这一点）。",
+      "count": 2
+    },
+    {
+      "source": "This section includes topics about setting and reading properties and configuration settings and their interaction with Spring Boot applications.",
+      "translation": "本节包含有关设置和读取属性及配置设置及其与 Spring Boot 应用程序交互的主题。",
+      "count": 2
+    },
+    {
+      "source": "Rather than hardcoding some properties that are also specified in your project’s build configuration, you can automatically expand them by instead using the existing build configuration.\nThis is possible in both Maven and Gradle.",
+      "translation": "与其在项目构建配置中也指定的属性中硬编码，您可以改用现有的构建配置来自动扩展它们。这在 Maven 和 Gradle 中都是可行的。",
+      "count": 2
+    },
+    {
+      "source": "You can then refer to your Gradle project’s properties by using placeholders, as shown in the following example:",
+      "translation": "然后，您可以使用占位符引用 Gradle 项目的属性，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "Then the Spring Boot banner is not printed on startup, and the application is not starting an embedded web server.",
+      "translation": "然后，Spring Boot 横幅在启动时不会打印，并且应用程序不会启动嵌入式 Web 服务器。",
+      "count": 2
+    },
+    {
+      "source": "Given the examples above, if we have the following configuration:",
+      "translation": "给定以下配置：",
+      "count": 2
+    },
+    {
+      "source": "You can also provide the following System properties (or environment variables) to change the behavior:",
+      "translation": "您还可以提供以下系统属性（或环境变量）来更改其行为：",
+      "count": 2
+    },
+    {
+      "source": "YAML is a superset of JSON and, as such, is a convenient syntax for storing external properties in a hierarchical format, as shown in the following example:",
+      "translation": "YAML 是 JSON 的超集，因此它是一种方便的语法，可用于以分层格式存储外部属性，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "In the preceding example, the default port is 9000.\nHowever, if the Spring profile called ‘development’ is active, then the port is 9001.\nIf ‘production’ is active, then the port is 0.",
+      "translation": "在前面的示例中，默认端口为 9000。然而，如果名为 'development' 的 Spring profile 处于活动状态，则端口为 9001。如果 'production' 处于活动状态，则端口为 0。",
+      "count": 2
+    },
+    {
+      "source": "<nav aria-label=\"breadcrumbs\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"Copy versioned URL\"></li>\n      <li><a href=\"../index.html\">Spring Boot</a></li>\n      <li><a href=\"index.html\">How-to Guides</a></li>\n      <li><a href=\"properties-and-configuration.html\">Properties and Configuration</a></li>\n    </ul>\n  </nav>",
+      "translation": "<nav aria-label=\"面包屑\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"复制带版本号的 URL\"></li>\n      <li><a href=\"../index.html\">Spring Boot</a></li>\n      <li><a href=\"index.html\">操作指南</a></li>\n      <li><a href=\"properties-and-configuration.html\">属性与配置</a></li>\n    </ul>\n  </nav>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">How-to Guides</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"application.html\">Spring Boot Application</a>\n  </li>\n  <li class=\"nav-item is-current-page\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"properties-and-configuration.html\">Properties and Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"webserver.html\">Embedded Web Servers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"http-clients.html\">HTTP Clients</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"data-access.html\">Data Access</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"data-initialization.html\">Database Initialization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"messaging.html\">Messaging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"batch.html\">Batch Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"security.html\">Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"hotswapping.html\">Hot Swapping</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"testing.html\">Testing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"build.html\">Build</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"native-image/index.html\">GraalVM Native Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"native-image/developing-your-first-application.html\">Developing Your First GraalVM Native Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"native-image/testing-native-applications.html\">Testing GraalVM Native Images</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"deployment/index.html\">Deploying Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/traditional-deployment.html\">Traditional Deployment</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/cloud.html\">Deploying to the Cloud</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/installing.html\">Installing Spring Boot Applications</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">操作指南</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"application.html\">Spring Boot 应用</a>\n  </li>\n  <li class=\"nav-item is-current-page\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"properties-and-configuration.html\">属性与配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"webserver.html\">嵌入式 Web 服务器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"http-clients.html\">HTTP 客户端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"data-access.html\">数据访问</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"data-initialization.html\">数据库初始化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"messaging.html\">消息传递</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"batch.html\">批处理应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"security.html\">安全</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"hotswapping.html\">热替换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"testing.html\">测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"build.html\">构建</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"aot.html\">提前处理 (AOT)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"native-image/index.html\">GraalVM 原生应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"native-image/developing-your-first-application.html\">开发您的第一个 GraalVM 原生应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"native-image/testing-native-applications.html\">测试 GraalVM 原生镜像</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"deployment/index.html\">部署 Spring Boot 应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/traditional-deployment.html\">传统部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/cloud.html\">部署到云端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"deployment/installing.html\">安装 Spring Boot 应用</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you inherit from the <code>spring-boot-starter-parent</code> POM, the default filter token of the <code>maven-resources-plugins</code> has been changed from <code>${*}</code> to <code>@</code> (that is, <code>@maven.token@</code> instead of <code>${maven.token}</code>) to prevent conflicts with Spring-style placeholders.\nIf you have enabled Maven filtering for the <code>application.properties</code> directly, you may want to also change the default filter token to use <a href=\"https://maven.apache.org/plugins/maven-resources-plugin/resources-mojo.html#delimiters\">other delimiters</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n如果您继承自 <code>spring-boot-starter-parent</code> POM，<code>maven-resources-plugins</code> 的默认过滤器标记已从 <code>${*}</code> 更改为 <code>@</code>（即使用 <code>@maven.token@</code> 而非 <code>${maven.token}</code>），以防止与 Spring 风格的占位符发生冲突。\n如果您已直接为 <code>application.properties</code> 启用了 Maven 过滤，您可能也想将默认过滤器标记更改为使用<a href=\"https://maven.apache.org/plugins/maven-resources-plugin/resources-mojo.html#delimiters\">其他分隔符</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you enable the <code>addResources</code> flag, the <code>spring-boot:run</code> goal can add <code>src/main/resources</code> directly to the classpath (for hot reloading purposes).\nDoing so circumvents the resource filtering and this feature.\nInstead, you can use the <code>exec:java</code> goal or customize the plugin’s configuration.\nSee the <a class=\"xref page\" href=\"../maven-plugin/using.html\">plugin usage page</a> for more details.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果启用 <code>addResources</code> 标志，<code>spring-boot:run</code> 目标可以直接将 <code>src/main/resources</code> 添加到类路径中（用于热重载目的）。\n这样做会绕过资源过滤和此功能。\n相反，您可以使用 <code>exec:java</code> 目标或自定义插件的配置。\n有关更多详细信息，请参阅<a class=\"xref page\" href=\"../maven-plugin/using.html\">插件使用页面</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nGradle’s <code>expand</code> method uses Groovy’s <code>SimpleTemplateEngine</code>, which transforms <code>${..}</code> tokens.\nThe <code>${..}</code> style conflicts with Spring’s own property placeholder mechanism.\nTo use Spring property placeholders together with automatic expansion, escape the Spring property placeholders as follows: <code>\\${..}</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nGradle 的 <code>expand</code> 方法使用 Groovy 的 <code>SimpleTemplateEngine</code>，该引擎会转换 <code>${..}</code> 标记。\n<code>${..}</code> 样式与 Spring 自身的属性占位符机制冲突。\n若要同时使用 Spring 属性占位符和自动扩展功能，请按以下方式转义 Spring 属性占位符：<code>\\${..}</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe <code>useDefaultDelimiters</code> property is important if you use standard Spring placeholders (such as <code>${placeholder}</code>) in your configuration.\nIf that property is not set to <code>false</code>, these may be expanded by the build.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n如果您在配置中使用标准的 Spring 占位符（例如 <code>${placeholder}</code>），则 <code>useDefaultDelimiters</code> 属性非常重要。如果该属性未设置为 <code>false</code>，构建过程可能会展开这些占位符。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you want detailed information about the files that are being loaded you can <a class=\"xref page\" href=\"../reference/features/logging.html#features.logging.log-levels\">set the logging level</a> of <code>org.springframework.boot.context.config</code> to <code>trace</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您需要有关正在加载的文件的详细信息，可以<code>org.springframework.boot.context.config</code>的<a class=\"xref page\" href=\"../reference/features/logging.html#features.logging.log-levels\">日志级别</a>设置为<code>trace</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nIn this specific case, the port binding works in a PaaS environment such as Heroku or Cloud Foundry.\nOn those two platforms, the <code>PORT</code> environment variable is set automatically and Spring can bind to capitalized synonyms for <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> properties.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n在此特定情况下，端口绑定在 Heroku 或 Cloud Foundry 等 PaaS 环境中有效。\n在这两个平台上，<code>PORT</code> 环境变量会自动设置，Spring 可以将其绑定到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性的首字母大写同义词。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nOnly production configuration is filtered that way (in other words, no filtering is applied on <code>src/test/resources</code>).\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n仅通过这种方式过滤生产配置（换句话说，不对 <code>src/test/resources</code> 应用任何过滤）。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe documents are merged in the order in which they are encountered.\nLater values override earlier values.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n文档按照遇到的顺序进行合并。\n后出现的值会覆盖先出现的值。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"prev\"><a href=\"application.html\">Spring Boot Application</a></span>\n  <span class=\"next\"><a href=\"webserver.html\">Embedded Web Servers</a></span>",
+      "translation": "<span class=\"prev\"><a href=\"application.html\">Spring Boot 应用程序</a></span>\n  <span class=\"next\"><a href=\"webserver.html\">嵌入式 Web 服务器</a></span>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties\"></a>Automatically Expand Properties at Build Time",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties\"></a>构建时自动展开属性",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties.maven\"></a>Automatic Property Expansion Using Maven",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties.maven\"></a>使用 Maven 自动扩展属性",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties.gradle\"></a>Automatic Property Expansion Using Gradle",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.expand-properties.gradle\"></a>使用 Gradle 自动扩展属性",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.externalize-configuration\"></a>Externalize the Configuration of SpringApplication",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.externalize-configuration\"></a>外部化 SpringApplication 的配置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.external-properties-location\"></a>Change the Location of External Properties of an Application",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.external-properties-location\"></a>更改应用程序外部属性的位置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.short-command-line-arguments\"></a>Use ‘Short’ Command Line Arguments",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.short-command-line-arguments\"></a>使用“短”命令行参数",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.yaml\"></a>Use YAML for External Properties",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.yaml\"></a>使用 YAML 进行外部属性配置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.set-active-spring-profiles\"></a>Set the Active Spring Profiles",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.set-active-spring-profiles\"></a>设置活动的 Spring 配置文件",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.set-default-spring-profile-name\"></a>Set the Default Profile Name",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.set-default-spring-profile-name\"></a>设置默认配置名称",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.change-configuration-depending-on-the-environment\"></a>Change Configuration Depending on the Environment",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.change-configuration-depending-on-the-environment\"></a>根据环境更改配置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.discover-build-in-options-for-external-properties\"></a>Discover Built-in Options for External Properties",
+      "translation": "<a class=\"anchor\" href=\"#howto.properties-and-configuration.discover-build-in-options-for-external-properties\"></a>发现外部属性的内置选项",
+      "count": 2
+    },
+    {
+      "source": "Properties and Configuration",
+      "translation": "<code>Properties</code> 和配置",
+      "count": 2
+    },
+    {
+      "source": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">Terms of Use</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">Privacy</a> • <a href=\"https://spring.io/trademarks\">Trademark Guidelines</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">Thank you</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">Your California Privacy Rights</a> • <a class=\"ot-sdk-show-settings\">Cookie Settings</a> <span id=\"teconsent\"></span>",
+      "translation": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">使用条款</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">隐私政策</a> • <a href=\"https://spring.io/trademarks\">商标指南</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">致谢</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">您的加州隐私权利</a> • <a class=\"ot-sdk-show-settings\">Cookie 设置</a> <span id=\"teconsent\"></span>",
+      "count": 2
+    },
+    {
+      "source": "Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.",
+      "translation": "Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他国家/地区的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS\"和“Amazon Web Services\"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">Microservices</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">Reactive</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">Event\n              Driven</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web\n              Applications</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">Serverless</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">Batch</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">概述</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">微服务</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">响应式</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">事件驱动</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">云</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web 应用程序</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">无服务器</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">批处理</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring Runtime</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring Consulting</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring Academy For Teams</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">Security Advisories</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring 运行时</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring 咨询</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring 团队学院</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">安全公告</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">Courses</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">Get Certified</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">课程</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">获取认证</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"title\" href=\"../index.html\">Spring Boot</a>",
+      "translation": "<a class=\"title\" href=\"../index.html\">Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../build-tool-plugin/index.html\">Build Tool Plugins</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../maven-plugin/index.html\">Maven Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/using.html\">Using the Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/goals.html\">Goals</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/build-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/run.html\">Running your Application with Maven</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/integration-tests.html\">Running Integration Tests</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/build-info.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/help.html\">Help Information</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../gradle-plugin/index.html\">Gradle Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/managing-dependencies.html\">Managing Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging-oci-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/publishing.html\">Publishing your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/running.html\">Running your Application with Gradle</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/integrating-with-actuator.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/reacting.html\">Reacting to Other Plugins</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/antlib.html\">Spring Boot AntLib Module</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/other-build-systems.html\">Supporting Other Build Systems</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../build-tool-plugin/index.html\">构建工具插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../maven-plugin/index.html\">Maven 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/using.html\">使用插件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/goals.html\">目标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/build-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/run.html\">使用 Maven 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/integration-tests.html\">运行集成测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/build-info.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../maven-plugin/help.html\">帮助信息</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../gradle-plugin/index.html\">Gradle 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/managing-dependencies.html\">管理依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging-oci-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/publishing.html\">发布应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/running.html\">使用 Gradle 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/integrating-with-actuator.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/reacting.html\">响应其他插件</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/antlib.html\">Spring Boot AntLib 模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/other-build-systems.html\">支持其他构建系统</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/index.html\">Packaging Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/efficient.html\">Efficient Deployments</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot.html\">Ahead-of-Time Processing With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/index.html\">GraalVM Native Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/introducing-graalvm-native-images.html\">Introducing GraalVM Native Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/advanced-topics.html\">Advanced Native Images Topics</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/checkpoint-restore.html\">Checkpoint and Restore With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/index.html\">Container Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/efficient-images.html\">Efficient Container Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/cloud-native-buildpacks.html\">Cloud Native Buildpacks</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/index.html\">打包 Spring Boot 应用程序</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/efficient.html\">高效部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot.html\">使用 JVM 进行提前处理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/index.html\">GraalVM 原生镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/introducing-graalvm-native-images.html\">介绍 GraalVM 原生镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/advanced-topics.html\">高级原生镜像主题</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/checkpoint-restore.html\">使用 JVM 进行检查点和恢复</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/index.html\">容器镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/efficient-images.html\">高效容器镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/dockerfiles.html\">Dockerfile</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/cloud-native-buildpacks.html\">云原生构建包</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Specifications</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/index.html\">Configuration Metadata</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/format.html\">Metadata Format</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/manual-hints.html\">Providing Manual Hints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/annotation-processor.html\">Generating Your Own Metadata by Using the Annotation Processor</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/executable-jar/index.html\">The Executable Jar Format</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/nested-jars.html\">Nested JARs</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/jarfile-class.html\">Spring Boot’s “NestedJarFile” Class</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/launching.html\">Launching Executable Jars</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/property-launcher.html\">PropertiesLauncher Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/restrictions.html\">Executable Jar Restrictions</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/alternatives.html\">Alternative Single Jar Solutions</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">规范</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/index.html\">配置元数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/format.html\">元数据格式</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/manual-hints.html\">提供手动提示</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/annotation-processor.html\">使用注解处理器生成自己的元数据</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/executable-jar/index.html\">可执行 JAR 格式</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/nested-jars.html\">嵌套 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/jarfile-class.html\">Spring Boot 的“NestedJarFile”类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/launching.html\">启动可执行 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/property-launcher.html\">PropertiesLauncher 功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/restrictions.html\">可执行 JAR 限制</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/alternatives.html\">替代单 JAR 解决方案</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/features/index.html\">Core Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/external-config.html\">Externalized Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/profiles.html\">Profiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/internationalization.html\">Internationalization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/aop.html\">Aspect-Oriented Programming</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/task-execution-and-scheduling.html\">Task Execution and Scheduling</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/dev-services.html\">Development-time Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/developing-auto-configuration.html\">Creating Your Own Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/kotlin.html\">Kotlin Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/features/index.html\">核心功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/external-config.html\">外部化配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/profiles.html\">Profile</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/internationalization.html\">国际化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/aop.html\">面向切面编程</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/task-execution-and-scheduling.html\">任务执行与调度</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/dev-services.html\">开发时服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/developing-auto-configuration.html\">创建自己的自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/kotlin.html\">Kotlin 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/actuator/index.html\">Production-ready Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/enabling.html\">Enabling Production-ready Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/endpoints.html\">Endpoints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/monitoring.html\">Monitoring and Management Over HTTP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/jmx.html\">Monitoring and Management over JMX</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/observability.html\">Observability</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/loggers.html\">Loggers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/metrics.html\">Metrics</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/tracing.html\">Tracing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/auditing.html\">Auditing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/http-exchanges.html\">Recording HTTP Exchanges</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/process-monitoring.html\">Process Monitoring</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/cloud-foundry.html\">Cloud Foundry Support</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/actuator/index.html\">生产就绪功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/enabling.html\">启用生产就绪功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/endpoints.html\">端点</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/monitoring.html\">通过 HTTP 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/jmx.html\">通过 JMX 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/observability.html\">可观测性</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/loggers.html\">日志记录器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/metrics.html\">指标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/tracing.html\">追踪</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/auditing.html\">审计</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/http-exchanges.html\">记录 HTTP 交换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/process-monitoring.html\">进程监控</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/cloud-foundry.html\">Cloud Foundry 支持</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/using/index.html\">Developing with Spring Boot</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/build-systems.html\">Build Systems</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/structuring-your-code.html\">Structuring Your Code</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/configuration-classes.html\">Configuration Classes</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/auto-configuration.html\">Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/spring-beans-and-dependency-injection.html\">Spring Beans and Dependency Injection</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/using-the-springbootapplication-annotation.html\">Using the @SpringBootApplication Annotation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/running-your-application.html\">Running Your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/devtools.html\">Developer Tools</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/packaging-for-production.html\">Packaging Your Application for Production</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/using/index.html\">使用 Spring Boot 进行开发</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/build-systems.html\">构建系统</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/structuring-your-code.html\">代码结构</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/configuration-classes.html\">配置类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/auto-configuration.html\">自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/spring-beans-and-dependency-injection.html\">Spring Bean 和依赖注入</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/using-the-springbootapplication-annotation.html\">使用 @SpringBootApplication 注解</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/running-your-application.html\">运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/devtools.html\">开发人员工具</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/packaging-for-production.html\">将应用程序打包用于生产环境</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/caching.html\">Caching</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/quartz.html\">Quartz Scheduler</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/email.html\">Sending Email</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/validation.html\">Validation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/rest-client.html\">Calling REST Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/webservices.html\">Web Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/jta.html\">Distributed Transactions With JTA</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/caching.html\">缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/quartz.html\">Quartz 调度器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/email.html\">发送邮件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/validation.html\">验证</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/rest-client.html\">调用 REST 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/webservices.html\">Web 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/jta.html\">使用 JTA 进行分布式事务</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/servlet.html\">Servlet Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/reactive.html\">Reactive Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/graceful-shutdown.html\">Graceful Shutdown</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/servlet.html\">Servlet Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/reactive.html\">响应式 Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/graceful-shutdown.html\">优雅关闭</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/messaging/index.html\">Messaging</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/kafka.html\">Apache Kafka Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/pulsar.html\">Apache Pulsar Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/messaging/index.html\">消息传递</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/kafka.html\">Apache Kafka 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/pulsar.html\">Apache Pulsar 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/testing/index.html\">Testing</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-modules.html\">Test Modules</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-scope-dependencies.html\">Test Scope Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-applications.html\">Testing Spring Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-boot-applications.html\">Testing Spring Boot Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-utilities.html\">Test Utilities</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/testing/index.html\">测试</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-modules.html\">测试模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-scope-dependencies.html\">测试范围依赖</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-applications.html\">测试 Spring 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-boot-applications.html\">测试 Spring Boot 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-utilities.html\">测试工具</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/data/index.html\">Data</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/sql.html\">SQL Databases</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/nosql.html\">Working with NoSQL Technologies</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/data/index.html\">数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/sql.html\">SQL 数据库</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/nosql.html\">使用 NoSQL 技术</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/installation.html\">Installing the CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/using-the-cli.html\">Using the CLI</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/installation.html\">安装 CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/using-the-cli.html\">使用 CLI</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/index.html\">Dependency Versions</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/coordinates.html\">Managed Dependency Coordinates</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/properties.html\">Version Properties</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/index.html\">依赖版本</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/coordinates.html\">托管依赖坐标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/properties.html\">版本属性</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../tutorial/index.html\">Tutorials</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../tutorial/first-application/index.html\">Developing Your First Spring Boot Application</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../tutorial/index.html\">教程</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../tutorial/first-application/index.html\">开发您的第一个 Spring Boot 应用程序</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/index.html\">Test Auto-configuration Annotations</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/slices.html\">Test Slices</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/index.html\">测试自动配置注解</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/slices.html\">测试切片</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/auditevents.html\">Audit Events (<code>auditevents</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/auditevents.html\">审计事件 (<code>auditevents</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/conditions.html\">Conditions Evaluation Report (<code>conditions</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/conditions.html\">条件评估报告 (<code>conditions</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/configprops.html\">Configuration Properties (<code>configprops</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/configprops.html\">配置属性 (<code>configprops</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/heapdump.html\">Heap Dump (<code>heapdump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/heapdump.html\">堆转储 (<code>heapdump</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/httpexchanges.html\">HTTP Exchanges (<code>httpexchanges</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/httpexchanges.html\">HTTP 交换 (<code>httpexchanges</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/integrationgraph.html\">Spring Integration Graph (<code>integrationgraph</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/integrationgraph.html\">Spring Integration Graph（<code>integrationgraph</code>）</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/logfile.html\">Log File (<code>logfile</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/logfile.html\">日志文件 (<code>logfile</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/sbom.html\">Software Bill of Materials (<code>sbom</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/sbom.html\">软件物料清单（<code>sbom</code>）</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/scheduledtasks.html\">Scheduled Tasks (<code>scheduledtasks</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/scheduledtasks.html\">定时任务 (<code>scheduledtasks</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/startup.html\">Application Startup (<code>startup</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/startup.html\">应用启动 (<code>startup</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/threaddump.html\">Thread Dump (<code>threaddump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/threaddump.html\">线程转储 (<code>threaddump</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-server\" href=\"../system-requirements.html\">System Requirements</a>",
+      "translation": "<a class=\"nav-link navtree-icon-server\" href=\"../system-requirements.html\">系统要求</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-gift\" href=\"../installing.html\">Installing Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-gift\" href=\"../installing.html\">安装 Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-rocket\" href=\"../upgrading.html\">Upgrading Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-rocket\" href=\"../upgrading.html\">升级 Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../appendix/application-properties/index.html\">Common Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../appendix/application-properties/index.html\">通用应用程序属性</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../appendix/deprecated-application-properties/index.html\">Deprecated Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../appendix/deprecated-application-properties/index.html\">已弃用的应用程序属性</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">\n  Spring Modulith\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">Spring Modulith</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "count": 2
+    },
+    {
+      "source": "Why Spring",
+      "translation": "为什么选择 Spring",
+      "count": 2
+    },
+    {
+      "source": "Rest APIs",
+      "translation": "REST API",
+      "count": 2
+    },
+    {
+      "source": "Auto-configuration Classes",
+      "translation": "自动配置类",
+      "count": 2
+    },
+    {
+      "source": "All Docs...",
+      "translation": "所有文档...",
+      "count": 2
+    },
+    {
+      "source": "Related Spring Documentation",
+      "translation": "相关 Spring 文档",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/how-to/pages/properties-and-configuration.adoc\">\n          <svg id=\"svg-stash-05b5c46b\"></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"svg-stash-28d888b7\"></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-24b05902\"></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/how-to/pages/properties-and-configuration.adoc\">\n          <svg id=\"svg-stash-05b5c46b\"></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"svg-stash-28d888b7\"></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-24b05902\"></svg>\n          Stack Overflow\n        </a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-a70622f4\"></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-a70622f4\"></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/how-to/pages/properties-and-configuration.adoc\">\n          <svg id=\"svg-stash-eb043b7a\"></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"Layer_1\"></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-03b111f3\"></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/how-to/pages/properties-and-configuration.adoc\">\n          <svg id=\"svg-stash-eb043b7a\"></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"Layer_1\"></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-03b111f3\"></svg>\n          Stack Overflow\n        </a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"Layer_1\"></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"Layer_1\"></svg>\n  </button>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-f15b5668\"></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-f15b5668\"></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"svg-stash-ac7a95a2\"></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"svg-stash-ac7a95a2\"></svg>\n  </button>",
+      "count": 1
+    }
+  ]
+}

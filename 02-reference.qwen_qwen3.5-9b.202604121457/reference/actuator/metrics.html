@@ -1,0 +1,4278 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>Metrics :: Spring Boot</title>
+    <link href="loggers.html" rel="prev"/>
+    <link href="tracing.html" rel="next"/>
+    <meta content="Antora 3.2.0-alpha.10" name="generator"/>
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link href="../../_/css/site.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/page-search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/asciidoctor-tabs.css" rel="stylesheet"/>
+
+    <meta content="v0.4.21" name="antora-ui-version"/> 
+    <meta content="4.0.0" name="version"/>
+    <meta content="" name="generation"/>
+    <meta content="undefined/undefined/reference/actuator/metrics.html" name="versioned-url"/>
+    <meta content="boot" name="component"/>
+    <meta content="false" name="latest-version"/>
+    <link href="../../_/img/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img alt="Spring" class="block" id="springlogo" src="../../_/img/spring-logo.svg"/>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar-menu" id="topbar-nav">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">为什么选择 Spring</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.io/why-spring">概述</a>
+<a class="navbar-item" href="https://spring.io/microservices">微服务</a>
+<a class="navbar-item" href="https://spring.io/reactive">响应式</a>
+<a class="navbar-item" href="https://spring.io/event-driven">事件驱动</a>
+<a class="navbar-item" href="https://spring.io/cloud">云</a>
+<a class="navbar-item" href="https://spring.io/web-applications">Web 应用</a>
+<a class="navbar-item" href="https://spring.io/serverless">无服务器</a>
+<a class="navbar-item" href="https://spring.io/batch">批处理</a></div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a class="navbar-item" href="https://spring.io/quickstart">Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px"><a class="navbar-item" href="https://spring.io/projects">概览</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-boot">Spring Boot</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-framework">Spring Framework</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud">Spring Cloud</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud-dataflow">Spring Cloud Data Flow</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-data">Spring Data</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-integration">Spring Integration</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-batch">Spring Batch</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-security">Spring Security</a>
+<a class="navbar-item navbar-item-special" href="https://spring.io/projects">查看所有项目</a>
+<li class="navbar-item navbar-item-special-3">开发工具</li>
+<a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+<a class="navbar-item navbar-item-special-2" href="https://start.spring.io">Spring Initializr
+              <svg class="external-link-icon" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="15 10.94 15 15 1 15 1 1 5.06 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><polyline fill="none" points="8.93 1 15 1 15 7.07" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><line fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" x1="15" x2="8" y1="1" y2="8"></line></svg></a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.academy/courses">课程</a>
+<a class="navbar-item" href="https://spring.academy/learning-path">获取认证</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg"><a class="navbar-item" href="https://spring.io/solutions">概览</a>
+<a class="navbar-item" href="https://spring.io/support">Spring 运行时</a>
+<a class="navbar-item" href="https://spring.io/consulting">Spring 咨询</a>
+<a class="navbar-item" href="https://spring.academy/teams">Spring 团队学院</a>
+<a class="navbar-item" href="https://spring.io/security">安全公告</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/community">Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input id="switch-theme-checkbox" name="switch-theme-checkbox" type="checkbox"/>
+      <span class="icon"><svg aria-hidden="true" class="svg-inline--fa fa-moon moon" data-icon="moon" data-prefix="fas" focusable="false" role="img" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" fill="currentColor"></path>
+        </svg>
+        <svg aria-hidden="true" class="svg-inline--fa fa-sun sun" data-icon="sun" data-prefix="fas" focusable="false" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor"></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context"><span class="title">Spring Boot</span>
+<span class="version">4.0.0</span>
+<button class="browse-version" id="browse-version">
+<svg height="24px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="24px" xml:space="preserve"><g><path d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"></path><path d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"></path><path d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"></path></g></svg>
+</button></div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book" href="../../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question" href="../../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-server" href="../../system-requirements.html">系统要求</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-gift" href="../../installing.html">安装 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-rocket" href="../../upgrading.html">升级 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../tutorial/index.html">教程</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../tutorial/first-application/index.html">开发您的第一个 Spring Boot 应用程序</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../using/index.html">使用 Spring Boot 进行开发</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/build-systems.html">构建系统</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/structuring-your-code.html">代码结构</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/configuration-classes.html">配置类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/auto-configuration.html">自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/spring-beans-and-dependency-injection.html">Spring Bean 和依赖注入</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/using-the-springbootapplication-annotation.html">使用 @SpringBootApplication 注解</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/running-your-application.html">运行您的应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/devtools.html">开发者工具</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/packaging-for-production.html">将您的应用程序打包用于生产环境</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../features/index.html">核心功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/spring-application.html">SpringApplication</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/external-config.html">外部化配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/profiles.html">Profile</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/internationalization.html">国际化</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/aop.html">面向切面编程</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/json.html">JSON</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/task-execution-and-scheduling.html">任务执行与调度</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/dev-services.html">开发时服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/developing-auto-configuration.html">创建自己的自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/kotlin.html">Kotlin 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/ssl.html">SSL</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../web/index.html">Web</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/servlet.html">Servlet Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/reactive.html">响应式 Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/graceful-shutdown.html">优雅关闭</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-security.html">Spring Security</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-session.html">Spring Session</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-graphql.html">Spring for GraphQL</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-hateoas.html">Spring HATEOAS</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../data/index.html">数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/sql.html">SQL 数据库</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/nosql.html">使用 NoSQL 技术</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../io/index.html">IO</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/caching.html">缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/spring-batch.html">Spring Batch</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/hazelcast.html">Hazelcast</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/quartz.html">Quartz 调度器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/email.html">发送邮件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/validation.html">验证</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/rest-client.html">调用 REST 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/webservices.html">Web 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/jta.html">使用 JTA 进行分布式事务</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../messaging/index.html">消息传递</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/jms.html">JMS</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/amqp.html">AMQP</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/kafka.html">Apache Kafka 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/pulsar.html">Apache Pulsar 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/rsocket.html">RSocket</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/spring-integration.html">Spring Integration</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/websockets.html">WebSockets</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../testing/index.html">测试</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-modules.html">测试模块</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-scope-dependencies.html">测试作用域依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-applications.html">测试 Spring 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-boot-applications.html">测试 Spring Boot 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/testcontainers.html">Testcontainers</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-utilities.html">测试工具</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/index.html">打包 Spring Boot 应用程序</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/efficient.html">高效部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot.html">使用 JVM 进行提前处理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/native-image/index.html">GraalVM 原生镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/introducing-graalvm-native-images.html">介绍 GraalVM 原生镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/advanced-topics.html">高级原生镜像主题</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/checkpoint-restore.html">使用 JVM 进行检查点和恢复</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/container-images/index.html">容器镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/efficient-images.html">高效容器镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/dockerfiles.html">Dockerfiles</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/cloud-native-buildpacks.html">云原生构建包</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="index.html">生产就绪功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="enabling.html">启用生产就绪功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="endpoints.html">端点</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="monitoring.html">通过 HTTP 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="jmx.html">通过 JMX 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="observability.html">可观测性</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="loggers.html">日志记录器</a>
+</li>
+<li class="nav-item is-current-page" data-depth="3">
+<a class="nav-link" href="metrics.html">指标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="tracing.html">追踪</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="auditing.html">审计</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="http-exchanges.html">记录 HTTP 交换</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="process-monitoring.html">进程监控</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="cloud-foundry.html">Cloud Foundry 支持</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/index.html">操作指南</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/application.html">Spring Boot 应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/properties-and-configuration.html">属性与配置</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/webserver.html">嵌入式 Web 服务器</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/spring-mvc.html">Spring MVC</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/jersey.html">Jersey</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/http-clients.html">HTTP 客户端</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-access.html">数据访问</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-initialization.html">数据库初始化</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/nosql.html">NoSQL</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/messaging.html">消息传递</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/batch.html">批处理应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/actuator.html">Actuator</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/security.html">安全</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/hotswapping.html">热替换</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/testing.html">测试</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/build.html">构建</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot.html">提前处理 (AOT)</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/native-image/index.html">GraalVM 原生应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/developing-your-first-application.html">开发您的第一个 GraalVM 原生应用</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/testing-native-applications.html">测试 GraalVM 原生镜像</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/deployment/index.html">部署 Spring Boot 应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/traditional-deployment.html">传统部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/cloud.html">部署到云端</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/installing.html">安装 Spring Boot 应用</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/docker-compose.html">Docker Compose</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../build-tool-plugin/index.html">构建工具插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../maven-plugin/index.html">Maven 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/using.html">使用插件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/goals.html">目标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/run.html">使用 Maven 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/integration-tests.html">运行集成测试</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-info.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/help.html">帮助信息</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../gradle-plugin/index.html">Gradle 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/managing-dependencies.html">管理依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging-oci-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/publishing.html">发布应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/running.html">使用 Gradle 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/integrating-with-actuator.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/reacting.html">响应其他插件</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/antlib.html">Spring Boot AntLib 模块</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/other-build-systems.html">支持其他构建系统</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/installation.html">安装 CLI</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/using-the-cli.html">使用 CLI</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../api/rest/actuator/index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/auditevents.html">审计事件（<code>auditevents</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/conditions.html">条件评估报告 (<code>conditions</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/configprops.html">配置属性 (<code>configprops</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/heapdump.html">堆转储 (<code>heapdump</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/httpexchanges.html">HTTP 交换记录（<code>httpexchanges</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/integrationgraph.html">Spring Integration 图 (<code>integrationgraph</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/logfile.html">日志文件（<code>logfile</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/sbom.html">软件物料清单（<code>sbom</code>）</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/scheduledtasks.html">定时任务 (<code>scheduledtasks</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/startup.html">应用启动 (<code>startup</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/threaddump.html">线程转储 (<code>threaddump</code>)</a></li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/java/index.html" target="_blank">Spring Boot</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../gradle-plugin/api/java/index.html" target="_blank">Gradle Plugin</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../maven-plugin/api/java/index.html" target="_blank">Maven Plugin</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/kotlin/index.html" target="_blank">Spring Boot</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">规范</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/configuration-metadata/index.html">配置元数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/format.html">元数据格式</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/manual-hints.html">提供手动提示</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/annotation-processor.html">使用注解处理器生成自己的元数据</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/executable-jar/index.html">可执行 JAR 格式</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/nested-jars.html">嵌套 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/jarfile-class.html">Spring Boot 的“NestedJarFile”类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/launching.html">启动可执行 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/property-launcher.html">PropertiesLauncher 功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/restrictions.html">可执行 JAR 限制</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/alternatives.html">替代单 JAR 解决方案</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/application-properties/index.html">通用应用程序属性</a></li>
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/deprecated-application-properties/index.html">已废弃的应用程序属性</a></li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/index.html">自动配置类</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/test-auto-configuration/index.html">测试自动配置注解</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/test-auto-configuration/slices.html">测试切片</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/dependency-versions/index.html">依赖版本</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/coordinates.html">托管依赖坐标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/properties.html">版本属性</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button class="nav-toggle" id="nav-toggle-2"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle" id="nav-toggle-1"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div class="toc" data-levels="2" data-title="Metrics">
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links"><a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/actuator/metrics.adoc">
+<svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg>
+          编辑此页面
+        </a>
+<a href="https://github.com/doc2401/spring-boot" title="GitHub">
+<svg height="512px" id="Layer_1" version="1.1" viewbox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg"><style type="text/css">
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"></path></g></svg>
+          GitHub 项目
+        </a>
+<a href="https://stackoverflow.com/tags/spring-boot">
+<svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"></path></svg>
+          Stack Overflow
+        </a></div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container"><nav aria-label="面包屑" class="breadcrumbs">
+<ul>
+<li id="copy-url" title="复制带版本号的 URL"></li>
+<li><a href="../../index.html">Spring Boot</a></li>
+<li><a href="../index.html">参考</a></li>
+<li><a href="index.html">生产就绪功能</a></li>
+<li><a href="metrics.html">指标</a></li>
+</ul>
+</nav></div><h1 class="page" id="page-title">Metrics</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot Actuator 为 <a href="https://micrometer.io">Micrometer</a> 提供依赖管理和自动配置，Micrometer 是一个应用程序指标门面，支持 <a href="https://docs.micrometer.io/micrometer/reference/1.16">众多监控系统</a>，包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#actuator.metrics.export.appoptics">AppOptics</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.atlas">Atlas</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.datadog">Datadog</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.dynatrace">Dynatrace</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.elastic">Elastic</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.ganglia">Ganglia</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.graphite">Graphite</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.humio">Humio</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.influx">Influx</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.jmx">JMX</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.kairos">KairosDB</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.newrelic">New Relic</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.otlp">OTLP</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.prometheus">Prometheus</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.simple">Simple</a> (in-memory)</p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.stackdriver">Stackdriver</a></p>
+</li>
+<li>
+<p><a href="#actuator.metrics.export.statsd">StatsD</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+要了解 Micrometer 的功能，请参阅其<a href="https://docs.micrometer.io/micrometer/reference/1.16">参考文档</a>，特别是<a href="https://docs.micrometer.io/micrometer/reference/1.16/concepts">概念部分</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.getting-started"><a class="anchor" href="#actuator.metrics.getting-started"></a>入门指南</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 自动配置一个组合的<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a>，并为类路径上找到的每个支持的实现添加一个注册表。
+在运行时类路径中依赖<code>micrometer-registry-{system}</code>就足以让 Spring Boot 配置该注册表。</p>
+</div>
+<div class="paragraph">
+<p>大多数注册表具有共同的功能。例如，即使 Micrometer 注册表实现位于类路径中，您也可以禁用特定的注册表。以下示例禁用了 Datadog：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_1">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_1_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_1_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_1_properties" class="tabpanel" id="_tabs_1_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.datadog.metrics.export.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_1_yaml" class="tabpanel" id="_tabs_1_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  datadog:
+    metrics:
+      export:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您也可以禁用所有注册表，除非注册表特定的属性另有说明，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_2">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_2_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_2_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_2_properties" class="tabpanel" id="_tabs_2_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.defaults.metrics.export.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_2_yaml" class="tabpanel" id="_tabs_2_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  defaults:
+    metrics:
+      export:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Boot 还会将任何自动配置的注册表添加到 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/Metrics.html"><code>Metrics</code></a> 类的全局静态复合注册表中，除非您明确告知它不要这样做：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_3">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_3_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_3_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_3_properties" class="tabpanel" id="_tabs_3_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.metrics.use-global-registry=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_3_yaml" class="tabpanel" id="_tabs_3_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  metrics:
+    use-global-registry: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以注册任意数量的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/metrics/MeterRegistryCustomizer.html"><code>MeterRegistryCustomizer</code></a> Bean 以进一步配置注册表，例如应用通用标签，这将在任何度量指标注册到注册表之前完成：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_4">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_4_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_4_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_4_java" class="tabpanel" id="_tabs_4_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.MeterRegistry;
+
+import org.springframework.boot.micrometer.metrics.autoconfigure.MeterRegistryCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyMeterRegistryConfiguration {
+
+	@Bean
+	public MeterRegistryCustomizer&lt;MeterRegistry&gt; metricsCommonTags() {
+		return (registry) -&gt; registry.config().commonTags("region", "us-east-1");
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_4_kotlin" class="tabpanel" id="_tabs_4_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.MeterRegistry
+import org.springframework.boot.micrometer.metrics.autoconfigure.MeterRegistryCustomizer
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyMeterRegistryConfiguration {
+
+	@Bean
+	fun metricsCommonTags(): MeterRegistryCustomizer&lt;MeterRegistry&gt; {
+		return MeterRegistryCustomizer { registry -&gt;
+			registry.config().commonTags("region", "us-east-1")
+		}
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以通过更具体地指定泛型类型，来对特定的注册表实现应用自定义：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_5">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_5_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_5_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_5_java" class="tabpanel" id="_tabs_5_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.config.NamingConvention;
+import io.micrometer.graphite.GraphiteMeterRegistry;
+
+import org.springframework.boot.micrometer.metrics.autoconfigure.MeterRegistryCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyMeterRegistryConfiguration {
+
+	@Bean
+	public MeterRegistryCustomizer&lt;GraphiteMeterRegistry&gt; graphiteMetricsNamingConvention() {
+		return (registry) -&gt; registry.config().namingConvention(this::name);
+	}
+
+	private String name(String name, Meter.Type type, String baseUnit) {
+		return ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_5_kotlin" class="tabpanel" id="_tabs_5_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Meter
+import io.micrometer.core.instrument.config.NamingConvention
+import io.micrometer.graphite.GraphiteMeterRegistry
+import org.springframework.boot.micrometer.metrics.autoconfigure.MeterRegistryCustomizer
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyMeterRegistryConfiguration {
+
+	@Bean
+	fun graphiteMetricsNamingConvention(): MeterRegistryCustomizer&lt;GraphiteMeterRegistry&gt; {
+		return MeterRegistryCustomizer { registry: GraphiteMeterRegistry -&gt;
+			registry.config().namingConvention(this::name)
+		}
+	}
+
+	private fun name(name: String, type: Meter.Type, baseUnit: String?): String {
+		return  ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Spring Boot 还<a href="#actuator.metrics.supported">配置了内置的仪表</a>，您可以通过配置或专用的注解标记来控制它们。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.export"><a class="anchor" href="#actuator.metrics.export"></a>支持的监控系统</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本节简要介绍了每个支持的监控系统。</p>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.appoptics"><a class="anchor" href="#actuator.metrics.export.appoptics"></a>AppOptics</h3>
+<div class="paragraph">
+<p>默认情况下，AppOptics 注册表会定期将指标推送到<code><a class="bare" href="https://api.appoptics.com/v1/measurements">api.appoptics.com/v1/measurements</a></code>。若要导出指标到 SaaS <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/appOptics">AppOptics</a>，必须提供 API 令牌：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_6">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_6_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_6_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_6_properties" class="tabpanel" id="_tabs_6_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.appoptics.metrics.export.api-token=YOUR_TOKEN</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_6_yaml" class="tabpanel" id="_tabs_6_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  appoptics:
+    metrics:
+      export:
+        api-token: "YOUR_TOKEN"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.atlas"><a class="anchor" href="#actuator.metrics.export.atlas"></a>Atlas</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到您本地机器上运行的<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/atlas">Atlas</a>。
+您可以提供<a href="https://github.com/Netflix/atlas">Atlas 服务器</a>的位置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_7">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_7_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_7_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_7_properties" class="tabpanel" id="_tabs_7_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.atlas.metrics.export.uri=https://atlas.example.com:7101/api/v1/publish</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_7_yaml" class="tabpanel" id="_tabs_7_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  atlas:
+    metrics:
+      export:
+        uri: "https://atlas.example.com:7101/api/v1/publish"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.datadog"><a class="anchor" href="#actuator.metrics.export.datadog"></a>Datadog</h3>
+<div class="paragraph">
+<p>Datadog 注册表会定期将指标推送到 <a href="https://www.datadoghq.com">datadoghq</a>。
+若要导出指标到 <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/datadog">Datadog</a>，您必须提供 API 密钥：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_8">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_8_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_8_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_8_properties" class="tabpanel" id="_tabs_8_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.datadog.metrics.export.api-key=YOUR_KEY</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_8_yaml" class="tabpanel" id="_tabs_8_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  datadog:
+    metrics:
+      export:
+        api-key: "YOUR_KEY"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您额外提供应用密钥（可选），则计量器描述、类型和基础单位等元数据也将被导出：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_9">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_9_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_9_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_9_properties" class="tabpanel" id="_tabs_9_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.datadog.metrics.export.api-key=YOUR_API_KEY
+management.datadog.metrics.export.application-key=YOUR_APPLICATION_KEY</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_9_yaml" class="tabpanel" id="_tabs_9_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  datadog:
+    metrics:
+      export:
+        api-key: "YOUR_API_KEY"
+        application-key: "YOUR_APPLICATION_KEY"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>默认情况下，指标会发送到 Datadog US <a href="https://docs.datadoghq.com/getting_started/site">站点</a> (<code><a class="bare" href="https://api.datadoghq.com">api.datadoghq.com</a></code>)。
+如果您的 Datadog 项目托管在其他站点之一，或者需要通过代理发送指标，请相应地配置 URI：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_10">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_10_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_10_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_10_properties" class="tabpanel" id="_tabs_10_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.datadog.metrics.export.uri=https://api.datadoghq.eu</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_10_yaml" class="tabpanel" id="_tabs_10_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  datadog:
+    metrics:
+      export:
+        uri: "https://api.datadoghq.eu"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还可以更改将指标发送到 Datadog 的间隔：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_11">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_11_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_11_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_11_properties" class="tabpanel" id="_tabs_11_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.datadog.metrics.export.step=30s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_11_yaml" class="tabpanel" id="_tabs_11_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  datadog:
+    metrics:
+      export:
+        step: "30s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.dynatrace"><a class="anchor" href="#actuator.metrics.export.dynatrace"></a>Dynatrace</h3>
+<div class="paragraph">
+<p>Dynatrace 提供两个指标摄入 API，两者均已针对 <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/dynatrace">Micrometer</a> 实现。
+您可以在 <a href="https://docs.dynatrace.com/docs/shortlink/micrometer-metrics-ingest">此处</a> 找到有关 Micrometer 指标摄入的 Dynatrace 文档。
+<code>v1</code> 命名空间中的配置属性仅适用于导出到 <a href="https://docs.dynatrace.com/docs/shortlink/api-metrics">Timeseries v1 API</a>。
+<code>v2</code> 命名空间中的配置属性仅适用于导出到 <a href="https://docs.dynatrace.com/docs/shortlink/api-metrics-v2-post-datapoints">Metrics v2 API</a>。
+请注意，此集成一次只能导出到 <code>v1</code> 或 <code>v2</code> 版本的 API，且首选 <code>v2</code>。
+如果在 <code>v1</code> 命名空间中设置了 <code>device-id</code>（v1 必需，v2 不使用），则指标将导出到 <code>v1</code> 端点。
+否则，假定为 <code>v2</code>。</p>
+</div>
+<div class="sect3">
+<h4 id="actuator.metrics.export.dynatrace.v2-api"><a class="anchor" href="#actuator.metrics.export.dynatrace.v2-api"></a>v2 API</h4>
+<div class="paragraph">
+<p>您可以使用两种方式使用 v2 API。</p>
+</div>
+<div class="sect4">
+<h5 id="actuator.metrics.export.dynatrace.v2-api.auto-config"><a class="anchor" href="#actuator.metrics.export.dynatrace.v2-api.auto-config"></a>Auto-configuration</h5>
+<div class="paragraph">
+<p>OneAgent 或 Kubernetes 中的 Dynatrace Operator 监控的主机支持 Dynatrace 自动配置。</p>
+</div>
+<div class="paragraph">
+<p><strong>本地 OneAgent：</strong> 如果主机上正在运行 OneAgent，指标将自动导出到 <a href="https://docs.dynatrace.com/docs/shortlink/local-api">本地 OneAgent 接收端点</a>。该接收端点会将指标转发至 Dynatrace 后端。</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynatrace Kubernetes Operator：</strong> 在安装了 Dynatrace Operator 的 Kubernetes 环境中运行时，注册表将自动从该 Operator 获取您的端点 URI 和 API 令牌。</p>
+</div>
+<div class="paragraph">
+<p>这是默认行为，除了依赖 <code>io.micrometer:micrometer-registry-dynatrace</code> 之外无需特殊设置。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="actuator.metrics.export.dynatrace.v2-api.manual-config"><a class="anchor" href="#actuator.metrics.export.dynatrace.v2-api.manual-config"></a>手动配置</h5>
+<div class="paragraph">
+<p>如果没有可用的自动配置，则需要 Metrics v2 API 的端点以及 API 令牌。API 令牌必须设置“摄取指标”（`metrics.ingest`）权限。我们建议将该令牌的权限范围限制为仅此一项。您必须确保端点 URI 包含路径（例如，`/api/v2/metrics/ingest`）：</p>
+</div>
+<div class="paragraph">
+<p>Metrics API v2 摄入端点的 URL 根据您的部署选项而有所不同：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SaaS: <code>https://{your-environment-id}.live.dynatrace.com/api/v2/metrics/ingest</code></p>
+</li>
+<li>
+<p>托管部署：<code>https://{your-domain}/e/{your-environment-id}/api/v2/metrics/ingest</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>下面的示例使用环境 ID `example` 配置指标导出：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_12">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_12_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_12_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_12_properties" class="tabpanel" id="_tabs_12_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.dynatrace.metrics.export.uri=https://example.live.dynatrace.com/api/v2/metrics/ingest
+management.dynatrace.metrics.export.api-token=YOUR_TOKEN</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_12_yaml" class="tabpanel" id="_tabs_12_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  dynatrace:
+    metrics:
+      export:
+        uri: "https://example.live.dynatrace.com/api/v2/metrics/ingest"
+        api-token: "YOUR_TOKEN"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>使用 Dynatrace v2 API 时，可使用以下可选功能（更多详细信息请参见 <a href="https://docs.dynatrace.com/docs/shortlink/micrometer-metrics-ingest#dt-configuration-properties">Dynatrace 文档</a>）：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>指标键前缀：设置一个附加到所有导出指标键的前缀。</p>
+</li>
+<li>
+<p>如果正在运行 OneAgent 或 Dynatrace Operator，请利用额外的元数据（例如有关主机、进程或 Pod 的信息）来丰富指标。</p>
+</li>
+<li>
+<p>默认维度：指定添加到所有导出指标中的键值对。如果通过 Micrometer 指定了具有相同键的标签，它们将覆盖默认维度。</p>
+</li>
+<li>
+<p>使用 Dynatrace Summary 仪表：在某些情况下，Micrometer Dynatrace 注册表创建的指标会被拒绝。在 Micrometer 1.9.x 中，通过引入专用的 Dynatrace Summary 仪表解决了此问题。将此开关设置为 <code>false</code> 会强制 Micrometer 回退到 1.9.x 之前的默认行为。仅在从 Micrometer 1.8.x 迁移到 1.9.x 时遇到问题时才应使用此选项。</p>
+</li>
+<li>
+<p>从 Micrometer 1.12.0 开始，Dynatrace 导出器默认也会导出计量器元数据（例如单位和描述）。使用<code>export-meter-metadata</code>开关可关闭此功能。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>可以不指定 URI 和 API 令牌，如下例所示。
+在此情况下，将使用自动配置的端点：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_13">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_13_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_13_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_13_properties" class="tabpanel" id="_tabs_13_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.dynatrace.metrics.export.v2.metric-key-prefix=your.key.prefix
+management.dynatrace.metrics.export.v2.enrich-with-dynatrace-metadata=true
+management.dynatrace.metrics.export.v2.default-dimensions.key1=value1
+management.dynatrace.metrics.export.v2.default-dimensions.key2=value2
+management.dynatrace.metrics.export.v2.use-dynatrace-summary-instruments=true
+management.dynatrace.metrics.export.v2.export-meter-metadata=true</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_13_yaml" class="tabpanel" id="_tabs_13_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  dynatrace:
+    metrics:
+      export:
+        # Specify uri and api-token here if not using the local OneAgent endpoint.
+        v2:
+          metric-key-prefix: "your.key.prefix"
+          enrich-with-dynatrace-metadata: true
+          default-dimensions:
+            key1: "value1"
+            key2: "value2"
+          use-dynatrace-summary-instruments: true # (default: true)
+          export-meter-metadata: true             # (default: true)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.metrics.export.dynatrace.v1-api"><a class="anchor" href="#actuator.metrics.export.dynatrace.v1-api"></a>v1 API（旧版）</h4>
+<div class="paragraph">
+<p>Dynatrace v1 API 指标注册表通过 <a href="https://docs.dynatrace.com/docs/shortlink/api-metrics">Timeseries v1 API</a> 定期将指标推送到配置的 URI。为了与现有设置保持向后兼容，当设置了 <code>device-id</code>（v1 必需，但 v2 不使用）时，指标将导出到 Timeseries v1 端点。要将指标导出到 </p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_14">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_14_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_14_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_14_properties" class="tabpanel" id="_tabs_14_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.dynatrace.metrics.export.uri=https://{your-environment-id}.live.dynatrace.com
+management.dynatrace.metrics.export.api-token=YOUR_TOKEN
+management.dynatrace.metrics.export.v1.device-id=YOUR_DEVICE_ID</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_14_yaml" class="tabpanel" id="_tabs_14_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  dynatrace:
+    metrics:
+      export:
+        uri: "https://{your-environment-id}.live.dynatrace.com"
+        api-token: "YOUR_TOKEN"
+        v1:
+          device-id: "YOUR_DEVICE_ID"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>对于 v1 API，您必须指定不带路径的基础环境 URI，因为 v1 端点路径会自动添加。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.metrics.export.dynatrace.version-independent-settings"><a class="anchor" href="#actuator.metrics.export.dynatrace.version-independent-settings"></a>版本无关设置</h4>
+<div class="paragraph">
+<p>除了 API 端点和令牌，您还可以更改将指标发送到 Dynatrace 的间隔。默认导出间隔为 <code>60s</code>。以下示例将导出间隔设置为 30 秒：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_15">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_15_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_15_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_15_properties" class="tabpanel" id="_tabs_15_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.dynatrace.metrics.export.step=30s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_15_yaml" class="tabpanel" id="_tabs_15_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  dynatrace:
+    metrics:
+      export:
+        step: "30s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以在<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/dynatrace">Micrometer 文档</a>和<a href="https://docs.dynatrace.com/docs/shortlink/micrometer-metrics-ingest">Dynatrace 文档</a>中查找有关如何为 Micrometer 设置 Dynatrace 导出器的更多信息。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.elastic"><a class="anchor" href="#actuator.metrics.export.elastic"></a>Elastic</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到运行在您本地机器上的<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/elastic">Elastic</a>。您可以通过使用以下属性来指定要使用的 Elastic 服务器位置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_16">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_16_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_16_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_16_properties" class="tabpanel" id="_tabs_16_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.elastic.metrics.export.host=https://elastic.example.com:8086</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_16_yaml" class="tabpanel" id="_tabs_16_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  elastic:
+    metrics:
+      export:
+        host: "https://elastic.example.com:8086"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.ganglia"><a class="anchor" href="#actuator.metrics.export.ganglia"></a>Ganglia</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到您本地机器上运行的<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/ganglia">Ganglia</a>。
+您可以提供<a href="http://ganglia.sourceforge.net">Ganglia 服务器</a>的主机和端口，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_17">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_17_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_17_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_17_properties" class="tabpanel" id="_tabs_17_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.ganglia.metrics.export.host=ganglia.example.com
+management.ganglia.metrics.export.port=9649</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_17_yaml" class="tabpanel" id="_tabs_17_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  ganglia:
+    metrics:
+      export:
+        host: "ganglia.example.com"
+        port: 9649</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.graphite"><a class="anchor" href="#actuator.metrics.export.graphite"></a>Graphite</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到运行在您本地机器上的<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/graphite">Graphite</a>。
+您可以提供<a href="https://graphiteapp.org">Graphite 服务器</a>的主机和端口，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_18">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_18_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_18_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_18_properties" class="tabpanel" id="_tabs_18_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.graphite.metrics.export.host=graphite.example.com
+management.graphite.metrics.export.port=9004</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_18_yaml" class="tabpanel" id="_tabs_18_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  graphite:
+    metrics:
+      export:
+         host: "graphite.example.com"
+         port: 9004</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Micrometer 提供了一个默认的<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>，用于控制如何将具有维度的仪表 ID <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/graphite#_hierarchical_name_mapping">映射为扁平层级名称</a>。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>要控制此行为，请定义自己的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-registry-graphite/1.16.0/io/micrometer/graphite/GraphiteMeterRegistry.html"><code>GraphiteMeterRegistry</code></a> 并提供自己的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>。除非您定义了自己的组件，否则会自动配置 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-registry-graphite/1.16.0/io/micrometer/graphite/GraphiteConfig.html"><code>GraphiteConfig</code></a> 和 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/Clock.html"><code>Clock</code></a> Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_19">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_19_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_19_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_19_java" class="tabpanel" id="_tabs_19_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Clock;
+import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.config.NamingConvention;
+import io.micrometer.core.instrument.util.HierarchicalNameMapper;
+import io.micrometer.graphite.GraphiteConfig;
+import io.micrometer.graphite.GraphiteMeterRegistry;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyGraphiteConfiguration {
+
+	@Bean
+	public GraphiteMeterRegistry graphiteMeterRegistry(GraphiteConfig config, Clock clock) {
+		return new GraphiteMeterRegistry(config, clock, this::toHierarchicalName);
+	}
+
+	private String toHierarchicalName(Meter.Id id, NamingConvention convention) {
+		return ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_19_kotlin" class="tabpanel" id="_tabs_19_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Clock
+import io.micrometer.core.instrument.Meter
+import io.micrometer.core.instrument.config.NamingConvention
+import io.micrometer.core.instrument.util.HierarchicalNameMapper
+import io.micrometer.graphite.GraphiteConfig
+import io.micrometer.graphite.GraphiteMeterRegistry
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyGraphiteConfiguration {
+
+	@Bean
+	fun graphiteMeterRegistry(config: GraphiteConfig, clock: Clock): GraphiteMeterRegistry {
+		return GraphiteMeterRegistry(config, clock, this::toHierarchicalName)
+	}
+	private fun toHierarchicalName(id: Meter.Id, convention: NamingConvention): String {
+		return  ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.humio"><a class="anchor" href="#actuator.metrics.export.humio"></a>Humio</h3>
+<div class="paragraph">
+<p>默认情况下，Humio 注册表会定期将指标推送到<a class="bare" href="https://cloud.humio.com">cloud.humio.com</a>。
+若要导出指标到 SaaS <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/humio">Humio</a>，您必须提供 API 令牌：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_20">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_20_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_20_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_20_properties" class="tabpanel" id="_tabs_20_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.humio.metrics.export.api-token=YOUR_TOKEN</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_20_yaml" class="tabpanel" id="_tabs_20_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  humio:
+    metrics:
+      export:
+        api-token: "YOUR_TOKEN"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还应配置一个或多个标签，以标识指标推送到的数据源：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_21">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_21_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_21_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_21_properties" class="tabpanel" id="_tabs_21_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.humio.metrics.export.tags.alpha=a
+management.humio.metrics.export.tags.bravo=b</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_21_yaml" class="tabpanel" id="_tabs_21_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  humio:
+    metrics:
+      export:
+        tags:
+          alpha: "a"
+          bravo: "b"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.influx"><a class="anchor" href="#actuator.metrics.export.influx"></a>Influx</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到您本地机器上运行的具有默认配置的 <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/influx">Influx</a> v1 实例。
+若要向 InfluxDB v2 导出指标，请配置用于写入指标的 <code>org</code>、<code>bucket</code> 和身份验证 <code>token</code>。
+您可以通过使用以下方法提供要使用的 <a href="https://www.influxdata.com">Influx 服务器</a> 的位置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_22">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_22_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_22_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_22_properties" class="tabpanel" id="_tabs_22_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.influx.metrics.export.uri=https://influx.example.com:8086</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_22_yaml" class="tabpanel" id="_tabs_22_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  influx:
+    metrics:
+      export:
+        uri: "https://influx.example.com:8086"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.jmx"><a class="anchor" href="#actuator.metrics.export.jmx"></a>JMX</h3>
+<div class="paragraph">
+<p>Micrometer 提供了对 <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/jmx">JMX</a> 的分层映射，主要作为一种廉价且可移植的方式来本地查看指标。
+默认情况下，指标导出到 `metrics` JMX 域。
+您可以通过使用以下方法指定要使用的域：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_23">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_23_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_23_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_23_properties" class="tabpanel" id="_tabs_23_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.jmx.metrics.export.domain=com.example.app.metrics</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_23_yaml" class="tabpanel" id="_tabs_23_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  jmx:
+    metrics:
+      export:
+        domain: "com.example.app.metrics"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Micrometer 提供了一个默认的 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>`，用于控制如何将具有维度的仪表 ID 映射为扁平化的分层名称。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>要控制此行为，请定义您的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-registry-jmx/1.16.0/io/micrometer/jmx/JmxMeterRegistry.html"><code>JmxMeterRegistry</code></a> 并提供您自己的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/util/HierarchicalNameMapper.html"><code>HierarchicalNameMapper</code></a>。
+除非您自己定义，否则会自动配置 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-registry-jmx/1.16.0/io/micrometer/jmx/JmxConfig.html"><code>JmxConfig</code></a> 和 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/Clock.html"><code>Clock</code></a> Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_24">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_24_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_24_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_24_java" class="tabpanel" id="_tabs_24_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Clock;
+import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.config.NamingConvention;
+import io.micrometer.core.instrument.util.HierarchicalNameMapper;
+import io.micrometer.jmx.JmxConfig;
+import io.micrometer.jmx.JmxMeterRegistry;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyJmxConfiguration {
+
+	@Bean
+	public JmxMeterRegistry jmxMeterRegistry(JmxConfig config, Clock clock) {
+		return new JmxMeterRegistry(config, clock, this::toHierarchicalName);
+	}
+
+	private String toHierarchicalName(Meter.Id id, NamingConvention convention) {
+		return ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_24_kotlin" class="tabpanel" id="_tabs_24_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Clock
+import io.micrometer.core.instrument.Meter
+import io.micrometer.core.instrument.config.NamingConvention
+import io.micrometer.core.instrument.util.HierarchicalNameMapper
+import io.micrometer.jmx.JmxConfig
+import io.micrometer.jmx.JmxMeterRegistry
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyJmxConfiguration {
+
+	@Bean
+	fun jmxMeterRegistry(config: JmxConfig, clock: Clock): JmxMeterRegistry {
+		return JmxMeterRegistry(config, clock, this::toHierarchicalName)
+	}
+
+	private fun toHierarchicalName(id: Meter.Id, convention: NamingConvention): String {
+		return  ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.kairos"><a class="anchor" href="#actuator.metrics.export.kairos"></a>KairosDB</h3>
+<div class="paragraph">
+<p>默认情况下，指标会导出到您本地机器上运行的<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/kairos">KairosDB</a>。您可以通过使用以下方法指定要使用的<a href="https://kairosdb.github.io/">KairosDB 服务器</a>位置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_25">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_25_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_25_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_25_properties" class="tabpanel" id="_tabs_25_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.kairos.metrics.export.uri=https://kairosdb.example.com:8080/api/v1/datapoints</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_25_yaml" class="tabpanel" id="_tabs_25_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  kairos:
+    metrics:
+      export:
+        uri: "https://kairosdb.example.com:8080/api/v1/datapoints"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.newrelic"><a class="anchor" href="#actuator.metrics.export.newrelic"></a>New Relic</h3>
+<div class="paragraph">
+<p>A New Relic registry 定期将指标推送到<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/new-relic">New Relic</a>。
+要将指标导出到<a href="https://newrelic.com">New Relic</a>，您必须提供 API 密钥和账户 ID：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_26">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_26_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_26_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_26_properties" class="tabpanel" id="_tabs_26_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.newrelic.metrics.export.api-key=YOUR_KEY
+management.newrelic.metrics.export.account-id=YOUR_ACCOUNT_ID</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_26_yaml" class="tabpanel" id="_tabs_26_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  newrelic:
+    metrics:
+      export:
+        api-key: "YOUR_KEY"
+        account-id: "YOUR_ACCOUNT_ID"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还可以更改将指标发送到 New Relic 的间隔：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_27">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_27_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_27_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_27_properties" class="tabpanel" id="_tabs_27_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.newrelic.metrics.export.step=30s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_27_yaml" class="tabpanel" id="_tabs_27_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  newrelic:
+    metrics:
+      export:
+        step: "30s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>默认情况下，指标通过 REST 调用发布，但如果您在类路径中包含 Java Agent API，也可以使用它：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_28">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_28_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_28_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_28_properties" class="tabpanel" id="_tabs_28_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.newrelic.metrics.export.client-provider-type=insights-agent</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_28_yaml" class="tabpanel" id="_tabs_28_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  newrelic:
+    metrics:
+      export:
+        client-provider-type: "insights-agent"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>最后，您可以通过定义自己的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-registry-new-relic/1.16.0/io/micrometer/newrelic/NewRelicClientProvider.html"><code>NewRelicClientProvider</code></a> Bean 来获得完全控制。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.otlp"><a class="anchor" href="#actuator.metrics.export.otlp"></a>OTLP</h3>
+<div class="paragraph">
+<p>默认情况下，指标通过<a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/otlp">OpenTelemetry 协议 (OTLP)</a>导出到运行在您本地机器上的消费者。若要导出到其他位置，请使用<code>management.otlp.metrics.export.url</code>提供<a href="https://opentelemetry.io/">OTLP 指标端点</a>的位置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_29">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_29_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_29_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_29_properties" class="tabpanel" id="_tabs_29_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.otlp.metrics.export.url=https://otlp.example.com:4318/v1/metrics</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_29_yaml" class="tabpanel" id="_tabs_29_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  otlp:
+    metrics:
+      export:
+        url: "https://otlp.example.com:4318/v1/metrics"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自定义标头（例如用于身份验证）也可以通过 `management.otlp.metrics.export.headers.*` 属性提供。</p>
+</div>
+<div class="paragraph">
+<p>如果存在 <code>OtlpMetricsSender</code> Bean，它将被配置在由 Spring Boot 自动配置的 `<code>OtlpMeterRegistry` 上。</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.prometheus"><a class="anchor" href="#actuator.metrics.export.prometheus"></a>Prometheus</h3>
+<div class="paragraph">
+<p><a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/prometheus">Prometheus</a> 期望抓取或轮询各个应用程序实例以获取指标。Spring Boot 在 <code>/actuator/prometheus</code> 处提供了一个 actuator 端点，用于以适当的格式呈现 <a href="https://prometheus.io">Prometheus 抓取</a>。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+默认情况下，该端点不可用且必须暴露。有关更多详细信息，请参阅<a class="xref page" href="endpoints.html#actuator.endpoints.exposing">暴露端点</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>以下示例会添加到 <code>prometheus.yml</code>` 中的 `<code>scrape_config</code>：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">scrape_configs:
+- job_name: "spring"
+  metrics_path: "/actuator/prometheus"
+  static_configs:
+  - targets: ["HOST:PORT"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://prometheus.io/docs/prometheus/latest/feature_flags/#exemplars-storage">Prometheus Exemplars</a> 也得到了支持。要启用此功能，必须存在一个 <a class="apiref" href="https://javadoc.io/doc/io.prometheus/prometheus-metrics-tracer-common/1.4.3/io/prometheus/metrics/tracer/common/SpanContext.html"><code>SpanContext</code></a> Bean。如果您使用的是已弃用的 Prometheus simpleclient 支持并希望启用该功能，则必须存在一个 <a class="apiref" href="https://javadoc.io/doc/io.prometheus/simpleclient_tracer_common/0.16.0/io/prometheus/client/exemplars/tracer/common/SpanContextSupplier.html"><code>SpanContextSupplier</code></a> Bean。如果您使用 <a href="https://docs.micrometer.io/tracing/reference/1.6">Micrometer Tracing</a>，这将为您自动配置，但如果您愿意，也可以自行创建。请检查 <a href="https://prometheus.io/docs/prometheus/latest/feature_flags/#exemplars-storage">Prometheus 文档</a>，因为此功能需要在 Prometheus 端显式启用，并且仅支持使用 <a href="https://github.com/OpenObservability/OpenMetrics/blob/v1.0.0/specification/OpenMetrics.md#exemplars">OpenMetrics</a> 格式。</p>
+</div>
+<div class="paragraph">
+<p>对于可能无法存在足够长时间以便被采集的临时或批处理作业，您可以使用<a href="https://github.com/prometheus/pushgateway">Prometheus Pushgateway</a>支持将指标暴露给 Prometheus。</p>
+</div>
+<div class="paragraph">
+<p>要启用 Prometheus Pushgateway 支持，请将以下依赖添加到您的项目中：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+	&lt;groupId&gt;io.prometheus&lt;/groupId&gt;
+	&lt;artifactId&gt;prometheus-metrics-exporter-pushgateway&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>当类路径上存在 Prometheus Pushgateway 依赖，且 <code>management.prometheus.metrics.export.pushgateway.enabled</code>` 属性设置为 `<code>true</code> 时，会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a> Bean。该 Bean 负责将指标推送到 Prometheus Pushgateway。</p>
+</div>
+<div class="paragraph">
+<p>您可以通过 <code>management.prometheus.metrics.export.pushgateway</code> 下的属性来调整 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a>。对于高级配置，您还可以提供自己的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a> Bean。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.simple"><a class="anchor" href="#actuator.metrics.export.simple"></a>Simple</h3>
+<div class="paragraph">
+<p>Micrometer 附带一个简单的内存后端，如果未配置其他注册表，则会自动将其用作后备。这使您能够在<a href="#actuator.metrics.endpoint">指标端点</a>中查看收集的指标。</p>
+</div>
+<div class="paragraph">
+<p>内存后端一旦使用任何其他可用后端，便会自动禁用。您也可以显式地禁用它：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_30">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_30_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_30_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_30_properties" class="tabpanel" id="_tabs_30_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.simple.metrics.export.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_30_yaml" class="tabpanel" id="_tabs_30_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  simple:
+    metrics:
+      export:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.stackdriver"><a class="anchor" href="#actuator.metrics.export.stackdriver"></a>Stackdriver</h3>
+<div class="paragraph">
+<p>Stackdriver 注册表会定期将指标推送到<a href="https://cloud.google.com/stackdriver/">Stackdriver</a>。若要导出指标到 SaaS <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/stackdriver">Stackdriver</a>，您必须提供 Google Cloud 项目 ID：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_31">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_31_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_31_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_31_properties" class="tabpanel" id="_tabs_31_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.stackdriver.metrics.export.project-id=my-project</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_31_yaml" class="tabpanel" id="_tabs_31_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  stackdriver:
+    metrics:
+      export:
+        project-id: "my-project"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还可以更改将指标发送到 Stackdriver 的间隔：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_32">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_32_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_32_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_32_properties" class="tabpanel" id="_tabs_32_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.stackdriver.metrics.export.step=30s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_32_yaml" class="tabpanel" id="_tabs_32_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  stackdriver:
+    metrics:
+      export:
+        step: "30s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.export.statsd"><a class="anchor" href="#actuator.metrics.export.statsd"></a>StatsD</h3>
+<div class="paragraph">
+<p>StatsD 注册表会急切地通过 UDP 将指标推送到 StatsD 代理。默认情况下，指标导出到您本地机器上运行的 <a href="https://docs.micrometer.io/micrometer/reference/1.16/implementations/statsD">StatsD</a> 代理。您可以通过使用以下方法提供要使用的 StatsD 代理主机、端口和协议：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_33">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_33_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_33_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_33_properties" class="tabpanel" id="_tabs_33_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.statsd.metrics.export.host=statsd.example.com
+management.statsd.metrics.export.port=9125
+management.statsd.metrics.export.protocol=udp</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_33_yaml" class="tabpanel" id="_tabs_33_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  statsd:
+    metrics:
+      export:
+        host: "statsd.example.com"
+        port: 9125
+        protocol: "udp"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还可以将 StatsD 行协议更改为使用（默认值为 Datadog）：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_34">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_34_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_34_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_34_properties" class="tabpanel" id="_tabs_34_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.statsd.metrics.export.flavor=etsy</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_34_yaml" class="tabpanel" id="_tabs_34_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  statsd:
+    metrics:
+      export:
+        flavor: "etsy"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.supported"><a class="anchor" href="#actuator.metrics.supported"></a>支持的指标和度量器</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 为多种技术提供了自动指标注册功能。在大多数情况下，默认配置会提供合理的指标，这些指标可以发布到任何支持的监控系统中。</p>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.jvm"><a class="anchor" href="#actuator.metrics.supported.jvm"></a>JVM 指标</h3>
+<div class="paragraph">
+<p>自动配置通过核心 Micrometer 类启用 JVM 指标。JVM 指标发布在 <code>jvm.</code> 仪表名称下。</p>
+</div>
+<div class="paragraph">
+<p>以下是提供的 JVM 指标：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>各种内存和缓冲池详细信息</p>
+</li>
+<li>
+<p>与垃圾回收相关的统计信息</p>
+</li>
+<li>
+<p>线程利用率</p>
+</li>
+<li>
+<p><a href="https://docs.micrometer.io/micrometer/reference/reference/jvm.html#_java_21_metrics">虚拟线程统计信息</a>（为此，<code>io.micrometer:micrometer-java21</code> 必须位于类路径中）</p>
+</li>
+<li>
+<p>加载和卸载的类数量</p>
+</li>
+<li>
+<p>JVM 版本信息</p>
+</li>
+<li>
+<p>JIT 编译时间</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.system"><a class="anchor" href="#actuator.metrics.supported.system"></a>系统指标</h3>
+<div class="paragraph">
+<p>自动配置通过核心 Micrometer 类启用系统指标。系统指标发布在 <code>system.</code>`、`<code>process.</code>` 和 `<code>disk.</code> 计量器名称下。</p>
+</div>
+<div class="paragraph">
+<p>以下是提供的系统指标：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CPU 指标</p>
+</li>
+<li>
+<p>文件描述符指标</p>
+</li>
+<li>
+<p>正常运行时间指标（包括应用程序的运行时长以及绝对启动时间的固定仪表）</p>
+</li>
+<li>
+<p>可用磁盘空间</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.application-startup"><a class="anchor" href="#actuator.metrics.supported.application-startup"></a>应用启动指标</h3>
+<div class="paragraph">
+<p>自动配置会暴露应用程序启动时间指标：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application.started.time</code>：启动应用程序所需的时间。</p>
+</li>
+<li>
+<p><code>application.ready.time</code>：应用程序准备好处理请求所需的时间。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>指标通过应用程序类的完全限定名称进行标记。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.logger"><a class="anchor" href="#actuator.metrics.supported.logger"></a>日志记录器指标</h3>
+<div class="paragraph">
+<p>自动配置可启用 Logback 和 Log4J2 的事件指标。详细信息发布在 <code>log4j2.events.</code>` 或 `<code>logback.events.</code> 计量器名称下。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.tasks"><a class="anchor" href="#actuator.metrics.supported.tasks"></a>任务执行和调度指标</h3>
+<div class="paragraph">
+<p>自动配置可对所有可用的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html"><code>ThreadPoolTaskExecutor</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskScheduler.html"><code>ThreadPoolTaskScheduler</code></a> Bean 进行仪器化，前提是底层的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ThreadPoolExecutor.html"><code>ThreadPoolExecutor</code></a> 可用。
+指标通过执行器的名称进行标记，该名称源自 Bean 名称。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.jms"><a class="anchor" href="#actuator.metrics.supported.jms"></a>JMS 指标</h3>
+<div class="paragraph">
+<p>自动配置可启用所有可用的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/core/JmsTemplate.html"><code>JmsTemplate</code></a>bean 和带有<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/annotation/JmsListener.html"><code>@JmsListener</code></a>注解的方法的仪器化。
+这将分别生成<code>"jms.message.publish"</code>和<code>"jms.message.process"</code>指标。
+有关生成的观测值的更多信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.jms">Spring Framework 参考文档</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/core/JmsClient.html"><code>JmsClient</code></a> 和使用了 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/core/JmsTemplate.html"><code>JmsTemplate</code></a> Bean 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/core/JmsMessagingTemplate.html"><code>JmsMessagingTemplate</code></a> 也经过了增强。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-mvc"><a class="anchor" href="#actuator.metrics.supported.spring-mvc"></a>Spring MVC 指标</h3>
+<div class="paragraph">
+<p>自动配置可启用对 Spring MVC 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为<code>http.server.requests</code>。您可以通过设置<code>management.observations.http.server.requests.name</code>属性来自定义名称。</p>
+</div>
+<div class="paragraph">
+<p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-server.servlet">Spring 框架参考文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>要添加默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.observation</code> 包的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
+要替换默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+在某些情况下，Web 控制器中处理的异常不会被记录为请求指标标签。应用程序可以选择通过<a class="xref page" href="../web/servlet.html#web.servlet.spring-mvc.error-handling">将已处理的异常设置为请求属性</a>来启用并记录这些异常。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>默认情况下，所有请求都会被处理。
+若要自定义过滤器，请提供一个实现 <code>FilterRegistrationBean&lt;ServerHttpObservationFilter&gt;</code> 的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-webflux"><a class="anchor" href="#actuator.metrics.supported.spring-webflux"></a>Spring WebFlux 指标</h3>
+<div class="paragraph">
+<p>自动配置可启用对 Spring WebFlux 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
+</div>
+<div class="paragraph">
+<p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-server.reactive">Spring 框架参考文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>要添加默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它扩展了来自 <code>org.springframework.http.server.reactive.observation</code> 包的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/DefaultServerRequestObservationConvention.html"><code>DefaultServerRequestObservationConvention</code></a>`。
+要替换默认标签，请提供一个 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它实现了 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/server/reactive/observation/ServerRequestObservationConvention.html"><code>ServerRequestObservationConvention</code></a>`。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+在某些情况下，控制器和处理器函数中处理的异常不会被记录为请求指标标签。应用程序可以选择通过<a class="xref page" href="../web/reactive.html#web.reactive.webflux.error-handling">将处理的异常设置为请求属性</a>来启用并记录这些异常。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.jersey"><a class="anchor" href="#actuator.metrics.supported.jersey"></a>Jersey 服务器指标</h3>
+<div class="paragraph">
+<p>自动配置可启用对 Jersey JAX-RS 实现处理的所有请求的监控。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，Jersey 服务器指标会标记以下信息：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">处理请求时抛出的任何异常的简单类名。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求的方法（例如，<code>GET</code> 或 <code>POST</code>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outcome</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求的结果基于响应的状态码。1xx 为 `<code>INFORMATIONAL`，2xx 为 `<code>SUCCESS`，3xx 为 `<code>REDIRECTION`，4xx 为 `<code>CLIENT_ERROR`，5xx 为 `<code>SERVER_ERROR`。</code></code></code></code></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">响应的 HTTP 状态码（例如 <code>200</code>` 或 `<code>500</code>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求在变量替换之前的 URI 模板（如果可能的话，例如 <code>/api/person/{id}</code>）</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要自定义标签，请提供一个实现 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/jersey/server/JerseyObservationConvention.html"><code>JerseyObservationConvention</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.ssl"><a class="anchor" href="#actuator.metrics.supported.ssl"></a>SSL 捆绑包指标</h3>
+<div class="paragraph">
+<p>Spring Boot Actuator 发布有关 SSL 包的过期指标。
+指标 <code>ssl.chain.expiry</code> 以秒为单位衡量每个证书链的过期日期。
+如果该链已过期，此数字将为负数。
+此指标带有以下标签信息：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bundle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">包含证书链的包名</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>certificate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">证书链中即将过期的证书的序列号（十六进制格式）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chain</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">证书链的名称。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.http-clients"><a class="anchor" href="#actuator.metrics.supported.http-clients"></a>HTTP 客户端指标</h3>
+<div class="paragraph">
+<p>Spring Boot Actuator 管理 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html"><code>RestTemplate</code></a>、<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html"><code>WebClient</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a> 的仪器化。为此，您需要注入自动配置的构建器并使用它来创建实例：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/client/RestTemplateBuilder.html"><code>RestTemplateBuilder</code></a> for <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html"><code>RestTemplate</code></a></p>
+</li>
+<li>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html"><code>WebClient.Builder</code></a> for <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html"><code>WebClient</code></a></p>
+</li>
+<li>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html"><code>RestClient.Builder</code></a> for <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>您也可以手动应用负责此仪器化的自定义器，即 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/client/ObservationRestTemplateCustomizer.html"><code>ObservationRestTemplateCustomizer</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/reactive/client/ObservationWebClientCustomizer.html"><code>ObservationWebClientCustomizer</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/client/ObservationRestClientCustomizer.html"><code>ObservationRestClientCustomizer</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，指标生成的名称为 <code>http.client.requests</code>`。您可以通过设置 `<code>management.observations.http.client.requests.name</code> 属性来自定义该名称。</p>
+</div>
+<div class="paragraph">
+<p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-client">Spring 框架参考文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>要自定义使用<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html"><code>RestTemplate</code></a>或<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.html"><code>RestClient</code></a>时的标签，请提供一个实现来自<code>org.springframework.http.client.observation</code> 包的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/observation/ClientRequestObservationConvention.html"><code>ClientRequestObservationConvention</code></a>。
+要自定义使用<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html"><code>WebClient</code></a>时的标签，请提供一个实现来自<code>org.springframework.web.reactive.function.client</code> 包的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/ClientRequestObservationConvention.html"><code>ClientRequestObservationConvention</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.tomcat"><a class="anchor" href="#actuator.metrics.supported.tomcat"></a>Tomcat 指标</h3>
+<div class="paragraph">
+<p>自动配置仅在启用 MBean <a class="apiref" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/tomcat/util/modeler/Registry.html"><code>Registry</code></a> 时才会对 Tomcat 进行仪器化。默认情况下，MBean 注册表处于禁用状态，但您可以通过将 <code>server.tomcat.mbeanregistry.enabled</code> 设置为 <code>true</code> 来启用它。</p>
+</div>
+<div class="paragraph">
+<p>Tomcat 指标发布在 <code>tomcat.</code> 计量器名称下。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.cache"><a class="anchor" href="#actuator.metrics.supported.cache"></a>缓存指标</h3>
+<div class="paragraph">
+<p>自动配置可在启动时对所有可用的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html"><code>Cache</code></a>实例进行仪器化，指标前缀为<code>cache</code>。
+Cache 的仪器化针对一组基本指标进行了标准化。
+此外，还提供特定的 Cache 指标。</p>
+</div>
+<div class="paragraph">
+<p>支持的缓存库如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cache2k</p>
+</li>
+<li>
+<p>Caffeine</p>
+</li>
+<li>
+<p>Hazelcast</p>
+</li>
+<li>
+<p>任何符合 JCache（JSR-107）规范的实现</p>
+</li>
+<li>
+<p>Redis</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+必须启用指标，以便自动配置能够获取它们。有关更多详细信息，请参阅您使用的缓存库的文档。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>指标通过缓存的名称和 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a>` 的名称进行标记，后者是从 Bean 名称派生的。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+仅在启动时配置的缓存才会绑定到注册表。对于未在缓存配置中定义的缓存（例如在启动阶段后动态创建或通过编程方式创建的缓存），必须进行显式注册。为此，提供了一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/cache/CacheMetricsRegistrar.html"><code>CacheMetricsRegistrar</code></a> Bean 以简化该过程。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-batch"><a class="anchor" href="#actuator.metrics.supported.spring-batch"></a>Spring Batch 指标</h3>
+<div class="paragraph">
+<p>参见<a href="https://docs.spring.io/spring-batch/reference/6.0/monitoring-and-metrics.html">Spring Batch 参考文档</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-graphql"><a class="anchor" href="#actuator.metrics.supported.spring-graphql"></a>Spring GraphQL 指标</h3>
+<div class="paragraph">
+<p>参见<a href="https://docs.spring.io/spring-graphql/reference/2.0/observability.html">Spring GraphQL 参考文档</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.jdbc"><a class="anchor" href="#actuator.metrics.supported.jdbc"></a>数据源指标</h3>
+<div class="paragraph">
+<p>自动配置可启用对所有可用的<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>对象的指标收集，这些指标以<code>jdbc.connections</code>为前缀。数据源仪表的结果是表示池中当前活动、空闲、允许的最大和最小连接数的监控器。</p>
+</div>
+<div class="paragraph">
+<p>指标还根据基于 Bean 名称计算的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 名称进行标记。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+默认情况下，Spring Boot 为所有支持的数据源提供元数据。
+如果您的首选数据源不受支持，可以添加额外的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/metadata/DataSourcePoolMetadataProvider.html"><code>DataSourcePoolMetadataProvider</code></a> Bean。
+有关示例，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourcePoolMetadataProvidersConfiguration.html"><code>DataSourcePoolMetadataProvidersConfiguration</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>此外，Hikari 特定的指标以 `hikaricp` 前缀暴露。每个指标都通过池的名称进行标记（您可以通过 <code>spring.datasource.name</code> 控制它）。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.hibernate"><a class="anchor" href="#actuator.metrics.supported.hibernate"></a>Hibernate 指标</h3>
+<div class="paragraph">
+<p>如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 实例都将使用名为 `<code>hibernate</code> 的指标进行仪器化。</p>
+</div>
+<div class="paragraph">
+<p>指标还通过 `<a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` 的名称进行标记，该名称源自 Bean 名称。</p>
+</div>
+<div class="paragraph">
+<p>要启用统计信息，必须将标准 JPA 属性 <code>hibernate.generate_statistics</code> 设置为 <code>true</code>。您可以在自动配置的 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 上启用该功能：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_35">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_35_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_35_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_35_properties" class="tabpanel" id="_tabs_35_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.jpa.properties[hibernate.generate_statistics]=true</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_35_yaml" class="tabpanel" id="_tabs_35_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  jpa:
+    properties:
+      "[hibernate.generate_statistics]": true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-data-repository"><a class="anchor" href="#actuator.metrics.supported.spring-data-repository"></a>Spring Data 存储库指标</h3>
+<div class="paragraph">
+<p>自动配置可启用对所有 Spring Data <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a> 方法调用的监控。
+默认情况下，指标的名称为 <code>spring.data.repository.invocations</code>。
+您可以通过设置 <code>management.metrics.data.repository.metric-name</code> 属性来自定义名称。</p>
+</div>
+<div class="paragraph">
+<p>来自 `io.micrometer.core.annotation` 包的 <code>@Timed</code><a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/annotation/Timed.html">注解</a>支持应用于<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>接口和方法。如果您不想记录所有<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>调用的指标，可以将<code>management.metrics.data.repository.autotime.enabled</code>设置为<code>false</code>，并仅使用<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/annotation/Timed.html"><code>@Timed</code></a>注解。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+带有 <code>longTask = true</code> 的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/annotation/Timed.html"><code>@Timed</code></a> 注解可为该方法启用长任务计时器。
+长任务计时器需要独立的指标名称，并且可以与短任务计时器堆叠使用。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>默认情况下，与仓库调用相关的指标会标记以下信息：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repository</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">源 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>` 的简单类名。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">被调用的<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>方法名称。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>state</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">结果状态（<code>SUCCESS</code>、<code>ERROR</code>、<code>CANCELED</code> 或 <code>RUNNING</code>）。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">被调用中抛出的任何异常的简单类名。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要替换默认标签，请提供一个实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/data/RepositoryTagsProvider.html"><code>RepositoryTagsProvider</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.rabbitmq"><a class="anchor" href="#actuator.metrics.supported.rabbitmq"></a>RabbitMQ 指标</h3>
+<div class="paragraph">
+<p>自动配置会启用所有可用的 RabbitMQ 连接工厂的度量，度量名称为<code>rabbitmq</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.spring-integration"><a class="anchor" href="#actuator.metrics.supported.spring-integration"></a>Spring Integration 指标</h3>
+<div class="paragraph">
+<p>Spring Integration 会自动提供<a href="https://docs.spring.io/spring-integration/reference/7.0/metrics.html#micrometer-integration">Micrometer 支持</a>，只要有一个<code>MeterRegistry</code> Bean 可用。指标发布在<code>spring.integration.</code>计量器名称下。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.kafka"><a class="anchor" href="#actuator.metrics.supported.kafka"></a>Kafka 指标</h3>
+<div class="paragraph">
+<p>自动配置分别为自动配置的消费者工厂和 producer 工厂注册了 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/core/MicrometerConsumerListener.html"><code>MicrometerConsumerListener</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/core/MicrometerProducerListener.html"><code>MicrometerProducerListener</code></a>。
+它还为 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/config/StreamsBuilderFactoryBean.html"><code>StreamsBuilderFactoryBean</code></a> 注册了 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/streams/KafkaStreamsMicrometerListener.html"><code>KafkaStreamsMicrometerListener</code></a>。
+有关更多详细信息，请参阅 Spring Kafka 文档中的 <a href="https://docs.spring.io/spring-kafka/reference/4.0/kafka/micrometer.html#micrometer-native">Micrometer Native Metrics</a> 部分。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.mongodb"><a class="anchor" href="#actuator.metrics.supported.mongodb"></a>MongoDB 指标</h3>
+<div class="paragraph">
+<p>本节简要描述了 MongoDB 的可用指标。</p>
+</div>
+<div class="sect3">
+<h4 id="actuator.metrics.supported.mongodb.command"><a class="anchor" href="#actuator.metrics.supported.mongodb.command"></a>MongoDB 命令指标</h4>
+<div class="paragraph">
+<p>自动配置会向自动配置的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>注册一个<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/mongodb/MongoMetricsCommandListener.html"><code>MongoMetricsCommandListener</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>为向底层 MongoDB 驱动程序发出的每个命令创建一个名为 <code>mongodb.driver.commands</code> 的计时器指标。默认情况下，每个指标都标记有以下信息：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">发出的命令名称。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cluster.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命令所发送到的集群的标识符。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>server.address</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命令发送到的服务器地址。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命令的结果（<code>SUCCESS</code> 或 <code>FAILED</code>）。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要替换默认的指标标签，请定义一个 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/mongodb/MongoCommandTagsProvider.html"><code>MongoCommandTagsProvider</code></a> Bean，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_36">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_36_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_36_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_36_java" class="tabpanel" id="_tabs_36_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.binder.mongodb.MongoCommandTagsProvider;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyCommandTagsProviderConfiguration {
+
+	@Bean
+	public MongoCommandTagsProvider customCommandTagsProvider() {
+		return new CustomCommandTagsProvider();
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_36_kotlin" class="tabpanel" id="_tabs_36_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.binder.mongodb.MongoCommandTagsProvider
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyCommandTagsProviderConfiguration {
+
+	@Bean
+	fun customCommandTagsProvider(): MongoCommandTagsProvider? {
+		return CustomCommandTagsProvider()
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>要禁用自动配置的命令指标，请设置以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_37">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_37_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_37_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_37_properties" class="tabpanel" id="_tabs_37_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.metrics.mongodb.command.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_37_yaml" class="tabpanel" id="_tabs_37_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  metrics:
+    mongodb:
+      command:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.metrics.supported.mongodb.connection-pool"><a class="anchor" href="#actuator.metrics.supported.mongodb.connection-pool"></a>MongoDB 连接池指标</h4>
+<div class="paragraph">
+<p>自动配置会向自动配置的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>注册一个<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/mongodb/MongoMetricsConnectionPoolListener.html"><code>MongoMetricsConnectionPoolListener</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>为连接池创建以下仪表指标：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mongodb.driver.pool.size</code> 报告当前连接池的大小，包括空闲和正在使用的成员。</p>
+</li>
+<li>
+<p><code>mongodb.driver.pool.checkedout</code> 报告当前正在使用的连接数。</p>
+</li>
+<li>
+<p><code>mongodb.driver.pool.waitqueuesize</code> 报告池中连接等待队列的当前大小。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>每个指标默认都标记有以下信息：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cluster.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">连接池所对应的集群的标识符。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>server.address</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">连接池对应的服务器地址。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>要替换默认的指标标签，请定义一个 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/mongodb/MongoConnectionPoolTagsProvider.html"><code>MongoConnectionPoolTagsProvider</code></a> Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_38">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_38_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_38_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_38_java" class="tabpanel" id="_tabs_38_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.binder.mongodb.MongoConnectionPoolTagsProvider;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyConnectionPoolTagsProviderConfiguration {
+
+	@Bean
+	public MongoConnectionPoolTagsProvider customConnectionPoolTagsProvider() {
+		return new CustomConnectionPoolTagsProvider();
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_38_kotlin" class="tabpanel" id="_tabs_38_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.binder.mongodb.MongoConnectionPoolTagsProvider
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyConnectionPoolTagsProviderConfiguration {
+
+	@Bean
+	fun customConnectionPoolTagsProvider(): MongoConnectionPoolTagsProvider {
+		return CustomConnectionPoolTagsProvider()
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>要禁用自动配置的连接池指标，请设置以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_39">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_39_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_39_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_39_properties" class="tabpanel" id="_tabs_39_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.metrics.mongodb.connectionpool.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_39_yaml" class="tabpanel" id="_tabs_39_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  metrics:
+    mongodb:
+      connectionpool:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.neo4j"><a class="anchor" href="#actuator.metrics.supported.neo4j"></a>Neo4j 指标</h3>
+<div class="paragraph">
+<p>自动配置为自动配置的<a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Driver.html"><code>Driver</code></a>注册了一个<a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/observation/micrometer/MicrometerObservationProvider.html"><code>MicrometerObservationProvider</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>要覆盖此行为，您可以注册一个顺序高于零的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/neo4j/autoconfigure/ConfigBuilderCustomizer.html"><code>ConfigBuilderCustomizer</code></a> Bean。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.jetty"><a class="anchor" href="#actuator.metrics.supported.jetty"></a>Jetty 指标</h3>
+<div class="paragraph">
+<p>自动配置通过 Micrometer 的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/jetty/JettyServerThreadPoolMetrics.html"><code>JettyServerThreadPoolMetrics</code></a> 绑定 Jetty 的 <a class="apiref" href="https://javadoc.jetty.org/jetty-12/org/eclipse/jetty/util/thread/ThreadPool.html"><code>ThreadPool</code></a> 指标。Jetty 的 <a class="apiref" href="https://javadoc.jetty.org/jetty-12/org/eclipse/jetty/server/Connector.html"><code>Connector</code></a> 实例的指标通过 Micrometer 的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/jetty/JettyConnectionMetrics.html"><code>JettyConnectionMetrics</code></a> 绑定，并且当 <code>server.ssl.enabled</code> 设置为 <code>true</code> 时，还会通过 Micrometer 的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/jetty/JettySslHandshakeMetrics.html"><code>JettySslHandshakeMetrics</code></a> 绑定。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.supported.redis"><a class="anchor" href="#actuator.metrics.supported.redis"></a>Redis 指标</h3>
+<div class="paragraph">
+<p>自动配置为自动配置的<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/lettuce/LettuceConnectionFactory.html"><code>LettuceConnectionFactory</code></a>注册了一个<a class="apiref" href="https://javadoc.io/doc/io.lettuce/lettuce-core/6.8.1.RELEASE/io/lettuce/core/tracing/MicrometerTracing.html"><code>MicrometerTracing</code></a>。
+有关详细信息，请参阅 Lettuce 文档中的<a href="https://redis.github.io/lettuce/advanced-usage/#observability">可观测性部分</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.registering-custom"><a class="anchor" href="#actuator.metrics.registering-custom"></a>注册自定义指标</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>要注册自定义指标，将 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a> 注入到您的组件中：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_40">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_40_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_40_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_40_java" class="tabpanel" id="_tabs_40_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Tags;
+
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final Dictionary dictionary;
+
+	public MyBean(MeterRegistry registry) {
+		this.dictionary = Dictionary.load();
+		registry.gauge("dictionary.size", Tags.empty(), this.dictionary.getWords().size());
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_40_kotlin" class="tabpanel" id="_tabs_40_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.MeterRegistry
+import io.micrometer.core.instrument.Tags
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(registry: MeterRegistry) {
+
+	private val dictionary: Dictionary
+
+	init {
+		dictionary = Dictionary.load()
+		registry.gauge("dictionary.size", Tags.empty(), dictionary.words.size)
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您的指标依赖于其他 Bean，我们建议使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a> 进行注册：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_41">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_41_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_41_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_41_java" class="tabpanel" id="_tabs_41_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.binder.MeterBinder;
+
+import org.springframework.context.annotation.Bean;
+
+</span><span class="fold-block">public class MyMeterBinderConfiguration {
+
+	@Bean
+	public MeterBinder queueSize(Queue queue) {
+		return (registry) -&gt; Gauge.builder("queueSize", queue::size).register(registry);
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_41_kotlin" class="tabpanel" id="_tabs_41_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.Gauge
+import io.micrometer.core.instrument.binder.MeterBinder
+import org.springframework.context.annotation.Bean
+
+</span><span class="fold-block">class MyMeterBinderConfiguration {
+
+	@Bean
+	fun queueSize(queue: Queue): MeterBinder {
+		return MeterBinder { registry -&gt;
+			Gauge.builder("queueSize", queue::size).register(registry)
+		}
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>使用 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 可以确保设置正确的依赖关系，并在获取指标值时使该 Bean 可用。
+如果您发现需要在组件或应用程序之间重复地对一系列指标进行监控，`<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a>` 的实现也会很有用。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+默认情况下，所有 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/binder/MeterBinder.html"><code>MeterBinder</code></a> Bean 的指标会自动绑定到 Spring 管理的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.customizing"><a class="anchor" href="#actuator.metrics.customizing"></a>自定义单个指标</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如果您需要对特定的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/Meter.html"><code>Meter</code></a> 实例应用自定义配置，可以使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a> 接口。</p>
+</div>
+<div class="paragraph">
+<p>例如，如果您想将所有以<code>com.example</code>开头的仪表 ID 的<code>mytag.region</code>标签重命名为<code>mytag.area</code>，您可以执行以下操作：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_42">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_42_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_42_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_42_java" class="tabpanel" id="_tabs_42_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.config.MeterFilter;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyMetricsFilterConfiguration {
+
+	@Bean
+	public MeterFilter renameRegionTagMeterFilter() {
+		return MeterFilter.renameTag("com.example", "mytag.region", "mytag.area");
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_42_kotlin" class="tabpanel" id="_tabs_42_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import io.micrometer.core.instrument.config.MeterFilter
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyMetricsFilterConfiguration {
+
+	@Bean
+	fun renameRegionTagMeterFilter(): MeterFilter {
+		return MeterFilter.renameTag("com.example", "mytag.region", "mytag.area")
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+默认情况下，所有 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a> Bean 都会自动绑定到 Spring 管理的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a>。
+请确保使用 Spring 管理的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a> 来注册指标，而不是使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/Metrics.html"><code>Metrics</code></a> 上的任何静态方法。
+这些方法使用的是非 Spring 管理的全局注册表。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.customizing.common-tags"><a class="anchor" href="#actuator.metrics.customizing.common-tags"></a>通用标签</h3>
+<div class="paragraph">
+<p>通用标签通常用于对运行环境（如主机、实例、区域、堆栈等）进行维度下钻。通用标签适用于所有指标，并可进行配置，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_43">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_43_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_43_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_43_properties" class="tabpanel" id="_tabs_43_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.metrics.tags.region=us-east-1
+management.metrics.tags.stack=prod</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_43_yaml" class="tabpanel" id="_tabs_43_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  metrics:
+    tags:
+      region: "us-east-1"
+      stack: "prod"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>前面的示例为所有值为 <code>us-east-1</code>` 和 `<code>prod</code>` 的计量器添加了 `<code>region</code>` 和 `<code>stack</code> 标签。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您使用 Graphite，常见标签的顺序非常重要。由于这种方法无法保证常见标签的顺序，因此建议 Graphite 用户定义自定义的 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.metrics.customizing.per-meter-properties"><a class="anchor" href="#actuator.metrics.customizing.per-meter-properties"></a>每指标属性</h3>
+<div class="paragraph">
+<p>除了 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/config/MeterFilter.html"><code>MeterFilter</code></a>` Bean 之外，您还可以使用属性按每个仪表应用有限的自定义。
+按仪表的自定义是使用 Spring Boot 的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/metrics/PropertiesMeterFilter.html"><code>PropertiesMeterFilter</code></a>` 应用于任何以给定名称开头的仪表 ID。
+以下示例会过滤掉任何 ID 以 `example.remote` 开头的仪表。</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_44">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_44_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_44_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_44_properties" class="tabpanel" id="_tabs_44_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.metrics.enable.example.remote=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_44_yaml" class="tabpanel" id="_tabs_44_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  metrics:
+    enable:
+      example:
+        remote: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>以下属性允许按米进行自定义：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 1. 每米自定义设置</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.enable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否接受具有特定 ID 的 Meter。未被接受的 Meter 将从 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/MeterRegistry.html"><code>MeterRegistry</code></a> 中过滤掉。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.distribution.percentiles-histogram</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否发布适用于计算可聚合（跨维度）百分位近似值的直方图。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.distribution.minimum-expected-value</code>, <code>management.metrics.distribution.maximum-expected-value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">通过钳制预期值的范围来减少发布的直方图桶数量。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.distribution.percentiles</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">发布应用程序中计算的百分位数值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.distribution.expiry</code>, <code>management.metrics.distribution.buffer-length</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">通过配置可过期时间和缓冲区长度，将样本累积到环形缓冲区中，并对较新的样本赋予更大的权重，在达到配置的过期时间后旋转缓冲区。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.metrics.distribution.slo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">发布累积直方图，其分桶由您的服务级别目标定义。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>有关 <code>percentiles-histogram`、`<code>percentiles</code>` 和 `<code>slo</code> 背后概念的更多详细信息，请参阅 Micrometer 文档中的 <a href="https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html">直方图和分位数</a> 部分。</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.endpoint"><a class="anchor" href="#actuator.metrics.endpoint"></a>指标端点</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 提供了一个 `<code>metrics`</code> 端点，您可以使用它来诊断性地检查应用程序收集的指标。该端点默认不可用，必须将其暴露。有关更多详细信息，请参阅<a class="xref page" href="endpoints.html#actuator.endpoints.exposing">暴露端点</a>。</p>
+</div>
+<div class="paragraph">
+<p>导航到 <code>/actuator/metrics</code>` 会显示可用计量器名称的列表。您可以通过提供其名称作为选择器来深入查看特定计量器的信息——例如，`<code>/actuator/metrics/jvm.memory.max</code>。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>此处使用的名称应与代码中使用的名称匹配，而不是与它被规范化命名约定后用于监控系统的名称匹配。换句话说，如果 <code>jvm.memory.max</code>` 在 Prometheus 中因蛇形命名约定而显示为 `<code>jvm_memory_max</code>`，您在检查 `<code>metrics</code>` 端点中的仪表时，仍应使用 `<code>jvm.memory.max</code> 作为选择器。</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>您还可以在 URL 末尾添加任意数量的 <code>tag=KEY:VALUE</code> 查询参数，以对仪表进行维度下钻——例如，`/actuator/metrics/jvm.memory.max?tag=area:nonheap`。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>报告的测量值是匹配计量器名称和所有已应用标签的计量器的统计数据的<em>总和</em>。  
+在前面的示例中，返回的 `<code>Value` 统计数据是堆中“Code Cache”、“Compressed Class Space"和“Metaspace"区域的最大内存占用量的总和。  
+如果您只想查看“Metaspace"的最大大小，可以添加额外的 <code>tag=id:Metaspace</code>`——即 `<code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>。</code></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.metrics.micrometer-observation"><a class="anchor" href="#actuator.metrics.micrometer-observation"></a>Micrometer 观测集成</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>`<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-core/1.16.0/io/micrometer/core/instrument/observation/DefaultMeterObservationHandler.html"><code>DefaultMeterObservationHandler</code></a>` 会自动注册到 `<a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>`，从而为每个完成的观察创建指标。</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="loggers.html">Loggers</a></span>
+  <span class="next"><a href="tracing.html">Tracing</a></span>
+</nav>
+</article>  </div>
+</main>
+<div aria-hidden="true" class="modal micromodal-slide" id="modal-versions">
+    <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+        <div aria-modal="true" class="modal__container" role="dialog">
+            <main class="modal__content" id="modal-versions-content">
+              <button class="modal-versions-close" data-micromodal-close="">
+                <svg height="28px" viewBox="0 0 32 32" width="28px" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title></title><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"></line><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"></line></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div><a class="title" href="../../index.html">Spring Boot</a></div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>相关 Spring 文档<ul class="projects-list">
+        <li><a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Cloud
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Data
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a></li>
+        <li><a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a></li>
+        <li><a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a></li>
+        <li><a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a></li>
+        <li><a href="https://docs.spring.io/spring-modulith/reference/">Spring Modulith</a></li>
+        <li><a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a></li>
+        <li><a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a></li>
+    </ul>
+  </li><a href="../../spring-projects.html">所有文档...</a>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img alt="Spring" id="springlogo" src="../../_/img/spring-logo.svg"/>
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href="https://www.vmware.com/help/legal.html">使用条款</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">隐私政策</a> • <a href="https://spring.io/trademarks">商标指南</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">致谢</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">您的加州隐私权利</a> • <a class="ot-sdk-show-settings">Cookie 设置</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。</p>
+    </div>
+    <div class="flex jc-between" id="social-icons">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="20" cy="20" r="20"></circle><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"></path></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"></path><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"></path></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"></circle><path class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z" data-name="Twitter" id="Twitter-2"></path></svg></a>
+    </div>
+</footer>
+<script src="../../_/js/vendor/import.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async="" src="../../_/js/vendor/highlight.js"></script>
+<script async="" data-sync-storage-key="docs:preferred-tab" src="../../_/js/vendor/asciidoctor-tabs.js"></script>
+  
+
+</body></html>

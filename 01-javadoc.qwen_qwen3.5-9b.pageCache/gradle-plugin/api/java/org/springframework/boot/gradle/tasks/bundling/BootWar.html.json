@@ -1,0 +1,206 @@
+{
+  "created_at": "2026-04-13 20:18:39",
+  "updated_at": "2026-04-13 20:18:39",
+  "stats": {
+    "total_entries": 38,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 53,
+    "entries_with_hits": 38,
+    "entries_without_hits": 0,
+    "hit_rate": 1.394736842105263,
+    "usage_percentage": 0.0038000000000000004
+  },
+  "items": [
+    {
+      "source": "Sets the provided classpath to include in the <code>WEB-INF/lib-provided</code>\ndirectory of the war.",
+      "translation": "将提供的类路径设置为包含在 war 的 `<code>WEB-INF/lib-provided</code>` 目录中。",
+      "count": 3
+    },
+    {
+      "source": "Adds files to the provided classpath to include in the <code>WEB-INF/lib-provided</code>\ndirectory of the war. The given <code>classpath</code> is evaluated as per\n<a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#files(java.lang.Object...)\" title=\"class or interface in org.gradle.api\"><code>Project.files(Object...)</code></a>.",
+      "translation": "将文件添加到提供的类路径中，以便将其包含在 war 的 `<code>WEB-INF/lib-provided</code>` 目录中。给定的 `<code>classpath</code>` 将按照 <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#files(java.lang.Object...)\" title=\"class or interface in org.gradle.api\"><code>Project.files(Object...)</code></a> 进行评估。",
+      "count": 2
+    },
+    {
+      "source": "Sets the provided classpath to include in the <code>WEB-INF/lib-provided</code>\ndirectory of the war. The given <code>classpath</code> is evaluated as per\n<a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#files(java.lang.Object...)\" title=\"class or interface in org.gradle.api\"><code>Project.files(Object...)</code></a>.",
+      "translation": "将提供的类路径设置为包含在 war 的 `<code>WEB-INF/lib-provided</code>` 目录中。给定的 `<code>classpath` 按照 <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#files(java.lang.Object...)\" title=\"class or interface in org.gradle.api\"><code>Project.files(Object...)</code></a> 进行评估。",
+      "count": 2
+    },
+    {
+      "source": "Return if the <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/file/FileCopyDetails.html\" title=\"class or interface in org.gradle.api.file\"><code>FileCopyDetails</code></a> are for a library. By default any file in\n<code>WEB-INF/lib</code> or <code>WEB-INF/lib-provided</code> is considered to be a library.",
+      "translation": "如果 `<a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/file/FileCopyDetails.html\" title=\"class or interface in org.gradle.api.file\"><code>FileCopyDetails</code></a>` 是用于库，则返回。默认情况下，`WEB-INF/lib` 或 `WEB-INF/lib-provided` 中的任何文件都被视为库。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>BootWar</code> task.",
+      "translation": "创建一个新的<code>BootWar</code>任务。",
+      "count": 2
+    },
+    {
+      "source": "Returns the provided classpath, the contents of which will be included in the\n<code>WEB-INF/lib-provided</code> directory of the war.",
+      "translation": "返回提供的类路径，其内容将被包含在 war 的 `<code>WEB-INF/lib-provided</code>` 目录中。",
+      "count": 2
+    },
+    {
+      "source": "Configures the war's layering using the given <code>action</code>.",
+      "translation": "使用给定的 <code>action</code> 配置 WAR 的分层。",
+      "count": 2
+    },
+    {
+      "source": "Returns the spec that describes the layers in a layered jar.",
+      "translation": "返回描述分层 JAR 中各层的规范。",
+      "count": 2
+    },
+    {
+      "source": "Adds Ant-style patterns that identify files that must be unpacked from the archive\nwhen it is launched.",
+      "translation": "添加 Ant 风格模式，用于识别在启动时必须从归档中解压的文件。",
+      "count": 2
+    },
+    {
+      "source": "Adds a spec that identifies files that must be unpacked from the archive when it is\nlaunched.",
+      "translation": "添加一个规范，用于标识在启动归档时必须从中解压缩的文件。",
+      "count": 2
+    },
+    {
+      "source": "<code>classpath</code> - the classpath",
+      "translation": "<code>classpath</code> - 类路径",
+      "count": 2
+    },
+    {
+      "source": "<code>details</code> - the file copy details",
+      "translation": "<code>details</code> - 文件复制详情",
+      "count": 2
+    },
+    {
+      "source": "Andy Wilkinson, Phillip Webb, Scott Frederick",
+      "translation": "Andy Wilkinson, Phillip Webb, Scott Frederick",
+      "count": 2
+    },
+    {
+      "source": "the provided classpath",
+      "translation": "提供的类路径",
+      "count": 2
+    },
+    {
+      "source": "Return the <a href=\"ZipCompression.html\" title=\"enum class in org.springframework.boot.gradle.tasks.bundling\"><code>ZipCompression</code></a> that should be used when adding the file\nrepresented by the given <code>details</code> to the jar. By default, any\n<a href=\"#isLibrary(org.gradle.api.file.FileCopyDetails)\"><code>library</code></a> is <a href=\"ZipCompression.html#STORED\"><code>stored</code></a>\nand all other files are <a href=\"ZipCompression.html#DEFLATED\"><code>deflated</code></a>.",
+      "translation": "返回在将给定 `<code>details` 表示的文件添加到 jar 时应使用的<a href=\"ZipCompression.html\" title=\"enum class in org.springframework.boot.gradle.tasks.bundling\"><code>ZipCompression</code></a>。默认情况下，任何<a href=\"#isLibrary(org.gradle.api.file.FileCopyDetails)\"><code>library</code></a>均被<a href=\"ZipCompression.html#STORED\"><code>stored</code></a>，而所有其他文件则被<a href=\"ZipCompression.html#DEFLATED\"><code>deflated</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Return the <a href=\"ZipCompression.html\" title=\"enum class in org.springframework.boot.gradle.tasks.bundling\"><code>ZipCompression</code></a> that should be used when adding the file\nrepresented by the given <code>details</code> to the jar.",
+      "translation": "返回在将给定 `<code>details` 表示的文件添加到 jar 时应使用的<a href=\"ZipCompression.html\" title=\"enum class in org.springframework.boot.gradle.tasks.bundling\"><code>ZipCompression</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"BootArchive.html#resolvedArtifacts(org.gradle.api.provider.Provider)\">BootArchive</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"BootArchive.html#resolvedArtifacts(org.gradle.api.provider.Provider)\">BootArchive</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "Registers the given lazily provided <code>resolvedArtifacts</code>. They are used to map\nfrom the files in the <a href=\"BootArchive.html#getClasspath()\"><code>classpath</code></a> to their dependency\ncoordinates.",
+      "translation": "注册给定的懒式提供的 `<code>resolvedArtifacts</code>`。它们用于将 `<a href=\"BootArchive.html#getClasspath()\"><code>classpath</code></a>` 中的文件映射到其依赖坐标。",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"BootArchive.html#requiresUnpack(java.lang.String...)\">BootArchive</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"BootArchive.html#requiresUnpack(java.lang.String...)\">BootArchive</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"BootArchive.html#requiresUnpack(org.gradle.api.specs.Spec)\">BootArchive</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"BootArchive.html#requiresUnpack(org.gradle.api.specs.Spec)\">BootArchive</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "A custom <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/War.html\" title=\"class or interface in org.gradle.api.tasks.bundling\"><code>War</code></a> task that produces a Spring Boot executable war.",
+      "translation": "一个自定义的 <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/War.html\" title=\"class or interface in org.gradle.api.tasks.bundling\"><code>War</code></a> 任务，用于生成 Spring Boot 可执行 war。",
+      "count": 1
+    },
+    {
+      "source": "Return if the <a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/file/FileCopyDetails.html\" title=\"class or interface in org.gradle.api.file\"><code>FileCopyDetails</code></a> are for a library.",
+      "translation": "如果 `<a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/file/FileCopyDetails.html\" title=\"class or interface in org.gradle.api.file\"><code>FileCopyDetails</code></a>` 是针对库的，则返回。",
+      "count": 1
+    },
+    {
+      "source": "Adds files to the provided classpath to include in the <code>WEB-INF/lib-provided</code>\ndirectory of the war.",
+      "translation": "将文件添加到提供的类路径中，以便将其包含在 war 的 `<code>WEB-INF/lib-provided</code>` 目录中。",
+      "count": 1
+    },
+    {
+      "source": "Registers the given lazily provided <code>resolvedArtifacts</code>.",
+      "translation": "注册给定的懒式提供的<code>resolvedArtifacts</code>。",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"BootArchive.html#resolvedArtifacts(org.gradle.api.provider.Provider)\">resolvedArtifacts</a></code> in interface <code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>",
+      "translation": "`<code><a href=\"BootArchive.html#resolvedArtifacts(org.gradle.api.provider.Provider)\">resolvedArtifacts</a></code>` 接口 `<code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/AbstractCopyTask.html#copy()\" title=\"class or interface in org.gradle.api.tasks\">copy</a></code> in class <code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/AbstractCopyTask.html\" title=\"class or interface in org.gradle.api.tasks\">AbstractCopyTask</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/AbstractCopyTask.html#copy()\" title=\"class or interface in org.gradle.api.tasks\">copy</a></code>` 类 `<code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/AbstractCopyTask.html\" title=\"class or interface in org.gradle.api.tasks\">AbstractCopyTask</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/Zip.html#createCopyAction()\" title=\"class or interface in org.gradle.api.tasks.bundling\">createCopyAction</a></code> in class <code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/Zip.html\" title=\"class or interface in org.gradle.api.tasks.bundling\">Zip</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/Zip.html#createCopyAction()\" title=\"class or interface in org.gradle.api.tasks.bundling\">createCopyAction</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/bundling/Zip.html\" title=\"class or interface in org.gradle.api.tasks.bundling\">Zip</a></code>",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"BootArchive.html#requiresUnpack(java.lang.String...)\">requiresUnpack</a></code> in interface <code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>",
+      "translation": "`<a href=\"BootArchive.html#requiresUnpack(java.lang.String...)\">requiresUnpack</a>` 在接口 `<code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"BootArchive.html#requiresUnpack(org.gradle.api.specs.Spec)\">requiresUnpack</a></code> in interface <code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>",
+      "translation": "`<code><a href=\"BootArchive.html#requiresUnpack(org.gradle.api.specs.Spec)\">requiresUnpack</a></code>` 在接口 `<code><a href=\"BootArchive.html\" title=\"interface in org.springframework.boot.gradle.tasks.bundling\">BootArchive</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>resolvedArtifacts</code> - the lazily provided resolved artifacts",
+      "translation": "<code>resolvedArtifacts</code> - 懒式提供的已解析工件",
+      "count": 1
+    },
+    {
+      "source": "<code>patterns</code> - the patterns",
+      "translation": "<code>patterns</code> - 模式",
+      "count": 1
+    },
+    {
+      "source": "<code>spec</code> - the spec",
+      "translation": "<code>spec</code> - 规范",
+      "count": 1
+    },
+    {
+      "source": "<code>classpath</code> - the additions to the classpath",
+      "translation": "<code>classpath</code> - 类路径的添加项",
+      "count": 1
+    },
+    {
+      "source": "<code>action</code> - the action to apply",
+      "translation": "<code>action</code> - 要应用的操作",
+      "count": 1
+    },
+    {
+      "source": "<code>true</code> if the details are for a library",
+      "translation": "<code>true</code> 如果详细信息是针对库的",
+      "count": 1
+    },
+    {
+      "source": "the compression to use",
+      "translation": "要使用的压缩方式",
+      "count": 1
+    },
+    {
+      "source": "the spec for the layers",
+      "translation": "层的规范",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

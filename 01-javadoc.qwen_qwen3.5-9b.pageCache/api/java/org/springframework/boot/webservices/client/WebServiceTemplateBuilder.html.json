@@ -1,0 +1,291 @@
+{
+  "created_at": "2026-04-13 20:16:01",
+  "updated_at": "2026-04-13 20:16:01",
+  "stats": {
+    "total_entries": 55,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 139,
+    "entries_with_hits": 55,
+    "entries_without_hits": 0,
+    "hit_rate": 2.5272727272727273,
+    "usage_percentage": 0.0055000000000000005
+  },
+  "items": [
+    {
+      "source": "a new builder instance.",
+      "translation": "一个新的构建器实例。",
+      "count": 13
+    },
+    {
+      "source": "a new builder instance",
+      "translation": "一个新的构建器实例",
+      "count": 10
+    },
+    {
+      "source": "Add additional <code>ClientInterceptors</code> that should be used\nwith the <code>WebServiceTemplate</code>.",
+      "translation": "添加额外的<code>ClientInterceptors</code>，这些拦截器将用于<code>WebServiceTemplate</code>。",
+      "count": 4
+    },
+    {
+      "source": "Add additional <code>WebServiceMessageSenders</code> that should\nbe used with the <code>WebServiceTemplate</code>.",
+      "translation": "添加额外的应使用与<code>WebServiceTemplate</code>配合的<code>WebServiceMessageSenders</code>。",
+      "count": 4
+    },
+    {
+      "source": "Add additional <a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>\nthat should be applied to the <code>WebServiceTemplate</code>.",
+      "translation": "添加额外的 `<a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>`，这些自定义器将应用于 `<code>WebServiceTemplate</code>`。",
+      "count": 3
+    },
+    {
+      "source": "Set <a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a> that should\nbe applied to the <code>WebServiceTemplate</code>.",
+      "translation": "设置应应用于 `<code>WebServiceTemplate</code>` 的 `<a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>`。",
+      "count": 3
+    },
+    {
+      "source": "Set <a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a> that should\nbe applied to the <code>WebServiceTemplate</code>. Customizers are applied in the order\nthat they were added after builder configuration has been applied. Setting this\nvalue will replace any previously configured customizers.",
+      "translation": "设置应应用于 `<code>WebServiceTemplate</code>` 的 `<a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>`。自定义器在应用构建器配置后，按添加顺序进行应用。设置此值将替换任何先前配置的自定义器。",
+      "count": 3
+    },
+    {
+      "source": "Add additional <a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>\nthat should be applied to the <code>WebServiceTemplate</code>. Customizers are applied\nin the order that they were added after builder configuration has been applied.",
+      "translation": "添加额外的 `<a href=\"WebServiceTemplateCustomizer.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceTemplateCustomizers</code></a>`，这些自定义器将应用于 `<code>WebServiceTemplate</code>`。在应用构建器配置后，自定义器将按照添加的顺序进行应用。",
+      "count": 3
+    },
+    {
+      "source": "Set the <a href=\"WebServiceMessageSenderFactory.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceMessageSenderFactory</code></a> that should be used to send HTTP\nmessages.",
+      "translation": "设置用于发送 HTTP 消息的<a href=\"WebServiceMessageSenderFactory.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceMessageSenderFactory</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Set the <code>ClientInterceptors</code> that should be used with the\n<code>WebServiceTemplate</code>. Setting this value will replace any previously defined\ninterceptors.",
+      "translation": "设置与 `<code>WebServiceTemplate</code>` 一起使用的 `<code>ClientInterceptors</code>`。设置此值将替换任何先前定义的拦截器。",
+      "count": 3
+    },
+    {
+      "source": "<code>messageSenders</code> - the message senders to set",
+      "translation": "<code>messageSenders</code> - 要设置的发送者",
+      "count": 3
+    },
+    {
+      "source": "<code>messageSenders</code> - the message senders to add",
+      "translation": "<code>messageSenders</code> - 要添加的消息发送者",
+      "count": 3
+    },
+    {
+      "source": "a configured <code>WebServiceTemplate</code> instance.",
+      "translation": "已配置的<code>WebServiceTemplate</code> 实例。",
+      "count": 3
+    },
+    {
+      "source": "By default the built <code>WebServiceTemplate</code> uses the most suitable HTTP-based\n<code>WebServiceMessageSender</code>, call <a href=\"#detectHttpMessageSender(boolean)\"><code>detectHttpMessageSender(false)</code></a> if you prefer to keep the default. In a typical\nauto-configured Spring Boot application this builder is available as a bean and can be\ninjected whenever a <code>WebServiceTemplate</code> is needed.",
+      "translation": "默认情况下，构建的<code>WebServiceTemplate</code>会使用最合适的基于 HTTP 的<code>WebServiceMessageSender</code>，如果您希望保留默认设置，请调用<a href=\"#detectHttpMessageSender(boolean)\"><code>detectHttpMessageSender(false)</code></a>。在典型的自动配置的 Spring Boot 应用程序中，该构建器可作为 Bean 提供，并在需要<code>WebServiceTemplate</code>时进行注入。",
+      "count": 2
+    },
+    {
+      "source": "Sets the <code>WebServiceMessageSenders</code> that should be\nused with the <code>WebServiceTemplate</code>. Setting this value will replace any\npreviously defined message senders, including the HTTP-based message sender, if\nany. Consider using <a href=\"#additionalMessageSenders(org.springframework.ws.transport.WebServiceMessageSender...)\"><code>additionalMessageSenders(WebServiceMessageSender...)</code></a>\nto keep it with user-defined message senders.",
+      "translation": "设置与 `<code>WebServiceTemplate</code>` 一起使用的 `<code>WebServiceMessageSenders</code>`。设置此值将替换任何先前定义的消息发送器，包括基于 HTTP 的消息发送器（如果有）。请考虑使用 <a href=\"#additionalMessageSenders(org.springframework.ws.transport.WebServiceMessageSender...)\"><code>additionalMessageSenders(WebServiceMessageSender...)</code></a> 将其与用户定义的消息发送器一起保留。",
+      "count": 2
+    },
+    {
+      "source": "Sets the <code>WebServiceMessageSenders</code> that should be\nused with the <code>WebServiceTemplate</code>. Setting this value will replace any\npreviously defined message senders, including the HTTP-based message sender, if\nany. Consider using <a href=\"#additionalMessageSenders(java.util.Collection)\"><code>additionalMessageSenders(Collection)</code></a> to keep it with\nuser-defined message senders.",
+      "translation": "设置与 `<code>WebServiceTemplate</code>` 一起使用的 `<code>WebServiceMessageSenders</code>`。设置此值将替换任何先前定义的消息发送器，包括基于 HTTP 的消息发送器（如果有）。请考虑使用 <a href=\"#additionalMessageSenders(java.util.Collection)\"><code>additionalMessageSenders(Collection)</code></a> 将其与用户定义的消息发送器保留在一起。",
+      "count": 2
+    },
+    {
+      "source": "Set the <code>DestinationProvider</code> to use. Typically, either this property is set,\nor <a href=\"#setDefaultUri(java.lang.String)\"><code>setDefaultUri(String)</code></a>, but not both.",
+      "translation": "设置要使用的 `<code>DestinationProvider</code>`。通常，要么设置此属性，要么调用<a href=\"#setDefaultUri(java.lang.String)\"><code>setDefaultUri(String)</code></a>，但两者不能同时使用。",
+      "count": 2
+    },
+    {
+      "source": "Set the <code>ClientInterceptors</code> that should be used with the\n<code>WebServiceTemplate</code>.",
+      "translation": "设置与 <code>WebServiceTemplate</code> 一起使用的 <code>ClientInterceptors</code>。",
+      "count": 2
+    },
+    {
+      "source": "Sets the <code>WebServiceMessageSenders</code> that should be\nused with the <code>WebServiceTemplate</code>.",
+      "translation": "设置与 <code>WebServiceTemplate</code> 一起使用的 <code>WebServiceMessageSenders</code>。",
+      "count": 2
+    },
+    {
+      "source": "Indicates whether the connection should be checked for error indicators\n(<code>true</code>), or whether these should be ignored (<code>false</code>).",
+      "translation": "指示是否应检查连接中的错误指示器（<code>true</code>），还是忽略这些指示器（<code>false</code>）。",
+      "count": 2
+    },
+    {
+      "source": "Indicates whether the connection should be checked for fault indicators\n(<code>true</code>), or whether we should rely on the message only (<code>false</code>).",
+      "translation": "指示是否应检查连接中的故障指示器（<code>true</code>），还是仅依赖消息（<code>false</code>）。",
+      "count": 2
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/oxm/Marshaller.html\" title=\"class or interface in org.springframework.oxm\"><code>Marshaller</code></a> to use to serialize messages.",
+      "translation": "设置用于序列化消息的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/oxm/Marshaller.html\" title=\"class or interface in org.springframework.oxm\"><code>Marshaller</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/javax/xml/transform/TransformerFactory.html\" title=\"class or interface in javax.xml.transform\"><code>TransformerFactory</code></a> implementation to use.",
+      "translation": "设置要使用的 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.xml/javax/xml/transform/TransformerFactory.html\" title=\"class or interface in javax.xml.transform\"><code>TransformerFactory</code></a>` 实现。",
+      "count": 2
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/oxm/Unmarshaller.html\" title=\"class or interface in org.springframework.oxm\"><code>Unmarshaller</code></a> to use to deserialize messages.",
+      "translation": "设置用于反序列化消息的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/oxm/Unmarshaller.html\" title=\"class or interface in org.springframework.oxm\"><code>Unmarshaller</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Set if a suitable HTTP-based <code>WebServiceMessageSender</code> should be detected\nbased on the classpath when one has not been specified. Default is <code>true</code>.",
+      "translation": "设置当未指定时，是否应基于类路径检测合适的基于 HTTP 的 `WebServiceMessageSender`。默认值为 `<code>true</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Set the default URI to be used on operations that do not have a URI parameter.\nTypically, either this property is set, or\n<a href=\"#setDestinationProvider(org.springframework.ws.client.support.destination.DestinationProvider)\"><code>setDestinationProvider(DestinationProvider)</code></a>, but not both.",
+      "translation": "将默认 URI 设置为在没有 URI 参数的操作中使用。通常，要么设置此属性，要么\n<a href=\"#setDestinationProvider(org.springframework.ws.client.support.destination.DestinationProvider)\"><code>setDestinationProvider(DestinationProvider)</code></a>，但不能两者都使用。",
+      "count": 2
+    },
+    {
+      "source": "Build a new <code>WebServiceTemplate</code> instance and configure it using this\nbuilder.",
+      "translation": "构建一个新的<code>WebServiceTemplate</code>实例，并使用此构建器进行配置。",
+      "count": 2
+    },
+    {
+      "source": "Build a new <code>WebServiceTemplate</code> instance of the specified type and configure\nit using this builder.",
+      "translation": "构建指定类型的新的<code>WebServiceTemplate</code>实例，并使用此构建器对其进行配置。",
+      "count": 2
+    },
+    {
+      "source": "Configure the provided <code>WebServiceTemplate</code> instance using this builder.",
+      "translation": "使用此构建器配置提供的 <code>WebServiceTemplate</code> 实例。",
+      "count": 2
+    },
+    {
+      "source": "Set the <code>FaultMessageResolver</code> to use.",
+      "translation": "设置要使用的<code>FaultMessageResolver</code>。",
+      "count": 2
+    },
+    {
+      "source": "Sets the <code>WebServiceMessageFactory</code> to use for creating messages.",
+      "translation": "设置用于创建消息的<code>WebServiceMessageFactory</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code>messageSenderFactory</code> - the <a href=\"WebServiceMessageSenderFactory.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceMessageSenderFactory</code></a> to use",
+      "translation": "`messageSenderFactory` - 要使用的 <a href=\"WebServiceMessageSenderFactory.html\" title=\"interface in org.springframework.boot.webservices.client\"><code>WebServiceMessageSenderFactory</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code>detectHttpMessageSender</code> - if an HTTP-based <code>WebServiceMessageSender</code>\nshould be detected",
+      "translation": "<code>detectHttpMessageSender</code> - 如果应检测基于 HTTP 的 <code>WebServiceMessageSender</code>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"build(java.lang.Class)-type-param-T\"><code>T</code> - the type of web service template</span>",
+      "translation": "<span id=\"build(java.lang.Class)-type-param-T\"><code>T</code> - Web 服务模板的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"configure(T)-type-param-T\"><code>T</code> - the type of web service template</span>",
+      "translation": "<span id=\"configure(T)-type-param-T\"><code>T</code> - Web 服务模板的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>webServiceTemplate</code> - the <code>WebServiceTemplate</code> to configure",
+      "translation": "<code>webServiceTemplate</code> - 要配置的 <code>WebServiceTemplate</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>interceptors</code> - the interceptors to set",
+      "translation": "<code>interceptors</code> - 要设置的拦截器",
+      "count": 2
+    },
+    {
+      "source": "<code>interceptors</code> - the interceptors to add",
+      "translation": "<code>interceptors</code> - 要添加的拦截器",
+      "count": 2
+    },
+    {
+      "source": "<code>customizers</code> - the customizers to set",
+      "translation": "<code>customizers</code> - 要设置的自定义器",
+      "count": 2
+    },
+    {
+      "source": "<code>customizers</code> - the customizers to add",
+      "translation": "<code>customizers</code> - 要添加的自定义器",
+      "count": 2
+    },
+    {
+      "source": "<code>checkConnectionForFault</code> - whether to check for fault indicators",
+      "translation": "<code>checkConnectionForFault</code> - 是否检查故障指示器",
+      "count": 2
+    },
+    {
+      "source": "<code>checkConnectionForError</code> - whether to check for error indicators",
+      "translation": "<code>checkConnectionForError</code> - 是否检查错误指示器",
+      "count": 2
+    },
+    {
+      "source": "<code>messageFactory</code> - the message factory to use for creating messages",
+      "translation": "<code>messageFactory</code> - 用于创建消息的消息工厂",
+      "count": 2
+    },
+    {
+      "source": "<code>unmarshaller</code> - the message unmarshaller",
+      "translation": "<code>unmarshaller</code> - 消息解包器",
+      "count": 2
+    },
+    {
+      "source": "<code>marshaller</code> - the message marshaller",
+      "translation": "<code>marshaller</code> - 消息编组器",
+      "count": 2
+    },
+    {
+      "source": "<code>faultMessageResolver</code> - the fault message resolver to use",
+      "translation": "<code>faultMessageResolver</code> - 要使用的故障消息解析器",
+      "count": 2
+    },
+    {
+      "source": "<code>transformerFactoryClass</code> - the transformer factory implementation to use",
+      "translation": "<code>transformerFactoryClass</code> - 要使用的转换器工厂实现",
+      "count": 2
+    },
+    {
+      "source": "<code>defaultUri</code> - the destination provider URI to be used on operations that do not\nhave a URI parameter.",
+      "translation": "<code>defaultUri</code> - 在没有 URI 参数的操作中将使用的目标提供者 URI。",
+      "count": 2
+    },
+    {
+      "source": "<code>destinationProvider</code> - the destination provider to be used on operations that\ndo not have a URI parameter.",
+      "translation": "<code>destinationProvider</code> - 在没有 URI 参数的操作中将使用的目标提供者。",
+      "count": 2
+    },
+    {
+      "source": "<code>webServiceTemplateClass</code> - the template type to create",
+      "translation": "<code>webServiceTemplateClass</code> - 要创建的模板类型",
+      "count": 2
+    },
+    {
+      "source": "Dmytro Nosan, Stephane Nicoll",
+      "translation": "Dmytro Nosan, Stephane Nicoll",
+      "count": 2
+    },
+    {
+      "source": "the web service template instance",
+      "translation": "Web 服务模板实例",
+      "count": 2
+    },
+    {
+      "source": "Set if a suitable HTTP-based <code>WebServiceMessageSender</code> should be detected\nbased on the classpath when one has not been specified.",
+      "translation": "设置是否应在未指定时，根据类路径检测合适的基于 HTTP 的<code>WebServiceMessageSender</code>。",
+      "count": 1
+    },
+    {
+      "source": "Set the <code>DestinationProvider</code> to use.",
+      "translation": "设置要使用的 `<code>DestinationProvider</code>`。",
+      "count": 1
+    },
+    {
+      "source": "Set the default URI to be used on operations that do not have a URI parameter.",
+      "translation": "将默认 URI 设置为在没有 URI 参数的操作中使用。",
+      "count": 1
+    }
+  ]
+}

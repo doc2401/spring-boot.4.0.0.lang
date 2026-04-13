@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-04-13 15:45:27",
+  "updated_at": "2026-04-13 19:10:20",
+  "stats": {
+    "total_entries": 13,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 28,
+    "entries_with_hits": 13,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1538461538461537,
+    "usage_percentage": 0.0013
+  },
+  "items": [
+    {
+      "source": "The scope under which the serializer/deserializer should be registered with the\nmodule.",
+      "translation": "序列化器/反序列化器应与模块注册的注册范围。",
+      "count": 3
+    },
+    {
+      "source": "The value may indicate a suggestion for a logical component name, to be turned into\na Spring bean in case of an auto-detected component.",
+      "translation": "该值可能表示逻辑组件名称的建议，在检测到自动组件时，将转换为 Spring  Bean。",
+      "count": 3
+    },
+    {
+      "source": "<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\" title=\"class or interface in org.springframework.stereotype\"><code>@Component</code></a> that provides <code>ValueSerializer</code>,\n<code>ValueDeserializer</code> or <code>KeyDeserializer</code> implementations to be registered\nwith Jackson when <a href=\"JacksonComponentModule.html\" title=\"class in org.springframework.boot.jackson\"><code>JacksonComponentModule</code></a> is in use. Can be used to annotate\nimplementations directly or a class that contains them as inner-classes. For example:\n<pre class=\"code\">@JacksonComponent\npublic class CustomerJacksonComponent {\n\n    public static class Serializer extends ValueSerializer&lt;Customer&gt; {\n\n        // ...\n\n    }\n\n    public static class Deserializer extends ValueDeserializer&lt;Customer&gt; {\n\n        // ...\n\n    }\n\n}\n\n</pre>",
+      "translation": "",
+      "count": 2
+    },
+    {
+      "source": "The types that are handled by the provided serializer/deserializer. This attribute\nis mandatory for a <code>KeyDeserializer</code>, as the type cannot be inferred. For a\n<code>ValueSerializer</code> or <code>ValueDeserializer</code> it can be used to limit\nhandling to a subclasses of type inferred from the generic.",
+      "translation": "",
+      "count": 2
+    },
+    {
+      "source": "the component name",
+      "translation": "组件名称",
+      "count": 2
+    },
+    {
+      "source": "the types that should be handled by the component",
+      "translation": "应由组件处理的类型",
+      "count": 2
+    },
+    {
+      "source": "the component's handle type",
+      "translation": "组件的手柄类型",
+      "count": 2
+    },
+    {
+      "source": "The various scopes under which a serializer/deserializer can be registered.",
+      "translation": "序列化器/反序列化器可以注册的各个作用域。",
+      "count": 2
+    },
+    {
+      "source": "The types that are handled by the provided serializer/deserializer.",
+      "translation": "由提供的序列化器/反序列化器处理的类型。",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Paul Aly",
+      "translation": "Phillip Webb，Paul Aly",
+      "count": 2
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 2
+    },
+    {
+      "source": "Optional Element Summary",
+      "translation": "可选元素摘要",
+      "count": 2
+    },
+    {
+      "source": "Element Details",
+      "translation": "元素详情",
+      "count": 2
+    }
+  ]
+}

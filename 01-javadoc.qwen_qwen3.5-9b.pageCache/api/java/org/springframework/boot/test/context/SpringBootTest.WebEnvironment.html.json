@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-04-13 19:50:33",
+  "updated_at": "2026-04-13 19:50:33",
+  "stats": {
+    "total_entries": 21,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 30,
+    "entries_with_hits": 21,
+    "entries_without_hits": 0,
+    "hit_rate": 1.4285714285714286,
+    "usage_percentage": 0.0021
+  },
+  "items": [
+    {
+      "source": "Creates a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/WebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\"><code>WebApplicationContext</code></a> with a mock servlet environment if\nservlet APIs are on the classpath, a <a href=\"../../web/context/reactive/ReactiveWebApplicationContext.html\" title=\"interface in org.springframework.boot.web.context.reactive\"><code>ReactiveWebApplicationContext</code></a> if\nSpring WebFlux is on the classpath or a regular <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>\notherwise.",
+      "translation": "创建一个带有模拟 Servlet 环境的 `<code>WebApplicationContext</code>`，前提是 Servlet API 在类路径中；如果 Spring WebFlux 在类路径中，则创建 `<code>ReactiveWebApplicationContext</code>`；否则，创建常规的 `<code>ApplicationContext</code>`。",
+      "count": 3
+    },
+    {
+      "source": "Creates an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> and sets\n<a href=\"../../SpringApplication.html#setWebApplicationType(org.springframework.boot.WebApplicationType)\"><code>SpringApplication.setWebApplicationType(WebApplicationType)</code></a> to\n<a href=\"../../WebApplicationType.html#NONE\"><code>WebApplicationType.NONE</code></a>.",
+      "translation": "创建一个 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 并将 `<a href=\"../../SpringApplication.html#setWebApplicationType(org.springframework.boot.WebApplicationType)\"><code>SpringApplication.setWebApplicationType(WebApplicationType)</code></a>` 设置为 `<a href=\"../../WebApplicationType.html#NONE\"><code>WebApplicationType.NONE</code></a>`。",
+      "count": 3
+    },
+    {
+      "source": "Creates a web application context (reactive or servlet based) and sets a\n<code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property (which usually triggers\nlistening on a random port). Requires a dependency on\n<code>spring-boot-web-server</code>. Often used in conjunction with a\n<code>@LocalServerPort</code> injected field on the test.",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。需要依赖 `<code>spring-boot-web-server`》。通常与测试类上注入的 `<code>@LocalServerPort</code>` 字段配合使用。",
+      "count": 2
+    },
+    {
+      "source": "Creates a web application context (reactive or servlet based) without defining\nany <code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property. Requires a dependency\non <code>spring-boot-web-server</code>.",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而无需定义任何 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。需要依赖 `<code>spring-boot-web-server</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Return if the environment uses an embedded web server.",
+      "translation": "如果环境使用嵌入式 Web 服务器，则返回。",
+      "count": 2
+    },
+    {
+      "source": "Returns an array containing the constants of this enum class, in\nthe order they are declared.",
+      "translation": "返回一个包含此枚举类常量的数组，按声明顺序排列。",
+      "count": 2
+    },
+    {
+      "source": "if an embedded web server is used",
+      "translation": "如果使用了嵌入式 Web 服务器",
+      "count": 2
+    },
+    {
+      "source": "Creates a web application context (reactive or servlet based) without defining\nany <code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property.",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而不定义任何 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。",
+      "count": 1
+    },
+    {
+      "source": "Creates a web application context (reactive or servlet based) and sets a\n<code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property (which usually triggers\nlistening on a random port).",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置一个 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。",
+      "count": 1
+    },
+    {
+      "source": "Returns the enum constant of this class with the specified name.\nThe string must match <i>exactly</i> an identifier used to declare an\nenum constant in this class.  (Extraneous whitespace characters are \nnot permitted.)",
+      "translation": "返回此类的具有指定名称的枚举常量。该字符串必须与用于在此类中声明枚举常量的标识符<i>完全匹配</i>。（不允许存在多余的空白字符。）",
+      "count": 1
+    },
+    {
+      "source": "An enumeration web environment modes.",
+      "translation": "枚举 Web 环境模式。",
+      "count": 1
+    },
+    {
+      "source": "Returns the enum constant of this class with the specified name.",
+      "translation": "返回此类的具有指定名称的枚举常量。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html\" title=\"class or interface in java.lang\">IllegalArgumentException</a></code> - if this enum class has no constant with the specified name",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html\" title=\"class or interface in java.lang\">IllegalArgumentException</a></code> - 如果此枚举类没有指定名称的常量",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html\" title=\"class or interface in java.lang\">NullPointerException</a></code> - if the argument is null",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html\" title=\"java.lang 中的类或接口\">NullPointerException</a></code> - 如果参数为 null",
+      "count": 1
+    },
+    {
+      "source": "<code>name</code> - the name of the enum constant to be returned.",
+      "translation": "<code>name</code> - 要返回的枚举常量的名称。",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson",
+      "translation": "Phillip Webb，Andy Wilkinson",
+      "count": 1
+    },
+    {
+      "source": "an array containing the constants of this enum class, in the order they are declared",
+      "translation": "一个包含此枚举类常量的数组，按声明顺序排列。",
+      "count": 1
+    },
+    {
+      "source": "the enum constant with the specified name",
+      "translation": "指定名称的枚举常量",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    },
+    {
+      "source": "Enum Constant Summary",
+      "translation": "枚举常量摘要",
+      "count": 1
+    },
+    {
+      "source": "Enum Constant Details",
+      "translation": "枚举常量详情",
+      "count": 1
+    }
+  ]
+}

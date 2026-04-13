@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-04-13 07:59:42",
+  "updated_at": "2026-04-13 19:08:04",
+  "stats": {
+    "total_entries": 9,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 19,
+    "entries_with_hits": 9,
+    "entries_without_hits": 0,
+    "hit_rate": 2.111111111111111,
+    "usage_percentage": 0.0009
+  },
+  "items": [
+    {
+      "source": "Post-process the given <code>environment</code>.",
+      "translation": "后处理给定的<code>environment</code>。",
+      "count": 3
+    },
+    {
+      "source": "EnvironmentPostProcessor implementations have to be registered in\n<code>META-INF/spring.factories</code>, using the fully qualified name of this class as the\nkey. Implementations may implement the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\"><code>Ordered</code></a>\ninterface or use an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\" title=\"class or interface in org.springframework.core.annotation\"><code>@Order</code></a> annotation\nif they wish to be invoked in specific order.",
+      "translation": "`EnvironmentPostProcessor` 实现必须在 `<code>META-INF/spring.factories</code>` 中注册，使用该类的全限定名作为键。如果希望按特定顺序调用，实现类可以实施 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\"><code>Ordered</code></a> 接口或使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\" title=\"class or interface in org.springframework.core.annotation\"><code>@Order</code></a> 注解。",
+      "count": 2
+    },
+    {
+      "source": "<code>EnvironmentPostProcessor</code> implementations may optionally take the following\nconstructor parameters:",
+      "translation": "<code>EnvironmentPostProcessor</code> 实现类可选地接受以下构造函数参数：",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"bootstrap/ConfigurableBootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>ConfigurableBootstrapContext</code></a> - A bootstrap context that can be used to\nstore objects that may be expensive to create, or need to be shared\n(<a href=\"bootstrap/BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a> or <a href=\"bootstrap/BootstrapRegistry.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry</code></a> may also be used).",
+      "translation": "<a href=\"bootstrap/ConfigurableBootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>ConfigurableBootstrapContext</code></a> - 一个可用于存储创建成本高昂或需要共享的对象的引导上下文（<a href=\"bootstrap/BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a> 或 <a href=\"bootstrap/BootstrapRegistry.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry</code></a> 也可使用）。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"logging/DeferredLogFactory.html\" title=\"interface in org.springframework.boot.logging\"><code>DeferredLogFactory</code></a> - A factory that can be used to create loggers with\noutput deferred until the application has been fully prepared (allowing the environment\nitself to configure logging levels).",
+      "translation": "<a href=\"logging/DeferredLogFactory.html\" title=\"interface in org.springframework.boot.logging\"><code>DeferredLogFactory</code></a> - 一个工厂，可用于创建日志记录器，其输出延迟到应用程序完全准备就绪后（允许环境本身配置日志级别）。",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the environment to post-process",
+      "translation": "<code>environment</code> - 用于后处理的环境",
+      "count": 2
+    },
+    {
+      "source": "<code>application</code> - the application to which the environment belongs",
+      "translation": "<code>application</code> - 该环境所属的应用程序",
+      "count": 2
+    },
+    {
+      "source": "This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.",
+      "translation": "这是一个函数式接口，因此可用作 Lambda 表达式或方法引用的赋值目标。",
+      "count": 2
+    },
+    {
+      "source": "Andy Wilkinson, Stephane Nicoll",
+      "translation": "Andy Wilkinson，Stephane Nicoll",
+      "count": 2
+    }
+  ]
+}

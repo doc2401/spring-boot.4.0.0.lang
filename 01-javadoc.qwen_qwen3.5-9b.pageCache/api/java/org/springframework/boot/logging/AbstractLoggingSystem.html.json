@@ -1,0 +1,201 @@
+{
+  "created_at": "2026-04-13 19:20:11",
+  "updated_at": "2026-04-13 19:20:11",
+  "stats": {
+    "total_entries": 37,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 66,
+    "entries_with_hits": 37,
+    "entries_without_hits": 0,
+    "hit_rate": 1.7837837837837838,
+    "usage_percentage": 0.0036999999999999997
+  },
+  "items": [
+    {
+      "source": "<code>initializationContext</code> - the logging initialization context",
+      "translation": "<code>initializationContext</code> - 日志初始化上下文",
+      "count": 4
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"LoggingSystem.html#beforeInitialize()\">LoggingSystem</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"LoggingSystem.html#beforeInitialize()\">LoggingSystem</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\">LoggingSystem</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\">LoggingSystem</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "Maintains a mapping between native levels and <a href=\"LogLevel.html\" title=\"enum class in org.springframework.boot.logging\"><code>LogLevel</code></a>.",
+      "translation": "维护本地级别与<a href=\"LogLevel.html\" title=\"enum class in org.springframework.boot.logging\"><code>LogLevel</code></a>之间的映射。",
+      "count": 2
+    },
+    {
+      "source": "Reset the logging system to be limit output. This method may be called before\n<a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\"><code>LoggingSystem.initialize(LoggingInitializationContext, String, LogFile)</code></a> to reduce\nlogging noise until the system has been fully initialized.",
+      "translation": "重置日志系统以限制输出。此方法可在调用 <a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\"><code>LoggingSystem.initialize(LoggingInitializationContext, String, LogFile)</code></a> 之前执行，以减少系统在完全初始化之前的日志噪音。",
+      "count": 2
+    },
+    {
+      "source": "Return any self initialization config that has been applied. By default this method\nchecks <a href=\"#getStandardConfigLocations()\"><code>getStandardConfigLocations()</code></a> and assumes that any file that exists\nwill have been applied.",
+      "translation": "返回任何已应用的自我初始化配置。默认情况下，此方法检查<a href=\"#getStandardConfigLocations()\"><code>getStandardConfigLocations()</code></a>，并假设任何存在的文件都已被应用。",
+      "count": 2
+    },
+    {
+      "source": "Return any spring specific initialization config that should be applied. By default\nthis method checks <a href=\"#getSpringConfigLocations()\"><code>getSpringConfigLocations()</code></a>.",
+      "translation": "返回任何应应用的 Spring 特定初始化配置。默认情况下，此方法会检查<a href=\"#getSpringConfigLocations()\"><code>getSpringConfigLocations()</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return the spring config locations for this system. By default this method returns\na set of locations based on <a href=\"#getStandardConfigLocations()\"><code>getStandardConfigLocations()</code></a>.",
+      "translation": "返回此系统的 Spring 配置位置。默认情况下，此方法返回一组基于<a href=\"#getStandardConfigLocations()\"><code>getStandardConfigLocations()</code></a>的位置。",
+      "count": 2
+    },
+    {
+      "source": "Reinitialize the logging system if required. Called when\n<a href=\"#getSelfInitializationConfig()\"><code>getSelfInitializationConfig()</code></a> is used and the log file hasn't changed. May\nbe used to reload configuration (for example to pick up additional System\nproperties).",
+      "translation": "如需要则重新初始化日志系统。当使用<a href=\"#getSelfInitializationConfig()\"><code>getSelfInitializationConfig()</code></a>且日志文件未更改时调用。可用于重新加载配置（例如以获取额外的 System 属性）。",
+      "count": 2
+    },
+    {
+      "source": "Return the default log correlation pattern or <code>null</code> if log correlation\npatterns are not supported.",
+      "translation": "返回默认日志关联模式，或者如果日志关联模式不受支持则返回 `<code>null</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Return the default value resolver to use when resolving system properties.",
+      "translation": "返回用于解析系统属性的默认值解析器。",
+      "count": 2
+    },
+    {
+      "source": "Return the standard config locations for this system.",
+      "translation": "返回此系统的标准配置位置。",
+      "count": 2
+    },
+    {
+      "source": "Fully initialize the logging system.",
+      "translation": "完全初始化日志系统。",
+      "count": 2
+    },
+    {
+      "source": "Load a specific configuration.",
+      "translation": "加载特定配置。",
+      "count": 2
+    },
+    {
+      "source": "Load sensible defaults for the logging system.",
+      "translation": "为日志系统加载合理的默认值。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"LoggingSystem.html#beforeInitialize()\">beforeInitialize</a></code> in class <code><a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\">LoggingSystem</a></code>",
+      "translation": "`<code><a href=\"LoggingSystem.html#beforeInitialize()\">beforeInitialize</a></code>` 类中的 `<code><a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\">LoggingSystem</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\">initialize</a></code> in class <code><a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\">LoggingSystem</a></code>",
+      "translation": "`LoggingSystem` 类中的 <code><a href=\"LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\">initialize</a></code>",
+      "count": 2
+    },
+    {
+      "source": "<code>configLocation</code> - a log configuration location or <code>null</code> if default\ninitialization is required",
+      "translation": "<code>configLocation</code> - 日志配置位置，或需要默认初始化时为`null`",
+      "count": 2
+    },
+    {
+      "source": "<code>logFile</code> - the log output file that should be written or <code>null</code> for\nconsole only output",
+      "translation": "<code>logFile</code> - 要写入的日志输出文件，或仅用于控制台输出的`null`。",
+      "count": 2
+    },
+    {
+      "source": "<code>logFile</code> - the file to load or <code>null</code> if no log file is to be written",
+      "translation": "<code>logFile</code> - 要加载的文件，或者如果不写入日志文件则为 <code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>location</code> - the location of the configuration to load (never <code>null</code>)",
+      "translation": "<code>location</code> - 要加载的配置的位置（永远不为 <code>null</code>）",
+      "count": 2
+    },
+    {
+      "source": "the self initialization config or <code>null</code>",
+      "translation": "self 初始化配置或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the spring initialization config or <code>null</code>",
+      "translation": "Spring 初始化配置或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the standard config locations",
+      "translation": "标准配置位置",
+      "count": 2
+    },
+    {
+      "source": "the spring config locations",
+      "translation": "Spring 配置位置",
+      "count": 2
+    },
+    {
+      "source": "the default value resolver",
+      "translation": "默认值解析器",
+      "count": 2
+    },
+    {
+      "source": "the default log correlation pattern",
+      "translation": "默认日志关联模式",
+      "count": 2
+    },
+    {
+      "source": "Abstract base class for <a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a> implementations.",
+      "translation": "用于 `<a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>` 实现的抽象基类。",
+      "count": 1
+    },
+    {
+      "source": "Reset the logging system to be limit output.",
+      "translation": "重置日志系统以限制输出。",
+      "count": 1
+    },
+    {
+      "source": "Return any self initialization config that has been applied.",
+      "translation": "返回任何已应用的自初始化配置。",
+      "count": 1
+    },
+    {
+      "source": "Return the spring config locations for this system.",
+      "translation": "返回此系统的 Spring 配置位置。",
+      "count": 1
+    },
+    {
+      "source": "Return any spring specific initialization config that should be applied.",
+      "translation": "返回任何应应用的 Spring 特定初始化配置。",
+      "count": 1
+    },
+    {
+      "source": "Reinitialize the logging system if required.",
+      "translation": "如需要求，重新初始化日志系统。",
+      "count": 1
+    },
+    {
+      "source": "<code>environment</code> - the environment",
+      "translation": "<code>environment</code> - 环境",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Dave Syer",
+      "translation": "Phillip Webb，Dave Syer",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

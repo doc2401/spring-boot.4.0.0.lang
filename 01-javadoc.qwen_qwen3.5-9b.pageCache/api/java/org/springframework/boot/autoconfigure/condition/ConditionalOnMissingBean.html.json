@@ -1,0 +1,151 @@
+{
+  "created_at": "2026-04-13 08:27:24",
+  "updated_at": "2026-04-13 19:08:39",
+  "stats": {
+    "total_entries": 27,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 57,
+    "entries_with_hits": 27,
+    "entries_without_hits": 0,
+    "hit_rate": 2.111111111111111,
+    "usage_percentage": 0.0026999999999999997
+  },
+  "items": [
+    {
+      "source": "The class types of beans that should be ignored when identifying matching beans.",
+      "translation": "应忽略的用于识别匹配 Bean 的 Bean 类类型。",
+      "count": 3
+    },
+    {
+      "source": "The class type names of beans that should be ignored when identifying matching\nbeans.",
+      "translation": "应忽略的 Bean 类类型名称，这些 Bean 在识别匹配的 Bean 时将被跳过。",
+      "count": 3
+    },
+    {
+      "source": "Strategy to decide if the application context hierarchy (parent contexts) should be\nconsidered.",
+      "translation": "决定是否应考虑应用程序上下文层次结构（父上下文）的策略。",
+      "count": 3
+    },
+    {
+      "source": "In the sample above the condition will match if no bean of type <code>MyService</code> is\nalready contained in the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>.",
+      "translation": "在上面的示例中，如果 <code>BeanFactory</code> 中尚未包含类型为 <code>MyService</code> 的 Bean，则该条件将匹配。<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>",
+      "count": 2
+    },
+    {
+      "source": "The class types of beans that should be checked. The condition matches when no bean\nof each class specified is contained in the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>. Beans that are not\nautowire candidates or that are not default candidates are ignored.",
+      "translation": "要检查的 Bean 类类型。当每个指定的类中都不包含 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a> 中的 Bean 时，该条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。",
+      "count": 2
+    },
+    {
+      "source": "The class type names of beans that should be checked. The condition matches when no\nbean of each class specified is contained in the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>. Beans that\nare not autowire candidates or that are not default candidates are ignored.",
+      "translation": "应检查的 Bean 类类型名称。当指定的每个类的 Bean 都不包含在 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>` 中时，条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。",
+      "count": 2
+    },
+    {
+      "source": "The annotation type decorating a bean that should be checked. The condition matches\nwhen each annotation specified is missing from all beans in the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>. Beans that are not autowire candidates or that are not default\ncandidates are ignored.",
+      "translation": "装饰应进行检查的 Bean 的注解类型。当指定的每个注解都缺失于<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>中的所有 Bean 时，条件匹配。非自动装配候选项或非默认候选项的 Bean 将被忽略。",
+      "count": 2
+    },
+    {
+      "source": "The names of beans to check. The condition matches when each bean name specified is\nmissing in the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a>.",
+      "translation": "要检查的 Bean 名称。当指定的每个 Bean 名称在 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html\" title=\"class or interface in org.springframework.beans.factory\"><code>BeanFactory</code></a> 中缺失时，条件匹配。",
+      "count": 2
+    },
+    {
+      "source": "the class types of beans to ignore",
+      "translation": "要忽略的 Bean 类类型",
+      "count": 2
+    },
+    {
+      "source": "the class type names of beans to ignore",
+      "translation": "要忽略的 Bean 类类型名称",
+      "count": 2
+    },
+    {
+      "source": "When placed on a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Bean</code></a> method and none of <a href=\"#value()\"><code>value()</code></a>, <a href=\"#type()\"><code>type()</code></a>,\n<a href=\"#name()\"><code>name()</code></a>, or <a href=\"#annotation()\"><code>annotation()</code></a> has been specified, the bean type to match\ndefaults to the return type of the <code>@Bean</code> method:",
+      "translation": "当放置在带有 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Bean</code></a>` 的方法上，且未指定任何 `<a href=\"#value()\"><code>value()</code></a>`、`<a href=\"#type()\"><code>type()</code></a>`、`<a href=\"#name()\"><code>name()</code></a>` 或 `<a href=\"#annotation()\"><code>annotation()</code></a>` 时，要匹配的 Bean 类型默认为 `<code>@Bean</code>` 方法的返回类型：",
+      "count": 2
+    },
+    {
+      "source": "The condition can only match the bean definitions that have been processed by the\napplication context so far and, as such, it is strongly recommended to use this\ncondition on auto-configuration classes only. If a candidate bean may be created by\nanother auto-configuration, make sure that the one using this condition runs after.",
+      "translation": "该条件仅能匹配到目前为止已由应用程序上下文处理的 Bean 定义，因此强烈建议仅在自动配置类中使用此条件。如果候选 Bean 可能由另一个自动配置创建，请确保使用此条件的配置在其之后运行。",
+      "count": 2
+    },
+    {
+      "source": "Additional classes that may contain the specified bean types within their generic\nparameters. For example, an annotation declaring <code>value=Name.class</code> and\n<code>parameterizedContainer=NameRegistration.class</code> would detect both\n<code>Name</code> and <code>NameRegistration&lt;Name&gt;</code>.",
+      "translation": "包含指定 Bean 类型在其泛型参数中的其他类。例如，一个声明了 `<code>value=Name.class</code>` 和 `<code>parameterizedContainer=NameRegistration.class</code>` 的注解将同时检测到 `<code>Name</code>` 和 `<code>NameRegistration&lt;Name&gt;</code>`。",
+      "count": 2
+    },
+    {
+      "source": "The annotation type decorating a bean that should be checked.",
+      "translation": "装饰应被检查的 Bean 的注解类型。",
+      "count": 2
+    },
+    {
+      "source": "The names of beans to check.",
+      "translation": "要检查的 Bean 名称。",
+      "count": 2
+    },
+    {
+      "source": "Additional classes that may contain the specified bean types within their generic\nparameters.",
+      "translation": "可能在其泛型参数中包含指定 Bean 类型的其他类。",
+      "count": 2
+    },
+    {
+      "source": "The class type names of beans that should be checked.",
+      "translation": "应检查的 Bean 类类型名称。",
+      "count": 2
+    },
+    {
+      "source": "The class types of beans that should be checked.",
+      "translation": "应检查的 Bean 类类型。",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson",
+      "translation": "Phillip Webb，Andy Wilkinson",
+      "count": 2
+    },
+    {
+      "source": "the class types of beans to check",
+      "translation": "要检查的 Bean 类类型",
+      "count": 2
+    },
+    {
+      "source": "the class type names of beans to check",
+      "translation": "要检查的 Bean 类类型名称",
+      "count": 2
+    },
+    {
+      "source": "the class-level annotation types to check",
+      "translation": "要检查的类级别注解类型",
+      "count": 2
+    },
+    {
+      "source": "the names of beans to check",
+      "translation": "要检查的 Bean 名称",
+      "count": 2
+    },
+    {
+      "source": "the search strategy",
+      "translation": "搜索策略",
+      "count": 2
+    },
+    {
+      "source": "the container types",
+      "translation": "容器类型",
+      "count": 2
+    },
+    {
+      "source": "Optional Element Summary",
+      "translation": "可选元素摘要",
+      "count": 2
+    },
+    {
+      "source": "Element Details",
+      "translation": "元素详情",
+      "count": 2
+    }
+  ]
+}

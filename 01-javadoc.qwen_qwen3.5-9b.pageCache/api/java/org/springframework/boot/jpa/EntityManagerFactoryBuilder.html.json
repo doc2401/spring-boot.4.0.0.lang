@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-04-13 19:11:50",
+  "updated_at": "2026-04-13 19:11:50",
+  "stats": {
+    "total_entries": 16,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 35,
+    "entries_with_hits": 16,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1875,
+    "usage_percentage": 0.0015999999999999999
+  },
+  "items": [
+    {
+      "source": "Create a new instance passing in the common pieces that will be shared if multiple\nEntityManagerFactory instances are created.",
+      "translation": "创建新实例时，传入如果创建了多个 EntityManagerFactory 实例将共享的公共部分。",
+      "count": 4
+    },
+    {
+      "source": "Create a new <a href=\"EntityManagerFactoryBuilder.Builder.html\" title=\"class in org.springframework.boot.jpa\"><code>EntityManagerFactoryBuilder.Builder</code></a> for a <code>EntityManagerFactory</code> using the settings\nof the given instance, and the given <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\" title=\"class or interface in javax.sql\"><code>DataSource</code></a>.",
+      "translation": "为给定的实例设置和给定的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\" title=\"class or interface in javax.sql\"><code>DataSource</code></a>创建一个用于<code>EntityManagerFactory</code>的新<a href=\"EntityManagerFactoryBuilder.Builder.html\" title=\"class in org.springframework.boot.jpa\"><code>EntityManagerFactoryBuilder.Builder</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "<code>jpaPropertiesFactory</code> - the JPA properties to be passed to the persistence\nprovider, based on the <a href=\"#dataSource(javax.sql.DataSource)\">configured data source</a>",
+      "translation": "<code>jpaPropertiesFactory</code> - 基于<a href=\"#dataSource(javax.sql.DataSource)\">配置的数据源</a>传递给持久化提供程序的 JPA 属性。",
+      "count": 3
+    },
+    {
+      "source": "<code>jpaVendorAdapter</code> - a vendor adapter",
+      "translation": "<code>jpaVendorAdapter</code> - 一个供应商适配器",
+      "count": 3
+    },
+    {
+      "source": "<code>persistenceUnitManager</code> - optional source of persistence unit information (can\nbe null)",
+      "translation": "<persistenceUnitManager</p> - 可选的持久化单元信息源（可为 null）",
+      "count": 3
+    },
+    {
+      "source": "Convenient builder for JPA EntityManagerFactory instances. Collects common\nconfiguration when constructed and then allows you to create one or more\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a> through a fluent builder pattern. The\nmost common options are covered in the builder, but you can always manipulate the\nproduct of the builder if you need more control, before returning it from a\n<code>@Bean</code> definition.",
+      "translation": "JPA EntityManagerFactory 实例的便捷构建器。在构造时收集通用配置，然后通过流式构建模式创建一个或多个<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a>。构建器涵盖了最常见的选项，但如果您需要更多控制，可以在从<code>@Bean</code>定义返回之前始终操纵构建器的产物。",
+      "count": 2
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/persistenceunit/PersistenceUnitPostProcessor.html\" title=\"class or interface in org.springframework.orm.jpa.persistenceunit\">persistence unit post processors</a>\nto be applied to the PersistenceUnitInfo used for creating the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a>.",
+      "translation": "将 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/persistenceunit/PersistenceUnitPostProcessor.html\" title=\"class or interface in org.springframework.orm.jpa.persistenceunit\">persistence unit post processors</a> 设置为应用于用于创建 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a> 的 PersistenceUnitInfo。",
+      "count": 2
+    },
+    {
+      "source": "Configure the bootstrap executor to be used by the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a>.",
+      "translation": "配置用于由 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalContainerEntityManagerFactoryBean.html\" title=\"class or interface in org.springframework.orm.jpa\"><code>LocalContainerEntityManagerFactoryBean</code></a> 使用的 bootstrap 执行器。",
+      "count": 2
+    },
+    {
+      "source": "<code>persistenceUnitRootLocation</code> - the persistence unit root location to use as a\nfallback or <code>null</code>",
+      "translation": "<code>persistenceUnitRootLocation</code> - 用作回退的持久化单元根位置或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>dataSource</code> - the data source to use",
+      "translation": "<code>dataSource</code> - 要使用的数据源",
+      "count": 2
+    },
+    {
+      "source": "a builder to create an <code>EntityManagerFactory</code>",
+      "translation": "用于创建 `<code>EntityManagerFactory</code>` 的构建器。",
+      "count": 2
+    },
+    {
+      "source": "<code>bootstrapExecutor</code> - the executor",
+      "translation": "<code>bootstrapExecutor</code> - 执行器",
+      "count": 2
+    },
+    {
+      "source": "<code>persistenceUnitPostProcessors</code> - the persistence unit post processors to use",
+      "translation": "<persistenceUnitPostProcessors> - 要使用的持久化单元后置处理器",
+      "count": 2
+    },
+    {
+      "source": "A fluent builder for a LocalContainerEntityManagerFactoryBean.",
+      "translation": "LocalContainerEntityManagerFactoryBean 的流式构建器。",
+      "count": 1
+    },
+    {
+      "source": "Dave Syer, Phillip Webb, Stephane Nicoll",
+      "translation": "Dave Syer, Phillip Webb, Stephane Nicoll",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "created_at": "2026-04-13 19:37:50",
+  "updated_at": "2026-04-13 19:37:50",
+  "stats": {
+    "total_entries": 50,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 91,
+    "entries_with_hits": 50,
+    "entries_without_hits": 0,
+    "hit_rate": 1.82,
+    "usage_percentage": 0.005
+  },
+  "items": [
+    {
+      "source": "The default is empty, leading to a retry attempt for any exception.",
+      "translation": "默认值为空，导致对任何异常进行重试尝试。",
+      "count": 3
+    },
+    {
+      "source": "If a <a href=\"#getMultiplier()\">multiplier</a> is specified, this serves as the\ninitial delay to multiply from.",
+      "translation": "如果指定了<a href=\"#getMultiplier()\">乘数</a>，则以此作为初始延迟的乘数基准。",
+      "count": 2
+    },
+    {
+      "source": "If a <a href=\"#getMultiplier()\">multiplier</a> is specified, it is applied to the\njitter value as well.",
+      "translation": "如果指定了<a href=\"#getMultiplier()\">乘数</a>，它也会应用于抖动值。",
+      "count": 2
+    },
+    {
+      "source": "The default is unlimited.",
+      "translation": "默认值为无限制。",
+      "count": 2
+    },
+    {
+      "source": "Set the factory to use to create the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a>, or <code>null</code> to use\nthe default. The function takes a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.Builder.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy.Builder</code></a> initialized\nwith the state of this instance that can be further configured, or ignored to\nrestart from scratch.",
+      "translation": "设置用于创建 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a> 的工厂，或设置为 <code>null</code> 以使用默认值。该函数接受一个已用此实例的状态初始化的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.Builder.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy.Builder</code></a>，可对其进行进一步配置，或忽略它以从头开始重新启动。",
+      "count": 2
+    },
+    {
+      "source": "Specify a jitter period for the base retry attempt, randomly subtracted or added to\nthe calculated delay, resulting in a value between <code>delay - jitter</code> and\n<code>delay + jitter</code> but never below the <a href=\"#getDelay()\">base delay</a> or\nabove the <a href=\"#getMaxDelay()\">max delay</a>.",
+      "translation": "为基本重试尝试指定抖动周期，将其随机减去或加到计算出的延迟上，从而得到一个介于 `<code>delay - jitter</code>` 和 `<code>delay + jitter</code>` 之间的值，但永远不会低于 <a href=\"#getDelay()\">基本延迟</a> 或高于 <a href=\"#getMaxDelay()\">最大延迟</a>。",
+      "count": 2
+    },
+    {
+      "source": "Specify the maximum delay for any retry attempt, limiting how far\n<a href=\"#getJitter()\">jitter</a> and the <a href=\"#getMultiplier()\">multiplier</a>\ncan increase the <a href=\"#getDelay()\">delay</a>.",
+      "translation": "指定任何重试尝试的最大延迟，限制抖动和倍增器可以增加的延迟。",
+      "count": 2
+    },
+    {
+      "source": "Replace the applicable exception types to attempt a retry for by the given\n<code>includes</code>. Alternatively consider using <a href=\"#getExceptionIncludes()\"><code>getExceptionIncludes()</code></a> to\nmutate the existing list.",
+      "translation": "将适用的异常类型替换为给定的 `<code>includes</code>` 以尝试重试。或者，可以考虑使用 <a href=\"#getExceptionIncludes()\"><code>getExceptionIncludes()</code></a> 来修改现有列表。",
+      "count": 2
+    },
+    {
+      "source": "Replace the non-applicable exception types to attempt a retry for by the given\n<code>excludes</code>. Alternatively consider using <a href=\"#getExceptionExcludes()\"><code>getExceptionExcludes()</code></a> to\nmutate the existing list.",
+      "translation": "将非适用的异常类型替换为给定的 `<code>excludes` 以尝试重试。或者，考虑使用<a href=\"#getExceptionExcludes()\"><code>getExceptionExcludes()</code></a>来修改现有列表。",
+      "count": 2
+    },
+    {
+      "source": "Create a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a> based on the state of this instance.",
+      "translation": "基于此实例的状态，创建一个<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return the predicate to use to determine whether to retry a failed operation based\non a given <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html\" title=\"class or interface in java.lang\"><code>Throwable</code></a>.",
+      "translation": "返回用于根据给定的 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html\" title=\"class or interface in java.lang\"><code>Throwable</code></a>` 确定是否重试失败操作的谓词。",
+      "count": 2
+    },
+    {
+      "source": "Set the predicate to use to determine whether to retry a failed operation based on\na given <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html\" title=\"class or interface in java.lang\"><code>Throwable</code></a>.",
+      "translation": "根据给定的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html\" title=\"class or interface in java.lang\"><code>Throwable</code></a>设置用于确定是否重试失败操作的谓词。",
+      "count": 2
+    },
+    {
+      "source": "Return the value to multiply the current interval by for each attempt. The default\nvalue, <code>1.0</code>, effectively results in a fixed delay.",
+      "translation": "返回每次尝试时用于将当前间隔相乘的值。默认值 `<code>1.0</code>` 实际上会导致固定延迟。",
+      "count": 2
+    },
+    {
+      "source": "Default initial delay.",
+      "translation": "默认初始延迟。",
+      "count": 2
+    },
+    {
+      "source": "Default maximum delay (infinite).",
+      "translation": "默认最大延迟（无限）。",
+      "count": 2
+    },
+    {
+      "source": "Default number of retry attempts.",
+      "translation": "默认的重试尝试次数。",
+      "count": 2
+    },
+    {
+      "source": "Default multiplier, uses a fixed delay.",
+      "translation": "默认倍数，使用固定延迟。",
+      "count": 2
+    },
+    {
+      "source": "Return the base delay after the initial invocation.",
+      "translation": "返回初始调用后的基础延迟。",
+      "count": 2
+    },
+    {
+      "source": "Return the jitter period to enable random retry attempts.",
+      "translation": "返回抖动周期以启用随机重试尝试。",
+      "count": 2
+    },
+    {
+      "source": "Return the maximum delay for any retry attempt.",
+      "translation": "返回任何重试尝试的最大延迟。",
+      "count": 2
+    },
+    {
+      "source": "Return the maximum number of retry attempts.",
+      "translation": "返回最大重试尝试次数。",
+      "count": 2
+    },
+    {
+      "source": "Specify the maximum number of retry attempts.",
+      "translation": "指定最大重试尝试次数。",
+      "count": 2
+    },
+    {
+      "source": "Specify a multiplier for a delay for the next retry attempt.",
+      "translation": "指定下一个重试尝试的延迟倍数。",
+      "count": 2
+    },
+    {
+      "source": "<code>includes</code> - the applicable exception types",
+      "translation": "<code>includes</code> - 适用的异常类型",
+      "count": 2
+    },
+    {
+      "source": "<code>excludes</code> - the non-applicable types",
+      "translation": "<code>excludes</code> - 不适用的类型",
+      "count": 2
+    },
+    {
+      "source": "<code>exceptionPredicate</code> - the predicate to use",
+      "translation": "<code>exceptionPredicate</code> - 要使用的谓词",
+      "count": 2
+    },
+    {
+      "source": "<code>maxRetries</code> - the maximum number of retry attempts (must be equal or greater\nthan zero)",
+      "translation": "<code>maxRetries</code> - 最大重试尝试次数（必须大于或等于零）",
+      "count": 2
+    },
+    {
+      "source": "<code>delay</code> - the base delay (must be greater than or equal to zero)",
+      "translation": "<code>delay</code> - 基础延迟（必须大于或等于零）",
+      "count": 2
+    },
+    {
+      "source": "<code>jitter</code> - the jitter value (must be positive)",
+      "translation": "<code>jitter</code> - 抖动值（必须为正数）",
+      "count": 2
+    },
+    {
+      "source": "<code>multiplier</code> - value to multiply the current interval by for each attempt (must\nbe greater than or equal to 1)",
+      "translation": "<code>multiplier</code> - 每次尝试时用于乘以当前区间的值（必须大于或等于 1）",
+      "count": 2
+    },
+    {
+      "source": "<code>maxDelay</code> - the maximum delay (must be positive)",
+      "translation": "<code>maxDelay</code> - 最大延迟（必须为正数）",
+      "count": 2
+    },
+    {
+      "source": "<code>factory</code> - a factory to customize the retry policy.",
+      "translation": "<code>factory</code> - 用于自定义重试策略的工厂。",
+      "count": 2
+    },
+    {
+      "source": "the applicable exception types",
+      "translation": "适用的异常类型",
+      "count": 2
+    },
+    {
+      "source": "the non-applicable exception types",
+      "translation": "非适用的异常类型",
+      "count": 2
+    },
+    {
+      "source": "the predicate to use",
+      "translation": "要使用的谓词",
+      "count": 2
+    },
+    {
+      "source": "the maximum number of retry attempts",
+      "translation": "重试尝试的最大次数",
+      "count": 2
+    },
+    {
+      "source": "the base delay",
+      "translation": "基础延迟",
+      "count": 2
+    },
+    {
+      "source": "the jitter value",
+      "translation": "抖动值",
+      "count": 2
+    },
+    {
+      "source": "the value to multiply the current interval by for each attempt",
+      "translation": "每次尝试时用于将当前区间相乘的值",
+      "count": 2
+    },
+    {
+      "source": "the maximum delay",
+      "translation": "最大延迟",
+      "count": 2
+    },
+    {
+      "source": "Set the factory to use to create the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a>, or <code>null</code> to use\nthe default.",
+      "translation": "设置用于创建<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a>的工厂，或设置为<code>null</code>以使用默认值。",
+      "count": 1
+    },
+    {
+      "source": "Settings for a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/retry/RetryPolicy.html\" title=\"class or interface in org.springframework.core.retry\"><code>RetryPolicy</code></a>.",
+      "translation": "<code>RetryPolicy</code> 的设置。",
+      "count": 1
+    },
+    {
+      "source": "Replace the non-applicable exception types to attempt a retry for by the given\n<code>excludes</code>.",
+      "translation": "将非适用的异常类型替换为给定 `<code>excludes</code>` 中指定的类型，以尝试重试。",
+      "count": 1
+    },
+    {
+      "source": "Replace the applicable exception types to attempt a retry for by the given\n<code>includes</code>.",
+      "translation": "用给定的 <code>includes</code> 替换要重试的适用异常类型。",
+      "count": 1
+    },
+    {
+      "source": "Return the non-applicable exception types to avoid a retry for.",
+      "translation": "返回非适用的异常类型以避免重试。",
+      "count": 1
+    },
+    {
+      "source": "Return the applicable exception types to attempt a retry for.",
+      "translation": "返回适用于重试的异常类型。",
+      "count": 1
+    },
+    {
+      "source": "Return the value to multiply the current interval by for each attempt.",
+      "translation": "返回每次尝试时用于将当前区间相乘的值。",
+      "count": 1
+    },
+    {
+      "source": "Specify the base delay after the initial invocation.",
+      "translation": "指定初始调用后的基础延迟。",
+      "count": 1
+    },
+    {
+      "source": "Stephane Nicoll",
+      "translation": "Stephane Nicoll",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

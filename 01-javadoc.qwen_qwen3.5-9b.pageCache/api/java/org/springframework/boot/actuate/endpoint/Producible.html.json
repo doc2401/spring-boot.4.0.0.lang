@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-04-13 08:06:13",
+  "updated_at": "2026-04-13 19:08:16",
+  "stats": {
+    "total_entries": 9,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 19,
+    "entries_with_hits": 9,
+    "entries_without_hits": 0,
+    "hit_rate": 2.111111111111111,
+    "usage_percentage": 0.0009
+  },
+  "items": [
+    {
+      "source": "Mime type that can be produced.",
+      "translation": "可生成的 MIME 类型。",
+      "count": 3
+    },
+    {
+      "source": "Can be used with <a href=\"annotation/ReadOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@ReadOperation</code></a>,\n<a href=\"annotation/WriteOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@WriteOperation</code></a> and <a href=\"annotation/DeleteOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@DeleteOperation</code></a>\nannotations to quickly define a list of <code>produces</code> values.",
+      "translation": "可与 `<a href=\"annotation/ReadOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@ReadOperation</code></a>`、`<a href=\"annotation/WriteOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@WriteOperation</code></a>` 和 `<a href=\"annotation/DeleteOperation.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@DeleteOperation</code></a>` 注解配合使用，以快速定义一组 `<code>produces</code>` 值。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"Producible.html\" title=\"interface in org.springframework.boot.actuate.endpoint\"><code>Producible</code></a> types can also be injected into operations when the underlying\ntechnology supports content negotiation. For example, with web based endpoints, the\nvalue of the <code>Producible</code> enum is resolved using the <code>Accept</code> header of the\nrequest. When multiple values are equally acceptable, the value with the highest\n<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()\" title=\"class or interface in java.lang\"><code>ordinal</code></a> is used.",
+      "translation": "<a href=\"Producible.html\" title=\"interface in org.springframework.boot.actuate.endpoint\"><code>Producible</code></a> 类型也可以在底层技术支持内容协商时注入到操作中。例如，对于基于 Web 的端点，<code>Producible</code> 枚举的值是使用请求的 <code>Accept</code> 头解析的。当多个值同样可接受时，使用具有最高<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()\" title=\"class or interface in java.lang\"><code>ordinal</code></a> 的值。",
+      "count": 2
+    },
+    {
+      "source": "Return if this enum value should be used as the default value when an accept header\nof */* is provided, or if the <code>Accept</code> header is missing. Only\none value can be marked as default. If no value is marked, then the value with the\nhighest <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()\" title=\"class or interface in java.lang\"><code>ordinal</code></a> is used as the default.",
+      "translation": "如果提供了 `Accept` 头为 `*/*`，或者 `<code>Accept</code>` 头缺失时，应返回此枚举值作为默认值。只能标记一个值为默认值。如果没有标记任何值，则使用具有最高 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()\" title=\"class or interface in java.lang\"><code>ordinal</code></a> 的值作为默认值。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-E\"><code>E</code> - enum type that implements this interface</span>",
+      "translation": "<span id=\"type-param-E\"><code>E</code> - 实现此接口的枚举类型</span>",
+      "count": 2
+    },
+    {
+      "source": "if this value should be used as the default value",
+      "translation": "如果该值应作为默认值使用",
+      "count": 2
+    },
+    {
+      "source": "Return if this enum value should be used as the default value when an accept header\nof */* is provided, or if the <code>Accept</code> header is missing.",
+      "translation": "如果提供了 `*/*` 的接受头，或者缺少 `<code>Accept</code>` 头，则返回此枚举值是否应作为默认值。",
+      "count": 2
+    },
+    {
+      "source": "Andy Wilkinson",
+      "translation": "Andy Wilkinson",
+      "count": 2
+    },
+    {
+      "source": "the producible mime type",
+      "translation": "可生成的 MIME 类型",
+      "count": 2
+    }
+  ]
+}

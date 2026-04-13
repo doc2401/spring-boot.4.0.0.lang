@@ -1,0 +1,826 @@
+{
+  "created_at": "2026-04-12 20:38:58",
+  "updated_at": "2026-04-13 00:22:44",
+  "stats": {
+    "total_entries": 162,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 353,
+    "entries_with_hits": 162,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1790123456790123,
+    "usage_percentage": 0.0162
+  },
+  "items": [
+    {
+      "source": "Default value",
+      "translation": "默认值",
+      "count": 19
+    },
+    {
+      "source": "User property",
+      "translation": "用户属性",
+      "count": 19
+    },
+    {
+      "source": "The <code>spring-boot-devtools</code> and <code>spring-boot-docker-compose</code> modules are automatically excluded by default (you can control this using the <code>excludeDevtools</code> and <code>excludeDockerCompose</code> properties).\nIn order to make that work with <code>war</code> packaging, the <code>spring-boot-devtools</code> and <code>spring-boot-docker-compose</code> dependencies must be set as <code>optional</code> or with the <code>provided</code> scope.",
+      "translation": "`spring-boot-devtools` 和 `spring-boot-docker-compose` 模块默认会自动排除（您可以使用 `excludeDevtools` 和 `excludeDockerCompose` 属性来控制此行为）。为了使它们与 <code>war</code>` 打包方式兼容，必须将 `spring-boot-devtools` 和 `spring-boot-docker-compose` 依赖设置为 `<code>optional</code>` 或使用 `<code>provided</code> 作用域。",
+      "count": 2
+    },
+    {
+      "source": "The <code>&lt;into&gt;</code> block claims content using nested <code>&lt;include&gt;</code> and <code>&lt;exclude&gt;</code> elements.\nThe <code>&lt;application&gt;</code> section uses Ant-style path matching for include/exclude expressions.\nThe <code>&lt;dependencies&gt;</code> section uses <code>group:artifact[:version]</code> patterns.\nIt also provides <code>&lt;includeModuleDependencies /&gt;</code> and <code>&lt;excludeModuleDependencies /&gt;</code> elements that can be used to include or exclude local module dependencies.",
+      "translation": "`<into>` 块使用嵌套的 `<include>` 和 `<exclude>` 元素来声明内容。\n`<application>` 部分使用 Ant 风格的路径匹配来处理包含/排除表达式。\n`<dependencies>` 部分使用 `group:artifact[:version]` 模式。\n它还提供了 `<includeModuleDependencies />` 和 `<excludeModuleDependencies />` 元素，可用于包含或排除本地模块依赖项。",
+      "count": 2
+    },
+    {
+      "source": "Looking at the <code>&lt;dependencies&gt;</code> example above, we can see that the first <code>&lt;into&gt;</code> will claim all module dependencies for the <code>application.layer</code>.\nThe next <code>&lt;into&gt;</code> will claim all SNAPSHOT dependencies for the <code>snapshot-dependencies</code> layer.\nThe final <code>&lt;into&gt;</code> will claim anything left (in this case, any dependency that is not a SNAPSHOT) for the <code>dependencies</code> layer.",
+      "translation": "查看上面的 `<dependencies>` 示例，我们可以看到第一个 `<into>` 将声明 `application.layer` 的所有模块依赖。下一个 `<into>` 将声明 `snapshot-dependencies` 层的所有 SNAPSHOT 依赖。最后一个 `<into>` 将声明剩余的任何内容（在这种情况下，任何不是 SNAPSHOT 的依赖）到 `dependencies` 层。",
+      "count": 2
+    },
+    {
+      "source": "By default, both the <code>repackage</code> and the <code>run</code> goals will include any <code>provided</code> dependencies that are defined in the project.\nA Spring Boot project should consider <code>provided</code> dependencies as \"container\" dependencies that are required to run the application.\nGenerally speaking, Spring Boot projects are not used as dependencies and are therefore unlikely to have any <code>optional</code> dependencies.\nWhen a project does have optional dependencies they too will be included by the <code>repackage</code> and <code>run</code> goals.",
+      "translation": "默认情况下，<code>repackage</code> 和 <code>run</code> 目标都会包含项目中定义的任意 <code>provided</code> 依赖项。Spring Boot 项目应将 <code>provided</code> 依赖项视为运行应用程序所需的“容器”依赖项。一般来说，Spring Boot 项目不作为依赖项使用，因此不太可能有任意 <code>optional</code> 依赖项。当项目确实存在可选依赖项时，<code>repackage</code> 和 <code>run</code> 目标也会包含它们。",
+      "count": 2
+    },
+    {
+      "source": "The example above repackages a <code>jar</code> or <code>war</code> archive that is built during the package phase of the Maven lifecycle, including any <code>provided</code> dependencies that are defined in the project.\nIf some of these dependencies need to be excluded, you can use one of the <code>exclude</code> options; see the <a href=\"#packaging.examples.exclude-dependency\">dependency exclusion</a> for more details.",
+      "translation": "上面的示例重新打包了在 Maven 生命周期打包阶段构建的 <code>jar</code>` 或 `<code>war</code>` 归档文件，包括项目中定义的 `<code>provided</code>` 依赖项。如果其中某些依赖项需要排除，您可以使用其中一个 `<code>exclude</code> 选项；有关详细信息，请参阅<a href=\"#packaging.examples.exclude-dependency\">依赖项排除</a>。",
+      "count": 2
+    },
+    {
+      "source": "A repackaged jar contains the application’s classes and dependencies in <code>BOOT-INF/classes</code> and <code>BOOT-INF/lib</code> respectively.\nSimilarly, an executable war contains the application’s classes in <code>WEB-INF/classes</code> and dependencies in <code>WEB-INF/lib</code> and <code>WEB-INF/lib-provided</code>.\nFor cases where a docker image needs to be built from the contents of a jar or war, it’s useful to be able to separate these directories further so that they can be written into distinct layers.",
+      "translation": "重打包的 jar 包分别在 <code>BOOT-INF/classes</code>` 和 `<code>BOOT-INF/lib</code>` 中包含应用程序的类和依赖项。同样，可执行的 war 包在 `<code>WEB-INF/classes</code>` 中包含应用程序的类，并在 `<code>WEB-INF/lib</code>` 和 `<code>WEB-INF/lib-provided</code> 中包含依赖项。对于需要从 jar 或 war 的内容构建 Docker 镜像的情况，能够进一步分离这些目录以便将它们写入不同的层是非常有用的。",
+      "count": 2
+    },
+    {
+      "source": "The plugin rewrites your manifest, and in particular it manages the <code>Main-Class</code> and <code>Start-Class</code> entries.\nIf the defaults don’t work you have to configure the values in the Spring Boot plugin, not in the jar plugin.\nThe <code>Main-Class</code> in the manifest is controlled by the <code>layout</code> property of the Spring Boot plugin, as shown in the following example:",
+      "translation": "该插件会重写您的清单文件，特别是管理 <code>Main-Class</code>` 和 `<code>Start-Class</code>` 条目。如果默认值不起作用，您必须在 Spring Boot 插件中配置这些值，而不是在 jar 插件中配置。清单中的 `<code>Main-Class</code>` 由 Spring Boot 插件的 `<code>layout</code> 属性控制，如下面的示例所示：",
+      "count": 2
+    },
+    {
+      "source": "<code>WAR</code>: executable WAR layout. <code>provided</code> dependencies are placed in <code>WEB-INF/lib-provided</code> to avoid any clash when the <code>war</code> is deployed in a servlet container.",
+      "translation": "<code>WAR</code>：可执行的 WAR 布局。<code>provided</code> 依赖项被放置在 <code>WEB-INF/lib-provided</code> 中，以避免在将 <code>war</code> 部署到 Servlet 容器时发生任何冲突。",
+      "count": 2
+    },
+    {
+      "source": "<code>ZIP</code> (alias to <code>DIR</code>): similar to the <code>JAR</code> layout using <code>PropertiesLauncher</code>.",
+      "translation": "<code>ZIP</code>（<code>DIR</code> 的别名）：与使用 <code>PropertiesLauncher</code> 的 <code>JAR</code> 布局类似。",
+      "count": 2
+    },
+    {
+      "source": "The <code>&lt;application&gt;</code> block has similar rules.\nFirst claiming <code>org/springframework/boot/loader/**</code> content for the <code>spring-boot-loader</code> layer.\nThen claiming any remaining classes and resources for the <code>application</code> layer.",
+      "translation": "`<application>` 块具有类似的规则。首先声明 `org/springframework/boot/loader/**` 的内容属于 `spring-boot-loader` 层，然后声明其余的类和资源属于 `application` 层。",
+      "count": 2
+    },
+    {
+      "source": "The layout factory is provided as an implementation of <code>LayoutFactory</code> (from <code>spring-boot-loader-tools</code>) explicitly specified in the pom.\nIf there is only one custom <code>LayoutFactory</code> on the plugin classpath and it is listed in <code>META-INF/spring.factories</code> then it is unnecessary to explicitly set it in the plugin configuration.",
+      "translation": "布局工厂作为 <code>LayoutFactory</code>`（来自 `<code>spring-boot-loader-tools</code>`）的实现，已在 pom 中明确指定。如果插件类路径上只有一个自定义的 `<code>LayoutFactory</code>`，并且它已列在 `<code>META-INF/spring.factories</code> 中，则无需在插件配置中显式设置它。",
+      "count": 2
+    },
+    {
+      "source": "The <code>layout</code> property defaults to a value determined by the archive type (<code>jar</code> or <code>war</code>). The following layouts are available:",
+      "translation": "<code>layout</code> 属性的默认值由归档类型（<code>jar</code> 或 <code>war</code>）决定。可用的布局如下：",
+      "count": 2
+    },
+    {
+      "source": "Nested <code>&lt;into&gt;</code> blocks are used within <code>&lt;application&gt;</code> and <code>&lt;dependencies&gt;</code> sections to claim content for a layer.\nThe blocks are evaluated in the order that they are defined, from top to bottom.\nAny content not claimed by an earlier block remains available for subsequent blocks to consider.",
+      "translation": "嵌套的 <code>&lt;into&gt;</code>` 块用于在 `<code>&lt;application&gt;</code>` 和 `<code>&lt;dependencies&gt;</code> 部分中声明层的内容。\n这些块按照其定义顺序从上到下进行评估。\n任何未被较早块声明的内容仍可供后续块考虑。",
+      "count": 2
+    },
+    {
+      "source": "A list of the libraries that must be unpacked from uber jars in order to run. Specify each library as a <code>&lt;dependency&gt;</code> with a <code>&lt;groupId&gt;</code> and a <code>&lt;artifactId&gt;</code> and they will be unpacked at runtime.",
+      "translation": "运行时必须从 uber jar 中解压的库列表。将每个库指定为具有 `<groupId>` 和 `<artifactId>` 的 `<dependency>`，它们将在运行时被解压。",
+      "count": 2
+    },
+    {
+      "source": "If you are using <code>spring-boot-starter-parent</code>, the <code>repackage</code> goal is executed automatically in an execution with id <code>repackage</code>.\nIn that setup, only the configuration should be specified, as shown in the following example:",
+      "translation": "如果您使用 <code>spring-boot-starter-parent</code>`，则会在 ID 为 `<code>repackage</code>` 的执行中自动执行 `<code>repackage</code> 目标。在这种配置下，只需指定配置，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "As both the <code>maven-jar-plugin</code> and the <code>spring-boot-maven-plugin</code> run at the same phase, it is important that the jar plugin is defined first (so that it runs before the repackage goal).\nAgain, if you are using <code>spring-boot-starter-parent</code>, this can be simplified as follows:",
+      "translation": "由于 <code>maven-jar-plugin</code>` 和 `<code>spring-boot-maven-plugin</code>` 都在同一阶段运行，因此必须首先定义 jar 插件（以便它在重新打包目标之前运行）。同样，如果您使用的是 `<code>spring-boot-starter-parent</code>，则可以简化如下：",
+      "count": 2
+    },
+    {
+      "source": "Exclude a specific artifact identified by <code>groupId</code> and <code>artifactId</code>, optionally with a <code>classifier</code> if needed.",
+      "translation": "排除通过 <code>groupId</code>` 和 `<code>artifactId</code>` 标识的特定工件，如有需要，还可包含 `<code>classifier</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code>dependencies</code> for any dependency whose version does not contain <code>SNAPSHOT</code>.",
+      "translation": "<code>dependencies</code> 适用于任何版本不包含 <code>SNAPSHOT</code> 的依赖。",
+      "count": 2
+    },
+    {
+      "source": "<code>snapshot-dependencies</code> for any dependency whose version contains <code>SNAPSHOT</code>.",
+      "translation": "<code>snapshot-dependencies</code> 用于任何版本包含 <code>SNAPSHOT</code> 的依赖。",
+      "count": 2
+    },
+    {
+      "source": "Attach the repackaged archive to be installed into your local Maven repository or deployed to a remote repository. If no classifier has been configured, it will replace the normal jar. If a <code>classifier</code> has been configured such that the normal jar and the repackaged jar are different, it will be attached alongside the normal jar. When the property is set to <code>false</code>, the repackaged archive will not be installed or deployed.",
+      "translation": "将重新打包的归档文件附加到本地 Maven 仓库中安装，或部署到远程仓库。如果未配置分类器，它将替换正常的 jar 文件。如果已配置 <code>classifier</code>` 使得正常 jar 和重新打包的 jar 不同，它将与正常 jar 一起附加。当该属性设置为 `<code>false</code> 时，不会安装或部署重新打包的归档文件。",
+      "count": 2
+    },
+    {
+      "source": "Timestamp for reproducible output archive entries, either formatted as ISO 8601 (<code>yyyy-MM-dd’T’HH:mm:ssXXX</code>) or an <code>int</code> representing seconds since the epoch.",
+      "translation": "用于生成可重现输出归档条目的时间戳，格式为 ISO 8601（<code>yyyy-MM-dd’T’HH:mm:ssXXX</code>）或表示自纪元以来秒数的 <code>int</code>。",
+      "count": 2
+    },
+    {
+      "source": "By default, the <code>repackage</code> goal replaces the original artifact with the repackaged one.\nThat is a sane behavior for modules that represent an application but if your module is used as a dependency of another module, you need to provide a classifier for the repackaged one.\nThe reason for that is that application classes are packaged in <code>BOOT-INF/classes</code> so that the dependent module cannot load a repackaged jar’s classes.",
+      "translation": "默认情况下，`repackage` 目标会用重新打包后的构件替换原始构件。对于代表应用程序的模块来说，这是一种合理的行为；但如果您的模块被用作另一个模块的依赖项，则需要为重新打包后的构件提供分类器。原因是应用程序类被打包在 <code>BOOT-INF/classes</code> 中，因此依赖模块无法加载重新打包的 jar 中的类。",
+      "count": 2
+    },
+    {
+      "source": "If you need the repackaged jar to have a different local name than the one defined by the <code>artifactId</code> attribute of the project, use the standard <code>finalName</code>, as shown in the following example:",
+      "translation": "如果您需要重新打包的 jar 具有与项目中由 <code>artifactId</code>` 属性定义的本地名称不同的名称，请使用标准的 `<code>finalName</code>，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "The configuration above creates an additional <code>company-dependencies</code> layer with all libraries with the <code>com.acme</code> groupId.",
+      "translation": "上面的配置会创建一个额外的 <code>company-dependencies</code>` 层，包含所有 `groupId` 为 `<code>com.acme</code> 的库。",
+      "count": 2
+    },
+    {
+      "source": "Packaging an executable archive is performed by the <code>repackage</code> goal, as shown in the following example:",
+      "translation": "打包可执行归档由<code>repackage</code>目标完成，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "The original (that is non-executable) artifact is renamed to <code>.original</code> by default but it is also possible to keep the original artifact using a custom classifier.",
+      "translation": "默认情况下，原始（非可执行）工件会被重命名为 `<code>.original`，但也可以使用自定义分类器来保留原始工件。",
+      "count": 2
+    },
+    {
+      "source": "<code>JAR</code>: regular executable JAR layout.",
+      "translation": "<code>JAR</code>：常规可执行 JAR 布局。",
+      "count": 2
+    },
+    {
+      "source": "<code>NONE</code>: Bundle all dependencies and project resources. Does not bundle a bootstrap loader.",
+      "translation": "<code>NONE</code>：打包所有依赖项和项目资源。不打包引导加载程序。",
+      "count": 2
+    },
+    {
+      "source": "<code>spring-boot-loader</code> for the loader classes.",
+      "translation": "<code>spring-boot-loader</code> 用于加载器类。",
+      "count": 2
+    },
+    {
+      "source": "<code>application</code> for local module dependencies, application classes, and resources.",
+      "translation": "<code>application</code> 用于本地模块依赖项、应用程序类和资源。",
+      "count": 2
+    },
+    {
+      "source": "The repackaged archive includes the <code>layers.idx</code> file by default.\nTo disable this feature, you can do so in the following manner:",
+      "translation": "重新打包的归档默认包含 <code>layers.idx</code> 文件。要禁用此功能，可以按以下方式操作：",
+      "count": 2
+    },
+    {
+      "source": "The <code>layers</code> XML format is defined in three sections:",
+      "translation": "<code>layers</code> XML 格式定义在三个部分中：",
+      "count": 2
+    },
+    {
+      "source": "The <code>&lt;application&gt;</code> block defines how the application classes and resources should be layered.",
+      "translation": "<code>&lt;application&gt;</code> 块定义了应用程序类和资源的分层方式。",
+      "count": 2
+    },
+    {
+      "source": "The <code>&lt;dependencies&gt;</code> block defines how dependencies should be layered.",
+      "translation": "<code>&lt;dependencies&gt;</code> 块定义了依赖项的分层方式。",
+      "count": 2
+    },
+    {
+      "source": "The <code>&lt;layerOrder&gt;</code> block defines the order that the layers should be written.",
+      "translation": "<code>&lt;layerOrder&gt;</code> 块定义了图层写入的顺序。",
+      "count": 2
+    },
+    {
+      "source": "If no <code>&lt;include&gt;</code> is defined, then all content (not claimed by an earlier block) is considered.",
+      "translation": "如果未定义 <code>&lt;include&gt;</code>，则考虑所有内容（未被更早的块声明的内容）。",
+      "count": 2
+    },
+    {
+      "source": "If no <code>&lt;exclude&gt;</code> is defined, then no exclusions are applied.",
+      "translation": "如果未定义 <code>&lt;exclude&gt;</code>，则不会应用任何排除项。",
+      "count": 2
+    },
+    {
+      "source": "Classifier to add to the repackaged archive. If not given, the main artifact will be replaced by the repackaged archive. If given, the classifier will also be used to determine the source archive to repackage: if an artifact with that classifier already exists, it will be used as source and replaced. If no such artifact exists, the main artifact will be used as source and the repackaged archive will be attached as a supplemental artifact with that classifier. Attaching the artifact allows to deploy it alongside to the original one, see <a href=\"https://maven.apache.org/plugins/maven-deploy-plugin/examples/deploying-with-classifiers.html\">the Maven documentation for more details</a>.",
+      "translation": "要添加到重新打包归档中的分类器。如果未指定，主构件将被重新打包的归档替换。如果指定了该分类器，它还将用于确定要重新打包的源归档：如果已存在具有该分类器的构件，则将其用作源并替换；如果不存在这样的构件，则将使用主构件作为源，并将重新打包的归档附加为具有该分类器的补充构件。附加构件允许将其与原始构件一起部署，有关更多详细信息，请参阅 <a href=\"https://maven.apache.org/plugins/maven-deploy-plugin/examples/deploying-with-classifiers.html\">Maven 文档</a>。",
+      "count": 2
+    },
+    {
+      "source": "You can also use the same configuration if you want to repackage a secondary artifact the same way the main artifact is replaced.\nThe following configuration installs/deploys a single <code>task</code> classified artifact with the repackaged application:",
+      "translation": "您也可以使用相同的配置，以与替换主构件相同的方式重新打包次要构件。\n以下配置安装/部署单个分类为 `<code>task`` 的重新打包应用程序：",
+      "count": 2
+    },
+    {
+      "source": "This configuration will generate the repackaged artifact in <code>target/my-app.jar</code>.",
+      "translation": "此配置将在 <code>target/my-app.jar</code> 中生成重新打包的工件。",
+      "count": 2
+    },
+    {
+      "source": "By default, the <code>repackage</code> goal replaces the original artifact with the executable one.\nIf you need to only deploy the original jar and yet be able to run your app with the regular file name, configure the plugin as follows:",
+      "translation": "默认情况下，`repackage` 目标会将原始构件替换为可执行构件。如果您只需部署原始 jar 包，但仍希望使用常规文件名运行应用程序，请按以下方式配置插件：",
+      "count": 2
+    },
+    {
+      "source": "This configuration generates two artifacts: the original one and the executable counter part produced by the <code>repackage</code> goal.\nOnly the original one will be installed/deployed.",
+      "translation": "此配置会生成两个产物：原始产物和由 <code>repackage</code> 目标生成的可执行版本。仅安装/部署原始产物。",
+      "count": 2
+    },
+    {
+      "source": "Layout factories are always ignored if an explicit <a href=\"#packaging.repackage-goal.parameter-details.layout-factory\">layout</a> is set.",
+      "translation": "如果设置了显式的<a href=\"#packaging.repackage-goal.parameter-details.layout-factory\">布局</a>，则始终会忽略布局工厂。",
+      "count": 2
+    },
+    {
+      "source": "Exclude any artifact belonging to a given <code>groupId</code>.",
+      "translation": "排除给定<code>groupId</code>所属的任何构件。",
+      "count": 2
+    },
+    {
+      "source": "The following example excludes <code>com.example:module1</code>, and only that artifact:",
+      "translation": "以下示例排除 <code>com.example:module1</code>，且仅排除该工件：",
+      "count": 2
+    },
+    {
+      "source": "This example excludes any artifact belonging to the <code>com.example</code> group:",
+      "translation": "此示例排除属于 <code>com.example</code> 组的所有构件：",
+      "count": 2
+    },
+    {
+      "source": "The default setup splits dependencies into snapshot and non-snapshot, however, you may have more complex rules.\nFor example, you may want to isolate company-specific dependencies of your project in a dedicated layer.\nThe following <code>layers.xml</code> configuration shown one such setup:",
+      "translation": "默认设置将依赖项分为快照和非快照，但您可能需要更复杂的规则。例如，您可能希望将项目的特定于公司的依赖项隔离在专用层中。以下所示的<code>layers.xml</code>配置展示了此类设置：",
+      "count": 2
+    },
+    {
+      "source": "Layered archives use the same layout as a regular repackaged jar or war, but include an additional meta-data file that describes each layer.",
+      "translation": "分层归档使用与常规重新打包的 jar 或 war 相同的布局，但包含一个额外的元数据文件，用于描述每一层。",
+      "count": 2
+    },
+    {
+      "source": "Module dependencies are identified by looking at all of the modules that are part of the current build.\nIf a module dependency can only be resolved because it has been installed into Maven’s local cache and it is not part of the current build, it will be identified as regular dependency.",
+      "translation": "模块依赖通过检查当前构建中的所有模块来识别。如果某个模块依赖仅因已安装到 Maven 本地缓存才能解析，且不属于当前构建，则它将被标识为常规依赖。",
+      "count": 2
+    },
+    {
+      "source": "Depending on your application, you may want to tune how layers are created and add new ones.\nThis can be done using a separate configuration file that should be registered as shown below:",
+      "translation": "根据您的应用程序，您可能需要调整层的创建方式并添加新层。这可以通过一个单独的配置文件来完成，该文件应按以下方式注册：",
+      "count": 2
+    },
+    {
+      "source": "The configuration file describes how an archive can be separated into layers, and the order of those layers.\nThe following example shows how the default ordering described above can be defined explicitly:",
+      "translation": "配置文件描述了如何分离归档中的层以及这些层的顺序。以下示例展示了如何显式定义上述默认顺序：",
+      "count": 2
+    },
+    {
+      "source": "Directory containing the generated archive.",
+      "translation": "包含生成归档的目录。",
+      "count": 2
+    },
+    {
+      "source": "If that is the case or if you prefer to keep the original artifact and attach the repackaged one with a different classifier, configure the plugin as shown in the following example:",
+      "translation": "如果是这种情况，或者如果您希望保留原始工件并附加一个具有不同分类器的重新打包工件，请按以下示例配置插件：",
+      "count": 2
+    },
+    {
+      "source": "This configuration will generate two artifacts: the original one and the repackaged counter part produced by the repackage goal.\nBoth will be installed/deployed transparently.",
+      "translation": "此配置将生成两个工件：原始工件和由 repackage 目标生成的重新打包版本。两者都将透明地安装/部署。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot repackages the jar file for this project using a custom layout factory defined in the additional jar file, provided as a dependency to the build plugin:",
+      "translation": "Spring Boot 使用构建插件的依赖项中提供的附加 jar 文件里定义的自定义布局工厂，重新打包此项目的 jar 文件：",
+      "count": 2
+    },
+    {
+      "source": "Some of these dependencies may not be required at all and should be excluded from the executable jar.\nFor consistency, they should not be present either when running the application.",
+      "translation": "这些依赖项中有些可能完全不需要，应从可执行 JAR 中排除。为保持一致性，在运行应用程序时也不应包含它们。",
+      "count": 2
+    },
+    {
+      "source": "There are two ways one can exclude a dependency from being packaged/used at runtime:",
+      "translation": "有两种方式可以将依赖排除在打包/运行时之外：",
+      "count": 2
+    },
+    {
+      "source": "<nav aria-label=\"breadcrumbs\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"Copy versioned URL\"></li>\n      <li><a href=\"../index.html\">Spring Boot</a></li>\n      <li><a href=\"../build-tool-plugin/index.html\">Build Tool Plugins</a></li>\n      <li><a href=\"index.html\">Maven Plugin</a></li>\n      <li><a href=\"packaging.html\">Packaging Executable Archives</a></li>\n    </ul>\n  </nav>",
+      "translation": "<nav aria-label=\"面包屑\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"复制带版本号的 URL\"></li>\n      <li><a href=\"../index.html\">Spring Boot</a></li>\n      <li><a href=\"../build-tool-plugin/index.html\">构建工具插件</a></li>\n      <li><a href=\"index.html\">Maven 插件</a></li>\n      <li><a href=\"packaging.html\">打包可执行归档文件</a></li>\n    </ul>\n  </nav>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../build-tool-plugin/index.html\">Build Tool Plugins</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">Maven Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"using.html\">Using the Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"goals.html\">Goals</a>\n  </li>\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"build-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"run.html\">Running your Application with Maven</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"integration-tests.html\">Running Integration Tests</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"build-info.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"help.html\">Help Information</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../gradle-plugin/index.html\">Gradle Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/managing-dependencies.html\">Managing Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging-oci-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/publishing.html\">Publishing your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/running.html\">Running your Application with Gradle</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/integrating-with-actuator.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/reacting.html\">Reacting to Other Plugins</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/antlib.html\">Spring Boot AntLib Module</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/other-build-systems.html\">Supporting Other Build Systems</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../build-tool-plugin/index.html\">构建工具插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">Maven 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"using.html\">使用插件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"goals.html\">目标</a>\n  </li>\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"build-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"run.html\">使用 Maven 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"integration-tests.html\">运行集成测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"build-info.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"help.html\">帮助信息</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../gradle-plugin/index.html\">Gradle 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/managing-dependencies.html\">管理依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/packaging-oci-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/publishing.html\">发布应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/running.html\">使用 Gradle 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/integrating-with-actuator.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../gradle-plugin/reacting.html\">响应其他插件</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/antlib.html\">Spring Boot AntLib 模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../build-tool-plugin/other-build-systems.html\">支持其他构建系统</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"Warning\"></i>\n</td>\n<td class=\"content\">\nThe <code>repackage</code> goal is not meant to be used alone on the command-line as it operates on the source\n<code>jar</code> (or <code>war</code>) produced by the <code>package</code> phase.\nTo use this goal on the command-line, you must include the <code>package</code> phase: <code>mvn package spring-boot:repackage</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"Warning\"></i>\n</td>\n<td class=\"content\">\n<code>repackage</code> 目标并非设计为在命令行中单独使用，因为它操作的是由 <code>package</code> 阶段生成的源 <code>jar</code>（或 <code>war</code>）。要在命令行中使用此目标，必须包含 <code>package</code> 阶段：<code>mvn package spring-boot:repackage</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe order that <code>&lt;into&gt;</code> blocks are defined is often different from the order that the layers are written.\nFor this reason the <code>&lt;layerOrder&gt;</code> element must always be included and <em>must</em> cover all layers referenced by the <code>&lt;into&gt;</code> blocks.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n`<into>` 块的定义顺序通常与图层写入的顺序不同。因此，必须始终包含 `<layerOrder>` 元素，并且该元素必须涵盖所有由 `<into>` 块引用的图层。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you are using <code>spring-boot-starter-parent</code>, such execution is already pre-configured with a <code>repackage</code> execution ID so that only the plugin definition should be added.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您使用的是 <code>spring-boot-starter-parent</code>，此类执行已预配置了 <code>repackage</code> 执行 ID，因此只需添加插件定义即可。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe <code>outputFileNameMapping</code> feature of the <code>maven-war-plugin</code> is currently not supported.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n目前不支持 <code>maven-war-plugin</code> 的 <code>outputFileNameMapping</code> 功能。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"prev\"><a href=\"goals.html\">Goals</a></span>\n  <span class=\"next\"><a href=\"build-image.html\">Packaging OCI Images</a></span>",
+      "translation": "<span class=\"prev\"><a href=\"goals.html\">目标</a></span>\n  <span class=\"next\"><a href=\"build-image.html\">打包 OCI 镜像</a></span>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.layers\"></a>Layered Jar or War",
+      "translation": "<a class=\"anchor\" href=\"#packaging.layers\"></a>分层 Jar 或 War",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.layers.configuration\"></a>Custom Layers Configuration",
+      "translation": "<a class=\"anchor\" href=\"#packaging.layers.configuration\"></a>自定义层配置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.repackage-goal.required-parameters\"></a>Required parameters",
+      "translation": "<a class=\"anchor\" href=\"#packaging.repackage-goal.required-parameters\"></a>必需参数",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.repackage-goal.optional-parameters\"></a>Optional parameters",
+      "translation": "<a class=\"anchor\" href=\"#packaging.repackage-goal.optional-parameters\"></a>可选参数",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.repackage-goal.parameter-details\"></a>Parameter details",
+      "translation": "<a class=\"anchor\" href=\"#packaging.repackage-goal.parameter-details\"></a>参数详情",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.custom-classifier\"></a>Custom Classifier",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.custom-classifier\"></a>自定义分类器",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.custom-name\"></a>Custom Name",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.custom-name\"></a>自定义名称",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.local-artifact\"></a>Local Repackaged Artifact",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.local-artifact\"></a>本地重新打包的工件",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.custom-layout\"></a>Custom Layout",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.custom-layout\"></a>自定义布局",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.exclude-dependency\"></a>Dependency Exclusion",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.exclude-dependency\"></a>依赖排除",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.layered-archive-tools\"></a>JAR Tools",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.layered-archive-tools\"></a>JAR 工具",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#packaging.examples.custom-layers-configuration\"></a>Custom Layers Configuration",
+      "translation": "<a class=\"anchor\" href=\"#packaging.examples.custom-layers-configuration\"></a>自定义层配置",
+      "count": 2
+    },
+    {
+      "source": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">Terms of Use</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">Privacy</a> • <a href=\"https://spring.io/trademarks\">Trademark Guidelines</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">Thank you</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">Your California Privacy Rights</a> • <a class=\"ot-sdk-show-settings\">Cookie Settings</a> <span id=\"teconsent\"></span>",
+      "translation": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">使用条款</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">隐私政策</a> • <a href=\"https://spring.io/trademarks\">商标指南</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">致谢</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">您的加州隐私权利</a> • <a class=\"ot-sdk-show-settings\">Cookie 设置</a> <span id=\"teconsent\"></span>",
+      "count": 2
+    },
+    {
+      "source": "Collection of artifact definitions to exclude. The <code>Exclude</code> element defines mandatory <code>groupId</code> and <code>artifactId</code> components and an optional <code>classifier</code> component. When configured as a property, values should be comma-separated with colon-separated components: <code>groupId:artifactId,groupId:artifactId:classifier</code>",
+      "translation": "要排除的构件定义集合。<code>Exclude</code> 元素定义了必需的 <code>groupId</code> 和 <code>artifactId</code> 组件以及可选的 <code>classifier</code> 组件。当配置为属性时，值应以逗号分隔，组件之间以冒号分隔：<code>groupId:artifactId,groupId:artifactId:classifier</code>",
+      "count": 2
+    },
+    {
+      "source": "Collection of artifact definitions to include. The <code>Include</code> element defines mandatory <code>groupId</code> and <code>artifactId</code> components and an optional <code>classifier</code> component. When configured as a property, values should be comma-separated with colon-separated components: <code>groupId:artifactId,groupId:artifactId:classifier</code>",
+      "translation": "要包含的制品定义集合。<code>Include</code> 元素定义了必需的 <code>groupId</code> 和 <code>artifactId</code> 组件以及可选的 <code>classifier</code> 组件。当配置为属性时，值应以逗号分隔，组件之间以冒号分隔：<code>groupId:artifactId,groupId:artifactId:classifier</code>",
+      "count": 2
+    },
+    {
+      "source": "The type of archive (which corresponds to how the dependencies are laid out inside it). Possible values are <code>JAR</code>, <code>WAR</code>, <code>ZIP</code>, <code>DIR</code>, <code>NONE</code>. Defaults to a guess based on the archive type.",
+      "translation": "归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>`、`<code>WAR</code>`、`<code>ZIP</code>`、`<code>DIR</code>` 和 `<code>NONE</code>。默认值基于归档类型进行猜测。",
+      "count": 2
+    },
+    {
+      "source": "The layers order is important as it determines how likely previous layers can be cached when part of the application changes.\nThe default order is <code>dependencies</code>, <code>spring-boot-loader</code>, <code>snapshot-dependencies</code>, <code>application</code>.\nContent that is least likely to change should be added first, followed by layers that are more likely to change.",
+      "translation": "层顺序很重要，因为它决定了当应用程序的一部分发生变化时，前一层被缓存的可能性。默认顺序为 <code>dependencies</code>`、`<code>spring-boot-loader</code>`、`<code>snapshot-dependencies</code>` 和 `<code>application</code>。最不可能变化的内容应首先添加，随后是更可能变化的层。",
+      "count": 2
+    },
+    {
+      "source": "Repackage existing JAR and WAR archives so that they can be executed from the command line using <code>java -jar</code>. With <code>layout=NONE</code> can also be used simply to package a JAR with nested dependencies (and no main class, so not executable).",
+      "translation": "重新打包现有的 JAR 和 WAR 归档文件，以便可以使用 <code>java -jar</code>` 从命令行执行。使用 `<code>layout=NONE</code> 也可以仅用于打包包含嵌套依赖的 JAR（且无主类，因此不可执行）。",
+      "count": 2
+    },
+    {
+      "source": "The plugin can create executable archives (jar files and war files) that contain all of an application’s dependencies and can then be run with <code>java -jar</code>.",
+      "translation": "该插件可以创建包含应用程序所有依赖项的可执行归档文件（jar 文件和 war 文件），然后使用 <code>java -jar</code> 运行它们。",
+      "count": 2
+    },
+    {
+      "source": "The name of the main class. If not specified the first compiled class found that contains a <code>main</code> method will be used.",
+      "translation": "主类的名称。如果未指定，将使用找到的第一个包含 <code>main</code> 方法的编译类。",
+      "count": 2
+    },
+    {
+      "source": "When a layered jar or war is created, the <code>spring-boot-jarmode-tools</code> jar will be added as a dependency to your archive.\nWith this jar on the classpath, you can launch your application in a special mode which allows the bootstrap code to run something entirely different from your application, for example, something that extracts the layers.\nIf you wish to exclude this dependency, you can do so in the following manner:",
+      "translation": "当创建分层 jar 或 war 时，`spring-boot-jarmode-tools` jar 将被添加为归档的依赖项。在类路径中包含此 jar 后，您可以以特殊模式启动应用程序，该模式允许引导代码执行与您的应用程序完全不同的操作（例如，提取分层）。如果您希望排除此依赖项，可以按以下方式操作：",
+      "count": 2
+    },
+    {
+      "source": "By default, the following layers are defined:",
+      "translation": "默认情况下，定义以下图层：",
+      "count": 2
+    },
+    {
+      "source": "Exclude Spring Boot devtools from the repackaged archive.",
+      "translation": "从重新打包的归档中排除 Spring Boot devtools。",
+      "count": 2
+    },
+    {
+      "source": "Exclude Spring Boot dev services from the repackaged archive.",
+      "translation": "从重新打包的归档中排除 Spring Boot 开发服务。",
+      "count": 2
+    },
+    {
+      "source": "Comma separated list of groupId names to exclude (exact match).",
+      "translation": "要排除的 groupId 名称逗号分隔列表（精确匹配）。",
+      "count": 2
+    },
+    {
+      "source": "Include optional dependencies.",
+      "translation": "包含可选依赖项。",
+      "count": 2
+    },
+    {
+      "source": "Include system scoped dependencies.",
+      "translation": "包含系统范围的依赖项。",
+      "count": 2
+    },
+    {
+      "source": "Include JAR tools.",
+      "translation": "包含 JAR 工具。",
+      "count": 2
+    },
+    {
+      "source": "Layer configuration with options to disable layer creation, exclude layer tools jar, and provide a custom layers configuration file.",
+      "translation": "支持禁用图层创建、排除图层工具 JAR 以及提供自定义图层配置文件选项的图层配置。",
+      "count": 2
+    },
+    {
+      "source": "The layout factory that will be used to create the executable archive if no explicit layout is set. Alternative layouts implementations can be provided by 3rd parties.",
+      "translation": "如果未设置显式布局，将用于创建可执行归档的布局工厂。第三方可以提供替代的布局实现。",
+      "count": 2
+    },
+    {
+      "source": "Skip the execution.",
+      "translation": "跳过执行。",
+      "count": 2
+    },
+    {
+      "source": "Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.",
+      "translation": "Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他国家/地区的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS\"和“Amazon Web Services\"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">Microservices</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">Reactive</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">Event\n              Driven</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web\n              Applications</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">Serverless</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">Batch</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">概述</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">微服务</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">响应式</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">事件驱动</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">云</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web 应用程序</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">无服务器</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">批处理</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring Runtime</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring Consulting</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring Academy For Teams</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">Security Advisories</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring 运行时</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring 咨询</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring 团队学院</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">安全公告</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">Courses</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">Get Certified</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">课程</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">获取认证</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"title\" href=\"../index.html\">Spring Boot</a>",
+      "translation": "<a class=\"title\" href=\"../index.html\">Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/index.html\">How-to Guides</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/application.html\">Spring Boot Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/properties-and-configuration.html\">Properties and Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/webserver.html\">Embedded Web Servers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/http-clients.html\">HTTP Clients</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/data-access.html\">Data Access</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/data-initialization.html\">Database Initialization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/messaging.html\">Messaging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/batch.html\">Batch Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/security.html\">Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/hotswapping.html\">Hot Swapping</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/testing.html\">Testing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/build.html\">Build</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/native-image/index.html\">GraalVM Native Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/native-image/developing-your-first-application.html\">Developing Your First GraalVM Native Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/native-image/testing-native-applications.html\">Testing GraalVM Native Images</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/deployment/index.html\">Deploying Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/traditional-deployment.html\">Traditional Deployment</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/cloud.html\">Deploying to the Cloud</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/installing.html\">Installing Spring Boot Applications</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/index.html\">操作指南</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/application.html\">Spring Boot 应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/properties-and-configuration.html\">属性与配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/webserver.html\">嵌入式 Web 服务器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/http-clients.html\">HTTP 客户端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/data-access.html\">数据访问</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/data-initialization.html\">数据库初始化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/messaging.html\">消息传递</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/batch.html\">批处理应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/security.html\">安全</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/hotswapping.html\">热替换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/testing.html\">测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/build.html\">构建</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/aot.html\">提前处理 (AOT)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/native-image/index.html\">GraalVM 原生应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/native-image/developing-your-first-application.html\">开发您的第一个 GraalVM 原生应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/native-image/testing-native-applications.html\">测试 GraalVM 原生镜像</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../how-to/deployment/index.html\">部署 Spring Boot 应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/traditional-deployment.html\">传统部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/cloud.html\">部署到云端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../how-to/deployment/installing.html\">安装 Spring Boot 应用</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/index.html\">Packaging Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/efficient.html\">Efficient Deployments</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot.html\">Ahead-of-Time Processing With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/index.html\">GraalVM Native Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/introducing-graalvm-native-images.html\">Introducing GraalVM Native Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/advanced-topics.html\">Advanced Native Images Topics</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/checkpoint-restore.html\">Checkpoint and Restore With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/index.html\">Container Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/efficient-images.html\">Efficient Container Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/cloud-native-buildpacks.html\">Cloud Native Buildpacks</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/index.html\">打包 Spring Boot 应用程序</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/efficient.html\">高效部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/aot.html\">使用 JVM 进行提前处理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/index.html\">GraalVM 原生镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/introducing-graalvm-native-images.html\">介绍 GraalVM 原生镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/native-image/advanced-topics.html\">高级原生镜像主题</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/packaging/checkpoint-restore.html\">使用 JVM 进行检查点和恢复</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/index.html\">容器镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/efficient-images.html\">高效容器镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/dockerfiles.html\">Dockerfile</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../reference/packaging/container-images/cloud-native-buildpacks.html\">云原生构建包</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Specifications</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/index.html\">Configuration Metadata</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/format.html\">Metadata Format</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/manual-hints.html\">Providing Manual Hints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/annotation-processor.html\">Generating Your Own Metadata by Using the Annotation Processor</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/executable-jar/index.html\">The Executable Jar Format</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/nested-jars.html\">Nested JARs</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/jarfile-class.html\">Spring Boot’s “NestedJarFile” Class</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/launching.html\">Launching Executable Jars</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/property-launcher.html\">PropertiesLauncher Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/restrictions.html\">Executable Jar Restrictions</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/alternatives.html\">Alternative Single Jar Solutions</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">规范</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/index.html\">配置元数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/format.html\">元数据格式</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/manual-hints.html\">提供手动提示</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/configuration-metadata/annotation-processor.html\">使用注解处理器生成自己的元数据</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../specification/executable-jar/index.html\">可执行 JAR 格式</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/nested-jars.html\">嵌套 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/jarfile-class.html\">Spring Boot 的“NestedJarFile”类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/launching.html\">启动可执行 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/property-launcher.html\">PropertiesLauncher 功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/restrictions.html\">可执行 JAR 限制</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../specification/executable-jar/alternatives.html\">替代单 JAR 解决方案</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/features/index.html\">Core Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/external-config.html\">Externalized Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/profiles.html\">Profiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/internationalization.html\">Internationalization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/aop.html\">Aspect-Oriented Programming</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/task-execution-and-scheduling.html\">Task Execution and Scheduling</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/dev-services.html\">Development-time Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/developing-auto-configuration.html\">Creating Your Own Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/kotlin.html\">Kotlin Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/features/index.html\">核心功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/external-config.html\">外部化配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/profiles.html\">Profile</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/internationalization.html\">国际化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/aop.html\">面向切面编程</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/task-execution-and-scheduling.html\">任务执行与调度</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/dev-services.html\">开发时服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/developing-auto-configuration.html\">创建自己的自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/kotlin.html\">Kotlin 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/actuator/index.html\">Production-ready Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/enabling.html\">Enabling Production-ready Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/endpoints.html\">Endpoints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/monitoring.html\">Monitoring and Management Over HTTP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/jmx.html\">Monitoring and Management over JMX</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/observability.html\">Observability</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/loggers.html\">Loggers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/metrics.html\">Metrics</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/tracing.html\">Tracing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/auditing.html\">Auditing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/http-exchanges.html\">Recording HTTP Exchanges</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/process-monitoring.html\">Process Monitoring</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/cloud-foundry.html\">Cloud Foundry Support</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/actuator/index.html\">生产就绪功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/enabling.html\">启用生产就绪功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/endpoints.html\">端点</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/monitoring.html\">通过 HTTP 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/jmx.html\">通过 JMX 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/observability.html\">可观测性</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/loggers.html\">日志记录器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/metrics.html\">指标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/tracing.html\">追踪</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/auditing.html\">审计</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/http-exchanges.html\">记录 HTTP 交换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/process-monitoring.html\">进程监控</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/actuator/cloud-foundry.html\">Cloud Foundry 支持</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/using/index.html\">Developing with Spring Boot</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/build-systems.html\">Build Systems</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/structuring-your-code.html\">Structuring Your Code</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/configuration-classes.html\">Configuration Classes</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/auto-configuration.html\">Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/spring-beans-and-dependency-injection.html\">Spring Beans and Dependency Injection</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/using-the-springbootapplication-annotation.html\">Using the @SpringBootApplication Annotation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/running-your-application.html\">Running Your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/devtools.html\">Developer Tools</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/packaging-for-production.html\">Packaging Your Application for Production</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/using/index.html\">使用 Spring Boot 进行开发</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/build-systems.html\">构建系统</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/structuring-your-code.html\">代码结构</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/configuration-classes.html\">配置类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/auto-configuration.html\">自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/spring-beans-and-dependency-injection.html\">Spring Bean 和依赖注入</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/using-the-springbootapplication-annotation.html\">使用 @SpringBootApplication 注解</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/running-your-application.html\">运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/devtools.html\">开发人员工具</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/using/packaging-for-production.html\">将应用程序打包用于生产环境</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/caching.html\">Caching</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/quartz.html\">Quartz Scheduler</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/email.html\">Sending Email</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/validation.html\">Validation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/rest-client.html\">Calling REST Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/webservices.html\">Web Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/jta.html\">Distributed Transactions With JTA</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/caching.html\">缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/quartz.html\">Quartz 调度器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/email.html\">发送邮件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/validation.html\">验证</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/rest-client.html\">调用 REST 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/webservices.html\">Web 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/io/jta.html\">使用 JTA 进行分布式事务</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/servlet.html\">Servlet Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/reactive.html\">Reactive Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/graceful-shutdown.html\">Graceful Shutdown</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/servlet.html\">Servlet Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/reactive.html\">响应式 Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/graceful-shutdown.html\">优雅关闭</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/messaging/index.html\">Messaging</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/kafka.html\">Apache Kafka Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/pulsar.html\">Apache Pulsar Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/messaging/index.html\">消息传递</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/kafka.html\">Apache Kafka 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/pulsar.html\">Apache Pulsar 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/testing/index.html\">Testing</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-modules.html\">Test Modules</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-scope-dependencies.html\">Test Scope Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-applications.html\">Testing Spring Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-boot-applications.html\">Testing Spring Boot Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-utilities.html\">Test Utilities</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/testing/index.html\">测试</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-modules.html\">测试模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-scope-dependencies.html\">测试范围依赖</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-applications.html\">测试 Spring 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/spring-boot-applications.html\">测试 Spring Boot 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/testing/test-utilities.html\">测试工具</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/data/index.html\">Data</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/sql.html\">SQL Databases</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/nosql.html\">Working with NoSQL Technologies</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../reference/data/index.html\">数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/sql.html\">SQL 数据库</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../reference/data/nosql.html\">使用 NoSQL 技术</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/installation.html\">Installing the CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/using-the-cli.html\">Using the CLI</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/installation.html\">安装 CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../cli/using-the-cli.html\">使用 CLI</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/index.html\">Dependency Versions</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/coordinates.html\">Managed Dependency Coordinates</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/properties.html\">Version Properties</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/index.html\">依赖版本</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/coordinates.html\">托管依赖坐标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/dependency-versions/properties.html\">版本属性</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../tutorial/index.html\">Tutorials</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../tutorial/first-application/index.html\">Developing Your First Spring Boot Application</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../tutorial/index.html\">教程</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../tutorial/first-application/index.html\">开发您的第一个 Spring Boot 应用程序</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/index.html\">Test Auto-configuration Annotations</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/slices.html\">Test Slices</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/index.html\">测试自动配置注解</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../appendix/test-auto-configuration/slices.html\">测试切片</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/auditevents.html\">Audit Events (<code>auditevents</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/auditevents.html\">审计事件 (<code>auditevents</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/conditions.html\">Conditions Evaluation Report (<code>conditions</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/conditions.html\">条件评估报告 (<code>conditions</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/configprops.html\">Configuration Properties (<code>configprops</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/configprops.html\">配置属性 (<code>configprops</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/heapdump.html\">Heap Dump (<code>heapdump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/heapdump.html\">堆转储 (<code>heapdump</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/httpexchanges.html\">HTTP Exchanges (<code>httpexchanges</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/httpexchanges.html\">HTTP 交换 (<code>httpexchanges</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/integrationgraph.html\">Spring Integration Graph (<code>integrationgraph</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/integrationgraph.html\">Spring Integration Graph（<code>integrationgraph</code>）</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/logfile.html\">Log File (<code>logfile</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/logfile.html\">日志文件 (<code>logfile</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/sbom.html\">Software Bill of Materials (<code>sbom</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/sbom.html\">软件物料清单（<code>sbom</code>）</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/scheduledtasks.html\">Scheduled Tasks (<code>scheduledtasks</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/scheduledtasks.html\">定时任务 (<code>scheduledtasks</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/startup.html\">Application Startup (<code>startup</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/startup.html\">应用启动 (<code>startup</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../api/rest/actuator/threaddump.html\">Thread Dump (<code>threaddump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../api/rest/actuator/threaddump.html\">线程转储 (<code>threaddump</code>)</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-server\" href=\"../system-requirements.html\">System Requirements</a>",
+      "translation": "<a class=\"nav-link navtree-icon-server\" href=\"../system-requirements.html\">系统要求</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-gift\" href=\"../installing.html\">Installing Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-gift\" href=\"../installing.html\">安装 Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-rocket\" href=\"../upgrading.html\">Upgrading Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-rocket\" href=\"../upgrading.html\">升级 Spring Boot</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../appendix/application-properties/index.html\">Common Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../appendix/application-properties/index.html\">通用应用程序属性</a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../appendix/deprecated-application-properties/index.html\">Deprecated Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../appendix/deprecated-application-properties/index.html\">已弃用的应用程序属性</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">\n  Spring Modulith\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">Spring Modulith</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "count": 2
+    },
+    {
+      "source": "Why Spring",
+      "translation": "为什么选择 Spring",
+      "count": 2
+    },
+    {
+      "source": "Rest APIs",
+      "translation": "REST API",
+      "count": 2
+    },
+    {
+      "source": "Auto-configuration Classes",
+      "translation": "自动配置类",
+      "count": 2
+    },
+    {
+      "source": "Packaging Executable Archives",
+      "translation": "打包可执行归档文件",
+      "count": 2
+    },
+    {
+      "source": "All Docs...",
+      "translation": "所有文档...",
+      "count": 2
+    },
+    {
+      "source": "Related Spring Documentation",
+      "translation": "相关 Spring 文档",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/build/generated/docs/antora-dependencies-source/maven-plugin/modules/maven-plugin/pages/packaging.adoc\">\n          <svg id=\"svg-stash-05b5c46b\"></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"svg-stash-28d888b7\"></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-24b05902\"></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/build/generated/docs/antora-dependencies-source/maven-plugin/modules/maven-plugin/pages/packaging.adoc\">\n          <svg id=\"svg-stash-05b5c46b\"></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"svg-stash-28d888b7\"></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-24b05902\"></svg>\n          Stack Overflow\n        </a>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-80254425\"></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-80254425\"></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/build/generated/docs/antora-dependencies-source/maven-plugin/modules/maven-plugin/pages/packaging.adoc\">\n          <svg id=\"svg-stash-cbdeb110\"></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"Layer_1\"></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-cc28f43f\"></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/build/generated/docs/antora-dependencies-source/maven-plugin/modules/maven-plugin/pages/packaging.adoc\">\n          <svg id=\"svg-stash-cbdeb110\"></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg id=\"Layer_1\"></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg id=\"svg-stash-cc28f43f\"></svg>\n          Stack Overflow\n        </a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"Layer_1\"></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"Layer_1\"></svg>\n  </button>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-f15b5668\"></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg id=\"svg-stash-f15b5668\"></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"svg-stash-ac7a95a2\"></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg id=\"svg-stash-ac7a95a2\"></svg>\n  </button>",
+      "count": 1
+    }
+  ]
+}

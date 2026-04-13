@@ -1,0 +1,211 @@
+{
+  "created_at": "2026-04-13 20:09:50",
+  "updated_at": "2026-04-13 20:09:50",
+  "stats": {
+    "total_entries": 39,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 72,
+    "entries_with_hits": 39,
+    "entries_without_hits": 0,
+    "hit_rate": 1.8461538461538463,
+    "usage_percentage": 0.0039
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a> instance with the specified\n<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a> and URL mappings.",
+      "translation": "创建一个带有指定的<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a>和 URL 映射的新<a href=\"ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a>实例。",
+      "count": 5
+    },
+    {
+      "source": "Create a new <a href=\"ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a> instance.",
+      "translation": "创建一个新的<a href=\"ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "<code>servlet</code> - the servlet being mapped",
+      "translation": "<servlet> - 被映射的 Servlet",
+      "count": 3
+    },
+    {
+      "source": "<code>urlMappings</code> - the URLs being mapped",
+      "translation": "<code>urlMappings</code> - 被映射的 URL",
+      "count": 3
+    },
+    {
+      "source": "The <a href=\"#setServlet(T)\"><code>servlet</code></a> must be specified before calling\n<a href=\"RegistrationBean.html#onStartup(jakarta.servlet.ServletContext)\"><code>RegistrationBean.onStartup(ServletContext)</code></a>. URL mapping can be configured used <a href=\"#setUrlMappings(java.util.Collection)\"><code>setUrlMappings(Collection)</code></a> or\nomitted when mapping to '/*' (unless\n<a href=\"#%3Cinit%3E(T,boolean,java.lang.String...)\"><code>alwaysMapUrl</code></a> is set to\n<code>false</code>). The servlet name will be deduced if not specified.",
+      "translation": "在调用 <a href=\"RegistrationBean.html#onStartup(jakarta.servlet.ServletContext)\"><code>RegistrationBean.onStartup(ServletContext)</code></a> 之前，必须指定 <a href=\"#setServlet(T)\"><code>servlet</code></a>。URL 映射可以通过使用 <a href=\"#setUrlMappings(java.util.Collection)\"><code>setUrlMappings(Collection)</code></a> 进行配置，或者在映射到 '/*' 时省略（除非将 <a href=\"#%3Cinit%3E(T,boolean,java.lang.String...)\"><code>alwaysMapUrl</code></a> 设置为 <code>false</code>）。如果未指定 servlet 名称，则会自动推导。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/MultipartConfigElement.html\" title=\"class or interface in jakarta.servlet\"><code>multi-part configuration</code></a> to be applied\nor <code>null</code>.",
+      "translation": "返回要应用的<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/MultipartConfigElement.html\" title=\"class or interface in jakarta.servlet\"><code>多部分配置</code></a>，或返回<code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "Sets the <code>loadOnStartup</code> priority. See\n<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html#setLoadOnStartup(int)\" title=\"class or interface in jakarta.servlet\"><code>ServletRegistration.Dynamic.setLoadOnStartup(int)</code></a> for details.",
+      "translation": "设置 `<code>loadOnStartup</code>` 优先级。有关详细信息，请参阅\n<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html#setLoadOnStartup(int)\" title=\"class or interface in jakarta.servlet\"><code>ServletRegistration.Dynamic.setLoadOnStartup(int)</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/MultipartConfigElement.html\" title=\"class or interface in jakarta.servlet\"><code>multi-part configuration</code></a>.",
+      "translation": "设置<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/MultipartConfigElement.html\" title=\"class or interface in jakarta.servlet\"><code>多部分配置</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Add URL mappings, as defined in the Servlet specification, for the servlet.",
+      "translation": "为 Servlet 添加如 Servlet 规范中定义的 URL 映射。",
+      "count": 2
+    },
+    {
+      "source": "Return the servlet being registered.",
+      "translation": "返回正在注册的 Servlet。",
+      "count": 2
+    },
+    {
+      "source": "Returns the servlet name that will be registered.",
+      "translation": "返回将注册的 Servlet 名称。",
+      "count": 2
+    },
+    {
+      "source": "Return a mutable collection of the URL mappings, as defined in the Servlet\nspecification, for the servlet.",
+      "translation": "返回一个可变集合，其中包含该 Servlet 的 URL 映射（如 Servlet 规范中定义）。",
+      "count": 2
+    },
+    {
+      "source": "Sets the servlet to be registered.",
+      "translation": "设置要注册的 Servlet。",
+      "count": 2
+    },
+    {
+      "source": "Set the URL mappings for the servlet. If not specified the mapping will default to\n'/'. This will replace any previously specified mappings.",
+      "translation": "设置 Servlet 的 URL 映射。如果未指定，默认映射为 '/'。这将替换任何先前指定的映射。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"DynamicRegistrationBean.html#addRegistration(java.lang.String,jakarta.servlet.ServletContext)\">addRegistration</a></code> in class <code><a href=\"DynamicRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">DynamicRegistrationBean</a>&lt;<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html\" title=\"class or interface in jakarta.servlet\">ServletRegistration.Dynamic</a>&gt;</code>",
+      "translation": "<code><a href=\"DynamicRegistrationBean.html#addRegistration(java.lang.String,jakarta.servlet.ServletContext)\">addRegistration</a></code> 类中的 <code><a href=\"DynamicRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">DynamicRegistrationBean</a>&lt;<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html\" title=\"class or interface in jakarta.servlet\">ServletRegistration.Dynamic</a>&gt;</code>",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"DynamicRegistrationBean.html#configure(D)\">configure</a></code> in class <code><a href=\"DynamicRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">DynamicRegistrationBean</a>&lt;<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html\" title=\"class or interface in jakarta.servlet\">ServletRegistration.Dynamic</a>&gt;</code>",
+      "translation": "<code><a href=\"DynamicRegistrationBean.html#configure(D)\">configure</a></code> 在类 <code><a href=\"DynamicRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">DynamicRegistrationBean</a>&lt;<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletRegistration.Dynamic.html\" title=\"class or interface in jakarta.servlet\">ServletRegistration.Dynamic</a>&gt;</code> 中",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-T\"><code>T</code> - the type of the <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a> to register</span>",
+      "translation": "<span id=\"type-param-T\"><code>T</code> - 要注册的 <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a> 的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>multipartConfig</code> - the multipart configuration to set or <code>null</code>",
+      "translation": "<code>multipartConfig</code> - 要设置的 multipart 配置或 <code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>alwaysMapUrl</code> - if omitted URL mappings should be replaced with '/*'",
+      "translation": "<code>alwaysMapUrl</code> - 如果省略，URL 映射应替换为 '/*'",
+      "count": 2
+    },
+    {
+      "source": "<code>servlet</code> - the servlet",
+      "translation": "<servlet> - Servlet",
+      "count": 2
+    },
+    {
+      "source": "<code>urlMappings</code> - the mappings to set",
+      "translation": "<code>urlMappings</code> - 要设置的映射",
+      "count": 2
+    },
+    {
+      "source": "<code>urlMappings</code> - the mappings to add",
+      "translation": "<code>urlMappings</code> - 要添加的映射",
+      "count": 2
+    },
+    {
+      "source": "<code>loadOnStartup</code> - if load on startup is enabled",
+      "translation": "<code>loadOnStartup</code> - 如果启用启动时加载",
+      "count": 2
+    },
+    {
+      "source": "the servlet",
+      "translation": "servlet",
+      "count": 2
+    },
+    {
+      "source": "the urlMappings",
+      "translation": "urlMappings",
+      "count": 2
+    },
+    {
+      "source": "the multipart config",
+      "translation": "多部分配置",
+      "count": 2
+    },
+    {
+      "source": "the servlet name",
+      "translation": "servlet 名称",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"RegistrationBean.html#getDescription()\">RegistrationBean</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"RegistrationBean.html#getDescription()\">RegistrationBean</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "Sets the <code>loadOnStartup</code> priority.",
+      "translation": "设置<code>loadOnStartup</code>优先级。",
+      "count": 1
+    },
+    {
+      "source": "Configure registration settings.",
+      "translation": "配置注册设置。",
+      "count": 1
+    },
+    {
+      "source": "Return a description of the registration.",
+      "translation": "返回注册描述。",
+      "count": 1
+    },
+    {
+      "source": "Set the URL mappings for the servlet.",
+      "translation": "设置 servlet 的 URL 映射。",
+      "count": 1
+    },
+    {
+      "source": "Return a description of the registration. For example \"Servlet resourceServlet\"",
+      "translation": "返回注册描述。例如：\"Servlet 资源 servlet\"",
+      "count": 1
+    },
+    {
+      "source": "Configure registration settings. Subclasses can override this method to perform\nadditional configuration if required.",
+      "translation": "配置注册设置。子类可以重写此方法，在需要时执行额外的配置。",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"RegistrationBean.html#getDescription()\">getDescription</a></code> in class <code><a href=\"RegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">RegistrationBean</a></code>",
+      "translation": "`<code><a href=\"RegistrationBean.html#getDescription()\">getDescription</a></code>` 类中的 `<code><a href=\"RegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\">RegistrationBean</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()\" title=\"class or interface in java.lang\">toString</a></code> in class <code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\" title=\"class or interface in java.lang\">Object</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()\" title=\"class or interface in java.lang\">toString</a></code>` 在类 `<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\" title=\"class or interface in java.lang\">Object</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>registration</code> - the registration",
+      "translation": "<code>registration</code> - 注册",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb",
+      "translation": "Phillip Webb",
+      "count": 1
+    },
+    {
+      "source": "a description of the registration",
+      "translation": "注册描述",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,901 @@
+{
+  "created_at": "2026-04-13 08:01:29",
+  "updated_at": "2026-04-13 19:08:05",
+  "stats": {
+    "total_entries": 177,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 415,
+    "entries_with_hits": 177,
+    "entries_without_hits": 0,
+    "hit_rate": 2.3446327683615817,
+    "usage_percentage": 0.0177
+  },
+  "items": [
+    {
+      "source": "Perform the given action with the given <a href=\"SpringApplicationHook.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationHook</code></a> attached if\nthe action triggers an <a href=\"#run(java.lang.String...)\"><code>application run</code></a>.",
+      "translation": "如果该操作触发了<code>application run</code>，则执行给定操作并附加给定的<a href=\"SpringApplicationHook.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationHook</code></a>。",
+      "count": 5
+    },
+    {
+      "source": "<code>context</code> - the application context",
+      "translation": "<code>context</code> - 应用程序上下文",
+      "count": 5
+    },
+    {
+      "source": "<code>args</code> - arguments passed to the <code>run</code> method",
+      "translation": "<code>args</code> - 传递给 <code>run</code> 方法的参数",
+      "count": 4
+    },
+    {
+      "source": "<code>args</code> - the application arguments (usually passed from a Java main method)",
+      "translation": "<code>args</code> - 应用程序参数（通常从 Java 主方法传递）",
+      "count": 4
+    },
+    {
+      "source": "<code>environment</code> - this application's environment",
+      "translation": "<code>environment</code> - 此应用程序的环境",
+      "count": 4
+    },
+    {
+      "source": "Sources set here will be used in addition to any primary sources set in the\nconstructor.",
+      "translation": "此处设置的源将作为构造函数中设置的主源之外的附加源使用。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance. The application context will load\nbeans from the specified primary sources (see <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>class-level</code></a>\ndocumentation for details). The instance can be customized before calling\n<a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a>.",
+      "translation": "创建一个新的 <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 实例。应用程序上下文将从指定的主要源加载 bean（有关详细信息，请参阅 <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>类级别</code></a>\n文档）。在调用 <a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a> 之前可以自定义该实例。",
+      "count": 3
+    },
+    {
+      "source": "Adds <a href=\"bootstrap/BootstrapRegistryInitializer.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistryInitializer</code></a> instances that can be used to initialize\nthe <a href=\"bootstrap/BootstrapRegistry.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry</code></a>.",
+      "translation": "添加可用于初始化<a href=\"bootstrap/BootstrapRegistry.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry</code></a>的<a href=\"bootstrap/BootstrapRegistryInitializer.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistryInitializer</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "Either the ClassLoader that will be used in the ApplicationContext (if\n<a href=\"#setResourceLoader(org.springframework.core.io.ResourceLoader)\"><code>resourceLoader</code></a> is set), or the context\nclass loader (if not null), or the loader of the Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/ClassUtils.html\" title=\"class or interface in org.springframework.util\"><code>ClassUtils</code></a> class.",
+      "translation": "要么是使用于 ApplicationContext 中的 ClassLoader（如果已设置 <a href=\"#setResourceLoader(org.springframework.core.io.ResourceLoader)\"><code>resourceLoader</code></a>），要么是上下文类加载器（如果不为 null），或者是 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/ClassUtils.html\" title=\"class or interface in org.springframework.util\"><code>ClassUtils</code></a> 类的加载器。",
+      "count": 3
+    },
+    {
+      "source": "Sets if the <a href=\"convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a> should be added to the application\ncontext's <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "设置是否将 <a href=\"convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a> 添加到应用程序上下文中的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance.",
+      "translation": "创建一个新的<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 实例。",
+      "count": 3
+    },
+    {
+      "source": "Return a <a href=\"SpringApplicationShutdownHandlers.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationShutdownHandlers</code></a> instance that can be used to add\nor remove handlers that perform actions before the JVM is shutdown.",
+      "translation": "返回一个 `<a href=\"SpringApplicationShutdownHandlers.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationShutdownHandlers</code></a>` 实例，该实例可用于添加或移除在 JVM 关闭之前执行操作的处理器。",
+      "count": 3
+    },
+    {
+      "source": "Static helper that can be used to run a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> from the\nspecified sources using default settings and user supplied arguments.",
+      "translation": "可用于从指定源使用默认设置和用户提供参数运行<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>的静态辅助方法。",
+      "count": 3
+    },
+    {
+      "source": "Static helper that can be used to run a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> from the\nspecified source using default settings.",
+      "translation": "可用于从指定源使用默认设置运行<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>的静态辅助方法。",
+      "count": 3
+    },
+    {
+      "source": "Sets the <a href=\"Banner.html\" title=\"interface in org.springframework.boot\"><code>Banner</code></a> instance which will be used to print the banner when no\nstatic banner file is provided.",
+      "translation": "设置 `<a href=\"Banner.html\" title=\"org.springframework.boot 中的接口\"><code>Banner</code></a>` 实例，当未提供静态横幅文件时，将使用该实例打印横幅。",
+      "count": 3
+    },
+    {
+      "source": "Convenient alternative to <a href=\"#setDefaultProperties(java.util.Map)\"><code>setDefaultProperties(Map)</code></a>.",
+      "translation": "<a href=\"#setDefaultProperties(java.util.Map)\"><code>setDefaultProperties(Map)</code></a> 的便捷替代方案。",
+      "count": 3
+    },
+    {
+      "source": "<code>primarySources</code> - the primary bean sources",
+      "translation": "<code>primarySources</code> - 主要 Bean 源",
+      "count": 3
+    },
+    {
+      "source": "<code>sources</code> - the sources to load",
+      "translation": "<code>sources</code> - 要加载的源",
+      "count": 3
+    },
+    {
+      "source": "<code>hook</code> - the hook to apply",
+      "translation": "<code>hook</code> - 要应用的钩子",
+      "count": 3
+    },
+    {
+      "source": "<code>action</code> - the action to run",
+      "translation": "<code>action</code> - 要运行的操作",
+      "count": 3
+    },
+    {
+      "source": "Add <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>s to be applied to the Spring\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "添加 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>` 以应用于 Spring `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>`。",
+      "count": 3
+    },
+    {
+      "source": "Add <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>s to be applied to the SpringApplication and\nregistered with the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "添加 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>` 以应用于 `SpringApplication`，并注册到 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>`。",
+      "count": 3
+    },
+    {
+      "source": "Returns read-only ordered Set of the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>s that\nwill be applied to the Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "返回一个只读的有序 Set，包含将应用于 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>s。",
+      "count": 3
+    },
+    {
+      "source": "Returns read-only ordered Set of the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>s that will be\napplied to the SpringApplication and registered with the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>\n.",
+      "translation": "返回一个只读的有序 Set，包含将应用于 SpringApplication 并注册到 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>s。",
+      "count": 3
+    },
+    {
+      "source": "Sets the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a> that will be applied to the Spring\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "设置将应用于 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Sets the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>s that will be applied to the SpringApplication\nand registered with the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "设置将应用于 SpringApplication 的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>，并将其注册到 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Apply any <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>s to the context before it is\nrefreshed.",
+      "translation": "在刷新上下文之前，应用任何 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>` 到该上下文。",
+      "count": 3
+    },
+    {
+      "source": "Add, remove or re-order any <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a>s in this application's\nenvironment.",
+      "translation": "在此应用程序环境中添加、删除或重新排列任何 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Returns the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a> used for collecting startup metrics.",
+      "translation": "返回用于收集启动指标的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a>`。",
+      "count": 3
+    },
+    {
+      "source": "Refresh the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "刷新底层的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Run the Spring application, creating and refreshing a new\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "运行 Spring 应用程序，创建并刷新一个新的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Set the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a> to use for collecting startup metrics.",
+      "translation": "设置 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a>` 用于收集启动指标。",
+      "count": 3
+    },
+    {
+      "source": "Set default environment properties which will be used in addition to those in the\nexisting <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "设置默认的环境属性，这些属性将附加到现有的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 中。",
+      "count": 3
+    },
+    {
+      "source": "Sets the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/ResourceLoader.html\" title=\"class or interface in org.springframework.core.io\"><code>ResourceLoader</code></a> that should be used when loading resources.",
+      "translation": "设置加载资源时应使用的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/ResourceLoader.html\" title=\"class or interface in org.springframework.core.io\"><code>ResourceLoader</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Bind the environment to the <code>ApplicationProperties</code>.",
+      "translation": "将环境绑定到<code>ApplicationProperties</code>。",
+      "count": 3
+    },
+    {
+      "source": "Factory method used to create the <code>BeanDefinitionLoader</code>.",
+      "translation": "用于创建<code>BeanDefinitionLoader</code>的工厂方法。",
+      "count": 3
+    },
+    {
+      "source": "Banner location property key.",
+      "translation": "Banner 位置属性键。",
+      "count": 3
+    },
+    {
+      "source": "Default banner location.",
+      "translation": "默认横幅位置。",
+      "count": 3
+    },
+    {
+      "source": "Called after the context has been refreshed.",
+      "translation": "在上下文刷新后调用。",
+      "count": 3
+    },
+    {
+      "source": "Return an immutable set of any additional profiles in use.",
+      "translation": "返回一个包含所有正在使用的额外配置文件的不可变集合。",
+      "count": 3
+    },
+    {
+      "source": "Return a prefix that should be applied when obtaining configuration properties from\nthe system environment.",
+      "translation": "返回一个前缀，在从系统环境获取配置属性时应应用该前缀。",
+      "count": 3
+    },
+    {
+      "source": "Returns the main application class that has been deduced or explicitly configured.",
+      "translation": "返回已推导或显式配置的主应用程序类。",
+      "count": 3
+    },
+    {
+      "source": "The ResourceLoader that will be used in the ApplicationContext.",
+      "translation": "将在 ApplicationContext 中使用的 ResourceLoader。",
+      "count": 3
+    },
+    {
+      "source": "Returns the type of web application that is being run.",
+      "translation": "返回正在运行的 Web 应用程序的类型。",
+      "count": 3
+    },
+    {
+      "source": "Whether to keep the application alive even if there are no more non-daemon threads.",
+      "translation": "即使没有更多非守护线程，是否保持应用程序运行。",
+      "count": 3
+    },
+    {
+      "source": "Load beans into the application context.",
+      "translation": "将 Bean 加载到应用程序上下文中。",
+      "count": 3
+    },
+    {
+      "source": "Called to log startup information, subclasses may override to add additional\nlogging.",
+      "translation": "被调用以记录启动信息，子类可以重写此方法以添加额外的日志记录。",
+      "count": 3
+    },
+    {
+      "source": "Called to log active profile information.",
+      "translation": "调用以记录活动配置文件信息。",
+      "count": 3
+    },
+    {
+      "source": "Set additional profile values to use (on top of those set in system or command line\nproperties).",
+      "translation": "设置要使用的额外配置文件值（在系统或命令行属性中设置的值之上）。",
+      "count": 3
+    },
+    {
+      "source": "Sets the bean name generator that should be used when generating bean names.",
+      "translation": "设置用于生成 Bean 名称的 Bean 名称生成器。",
+      "count": 3
+    },
+    {
+      "source": "Sets the underlying environment that should be used with the created application\ncontext.",
+      "translation": "设置创建的应用程序上下文应使用的底层环境。",
+      "count": 3
+    },
+    {
+      "source": "Set the prefix that should be applied when obtaining configuration properties from\nthe system environment.",
+      "translation": "设置从系统环境获取配置属性时应应用的前缀。",
+      "count": 3
+    },
+    {
+      "source": "Set whether to keep the application alive even if there are no more non-daemon\nthreads.",
+      "translation": "设置是否即使没有更多非守护线程也要保持应用程序运行。",
+      "count": 3
+    },
+    {
+      "source": "the running <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>",
+      "translation": "正在运行的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>",
+      "count": 3
+    },
+    {
+      "source": "The sources here are added to those that were set in the constructor. Most users\nshould consider using <a href=\"#getSources()\"><code>getSources()</code></a>/<a href=\"#setSources(java.util.Set)\"><code>setSources(Set)</code></a> rather than\ncalling this method.",
+      "translation": "此处的源会被添加到构造函数中设置的源。大多数用户应考虑使用<a href=\"#getSources()\"><code>getSources()</code></a>/<a href=\"#setSources(java.util.Set)\"><code>setSources(Set)</code></a>，而不是调用此方法。",
+      "count": 2
+    },
+    {
+      "source": "For more advanced configuration a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance can be created and\ncustomized before being run:",
+      "translation": "对于更高级的配置，可以在运行之前创建并自定义一个<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>实例：",
+      "count": 2
+    },
+    {
+      "source": "Most developers will want to define their own main method and call the\n<a href=\"#run(java.lang.Class,java.lang.String...)\"><code>run</code></a> method instead.",
+      "translation": "大多数开发者将希望定义自己的 `main` 方法，并调用 `<a href=\"#run(java.lang.Class,java.lang.String...)\"><code>run</code></a>` 方法。",
+      "count": 2
+    },
+    {
+      "source": "Static helper that can be used to exit a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> and obtain a\ncode indicating success (0) or otherwise. Does not throw exceptions but should\nprint stack traces of any encountered. Applies the specified\n<a href=\"ExitCodeGenerator.html\" title=\"interface in org.springframework.boot\"><code>ExitCodeGenerators</code></a> in addition to any Spring beans that\nimplement <a href=\"ExitCodeGenerator.html\" title=\"interface in org.springframework.boot\"><code>ExitCodeGenerator</code></a>. When multiple generators are available, the\nfirst non-zero exit code is used. Generators are ordered based on their\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\"><code>Ordered</code></a> implementation and <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\" title=\"class or interface in org.springframework.core.annotation\"><code>@Order</code></a> annotation.",
+      "translation": "这是一个可用于退出 <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 并获取表示成功（0）或其他结果的代码的静态辅助方法。该方法不会抛出异常，但应打印任何遇到的堆栈跟踪。除了应用指定的 <a href=\"ExitCodeGenerator.html\" title=\"interface in org.springframework.boot\"><code>ExitCodeGenerators</code></a> 外，还会应用所有实现 <a href=\"ExitCodeGenerator.html\" title=\"interface in org.springframework.boot\"><code>ExitCodeGenerator</code></a> 的 Spring Bean。当有多个生成器可用时，使用第一个非零退出代码。生成器的顺序基于其 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\"><code>Ordered</code></a> 实现和 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\" title=\"class or interface in org.springframework.core.annotation\"><code>@Order</code></a> 注解。",
+      "count": 2
+    },
+    {
+      "source": "Template method delegating to\n<a href=\"#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a> and\n<a href=\"#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a> in that order.",
+      "translation": "委托给以下方法的模板方法：首先调用 <a href=\"#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a>，然后调用 <a href=\"#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Template method delegating to\n<a href=\"#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a> and\n<a href=\"#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a> in that order.\nOverride this method for complete control over Environment customization, or one of\nthe above for fine-grained control over property sources or profiles, respectively.",
+      "translation": "委托给 `<a href=\"#configurePropertySources(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configurePropertySources(ConfigurableEnvironment, String[])</code></a>` 和 `<a href=\"#configureProfiles(org.springframework.core.env.ConfigurableEnvironment,java.lang.String%5B%5D)\"><code>configureProfiles(ConfigurableEnvironment, String[])</code></a>` 的模板方法，顺序如上。若要完全控制 Environment 定制，请重写此方法；若要对属性源或配置文件进行细粒度控制，则分别重写上述方法之一。",
+      "count": 2
+    },
+    {
+      "source": "Return an immutable set of all the sources that will be added to an\nApplicationContext when <a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a> is called. This method combines any\nprimary sources specified in the constructor with any additional ones that have\nbeen <a href=\"#setSources(java.util.Set)\"><code>explicitly set</code></a>.",
+      "translation": "返回一个不可变的集合，包含在调用<a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a>时将添加到 ApplicationContext 的所有源。此方法会合并构造函数中指定的任何主源与任何已<a href=\"#setSources(java.util.Set)\"><code>显式设置</code></a>的其他源。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the created <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> should have a shutdown hook\nregistered. Defaults to <code>true</code> to ensure that JVM shutdowns are handled\ngracefully.",
+      "translation": "设置是否应为创建的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>注册关闭钩子。默认值为<code>true</code>，以确保优雅地处理 JVM 关闭。",
+      "count": 2
+    },
+    {
+      "source": "Sets if a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> should be added to the application\ncontext in order to expose arguments. Defaults to <code>true</code>.",
+      "translation": "设置是否将 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> 添加到应用程序上下文中以暴露参数。默认为 <code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "Add additional items to the primary sources that will be added to an\nApplicationContext when <a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a> is called.",
+      "translation": "向主源添加额外项，这些项将在调用 `<a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a>` 时添加到 `ApplicationContext` 中。",
+      "count": 2
+    },
+    {
+      "source": "Static helper that can be used to exit a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> and obtain a\ncode indicating success (0) or otherwise.",
+      "translation": "可用于退出<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>并获取表示成功（0）或其他情况的代码的静态辅助方法。",
+      "count": 2
+    },
+    {
+      "source": "Return an immutable set of all the sources that will be added to an\nApplicationContext when <a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a> is called.",
+      "translation": "返回一个不可变的集合，包含在调用<a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a>时将添加到 ApplicationContext 的所有源。",
+      "count": 2
+    },
+    {
+      "source": "Returns a mutable set of the sources that will be added to an ApplicationContext\nwhen <a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a> is called.",
+      "translation": "返回一个可变集合，包含在调用 `<a href=\"#run(java.lang.String...)\"><code>run(String...)</code></a>` 时将添加到 ApplicationContext 的源。",
+      "count": 2
+    },
+    {
+      "source": "Strategy method used to create the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>. By default this\nmethod will respect any explicitly set application context class or factory before\nfalling back to a suitable default.",
+      "translation": "用于创建<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>的策略方法。默认情况下，此方法将首先尊重任何显式设置的应用程序上下文类或工厂，然后回退到合适的默认值。",
+      "count": 2
+    },
+    {
+      "source": "Apply any relevant post-processing to the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>. Subclasses\ncan apply additional processing as required.",
+      "translation": "对 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 应用任何相关的后处理。子类可根据需要应用额外的处理。",
+      "count": 2
+    },
+    {
+      "source": "Create an application from an existing <code>main</code> method that can run with\nadditional <code>@Configuration</code> or bean classes. This method can be helpful when\nwriting a test harness that needs to start an application with additional\nconfiguration.",
+      "translation": "从现有的 `main` 方法创建一个可以配合额外的 `<code>@Configuration</code>` 或 Bean 类运行的应用程序。当编写需要启动带有额外配置的应用程序的测试框架时，此方法非常有用。",
+      "count": 2
+    },
+    {
+      "source": "Configure which profiles are active (or active by default) for this application\nenvironment. Additional profiles may be activated during configuration file\nprocessing through the <code>spring.profiles.active</code> property.",
+      "translation": "配置此应用程序环境中哪些配置文件处于活动状态（或默认处于活动状态）。在配置文件处理过程中，可以通过 `<code>spring.profiles.active</code>` 属性激活额外的配置文件。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <code>Log</code> for the application. By default will be deduced.",
+      "translation": "返回应用程序的<code>Log</code>。默认情况下将自动推断。",
+      "count": 2
+    },
+    {
+      "source": "Set a specific main application class that will be used as a log source and to\nobtain version information. By default the main application class will be deduced.\nCan be set to <code>null</code> if there is no explicit application class.",
+      "translation": "设置一个特定的主应用程序类，将其用作日志源并获取版本信息。默认情况下，将推导出主应用程序类。如果没有明确的应用程序类，可以设置为 `<code>null</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Sets if bean definition overriding, by registering a definition with the same name\nas an existing definition, should be allowed. Defaults to <code>false</code>.",
+      "translation": "设置是否允许通过注册与现有定义具有相同名称的定义来覆盖 Bean 定义。默认值为 `<code>false</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Sets whether to allow circular references between beans and automatically try to\nresolve them. Defaults to <code>false</code>.",
+      "translation": "设置是否允许 Bean 之间的循环引用并自动尝试解析它们。默认为 `<code>false</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Sets if beans should be initialized lazily. Defaults to <code>false</code>.",
+      "translation": "设置是否延迟初始化 Bean。默认为<code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the application is headless and should not instantiate AWT. Defaults to\n<code>true</code> to prevent java icons appearing.",
+      "translation": "设置应用程序是否为无头模式且不应实例化 AWT。默认值为`true`，以防止出现 Java 图标。",
+      "count": 2
+    },
+    {
+      "source": "Sets the mode used to display the banner when the application runs. Defaults to\n<code>Banner.Mode.CONSOLE</code>.",
+      "translation": "设置应用程序运行时显示横幅的模式。默认为 `<code>Banner.Mode.CONSOLE</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the application information should be logged when the application starts.\nDefaults to <code>true</code>.",
+      "translation": "设置是否在应用程序启动时记录应用程序信息。默认为 `<code>true</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Register that the given exception has been logged. By default, if the running in\nthe main thread, this method will suppress additional printing of the stacktrace.",
+      "translation": "注册给定的异常已被记录。默认情况下，如果在主线程中运行，此方法将抑制堆栈跟踪的额外打印。",
+      "count": 2
+    },
+    {
+      "source": "Sets the type of web application to be run. If not explicitly set the type of web\napplication will be deduced based on the classpath.",
+      "translation": "设置要运行的 Web 应用程序的类型。如果未显式设置，则将根据类路径推断 Web 应用程序的类型。",
+      "count": 2
+    },
+    {
+      "source": "Sets the factory that will be called to create the application context. If not set,\ndefaults to a factory that will create a context that is appropriate for the\napplication's type (a reactive web application, a servlet web application, or a\nnon-web application).",
+      "translation": "设置用于创建应用程序上下文的工厂。如果未设置，则默认使用一个适用于应用程序类型的工厂（即响应式 Web 应用程序、Servlet Web 应用程序或非 Web 应用程序）。",
+      "count": 2
+    },
+    {
+      "source": "The location of an XML resource to be loaded by <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.html\" title=\"class or interface in org.springframework.beans.factory.xml\"><code>XmlBeanDefinitionReader</code></a>, or\na groovy script to be loaded by <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReader.html\" title=\"class or interface in org.springframework.beans.factory.groovy\"><code>GroovyBeanDefinitionReader</code></a>",
+      "translation": "要由 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/xml/XmlBeanDefinitionReader.html\" title=\"class or interface in org.springframework.beans.factory.xml\"><code>XmlBeanDefinitionReader</code></a>` 加载的 XML 资源位置，或由 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReader.html\" title=\"class or interface in org.springframework.beans.factory.groovy\"><code>GroovyBeanDefinitionReader</code></a>` 加载的 Groovy 脚本。",
+      "count": 2
+    },
+    {
+      "source": "<code>main</code> - the main method entry point that runs the <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>",
+      "translation": "<code>main</code> - 作为入口点运行的主方法，用于启动 <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Create an appropriate <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> instance (depending on your\nclasspath)",
+      "translation": "创建适当的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 实例（取决于您的类路径）",
+      "count": 2
+    },
+    {
+      "source": "Register a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> to expose command line arguments as\nSpring properties",
+      "translation": "注册一个 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> 以将命令行参数暴露为 Spring 属性",
+      "count": 2
+    },
+    {
+      "source": "Trigger any <a href=\"CommandLineRunner.html\" title=\"interface in org.springframework.boot\"><code>CommandLineRunner</code></a> beans",
+      "translation": "触发任何<code>CommandLineRunner</code> 类型的<a href=\"CommandLineRunner.html\" title=\"interface in org.springframework.boot\">Bean</a>。",
+      "count": 2
+    },
+    {
+      "source": "The fully qualified class name to be loaded by\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotatedBeanDefinitionReader.html\" title=\"class or interface in org.springframework.context.annotation\"><code>AnnotatedBeanDefinitionReader</code></a>",
+      "translation": "由 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotatedBeanDefinitionReader.html\" title=\"class or interface in org.springframework.context.annotation\"><code>AnnotatedBeanDefinitionReader</code></a>` 加载的完全限定类名",
+      "count": 2
+    },
+    {
+      "source": "The name of a package to be scanned by <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html\" title=\"class or interface in org.springframework.context.annotation\"><code>ClassPathBeanDefinitionScanner</code></a>",
+      "translation": "要被 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html\" title=\"class or interface in org.springframework.context.annotation\"><code>ClassPathBeanDefinitionScanner</code></a>` 扫描的包名。",
+      "count": 2
+    },
+    {
+      "source": "a running <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>",
+      "translation": "一个正在运行的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code>mainApplicationClass</code> - the mainApplicationClass to set or <code>null</code>",
+      "translation": "<code>mainApplicationClass</code> - 要设置的主应用程序类或 <code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - if the application cannot be started",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - 如果无法启动应用程序",
+      "count": 2
+    },
+    {
+      "source": "a <a href=\"SpringApplication.Augmented.html\" title=\"class in org.springframework.boot\"><code>SpringApplication.Augmented</code></a> instance that can be used to add\nconfiguration and run the application",
+      "translation": "一个<a href=\"SpringApplication.Augmented.html\" title=\"class in org.springframework.boot\"><code>SpringApplication.Augmented</code></a>实例，可用于添加配置并运行应用程序。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"withHook(org.springframework.boot.SpringApplicationHook,org.springframework.util.function.ThrowingSupplier)-type-param-T\"><code>T</code> - the result type</span>",
+      "translation": "<span id=\"withHook(org.springframework.boot.SpringApplicationHook,org.springframework.util.function.ThrowingSupplier)-type-param-T\"><code>T</code> - 结果类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>resourceLoader</code> - the resource loader to use",
+      "translation": "<code>resourceLoader</code> - 要使用的资源加载器",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the environment to bind",
+      "translation": "<code>environment</code> - 要绑定的环境",
+      "count": 2
+    },
+    {
+      "source": "<code>context</code> - the configured ApplicationContext (not refreshed yet)",
+      "translation": "<code>context</code> - 已配置的 ApplicationContext（尚未刷新）",
+      "count": 2
+    },
+    {
+      "source": "<code>context</code> - the context to load beans into",
+      "translation": "<code>context</code> - 用于加载 Bean 的上下文",
+      "count": 2
+    },
+    {
+      "source": "the resourceLoader the resource loader that will be used in the\nApplicationContext (or <code>null</code> if the default)",
+      "translation": "resourceLoader 将在 ApplicationContext 中使用的资源加载器（或如果为默认值则为 `<code>null</code>`）。",
+      "count": 2
+    },
+    {
+      "source": "<code>registry</code> - the bean definition registry",
+      "translation": "<code>registry</code> -  Bean 定义注册表",
+      "count": 2
+    },
+    {
+      "source": "the <code>BeanDefinitionLoader</code> that will be used to load beans",
+      "translation": "用于加载 Bean 的<code>BeanDefinitionLoader</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>applicationContext</code> - the application context to refresh",
+      "translation": "<code>applicationContext</code> - 要刷新的应用程序上下文",
+      "count": 2
+    },
+    {
+      "source": "<code>args</code> - the application arguments",
+      "translation": "<code>args</code> - 应用程序参数",
+      "count": 2
+    },
+    {
+      "source": "<code>exception</code> - the exception that was logged",
+      "translation": "<code>exception</code> - 已记录的异常",
+      "count": 2
+    },
+    {
+      "source": "the main application class or <code>null</code>",
+      "translation": "主应用程序类或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>allowBeanDefinitionOverriding</code> - if overriding is allowed",
+      "translation": "<code>allowBeanDefinitionOverriding</code> - 如果允许覆盖",
+      "count": 2
+    },
+    {
+      "source": "<code>allowCircularReferences</code> - if circular references are allowed",
+      "translation": "<code>allowCircularReferences</code> - 如果允许循环引用",
+      "count": 2
+    },
+    {
+      "source": "<code>lazyInitialization</code> - if initialization should be lazy",
+      "translation": "<code>lazyInitialization</code> - 如果初始化应为懒加载",
+      "count": 2
+    },
+    {
+      "source": "<code>headless</code> - if the application is headless",
+      "translation": "<code>headless</code> - 如果应用程序是无头模式",
+      "count": 2
+    },
+    {
+      "source": "<code>registerShutdownHook</code> - if the shutdown hook should be registered",
+      "translation": "<code>registerShutdownHook</code> - 如果应注册关闭钩子",
+      "count": 2
+    },
+    {
+      "source": "<code>banner</code> - the Banner instance to use",
+      "translation": "<code>banner</code> - 要使用的 Banner 实例",
+      "count": 2
+    },
+    {
+      "source": "<code>bannerMode</code> - the mode used to display the banner",
+      "translation": "<code>bannerMode</code> - 用于显示横幅的模式",
+      "count": 2
+    },
+    {
+      "source": "<code>logStartupInfo</code> - if startup info should be logged.",
+      "translation": "<code>logStartupInfo</code> - 是否应记录启动信息。",
+      "count": 2
+    },
+    {
+      "source": "<code>addCommandLineProperties</code> - if command line arguments should be exposed",
+      "translation": "<code>addCommandLineProperties</code> - 如果应暴露命令行参数",
+      "count": 2
+    },
+    {
+      "source": "<code>addConversionService</code> - if the application conversion service should be added",
+      "translation": "<code>addConversionService</code> - 如果应添加应用程序转换服务",
+      "count": 2
+    },
+    {
+      "source": "<code>bootstrapRegistryInitializer</code> - the bootstrap registry initializer to add",
+      "translation": "<code>bootstrapRegistryInitializer</code> - 要添加的引导注册表初始化器",
+      "count": 2
+    },
+    {
+      "source": "<code>defaultProperties</code> - the additional properties to set",
+      "translation": "<code>defaultProperties</code> - 要设置的附加属性",
+      "count": 2
+    },
+    {
+      "source": "<code>profiles</code> - the additional profiles to set",
+      "translation": "<code>profiles</code> - 要设置的附加配置文件",
+      "count": 2
+    },
+    {
+      "source": "<code>beanNameGenerator</code> - the bean name generator",
+      "translation": "<code>beanNameGenerator</code> - 生成器",
+      "count": 2
+    },
+    {
+      "source": "<code>additionalPrimarySources</code> - the additional primary sources to add",
+      "translation": "<code>additionalPrimarySources</code> - 要添加的额外主源",
+      "count": 2
+    },
+    {
+      "source": "<code>sources</code> - the application sources to set",
+      "translation": "<code>sources</code> - 要设置的应用程序源代码",
+      "count": 2
+    },
+    {
+      "source": "<code>environmentPrefix</code> - the environment property prefix to set",
+      "translation": "<code>environmentPrefix</code> - 要设置的环境属性前缀",
+      "count": 2
+    },
+    {
+      "source": "<code>applicationContextFactory</code> - the factory for the context",
+      "translation": "<code>applicationContextFactory</code> - 上下文的工厂",
+      "count": 2
+    },
+    {
+      "source": "<code>initializers</code> - the initializers to set",
+      "translation": "<code>initializers</code> - 要设置的初始化器",
+      "count": 2
+    },
+    {
+      "source": "<code>initializers</code> - the initializers to add",
+      "translation": "<code>initializers</code> - 要添加的初始化器",
+      "count": 2
+    },
+    {
+      "source": "<code>listeners</code> - the listeners to set",
+      "translation": "<code>listeners</code> - 要设置的监听器",
+      "count": 2
+    },
+    {
+      "source": "<code>listeners</code> - the listeners to add",
+      "translation": "<code>listeners</code> - 要添加的监听器",
+      "count": 2
+    },
+    {
+      "source": "<code>applicationStartup</code> - the application startup to use",
+      "translation": "<code>applicationStartup</code> - 要使用的应用程序启动配置",
+      "count": 2
+    },
+    {
+      "source": "<code>keepAlive</code> - whether to keep the application alive even if there are no more\nnon-daemon threads",
+      "translation": "<code>keepAlive</code> - 即使没有更多非守护线程，是否保持应用程序运行。",
+      "count": 2
+    },
+    {
+      "source": "<code>primarySource</code> - the primary source to load",
+      "translation": "<code>primarySource</code> - 要加载的主源",
+      "count": 2
+    },
+    {
+      "source": "<code>primarySources</code> - the primary sources to load",
+      "translation": "<code>primarySources</code> - 要加载的主源",
+      "count": 2
+    },
+    {
+      "source": "<code>args</code> - command line arguments",
+      "translation": "<code>args</code> - 命令行参数",
+      "count": 2
+    },
+    {
+      "source": "<code>context</code> - the context to close if possible",
+      "translation": "<code>context</code> - 如果可能，则关闭的上下文",
+      "count": 2
+    },
+    {
+      "source": "<code>exitCodeGenerators</code> - exit code generators",
+      "translation": "<code>exitCodeGenerators</code> - 退出码生成器",
+      "count": 2
+    },
+    {
+      "source": "Refresh the application context, loading all singleton beans",
+      "translation": "刷新应用程序上下文，加载所有单例 Bean。",
+      "count": 2
+    },
+    {
+      "source": "the application context (not yet refreshed)",
+      "translation": "应用程序上下文（尚未刷新）",
+      "count": 2
+    },
+    {
+      "source": "the application log",
+      "translation": "应用程序日志",
+      "count": 2
+    },
+    {
+      "source": "a ClassLoader (never null)",
+      "translation": "一个类加载器（永远不为 null）",
+      "count": 2
+    },
+    {
+      "source": "the type of web application",
+      "translation": "Web 应用程序的类型",
+      "count": 2
+    },
+    {
+      "source": "the additional profiles",
+      "translation": "其他配置文件",
+      "count": 2
+    },
+    {
+      "source": "the application sources.",
+      "translation": "应用程序源代码。",
+      "count": 2
+    },
+    {
+      "source": "an immutable set of all sources",
+      "translation": "所有源的不变集合",
+      "count": 2
+    },
+    {
+      "source": "the environment property prefix",
+      "translation": "环境属性前缀",
+      "count": 2
+    },
+    {
+      "source": "the initializers",
+      "translation": "初始化器",
+      "count": 2
+    },
+    {
+      "source": "the listeners",
+      "translation": "监听器",
+      "count": 2
+    },
+    {
+      "source": "the application startup",
+      "translation": "应用程序启动",
+      "count": 2
+    },
+    {
+      "source": "whether to keep the application alive even if there are no more non-daemon\nthreads",
+      "translation": "是否在没有更多非守护线程时保持应用程序存活。",
+      "count": 2
+    },
+    {
+      "source": "the outcome (0 if successful)",
+      "translation": "结果（成功时为 0）",
+      "count": 2
+    },
+    {
+      "source": "the result of the action",
+      "translation": "操作的结果",
+      "count": 2
+    },
+    {
+      "source": "Provides access to details of a <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> run using\n<a href=\"SpringApplication.Augmented.html#run(java.lang.String...)\"><code>SpringApplication.Augmented.run(String...)</code></a>.",
+      "translation": "提供对使用 <a href=\"SpringApplication.Augmented.html#run(java.lang.String...)\"><code>SpringApplication.Augmented.run(String...)</code></a> 运行的 <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 的详细信息。",
+      "count": 2
+    },
+    {
+      "source": "Exception that can be thrown to silently exit a running <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>\nwithout handling run failures.",
+      "translation": "可抛出以静默退出正在运行的<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>而无需处理运行失败的异常。",
+      "count": 2
+    },
+    {
+      "source": "Used to configure and run an augmented <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> where additional\nconfiguration should be applied.",
+      "translation": "用于配置和运行增强的<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>，以便应用额外的配置。",
+      "count": 2
+    },
+    {
+      "source": "Strategy method used to create the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "用于创建<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>的策略方法。",
+      "count": 2
+    },
+    {
+      "source": "Create an application from an existing <code>main</code> method that can run with\nadditional <code>@Configuration</code> or bean classes.",
+      "translation": "从现有的 `<code>main</code>` 方法创建一个应用程序，使其能够使用额外的 `<code>@Configuration</code>` 或 bean 类运行。",
+      "count": 2
+    },
+    {
+      "source": "Apply any relevant post-processing to the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "对 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 应用任何相关的后处理。",
+      "count": 2
+    },
+    {
+      "source": "Sets if a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> should be added to the application\ncontext in order to expose arguments.",
+      "translation": "设置是否将 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>CommandLinePropertySource</code></a> 添加到应用程序上下文中，以暴露参数。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the created <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> should have a shutdown hook\nregistered.",
+      "translation": "设置是否应为创建的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>注册关闭钩子。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <code>Log</code> for the application.",
+      "translation": "返回应用程序的<code>Log</code>。",
+      "count": 2
+    },
+    {
+      "source": "Configure which profiles are active (or active by default) for this application\nenvironment.",
+      "translation": "配置此应用程序环境中哪些配置文件处于活动状态（或默认处于活动状态）。",
+      "count": 2
+    },
+    {
+      "source": "A basic main that can be used to launch an application.",
+      "translation": "一个可用于启动应用程序的基本主程序。",
+      "count": 2
+    },
+    {
+      "source": "Register that the given exception has been logged.",
+      "translation": "注册给定的异常已被记录。",
+      "count": 2
+    },
+    {
+      "source": "Sets if bean definition overriding, by registering a definition with the same name\nas an existing definition, should be allowed.",
+      "translation": "设置是否允许通过注册与现有定义具有相同名称的定义来覆盖 Bean 定义。",
+      "count": 2
+    },
+    {
+      "source": "Sets whether to allow circular references between beans and automatically try to\nresolve them.",
+      "translation": "设置是否允许 Bean 之间的循环引用并自动尝试解析它们。",
+      "count": 2
+    },
+    {
+      "source": "Sets the factory that will be called to create the application context.",
+      "translation": "设置将用于创建应用程序上下文的工厂。",
+      "count": 2
+    },
+    {
+      "source": "Sets the mode used to display the banner when the application runs.",
+      "translation": "设置应用程序运行时显示横幅的模式。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the application is headless and should not instantiate AWT.",
+      "translation": "设置应用程序是否为无头模式且不应实例化 AWT。",
+      "count": 2
+    },
+    {
+      "source": "Sets if beans should be initialized lazily.",
+      "translation": "设置是否应该懒式初始化 Bean。",
+      "count": 2
+    },
+    {
+      "source": "Sets if the application information should be logged when the application starts.",
+      "translation": "设置是否在应用程序启动时记录应用程序信息。",
+      "count": 2
+    },
+    {
+      "source": "Set a specific main application class that will be used as a log source and to\nobtain version information.",
+      "translation": "设置一个特定的主应用程序类，将其用作日志源并获取版本信息。",
+      "count": 2
+    },
+    {
+      "source": "Set additional sources that will be used to create an ApplicationContext.",
+      "translation": "设置将用于创建 ApplicationContext 的附加资源。",
+      "count": 2
+    },
+    {
+      "source": "Sets the type of web application to be run.",
+      "translation": "设置要运行的 Web 应用程序的类型。",
+      "count": 2
+    },
+    {
+      "source": "<code>webApplicationType</code> - the web application type",
+      "translation": "<code>webApplicationType</code> -  Web 应用程序类型",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the environment",
+      "translation": "<code>environment</code> - 环境",
+      "count": 2
+    },
+    {
+      "source": "<code>resourceLoader</code> - the resource loader",
+      "translation": "<code>resourceLoader</code> - 资源加载器",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Dave Syer, Andy Wilkinson, Christian Dupuis, Stephane Nicoll, Jeremy Rickard, Craig Burke, Michael Simons, Madhura Bhave, Brian Clozel, Ethan Rubinson, Chris Bono, Moritz Halbritter, Tadaya Tsuyukubo, Lasse Wulff, Yanming Zhou",
+      "translation": "Phillip Webb, Dave Syer, Andy Wilkinson, Christian Dupuis, Stephane Nicoll, Jeremy Rickard, Craig Burke, Michael Simons, Madhura Bhave, Brian Clozel, Ethan Rubinson, Chris Bono, Moritz Halbritter, Tadaya Tsuyukubo, Lasse Wulff, Yanming Zhou",
+      "count": 2
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 2
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 2
+    }
+  ]
+}

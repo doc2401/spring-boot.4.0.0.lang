@@ -1,0 +1,891 @@
+{
+  "created_at": "2026-04-12 15:43:19",
+  "updated_at": "2026-04-12 15:43:19",
+  "stats": {
+    "total_entries": 175,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 289,
+    "entries_with_hits": 175,
+    "entries_without_hits": 0,
+    "hit_rate": 1.6514285714285715,
+    "usage_percentage": 0.017499999999999998
+  },
+  "items": [
+    {
+      "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> interfaces provides access to application arguments as a string array, whereas the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> uses the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> interface discussed earlier.\nThe following example shows a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> with a <code>run</code> method:",
+      "translation": "`CommandLineRunner` 接口提供对作为字符串数组的应用程序参数的访问，而 `ApplicationRunner` 则使用前面讨论过的 `ApplicationArguments` 接口。以下示例展示了一个带有 `run` 方法的 `CommandLineRunner`：",
+      "count": 2
+    },
+    {
+      "source": "During the application startup, the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> and the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> perform many tasks related to the application lifecycle,\nthe beans lifecycle or even processing application events.\nWith <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\"><code>ApplicationStartup</code></a>, Spring Framework <a href=\"https://docs.spring.io/spring-framework/reference/7.0/core/beans/context-introduction.html#context-functionality-startup\">allows you to track the application startup sequence with </a><a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\"><code>StartupStep</code></a> objects.\nThis data can be collected for profiling purposes, or just to have a better understanding of an application startup process.",
+      "translation": "在应用程序启动期间，<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 会执行许多与应用程序生命周期、Bean 生命周期甚至处理应用程序事件相关的任务。借助 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\"><code>ApplicationStartup</code></a>，Spring Framework <a href=\"https://docs.spring.io/spring-framework/reference/7.0/core/beans/context-introduction.html#context-functionality-startup\">允许您使用 </a><a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\"><code>StartupStep</code></a> 对象跟踪应用程序启动序列。此数据可用于性能分析目的，或仅为了更好地理解应用程序启动过程。",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/context/WebServerInitializedEvent.html\"><code>WebServerInitializedEvent</code></a> is sent after the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServer.html\"><code>WebServer</code></a> is ready.\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/ServletWebServerInitializedEvent.html\"><code>ServletWebServerInitializedEvent</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ReactiveWebServerInitializedEvent.html\"><code>ReactiveWebServerInitializedEvent</code></a> are the servlet and reactive variants respectively.",
+      "translation": "在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/WebServer.html\"><code>WebServer</code></a> 就绪后，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/context/WebServerInitializedEvent.html\"><code>WebServerInitializedEvent</code></a>。<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/ServletWebServerInitializedEvent.html\"><code>ServletWebServerInitializedEvent</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/ReactiveWebServerInitializedEvent.html\"><code>ReactiveWebServerInitializedEvent</code></a> 分别是 servlet 和 reactive 变体。",
+      "count": 2
+    },
+    {
+      "source": "If you need to access the application arguments that were passed to <code>SpringApplication.run(…​)</code>, you can inject a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> bean.\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> interface provides access to both the raw <code>String[]</code> arguments as well as parsed <code>option</code> and <code>non-option</code> arguments, as shown in the following example:",
+      "translation": "如果您需要访问传递给 <code>SpringApplication.run(…​)</code>` 的应用程序参数，可以注入一个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a>` Bean。\n`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a>` 接口提供了对原始 `<code>String[]</code>` 参数以及解析后的 `<code>option</code>` 和 `<code>non-option</code> 参数的访问，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "If you need to run some specific code once the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> has started, you can implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> interfaces.\nBoth interfaces work in the same way and offer a single <code>run</code> method, which is called just before <code>SpringApplication.run(…​)</code> completes.",
+      "translation": "如果您需要在 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 启动后运行一些特定代码，可以实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 接口。这两个接口的工作方式相同，都提供一个单独的 <code>run</code> 方法，该方法在 <code>SpringApplication.run(…​)</code> 完成之前立即调用。",
+      "count": 2
+    },
+    {
+      "source": "If several <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> beans are defined that must be called in a specific order, you can additionally implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\"><code>Ordered</code></a> interface or use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\"><code>Order</code></a> annotation.",
+      "translation": "如果定义了多个必须按特定顺序调用的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> Bean，则可以额外实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\"><code>Ordered</code></a> 接口或使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\"><code>Order</code></a> 注解。",
+      "count": 2
+    },
+    {
+      "source": "Each <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> registers a shutdown hook with the JVM to ensure that the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> closes gracefully on exit.\nAll the standard Spring lifecycle callbacks (such as the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/DisposableBean.html\"><code>DisposableBean</code></a> interface or the <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PreDestroy.html\"><code>@PreDestroy</code></a> annotation) can be used.",
+      "translation": "每个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 都会向 JVM 注册一个关闭钩子，以确保在退出时 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 能够优雅地关闭。\n可以使用所有标准的 Spring 生命周期回调（例如 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/DisposableBean.html\"><code>DisposableBean</code></a>` 接口或 `<a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PreDestroy.html\"><code>@PreDestroy</code></a>` 注解）。",
+      "count": 2
+    },
+    {
+      "source": "Lazy initialization can be enabled programmatically using the <code>lazyInitialization</code> method on <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> or the <code>setLazyInitialization</code> method on <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>.\nAlternatively, it can be enabled using the <code>spring.main.lazy-initialization</code> property as shown in the following example:",
+      "translation": "可以通过在<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>上使用<code>lazyInitialization</code>方法，或在<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>上使用<code>setLazyInitialization</code>方法以编程方式启用懒初始化。或者，可以使用<code>spring.main.lazy-initialization</code>属性来启用它，如下面的示例所示：",
+      "count": 2
+    },
+    {
+      "source": "The above list only includes <code>SpringApplicationEvent</code>s that are tied to a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>.\nIn addition to these, the following events are also published after <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationPreparedEvent.html\"><code>ApplicationPreparedEvent</code></a> and before <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a>:",
+      "translation": "上述列表仅包含与<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>关联的<code>SpringApplicationEvent</code>。\n此外，在<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationPreparedEvent.html\"><code>ApplicationPreparedEvent</code></a>之后和<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a>之前，还会发布以下事件：",
+      "count": 2
+    },
+    {
+      "source": "If no failure analyzers are able to handle the exception, you can still display the full conditions report to better understand what went wrong.\nTo do so, you need to <a class=\"xref page\" href=\"external-config.html\">enable the <code>debug</code> property</a> or <a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">enable <code>DEBUG</code> logging</a> for <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/logging/ConditionEvaluationReportLoggingListener.html\"><code>ConditionEvaluationReportLoggingListener</code></a>.",
+      "translation": "如果没有任何失败分析器能够处理该异常，您仍然可以显示完整的条件报告以更好地理解问题所在。为此，您需要 <a class=\"xref page\" href=\"external-config.html\">启用<code>debug</code>属性</a> 或为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/logging/ConditionEvaluationReportLoggingListener.html\"><code>ConditionEvaluationReportLoggingListener</code></a> <a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">启用<code>DEBUG</code>日志记录</a>。",
+      "count": 2
+    },
+    {
+      "source": "You can also use the <code>spring.main.banner-mode</code> property to determine if the banner has to be printed on <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out\"><code>System.out</code></a> (<code>console</code>), sent to the configured logger (<code>log</code>), or not produced at all (<code>off</code>).",
+      "translation": "您还可以使用 <code>spring.main.banner-mode</code> 属性来确定是否将横幅打印到 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out\"><code>System.out</code></a>（<code>console</code>）、发送到配置的日志记录器（<code>log</code>），或者完全不生成横幅（<code>off</code>）。",
+      "count": 2
+    },
+    {
+      "source": "The <code>application.title</code>, <code>application.version</code>, and <code>application.formatted-version</code> properties are only available if you are using <code>java -jar</code> or <code>java -cp</code> with Spring Boot launchers.\nThe values will not be resolved if you are running an unpacked jar and starting it with <code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code>\nor running your application as a native image.",
+      "translation": "`application.title`、`application.version` 和 `application.formatted-version` 属性仅在您使用 <code>java -jar</code>` 或 `<code>java -cp</code>` 配合 Spring Boot 启动器时可用。\n如果您解压 jar 包并使用 `<code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code> 启动，或将应用程序作为原生镜像运行，则这些值将不会被解析。",
+      "count": 2
+    },
+    {
+      "source": "Some events are actually triggered before the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> is created, so you cannot register a listener on those as a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>.\nYou can register them with the <code>SpringApplication.addListeners(…​)</code> method or the <code>SpringApplicationBuilder.listeners(…​)</code> method.",
+      "translation": "某些事件实际上是在创建<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>之前触发的，因此您无法将它们注册为<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>。您可以使用<code>SpringApplication.addListeners(…​)</code>方法或<code>SpringApplicationBuilder.listeners(…​)</code>方法进行注册。",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> attempts to create the right type of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> on your behalf.\nThe algorithm used to determine a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html\"><code>WebApplicationType</code></a> is the following:",
+      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 会尝试为您创建正确类型的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>`。\n用于确定 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html\"><code>WebApplicationType</code></a>` 的算法如下：",
+      "count": 2
+    },
+    {
+      "source": "If there is more than one <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a>, the first non-zero exit code that is generated is used.\nTo control the order in which the generators are called, additionally implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\"><code>Ordered</code></a> interface or use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\"><code>Order</code></a> annotation.",
+      "translation": "如果有多个<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a>，则使用生成的第一个非零退出码。要控制生成器的调用顺序，请额外实现<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\"><code>Ordered</code></a>接口或使用<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/Order.html\"><code>Order</code></a>注解。",
+      "count": 2
+    },
+    {
+      "source": "You can choose an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\"><code>ApplicationStartup</code></a> implementation when setting up the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> instance.\nFor example, to use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a>, you could write:",
+      "translation": "您可以在设置 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 实例时选择一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\"><code>ApplicationStartup</code></a> 实现。例如，若要使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a>，您可以编写如下代码：",
+      "count": 2
+    },
+    {
+      "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> class provides a convenient way to bootstrap a Spring application that is started from a <code>main()</code> method.\nIn many situations, you can delegate to the static <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#run(java.lang.Class,java.lang.String…​)\"><code>SpringApplication.run(Class, String…​)</code></a> method, as shown in the following example:",
+      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 类提供了一种便捷的方式来引导从 <code>main()</code> 方法启动的 Spring 应用程序。\n在许多情况下，您可以委托给静态 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#run(java.lang.Class,java.lang.String…​)\"><code>SpringApplication.run(Class, String…​)</code></a>` 方法，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "By default, <code>INFO</code> logging messages are shown, including some relevant startup details, such as the user that launched the application.\nIf you need a log level other than <code>INFO</code>, you can set it, as described in <a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">Log Levels</a>.\nThe application version is determined using the implementation version from the main application class’s package.\nStartup information logging can be turned off by setting <code>spring.main.log-startup-info</code> to <code>false</code>.\nThis will also turn off logging of the application’s active profiles.",
+      "translation": "默认情况下，会显示 `<code>INFO`</code> 级别的日志消息，其中包括一些相关的启动详细信息，例如启动应用程序的用户。\n如果您需要设置除 `<code>INFO`</code> 以外的日志级别，可以参照<a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">日志级别</a>中的说明进行设置。\n应用程序版本是根据主应用程序类所在包中的实现版本确定的。\n可以通过将 <code>spring.main.log-startup-info</code> 设置为 <code>false</code> 来关闭启动信息日志记录。\n这也将关闭应用程序活动配置文件的日志记录。",
+      "count": 2
+    },
+    {
+      "source": "It is possible to enable admin-related features for the application by specifying the <code>spring.application.admin.enabled</code> property.\nThis exposes the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/admin/SpringApplicationAdminMXBean.html\"><code>SpringApplicationAdminMXBean</code></a> on the platform <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html\"><code>MBeanServer</code></a>.\nYou could use this feature to administer your Spring Boot application remotely.\nThis feature could also be useful for any service wrapper implementation.",
+      "translation": "可以通过指定 <code>spring.application.admin.enabled</code> 属性来启用应用程序的管理相关功能。\n这会在平台 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/admin/SpringApplicationAdminMXBean.html\"><code>SpringApplicationAdminMXBean</code></a> 上暴露一个 MBean，该 MBean 位于 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html\"><code>MBeanServer</code></a>。\n您可以使用此功能远程管理您的 Spring Boot 应用程序。\n此功能对于任何服务包装器实现也可能很有用。",
+      "count": 2
+    },
+    {
+      "source": "To use the <code>application.*</code> properties, launch your application as a packed jar using <code>java -jar</code> or as an unpacked jar using <code>java org.springframework.boot.loader.launch.JarLauncher</code>.\nThis will initialize the <code>application.*</code> banner properties before building the classpath and launching your app.",
+      "translation": "要使用 <code>application.*</code>` 属性，请使用 `<code>java -jar</code>` 将应用程序打包为 jar 文件运行，或使用 `<code>java org.springframework.boot.loader.launch.JarLauncher</code>` 将其作为未打包的 jar 运行。这将在使用类路径构建并启动应用程序之前初始化 `<code>application.*</code> 横幅属性。",
+      "count": 2
+    },
+    {
+      "source": "It is also possible to configure the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> by using an <code>application.properties</code> file.\nSee <a class=\"xref page\" href=\"external-config.html\">Externalized Configuration</a> for details.",
+      "translation": "也可以使用 <code>application.properties</code> 文件来配置 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>。\n有关详细信息，请参阅<a class=\"xref page\" href=\"external-config.html\">外部化配置</a>。",
+      "count": 2
+    },
+    {
+      "source": "If you need to build an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> hierarchy (multiple contexts with a parent/child relationship) or if you prefer using a fluent builder API, you can use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>.",
+      "translation": "如果您需要构建一个 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 层次结构（具有父/子关系的多重上下文），或者您更喜欢使用流式构建器 API，您可以使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> lets you chain together multiple method calls and includes <code>parent</code> and <code>child</code> methods that let you create a hierarchy, as shown in the following example:",
+      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>` 允许您链接多个方法调用，并包含 <code>parent</code>` 和 `<code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "The “Readiness” state of an application tells whether the application is ready to handle traffic.\nA failing “Readiness” state tells the platform that it should not route traffic to the application for now.\nThis typically happens during startup, while <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> components are being processed, or at any time if the application decides that it is too busy for additional traffic.",
+      "translation": "应用程序的“就绪”状态指示该应用程序是否已准备好处理流量。\n如果“就绪”状态失败，平台将知道暂时不应将该应用程序路由到流量。\n这通常发生在启动期间，当正在处理 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> 组件时，或者在应用程序决定因过于繁忙而无法处理更多流量的任何时间。",
+      "count": 2
+    },
+    {
+      "source": "In addition to the usual Spring Framework events, such as <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/ContextRefreshedEvent.html\"><code>ContextRefreshedEvent</code></a>, a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> sends some additional application events.",
+      "translation": "除了常规的 Spring Framework 事件（例如 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/ContextRefreshedEvent.html\"><code>ContextRefreshedEvent</code></a>），<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 还会发送一些额外的应用程序事件。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationEnvironmentPreparedEvent.html\"><code>ApplicationEnvironmentPreparedEvent</code></a> is sent when the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> to be used in the context is known but before the context is created.",
+      "translation": "当在创建上下文之前已知将在上下文中使用的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 时，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationEnvironmentPreparedEvent.html\"><code>ApplicationEnvironmentPreparedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationContextInitializedEvent.html\"><code>ApplicationContextInitializedEvent</code></a> is sent when the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> is prepared and ApplicationContextInitializers have been called but before any bean definitions are loaded.",
+      "translation": "当 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 已准备就绪且 ApplicationContextInitializers 已被调用，但在加载任何 bean 定义之前，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationContextInitializedEvent.html\"><code>ApplicationContextInitializedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityChangeEvent.html\"><code>AvailabilityChangeEvent</code></a> is sent right after with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/LivenessState.html#CORRECT\"><code>LivenessState.CORRECT</code></a> to indicate that the application is considered as live.",
+      "translation": "随后会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityChangeEvent.html\"><code>AvailabilityChangeEvent</code></a>，其状态为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/LivenessState.html#CORRECT\"><code>LivenessState.CORRECT</code></a>，以表明该应用程序被视为处于存活状态。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityChangeEvent.html\"><code>AvailabilityChangeEvent</code></a> is sent right after with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ReadinessState.html#ACCEPTING_TRAFFIC\"><code>ReadinessState.ACCEPTING_TRAFFIC</code></a> to indicate that the application is ready to service requests.",
+      "translation": "发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityChangeEvent.html\"><code>AvailabilityChangeEvent</code></a>，并附带 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ReadinessState.html#ACCEPTING_TRAFFIC\"><code>ReadinessState.ACCEPTING_TRAFFIC</code></a>，以表明应用程序已准备好处理请求。",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/ContextRefreshedEvent.html\"><code>ContextRefreshedEvent</code></a> is sent when an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> is refreshed.",
+      "translation": "当<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>刷新时，会发送一个<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/ContextRefreshedEvent.html\"><code>ContextRefreshedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "To allow your listener to distinguish between an event for its context and an event for a descendant context, it should request that its application context is injected and then compare the injected context with the context of the event.\nThe context can be injected by implementing <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextAware.html\"><code>ApplicationContextAware</code></a> or, if the listener is a bean, by using <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>.",
+      "translation": "为了让监听器能够区分其上下文的事件和后代上下文的事件，它应该请求注入其应用程序上下文，然后将注入的上下文与事件上下文进行比较。可以通过实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextAware.html\"><code>ApplicationContextAware</code></a> 来注入上下文；或者如果监听器是一个 Bean，可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "In addition, beans may implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a> interface if they wish to return a specific exit code when <code>SpringApplication.exit()</code> is called.\nThis exit code can then be passed to <code>System.exit()</code> to return it as a status code, as shown in the following example:",
+      "translation": "此外，如果希望在使用 `SpringApplication.exit()` 时返回特定的退出码，Bean 可以实现 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a>` 接口。\n随后可以将该退出码传递给 `System.exit()` 作为状态码返回，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot ships with the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a> variant; this implementation is meant for buffering the startup steps and draining them into an external metrics system.\nApplications can ask for the bean of type <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a> in any component.",
+      "translation": "Spring Boot 附带了 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a> 变体；该实现旨在缓冲启动步骤并将其排空到外部指标系统中。应用程序可以在任何组件中请求类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html\"><code>BufferingApplicationStartup</code></a> 的 Bean。",
+      "count": 2
+    },
+    {
+      "source": "If your application fails to start, registered <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/diagnostics/FailureAnalyzer.html\"><code>FailureAnalyzer</code></a> beans get a chance to provide a dedicated error message and a concrete action to fix the problem.\nFor instance, if you start a web application on port <code>8080</code> and that port is already in use, you should see something similar to the following message:",
+      "translation": "如果您的应用程序启动失败，已注册的<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/diagnostics/FailureAnalyzer.html\"><code>FailureAnalyzer</code></a>Bean 将有机会提供专用的错误消息以及解决该问题的具体操作。\n例如，如果您在端口<code>8080</code>上启动 Web 应用程序，而该端口已被占用，您应该会看到类似以下的内容：",
+      "count": 2
+    },
+    {
+      "source": "The banner that is printed on start up can be changed by adding a <code>banner.txt</code> file to your classpath or by setting the <code>spring.banner.location</code> property to the location of such a file.\nIf the file has an encoding other than UTF-8, you can set <code>spring.banner.charset</code>.",
+      "translation": "启动时打印的横幅可以通过在类路径中添加 <code>banner.txt</code>` 文件，或将 `<code>spring.banner.location</code>` 属性设置为该文件的位置来更改。如果文件的编码不是 UTF-8，您可以设置 `<code>spring.banner.charset</code>。",
+      "count": 2
+    },
+    {
+      "source": "Inside your <code>banner.txt</code> file, you can use any key available in the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> as well as any of the following placeholders:",
+      "translation": "在您的 <code>banner.txt</code> 文件中，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中可用的任何键，以及以下任意占位符：",
+      "count": 2
+    },
+    {
+      "source": "The version number of your application, as declared in <code>MANIFEST.MF</code>.\n  For example, <code>Implementation-Version: 1.0</code> is printed as <code>1.0</code>.",
+      "translation": "应用程序的版本号，在<code>MANIFEST.MF</code>中声明。例如，<code>Implementation-Version: 1.0</code>被打印为<code>1.0</code>。",
+      "count": 2
+    },
+    {
+      "source": "The version number of your application, as declared in <code>MANIFEST.MF</code> and formatted for display (surrounded with brackets and prefixed with <code>v</code>).\n  For example <code>(v1.0)</code>.",
+      "translation": "您的应用程序版本号，在 <code>MANIFEST.MF</code>` 中声明并格式化用于显示（用括号包围并以 `<code>v</code>` 开头）。例如 `<code>(v1.0)</code>。",
+      "count": 2
+    },
+    {
+      "source": "Where <code>NAME</code> is the name of an ANSI escape code.\n  See <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ansi/AnsiPropertySource.html\"><code>AnsiPropertySource</code></a> for details.",
+      "translation": "其中 <code>NAME</code> 是 ANSI 转义码的名称。有关详细信息，请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ansi/AnsiPropertySource.html\"><code>AnsiPropertySource</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "The title of your application, as declared in <code>MANIFEST.MF</code>.\n  For example <code>Implementation-Title: MyApp</code> is printed as <code>MyApp</code>.",
+      "translation": "您的应用程序标题，在 <code>MANIFEST.MF</code>` 中声明。例如，`<code>Implementation-Title: MyApp</code>` 会显示为 `<code>MyApp</code>。",
+      "count": 2
+    },
+    {
+      "source": "The internal state of Spring Boot applications is mostly represented by the Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>.\nIf the application context has started successfully, Spring Boot assumes that the application is in a valid state.\nAn application is considered live as soon as the context has been refreshed, see <a href=\"#features.spring-application.application-events-and-listeners\">Spring Boot application lifecycle and related Application Events</a>.",
+      "translation": "Spring Boot 应用程序的内部状态主要由 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 表示。\n如果应用程序上下文已成功启动，Spring Boot 将假定应用程序处于有效状态。\n一旦上下文被刷新，即认为应用程序处于运行中状态，请参阅 <a href=\"#features.spring-application.application-events-and-listeners\">Spring Boot 应用程序生命周期及相关应用程序事件</a>。",
+      "count": 2
+    },
+    {
+      "source": "If you want those listeners to be registered automatically, regardless of the way the application is created, you can add a <code>META-INF/spring.factories</code> file to your project and reference your listener(s) by using the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\"><code>ApplicationListener</code></a> key, as shown in the following example:",
+      "translation": "如果您希望无论应用程序如何创建，都能自动注册这些监听器，您可以向项目中添加一个 <code>META-INF/spring.factories</code> 文件，并使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\"><code>ApplicationListener</code></a> 键引用您的监听器，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationReadyEvent.html\"><code>ApplicationReadyEvent</code></a> is sent after any <a href=\"#features.spring-application.command-line-runner\">application and command-line runners</a> have been called.",
+      "translation": "在调用任何<a href=\"#features.spring-application.command-line-runner\">应用程序和命令行运行器</a>之后，会发送一个<code>ApplicationReadyEvent</code><a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationReadyEvent.html\"></a>。",
+      "count": 2
+    },
+    {
+      "source": "This means that if you are using Spring MVC and the new <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html\"><code>WebClient</code></a> from Spring WebFlux in the same application, Spring MVC will be used by default.\nYou can override that easily by calling <code>setWebApplicationType(WebApplicationType)</code>.",
+      "translation": "这意味着，如果您在同一应用程序中使用 Spring MVC 和来自 Spring WebFlux 的新<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html\"><code>WebClient</code></a>，默认情况下将使用 Spring MVC。\n您可以通过调用<code>setWebApplicationType(WebApplicationType)</code>轻松覆盖此设置。",
+      "count": 2
+    },
+    {
+      "source": "It is also possible to take complete control of the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> type that is used by calling <code>setApplicationContextFactory(…​)</code>.",
+      "translation": "也可以通过调用 `setApplicationContextFactory(…)` 方法，完全控制由 Spring Framework 使用的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 类型。",
+      "count": 2
+    },
+    {
+      "source": "Also, the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a> interface may be implemented by exceptions.\nWhen such an exception is encountered, Spring Boot returns the exit code provided by the implemented <code>getExitCode()</code> method.",
+      "translation": "此外，异常可以实现<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a>接口。当遇到此类异常时，Spring Boot 将返回由实现的<code>getExitCode()</code>方法提供的退出码。",
+      "count": 2
+    },
+    {
+      "source": "For instance, if you are running your application by using <code>java -jar</code>, you can enable the <code>debug</code> property as follows:",
+      "translation": "例如，如果您使用 <code>java -jar</code>` 运行应用程序，可以按以下方式启用 `<code>debug</code> 属性：",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> allows an application to be initialized lazily.\nWhen lazy initialization is enabled, beans are created as they are needed rather than during application startup.\nAs a result, enabling lazy initialization can reduce the time that it takes your application to start.\nIn a web application, enabling lazy initialization will result in many web-related beans not being initialized until an HTTP request is received.",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 允许应用程序进行懒式初始化。\n启用懒式初始化后，Bean 将在需要时创建，而不是在应用程序启动期间创建。\n因此，启用懒式初始化可以减少应用程序的启动时间。\n在 Web 应用程序中，启用懒式初始化将导致许多与 Web 相关的 Bean 直到收到 HTTP 请求时才进行初始化。",
+      "count": 2
+    },
+    {
+      "source": "The Spring Boot version that you are using, formatted for display (surrounded with brackets and prefixed with <code>v</code>).\n  For example <code>(v4.0.0)</code>.",
+      "translation": "您正在使用的 Spring Boot 版本，格式化为显示形式（用括号包围并前缀为 <code>v</code>`）。例如 `<code>(v4.0.0)</code>。",
+      "count": 2
+    },
+    {
+      "source": "If the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> defaults are not to your taste, you can instead create a local instance and customize it.\nFor example, to turn off the banner, you could write:",
+      "translation": "如果 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 的默认设置不符合您的要求，您可以创建一个本地实例并进行自定义。\n例如，要关闭横幅，您可以编写如下代码：",
+      "count": 2
+    },
+    {
+      "source": "For a complete list of the configuration options, see the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> API documentation.",
+      "translation": "有关配置选项的完整列表，请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> API 文档。",
+      "count": 2
+    },
+    {
+      "source": "In addition, you can also obtain availability states by injecting the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ApplicationAvailability.html\"><code>ApplicationAvailability</code></a> interface into your own beans.",
+      "translation": "此外，您还可以通过将 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ApplicationAvailability.html\"><code>ApplicationAvailability</code></a> 接口注入到您自己的 Bean 中来获取可用性状态。",
+      "count": 2
+    },
+    {
+      "source": "Application components can retrieve the current availability state at any time, by injecting the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ApplicationAvailability.html\"><code>ApplicationAvailability</code></a> interface and calling methods on it.\nMore often, applications will want to listen to state updates or update the state of the application.",
+      "translation": "应用程序组件可以随时通过注入 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ApplicationAvailability.html\"><code>ApplicationAvailability</code></a> 接口并调用其上的方法来获取当前的可用性状态。\n更常见的是，应用程序希望监听状态更新或更新应用程序的状态。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot provides <a class=\"xref page\" href=\"../actuator/endpoints.html#actuator.endpoints.kubernetes-probes\">Kubernetes HTTP probes for \"Liveness\" and \"Readiness\" with Actuator Health Endpoints</a>.\nYou can get more guidance about <a class=\"xref page\" href=\"../../how-to/deployment/cloud.html#howto.deployment.cloud.kubernetes\">deploying Spring Boot applications on Kubernetes in the dedicated section</a>.",
+      "translation": "Spring Boot 提供了通过 Actuator 健康端点实现的“存活”和“就绪”Kubernetes HTTP 探针。<a class=\"xref page\" href=\"../actuator/endpoints.html#actuator.endpoints.kubernetes-probes\">有关详细信息，请参阅此处</a>。\n您可以在<a class=\"xref page\" href=\"../../how-to/deployment/cloud.html#howto.deployment.cloud.kubernetes\">专用章节</a>中获取关于在 Kubernetes 上部署 Spring Boot 应用程序的更多指导。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartingEvent.html\"><code>ApplicationStartingEvent</code></a> is sent at the start of a run but before any processing, except for the registration of listeners and initializers.",
+      "translation": "在运行开始但尚未进行任何处理（除了注册监听器和初始化器）时，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartingEvent.html\"><code>ApplicationStartingEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationPreparedEvent.html\"><code>ApplicationPreparedEvent</code></a> is sent just before the refresh is started but after bean definitions have been loaded.",
+      "translation": "在刷新开始之前但已加载完 Bean 定义之后，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationPreparedEvent.html\"><code>ApplicationPreparedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a> is sent after the context has been refreshed but before any application and command-line runners have been called.",
+      "translation": "在上下文刷新后但在调用任何应用程序和命令行运行器之前，会发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "An <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationFailedEvent.html\"><code>ApplicationFailedEvent</code></a> is sent if there is an exception on startup.",
+      "translation": "如果启动时出现异常，将发送一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationFailedEvent.html\"><code>ApplicationFailedEvent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Application events are sent by using Spring Framework’s event publishing mechanism.\nPart of this mechanism ensures that an event published to the listeners in a child context is also published to the listeners in any ancestor contexts.\nAs a result of this, if your application uses a hierarchy of <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> instances, a listener may receive multiple instances of the same type of application event.",
+      "translation": "应用程序事件是使用 Spring Framework 的事件发布机制发送的。该机制的一部分确保发布到子上下文中的监听器的事件也会发布到任何祖先上下文的监听器中。因此，如果您的应用程序使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 实例的层次结构，一个监听器可能会收到多个相同类型的应用程序事件实例。",
+      "count": 2
+    },
+    {
+      "source": "If Spring MVC is present, an <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/AnnotationConfigServletWebServerApplicationContext.html\"><code>AnnotationConfigServletWebServerApplicationContext</code></a> is used",
+      "translation": "如果存在 Spring MVC，则使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/AnnotationConfigServletWebServerApplicationContext.html\"><code>AnnotationConfigServletWebServerApplicationContext</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "If Spring MVC is not present and Spring WebFlux is present, an <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/AnnotationConfigReactiveWebServerApplicationContext.html\"><code>AnnotationConfigReactiveWebServerApplicationContext</code></a> is used",
+      "translation": "如果不存在 Spring MVC 而存在 Spring WebFlux，则使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/AnnotationConfigReactiveWebServerApplicationContext.html\"><code>AnnotationConfigReactiveWebServerApplicationContext</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "Otherwise, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html\"><code>AnnotationConfigApplicationContext</code></a> is used",
+      "translation": "否则，将使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html\"><code>AnnotationConfigApplicationContext</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "The first available implementation, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/jfr/FlightRecorderApplicationStartup.html\"><code>FlightRecorderApplicationStartup</code></a> is provided by Spring Framework.\nIt adds Spring-specific startup events to a Java Flight Recorder session and is meant for profiling applications and correlating their Spring context lifecycle with JVM events (such as allocations, GCs, class loading…​).\nOnce configured, you can record data by running the application with the Flight Recorder enabled:",
+      "translation": "第一个可用的实现 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/jfr/FlightRecorderApplicationStartup.html\"><code>FlightRecorderApplicationStartup</code></a>` 由 Spring Framework 提供。它向 Java Flight Recorder 会话添加 Spring 特定的启动事件，旨在用于分析应用程序并将其 Spring 上下文生命周期与 JVM 事件（例如分配、GC、类加载等）进行关联。配置完成后，您可以通过启用 Flight Recorder 运行应用程序来记录数据：",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot can also be configured to expose a <a class=\"xref page\" href=\"../../api/rest/actuator/startup.html\"><code>startup</code> endpoint</a> that provides this information as a JSON document.",
+      "translation": "Spring Boot 还可以配置为暴露一个 `<a class=\"xref page\" href=\"../../api/rest/actuator/startup.html\"><code>startup</code></a>` 端点，该端点以 JSON 文档的形式提供此信息。",
+      "count": 2
+    },
+    {
+      "source": "Virtual threads require Java 21 or later.\nFor the best experience, Java 24 or later is strongly recommended.\nTo enable virtual threads, set the <code>spring.threads.virtual.enabled</code> property to <code>true</code>.",
+      "translation": "虚拟线程需要 Java 21 或更高版本。为了获得最佳体验，强烈建议使用 Java 24 或更高版本。要启用虚拟线程，请将 <code>spring.threads.virtual.enabled</code>` 属性设置为 `<code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "Before turning on this option for your application, you should consider <a href=\"https://docs.oracle.com/en/java/javase/24/core/virtual-threads.html\">reading the official Java virtual threads documentation</a>.\nIn some cases, applications can experience lower throughput because of \"Pinned Virtual Threads\"; this page also explains how to detect such cases with JDK Flight Recorder or the <code>jcmd</code> CLI.",
+      "translation": "在为您的应用程序启用此选项之前，您应该考虑<a href=\"https://docs.oracle.com/en/java/javase/24/core/virtual-threads.html\">阅读官方 Java 虚拟线程文档</a>。\n在某些情况下，由于“钉住的虚拟线程”，应用程序的吞吐量可能会降低；本页面还介绍了如何使用 JDK Flight Recorder 或 <code>jcmd</code> CLI 检测此类情况。",
+      "count": 2
+    },
+    {
+      "source": "The Spring Boot version that you are using.\n  For example <code>4.0.0</code>.",
+      "translation": "您正在使用的 Spring Boot 版本。例如 <code>4.0.0</code>。",
+      "count": 2
+    },
+    {
+      "source": "The printed banner is registered as a singleton bean under the following name: <code>springBootBanner</code>.",
+      "translation": "打印的横幅作为单例 Bean 注册，名称如下：<code>springBootBanner</code>。",
+      "count": 2
+    },
+    {
+      "source": "When deployed on platforms, applications can provide information about their availability to the platform using infrastructure such as <a href=\"https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/\">Kubernetes Probes</a>.\nSpring Boot includes out-of-the box support for the commonly used “liveness” and “readiness” availability states.\nIf you are using Spring Boot’s “actuator” support then these states are exposed as health endpoint groups.",
+      "translation": "当在平台上部署时，应用程序可以使用诸如<a href=\"https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/\">Kubernetes Probes</a>之类的基础设施向平台提供其可用性的信息。Spring Boot 包含对常用的“存活”和“就绪”可用性状态的开箱即用支持。如果您使用 Spring Boot 的“actuator”支持，则这些状态将作为健康端点组进行暴露。",
+      "count": 2
+    },
+    {
+      "source": "An application is considered ready as soon as application and command-line runners have been called, see <a href=\"#features.spring-application.application-events-and-listeners\">Spring Boot application lifecycle and related Application Events</a>.",
+      "translation": "只要已调用应用程序和命令行运行器，即认为应用程序已就绪，请参阅<a href=\"#features.spring-application.application-events-and-listeners\">Spring Boot 应用程序生命周期及相关应用程序事件</a>。",
+      "count": 2
+    },
+    {
+      "source": "When your application starts, you should see something similar to the following output:",
+      "translation": "启动应用程序时，您应看到如下所示的输出：",
+      "count": 2
+    },
+    {
+      "source": "A downside of lazy initialization is that it can delay the discovery of a problem with the application.\nIf a misconfigured bean is initialized lazily, a failure will no longer occur during startup and the problem will only become apparent when the bean is initialized.\nCare must also be taken to ensure that the JVM has sufficient memory to accommodate all of the application’s beans and not just those that are initialized during startup.\nFor these reasons, lazy initialization is not enabled by default and it is recommended that fine-tuning of the JVM’s heap size is done before enabling lazy initialization.",
+      "translation": "懒加载的一个缺点是，它可能会延迟发现应用程序中的问题。如果配置错误的 Bean 被懒加载初始化，则启动时不会再发生失败，而只有在该 Bean 被初始化时才会暴露出问题。还必须注意确保 JVM 拥有足够的内存来容纳应用程序的所有 Bean，而不仅仅是启动期间初始化的那些 Bean。出于这些原因，默认情况下不启用懒加载，建议在启用懒加载之前对 JVM 的堆大小进行微调。",
+      "count": 2
+    },
+    {
+      "source": "The “Liveness” state of an application tells whether its internal state allows it to work correctly, or recover by itself if it is currently failing.\nA broken “Liveness” state means that the application is in a state that it cannot recover from, and the infrastructure should restart the application.",
+      "translation": "应用程序的“存活（Liveness）”状态指示其内部状态是否允许其正常工作，或在当前发生故障时能否自行恢复。\n“存活（Liveness）”状态损坏意味着应用程序处于无法恢复的状态，基础设施应重启该应用程序。",
+      "count": 2
+    },
+    {
+      "source": "For example, we can export the \"Readiness\" state of the application to a file so that a Kubernetes \"exec Probe\" can look at this file:",
+      "translation": "例如，我们可以将应用程序的“就绪”状态导出到文件中，以便 Kubernetes 的 `exec Probe` 可以检查此文件：",
+      "count": 2
+    },
+    {
+      "source": "We can also update the state of the application, when the application breaks and cannot recover:",
+      "translation": "我们还可以在应用程序崩溃且无法恢复时更新应用程序的状态：",
+      "count": 2
+    },
+    {
+      "source": "Application events are sent in the following order, as your application runs:",
+      "translation": "应用程序事件按以下顺序发送，随着您的应用程序运行：",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/features/spring-application.adoc\">\n          <svg height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z\"></path></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg height=\"512px\" id=\"Layer_1\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"512px\" xmlns=\"http://www.w3.org/2000/svg\"><style type=\"text/css\">\n              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class=\"st0\" d=\"M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z\"></path></g></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg viewBox=\"0 0 384 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z\"></path></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/features/spring-application.adoc\">\n          <svg height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z\"></path></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg height=\"512px\" id=\"Layer_1\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"512px\" xmlns=\"http://www.w3.org/2000/svg\"><style type=\"text/css\">\n              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class=\"st0\" d=\"M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z\"></path></g></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg viewBox=\"0 0 384 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z\"></path></svg>\n          Stack Overflow\n        </a>",
+      "count": 2
+    },
+    {
+      "source": "<nav aria-label=\"breadcrumbs\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"Copy versioned URL\"></li>\n      <li><a href=\"../../index.html\">Spring Boot</a></li>\n      <li><a href=\"../index.html\">Reference</a></li>\n      <li><a href=\"index.html\">Core Features</a></li>\n      <li><a href=\"spring-application.html\">SpringApplication</a></li>\n    </ul>\n  </nav>",
+      "translation": "<nav aria-label=\"面包屑\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"复制带版本号的 URL\"></li>\n      <li><a href=\"../../index.html\">Spring Boot</a></li>\n      <li><a href=\"../index.html\">参考</a></li>\n      <li><a href=\"index.html\">核心功能</a></li>\n      <li><a href=\"spring-application.html\">SpringApplication</a></li>\n    </ul>\n  </nav>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">Core Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"external-config.html\">Externalized Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"profiles.html\">Profiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"internationalization.html\">Internationalization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"aop.html\">Aspect-Oriented Programming</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"task-execution-and-scheduling.html\">Task Execution and Scheduling</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"dev-services.html\">Development-time Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"developing-auto-configuration.html\">Creating Your Own Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"kotlin.html\">Kotlin Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">核心功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"external-config.html\">外部化配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"profiles.html\">配置文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"internationalization.html\">国际化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"aop.html\">面向切面编程</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"task-execution-and-scheduling.html\">任务执行与调度</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"dev-services.html\">开发时服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"developing-auto-configuration.html\">创建自己的自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"kotlin.html\">Kotlin 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThere are some restrictions when creating an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> hierarchy.\nFor example, Web components <strong>must</strong> be contained within the child context, and the same <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> is used for both parent and child contexts.\nSee the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> API documentation for full details.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n创建 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 层次结构时存在一些限制。例如，Web 组件<strong>必须</strong>包含在子上下文中，并且父上下文和子上下文使用相同的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>。有关完整详细信息，请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> API 文档。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe constructor arguments passed to <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> are configuration sources for Spring beans.\nIn most cases, these are references to <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> classes, but they could also be direct references <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\"><code>@Component</code></a> classes.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n传递给 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 的构造函数参数是 Spring Bean 的配置源。\n在大多数情况下，这些是对 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> 类的引用，但它们也可以直接是 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\"><code>@Component</code></a> 类的引用。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nTasks expected to run during startup should be executed by <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> components instead of using Spring component lifecycle callbacks such as <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PostConstruct.html\"><code>@PostConstruct</code></a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n预期在启动期间运行的任务应由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> 组件执行，而不是使用 Spring 组件生命周期回调（例如 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PostConstruct.html\"><code>@PostConstruct</code></a>）。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nSpring Boot also registers a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\"><code>CommandLinePropertySource</code></a> with the Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>.\nThis lets you also inject single application arguments by using the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> annotation.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\nSpring Boot 还会向 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 注册一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/CommandLinePropertySource.html\"><code>CommandLinePropertySource</code></a>。\n这使您也可以通过使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> 注解来注入单个应用程序参数。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nThe <code>SpringApplication.setBanner(…​)</code> method can be used if you want to generate a banner programmatically.\nUse the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/Banner.html\"><code>Banner</code></a> interface and implement your own <code>printBanner()</code> method.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您想通过编程方式生成横幅，可以使用 <code>SpringApplication.setBanner(…​)</code> 方法。使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/Banner.html\"><code>Banner</code></a> 接口并实现您自己的 <code>printBanner()</code> 方法。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"Warning\"></i>\n</td>\n<td class=\"content\">\nOne side effect of virtual threads is that they are daemon threads.\nA JVM will exit if all of its threads are daemon threads.\nThis behavior can be a problem when you rely on <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/Scheduled.html\"><code>@Scheduled</code></a> beans, for example, to keep your application alive.\nIf you use virtual threads, the scheduler thread is a virtual thread and therefore a daemon thread and won’t keep the JVM alive.\nThis not only affects scheduling and can be the case with other technologies too.\nTo keep the JVM running in all cases, it is recommended to set the property <code>spring.main.keep-alive</code> to <code>true</code>.\nThis ensures that the JVM is kept alive, even if all threads are virtual threads.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"Warning\"></i>\n</td>\n<td class=\"content\">\n虚拟线程的一个副作用是它们是守护线程。\n如果 JVM 中的所有线程都是守护线程，JVM 将退出。\n当您依赖 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/Scheduled.html\"><code>@Scheduled</code></a> Bean 等来保持应用程序运行时，这种行为可能会成为一个问题。\n如果您使用虚拟线程，调度器线程是一个虚拟线程，因此也是一个守护线程，无法保持 JVM 运行。\n这不仅影响调度，其他技术也可能出现类似情况。\n为了确保在所有情况下 JVM 都能运行，建议将属性 <code>spring.main.keep-alive</code> 设置为 <code>true</code>。\n这样可以确保即使所有线程都是虚拟线程，JVM 也能保持运行。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nTo add additional logging during startup, you can override <code>logStartupInfo(boolean)</code> in a subclass of <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n若要添加额外的启动日志，您可以在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 的子类中重写 <code>logStartupInfo(boolean)</code> 方法。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nSpring Boot provides numerous <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/diagnostics/FailureAnalyzer.html\"><code>FailureAnalyzer</code></a> implementations, and you can <a class=\"xref page\" href=\"../../how-to/application.html#howto.application.failure-analyzer\">add your own</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nSpring Boot 提供了许多 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/diagnostics/FailureAnalyzer.html\"><code>FailureAnalyzer</code></a> 实现，您可以 <a class=\"xref page\" href=\"../../how-to/application.html#howto.application.failure-analyzer\">添加自己的实现</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIt is often desirable to call <code>setWebApplicationType(WebApplicationType.NONE)</code> when using <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> within a JUnit test.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n在使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 的 JUnit 测试中，通常希望调用 <code>setWebApplicationType(WebApplicationType.NONE)</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you want to disable lazy initialization for certain beans while using lazy initialization for the rest of the application, you can explicitly set their lazy attribute to false using the <code>@Lazy(false)</code> annotation.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n如果您希望在应用中使用懒加载的同时，为某些 Bean 禁用懒初始化，可以使用 <code>@Lazy(false)</code> 注解显式地将它们的 lazy 属性设置为 false。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nIn general, the \"Liveness\" state should not be based on external checks, such as <a class=\"xref page\" href=\"../actuator/endpoints.html#actuator.endpoints.health\">health checks</a>.\nIf it did, a failing external system (a database, a Web API, an external cache) would trigger massive restarts and cascading failures across the platform.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n通常，\"Liveness\" 状态不应基于外部检查（例如 <a class=\"xref page\" href=\"../actuator/endpoints.html#actuator.endpoints.health\">健康检查</a>）。\n如果这样做，失败的外部系统（如数据库、Web API、外部缓存）将触发大规模重启和平台级联故障。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nEvent listeners should not run potentially lengthy tasks as they execute in the same thread by default.\nConsider using <a href=\"#features.spring-application.command-line-runner\">application and command-line runners</a> instead.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n事件监听器不应执行可能耗时的任务，因为它们默认在同一个线程中运行。\n请考虑使用<a href=\"#features.spring-application.command-line-runner\">应用程序和命令行启动器</a>代替。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you want to know on which HTTP port the application is running, get the property with a key of <code>local.server.port</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您想知道应用程序在哪个 HTTP 端口上运行，请获取键为 <code>local.server.port</code> 的属性。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nYou often need not use application events, but it can be handy to know that they exist.\nInternally, Spring Boot uses events to handle a variety of tasks.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n您通常不需要使用应用程序事件，但了解它们的存在可能很有用。\n在内部，Spring Boot 使用事件来处理各种任务。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThis contract is well suited for tasks that should run after application startup but before it starts accepting traffic.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n此合同非常适合在应用程序启动后但在开始接受流量之前运行的任务。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nIf virtual threads are enabled, properties which configure thread pools don’t have an effect anymore.\nThat’s because virtual threads are scheduled on a JVM wide platform thread pool and not on dedicated thread pools.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n如果启用了虚拟线程，配置线程池的属性将不再生效。\n这是因为虚拟线程是在 JVM 范围的平台线程池上调度，而不是在专用的线程池上调度。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"prev\"><a href=\"index.html\">Core Features</a></span>\n  <span class=\"next\"><a href=\"external-config.html\">Externalized Configuration</a></span>",
+      "translation": "<span class=\"prev\"><a href=\"index.html\">核心功能</a></span>\n  <span class=\"next\"><a href=\"external-config.html\">外部化配置</a></span>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.startup-failure\"></a>Startup Failure",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.startup-failure\"></a>启动失败",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.lazy-initialization\"></a>Lazy Initialization",
+      "translation": "<a class=\"anchor\" href=\"#features.spring.application.lazy.initialization\"></a>懒加载初始化",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.banner\"></a>Customizing the Banner",
+      "translation": "<a class=\"anchor\" href=\"#features.spring.application.banner\"></a>自定义横幅",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.customizing-spring-application\"></a>Customizing SpringApplication",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.customizing-spring-application\"></a>自定义 SpringApplication",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.fluent-builder-api\"></a>Fluent Builder API",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.fluent-builder-api\"></a>流式构建器 API",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-availability\"></a>Application Availability",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-availability\"></a>应用可用性",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.liveness\"></a>Liveness State",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.liveness\"></a>存活状态",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.readiness\"></a>Readiness State",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.readiness\"></a>就绪状态",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.managing\"></a>Managing the Application Availability State",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-availability.managing\"></a>管理应用程序可用性状态",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-events-and-listeners\"></a>Application Events and Listeners",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-events-and-listeners\"></a>应用程序事件和监听器",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.web-environment\"></a>Web Environment",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.web-environment\"></a>Web 环境",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-arguments\"></a>Accessing Application Arguments",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-arguments\"></a>访问应用程序参数",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.command-line-runner\"></a>Using the ApplicationRunner or CommandLineRunner",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.command-line-runner\"></a>使用 ApplicationRunner 或 CommandLineRunner",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.application-exit\"></a>Application Exit",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.application-exit\"></a>应用退出",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.admin\"></a>Admin Features",
+      "translation": "<a class=\"anchor\" href=\"#features.spring.application.admin\"></a>管理功能",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.startup-tracking\"></a>Application Startup tracking",
+      "translation": "<a class=\"anchor\" href=\"#features.spring-application.startup-tracking\"></a>应用启动跟踪",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#features.spring-application.virtual-threads\"></a>Virtual threads",
+      "translation": "<a class=\"anchor\" href=\"#features.spring.application.virtual.threads\"></a>虚拟线程",
+      "count": 2
+    },
+    {
+      "source": "Table 1. Banner variables",
+      "translation": "表 1. Banner 变量",
+      "count": 2
+    },
+    {
+      "source": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">Terms of Use</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">Privacy</a> • <a href=\"https://spring.io/trademarks\">Trademark Guidelines</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">Thank you</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">Your California Privacy Rights</a> • <a class=\"ot-sdk-show-settings\">Cookie Settings</a> <span id=\"teconsent\"></span>",
+      "translation": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">使用条款</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">隐私政策</a> • <a href=\"https://spring.io/trademarks\">商标指南</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">致谢</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">您的加州隐私权利</a> • <a class=\"ot-sdk-show-settings\">Cookie 设置</a> <span id=\"teconsent\"></span>",
+      "count": 1
+    },
+    {
+      "source": "Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.",
+      "translation": "Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services\"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg class=\"external-link-icon\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" points=\"15 10.94 15 15 1 15 1 1 5.06 1\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><polyline fill=\"none\" points=\"8.93 1 15 1 15 7.07\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><line fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\" x1=\"15\" x2=\"8\" y1=\"1\" y2=\"8\"></line></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg class=\"external-link-icon\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" points=\"15 10.94 15 15 1 15 1 1 5.06 1\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><polyline fill=\"none\" points=\"8.93 1 15 1 15 7.07\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><line fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\" x1=\"15\" x2=\"8\" y1=\"1\" y2=\"8\"></line></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">Microservices</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">Reactive</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">Event\n              Driven</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web\n              Applications</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">Serverless</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">Batch</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">概述</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">微服务</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">响应式</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">事件驱动</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">云</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web 应用</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">无服务器</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">批处理</a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg height=\"24px\" id=\"Layer_1\" style=\"enable-background:new 0 0 512 512;\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"24px\" xml:space=\"preserve\"><g><path d=\"M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z\"></path><path d=\"M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z\"></path><path d=\"M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z\"></path></g></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg height=\"24px\" id=\"Layer_1\" style=\"enable-background:new 0 0 512 512;\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"24px\" xml:space=\"preserve\"><g><path d=\"M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z\"></path><path d=\"M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z\"></path><path d=\"M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z\"></path></g></svg>\n  </button>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring Runtime</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring Consulting</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring Academy For Teams</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">Security Advisories</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring 运行时</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring 咨询</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring 团队学院</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">安全公告</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">Courses</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">Get Certified</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">课程</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">获取认证</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"title\" href=\"../../index.html\">Spring Boot</a>",
+      "translation": "<a class=\"title\" href=\"../../index.html\">Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/index.html\">How-to Guides</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/application.html\">Spring Boot Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/properties-and-configuration.html\">Properties and Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/webserver.html\">Embedded Web Servers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/http-clients.html\">HTTP Clients</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-access.html\">Data Access</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-initialization.html\">Database Initialization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/messaging.html\">Messaging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/batch.html\">Batch Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/security.html\">Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/hotswapping.html\">Hot Swapping</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/testing.html\">Testing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/build.html\">Build</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/native-image/index.html\">GraalVM Native Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/developing-your-first-application.html\">Developing Your First GraalVM Native Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/testing-native-applications.html\">Testing GraalVM Native Images</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/deployment/index.html\">Deploying Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/traditional-deployment.html\">Traditional Deployment</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/cloud.html\">Deploying to the Cloud</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/installing.html\">Installing Spring Boot Applications</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/index.html\">操作指南</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/application.html\">Spring Boot 应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/properties-and-configuration.html\">属性与配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/webserver.html\">嵌入式 Web 服务器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/http-clients.html\">HTTP 客户端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-access.html\">数据访问</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-initialization.html\">数据库初始化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/messaging.html\">消息传递</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/batch.html\">批处理应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/security.html\">安全</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/hotswapping.html\">热替换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/testing.html\">测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/build.html\">构建</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot.html\">提前处理 (AOT)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/native-image/index.html\">GraalVM 原生应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/developing-your-first-application.html\">开发您的第一个 GraalVM 原生应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/testing-native-applications.html\">测试 GraalVM 原生镜像</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/deployment/index.html\">部署 Spring Boot 应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/traditional-deployment.html\">传统部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/cloud.html\">部署到云端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/installing.html\">安装 Spring Boot 应用</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/index.html\">Build Tool Plugins</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../maven-plugin/index.html\">Maven Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/using.html\">Using the Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/goals.html\">Goals</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/run.html\">Running your Application with Maven</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/integration-tests.html\">Running Integration Tests</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-info.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/help.html\">Help Information</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../gradle-plugin/index.html\">Gradle Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/managing-dependencies.html\">Managing Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging-oci-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/publishing.html\">Publishing your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/running.html\">Running your Application with Gradle</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/integrating-with-actuator.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/reacting.html\">Reacting to Other Plugins</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/antlib.html\">Spring Boot AntLib Module</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/other-build-systems.html\">Supporting Other Build Systems</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/index.html\">构建工具插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../maven-plugin/index.html\">Maven 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/using.html\">使用插件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/goals.html\">目标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/run.html\">使用 Maven 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/integration-tests.html\">运行集成测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-info.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/help.html\">帮助信息</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../gradle-plugin/index.html\">Gradle 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/managing-dependencies.html\">管理依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging-oci-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/publishing.html\">发布应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/running.html\">使用 Gradle 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/integrating-with-actuator.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/reacting.html\">响应其他插件</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/antlib.html\">Spring Boot AntLib 模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/other-build-systems.html\">支持其他构建系统</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/index.html\">Packaging Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/efficient.html\">Efficient Deployments</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot.html\">Ahead-of-Time Processing With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/native-image/index.html\">GraalVM Native Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/introducing-graalvm-native-images.html\">Introducing GraalVM Native Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/advanced-topics.html\">Advanced Native Images Topics</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/checkpoint-restore.html\">Checkpoint and Restore With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/container-images/index.html\">Container Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/efficient-images.html\">Efficient Container Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/cloud-native-buildpacks.html\">Cloud Native Buildpacks</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/index.html\">打包 Spring Boot 应用程序</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/efficient.html\">高效部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot.html\">使用 JVM 进行提前处理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/native-image/index.html\">GraalVM 原生镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/introducing-graalvm-native-images.html\">介绍 GraalVM 原生镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/advanced-topics.html\">高级原生镜像主题</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/checkpoint-restore.html\">使用 JVM 进行检查点和恢复</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/container-images/index.html\">容器镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/efficient-images.html\">高效容器镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/cloud-native-buildpacks.html\">云原生构建包</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Specifications</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/index.html\">Configuration Metadata</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/format.html\">Metadata Format</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/manual-hints.html\">Providing Manual Hints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/annotation-processor.html\">Generating Your Own Metadata by Using the Annotation Processor</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/index.html\">The Executable Jar Format</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/nested-jars.html\">Nested JARs</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/jarfile-class.html\">Spring Boot’s “NestedJarFile” Class</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/launching.html\">Launching Executable Jars</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/property-launcher.html\">PropertiesLauncher Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/restrictions.html\">Executable Jar Restrictions</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/alternatives.html\">Alternative Single Jar Solutions</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">规范</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/index.html\">配置元数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/format.html\">元数据格式</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/manual-hints.html\">提供手动提示</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/annotation-processor.html\">使用注解处理器生成自己的元数据</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/index.html\">可执行 JAR 格式</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/nested-jars.html\">嵌套 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/jarfile-class.html\">Spring Boot 的“NestedJarFile”类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/launching.html\">启动可执行 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/property-launcher.html\">PropertiesLauncher 功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/restrictions.html\">可执行 JAR 限制</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/alternatives.html\">替代单 JAR 解决方案</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../actuator/index.html\">Production-ready Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/enabling.html\">Enabling Production-ready Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/endpoints.html\">Endpoints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/monitoring.html\">Monitoring and Management Over HTTP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/jmx.html\">Monitoring and Management over JMX</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/observability.html\">Observability</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/loggers.html\">Loggers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/metrics.html\">Metrics</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/tracing.html\">Tracing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/auditing.html\">Auditing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/http-exchanges.html\">Recording HTTP Exchanges</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/process-monitoring.html\">Process Monitoring</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/cloud-foundry.html\">Cloud Foundry Support</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../actuator/index.html\">生产就绪功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/enabling.html\">启用生产就绪功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/endpoints.html\">端点</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/monitoring.html\">通过 HTTP 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/jmx.html\">通过 JMX 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/observability.html\">可观测性</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/loggers.html\">日志记录器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/metrics.html\">指标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/tracing.html\">追踪</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/auditing.html\">审计</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/http-exchanges.html\">记录 HTTP 交换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/process-monitoring.html\">进程监控</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/cloud-foundry.html\">Cloud Foundry 支持</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../using/index.html\">Developing with Spring Boot</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/build-systems.html\">Build Systems</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/structuring-your-code.html\">Structuring Your Code</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/configuration-classes.html\">Configuration Classes</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/auto-configuration.html\">Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/spring-beans-and-dependency-injection.html\">Spring Beans and Dependency Injection</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/using-the-springbootapplication-annotation.html\">Using the @SpringBootApplication Annotation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/running-your-application.html\">Running Your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/devtools.html\">Developer Tools</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/packaging-for-production.html\">Packaging Your Application for Production</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../using/index.html\">使用 Spring Boot 进行开发</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/build-systems.html\">构建系统</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/structuring-your-code.html\">代码结构</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/configuration-classes.html\">配置类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/auto-configuration.html\">自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/spring-beans-and-dependency-injection.html\">Spring Bean 和依赖注入</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/using-the-springbootapplication-annotation.html\">使用 @SpringBootApplication 注解</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/running-your-application.html\">运行您的应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/devtools.html\">开发者工具</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/packaging-for-production.html\">将您的应用程序打包用于生产环境</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/caching.html\">Caching</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/quartz.html\">Quartz Scheduler</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/email.html\">Sending Email</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/validation.html\">Validation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/rest-client.html\">Calling REST Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/webservices.html\">Web Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/jta.html\">Distributed Transactions With JTA</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/caching.html\">缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/quartz.html\">Quartz 调度器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/email.html\">发送邮件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/validation.html\">验证</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/rest-client.html\">调用 REST 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/webservices.html\">Web 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/jta.html\">使用 JTA 进行分布式事务</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/servlet.html\">Servlet Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/reactive.html\">Reactive Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/graceful-shutdown.html\">Graceful Shutdown</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/servlet.html\">Servlet Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/reactive.html\">响应式 Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/graceful-shutdown.html\">优雅关闭</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../messaging/index.html\">Messaging</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/kafka.html\">Apache Kafka Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/pulsar.html\">Apache Pulsar Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../messaging/index.html\">消息传递</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/kafka.html\">Apache Kafka 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/pulsar.html\">Apache Pulsar 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../testing/index.html\">Testing</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-modules.html\">Test Modules</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-scope-dependencies.html\">Test Scope Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-applications.html\">Testing Spring Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-boot-applications.html\">Testing Spring Boot Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-utilities.html\">Test Utilities</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../testing/index.html\">测试</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-modules.html\">测试模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-scope-dependencies.html\">测试作用域依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-applications.html\">测试 Spring 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-boot-applications.html\">测试 Spring Boot 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-utilities.html\">测试工具</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../data/index.html\">Data</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../data/sql.html\">SQL Databases</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../data/nosql.html\">Working with NoSQL Technologies</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../data/index.html\">数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../data/sql.html\">SQL 数据库</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../data/nosql.html\">使用 NoSQL 技术</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/installation.html\">Installing the CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/using-the-cli.html\">Using the CLI</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/installation.html\">安装 CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/using-the-cli.html\">使用 CLI</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/index.html\">Dependency Versions</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/coordinates.html\">Managed Dependency Coordinates</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/properties.html\">Version Properties</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/index.html\">依赖版本</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/coordinates.html\">托管依赖坐标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/properties.html\">版本属性</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../tutorial/index.html\">Tutorials</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../tutorial/first-application/index.html\">Developing Your First Spring Boot Application</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../tutorial/index.html\">教程</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../tutorial/first-application/index.html\">开发您的第一个 Spring Boot 应用程序</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/index.html\">Test Auto-configuration Annotations</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/slices.html\">Test Slices</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/index.html\">测试自动配置注解</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/slices.html\">测试切片</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/auditevents.html\">Audit Events (<code>auditevents</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/auditevents.html\">审计事件（<code>auditevents</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/conditions.html\">Conditions Evaluation Report (<code>conditions</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/conditions.html\">条件评估报告 (<code>conditions</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/configprops.html\">Configuration Properties (<code>configprops</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/configprops.html\">配置属性 (<code>configprops</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/heapdump.html\">Heap Dump (<code>heapdump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/heapdump.html\">堆转储 (<code>heapdump</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/httpexchanges.html\">HTTP Exchanges (<code>httpexchanges</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/httpexchanges.html\">HTTP 交换记录（<code>httpexchanges</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/integrationgraph.html\">Spring Integration Graph (<code>integrationgraph</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/integrationgraph.html\">Spring Integration 图 (<code>integrationgraph</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/logfile.html\">Log File (<code>logfile</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/logfile.html\">日志文件（<code>logfile</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/sbom.html\">Software Bill of Materials (<code>sbom</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/sbom.html\">软件物料清单（<code>sbom</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/scheduledtasks.html\">Scheduled Tasks (<code>scheduledtasks</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/scheduledtasks.html\">定时任务 (<code>scheduledtasks</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/startup.html\">Application Startup (<code>startup</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/startup.html\">应用启动 (<code>startup</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/threaddump.html\">Thread Dump (<code>threaddump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/threaddump.html\">线程转储 (<code>threaddump</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-server\" href=\"../../system-requirements.html\">System Requirements</a>",
+      "translation": "<a class=\"nav-link navtree-icon-server\" href=\"../../system-requirements.html\">系统要求</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-gift\" href=\"../../installing.html\">Installing Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-gift\" href=\"../../installing.html\">安装 Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-rocket\" href=\"../../upgrading.html\">Upgrading Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-rocket\" href=\"../../upgrading.html\">升级 Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../appendix/application-properties/index.html\">Common Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../appendix/application-properties/index.html\">通用应用程序属性</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../appendix/deprecated-application-properties/index.html\">Deprecated Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../appendix/deprecated-application-properties/index.html\">已废弃的应用程序属性</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">\n  Spring Modulith\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">Spring Modulith</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "count": 1
+    },
+    {
+      "source": "Why Spring",
+      "translation": "为什么选择 Spring",
+      "count": 1
+    },
+    {
+      "source": "Rest APIs",
+      "translation": "REST API",
+      "count": 1
+    },
+    {
+      "source": "Auto-configuration Classes",
+      "translation": "自动配置类",
+      "count": 1
+    },
+    {
+      "source": "All Docs...",
+      "translation": "所有文档...",
+      "count": 1
+    },
+    {
+      "source": "Related Spring Documentation",
+      "translation": "相关 Spring 文档",
+      "count": 1
+    }
+  ]
+}

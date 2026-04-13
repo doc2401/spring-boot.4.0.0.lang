@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-04-13 08:51:02",
+  "updated_at": "2026-04-13 19:09:09",
+  "stats": {
+    "total_entries": 12,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 26,
+    "entries_with_hits": 12,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1666666666666665,
+    "usage_percentage": 0.0012000000000000001
+  },
+  "items": [
+    {
+      "source": "Return the <code>MeterBinder</code> managing the specified <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a> or <code>null</code>\nif the specified <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a> is not supported.",
+      "translation": "返回管理指定<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a>的<code>MeterBinder</code>，或者如果指定的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a>不受支持，则返回<code>null</code>。",
+      "count": 3
+    },
+    {
+      "source": "Creates a <code>JCacheCacheMeterBinderProvider</code> that registers cache removals as a\n<code>Gauge</code>.",
+      "translation": "创建一个 `<code>JCacheCacheMeterBinderProvider</code>`，将缓存移除注册为 `<code>Gauge</code>`。",
+      "count": 3
+    },
+    {
+      "source": "Creates a <code>JCacheCacheMeterBinderProvider</code> that registers cache removals with\na meter type that depends on the value of\n<code>registerCacheRemovalsAsFunctionCounter</code>. When <code>false</code>, cache removals\nare registered as a <code>Gauge</code>. When <code>true</code>, cache removals are registered\nas a <code>FunctionCounter</code>.",
+      "translation": "创建一个 `<code>JCacheCacheMeterBinderProvider`》，该提供者根据 `<code>registerCacheRemovalsAsFunctionCounter</code>` 的值将缓存移除注册为相应的计量类型。当值为 `<code>false</code>` 时，缓存移除被注册为 `<code>Gauge`；当值为 `<code>true</code>` 时，缓存移除被注册为 `<code>FunctionCounter`。</code>",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"CacheMeterBinderProvider.html\" title=\"interface in org.springframework.boot.cache.metrics\"><code>CacheMeterBinderProvider</code></a> implementation for JCache.",
+      "translation": "用于 JCache 的 <a href=\"CacheMeterBinderProvider.html\" title=\"interface in org.springframework.boot.cache.metrics\"><code>CacheMeterBinderProvider</code></a> 实现。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)\">getMeterBinder</a></code> in interface <code><a href=\"CacheMeterBinderProvider.html\" title=\"interface in org.springframework.boot.cache.metrics\">CacheMeterBinderProvider</a>&lt;<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/jcache/JCacheCache.html\" title=\"class or interface in org.springframework.cache.jcache\">JCacheCache</a>&gt;</code>",
+      "translation": "`<code><a href=\"CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)\">getMeterBinder</a></code>` 在接口 `<code><a href=\"CacheMeterBinderProvider.html\" title=\"interface in org.springframework.boot.cache.metrics\">CacheMeterBinderProvider</a>&lt;<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/jcache/JCacheCache.html\" title=\"class or interface in org.springframework.cache.jcache\">JCacheCache</a>&gt;</code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>registerCacheRemovalsAsFunctionCounter</code> - whether to register removals as a\ngauge or a function counter",
+      "translation": "<code>registerCacheRemovalsAsFunctionCounter</code> - 是否将移除操作注册为监控指标（gauge）或函数计数器。",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)\">CacheMeterBinderProvider</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)\">CacheMeterBinderProvider</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "Creates a <code>JCacheCacheMeterBinderProvider</code> that registers cache removals with\na meter type that depends on the value of\n<code>registerCacheRemovalsAsFunctionCounter</code>.",
+      "translation": "创建一个 `<code>JCacheCacheMeterBinderProvider`》，该提供者根据 `<code>registerCacheRemovalsAsFunctionCounter</code>` 的值，将缓存移除注册为相应的计量类型。",
+      "count": 2
+    },
+    {
+      "source": "a <code>MeterBinder</code> handling the specified <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a> or <code>null</code>",
+      "translation": "处理指定<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\" title=\"class or interface in org.springframework.cache\"><code>Cache</code></a>或`null`的<code>MeterBinder</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>cache</code> - the cache to instrument",
+      "translation": "<code>cache</code> - 要添加监控的缓存",
+      "count": 2
+    },
+    {
+      "source": "<code>tags</code> - tags to apply to all recorded metrics",
+      "translation": "<code>tags</code> - 应用于所有已记录指标的标签",
+      "count": 2
+    },
+    {
+      "source": "Stephane Nicoll",
+      "translation": "Stephane Nicoll",
+      "count": 2
+    }
+  ]
+}

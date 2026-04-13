@@ -1,0 +1,106 @@
+{
+  "created_at": "2026-04-13 08:01:45",
+  "updated_at": "2026-04-13 19:08:05",
+  "stats": {
+    "total_entries": 18,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 45,
+    "entries_with_hits": 18,
+    "entries_without_hits": 0,
+    "hit_rate": 2.5,
+    "usage_percentage": 0.0018
+  },
+  "items": [
+    {
+      "source": "Called immediately before the run method finishes, when the application context has\nbeen refreshed and all <a href=\"CommandLineRunner.html\" title=\"interface in org.springframework.boot\"><code>CommandLineRunners</code></a> and\n<a href=\"ApplicationRunner.html\" title=\"interface in org.springframework.boot\"><code>ApplicationRunners</code></a> have been called.",
+      "translation": "在 run 方法即将结束、应用程序上下文已刷新且所有 <a href=\"CommandLineRunner.html\" title=\"interface in org.springframework.boot\"><code>CommandLineRunners</code></a> 和 <a href=\"ApplicationRunner.html\" title=\"interface in org.springframework.boot\"><code>ApplicationRunners</code></a> 均已调用时立即执行。",
+      "count": 3
+    },
+    {
+      "source": "The context has been refreshed and the application has started but\n<a href=\"CommandLineRunner.html\" title=\"interface in org.springframework.boot\"><code>CommandLineRunners</code></a> and <a href=\"ApplicationRunner.html\" title=\"interface in org.springframework.boot\"><code>ApplicationRunners</code></a> have not been called.",
+      "translation": "上下文已刷新且应用程序已启动，但尚未调用`CommandLineRunners`和`ApplicationRunners`。",
+      "count": 3
+    },
+    {
+      "source": "<code>bootstrapContext</code> - the bootstrap context",
+      "translation": "<code>bootstrapContext</code> - 引导上下文",
+      "count": 3
+    },
+    {
+      "source": "<code>context</code> - the application context.",
+      "translation": "<code>context</code> - 应用程序上下文。",
+      "count": 3
+    },
+    {
+      "source": "Called once the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> has been created and prepared, but\nbefore sources have been loaded.",
+      "translation": "在 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 创建并准备完成后调用一次，但在加载源之前。",
+      "count": 3
+    },
+    {
+      "source": "Called once the environment has been prepared, but before the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> has been created.",
+      "translation": "在环境准备完成后但尚未创建<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>时调用一次。",
+      "count": 3
+    },
+    {
+      "source": "Called once the application context has been loaded but before it has been\nrefreshed.",
+      "translation": "在应用程序上下文加载完成后但在刷新之前调用一次。",
+      "count": 3
+    },
+    {
+      "source": "Called when a failure occurs when running the application.",
+      "translation": "在运行应用程序时发生失败时调用。",
+      "count": 3
+    },
+    {
+      "source": "<code>context</code> - the application context",
+      "translation": "<code>context</code> - 应用程序上下文",
+      "count": 3
+    },
+    {
+      "source": "Listener for the <a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> <code>run</code> method.\n<a href=\"SpringApplicationRunListener.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationRunListener</code></a>s are loaded through the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/support/SpringFactoriesLoader.html\" title=\"class or interface in org.springframework.core.io.support\"><code>SpringFactoriesLoader</code></a> and should declare a public constructor that accepts a\n<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance and a <code>String[]</code> of arguments. A new\n<a href=\"SpringApplicationRunListener.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationRunListener</code></a> instance will be created for each run.",
+      "translation": "监听 `<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>` 的 `run` 方法。\n`<a href=\"SpringApplicationRunListener.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationRunListener</code></a>` 通过 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/support/SpringFactoriesLoader.html\" title=\"class or interface in org.springframework.core.io.support\"><code>SpringFactoriesLoader</code></a>` 加载，并应声明一个接受 `<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>` 实例和 `String[]` 参数数组的公共构造函数。每次运行时都会创建一个新的 `<a href=\"SpringApplicationRunListener.html\" title=\"interface in org.springframework.boot\"><code>SpringApplicationRunListener</code></a>` 实例。",
+      "count": 2
+    },
+    {
+      "source": "Called immediately when the run method has first started. Can be used for very\nearly initialization.",
+      "translation": "在 run 方法首次启动时立即调用。可用于非常早期的初始化。",
+      "count": 2
+    },
+    {
+      "source": "<code>timeTaken</code> - the time taken to start the application or <code>null</code> if unknown",
+      "translation": "<code>timeTaken</code> - 启动应用程序所花费的时间，或未知时为 <code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>timeTaken</code> - the time taken for the application to be ready or <code>null</code> if\nunknown",
+      "translation": "<code>timeTaken</code> - 应用程序就绪所需的时间，或如果未知则为 <code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>context</code> - the application context or <code>null</code> if a failure occurred before\nthe context was created",
+      "translation": "<code>context</code> - 应用程序上下文，或在创建上下文之前发生失败时为`null`",
+      "count": 2
+    },
+    {
+      "source": "<code>exception</code> - the failure",
+      "translation": "<code>exception</code> - 失败",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Dave Syer, Andy Wilkinson, Chris Bono",
+      "translation": "Phillip Webb, Dave Syer, Andy Wilkinson, Chris Bono",
+      "count": 2
+    },
+    {
+      "source": "Called immediately when the run method has first started.",
+      "translation": "在 run 方法首次启动时立即调用。",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the environment",
+      "translation": "<code>environment</code> - 环境",
+      "count": 2
+    }
+  ]
+}

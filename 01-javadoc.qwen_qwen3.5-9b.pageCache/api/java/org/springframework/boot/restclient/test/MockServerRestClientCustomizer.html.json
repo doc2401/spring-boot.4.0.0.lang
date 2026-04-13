@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-04-13 19:35:19",
+  "updated_at": "2026-04-13 19:35:19",
+  "stats": {
+    "total_entries": 13,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 25,
+    "entries_with_hits": 13,
+    "entries_without_hits": 0,
+    "hit_rate": 1.9230769230769231,
+    "usage_percentage": 0.0013
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"MockServerRestClientCustomizer.html\" title=\"class in org.springframework.boot.restclient.test\"><code>MockServerRestClientCustomizer</code></a> instance.",
+      "translation": "创建一个新的<a href=\"MockServerRestClientCustomizer.html\" title=\"class in org.springframework.boot.restclient.test\"><code>MockServerRestClientCustomizer</code></a> 实例。",
+      "count": 5
+    },
+    {
+      "source": "If the customizer is only used once, the <a href=\"#getServer()\"><code>getServer()</code></a> method can be used to\nobtain the mock server. If the customizer has been used more than once the\n<a href=\"#getServer(org.springframework.web.client.RestClient.Builder)\"><code>getServer(RestClient.Builder)</code></a> or <a href=\"#getServers()\"><code>getServers()</code></a> method must be used to\naccess the related server.",
+      "translation": "如果自定义器仅使用一次，可以使用<a href=\"#getServer()\"><code>getServer()</code></a>方法获取模拟服务器。如果自定义器已使用多次，则必须使用<a href=\"#getServer(org.springframework.web.client.RestClient.Builder)\"><code>getServer(RestClient.Builder)</code></a>或<a href=\"#getServers()\"><code>getServers()</code></a>方法来访问相关的服务器。",
+      "count": 2
+    },
+    {
+      "source": "If a mock server is used in more than one test case in a test class, it might be\nnecessary to reset the expectations on the server between tests using\n<code>getServer().reset()</code> or <code>getServer(restClientBuilder).reset()</code>.",
+      "translation": "如果在一个测试类中的多个测试用例使用了模拟服务器，则可能需要使用 `<code>getServer().reset()</code>` 或 `<code>getServer(restClientBuilder).reset()</code>` 在测试之间重置服务器上的期望。",
+      "count": 2
+    },
+    {
+      "source": "Typically applied to an existing builder before it is used, for example:",
+      "translation": "通常应用于现有构建器之前，例如：",
+      "count": 2
+    },
+    {
+      "source": "Callback to customize a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html\" title=\"class or interface in org.springframework.web.client\"><code>RestClient.Builder</code></a> instance.",
+      "translation": "回调，用于自定义 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestClient.Builder.html\" title=\"class or interface in org.springframework.web.client\"><code>RestClient.Builder</code></a> 实例。",
+      "count": 2
+    },
+    {
+      "source": "Set if the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/BufferingClientHttpRequestFactory.html\" title=\"class or interface in org.springframework.http.client\"><code>BufferingClientHttpRequestFactory</code></a> wrapper should be used to\nbuffer the input and output streams, and for example, allow multiple reads of the\nresponse body.",
+      "translation": "设置是否应使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/client/BufferingClientHttpRequestFactory.html\" title=\"class or interface in org.springframework.http.client\"><code>BufferingClientHttpRequestFactory</code></a> 包装器来缓冲输入和输出流，并例如允许多次读取响应体。",
+      "count": 2
+    },
+    {
+      "source": "<code>expectationManagerSupplier</code> - a supplier that provides the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/web/client/RequestExpectationManager.html\" title=\"class or interface in org.springframework.test.web.client\"><code>RequestExpectationManager</code></a> to use",
+      "translation": "<code>expectationManagerSupplier</code> - 一个提供用于的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/web/client/RequestExpectationManager.html\" title=\"class or interface in org.springframework.test.web.client\"><code>RequestExpectationManager</code></a> 的供应器",
+      "count": 2
+    },
+    {
+      "source": "<code>expectationManager</code> - the expectation manager class to use",
+      "translation": "<code>expectationManager</code> - 要使用的期望管理器类",
+      "count": 2
+    },
+    {
+      "source": "<code>bufferContent</code> - if request and response content should be buffered",
+      "translation": "<code>bufferContent</code> - 如果请求和响应内容应被缓冲",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"../RestClientCustomizer.html#customize(org.springframework.web.client.RestClient.Builder)\">RestClientCustomizer</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"../RestClientCustomizer.html#customize(org.springframework.web.client.RestClient.Builder)\">RestClientCustomizer</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"../RestClientCustomizer.html#customize(org.springframework.web.client.RestClient.Builder)\">customize</a></code> in interface <code><a href=\"../RestClientCustomizer.html\" title=\"interface in org.springframework.boot.restclient\">RestClientCustomizer</a></code>",
+      "translation": "`<code><a href=\"../RestClientCustomizer.html#customize(org.springframework.web.client.RestClient.Builder)\">customize</a></code>` 接口 `<code><a href=\"../RestClientCustomizer.html\" title=\"interface in org.springframework.boot.restclient\">RestClientCustomizer</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>restClientBuilder</code> - the client builder to customize",
+      "translation": "<code>restClientBuilder</code> - 用于自定义的客户端构建器",
+      "count": 1
+    },
+    {
+      "source": "Scott Frederick",
+      "translation": "斯科特·弗雷德里克",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-04-13 08:58:54",
+  "updated_at": "2026-04-13 19:09:21",
+  "stats": {
+    "total_entries": 4,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 8,
+    "entries_with_hits": 4,
+    "entries_without_hits": 0,
+    "hit_rate": 2.0,
+    "usage_percentage": 0.00039999999999999996
+  },
+  "items": [
+    {
+      "source": "In the example below, <code>Host</code> is flagged as a nested property using its field and\nan <code>example.server.host</code> nested group is created with any property that\n<code>Host</code> defines:",
+      "translation": "在下例中，`Host` 使用其字段被标记为嵌套属性，并创建一个包含 `Host` 定义的任何属性的 `<code>example.server.host</code>` 嵌套组：",
+      "count": 2
+    },
+    {
+      "source": "This has no effect on collections and maps as these types are automatically identified.\nAlso, the annotation is not necessary if the target type is an inner class of the\n<a href=\"ConfigurationProperties.html\" title=\"annotation interface in org.springframework.boot.context.properties\"><code>@ConfigurationProperties</code></a> object. In the example below,\n<code>Host</code> is detected as a nested type as it is defined as an inner class:",
+      "translation": "这不会影响集合和映射，因为这些类型会自动识别。此外，如果目标类型是 `<a href=\"ConfigurationProperties.html\" title=\"annotation interface in org.springframework.boot.context.properties\"><code>@ConfigurationProperties</code></a>` 对象的内部类，则不需要该注解。在下例中，`Host` 被检测为嵌套类型，因为它被定义为内部类：",
+      "count": 2
+    },
+    {
+      "source": "The annotation can also be specified on a getter method. If you use records, you can\nannotate the record component.",
+      "translation": "注解也可以指定在 getter 方法上。如果您使用记录，可以注解记录组件。",
+      "count": 2
+    },
+    {
+      "source": "Stephane Nicoll, Phillip Webb, Jared Bates",
+      "translation": "Stephane Nicoll, Phillip Webb, Jared Bates",
+      "count": 2
+    }
+  ]
+}

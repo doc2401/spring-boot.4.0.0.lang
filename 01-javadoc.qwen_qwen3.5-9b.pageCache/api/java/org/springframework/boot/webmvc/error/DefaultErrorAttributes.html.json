@@ -1,0 +1,116 @@
+{
+  "created_at": "2026-04-13 20:14:53",
+  "updated_at": "2026-04-13 20:14:53",
+  "stats": {
+    "total_entries": 20,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 35,
+    "entries_with_hits": 20,
+    "entries_without_hits": 0,
+    "hit_rate": 1.75,
+    "usage_percentage": 0.002
+  },
+  "items": [
+    {
+      "source": "<code>webRequest</code> - the source request",
+      "translation": "<code>webRequest</code> - 源请求",
+      "count": 3
+    },
+    {
+      "source": "Default implementation of <a href=\"ErrorAttributes.html\" title=\"interface in org.springframework.boot.webmvc.error\"><code>ErrorAttributes</code></a>. Provides the following attributes\nwhen possible:\n<ul>\n<li>timestamp - The time that the errors were extracted</li>\n<li>status - The status code</li>\n<li>error - The error reason</li>\n<li>exception - The class name of the root exception (if configured)</li>\n<li>message - The exception message (if configured)</li>\n<li>errors - Any validation errors derived from a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/BindingResult.html\" title=\"class or interface in org.springframework.validation\"><code>BindingResult</code></a> or\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/method/MethodValidationResult.html\" title=\"class or interface in org.springframework.validation.method\"><code>MethodValidationResult</code></a> exception (if configured). To ensure safe serialization\nto JSON, errors are <a href=\"../../web/error/Error.html#wrapIfNecessary(java.util.List)\"><code>wrapped if\nnecessary</code></a></li>\n<li>trace - The exception stack trace (if configured)</li>\n<li>path - The URL path when the exception was raised</li>\n</ul>",
+      "translation": "`ErrorAttributes` 接口的默认实现。在可能的情况下，提供以下属性：\n<ul>\n<li>timestamp - 提取错误的时间</li>\n<li>status - 状态码</li>\n<li>error - 错误原因</li>\n<li>exception - 根异常类名（如果已配置）</li>\n<li>message - 异常消息（如果已配置）</li>\n<li>errors - 从 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/BindingResult.html\" title=\"class or interface in org.springframework.validation\"><code>BindingResult</code></a> 或\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/method/MethodValidationResult.html\" title=\"class or interface in org.springframework.validation.method\"><code>MethodValidationResult</code></a> 异常派生的任何验证错误（如果已配置）。为确保安全地序列化为 JSON，错误会 <a href=\"../../web/error/Error.html#wrapIfNecessary(java.util.List)\"><code>在必要时进行包装</code></a></li>\n<li>trace - 异常堆栈跟踪（如果已配置）</li>\n<li>path - 抛出异常时的 URL 路径</li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "Returns the message to be included as the value of the <code>message</code> error\nattribute. By default the returned message is the first of the following that is\nnot empty:\n<ol>\n<li>Value of the <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/RequestDispatcher.html#ERROR_MESSAGE\" title=\"class or interface in jakarta.servlet\"><code>RequestDispatcher.ERROR_MESSAGE</code></a> request attribute.\n</li><li>Message of the given <code>error</code>.\n</li><li><code>No message available</code>.\n</li></ol>",
+      "translation": "返回要包含在 `<code>message</code>` 错误属性值中的消息。默认情况下，返回的消息是以下各项中第一个非空项：\n<ol>\n<li><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/RequestDispatcher.html#ERROR_MESSAGE\" title=\"class or interface in jakarta.servlet\"><code>RequestDispatcher.ERROR_MESSAGE</code></a> 请求属性的值。\n</li><li>给定 `<code>error</code>` 的消息。\n</li><li><code>No message available</code>。\n</li></ol>",
+      "count": 2
+    },
+    {
+      "source": "Returns a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a> of the error attributes. The map can be used as the model of\nan error page <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/ModelAndView.html\" title=\"class or interface in org.springframework.web.servlet\"><code>ModelAndView</code></a>, or returned as a\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/annotation/ResponseBody.html\" title=\"class or interface in org.springframework.web.bind.annotation\"><code>@ResponseBody</code></a>.",
+      "translation": "返回一个包含错误属性的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a>。该映射可作为错误页面模型 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/ModelAndView.html\" title=\"class or interface in org.springframework.web.servlet\"><code>ModelAndView</code></a> 使用，或作为 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/annotation/ResponseBody.html\" title=\"class or interface in org.springframework.web.bind.annotation\"><code>@ResponseBody</code></a> 返回。",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"ErrorAttributes.html#getErrorAttributes(org.springframework.web.context.request.WebRequest,org.springframework.boot.web.error.ErrorAttributeOptions)\">ErrorAttributes</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"ErrorAttributes.html#getErrorAttributes(org.springframework.web.context.request.WebRequest,org.springframework.boot.web.error.ErrorAttributeOptions)\">ErrorAttributes</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"ErrorAttributes.html#getError(org.springframework.web.context.request.WebRequest)\">ErrorAttributes</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"ErrorAttributes.html#getError(org.springframework.web.context.request.WebRequest)\">ErrorAttributes</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "Return the underlying cause of the error or <code>null</code> if the error cannot be\nextracted.",
+      "translation": "返回错误的根本原因，如果无法提取错误则返回<code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerExceptionResolver.html#resolveException(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.lang.Object,java.lang.Exception)\" title=\"class or interface in org.springframework.web.servlet\">resolveException</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerExceptionResolver.html\" title=\"class or interface in org.springframework.web.servlet\">HandlerExceptionResolver</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerExceptionResolver.html#resolveException(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.lang.Object,java.lang.Exception)\" title=\"class or interface in org.springframework.web.servlet\">resolveException</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerExceptionResolver.html\" title=\"class or interface in org.springframework.web.servlet\">HandlerExceptionResolver</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"ErrorAttributes.html#getErrorAttributes(org.springframework.web.context.request.WebRequest,org.springframework.boot.web.error.ErrorAttributeOptions)\">getErrorAttributes</a></code> in interface <code><a href=\"ErrorAttributes.html\" title=\"interface in org.springframework.boot.webmvc.error\">ErrorAttributes</a></code>",
+      "translation": "`<code><a href=\"ErrorAttributes.html#getErrorAttributes(org.springframework.web.context.request.WebRequest,org.springframework.boot.web.error.ErrorAttributeOptions)\">getErrorAttributes</a></code>` 接口 `<code><a href=\"ErrorAttributes.html\" title=\"interface in org.springframework.boot.webmvc.error\">ErrorAttributes</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"ErrorAttributes.html#getError(org.springframework.web.context.request.WebRequest)\">getError</a></code> in interface <code><a href=\"ErrorAttributes.html\" title=\"interface in org.springframework.boot.webmvc.error\">ErrorAttributes</a></code>",
+      "translation": "`<code><a href=\"ErrorAttributes.html#getError(org.springframework.web.context.request.WebRequest)\">getError</a></code>` 在接口 `<code><a href=\"ErrorAttributes.html\" title=\"interface in org.springframework.boot.webmvc.error\">ErrorAttributes</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>webRequest</code> - current request",
+      "translation": "<code>webRequest</code> - 当前请求",
+      "count": 2
+    },
+    {
+      "source": "<code>error</code> - current error, if any",
+      "translation": "<code>error</code> - 当前错误（如有）",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Dave Syer, Stephane Nicoll, Vedran Pavic, Scott Frederick, Moritz Halbritter, Yanming Zhou, Yongjun Hong",
+      "translation": "Phillip Webb, Dave Syer, Stephane Nicoll, Vedran Pavic, Scott Frederick, Moritz Halbritter, Yanming Zhou, Yongjun Hong",
+      "count": 2
+    },
+    {
+      "source": "message to include in the error attributes",
+      "translation": "包含在错误属性中的消息",
+      "count": 2
+    },
+    {
+      "source": "Returns a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a> of the error attributes.",
+      "translation": "返回错误属性的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Returns the message to be included as the value of the <code>message</code> error\nattribute.",
+      "translation": "返回作为 `<code>message`</code> 错误属性值的消息。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "the <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\"><code>Exception</code></a> that caused the error or <code>null</code>",
+      "translation": "导致错误的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\"><code>Exception</code></a>或<code>null</code>",
+      "count": 1
+    },
+    {
+      "source": "<code>options</code> - options for error attribute contents",
+      "translation": "<code>options</code> - 错误属性内容的选项",
+      "count": 1
+    },
+    {
+      "source": "a map of error attributes",
+      "translation": "错误属性映射",
+      "count": 1
+    }
+  ]
+}

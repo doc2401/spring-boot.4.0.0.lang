@@ -1,0 +1,606 @@
+{
+  "created_at": "2026-04-13 19:37:27",
+  "updated_at": "2026-04-13 19:37:27",
+  "stats": {
+    "total_entries": 118,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 406,
+    "entries_with_hits": 118,
+    "entries_without_hits": 0,
+    "hit_rate": 3.440677966101695,
+    "usage_percentage": 0.0118
+  },
+  "items": [
+    {
+      "source": "<code>url</code> - the URL",
+      "translation": "<code>url</code> - 网址",
+      "count": 39
+    },
+    {
+      "source": "<code>responseType</code> - the type of the return value",
+      "translation": "<code>responseType</code> - 返回值的类型",
+      "count": 20
+    },
+    {
+      "source": "The <code>request</code> parameter can be a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/HttpEntity.html\" title=\"class or interface in org.springframework.http\"><code>HttpEntity</code></a> in order to add\nadditional HTTP headers to the request.",
+      "translation": "`request` 参数可以是 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/HttpEntity.html\" title=\"class or interface in org.springframework.http\"><code>HttpEntity</code></a>，以便向请求添加额外的 HTTP 标头。",
+      "count": 15
+    },
+    {
+      "source": "the converted object",
+      "translation": "已转换的对象",
+      "count": 14
+    },
+    {
+      "source": "URI Template variables are expanded using the given URI variables, if any.",
+      "translation": "如果存在给定的 URI 变量，则使用这些变量展开 URI 模板变量。",
+      "count": 13
+    },
+    {
+      "source": "<code>urlVariables</code> - the variables to expand the template",
+      "translation": "<code>urlVariables</code> - 用于扩展模板的变量",
+      "count": 12
+    },
+    {
+      "source": "URI Template variables are expanded using the given map.",
+      "translation": "URI 模板变量使用给定的映射进行扩展。",
+      "count": 10
+    },
+    {
+      "source": "<code>request</code> - the Object to be POSTed, may be <code>null</code>",
+      "translation": "<code>request</code> - 要 POST 的对象，可为 <code>null</code>",
+      "count": 10
+    },
+    {
+      "source": "<code>urlVariables</code> - the variables to expand in the template",
+      "translation": "<code>urlVariables</code> - 模板中要展开的变量",
+      "count": 9
+    },
+    {
+      "source": "<code>method</code> - the HTTP method (GET, POST, etc.)",
+      "translation": "<code>method</code> - HTTP 方法（如 GET、POST 等）",
+      "count": 9
+    },
+    {
+      "source": "the response as entity",
+      "translation": "将响应作为实体返回。",
+      "count": 8
+    },
+    {
+      "source": "Execute the HTTP method to the given URI template, writing the given request entity\nto the request, and returns the response as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>.",
+      "translation": "执行 HTTP 方法到给定的 URI 模板，将给定的请求实体写入请求，并返回响应为 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>。",
+      "count": 7
+    },
+    {
+      "source": "If you need to assert the request result consider using the\n<a href=\"#exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.lang.Object...)\"><code>exchange</code></a> method.",
+      "translation": "如果您需要断言请求结果，请考虑使用 <a href=\"#exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.lang.Object...)\"><code>exchange</code></a> 方法。",
+      "count": 6
+    },
+    {
+      "source": "<code>requestEntity</code> - the entity (headers and/or body) to write to the request, may\nbe <code>null</code>",
+      "translation": "<code>requestEntity</code> - 要写入请求的实体（标头和/或正文），可能为<code>null</code>",
+      "count": 6
+    },
+    {
+      "source": "Create a new <a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a> instance with the specified credentials.",
+      "translation": "使用指定的凭据创建一个新的<a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a>实例。",
+      "count": 5
+    },
+    {
+      "source": "Create a new <a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a> instance.",
+      "translation": "创建一个新的<a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a> 实例。",
+      "count": 5
+    },
+    {
+      "source": "the new template",
+      "translation": "新模板",
+      "count": 5
+    },
+    {
+      "source": "Execute the HTTP method to the given URI template, writing the given request entity\nto the request, and returns the response as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>. The given\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html\" title=\"class or interface in org.springframework.core\"><code>ParameterizedTypeReference</code></a> is used to pass generic type information:\n<pre class=\"code\">ParameterizedTypeReference&lt;List&lt;MyBean&gt;&gt; myBean = new ParameterizedTypeReference&lt;List&lt;MyBean&gt;&gt;() {};\nResponseEntity&lt;List&lt;MyBean&gt;&gt; response = template.exchange(\"https://example.com\",HttpMethod.GET, null, myBean);\n</pre>",
+      "translation": "执行 HTTP 方法到给定的 URI 模板，将给定的请求实体写入请求，并返回响应为 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>。给定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html\" title=\"class or interface in org.springframework.core\"><code>ParameterizedTypeReference</code></a> 用于传递泛型类型信息：\n<pre class=\"code\">ParameterizedTypeReference&lt;List&lt;MyBean&gt;&gt; myBean = new ParameterizedTypeReference&lt;List&lt;MyBean&gt;&gt;() {};\nResponseEntity&lt;List&lt;MyBean&gt;&gt; response = template.exchange(\"https://example.com\",HttpMethod.GET, null, myBean);\n</pre>",
+      "count": 4
+    },
+    {
+      "source": "<code>request</code> - the Object to be PUT, may be <code>null</code>",
+      "translation": "<code>request</code> - 要 PUT 的对象，可为 <code>null</code>",
+      "count": 4
+    },
+    {
+      "source": "an arbitrary object, as returned by the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a>",
+      "translation": "任意对象，如由 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a> 返回的对象。",
+      "count": 4
+    },
+    {
+      "source": "<code>httpClientOptions</code> - client options to use if the Apache HTTP Client is used",
+      "translation": "<code>httpClientOptions</code> - 如果使用的是 Apache HTTP Client，则使用的客户端选项",
+      "count": 4
+    },
+    {
+      "source": "<code>urlVariables</code> - the map containing variables for the URI template",
+      "translation": "<code>urlVariables</code> - 包含 URI 模板变量的映射",
+      "count": 4
+    },
+    {
+      "source": "the value for the <code>Location</code> header",
+      "translation": "`Location` 标头的值",
+      "count": 4
+    },
+    {
+      "source": "<code>responseType</code> - the response type to return",
+      "translation": "<code>responseType</code> - 要返回的响应类型",
+      "count": 4
+    },
+    {
+      "source": "the value of the <code>Allow</code> header",
+      "translation": "`Allow` 标头的值",
+      "count": 4
+    },
+    {
+      "source": "<code>requestCallback</code> - object that prepares the request",
+      "translation": "<code>requestCallback</code> - 准备请求的对象",
+      "count": 4
+    },
+    {
+      "source": "<code>responseExtractor</code> - object that extracts the return value from the response",
+      "translation": "<code>responseExtractor</code> - 从响应中提取返回值的对象",
+      "count": 4
+    },
+    {
+      "source": "all HTTP headers of that resource",
+      "translation": "该资源的所有 HTTP 标头",
+      "count": 4
+    },
+    {
+      "source": "Returns the root URI applied by <a href=\"../restclient/RestTemplateBuilder.html#rootUri(java.lang.String)\"><code>RestTemplateBuilder.rootUri(String)</code></a> or\n<code>\"\"</code> if the root URI has not been applied.",
+      "translation": "返回由 `<a href=\"../restclient/RestTemplateBuilder.html#rootUri(java.lang.String)\"><code>RestTemplateBuilder.rootUri(String)</code></a>` 应用的根 URI，或者如果尚未应用根 URI，则返回`\"\"`。",
+      "count": 3
+    },
+    {
+      "source": "<code>username</code> - the username to use (or <code>null</code>)",
+      "translation": "<code>username</code> - 要使用的用户名（或 <code>null</code>）",
+      "count": 3
+    },
+    {
+      "source": "<code>password</code> - the password (or <code>null</code>)",
+      "translation": "<code>password</code> - 密码（或 <code>null</code>）",
+      "count": 3
+    },
+    {
+      "source": "<code>request</code> - the Object to be PATCHed, may be <code>null</code>",
+      "translation": "<code>request</code> - 要执行 PATCH 操作的 Object，可为 <code>null</code>",
+      "count": 3
+    },
+    {
+      "source": "<code>uriVariables</code> - the variables to expand the template",
+      "translation": "<code>uriVariables</code> - 用于扩展模板的变量",
+      "count": 3
+    },
+    {
+      "source": "<code>requestEntity</code> - the entity to write to the request",
+      "translation": "<code>requestEntity</code> - 要写入请求的实体",
+      "count": 3
+    },
+    {
+      "source": "If you are using the <code>@SpringBootTest</code> annotation with an embedded server, a\n<a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a> can be auto-configured by adding\n<a href=\"autoconfigure/AutoConfigureTestRestTemplate.html\" title=\"annotation interface in org.springframework.boot.resttestclient.autoconfigure\"><code>@AutoConfigureTestRestTemplate</code></a> to your test\nclass. It can then be <code>@Autowired</code> into your test. If you need customizations\n(for example to adding additional message converters) use a <a href=\"../restclient/RestTemplateBuilder.html\" title=\"class in org.springframework.boot.restclient\"><code>RestTemplateBuilder</code></a>\n<code>@Bean</code>.",
+      "translation": "如果您在使用带有嵌入式服务器的 `<code>@SpringBootTest` 注解，可以通过在测试类中添加 <a href=\"autoconfigure/AutoConfigureTestTemplate.html\" title=\"annotation interface in org.springframework.boot.resttestclient.autoconfigure\"><code>@AutoConfigureTestRestTemplate</code></a> 来自动配置 <a href=\"TestRestTemplate.html\" title=\"class in org.springframework.boot.resttestclient\"><code>TestRestTemplate</code></a>。然后，您可以使用 `<code>@Autowired` 将其注入到测试中。如果需要自定义（例如添加额外的消息转换器），请使用一个 <a href=\"../restclient/RestTemplateBuilder.html\" title=\"class in org.springframework.boot.restclient\"><code>RestTemplateBuilder</code></a> `<code>@Bean`。",
+      "count": 2
+    },
+    {
+      "source": "Note: To prevent injection problems this class intentionally does not extend\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>. If you need access to the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a> use\n<a href=\"#getRestTemplate()\"><code>getRestTemplate()</code></a>.",
+      "translation": "注意：为了防止注入问题，该类故意不继承 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>。如果您需要访问底层的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>，请使用 <a href=\"#getRestTemplate()\"><code>getRestTemplate()</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "A <code>TestRestTemplate</code> can optionally carry Basic authentication headers. If Apache\nHttp Client 4.3.2 or better is available (recommended) it will be used as the client,\nand by default configured to ignore cookies.",
+      "translation": "`TestRestTemplate` 可选地携带基本身份验证标头。如果可用（推荐）Apache Http Client 4.3.2 或更高版本，将用作客户端，并且默认配置为忽略 Cookie。",
+      "count": 2
+    },
+    {
+      "source": "URI Template variables are expanded using the given URI variables map.",
+      "translation": "URI 模板变量使用给定的 URI 变量映射进行扩展。",
+      "count": 2
+    },
+    {
+      "source": "Execute the request specified in the given <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> and return the\nresponse as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>. The given <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html\" title=\"class or interface in org.springframework.core\"><code>ParameterizedTypeReference</code></a> is\nused to pass generic type information: <pre class=\"code\">MyRequest body = ...\nRequestEntity request = RequestEntity.post(new URI(\"https://example.com/foo\")).accept(MediaType.APPLICATION_JSON).body(body);\nParameterizedTypeReference&lt;List&lt;MyResponse&gt;&gt; myBean = new ParameterizedTypeReference&lt;List&lt;MyResponse&gt;&gt;() {};\nResponseEntity&lt;List&lt;MyResponse&gt;&gt; response = template.exchange(request, myBean);\n</pre>",
+      "translation": "执行给定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> 并将响应返回为 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>。给定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/ParameterizedTypeReference.html\" title=\"class or interface in org.springframework.core\"><code>ParameterizedTypeReference</code></a> 用于传递泛型类型信息：<pre class=\"code\">MyRequest body = ...\nRequestEntity request = RequestEntity.post(new URI(\"https://example.com/foo\")).accept(MediaType.APPLICATION_JSON).body(body);\nParameterizedTypeReference&lt;List&lt;MyResponse&gt;&gt; myBean = new ParameterizedTypeReference&lt;List&lt;MyResponse&gt;&gt;() {};\nResponseEntity&lt;List&lt;MyResponse&gt;&gt; response = template.exchange(request, myBean);\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Execute the request specified in the given <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> and return the\nresponse as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>. Typically used in combination with the static\nbuilder methods on <code>RequestEntity</code>, for instance: <pre class=\"code\">MyRequest body = ...\nRequestEntity request = RequestEntity.post(new URI(\"https://example.com/foo\")).accept(MediaType.APPLICATION_JSON).body(body);\nResponseEntity&lt;MyResponse&gt; response = template.exchange(request, MyResponse.class);\n</pre>",
+      "translation": "执行 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> 中指定的请求，并返回 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a> 类型的响应。通常与 <code>RequestEntity</code> 上的静态构建器方法结合使用，例如：<pre class=\"code\">MyRequest body = ...\nRequestEntity request = RequestEntity.post(new URI(\"https://example.com/foo\")).accept(MediaType.APPLICATION_JSON).body(body);\nResponseEntity&lt;MyResponse&gt; response = template.exchange(request, MyResponse.class);\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will send basic authorization headers using the given\n<code>username</code> and <code>password</code>. The request factory used is a new instance\nof the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>'s request factory type (when possible).",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但使用给定的<code>username</code>和<code>password</code>发送基本身份验证标头。所使用的请求工厂是底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的请求工厂类型的新实例（在可能的情况下）。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will apply the given <a href=\"../http/client/HttpRedirects.html\" title=\"enum class in org.springframework.boot.http.client\"><code>HttpRedirects</code></a>. The request factory used\nis a new instance of the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>'s request factory type\n(when possible).",
+      "translation": "创建一个新的<code>TestRestTemplate</code>，其配置与此相同，但会应用给定的<a href=\"../http/client/HttpRedirects.html\" title=\"enum class in org.springframework.boot.http.client\"><code>HttpRedirects</code></a>。所使用的请求工厂是底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的请求工厂类型的新实例（在可能的情况下）。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will apply the given <a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>. The request factory\nused is a new instance of the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>'s request factory\ntype (when possible).",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但会应用给定的<a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>。所使用的请求工厂是底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的请求工厂类型的新实例（在可能的情况下）。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will customize the <a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>. The request factory\nused is a new instance of the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>'s request factory\ntype (when possible).",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但会自定义<a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>。所使用的请求工厂是底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的请求工厂类型的新实例（在可能的情况下）。",
+      "count": 2
+    },
+    {
+      "source": "Execute the request specified in the given <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> and return the\nresponse as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>.",
+      "translation": "执行指定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/RequestEntity.html\" title=\"class or interface in org.springframework.http\"><code>RequestEntity</code></a> 并返回 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a> 类型的响应。",
+      "count": 2
+    },
+    {
+      "source": "Execute the HTTP method to the given URI template, preparing the request with the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RequestCallback.html\" title=\"class or interface in org.springframework.web.client\"><code>RequestCallback</code></a>, and reading the response with a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a>.",
+      "translation": "执行 HTTP 方法到给定的 URI 模板，使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RequestCallback.html\" title=\"class or interface in org.springframework.web.client\"><code>RequestCallback</code></a> 准备请求，并使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a> 读取响应。",
+      "count": 2
+    },
+    {
+      "source": "Execute the HTTP method to the given URL, preparing the request with the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RequestCallback.html\" title=\"class or interface in org.springframework.web.client\"><code>RequestCallback</code></a>, and reading the response with a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a>.",
+      "translation": "执行 HTTP 方法到给定 URL，使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RequestCallback.html\" title=\"class or interface in org.springframework.web.client\"><code>RequestCallback</code></a> 准备请求，并使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/ResponseExtractor.html\" title=\"class or interface in org.springframework.web.client\"><code>ResponseExtractor</code></a> 读取响应。",
+      "count": 2
+    },
+    {
+      "source": "Configure the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/UriTemplateHandler.html\" title=\"class or interface in org.springframework.web.util\"><code>UriTemplateHandler</code></a> to use to expand URI templates. By default\nthe <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/DefaultUriBuilderFactory.html\" title=\"class or interface in org.springframework.web.util\"><code>DefaultUriBuilderFactory</code></a> is used which relies on Spring's URI template\nsupport and exposes several useful properties that customize its behavior for\nencoding and for prepending a common base URL. An alternative implementation may be\nused to plug an external URI template library.",
+      "translation": "配置用于展开 URI 模板的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/UriTemplateHandler.html\" title=\"class or interface in org.springframework.web.util\"><code>UriTemplateHandler</code></a>。默认情况下，使用<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/DefaultUriBuilderFactory.html\" title=\"class or interface in org.springframework.web.util\"><code>DefaultUriBuilderFactory</code></a>，它依赖于 Spring 的 URI 模板支持，并公开几个有用的属性以自定义其编码行为和添加公共基础 URL 的行为。可以使用替代实现来集成外部 URI 模板库。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will customize the <a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>.",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但会自定义<a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will apply the given <a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>.",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但会应用给定的<a href=\"../http/client/HttpClientSettings.html\" title=\"class in org.springframework.boot.http.client\"><code>HttpClientSettings</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will apply the given <a href=\"../http/client/HttpRedirects.html\" title=\"enum class in org.springframework.boot.http.client\"><code>HttpRedirects</code></a>.",
+      "translation": "创建一个新的<code>TestRestTemplate</code>，其配置与此相同，但会应用给定的<a href=\"../http/client/HttpRedirects.html\" title=\"enum class in org.springframework.boot.http.client\"><code>HttpRedirects</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Returns the underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a> that is actually used to perform the\nREST operations.",
+      "translation": "返回实际用于执行 REST 操作的底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve a representation by doing a GET on the URL . The response is converted and\nstored in an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>.",
+      "translation": "通过向 URL 发送 GET 请求来获取表示。响应被转换并存储在一个 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>` 中。",
+      "count": 2
+    },
+    {
+      "source": "Return the value of the <code>Allow</code> header for the given URI.",
+      "translation": "返回给定 URI 的<code>Allow</code>标头的值。",
+      "count": 2
+    },
+    {
+      "source": "Return the value of the <code>Allow</code> header for the given URL.",
+      "translation": "返回给定 URL 的<code>Allow</code>标头的值。",
+      "count": 2
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URI template, and returns\nthe value of the <code>Location</code> header.",
+      "translation": "通过 POST 将给定对象发送到 URI 模板来创建新资源，并返回 `<code>Location</code>` 头的值。",
+      "count": 2
+    },
+    {
+      "source": "Delete the resources at the specified URI.",
+      "translation": "删除指定 URI 处的资源。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve a representation by doing a GET on the URI template.",
+      "translation": "通过向 URI 模板发送 GET 请求来获取表示。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve a representation by doing a GET on the URL .",
+      "translation": "通过向 URL 发送 GET 请求来获取表示。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve all headers of the resource specified by the URI template.",
+      "translation": "检索由 URI 模板指定的资源的所有标头。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve all headers of the resource specified by the URL.",
+      "translation": "检索由 URL 指定的资源的所有标头。",
+      "count": 2
+    },
+    {
+      "source": "Update a resource by PATCHing the given object to the URI template, and returns the\nrepresentation found in the response.",
+      "translation": "通过 PATCH 将给定对象更新到 URI 模板，并返回响应中找到的表示形式。",
+      "count": 2
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URI template, and returns\nthe representation found in the response.",
+      "translation": "通过 POST 将给定对象发送到 URI 模板来创建新资源，并返回响应中表示的内容。",
+      "count": 2
+    },
+    {
+      "source": "Retrieve a representation by doing a GET on the URL . The response (if any) is\nconverted and returned.",
+      "translation": "通过向 URL 发送 GET 请求来获取表示。响应（如果有）将被转换并返回。",
+      "count": 2
+    },
+    {
+      "source": "<code>restTemplateBuilder</code> - builder used to configure underlying\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>",
+      "translation": "<code>restTemplateBuilder</code> - 用于配置底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的构建器",
+      "count": 2
+    },
+    {
+      "source": "<code>builder</code> - builder used to configure underlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>",
+      "translation": "<code>builder</code> - 用于配置底层<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html\" title=\"class or interface in org.springframework.web.client\"><code>RestTemplate</code></a>的构建器",
+      "count": 2
+    },
+    {
+      "source": "<code>clientSettingsCustomizer</code> - a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html\" title=\"class or interface in java.util.function\"><code>UnaryOperator</code></a> to update the settings",
+      "translation": "<code>clientSettingsCustomizer</code> - 一个用于更新设置的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/UnaryOperator.html\" title=\"class or interface in java.util.function\"><code>UnaryOperator</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForObject(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForObject(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForObject(java.lang.String,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForObject(java.lang.String,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForObject(java.net.URI,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForObject(java.net.URI,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForEntity(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForEntity(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForEntity(java.lang.String,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForEntity(java.lang.String,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getForEntity(java.net.URI,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"getForEntity(java.net.URI,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForObject(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForObject(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForObject(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForObject(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForObject(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForObject(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForEntity(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForEntity(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForEntity(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForEntity(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"postForEntity(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"postForEntity(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"patchForObject(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"patchForObject(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"patchForObject(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"patchForObject(java.lang.String,java.lang.Object,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"patchForObject(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"patchForObject(java.net.URI,java.lang.Object,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.net.URI,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.net.URI,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.lang.String,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(java.net.URI,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(java.net.URI,org.springframework.http.HttpMethod,org.springframework.http.HttpEntity,org.springframework.core.ParameterizedTypeReference)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(org.springframework.http.RequestEntity,java.lang.Class)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(org.springframework.http.RequestEntity,java.lang.Class)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"exchange(org.springframework.http.RequestEntity,org.springframework.core.ParameterizedTypeReference)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"exchange(org.springframework.http.RequestEntity,org.springframework.core.ParameterizedTypeReference)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"execute(java.lang.String,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"execute(java.lang.String,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor,java.lang.Object...)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"execute(java.lang.String,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor,java.util.Map)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"execute(java.lang.String,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor,java.util.Map)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"execute(java.net.URI,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor)-type-param-T\"><code>T</code> - the type of the return value</span>",
+      "translation": "<span id=\"execute(java.net.URI,org.springframework.http.HttpMethod,org.springframework.web.client.RequestCallback,org.springframework.web.client.ResponseExtractor)-type-param-T\"><code>T</code> - 返回值的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>handler</code> - the URI template handler to use",
+      "translation": "<code>handler</code> - 要使用的 URI 模板处理器",
+      "count": 2
+    },
+    {
+      "source": "<code>username</code> - the username",
+      "translation": "<code>username</code> - 用户名",
+      "count": 2
+    },
+    {
+      "source": "<code>redirects</code> - the new redirect settings",
+      "translation": "<code>redirects</code> - 新的重定向设置",
+      "count": 2
+    },
+    {
+      "source": "<code>clientSettings</code> - the new client settings",
+      "translation": "<code>clientSettings</code> - 新的客户端设置",
+      "count": 2
+    },
+    {
+      "source": "Dave Syer, Phillip Webb, Andy Wilkinson, Kristine Jetzke, Dmytro Nosan, Yanming Zhou",
+      "translation": "Dave Syer, Phillip Webb, Andy Wilkinson, Kristine Jetzke, Dmytro Nosan, Yanming Zhou",
+      "count": 2
+    },
+    {
+      "source": "the root URI",
+      "translation": "根 URI",
+      "count": 2
+    },
+    {
+      "source": "the entity",
+      "translation": "实体",
+      "count": 2
+    },
+    {
+      "source": "the restTemplate",
+      "translation": "restTemplate",
+      "count": 2
+    },
+    {
+      "source": "Creates a new <code>TestRestTemplate</code> with the same configuration as this one,\nexcept that it will send basic authorization headers using the given\n<code>username</code> and <code>password</code>.",
+      "translation": "创建一个与当前配置相同的新的<code>TestRestTemplate</code>，但使用给定的<code>username</code>和<code>password</code>发送基本身份验证标头。",
+      "count": 1
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URI template, and returns\nthe response as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>.",
+      "translation": "通过 POST 将给定对象发送到 URI 模板来创建新资源，并返回 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a> 类型的响应。",
+      "count": 1
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URI template, and returns\nthe response as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/HttpEntity.html\" title=\"class or interface in org.springframework.http\"><code>HttpEntity</code></a>.",
+      "translation": "通过 POST 将给定对象发送到 URI 模板来创建新资源，并返回 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/HttpEntity.html\" title=\"class or interface in org.springframework.http\"><code>HttpEntity</code></a> 类型的响应。",
+      "count": 1
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URL, and returns the\nresponse as <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a>.",
+      "translation": "通过 POST 将给定对象发送到 URL 来创建新资源，并返回 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/ResponseEntity.html\" title=\"class or interface in org.springframework.http\"><code>ResponseEntity</code></a> 类型的响应。",
+      "count": 1
+    },
+    {
+      "source": "Configure the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/UriTemplateHandler.html\" title=\"class or interface in org.springframework.web.util\"><code>UriTemplateHandler</code></a> to use to expand URI templates.",
+      "translation": "配置 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/util/UriTemplateHandler.html\" title=\"class or interface in org.springframework.web.util\"><code>UriTemplateHandler</code></a> 以用于扩展 URI 模板。",
+      "count": 1
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URL, and returns the value\nof the <code>Location</code> header.",
+      "translation": "通过 POST 将给定对象发送到该 URL 来创建新资源，并返回 `<code>Location</code>` 标头的值。",
+      "count": 1
+    },
+    {
+      "source": "Options used to customize the Apache HTTP Client.",
+      "translation": "用于自定义 Apache HTTP Client 的选项。",
+      "count": 1
+    },
+    {
+      "source": "Delete the resources at the specified URL.",
+      "translation": "删除指定 URL 处的资源。",
+      "count": 1
+    },
+    {
+      "source": "Retrieve an entity by doing a GET on the specified URL.",
+      "translation": "通过向指定 URL 发送 GET 请求来获取实体。",
+      "count": 1
+    },
+    {
+      "source": "Retrieve a representation by doing a GET on the specified URL.",
+      "translation": "通过向指定 URL 发送 GET 请求来获取表示。",
+      "count": 1
+    },
+    {
+      "source": "Update a resource by PATCHing the given object to the URL, and returns the\nrepresentation found in the response.",
+      "translation": "通过 PATCH 将给定对象更新到 URL，并返回响应中找到的表示形式。",
+      "count": 1
+    },
+    {
+      "source": "Create a new resource by POSTing the given object to the URL, and returns the\nrepresentation found in the response.",
+      "translation": "通过 POST 将给定对象发送到 URL 来创建新资源，并返回响应中找到的表示形式。",
+      "count": 1
+    },
+    {
+      "source": "Create or update a resource by PUTting the given object to the URI.",
+      "translation": "通过 PUT 将给定对象发送到 URI 来创建或更新资源。",
+      "count": 1
+    },
+    {
+      "source": "Creates a new resource by PUTting the given object to URI template.",
+      "translation": "通过向 URI 模板 PUT 给定对象来创建新资源。",
+      "count": 1
+    },
+    {
+      "source": "Creates a new resource by PUTting the given object to URL.",
+      "translation": "通过 PUT 给定对象到 URL 来创建新资源。",
+      "count": 1
+    },
+    {
+      "source": "<code>password</code> - the password",
+      "translation": "<code>password</code> - 密码",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

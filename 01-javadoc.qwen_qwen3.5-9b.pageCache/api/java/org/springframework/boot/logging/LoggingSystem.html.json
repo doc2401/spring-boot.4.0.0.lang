@@ -1,0 +1,196 @@
+{
+  "created_at": "2026-04-13 19:20:57",
+  "updated_at": "2026-04-13 19:20:57",
+  "stats": {
+    "total_entries": 36,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 66,
+    "entries_with_hits": 36,
+    "entries_without_hits": 0,
+    "hit_rate": 1.8333333333333333,
+    "usage_percentage": 0.0036
+  },
+  "items": [
+    {
+      "source": "The value of the <a href=\"#SYSTEM_PROPERTY\"><code>SYSTEM_PROPERTY</code></a> that can be used to indicate that no\n<a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a> should be used.",
+      "translation": "可用于指示不应使用任何 <a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a> 的 <a href=\"#SYSTEM_PROPERTY\"><code>SYSTEM_PROPERTY</code></a> 的值。",
+      "count": 3
+    },
+    {
+      "source": "A System property that can be used to indicate the <a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a> to use.",
+      "translation": "一个可用于指示要使用的<a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>的系统属性。",
+      "count": 3
+    },
+    {
+      "source": "Returns the current configuration for a <a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>'s logger.",
+      "translation": "返回 `<a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>` 的日志记录器的当前配置。",
+      "count": 3
+    },
+    {
+      "source": "Returns a collection of the current configuration for all a <a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>'s\nloggers.",
+      "translation": "返回当前所有 `<a href=\"LoggingSystem.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystem</code></a>` 的日志记录器的配置集合。",
+      "count": 3
+    },
+    {
+      "source": "Returns a set of the <a href=\"LogLevel.html\" title=\"enum class in org.springframework.boot.logging\"><code>LogLevels</code></a> that are actually supported by the\nlogging system.",
+      "translation": "返回一个由日志系统实际支持的<a href=\"LogLevel.html\" title=\"enum class in org.springframework.boot.logging\"><code>LogLevels</code></a>组成的集合。",
+      "count": 3
+    },
+    {
+      "source": "Return the <a href=\"LoggingSystemProperties.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystemProperties</code></a> that should be applied.",
+      "translation": "返回应应用的<a href=\"LoggingSystemProperties.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystemProperties</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Returns a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html\" title=\"class or interface in java.lang\"><code>Runnable</code></a> that can handle shutdown of this logging system when the\nJVM exits. The default implementation returns <code>null</code>, indicating that no\nshutdown is required.",
+      "translation": "返回一个 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html\" title=\"class or interface in java.lang\"><code>Runnable</code></a>`，用于在 JVM 退出时处理此日志系统的关闭。默认实现返回 `<code>null</code>`，表示不需要关闭。",
+      "count": 2
+    },
+    {
+      "source": "The name of an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property used to indicate that a correlation ID\nis expected to be logged at some point.",
+      "translation": "用于指示在某个时间点预期会记录关联 ID 的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性名称。",
+      "count": 2
+    },
+    {
+      "source": "Reset the logging system to be limit output. This method may be called before\n<a href=\"#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\"><code>initialize(LoggingInitializationContext, String, LogFile)</code></a> to reduce\nlogging noise until the system has been fully initialized.",
+      "translation": "重置日志系统以限制输出。此方法可在调用<a href=\"#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)\"><code>initialize(LoggingInitializationContext, String, LogFile)</code></a>之前使用，以减少系统在完全初始化之前的日志噪音。",
+      "count": 2
+    },
+    {
+      "source": "Fully initialize the logging system.",
+      "translation": "完全初始化日志系统。",
+      "count": 2
+    },
+    {
+      "source": "Sets the logging level for a given logger.",
+      "translation": "为指定的记录器设置日志级别。",
+      "count": 2
+    },
+    {
+      "source": "The name used for the root logger. LoggingSystem implementations should ensure that\nthis is the name used to represent the root logger, regardless of the underlying\nimplementation.",
+      "translation": "用于根记录器的名称。LoggingSystem 实现应确保无论底层实现如何，都使用此名称来表示根记录器。",
+      "count": 2
+    },
+    {
+      "source": "Clean up the logging system. The default implementation does nothing. Subclasses\nshould override this method to perform any logging system-specific cleanup.",
+      "translation": "清理日志系统。默认实现不执行任何操作。子类应重写此方法以执行特定于日志系统的清理工作。",
+      "count": 2
+    },
+    {
+      "source": "Detect and return the logging system in use. Supports Logback and Java Logging.",
+      "translation": "检测并返回正在使用的日志系统。支持 Logback 和 Java Logging。",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a> used to obtain value",
+      "translation": "<code>environment</code> - 用于获取值的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a>",
+      "count": 2
+    },
+    {
+      "source": "the <a href=\"LoggingSystemProperties.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystemProperties</code></a> to apply",
+      "translation": "将 `<a href=\"LoggingSystemProperties.html\" title=\"class in org.springframework.boot.logging\"><code>LoggingSystemProperties</code></a>` 应用于配置。",
+      "count": 2
+    },
+    {
+      "source": "<code>loggerName</code> - the name of the logger to set (<code>null</code> can be used for the\nroot logger).",
+      "translation": "<code>loggerName</code> - 要设置的日志记录器名称（对于根日志记录器，可以使用 <code>null</code>）。",
+      "count": 2
+    },
+    {
+      "source": "<code>level</code> - the log level (<code>null</code> can be used to remove any custom level for\nthe logger and use the default configuration instead)",
+      "translation": "<code>level</code> - 日志级别（可使用 <code>null</code> 移除自定义级别，转而使用默认配置）",
+      "count": 2
+    },
+    {
+      "source": "the shutdown handler, or <code>null</code>",
+      "translation": "关闭处理器，或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>loggerName</code> - the name of the logger",
+      "translation": "<code>loggerName</code> - 日志记录器的名称",
+      "count": 2
+    },
+    {
+      "source": "the supported levels",
+      "translation": "支持的级别",
+      "count": 2
+    },
+    {
+      "source": "the current configurations",
+      "translation": "当前配置",
+      "count": 2
+    },
+    {
+      "source": "the current configuration",
+      "translation": "当前配置",
+      "count": 2
+    },
+    {
+      "source": "the logging system",
+      "translation": "日志系统",
+      "count": 2
+    },
+    {
+      "source": "Returns a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html\" title=\"class or interface in java.lang\"><code>Runnable</code></a> that can handle shutdown of this logging system when the\nJVM exits.",
+      "translation": "返回一个 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html\" title=\"class or interface in java.lang\"><code>Runnable</code></a>`，当 JVM 退出时，它可以处理此日志系统的关闭。",
+      "count": 1
+    },
+    {
+      "source": "Common abstraction over logging systems.",
+      "translation": "对日志系统的通用抽象。",
+      "count": 1
+    },
+    {
+      "source": "The name used for the root logger.",
+      "translation": "用于根记录器的名称。",
+      "count": 1
+    },
+    {
+      "source": "Reset the logging system to be limit output.",
+      "translation": "重置日志系统以限制输出。",
+      "count": 1
+    },
+    {
+      "source": "Clean up the logging system.",
+      "translation": "清理日志系统。",
+      "count": 1
+    },
+    {
+      "source": "Detect and return the logging system in use.",
+      "translation": "检测并返回正在使用的日志系统。",
+      "count": 1
+    },
+    {
+      "source": "<code>configLocation</code> - a log configuration location or <code>null</code> if default\ninitialization is required",
+      "translation": "<code>configLocation</code> - 日志配置位置，或需要默认初始化时为`null`",
+      "count": 1
+    },
+    {
+      "source": "<code>logFile</code> - the log output file that should be written or <code>null</code> for\nconsole only output",
+      "translation": "<code>logFile</code> - 要写入的日志输出文件，或仅用于控制台输出的`null`。",
+      "count": 1
+    },
+    {
+      "source": "<code>initializationContext</code> - the logging initialization context",
+      "translation": "<code>initializationContext</code> - 日志初始化上下文",
+      "count": 1
+    },
+    {
+      "source": "<code>classLoader</code> - the classloader",
+      "translation": "<code>classLoader</code> - 类加载器",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Dave Syer, Andy Wilkinson, Ben Hale",
+      "translation": "Phillip Webb, Dave Syer, Andy Wilkinson, Ben Hale",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

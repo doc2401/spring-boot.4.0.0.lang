@@ -1,0 +1,166 @@
+{
+  "created_at": "2026-04-13 08:19:47",
+  "updated_at": "2026-04-13 19:08:35",
+  "stats": {
+    "total_entries": 30,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 66,
+    "entries_with_hits": 30,
+    "entries_without_hits": 0,
+    "hit_rate": 2.2,
+    "usage_percentage": 0.003
+  },
+  "items": [
+    {
+      "source": "Return the <a href=\"AutoConfigurationImportSelector.AutoConfigurationEntry.html\" title=\"class in org.springframework.boot.autoconfigure\"><code>AutoConfigurationImportSelector.AutoConfigurationEntry</code></a> based on the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a>\nof the importing <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Configuration</code></a> class.",
+      "translation": "返回基于导入的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Configuration</code></a> 类的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a> 的 <a href=\"AutoConfigurationImportSelector.AutoConfigurationEntry.html\" title=\"class in org.springframework.boot.autoconfigure\"><code>AutoConfigurationImportSelector.AutoConfigurationEntry</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "<code>metadata</code> - the source metadata",
+      "translation": "<code>metadata</code> - 源元数据",
+      "count": 3
+    },
+    {
+      "source": "Returns the auto-configurations excluded by the\n<code>spring.autoconfigure.exclude</code> property.",
+      "translation": "返回由 `<code>spring.autoconfigure.exclude</code>` 属性排除的自动配置。",
+      "count": 3
+    },
+    {
+      "source": "Return the source annotation class used by the selector.",
+      "translation": "返回选择器使用的源注解类。",
+      "count": 3
+    },
+    {
+      "source": "Return any exclusions that limit the candidate configurations.",
+      "translation": "返回任何限制候选配置的排除项。",
+      "count": 3
+    },
+    {
+      "source": "Handle any invalid excludes that have been specified.",
+      "translation": "处理任何已指定的无效排除项。",
+      "count": 3
+    },
+    {
+      "source": "<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\"><code>DeferredImportSelector</code></a> to handle <a href=\"EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>auto-configuration</code></a>. This class can also be subclassed if a custom variant of\n<a href=\"EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>@EnableAutoConfiguration</code></a> is needed.",
+      "translation": "<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\"><code>DeferredImportSelector</code></a> 用于处理 <a href=\"EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>auto-configuration</code></a>。如果需要自定义的 <a href=\"EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>@EnableAutoConfiguration</code></a> 变体，也可以对该类进行子类化。",
+      "count": 2
+    },
+    {
+      "source": "Return the appropriate <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/AnnotationAttributes.html\" title=\"class or interface in org.springframework.core.annotation\"><code>AnnotationAttributes</code></a> from the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a>. By default this method will return attributes for\n<a href=\"#getAnnotationClass()\"><code>getAnnotationClass()</code></a>.",
+      "translation": "从 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a> 返回适当的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/AnnotationAttributes.html\" title=\"class or interface in org.springframework.core.annotation\"><code>AnnotationAttributes</code></a>。默认情况下，此方法将返回 <a href=\"#getAnnotationClass()\"><code>getAnnotationClass()</code></a> 的属性。",
+      "count": 2
+    },
+    {
+      "source": "Return the auto-configuration class names that should be considered. By default,\nthis method will load candidates using <a href=\"../context/annotation/ImportCandidates.html\" title=\"class in org.springframework.boot.context.annotation\"><code>ImportCandidates</code></a>.",
+      "translation": "返回应考虑的自动配置类名称。默认情况下，此方法将使用<a href=\"../context/annotation/ImportCandidates.html\" title=\"class in org.springframework.boot.context.annotation\"><code>ImportCandidates</code></a>加载候选项。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html#selectImports(org.springframework.core.type.AnnotationMetadata)\" title=\"class or interface in org.springframework.context.annotation\">selectImports</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">ImportSelector</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html#selectImports(org.springframework.core.type.AnnotationMetadata)\" title=\"class or interface in org.springframework.context.annotation\">selectImports</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">ImportSelector</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html#getExclusionFilter()\" title=\"class or interface in org.springframework.context.annotation\">getExclusionFilter</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">ImportSelector</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html#getExclusionFilter()\" title=\"class or interface in org.springframework.context.annotation\">getExclusionFilter</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">ImportSelector</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html#getImportGroup()\" title=\"class or interface in org.springframework.context.annotation\">getImportGroup</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">DeferredImportSelector</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html#getImportGroup()\" title=\"class or interface in org.springframework.context.annotation\">getImportGroup</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/DeferredImportSelector.html\" title=\"class or interface in org.springframework.context.annotation\">DeferredImportSelector</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>annotationMetadata</code> - the annotation metadata of the configuration class",
+      "translation": "<code>annotationMetadata</code> - 配置类的注解元数据",
+      "count": 2
+    },
+    {
+      "source": "<code>invalidExcludes</code> - the list of invalid excludes (will always have at least one\nelement)",
+      "translation": "<code>invalidExcludes</code> - 无效排除项列表（将始终至少包含一个元素）",
+      "count": 2
+    },
+    {
+      "source": "the auto-configurations that should be imported",
+      "translation": "应导入的自动配置",
+      "count": 2
+    },
+    {
+      "source": "annotation attributes",
+      "translation": "注解属性",
+      "count": 2
+    },
+    {
+      "source": "the annotation class",
+      "translation": "注解类",
+      "count": 2
+    },
+    {
+      "source": "a list of candidate configurations",
+      "translation": "候选配置列表",
+      "count": 2
+    },
+    {
+      "source": "exclusions or an empty set",
+      "translation": "排除项或空集",
+      "count": 2
+    },
+    {
+      "source": "excluded auto-configurations",
+      "translation": "排除的自动配置",
+      "count": 2
+    },
+    {
+      "source": "Return the appropriate <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/AnnotationAttributes.html\" title=\"class or interface in org.springframework.core.annotation\"><code>AnnotationAttributes</code></a> from the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a>.",
+      "translation": "从<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/type/AnnotationMetadata.html\" title=\"class or interface in org.springframework.core.type\"><code>AnnotationMetadata</code></a>返回适当的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/AnnotationAttributes.html\" title=\"class or interface in org.springframework.core.annotation\"><code>AnnotationAttributes</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return the auto-configuration class names that should be considered.",
+      "translation": "返回应考虑的自动配置类名称。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactoryAware.html#setBeanFactory(org.springframework.beans.factory.BeanFactory)\" title=\"class or interface in org.springframework.beans.factory\">setBeanFactory</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactoryAware.html\" title=\"class or interface in org.springframework.beans.factory\">BeanFactoryAware</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactoryAware.html#setBeanFactory(org.springframework.beans.factory.BeanFactory)\" title=\"class or interface in org.springframework.beans.factory\">setBeanFactory</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactoryAware.html\" title=\"class or interface in org.springframework.beans.factory\">BeanFactoryAware</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanClassLoaderAware.html#setBeanClassLoader(java.lang.ClassLoader)\" title=\"class or interface in org.springframework.beans.factory\">setBeanClassLoader</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanClassLoaderAware.html\" title=\"class or interface in org.springframework.beans.factory\">BeanClassLoaderAware</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanClassLoaderAware.html#setBeanClassLoader(java.lang.ClassLoader)\" title=\"class or interface in org.springframework.beans.factory\">setBeanClassLoader</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanClassLoaderAware.html\" title=\"class or interface in org.springframework.beans.factory\">BeanClassLoaderAware</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html#setEnvironment(org.springframework.core.env.Environment)\" title=\"class or interface in org.springframework.context\">setEnvironment</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html\" title=\"class or interface in org.springframework.context\">EnvironmentAware</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html#setEnvironment(org.springframework.core.env.Environment)\" title=\"class or interface in org.springframework.context\">setEnvironment</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html\" title=\"class or interface in org.springframework.context\">EnvironmentAware</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ResourceLoaderAware.html#setResourceLoader(org.springframework.core.io.ResourceLoader)\" title=\"class or interface in org.springframework.context\">setResourceLoader</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ResourceLoaderAware.html\" title=\"class or interface in org.springframework.context\">ResourceLoaderAware</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ResourceLoaderAware.html#setResourceLoader(org.springframework.core.io.ResourceLoader)\" title=\"class or interface in org.springframework.context\">setResourceLoader</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ResourceLoaderAware.html\" title=\"class or interface in org.springframework.context\">ResourceLoaderAware</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>metadata</code> - the annotation metadata",
+      "translation": "<code>metadata</code> - 注解元数据",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson, Stephane Nicoll, Madhura Bhave, Moritz Halbritter, Scott Frederick",
+      "translation": "Phillip Webb, Andy Wilkinson, Stephane Nicoll, Madhura Bhave, Moritz Halbritter, Scott Frederick",
+      "count": 2
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 2
+    }
+  ]
+}

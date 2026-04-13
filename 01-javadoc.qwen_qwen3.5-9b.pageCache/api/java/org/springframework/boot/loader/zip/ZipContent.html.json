@@ -1,0 +1,246 @@
+{
+  "created_at": "2026-04-13 19:19:56",
+  "updated_at": "2026-04-13 19:19:56",
+  "stats": {
+    "total_entries": 46,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 94,
+    "entries_with_hits": 46,
+    "entries_without_hits": 0,
+    "hit_rate": 2.0434782608695654,
+    "usage_percentage": 0.0046
+  },
+  "items": [
+    {
+      "source": "Return the entry with the given name, if any.",
+      "translation": "返回给定名称的条目（如果存在）。",
+      "count": 4
+    },
+    {
+      "source": "<code>name</code> - the name of the entry to find",
+      "translation": "<code>name</code> - 要查找的条目名称",
+      "count": 4
+    },
+    {
+      "source": "the entry or <code>null</code>",
+      "translation": "条目或<code>null</code>",
+      "count": 4
+    },
+    {
+      "source": "Get or compute information based on the <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>.",
+      "translation": "根据 `<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>` 获取或计算信息。",
+      "count": 3
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code> - on I/O error",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code>` - 在 I/O 错误时",
+      "count": 3
+    },
+    {
+      "source": "<code>namePrefix</code> - an optional prefix for the name",
+      "translation": "<code>namePrefix</code> - 名称的可选前缀",
+      "count": 3
+    },
+    {
+      "source": "<code>path</code> - the zip path",
+      "translation": "<code>path</code> - 压缩文件路径",
+      "count": 3
+    },
+    {
+      "source": "This implementation does not use <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/Cleaner.Cleanable.html\" title=\"class or interface in java.lang.ref\"><code>Cleaner.Cleanable</code></a> so care must be taken to release\n<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> resources. The <a href=\"#close()\"><code>close()</code></a> method should be called explicitly\nor by try-with-resources. Care must be take to only call close once.",
+      "translation": "此实现未使用<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/Cleaner.Cleanable.html\" title=\"class or interface in java.lang.ref\"><code>Cleaner.Cleanable</code></a>，因此必须小心释放<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>资源。应显式调用<a href=\"#close()\"><code>close()</code></a>方法或通过 try-with-resources 调用。务必确保仅调用一次 close 方法。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> for a typical Spring Boot application JAR will have somewhere in the\nregion of 10,500 entries which should consume about 122K.",
+      "translation": "<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> 对于典型的 Spring Boot 应用程序 JAR，将包含大约 10,500 个条目，占用约 122K。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> results are cached and it is assumed that zip content will not\nchange once loaded. Entries and Strings are not cached and will be recreated on each\naccess which may produce a lot of garbage.",
+      "translation": "<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> 的结果会被缓存，并且假定 zip 内容在加载后不会改变。条目和字符串不会被缓存，每次访问时都会重新创建，这可能会产生大量垃圾对象。",
+      "count": 2
+    },
+    {
+      "source": "To release resources, the <a href=\"#close()\"><code>close()</code></a> method of the data block should be\ncalled explicitly or by try-with-resources.",
+      "translation": "为释放资源，应显式调用数据块的<a href=\"#close()\"><code>close()</code></a>方法，或使用 try-with-resources 语句。",
+      "count": 2
+    },
+    {
+      "source": "The returned data block should not be accessed once <a href=\"#close()\"><code>close()</code></a> has been\ncalled.",
+      "translation": "返回的数据块在调用<a href=\"#close()\"><code>close()</code></a>后不应再被访问。",
+      "count": 2
+    },
+    {
+      "source": "In order to reduce memory consumption, this implementation stores only the hash of the\nentry names, the central directory offsets and the original positions. Entries are\nstored internally in <code>hashCode</code> order so that a binary search can be used to\nquickly find an entry by name or determine if the zip file doesn't have a given entry.",
+      "translation": "为了减少内存消耗，此实现仅存储条目名称的哈希值、中央目录偏移量和原始位置。条目在内部按 `<code>hashCode</code>` 顺序存储，以便使用二分查找快速通过名称查找条目或确定 zip 文件是否包含给定条目。",
+      "count": 2
+    },
+    {
+      "source": "For nested directory zip files, a virtual data block will be created containing\nonly the relevant content.",
+      "translation": "对于嵌套目录的 zip 文件，将创建一个仅包含相关内容的虚拟数据块。",
+      "count": 2
+    },
+    {
+      "source": "Open <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> from the specified path. The resulting <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>\n<em>must</em> be <a href=\"#close()\"><code>closed</code></a> by the caller.",
+      "translation": "从指定路径打开<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>。由此生成的<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a><em>必须</em>由调用者<a href=\"#close()\"><code>closed</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Open nested <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> from the specified path. The resulting\n<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> <em>must</em> be <a href=\"#close()\"><code>closed</code></a> by the caller.",
+      "translation": "从指定路径打开嵌套的<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>。由此产生的<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a><em>必须</em>由调用者<a href=\"#close()\"><code>关闭</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Returns <code>true</code> if this zip contains a jar signature file\n(<code>META-INF/*.DSA</code>).",
+      "translation": "如果此 zip 包含 jar 签名文件（<code>META-INF/*.DSA</code>），则返回 <code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "Open <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> from the specified path.",
+      "translation": "从指定路径打开<code>ZipContent</code><a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\">类</a>。",
+      "count": 2
+    },
+    {
+      "source": "Open nested <a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a> from the specified path.",
+      "translation": "从指定路径打开嵌套的<a href=\"ZipContent.html\" title=\"class in org.springframework.boot.loader.zip\"><code>ZipContent</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Open a <a href=\"DataBlock.html\" title=\"interface in org.springframework.boot.loader.zip\"><code>DataBlock</code></a> containing the raw zip data.",
+      "translation": "打开一个包含原始 zip 数据的 `<a href=\"DataBlock.html\" title=\"interface in org.springframework.boot.loader.zip\"><code>DataBlock</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "Close this jar file, releasing the underlying file if this was the last reference.",
+      "translation": "关闭此 jar 文件，如果这是最后一个引用，则释放底层文件。",
+      "count": 2
+    },
+    {
+      "source": "Return the zip comment, if any.",
+      "translation": "返回 zip 注释（如果有）。",
+      "count": 2
+    },
+    {
+      "source": "Return the entry at the specified index.",
+      "translation": "返回指定索引处的元素。",
+      "count": 2
+    },
+    {
+      "source": "Return the kind of content that was loaded.",
+      "translation": "返回加载的内容类型。",
+      "count": 2
+    },
+    {
+      "source": "Return if an entry with the given name exists.",
+      "translation": "如果存在给定名称的条目，则返回。",
+      "count": 2
+    },
+    {
+      "source": "Returns the number of entries in the ZIP file.",
+      "translation": "返回 ZIP 文件中的条目数量。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IndexOutOfBoundsException.html\" title=\"class or interface in java.lang\">IndexOutOfBoundsException</a></code> - if the index is out of bounds",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IndexOutOfBoundsException.html\" title=\"class or interface in java.lang\">IndexOutOfBoundsException</a></code> - 如果索引超出范围",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getInfo(java.lang.Class,java.util.function.Function)-type-param-I\"><code>I</code> - the info type to get or compute</span>",
+      "translation": "<span id=\"getInfo(java.lang.Class,java.util.function.Function)-type-param-I\"><code>I</code> - 要获取或计算的信息类型</span>",
+      "count": 2
+    },
+    {
+      "source": "the comment or <code>null</code>",
+      "translation": "注释或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>index</code> - the entry index",
+      "translation": "<code>index</code> - 条目索引",
+      "count": 2
+    },
+    {
+      "source": "<code>type</code> - the info type to get or compute",
+      "translation": "<code>type</code> - 要获取或计算的 info 类型",
+      "count": 2
+    },
+    {
+      "source": "<code>function</code> - the function used to compute the information",
+      "translation": "<code>function</code> - 用于计算信息的函数",
+      "count": 2
+    },
+    {
+      "source": "the content kind",
+      "translation": "内容类型",
+      "count": 2
+    },
+    {
+      "source": "the zip data",
+      "translation": "zip 数据",
+      "count": 2
+    },
+    {
+      "source": "the number of entries",
+      "translation": "条目数量",
+      "count": 2
+    },
+    {
+      "source": "the entry",
+      "translation": "条目",
+      "count": 2
+    },
+    {
+      "source": "the computed or existing information",
+      "translation": "计算或现有的信息",
+      "count": 2
+    },
+    {
+      "source": "if the zip contains a jar signature file",
+      "translation": "如果 zip 包含 JAR 签名文件",
+      "count": 2
+    },
+    {
+      "source": "A single zip content entry.",
+      "translation": "单个 zip 内容条目。",
+      "count": 1
+    },
+    {
+      "source": "Zip content kinds.",
+      "translation": "Zip 内容类型。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()\" title=\"class or interface in java.lang\">close</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html\" title=\"class or interface in java.lang\">AutoCloseable</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()\" title=\"class or interface in java.lang\">close</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html\" title=\"class or interface in java.lang\">AutoCloseable</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()\" title=\"class or interface in java.io\">close</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html\" title=\"class or interface in java.io\">Closeable</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()\" title=\"class or interface in java.io\">close</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html\" title=\"class or interface in java.io\">Closeable</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()\" title=\"class or interface in java.lang\">toString</a></code> in class <code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\" title=\"class or interface in java.lang\">Object</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()\" title=\"class or interface in java.lang\">toString</a></code>` 在类 `<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\" title=\"class or interface in java.lang\">Object</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>nestedEntryName</code> - the nested entry name to open",
+      "translation": "<code>nestedEntryName</code> - 要打开的嵌套条目名称",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson",
+      "translation": "Phillip Webb，Andy Wilkinson",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-04-13 08:39:33",
+  "updated_at": "2026-04-13 19:08:52",
+  "stats": {
+    "total_entries": 14,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 38,
+    "entries_with_hits": 14,
+    "entries_without_hits": 0,
+    "hit_rate": 2.7142857142857144,
+    "usage_percentage": 0.0014
+  },
+  "items": [
+    {
+      "source": "Return <a href=\"AvailabilityState.html\" title=\"interface in org.springframework.boot.availability\"><code>AvailabilityState</code></a> information for the application.",
+      "translation": "返回应用程序的<code>AvailabilityState</code><a href=\"AvailabilityState.html\" title=\"interface in org.springframework.boot.availability\">接口</a>信息。",
+      "count": 5
+    },
+    {
+      "source": "<code>stateType</code> - the state type",
+      "translation": "<code>stateType</code> - 状态类型",
+      "count": 4
+    },
+    {
+      "source": "Return the last <a href=\"AvailabilityChangeEvent.html\" title=\"class in org.springframework.boot.availability\"><code>AvailabilityChangeEvent</code></a> received for a given state type.",
+      "translation": "返回给定状态类型的最后一个接收到的<code>AvailabilityChangeEvent</code><a href=\"AvailabilityChangeEvent.html\" title=\"class in org.springframework.boot.availability\">。</a>",
+      "count": 3
+    },
+    {
+      "source": "Return the <a href=\"LivenessState.html\" title=\"enum class in org.springframework.boot.availability\"><code>LivenessState</code></a> of the application.",
+      "translation": "返回应用程序的<a href=\"LivenessState.html\" title=\"enum class in org.springframework.boot.availability\"><code>LivenessState</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Return the <a href=\"ReadinessState.html\" title=\"enum class in org.springframework.boot.availability\"><code>ReadinessState</code></a> of the application.",
+      "translation": "返回应用程序的<a href=\"ReadinessState.html\" title=\"enum class in org.springframework.boot.availability\"><code>ReadinessState</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "the readiness state or <code>null</code> if no event of the given type has been\npublished yet",
+      "translation": "就绪状态，或者如果尚未发布给定类型的事件则为<code>null</code>。",
+      "count": 3
+    },
+    {
+      "source": "the readiness state",
+      "translation": "就绪状态",
+      "count": 3
+    },
+    {
+      "source": "Components can inject this class to get the current state information. To update the\nstate of the application an <a href=\"AvailabilityChangeEvent.html\" title=\"class in org.springframework.boot.availability\"><code>AvailabilityChangeEvent</code></a> should be\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationEventPublisher.html#publishEvent(org.springframework.context.ApplicationEvent)\" title=\"class or interface in org.springframework.context\"><code>published</code></a> to the application context with\ndirectly or through <a href=\"AvailabilityChangeEvent.html#publish(org.springframework.context.ApplicationContext,S)\"><code>AvailabilityChangeEvent.publish(ApplicationContext, S)</code></a>.",
+      "translation": "组件可以注入此类以获取当前状态信息。若要更新应用程序的状态，应<a href=\"AvailabilityChangeEvent.html\" title=\"class in org.springframework.boot.availability\"><code>AvailabilityChangeEvent</code></a>直接发布或通过 <a href=\"AvailabilityChangeEvent.html#publish(org.springframework.context.ApplicationContext,S)\"><code>AvailabilityChangeEvent.publish(ApplicationContext, S)</code></a> 发布到应用程序上下文中。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getState(java.lang.Class,S)-type-param-S\"><code>S</code> - the state type</span>",
+      "translation": "<span id=\"getState(java.lang.Class,S)-type-param-S\"><code>S</code> - 状态类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>defaultState</code> - the default state to return if no event of the given type has\nbeen published yet (must not be <code>null</code>).",
+      "translation": "<code>defaultState</code> - 如果尚未发布给定类型的事件，则返回的默认状态（不能为 <code>null</code>）。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getState(java.lang.Class)-type-param-S\"><code>S</code> - the state type</span>",
+      "translation": "<span id=\"getState(java.lang.Class)-type-param-S\"><code>S</code> - 状态类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getLastChangeEvent(java.lang.Class)-type-param-S\"><code>S</code> - the state type</span>",
+      "translation": "<span id=\"getLastChangeEvent(java.lang.Class)-type-param-S\"><code>S</code> - 状态类型</span>",
+      "count": 2
+    },
+    {
+      "source": "the liveness state",
+      "translation": "存活状态",
+      "count": 2
+    },
+    {
+      "source": "Brian Clozel, Phillip Webb",
+      "translation": "布莱恩·克洛泽尔，菲利普·韦伯",
+      "count": 2
+    }
+  ]
+}

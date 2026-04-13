@@ -1,0 +1,216 @@
+{
+  "created_at": "2026-04-13 09:16:16",
+  "updated_at": "2026-04-13 19:09:46",
+  "stats": {
+    "total_entries": 40,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 107,
+    "entries_with_hits": 40,
+    "entries_without_hits": 0,
+    "hit_rate": 2.675,
+    "usage_percentage": 0.004
+  },
+  "items": [
+    {
+      "source": "<code>args</code> - main application arguments",
+      "translation": "<code>args</code> - 主应用程序参数",
+      "count": 6
+    },
+    {
+      "source": "<code>initializer</code> - the restart initializer",
+      "translation": "<code>initializer</code> - 重启初始化器",
+      "count": 5
+    },
+    {
+      "source": "Initialize restart support.",
+      "translation": "初始化重启支持。",
+      "count": 5
+    },
+    {
+      "source": "Restart the running application.",
+      "translation": "重启正在运行的应用程序。",
+      "count": 5
+    },
+    {
+      "source": "Initialize restart support. See\n<a href=\"#initialize(java.lang.String%5B%5D,boolean,org.springframework.boot.devtools.restart.RestartInitializer)\"><code>initialize(String[], boolean, RestartInitializer)</code></a> for details.",
+      "translation": "初始化重启支持。有关详细信息，请参阅 <a href=\"#initialize(java.lang.String%5B%5D,boolean,org.springframework.boot.devtools.restart.RestartInitializer)\"><code>initialize(String[], boolean, RestartInitializer)</code></a>。",
+      "count": 4
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - in case of errors",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"java.lang 中的类或接口\">Exception</a></code> - 发生错误时",
+      "count": 4
+    },
+    {
+      "source": "Internal constructor to create a new <a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a> instance.",
+      "translation": "内部构造函数，用于创建新的<a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a> 实例。",
+      "count": 3
+    },
+    {
+      "source": "Add additional <a href=\"classloader/ClassLoaderFiles.html\" title=\"class in org.springframework.boot.devtools.restart.classloader\"><code>ClassLoaderFiles</code></a> to be included in the next restart.",
+      "translation": "添加额外的 `<a href=\"classloader/ClassLoaderFiles.html\" title=\"class in org.springframework.boot.devtools.restart.classloader\"><code>ClassLoaderFiles</code></a>` 以便在下次重启时包含在内。",
+      "count": 3
+    },
+    {
+      "source": "Return the initial set of URLs as configured by the <a href=\"RestartInitializer.html\" title=\"interface in org.springframework.boot.devtools.restart\"><code>RestartInitializer</code></a>.",
+      "translation": "返回由 `<a href=\"RestartInitializer.html\" title=\"interface in org.springframework.boot.devtools.restart\"><code>RestartInitializer</code></a>` 配置的初始 URL 集。",
+      "count": 3
+    },
+    {
+      "source": "<code>forceReferenceCleanup</code> - if forcing of soft/weak reference should happen on",
+      "translation": "<code>forceReferenceCleanup</code> - 如果应在...上强制进行软引用/弱引用的清理。",
+      "count": 3
+    },
+    {
+      "source": "Return a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ThreadFactory.html\" title=\"class or interface in java.util.concurrent\"><code>ThreadFactory</code></a> that can be used to create leak safe threads.",
+      "translation": "返回一个可用于创建无泄漏线程的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ThreadFactory.html\" title=\"class or interface in java.util.concurrent\"><code>ThreadFactory</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Add additional URLs to be includes in the next restart.",
+      "translation": "在下次重启时添加要包含的附加 URL。",
+      "count": 3
+    },
+    {
+      "source": "Initialize and disable restart support.",
+      "translation": "初始化并禁用重启支持。",
+      "count": 3
+    },
+    {
+      "source": "Relaunch the application using the specified classloader.",
+      "translation": "使用指定的类加载器重新启动应用程序。",
+      "count": 3
+    },
+    {
+      "source": "Start the application.",
+      "translation": "启动应用程序。",
+      "count": 3
+    },
+    {
+      "source": "Stop the application.",
+      "translation": "停止应用程序。",
+      "count": 3
+    },
+    {
+      "source": "The Restarter should be <a href=\"#initialize(java.lang.String%5B%5D)\"><code>initialized</code></a> early to ensure that\nclasses are loaded multiple times. Mostly the <a href=\"RestartApplicationListener.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>RestartApplicationListener</code></a> can be\nrelied upon to perform initialization, however, you may need to call\n<a href=\"#initialize(java.lang.String%5B%5D)\"><code>initialize(String[])</code></a> directly if your SpringApplication arguments are not\nidentical to your main method arguments.",
+      "translation": "Restarter 应尽早 <a href=\"#initialize(java.lang.String%5B%5D)\"><code>初始化</code></a>，以确保类被多次加载。通常情况下，可以依赖 <a href=\"RestartApplicationListener.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>RestartApplicationListener</code></a> 来执行初始化操作；但是，如果您的 SpringApplication 参数与主方法参数不一致，您可能需要直接调用 <a href=\"#initialize(java.lang.String%5B%5D)\"><code>initialize(String[])</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "By default, applications running in an IDE (i.e. those not packaged as \"uber jars\")\nwill automatically detect URLs that can change. It's also possible to manually\nconfigure URLs or class file updates for remote restart scenarios.",
+      "translation": "默认情况下，在 IDE 中运行的应用程序（即未打包为\"uber jar\"的应用程序）将自动检测可更改的 URL。此外，还可以手动配置远程重启场景中的 URL 或类文件更新。",
+      "count": 2
+    },
+    {
+      "source": "Initialize restart support for the current application. Called automatically by\n<a href=\"RestartApplicationListener.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>RestartApplicationListener</code></a> but can also be called directly if main\napplication arguments are not the same as those passed to the\n<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>.",
+      "translation": "初始化当前应用程序的重启支持。由 <a href=\"RestartApplicationListener.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>RestartApplicationListener</code></a> 自动调用，但如果主应用程序参数与传递给 <a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 的参数不同，也可以直接调用。",
+      "count": 2
+    },
+    {
+      "source": "Return the active <a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a> instance. Cannot be called before\n<a href=\"#initialize(java.lang.String%5B%5D)\"><code>initialization</code></a>.",
+      "translation": "返回活动的 <a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a> 实例。在调用<a href=\"#initialize(java.lang.String%5B%5D)\"><code>initialization</code></a>之前不能执行此操作。",
+      "count": 2
+    },
+    {
+      "source": "Return the active <a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a> instance.",
+      "translation": "返回活动的<a href=\"Restarter.html\" title=\"class in org.springframework.boot.devtools.restart\"><code>Restarter</code></a>实例。",
+      "count": 2
+    },
+    {
+      "source": "Initialize restart support. See\n<a href=\"#initialize(java.lang.String%5B%5D,boolean,org.springframework.boot.devtools.restart.RestartInitializer,boolean)\"><code>initialize(String[], boolean, RestartInitializer, boolean)</code></a> for details.",
+      "translation": "初始化重启支持。有关详细信息，请参阅<a href=\"#initialize(java.lang.String%5B%5D,boolean,org.springframework.boot.devtools.restart.RestartInitializer,boolean)\"><code>initialize(String[], boolean, RestartInitializer, boolean)</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Clear the instance. Primarily provided for tests and not usually used in\napplication code.",
+      "translation": "清除实例。主要用于测试，通常不在应用程序代码中使用。",
+      "count": 2
+    },
+    {
+      "source": "<code>restartOnInitialize</code> - if the restarter should be restarted immediately when\nthe <a href=\"RestartInitializer.html\" title=\"interface in org.springframework.boot.devtools.restart\"><code>RestartInitializer</code></a> returns non <code>null</code> results",
+      "translation": "<code>restartOnInitialize</code> - 如果 Restarter 在<a href=\"RestartInitializer.html\" title=\"interface in org.springframework.boot.devtools.restart\"><code>RestartInitializer</code></a>返回非<code>null</code>结果时应立即重启。",
+      "count": 2
+    },
+    {
+      "source": "<code>forceReferenceCleanup</code> - if soft/weak reference cleanup should be forced",
+      "translation": "<code>forceReferenceCleanup</code> - 如果应强制清理软引用/弱引用",
+      "count": 2
+    },
+    {
+      "source": "<code>urls</code> - the urls to add",
+      "translation": "<code>urls</code> - 要添加的 URL",
+      "count": 2
+    },
+    {
+      "source": "<code>classLoaderFiles</code> - the files to add",
+      "translation": "<code>classLoaderFiles</code> - 要添加的文件",
+      "count": 2
+    },
+    {
+      "source": "<code>failureHandler</code> - a failure handler to deal with application that doesn't start",
+      "translation": "<code>failureHandler</code> - 一个用于处理无法启动的应用程序的故障处理器。",
+      "count": 2
+    },
+    {
+      "source": "<code>failureHandler</code> - a failure handler for application that won't start",
+      "translation": "<code>failureHandler</code> - 用于无法启动的应用程序的故障处理器",
+      "count": 2
+    },
+    {
+      "source": "<code>classLoader</code> - the classloader to use",
+      "translation": "<code>classLoader</code> - 要使用的类加载器",
+      "count": 2
+    },
+    {
+      "source": "any exception that caused the launch to fail or <code>null</code>",
+      "translation": "任何导致启动失败的异常或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the initial URLs or <code>null</code>",
+      "translation": "初始 URL 或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>forceReferenceCleanup</code> - if forcing of soft/weak reference should happen on\neach restart. This will slow down restarts and is intended primarily for testing",
+      "translation": "<code>forceReferenceCleanup</code> - 如果应在每次重启时强制进行软引用/弱引用的清理。这将减慢重启速度，主要用于测试目的。",
+      "count": 2
+    },
+    {
+      "source": "a leak safe thread factory",
+      "translation": "一个防泄漏的线程工厂",
+      "count": 2
+    },
+    {
+      "source": "the restarter",
+      "translation": "重启器",
+      "count": 2
+    },
+    {
+      "source": "Clear the instance.",
+      "translation": "清除实例。",
+      "count": 2
+    },
+    {
+      "source": "Initialize restart support for the current application.",
+      "translation": "初始化当前应用程序的重启支持。",
+      "count": 2
+    },
+    {
+      "source": "<code>thread</code> - the source thread",
+      "translation": "<code>thread</code> - 源线程",
+      "count": 2
+    },
+    {
+      "source": "<code>args</code> - the application arguments",
+      "translation": "<code>args</code> - 应用程序参数",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson",
+      "translation": "Phillip Webb，Andy Wilkinson",
+      "count": 2
+    }
+  ]
+}

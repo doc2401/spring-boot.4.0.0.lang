@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-04-13 08:53:17",
+  "updated_at": "2026-04-13 19:09:15",
+  "stats": {
+    "total_entries": 14,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 32,
+    "entries_with_hits": 14,
+    "entries_without_hits": 0,
+    "hit_rate": 2.2857142857142856,
+    "usage_percentage": 0.0014
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a> instance using the filename\n'application.pid'.",
+      "translation": "使用文件名 'application.pid' 创建一个新的<a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a> instance with a specified file.",
+      "translation": "创建一个指定文件的 `<a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a>` 实例。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a> instance with a specified filename.",
+      "translation": "创建一个指定文件名的新的<a href=\"ApplicationPidFileWriter.html\" title=\"class in org.springframework.boot.context\"><code>ApplicationPidFileWriter</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "Reset the created flag for testing purposes.",
+      "translation": "为测试目的重置已创建的标志。",
+      "count": 3
+    },
+    {
+      "source": "Note: access to the Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> is only possible when the\n<a href=\"#setTriggerEventType(java.lang.Class)\"><code>triggerEventType</code></a> is set to\n<a href=\"event/ApplicationEnvironmentPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationEnvironmentPreparedEvent</code></a>, <a href=\"event/ApplicationReadyEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationReadyEvent</code></a>, or\n<a href=\"event/ApplicationPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationPreparedEvent</code></a>.",
+      "translation": "注意：只有在将 <a href=\"#setTriggerEventType(java.lang.Class)\"><code>triggerEventType</code></a> 设置为 <a href=\"event/ApplicationEnvironmentPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationEnvironmentPreparedEvent</code></a>、<a href=\"event/ApplicationReadyEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationReadyEvent</code></a> 或 <a href=\"event/ApplicationPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationPreparedEvent</code></a> 时，才能访问 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "If PID file can not be created no exception is reported. This behavior can be changed\nby assigning <code>true</code> to System property or environment variable named\n<code>PID_FAIL_ON_WRITE_ERROR</code> (or \"pid_fail_on_write_error\") or to\n<code>spring.pid.fail-on-write-error</code> property in the Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "如果无法创建 PID 文件，则不会报告异常。可以通过将名为<code>PID_FAIL_ON_WRITE_ERROR</code>（或\"pid_fail_on_write_error\"）的系统属性或环境变量设置为<code>true</code>，或将 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>中的<code>spring.pid.fail-on-write-error</code>属性设置为<code>true</code>来更改此行为。",
+      "count": 2
+    },
+    {
+      "source": "Sets the type of application event that will trigger writing of the PID file.\nDefaults to <a href=\"event/ApplicationPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationPreparedEvent</code></a>. NOTE: If you use the\n<a href=\"event/ApplicationStartingEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationStartingEvent</code></a> to trigger\nthe write, you will not be able to specify the PID filename in the Spring\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "设置触发 PID 文件写入的应用程序事件类型。默认为 <a href=\"event/ApplicationPreparedEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationPreparedEvent</code></a>。注意：如果您使用 <a href=\"event/ApplicationStartingEvent.html\" title=\"class in org.springframework.boot.context.event\"><code>ApplicationStartingEvent</code></a> 来触发写入，则无法在 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 中指定 PID 文件名。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html#onApplicationEvent(E)\" title=\"class or interface in org.springframework.context\">onApplicationEvent</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\">ApplicationListener</a>&lt;<a href=\"event/SpringApplicationEvent.html\" title=\"class in org.springframework.boot.context.event\">SpringApplicationEvent</a>&gt;</code>",
+      "translation": "`<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html#onApplicationEvent(E)\" title=\"class or interface in org.springframework.context\">onApplicationEvent</a>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\">ApplicationListener</a>&lt;<a href=\"event/SpringApplicationEvent.html\" title=\"class in org.springframework.boot.context.event\">SpringApplicationEvent</a>&gt;</code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>filename</code> - the name of file containing pid",
+      "translation": "<code>filename</code> - 包含进程 ID (pid) 的文件名",
+      "count": 2
+    },
+    {
+      "source": "<code>file</code> - the file containing pid",
+      "translation": "<code>file</code> - 包含 pid 的文件",
+      "count": 2
+    },
+    {
+      "source": "<code>triggerEventType</code> - the trigger event type",
+      "translation": "<code>triggerEventType</code> - 触发事件类型",
+      "count": 2
+    },
+    {
+      "source": "Jakub Kubrynski, Dave Syer, Phillip Webb, Tomasz Przybyla, Madhura Bhave",
+      "translation": "Jakub Kubrynski, Dave Syer, Phillip Webb, Tomasz Przybyla, Madhura Bhave",
+      "count": 2
+    },
+    {
+      "source": "Sets the type of application event that will trigger writing of the PID file.",
+      "translation": "设置将触发 PID 文件写入的应用程序事件类型。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>` 中",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,991 @@
+{
+  "created_at": "2026-04-12 15:24:15",
+  "updated_at": "2026-04-12 15:24:15",
+  "stats": {
+    "total_entries": 195,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 331,
+    "entries_with_hits": 195,
+    "entries_without_hits": 0,
+    "hit_rate": 1.6974358974358974,
+    "usage_percentage": 0.0195
+  },
+  "items": [
+    {
+      "source": "Spring Data repositories usually extend from the <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a> interfaces.\nIf you use auto-configuration, the <a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">auto-configuration packages</a> are searched for repositories.",
+      "translation": "Spring Data 存储库通常继承自 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a>` 或 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a>` 接口。\n如果您使用自动配置，将在 `<a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">自动配置包</a>` 中搜索存储库。",
+      "count": 3
+    },
+    {
+      "source": "The following example shows a typical Spring Data repository interface definition:",
+      "translation": "以下示例展示了典型的 Spring Data 存储库接口定义：",
+      "count": 3
+    },
+    {
+      "source": "The <code>spring.datasource.jndi-name</code> property can be used as an alternative to the <code>spring.datasource.url</code>, <code>spring.datasource.username</code>, and <code>spring.datasource.password</code> properties to access the <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> from a specific JNDI location.\nFor example, the following section in <code>application.properties</code> shows how you can access a JBoss AS defined <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>:",
+      "translation": "<code>spring.datasource.jndi-name</code> 属性可作为 <code>spring.datasource.url</code>、<code>spring.datasource.username</code> 和 <code>spring.datasource.password</code> 属性的替代方案，用于从特定的 JNDI 位置访问 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>。\n例如，<code>application.properties</code> 中的以下部分展示了如何访问 JBoss AS 定义的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>：",
+      "count": 2
+    },
+    {
+      "source": "When a <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> bean is available, the regular JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> auto-configuration backs off.\nIf you want to retain the JDBC <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> auto-configuration, and are comfortable with the risk of using the blocking JDBC API in a reactive application, add <code>@Import(DataSourceAutoConfiguration.class)</code> on a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> class in your application to re-enable it.",
+      "translation": "当存在 `<a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a>` Bean 时，常规的 JDBC `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置将不会生效。如果您希望保留 JDBC `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 自动配置，并且能够接受在响应式应用程序中使用阻塞式 JDBC API 的风险，请在您的应用程序中的 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a>` 类上添加 <code>@Import(DataSourceAutoConfiguration.class)</code> 以重新启用它。",
+      "count": 2
+    },
+    {
+      "source": "The <a href=\"https://spring.io/projects/spring-framework\">Spring Framework</a> provides extensive support for working with SQL databases, from direct JDBC access using <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/simple/JdbcClient.html\"><code>JdbcClient</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> to complete “object relational mapping” technologies such as Hibernate.\n<a href=\"https://spring.io/projects/spring-data\">Spring Data</a> provides an additional level of functionality: creating <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a> implementations directly from interfaces and using conventions to generate queries from your method names.",
+      "translation": "<a href=\"https://spring.io/projects/spring-framework\">Spring Framework</a> 提供了对 SQL 数据库工作的广泛支持，从使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/simple/JdbcClient.html\"><code>JdbcClient</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> 进行直接 JDBC 访问，到完整的“对象关系映射”技术（如 Hibernate）。\n<a href=\"https://spring.io/projects/spring-data\">Spring Data</a> 提供了额外的功能层级：直接从接口创建 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html\"><code>Repository</code></a> 实现，并利用约定从方法名生成查询。",
+      "count": 2
+    },
+    {
+      "source": "Spring Data JPA repositories support three different modes of bootstrapping: default, deferred, and lazy.\nTo enable deferred or lazy bootstrapping, set the <code>spring.data.jpa.repositories.bootstrap-mode</code> property to <code>deferred</code> or <code>lazy</code> respectively.\nWhen using deferred or lazy bootstrapping, the auto-configured <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html\"><code>EntityManagerFactoryBuilder</code></a> will use the context’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html\"><code>AsyncTaskExecutor</code></a>, if any, as the bootstrap executor.\nIf more than one exists, the one named <code>applicationTaskExecutor</code> will be used.",
+      "translation": "Spring Data JPA 仓库支持三种不同的引导模式：默认、延迟和惰性。\n要启用延迟或惰性引导，请将 <code>spring.data.jpa.repositories.bootstrap-mode</code>` 属性设置为 `<code>deferred</code>` 或 `<code>lazy</code>`。\n在使用延迟或惰性引导时，自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html\"><code>EntityManagerFactoryBuilder</code></a> 将使用上下文中存在的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html\"><code>AsyncTaskExecutor</code></a>（如果有）作为引导执行器。\n如果存在多个，将使用名为 `<code>applicationTaskExecutor</code> 的那个。",
+      "count": 2
+    },
+    {
+      "source": "The fluent API offered by jOOQ is initiated through the <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a> interface.\nSpring Boot auto-configures a <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a> as a Spring Bean and connects it to your application <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>.\nTo use the <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a>, you can inject it, as shown in the following example:",
+      "translation": "jOOQ 提供的流式 API 通过 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a> 接口启动。Spring Boot 自动配置一个 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a> 作为 Spring Bean，并将其连接到您的应用程序 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>。要使用 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a>，您可以像以下示例中那样注入它：",
+      "count": 2
+    },
+    {
+      "source": "See <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html\"><code>DataSourceProperties</code></a> API documentation for more of the supported options.\nThese are the standard options that work regardless of <a href=\"#data.sql.datasource.connection-pool\">the actual implementation</a>.\nIt is also possible to fine-tune implementation-specific settings by using their respective prefix (<code>spring.datasource.hikari.*</code>, <code>spring.datasource.tomcat.*</code>, <code>spring.datasource.dbcp2.*</code>, and <code>spring.datasource.oracleucp.*</code>).\nSee the documentation of the connection pool implementation you are using for more details.",
+      "translation": "有关更多支持的选项，请参阅<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html\"><code>DataSourceProperties</code></a> API 文档。\n这些是标准选项，无论<a href=\"#data.sql.datasource.connection-pool\">实际实现</a>如何均有效。\n此外，还可以使用各自的命名空间前缀（<code>spring.datasource.hikari.*</code>、<code>spring.datasource.tomcat.*</code>、<code>spring.datasource.dbcp2.*</code> 和 <code>spring.datasource.oracleucp.*</code>）来微调特定于实现的设置。\n有关更多详细信息，请参阅您所使用的连接池实现的文档。",
+      "count": 2
+    },
+    {
+      "source": "The Reactive Relational Database Connectivity (<a href=\"https://r2dbc.io\">R2DBC</a>) project brings reactive programming APIs to relational databases.\nR2DBC’s <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/Connection.html\"><code>Connection</code></a> provides a standard method of working with non-blocking database connections.\nConnections are provided by using a <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a>, similar to a <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> with jdbc.",
+      "translation": "Reactive Relational Database Connectivity (<a href=\"https://r2dbc.io\">R2DBC</a>) 项目将响应式编程 API 引入关系型数据库。\nR2DBC 的 <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/Connection.html\"><code>Connection</code></a> 提供了一种处理非阻塞数据库连接的标准方法。\n通过 <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> 提供连接，类似于使用 jdbc 时的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Additional connection pools can always be configured manually, using <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>.\nIf you define your own <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> bean, auto-configuration does not occur.\nThe following connection pools are supported by <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>:",
+      "translation": "可以使用 `<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 手动配置额外的连接池。\n如果您定义了自定义的 `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` Bean，则不会进行自动配置。\n`<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html\"><code>DataSourceBuilder</code></a>` 支持以下连接池：",
+      "count": 2
+    },
+    {
+      "source": "Any classes annotated with <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html\"><code>@Entity</code></a>, <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Embeddable.html\"><code>@Embeddable</code></a>, or <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/MappedSuperclass.html\"><code>@MappedSuperclass</code></a> are considered.\nA typical entity class resembles the following example:",
+      "translation": "任何带有 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html\"><code>@Entity</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Embeddable.html\"><code>@Embeddable</code></a> 或 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/MappedSuperclass.html\"><code>@MappedSuperclass</code></a> 注解的类都会被考虑。\n一个典型的实体类类似于以下示例：",
+      "count": 2
+    },
+    {
+      "source": "More advanced customizations can be achieved by defining your own <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jooq/autoconfigure/DefaultConfigurationCustomizer.html\"><code>DefaultConfigurationCustomizer</code></a> bean that will be invoked prior to creating the <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/Configuration.html\"><code>Configuration</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>.\nThis takes precedence to anything that is applied by the auto-configuration.",
+      "translation": "通过定义自己的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jooq/autoconfigure/DefaultConfigurationCustomizer.html\"><code>DefaultConfigurationCustomizer</code></a> Bean，可以在创建 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/Configuration.html\"><code>Configuration</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a> 之前对其进行调用，从而实现更高级的自定义。\n此自定义优先于自动配置所应用的所有内容。",
+      "count": 2
+    },
+    {
+      "source": "To customize the connections created by a <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a>, that is, set specific parameters that you do not want (or cannot) configure in your central database configuration, you can use a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/r2dbc/autoconfigure/ConnectionFactoryOptionsBuilderCustomizer.html\"><code>ConnectionFactoryOptionsBuilderCustomizer</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>.\nThe following example shows how to manually override the database port while the rest of the options are taken from the application configuration:",
+      "translation": "要自定义由 <a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> 创建的连接，即设置您不想（或无法）在中央数据库配置中配置的特定参数，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/r2dbc/autoconfigure/ConnectionFactoryOptionsBuilderCustomizer.html\"><code>ConnectionFactoryOptionsBuilderCustomizer</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>。以下示例展示了如何手动覆盖数据库端口，同时其余选项取自应用程序配置：",
+      "count": 2
+    },
+    {
+      "source": "Java’s <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> interface provides a standard method of working with database connections.\nTraditionally, a <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> uses a <code>URL</code> along with some credentials to establish a database connection.",
+      "translation": "Java 的 `<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 接口提供了一种与数据库连接进行交互的标准方法。传统上，`<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>` 使用 <code>URL</code> 以及一些凭据来建立数据库连接。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot can auto-configure embedded <a href=\"https://www.h2database.com\">H2</a>, <a href=\"https://hsqldb.org/\">HSQL</a>, and <a href=\"https://db.apache.org/derby/\">Derby</a> databases.\nYou need not provide any connection URLs.\nYou need only include a build dependency to the embedded database that you want to use.\nIf there are multiple embedded databases on the classpath, set the <code>spring.datasource.embedded-database-connection</code> configuration property to control which one is used.\nSetting the property to <code>none</code> disables auto-configuration of an embedded database.",
+      "translation": "Spring Boot 可以自动配置嵌入式 <a href=\"https://www.h2database.com\">H2</a>、<a href=\"https://hsqldb.org/\">HSQL</a> 和 <a href=\"https://db.apache.org/derby/\">Derby</a> 数据库。\n您无需提供任何连接 URL。\n您只需包含所需的嵌入式数据库的构建依赖项。\n如果类路径上有多个嵌入式数据库，请设置 <code>spring.datasource.embedded-database-connection</code> 配置属性以控制使用哪一个。\n将该属性设置为 <code>none</code> 可禁用嵌入式数据库的自动配置。",
+      "count": 2
+    },
+    {
+      "source": "If you are running a web application, Spring Boot by default registers <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/support/OpenEntityManagerInViewInterceptor.html\"><code>OpenEntityManagerInViewInterceptor</code></a> to apply the “Open EntityManager in View” pattern, to allow for lazy loading in web views.\nIf you do not want this behavior, you should set <code>spring.jpa.open-in-view</code> to <code>false</code> in your <code>application.properties</code>.",
+      "translation": "如果您正在运行 Web 应用程序，Spring Boot 默认会注册<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/support/OpenEntityManagerInViewInterceptor.html\"><code>OpenEntityManagerInViewInterceptor</code></a>以应用“在视图中打开 EntityManager”模式，从而允许在 Web 视图中进行延迟加载。\n如果您不希望有此行为，请在您的<code>application.properties</code>中将<code>spring.jpa.open-in-view</code>设置为<code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot will auto-configure Spring Data’s JDBC repositories when the necessary dependencies are on the classpath.\nThey can be added to your project with a single dependency on <code>spring-boot-starter-data-jdbc</code>.\nIf necessary, you can take control of Spring Data JDBC’s configuration by adding the <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/config/EnableJdbcRepositories.html\"><code>@EnableJdbcRepositories</code></a> annotation or an <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/config/AbstractJdbcConfiguration.html\"><code>AbstractJdbcConfiguration</code></a> subclass to your application.",
+      "translation": "当类路径中存在必要的依赖时，Spring Boot 会自动配置 Spring Data 的 JDBC 存储库。您可以仅通过添加对 <code>spring-boot-starter-data-jdbc</code> 的单个依赖项将其添加到项目中。如有必要，您可以通过向应用程序添加 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/config/EnableJdbcRepositories.html\"><code>@EnableJdbcRepositories</code></a> 注解或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/config/AbstractJdbcConfiguration.html\"><code>AbstractJdbcConfiguration</code></a> 子类来接管 Spring Data JDBC 的配置。",
+      "count": 2
+    },
+    {
+      "source": "In order to use jOOQ type-safe queries, you need to generate Java classes from your database schema.\nYou can follow the instructions in the <a href=\"https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3\">jOOQ user manual</a>.\nIf you use the <code>jooq-codegen-maven</code> plugin and you also use the <code>spring-boot-starter-parent</code> “parent POM”, you can safely omit the plugin’s <code>&lt;version&gt;</code> tag.\nYou can also use Spring Boot-defined version variables (such as <code>h2.version</code>) to declare the plugin’s database dependency.\nThe following listing shows an example:",
+      "translation": "为了使用 jOOQ 的类型安全查询，您需要从数据库架构生成 Java 类。您可以遵循<a href=\"https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3\">jOOQ 用户手册</a>中的说明。如果您使用 <code>jooq-codegen-maven</code>` 插件，并且也使用了 `<code>spring-boot-starter-parent</code>`“父 POM\"，则可以安全地省略插件的`<code>&lt;version&gt;</code>`标签。您还可以使用 Spring Boot 定义版本变量（例如 `<code>h2.version</code>）来声明插件的数据库依赖项。以下示例展示了这一点：",
+      "count": 2
+    },
+    {
+      "source": "Spring’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> classes are auto-configured, and you can autowire them directly into your own beans, as shown in the following example:",
+      "translation": "Spring 的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> 类已自动配置，您可以像以下示例中所示那样直接将它们注入到自己的 Bean 中：",
+      "count": 2
+    },
+    {
+      "source": "Spring’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/simple/JdbcClient.html\"><code>JdbcClient</code></a> is auto-configured based on the presence of a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a>.\nYou can inject it directly in your own beans as well, as shown in the following example:",
+      "translation": "Spring 的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/simple/JdbcClient.html\"><code>JdbcClient</code></a> 会根据 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> 的存在进行自动配置。\n您也可以像以下示例中那样，直接将其注入到自己的 Bean 中：",
+      "count": 2
+    },
+    {
+      "source": "When using deferred or lazy bootstrapping, make sure to defer any access to the JPA infrastructure after the application context bootstrap phase.\nYou can use <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/SmartInitializingSingleton.html\"><code>SmartInitializingSingleton</code></a> to invoke any initialization that requires the JPA infrastructure.\nFor JPA components (such as converters) that are created as Spring beans, use <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/ObjectProvider.html\"><code>ObjectProvider</code></a> to delay the resolution of dependencies, if any.",
+      "translation": "在使用延迟或懒式引导时，请确保在应用程序上下文引导阶段之后推迟对 JPA 基础设施的任何访问。您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/SmartInitializingSingleton.html\"><code>SmartInitializingSingleton</code></a> 来调用任何需要 JPA 基础设施的初始化操作。对于作为 Spring Bean 创建的 JPA 组件（例如转换器），请使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/ObjectProvider.html\"><code>ObjectProvider</code></a> 来推迟依赖项的解析（如果有）。",
+      "count": 2
+    },
+    {
+      "source": "Spring Data includes repository support for JDBC and will automatically generate SQL for the methods on <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a>.\nFor more advanced queries, a <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/query/Query.html\"><code>@Query</code></a> annotation is provided.",
+      "translation": "Spring Data 包含对 JDBC 的存储库支持，并会自动为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/CrudRepository.html\"><code>CrudRepository</code></a> 上的方法生成 SQL。对于更高级的查询，提供了 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jdbc/docs/4.0.x/api/org/springframework/data/jdbc/repository/query/Query.html\"><code>@Query</code></a> 注解。",
+      "count": 2
+    },
+    {
+      "source": "You can also create your own <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/Configuration.html\"><code>Configuration</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a> if you want to take complete control of the jOOQ configuration.",
+      "translation": "如果您想完全控制 jOOQ 配置，您也可以创建自己的 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/Configuration.html\"><code>Configuration</code></a> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> configuration is controlled by external configuration properties in <code>spring.r2dbc.*</code>.\nFor example, you might declare the following section in <code>application.properties</code>:",
+      "translation": "<a class=\"apiref\" href=\"https://r2dbc.io/spec/1.0.0.RELEASE/api/io/r2dbc/spi/ConnectionFactory.html\"><code>ConnectionFactory</code></a> 的配置由 <code>spring.r2dbc.*</code> 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：",
+      "count": 2
+    },
+    {
+      "source": "If you rely on auto-configuration to create the underlying <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a>, any customization using <code>spring.jdbc.template.*</code> properties is taken into account in the client as well.",
+      "translation": "如果您依赖自动配置来创建底层的<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a>，则使用<code>spring.jdbc.template.*</code>属性进行的任何自定义也会在客户端中予以考虑。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://spring.io/projects/spring-data-jpa\">Spring Data JPA</a> repositories are interfaces that you can define to access data.\nJPA queries are created automatically from your method names.\nFor example, a <code>CityRepository</code> interface might declare a <code>findAllByState(String state)</code> method to find all the cities in a given state.",
+      "translation": "<a href=\"https://spring.io/projects/spring-data-jpa\">Spring Data JPA</a> 仓库是您可以定义的接口，用于访问数据。\nJPA 查询会根据您的方法名自动创建。\n例如，一个 <code>CityRepository</code> 接口可能会声明一个 <code>findAllByState(String state)</code> 方法来查找给定州中的所有城市。",
+      "count": 2
+    },
+    {
+      "source": "By default, JPA databases are automatically created <strong>only</strong> if you use an embedded database (H2, HSQL, or Derby).\nYou can explicitly configure JPA settings by using <code>spring.jpa.*</code> properties.\nFor example, to create and drop tables you can add the following line to your <code>application.properties</code>:",
+      "translation": "默认情况下，仅在使用嵌入式数据库（H2、HSQL 或 Derby）时才会自动创建 JPA 数据库。\n您可以使用 <code>spring.jpa.*</code>` 属性显式配置 JPA 设置。\n例如，若要创建并删除表，您可以在 `<code>application.properties</code> 中添加以下行：",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"https://spring.io/projects/spring-data-r2dbc\">Spring Data R2DBC</a> repositories are interfaces that you can define to access data.\nQueries are created automatically from your method names.\nFor example, a <code>CityRepository</code> interface might declare a <code>findAllByState(String state)</code> method to find all the cities in a given state.",
+      "translation": "<a href=\"https://spring.io/projects/spring-data-r2dbc\">Spring Data R2DBC</a> 仓库是您可以定义的接口，用于访问数据。查询会根据您的方法名自动创建。例如，一个 <code>CityRepository</code> 接口可能会声明一个 <code>findAllByState(String state)</code> 方法来查找给定州中的所有城市。",
+      "count": 2
+    },
+    {
+      "source": "If you are using this feature in your tests, you may notice that the same database is reused by your whole test suite regardless of the number of application contexts that you use.\nIf you want to make sure that each context has a separate embedded database, you should set <code>spring.datasource.generate-unique-name</code> to <code>true</code>.",
+      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.datasource.generate-unique-name</code>` 设置为 `<code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "Production database connections can also be auto-configured by using a pooling <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>.",
+      "translation": "生产数据库连接也可以通过使用池化<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>进行自动配置。",
+      "count": 2
+    },
+    {
+      "source": "DataSource configuration is controlled by external configuration properties in <code>spring.datasource.*</code>.\nFor example, you might declare the following section in <code>application.properties</code>:",
+      "translation": "数据源配置由 <code>spring.datasource.*</code>` 中的外部配置属性控制。例如，您可以在 `<code>application.properties</code> 中声明以下部分：",
+      "count": 2
+    },
+    {
+      "source": "Otherwise, if the Tomcat pooling <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> is available, we use it.",
+      "translation": "否则，如果 Tomcat 池的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 可用，我们将使用它。",
+      "count": 2
+    },
+    {
+      "source": "You can bypass that algorithm completely and specify the connection pool to use by setting the <code>spring.datasource.type</code> property.\nThis is especially important if you run your application in a Tomcat container, as <code>tomcat-jdbc</code> is provided by default.",
+      "translation": "您可以完全绕过该算法，通过设置 <code>spring.datasource.type</code> 属性来指定要使用的连接池。如果您在 Tomcat 容器中运行应用程序，这一点尤为重要，因为 `tomcat-jdbc` 默认已提供。",
+      "count": 2
+    },
+    {
+      "source": "Tomcat pooling <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>",
+      "translation": "Tomcat 连接池<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>",
+      "count": 2
+    },
+    {
+      "source": "Spring Framework’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/datasource/SimpleDriverDataSource.html\"><code>SimpleDriverDataSource</code></a>",
+      "translation": "Spring Framework 的<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/datasource/SimpleDriverDataSource.html\"><code>SimpleDriverDataSource</code></a>",
+      "count": 2
+    },
+    {
+      "source": "If tuning of SQL exceptions is required, you can define your own <code>SQLExceptionTranslator</code> bean so that it is associated with the auto-configured <code>JdbcTemplate</code>.",
+      "translation": "如果需要调整 SQL 异常，您可以定义自己的 <code>SQLExceptionTranslator`</code> Bean，以便将其与自动配置的 `<code>JdbcTemplate</code> 关联。",
+      "count": 2
+    },
+    {
+      "source": "Traditionally, JPA “Entity” classes are specified in a <code>persistence.xml</code> file.\nWith Spring Boot, this file is not necessary and “Entity Scanning” is used instead.\nBy default the <a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">auto-configuration packages</a> are scanned.",
+      "translation": "传统上，JPA“实体”类是在 <code>persistence.xml</code> 文件中指定的。使用 Spring Boot 时，该文件不再必要，而是采用“实体扫描”。默认情况下，会扫描<a class=\"xref page\" href=\"../using/auto-configuration.html#using.auto-configuration.packages\">自动配置包</a>。",
+      "count": 2
+    },
+    {
+      "source": "For more complex queries, you can annotate your method with Spring Data’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jpa/docs/4.0.x/api/org/springframework/data/jpa/repository/Query.html\"><code>Query</code></a> annotation.",
+      "translation": "对于更复杂的查询，您可以使用 Spring Data 的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jpa/docs/4.0.x/api/org/springframework/data/jpa/repository/Query.html\"><code>Query</code></a> 注解来标注您的方法。",
+      "count": 2
+    },
+    {
+      "source": "To use Spring Data Envers, make sure your repository extends from <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/history/RevisionRepository.html\"><code>RevisionRepository</code></a> as shown in the following example:",
+      "translation": "要使用 Spring Data Envers，请确保您的仓库继承自 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/history/RevisionRepository.html\"><code>RevisionRepository</code></a>，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "The line in the preceding example passes a value of <code>true</code> for the <code>hibernate.globally_quoted_identifiers</code> property to the Hibernate entity manager.",
+      "translation": "前例中的行向 Hibernate 实体管理器传递了值为 <code>true</code>` 的 `<code>hibernate.globally_quoted_identifiers</code> 属性。",
+      "count": 2
+    },
+    {
+      "source": "By default, the DDL execution (or validation) is deferred until the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> has started.",
+      "translation": "默认情况下，DDL 执行（或验证）会推迟到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 启动之后进行。",
+      "count": 2
+    },
+    {
+      "source": "The <a href=\"https://www.h2database.com\">H2 database</a> provides a <a href=\"https://www.h2database.com/html/quickstart.html#h2_console\">browser-based console</a> that Spring Boot can auto-configure for you.\nThe console is auto-configured when the following conditions are met:",
+      "translation": "H2 数据库提供了一个基于浏览器的控制台，Spring Boot 可以为您自动配置该控制台。当满足以下条件时，控制台将被自动配置：",
+      "count": 2
+    },
+    {
+      "source": "By default, the console is available at <code>/h2-console</code>.\nYou can customize the console’s path by using the <code>spring.h2.console.path</code> property.",
+      "translation": "默认情况下，控制台位于 <code>/h2-console</code>。您可以通过使用 `spring.h2.console.path` 属性来自定义控制台的路径。",
+      "count": 2
+    },
+    {
+      "source": "set the header <code>X-Frame-Options</code> to <code>SAMEORIGIN</code> on responses from the console.",
+      "translation": "在来自控制台的响应中，将标头 <code>X-Frame-Options</code>` 设置为 `<code>SAMEORIGIN</code>。",
+      "count": 2
+    },
+    {
+      "source": "More information on <a href=\"https://docs.spring.io/spring-security/reference/7.0/features/exploits/csrf.html\">CSRF</a> and the header <a href=\"https://docs.spring.io/spring-security/reference/7.0/features/exploits/headers.html#headers-frame-options\">X-Frame-Options</a> can be found in the Spring Security Reference Guide.",
+      "translation": "有关 CSRF 和标头 X-Frame-Options 的更多信息，请参阅 Spring Security 参考指南。",
+      "count": 2
+    },
+    {
+      "source": "In simple setups, a <a class=\"apiref\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html\"><code>SecurityFilterChain</code></a> like the following can be used:",
+      "translation": "在简单的配置中，可以使用如下所示的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html\"><code>SecurityFilterChain</code></a>：",
+      "count": 2
+    },
+    {
+      "source": "jOOQ Object Oriented Querying (<a href=\"https://www.jooq.org/\">jOOQ</a>) is a popular product from <a href=\"https://www.datageekery.com/\">Data Geekery</a> which generates Java code from your database and lets you build type-safe SQL queries through its fluent API.\nBoth the commercial and open source editions can be used with Spring Boot.",
+      "translation": "jOOQ 面向对象查询 (<a href=\"https://www.jooq.org/\">jOOQ</a>) 是 <a href=\"https://www.datageekery.com/\">Data Geekery</a> 的一款流行产品，它可以从您的数据库生成 Java 代码，并通过其流式 API 构建类型安全的 SQL 查询。商业版和开源版均可与 Spring Boot 配合使用。",
+      "count": 2
+    },
+    {
+      "source": "You can then use the <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a> to construct your queries, as shown in the following example:",
+      "translation": "然后，您可以使用<a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a>来构建查询，如下面的示例所示：",
+      "count": 2
+    },
+    {
+      "source": "Unless the <code>spring.jooq.sql-dialect</code> property has been configured, Spring Boot determines the SQL dialect to use for your datasource.\nIf Spring Boot could not detect the dialect, it uses <code>DEFAULT</code>.",
+      "translation": "除非已配置 <code>spring.jooq.sql-dialect</code>` 属性，否则 Spring Boot 将确定用于数据源的 SQL 方言。如果 Spring Boot 无法检测到方言，它将使用 `<code>DEFAULT</code>。",
+      "count": 2
+    },
+    {
+      "source": "If you are using this feature in your tests, you may notice that the same database is reused by your whole test suite regardless of the number of application contexts that you use.\nIf you want to make sure that each context has a separate embedded database, you should set <code>spring.r2dbc.generate-unique-name</code> to <code>true</code>.",
+      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.r2dbc.generate-unique-name</code>` 设置为 `<code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html\"><code>DatabaseClient</code></a> bean is auto-configured, and you can autowire it directly into your own beans, as shown in the following example:",
+      "translation": "`<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/r2dbc/core/DatabaseClient.html\"><code>DatabaseClient</code></a>` 自动配置了一个 Bean，您可以像以下示例中那样直接将其注入到自己的 Bean 中：",
+      "count": 2
+    },
+    {
+      "source": "For more complex queries, you can annotate your method with Spring Data’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/r2dbc/docs/4.0.x/api/org/springframework/data/r2dbc/repository/Query.html\"><code>@Query</code></a> annotation.",
+      "translation": "对于更复杂的查询，您可以使用 Spring Data 的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/r2dbc/docs/4.0.x/api/org/springframework/data/r2dbc/repository/Query.html\"><code>@Query</code></a> 注解来标注您的方法。",
+      "count": 2
+    },
+    {
+      "source": "For instance, if you use the <a href=\"https://tomcat.apache.org/tomcat-11.0-doc/jdbc-pool.html#Common_Attributes\">Tomcat connection pool</a>, you could customize many additional settings, as shown in the following example:",
+      "translation": "例如，如果您使用<a href=\"https://tomcat.apache.org/tomcat-11.0-doc/jdbc-pool.html#Common_Attributes\">Tomcat 连接池</a>，则可以自定义许多其他设置，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "We prefer <a href=\"https://github.com/brettwooldridge/HikariCP\">HikariCP</a> for its performance and concurrency.\nIf HikariCP is available, we always choose it.",
+      "translation": "我们首选<a href=\"https://github.com/brettwooldridge/HikariCP\">HikariCP</a>，因其性能和并发能力出色。如果 HikariCP 可用，我们始终选择它。",
+      "count": 2
+    },
+    {
+      "source": "Otherwise, if <a href=\"https://commons.apache.org/proper/commons-dbcp/\">Commons DBCP2</a> is available, we use it.",
+      "translation": "否则，如果可用<a href=\"https://commons.apache.org/proper/commons-dbcp/\">Commons DBCP2</a>，我们将使用它。",
+      "count": 2
+    },
+    {
+      "source": "Oracle UCP &amp; <code>OracleDataSource</code>",
+      "translation": "Oracle UCP 与<code>OracleDataSource</code>",
+      "count": 2
+    },
+    {
+      "source": "You can customize some properties of the template by using the <code>spring.jdbc.template.*</code> properties, as shown in the following example:",
+      "translation": "您可以使用 <code>spring.jdbc.template.*</code> 属性来自定义模板的某些属性，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "The Java Persistence API is a standard technology that lets you “map” objects to relational databases.\nThe <code>spring-boot-starter-data-jpa</code> POM provides a quick way to get started.\nIt provides the following key dependencies:",
+      "translation": "Java Persistence API 是一项标准技术，可让您将对象“映射”到关系型数据库。\n`spring-boot-starter-data-jpa` POM 提供了一种快速入门的方式。\n它提供了以下关键依赖项：",
+      "count": 2
+    },
+    {
+      "source": "If <a href=\"https://spring.io/projects/spring-data-envers\">Spring Data Envers</a> is available, JPA repositories are auto-configured to support typical Envers queries.",
+      "translation": "如果可用<a href=\"https://spring.io/projects/spring-data-envers\">Spring Data Envers</a>，则 JPA 存储库将自动配置以支持典型的 Envers 查询。",
+      "count": 2
+    },
+    {
+      "source": "<code>com.h2database:h2</code> is on the classpath.",
+      "translation": "<code>com.h2database:h2</code> 在类路径中。",
+      "count": 2
+    },
+    {
+      "source": "You are using <a class=\"xref page\" href=\"../using/devtools.html\">Spring Boot’s developer tools</a>.",
+      "translation": "您正在使用<a class=\"xref page\" href=\"../using/devtools.html\">Spring Boot 的开发者工具</a>。",
+      "count": 2
+    },
+    {
+      "source": "Similarly to <a href=\"#data.sql.datasource.embedded\">the JDBC support</a>, Spring Boot can automatically configure an embedded database for reactive usage.\nYou need not provide any connection URLs.\nYou need only include a build dependency to the embedded database that you want to use, as shown in the following example:",
+      "translation": "与<a href=\"#data.sql.datasource.embedded\">JDBC 支持</a>类似，Spring Boot 可以自动配置嵌入式数据库以用于响应式使用。您无需提供任何连接 URL。您只需包含所需的嵌入式数据库的构建依赖项，如下例所示：",
+      "count": 2
+    },
+    {
+      "source": "It is often convenient to develop applications by using an in-memory embedded database.\nObviously, in-memory databases do not provide persistent storage.\nYou need to populate your database when your application starts and be prepared to throw away data when your application ends.",
+      "translation": "使用内存嵌入式数据库开发应用程序通常很方便。显然，内存数据库不提供持久化存储。您需要启动应用程序时填充数据库，并在应用程序结束时准备好丢弃数据。",
+      "count": 2
+    },
+    {
+      "source": "For example, the typical POM dependencies would be as follows:",
+      "translation": "例如，典型的 POM 依赖项如下所示：",
+      "count": 2
+    },
+    {
+      "source": "This will set the pool to wait 10000ms before throwing an exception if no connection is available, limit the maximum number of connections to 50 and validate the connection before borrowing it from the pool.",
+      "translation": "这将设置池在无法获取连接时等待 10000ms 后抛出异常，将最大连接数限制为 50，并在从池中借用连接之前验证该连接。",
+      "count": 2
+    },
+    {
+      "source": "Spring Boot uses the following algorithm for choosing a specific implementation:",
+      "translation": "Spring Boot 使用以下算法来选择具体的实现：",
+      "count": 2
+    },
+    {
+      "source": "If none of HikariCP, Tomcat, and DBCP2 are available and if Oracle UCP is available, we use it.",
+      "translation": "如果 HikariCP、Tomcat 和 DBCP2 均不可用，且 Oracle UCP 可用，则使用它。",
+      "count": 2
+    },
+    {
+      "source": "Commons DBCP2",
+      "translation": "Commons DBCP2",
+      "count": 2
+    },
+    {
+      "source": "If you deploy your Spring Boot application to an Application Server, you might want to configure and manage your DataSource by using your Application Server’s built-in features and access it by using JNDI.",
+      "translation": "如果您将 Spring Boot 应用程序部署到应用服务器，您可能希望使用应用服务器的内置功能配置和管理您的 DataSource，并通过 JNDI 访问它。",
+      "count": 2
+    },
+    {
+      "source": "Hibernate: One of the most popular JPA implementations.",
+      "translation": "Hibernate：最受欢迎的 JPA 实现之一。",
+      "count": 2
+    },
+    {
+      "source": "Spring Data JPA: Helps you to implement JPA-based repositories.",
+      "translation": "Spring Data JPA：帮助您实现基于 JPA 的存储库。",
+      "count": 2
+    },
+    {
+      "source": "Spring ORM: Core ORM support from the Spring Framework.",
+      "translation": "Spring ORM：来自 Spring 框架的核心 ORM 支持。",
+      "count": 2
+    },
+    {
+      "source": "You are developing a servlet-based web application.",
+      "translation": "您正在开发一个基于 Servlet 的 Web 应用程序。",
+      "count": 2
+    },
+    {
+      "source": "H2 Console uses frames and, as it is intended for development only, does not implement CSRF protection measures.\nIf your application uses Spring Security, you need to configure it to",
+      "translation": "H2 控制台使用框架，且仅用于开发目的，因此未实现 CSRF 保护机制。如果您的应用程序使用了 Spring Security，您需要对其进行配置以",
+      "count": 2
+    },
+    {
+      "source": "disable CSRF protection for requests against the console,",
+      "translation": "禁用针对控制台的请求的 CSRF 保护，",
+      "count": 2
+    },
+    {
+      "source": "The following examples show how to set some PostgreSQL connection options:",
+      "translation": "以下示例展示了如何设置一些 PostgreSQL 连接选项：",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/data/sql.adoc\">\n          <svg height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z\"></path></svg>\n          Edit this Page\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg height=\"512px\" id=\"Layer_1\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"512px\" xmlns=\"http://www.w3.org/2000/svg\"><style type=\"text/css\">\n              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class=\"st0\" d=\"M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z\"></path></g></svg>\n          GitHub Project\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg viewBox=\"0 0 384 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z\"></path></svg>\n          Stack Overflow\n        </a>",
+      "translation": "<a href=\"file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/data/sql.adoc\">\n          <svg height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z\"></path></svg>\n          编辑此页面\n        </a>\n        <a href=\"https://github.com/doc2401/spring-boot\" title=\"GitHub\">\n          <svg height=\"512px\" id=\"Layer_1\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"512px\" xmlns=\"http://www.w3.org/2000/svg\"><style type=\"text/css\">\n              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class=\"st0\" d=\"M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z\"></path></g></svg>\n          GitHub 项目\n        </a>\n        <a href=\"https://stackoverflow.com/tags/spring-boot\">\n          <svg viewBox=\"0 0 384 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z\"></path></svg>\n          Stack Overflow\n        </a>",
+      "count": 2
+    },
+    {
+      "source": "<nav aria-label=\"breadcrumbs\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"Copy versioned URL\"></li>\n      <li><a href=\"../../index.html\">Spring Boot</a></li>\n      <li><a href=\"../index.html\">Reference</a></li>\n      <li><a href=\"index.html\">Data</a></li>\n      <li><a href=\"sql.html\">SQL Databases</a></li>\n    </ul>\n  </nav>",
+      "translation": "<nav aria-label=\"面包屑\" class=\"breadcrumbs\">\n    <ul>\n      <li id=\"copy-url\" title=\"复制带版本号的 URL\"></li>\n      <li><a href=\"../../index.html\">Spring Boot</a></li>\n      <li><a href=\"../index.html\">参考</a></li>\n      <li><a href=\"index.html\">数据</a></li>\n      <li><a href=\"sql.html\">SQL 数据库</a></li>\n    </ul>\n  </nav>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> reuses the same <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> instance behind the scenes.\nIf more than one <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> is defined and no primary candidate exists, the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> is not auto-configured.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a> 在幕后重用同一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> 实例。\n如果定义了多个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html\"><code>JdbcTemplate</code></a> 且不存在主要候选项，则不会自动配置 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.html\"><code>NamedParameterJdbcTemplate</code></a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nFor a pooling <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> to be created, we need to be able to verify that a valid <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Driver.html\"><code>Driver</code></a> class is available, so we check for that before doing anything.\nIn other words, if you set <code>spring.datasource.driver-class-name=com.mysql.jdbc.Driver</code>, then that class has to be loadable.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n若要创建连接池 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a>，我们需要能够验证有效的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Driver.html\"><code>Driver</code></a> 类是否可用，因此在执行任何操作之前会进行检查。\n换句话说，如果您设置 <code>spring.datasource.driver-class-name=com.mysql.jdbc.Driver</code>，则该类的必须可加载。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nWe do not go into too many details of JPA or <a href=\"https://spring.io/projects/spring-data\">Spring Data</a> here.\nYou can follow the <a href=\"https://spring.io/guides/gs/accessing-data-jpa/\">Accessing Data with JPA</a> guide from <a class=\"bare\" href=\"https://spring.io\">spring.io</a> and read the <a href=\"https://spring.io/projects/spring-data-jpa\">Spring Data JPA</a> and <a href=\"https://hibernate.org/orm/documentation/\">Hibernate</a> reference documentation.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n此处我们不过多介绍 JPA 或 <a href=\"https://spring.io/projects/spring-data\">Spring Data</a> 的细节。您可以遵循来自 <a class=\"bare\" href=\"https://spring.io\">spring.io</a> 的<a href=\"https://spring.io/guides/gs/accessing-data-jpa/\">使用 JPA 访问数据</a>指南，并阅读 <a href=\"https://spring.io/projects/spring-data-jpa\">Spring Data JPA</a> 和 <a href=\"https://hibernate.org/orm/documentation/\">Hibernate</a> 参考文档。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nYou can customize entity scanning locations by using the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html\"><code>@EntityScan</code></a> annotation.\nSee the <a class=\"xref page\" href=\"../../how-to/data-access.html#howto.data-access.separate-entity-definitions-from-spring-configuration\">Separate @Entity Definitions from Spring Configuration</a> section of the “How-to Guides”.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html\"><code>@EntityScan</code></a> 注解来自定义实体扫描位置。\n请参阅“如何操作指南”中的 <a class=\"xref page\" href=\"../../how-to/data-access.html#howto.data-access.separate-entity-definitions-from-spring-configuration\">将 @Entity 定义与 Spring 配置分离</a> 部分。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nThe jOOQ manual tends to use a variable named <code>create</code> to hold the <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\njOOQ 手册倾向于使用名为 <code>create</code> 的变量来保存 <a class=\"apiref\" href=\"https://www.jooq.org/javadoc/3.19.28/org/jooq/DSLContext.html\"><code>DSLContext</code></a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nAt least the url should be provided.\nInformation specified in the URL takes precedence over individual properties, that is <code>name</code>, <code>username</code>, <code>password</code> and pooling options.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n至少需要提供 URL。URL 中指定的信息优先于各个属性，即 <code>name</code>、<code>username</code>、<code>password</code> 和连接池选项。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">Data</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"sql.html\">SQL Databases</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"nosql.html\">Working with NoSQL Technologies</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"index.html\">数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item is-current-page\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"sql.html\">SQL 数据库</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"nosql.html\">使用 NoSQL 技术</a>\n  </li>\n</ul>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nYou need a dependency on <code>spring-jdbc</code> for an embedded database to be auto-configured.\nIn this example, it is pulled in transitively through <code>spring-boot-starter-data-jpa</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n您需要依赖 <code>spring-jdbc</code> 才能自动配置嵌入式数据库。\n在本示例中，它是通过 <code>spring-boot-starter-data-jpa</code> 传递性引入的。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf, for whatever reason, you do configure the connection URL for an embedded database, take care to ensure that the database’s automatic shutdown is disabled.\nIf you use H2, you should use <code>DB_CLOSE_ON_EXIT=FALSE</code> to do so.\nIf you use HSQLDB, you should ensure that <code>shutdown=true</code> is not used.\nDisabling the database’s automatic shutdown lets Spring Boot control when the database is closed, thereby ensuring that it happens once access to the database is no longer needed.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果出于任何原因，您确实配置了嵌入式数据库的连接 URL，请务必确保禁用该数据库的自动关闭功能。\n如果您使用 H2，应设置 <code>DB_CLOSE_ON_EXIT=FALSE</code> 来实现此目的。\n如果您使用 HSQLDB，请确保不使用 <code>shutdown=true</code>。\n禁用数据库的自动关闭功能可以让 Spring Boot 控制何时关闭数据库，从而确保在不再需要访问数据库时才会执行关闭操作。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nIf you use the <code>spring-boot-starter-jdbc</code> or <code>spring-boot-starter-data-jpa</code> starters, you automatically get a dependency to HikariCP.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n如果您使用 <code>spring-boot-starter-jdbc</code> 或 <code>spring-boot-starter-data-jpa</code> 启动器，会自动获得对 HikariCP 的依赖。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nYou can customize the locations to look for repositories using <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jpa/docs/4.0.x/api/org/springframework/data/jpa/repository/config/EnableJpaRepositories.html\"><code>@EnableJpaRepositories</code></a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/jpa/docs/4.0.x/api/org/springframework/data/jpa/repository/config/EnableJpaRepositories.html\"><code>@EnableJpaRepositories</code></a> 来自定义查找仓库的位置。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nHibernate’s own internal property name for this (if you happen to remember it better) is <code>hibernate.hbm2ddl.auto</code>.\nYou can set it, along with other Hibernate native properties, by using <code>spring.jpa.properties.*</code> (the prefix is stripped before adding them to the entity manager).\nThe following line shows an example of setting JPA properties for Hibernate:\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nHibernate 自身用于此属性的内部属性名称（如果您恰好记得更好）是 <code>hibernate.hbm2ddl.auto</code>。\n您可以使用 <code>spring.jpa.properties.*</code> 来设置它以及其他 Hibernate 原生属性（在将其添加到实体管理器之前会剥离前缀）。\n下面一行展示了为 Hibernate 设置 JPA 属性的示例：\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you are not using Spring Boot’s developer tools but would still like to make use of H2’s console, you can configure the <code>spring.h2.console.enabled</code> property with a value of <code>true</code>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您不使用 Spring Boot 的开发者工具，但仍希望使用 H2 的控制台，可以将 <code>spring.h2.console.enabled</code> 属性配置为 <code>true</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nThe H2 console is only intended for use during development, so you should take care to ensure that <code>spring.h2.console.enabled</code> is not set to <code>true</code> in production.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nH2 控制台仅用于开发期间，因此您应确保在生产环境中未将 <code>spring.h2.console.enabled</code> 设置为 <code>true</code>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nSee the <a class=\"xref page\" href=\"../../how-to/data-access.html#howto.data-access.configure-custom-datasource\">Configure a Custom DataSource</a> section of the “How-to Guides” for more advanced examples, typically to take full control over the configuration of the DataSource.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n请参阅“操作指南”中的<a class=\"xref page\" href=\"../../how-to/data-access.html#howto.data-access.configure-custom-datasource\">配置自定义数据源</a>部分，以获取更高级别的示例，通常用于完全控制 DataSource 的配置。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nThe “How-to Guides” section includes a <a class=\"xref page\" href=\"../../how-to/data-initialization.html\">section on how to initialize a database</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n“操作指南”部分包含一个<a class=\"xref page\" href=\"../../how-to/data-initialization.html\">关于如何初始化数据库的章节</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nYou should at least specify the URL by setting the <code>spring.datasource.url</code> property.\nOtherwise, Spring Boot tries to auto-configure an embedded database.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n您至少应通过设置 <code>spring.datasource.url</code> 属性来指定 URL。否则，Spring Boot 将尝试自动配置嵌入式数据库。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nSpring Boot can deduce the JDBC driver class for most databases from the URL.\nIf you need to specify a specific class, you can use the <code>spring.datasource.driver-class-name</code> property.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\nSpring Boot 可以从 URL 推断出大多数数据库的 JDBC 驱动类。\n如果您需要指定特定的类，可以使用 <code>spring.datasource.driver-class-name</code> 属性。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nWe have barely scratched the surface of Spring Data JPA.\nFor complete details, see the <a href=\"https://docs.spring.io/spring-data/jpa/reference/4.0\">Spring Data JPA reference documentation</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n我们仅仅触及了 Spring Data JPA 的表面。\n有关完整详情，请参阅 <a href=\"https://docs.spring.io/spring-data/jpa/reference/4.0\">Spring Data JPA 参考文档</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nFor more details, check the <a href=\"https://docs.spring.io/spring-data/jpa/reference/4.0/envers.html\">Spring Data Envers reference documentation</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n有关更多详细信息，请查看 <a href=\"https://docs.spring.io/spring-data/jpa/reference/4.0/envers.html\">Spring Data Envers 参考文档</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nFor complete details of Spring Data JDBC, see the <a href=\"https://docs.spring.io/spring-data/relational/reference/4.0\">reference documentation</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n有关 Spring Data JDBC 的完整详细信息，请参阅<a href=\"https://docs.spring.io/spring-data/relational/reference/4.0\">参考文档</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n<code>PathRequest.toH2Console()</code> returns the correct request matcher also when the console’s path has been customized.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n<code>PathRequest.toH2Console()</code> 即使控制台的路径已自定义，也能返回正确的请求匹配器。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nThe “How-to Guides” section includes a <a class=\"xref page\" href=\"../../how-to/data-initialization.html#howto.data-initialization.using-basic-sql-scripts\">section on how to initialize a database</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n“如何操作指南”部分包含一个<a class=\"xref page\" href=\"../../how-to/data-initialization.html#howto.data-initialization.using-basic-sql-scripts\">关于如何初始化数据库的章节</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nWe have barely scratched the surface of Spring Data R2DBC. For complete details, see the <a href=\"https://docs.spring.io/spring-data/relational/reference/4.0\">Spring Data R2DBC reference documentation</a>.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\n我们仅略窥了 Spring Data R2DBC 的一角。有关完整详情，请参阅 <a href=\"https://docs.spring.io/spring-data/relational/reference/4.0\">Spring Data R2DBC 参考文档</a>。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"Warning\"></i>\n</td>\n<td class=\"content\">\nThe H2 console is only intended for use during development.\nIn production, disabling CSRF protection or allowing frames for a website may create severe security risks.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-warning\" title=\"警告\"></i>\n</td>\n<td class=\"content\">\nH2 控制台仅用于开发期间。在生产环境中，禁用 CSRF 保护或允许网站嵌入框架可能会造成严重的安全风险。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nSpring Boot can only auto-configure dialects supported by the open source version of jOOQ.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nSpring Boot 只能自动配置开源版本 jOOQ 支持的方言。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nYou do not need to specify a driver class name, since Spring Boot obtains the driver from R2DBC’s Connection Factory discovery.\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n您无需指定驱动程序类名，因为 Spring Boot 会从 R2DBC 的连接工厂发现机制中获取驱动程序。\n</td>\n</tr>\n</tbody>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"prev\"><a href=\"index.html\">Data</a></span>\n  <span class=\"next\"><a href=\"nosql.html\">Working with NoSQL Technologies</a></span>",
+      "translation": "<span class=\"prev\"><a href=\"index.html\">数据</a></span>\n  <span class=\"next\"><a href=\"nosql.html\">使用 NoSQL 技术</a></span>",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource\"></a>Configure a DataSource",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource\"></a>配置 DataSource",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource.embedded\"></a>Embedded Database Support",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource.embedded\"></a>嵌入式数据库支持",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource.production\"></a>Connection to a Production Database",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource.production\"></a>连接到生产数据库",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource.configuration\"></a>DataSource Configuration",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource.configuration\"></a>数据源配置",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource.connection-pool\"></a>Supported Connection Pools",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource.connection-pool\"></a>支持的连接池",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.datasource.jndi\"></a>Connection to a JNDI DataSource",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.datasource.jndi\"></a>JNDI 数据源连接",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jdbc-template\"></a>Using JdbcTemplate",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jdbc-template\"></a>使用 JdbcTemplate",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jdbc-client\"></a>Using JdbcClient",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jdbc-client\"></a>使用 JdbcClient",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data\"></a>JPA and Spring Data JPA",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data\"></a>JPA 和 Spring Data JPA",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.entity-classes\"></a>Entity Classes",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.entity-classes\"></a>实体类",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.repositories\"></a>Spring Data JPA Repositories",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.repositories\"></a>Spring Data JPA 存储库",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.envers-repositories\"></a>Spring Data Envers Repositories",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.envers-repositories\"></a>Spring Data Envers 仓库",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.creating-and-dropping\"></a>Creating and Dropping JPA Databases",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.creating-and-dropping\"></a>创建和删除 JPA 数据库",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.open-entity-manager-in-view\"></a>Open EntityManager in View",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jpa-and-spring-data.open-entity-manager-in-view\"></a>在视图中打开 EntityManager",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jdbc\"></a>Spring Data JDBC",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jdbc\"></a>Spring Data JDBC",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.h2-web-console\"></a>Using H2’s Web Console",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.h2-web-console\"></a>使用 H2 的 Web 控制台",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.h2-web-console.custom-path\"></a>Changing the H2 Console’s Path",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.h2-web-console.custom-path\"></a>更改 H2 控制台的路径",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.h2-web-console.spring-security\"></a>Accessing the H2 Console in a Secured Application",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.h2-web-console.spring-security\"></a>在受保护的应用程序中访问 H2 控制台",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jooq\"></a>Using jOOQ",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jooq\"></a>使用 jOOQ",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jooq.codegen\"></a>Code Generation",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jooq.codegen\"></a>代码生成",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jooq.dslcontext\"></a>Using DSLContext",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jooq.dslcontext\"></a>使用 DSLContext",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jooq.sqldialect\"></a>jOOQ SQL Dialect",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jooq.sqldialect\"></a>jOOQ SQL 方言",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.jooq.customizing\"></a>Customizing jOOQ",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.jooq.customizing\"></a>自定义 jOOQ",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.r2dbc\"></a>Using R2DBC",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.r2dbc\"></a>使用 R2DBC",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.r2dbc.embedded\"></a>Embedded Database Support",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.r2dbc.embedded\"></a>嵌入式数据库支持",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.r2dbc.using-database-client\"></a>Using DatabaseClient",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.r2dbc.using-database-client\"></a>使用 DatabaseClient",
+      "count": 2
+    },
+    {
+      "source": "<a class=\"anchor\" href=\"#data.sql.r2dbc.repositories\"></a>Spring Data R2DBC Repositories",
+      "translation": "<a class=\"anchor\" href=\"#data.sql.r2dbc.repositories\"></a>Spring Data R2DBC 存储库",
+      "count": 2
+    },
+    {
+      "source": "SQL Databases",
+      "translation": "SQL 数据库",
+      "count": 2
+    },
+    {
+      "source": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">Terms of Use</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">Privacy</a> • <a href=\"https://spring.io/trademarks\">Trademark Guidelines</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">Thank you</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">Your California Privacy Rights</a> • <a class=\"ot-sdk-show-settings\">Cookie Settings</a> <span id=\"teconsent\"></span>",
+      "translation": "Copyright © 2005 - <script>var d = new Date();\n        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term \"Broadcom\" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href=\"https://www.vmware.com/help/legal.html\">使用条款</a> • <a href=\"https://www.vmware.com/help/privacy.html\" rel=\"noopener noreferrer\">隐私政策</a> • <a href=\"https://spring.io/trademarks\">商标指南</a> <span id=\"thank-you-mobile\">• <a href=\"https://spring.io/thank-you\">致谢</a></span> • <a href=\"https://www.vmware.com/help/privacy/california-privacy-rights.html\">您的加州隐私权利</a> • <a class=\"ot-sdk-show-settings\">Cookie 设置</a> <span id=\"teconsent\"></span>",
+      "count": 1
+    },
+    {
+      "source": "Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.",
+      "translation": "Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services\"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">View all projects</a>\n            <li class=\"navbar-item navbar-item-special-3\">DEVELOPMENT TOOLS</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg class=\"external-link-icon\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" points=\"15 10.94 15 15 1 15 1 1 5.06 1\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><polyline fill=\"none\" points=\"8.93 1 15 1 15 7.07\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><line fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\" x1=\"15\" x2=\"8\" y1=\"1\" y2=\"8\"></line></svg></a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/projects\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-boot\">Spring Boot</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-framework\">Spring Framework</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-cloud-dataflow\">Spring Cloud Data Flow</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-data\">Spring Data</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-integration\">Spring Integration</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-batch\">Spring Batch</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/projects/spring-security\">Spring Security</a>\n            <a class=\"navbar-item navbar-item-special\" href=\"https://spring.io/projects\">查看所有项目</a>\n            <li class=\"navbar-item navbar-item-special-3\">开发工具</li>\n            <a class=\"navbar-item\" href=\"https://spring.io/tools\">Spring Tools 4</a>\n            <a class=\"navbar-item navbar-item-special-2\" href=\"https://start.spring.io\">Spring Initializr\n              <svg class=\"external-link-icon\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><polyline fill=\"none\" points=\"15 10.94 15 15 1 15 1 1 5.06 1\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><polyline fill=\"none\" points=\"8.93 1 15 1 15 7.07\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></polyline><line fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\" x1=\"15\" x2=\"8\" y1=\"1\" y2=\"8\"></line></svg></a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">Microservices</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">Reactive</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">Event\n              Driven</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">Cloud</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web\n              Applications</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">Serverless</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">Batch</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/why-spring\">概述</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/microservices\">微服务</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/reactive\">响应式</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/event-driven\">事件驱动</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/cloud\">云</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/web-applications\">Web 应用</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/serverless\">无服务器</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/batch\">批处理</a>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg height=\"24px\" id=\"Layer_1\" style=\"enable-background:new 0 0 512 512;\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"24px\" xml:space=\"preserve\"><g><path d=\"M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z\"></path><path d=\"M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z\"></path><path d=\"M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z\"></path></g></svg>\n  </button>",
+      "translation": "<span class=\"title\">Spring Boot</span>\n  <span class=\"version\">4.0.0</span>\n  <button class=\"browse-version\" id=\"browse-version\">\n    <svg height=\"24px\" id=\"Layer_1\" style=\"enable-background:new 0 0 512 512;\" version=\"1.1\" viewBox=\"0 0 512 512\" width=\"24px\" xml:space=\"preserve\"><g><path d=\"M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z\"></path><path d=\"M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z\"></path><path d=\"M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z\"></path></g></svg>\n  </button>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">Overview</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring Runtime</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring Consulting</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring Academy For Teams</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">Security Advisories</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.io/solutions\">概览</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/support\">Spring 运行时</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/consulting\">Spring 咨询</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/teams\">Spring 团队学院</a>\n            <a class=\"navbar-item\" href=\"https://spring.io/security\">安全公告</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">Courses</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">Get Certified</a>",
+      "translation": "<a class=\"navbar-item\" href=\"https://spring.academy/courses\">课程</a>\n            <a class=\"navbar-item\" href=\"https://spring.academy/learning-path\">获取认证</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"title\" href=\"../../index.html\">Spring Boot</a>",
+      "translation": "<a class=\"title\" href=\"../../index.html\">Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/index.html\">How-to Guides</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/application.html\">Spring Boot Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/properties-and-configuration.html\">Properties and Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/webserver.html\">Embedded Web Servers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/http-clients.html\">HTTP Clients</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-access.html\">Data Access</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-initialization.html\">Database Initialization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/messaging.html\">Messaging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/batch.html\">Batch Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/security.html\">Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/hotswapping.html\">Hot Swapping</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/testing.html\">Testing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/build.html\">Build</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/native-image/index.html\">GraalVM Native Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/developing-your-first-application.html\">Developing Your First GraalVM Native Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/testing-native-applications.html\">Testing GraalVM Native Images</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/deployment/index.html\">Deploying Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/traditional-deployment.html\">Traditional Deployment</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/cloud.html\">Deploying to the Cloud</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/installing.html\">Installing Spring Boot Applications</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/index.html\">操作指南</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/application.html\">Spring Boot 应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/properties-and-configuration.html\">属性与配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/webserver.html\">嵌入式 Web 服务器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/spring-mvc.html\">Spring MVC</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/jersey.html\">Jersey</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/http-clients.html\">HTTP 客户端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-access.html\">数据访问</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/data-initialization.html\">数据库初始化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/nosql.html\">NoSQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/messaging.html\">消息传递</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/batch.html\">批处理应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/actuator.html\">Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/security.html\">安全</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/hotswapping.html\">热替换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/testing.html\">测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/build.html\">构建</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot.html\">提前处理 (AOT)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/native-image/index.html\">GraalVM 原生应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/developing-your-first-application.html\">开发您的第一个 GraalVM 原生应用</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/native-image/testing-native-applications.html\">测试 GraalVM 原生镜像</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../how-to/deployment/index.html\">部署 Spring Boot 应用</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/traditional-deployment.html\">传统部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/cloud.html\">部署到云端</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../how-to/deployment/installing.html\">安装 Spring Boot 应用</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../how-to/docker-compose.html\">Docker Compose</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/index.html\">Build Tool Plugins</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../maven-plugin/index.html\">Maven Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/using.html\">Using the Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/goals.html\">Goals</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/run.html\">Running your Application with Maven</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/integration-tests.html\">Running Integration Tests</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-info.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/help.html\">Help Information</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../gradle-plugin/index.html\">Gradle Plugin</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/getting-started.html\">Getting Started</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/managing-dependencies.html\">Managing Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging.html\">Packaging Executable Archives</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging-oci-image.html\">Packaging OCI Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/publishing.html\">Publishing your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/running.html\">Running your Application with Gradle</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/aot.html\">Ahead-of-Time Processing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/integrating-with-actuator.html\">Integrating with Actuator</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/reacting.html\">Reacting to Other Plugins</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/antlib.html\">Spring Boot AntLib Module</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/other-build-systems.html\">Supporting Other Build Systems</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/index.html\">构建工具插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../maven-plugin/index.html\">Maven 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/using.html\">使用插件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/goals.html\">目标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/run.html\">使用 Maven 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/integration-tests.html\">运行集成测试</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/build-info.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../maven-plugin/help.html\">帮助信息</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../gradle-plugin/index.html\">Gradle 插件</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/getting-started.html\">入门指南</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/managing-dependencies.html\">管理依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging.html\">打包可执行归档文件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/packaging-oci-image.html\">打包 OCI 镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/publishing.html\">发布应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/running.html\">使用 Gradle 运行应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/aot.html\">提前处理 (Ahead-of-Time Processing)</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/integrating-with-actuator.html\">与 Actuator 集成</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../gradle-plugin/reacting.html\">响应其他插件</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/antlib.html\">Spring Boot AntLib 模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../build-tool-plugin/other-build-systems.html\">支持其他构建系统</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Cloud\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-build/reference/\">\n  Spring Cloud Build\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-bus/reference/\">\n  Spring Cloud Bus\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-circuitbreaker/reference/\">\n  Spring Cloud Circuit Breaker\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-commons/reference/\">\n  Spring Cloud Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-config/reference/\">\n  Spring Cloud Config\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-consul/reference/\">\n  Spring Cloud Consul\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-contract/reference/\">\n  Spring Cloud Contract\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-function/reference/\">\n  Spring Cloud Function\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-gateway/reference/\">\n  Spring Cloud Gateway\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-kubernetes/reference/\">\n  Spring Cloud Kubernetes\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-netflix/reference/\">\n  Spring Cloud Netflix\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-openfeign/reference/\">\n  Spring Cloud OpenFeign\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-stream/reference/\">\n  Spring Cloud Stream\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-task/reference/\">\n  Spring Cloud Task\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-vault/reference/\">\n  Spring Cloud Vault\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-cloud-zookeeper/reference/\">\n  Spring Cloud Zookeeper\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/index.html\">Packaging Spring Boot Applications</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/efficient.html\">Efficient Deployments</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot-cache.html\">AOT Cache</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot.html\">Ahead-of-Time Processing With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/native-image/index.html\">GraalVM Native Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/introducing-graalvm-native-images.html\">Introducing GraalVM Native Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/advanced-topics.html\">Advanced Native Images Topics</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/checkpoint-restore.html\">Checkpoint and Restore With the JVM</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/container-images/index.html\">Container Images</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/efficient-images.html\">Efficient Container Images</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/cloud-native-buildpacks.html\">Cloud Native Buildpacks</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/index.html\">打包 Spring Boot 应用程序</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/efficient.html\">高效部署</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot-cache.html\">AOT 缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/aot.html\">使用 JVM 进行提前处理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/native-image/index.html\">GraalVM 原生镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/introducing-graalvm-native-images.html\">介绍 GraalVM 原生镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/native-image/advanced-topics.html\">高级原生镜像主题</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../packaging/checkpoint-restore.html\">使用 JVM 进行检查点和恢复</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../packaging/container-images/index.html\">容器镜像</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/efficient-images.html\">高效容器镜像</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/dockerfiles.html\">Dockerfiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"4\">\n    <a class=\"nav-link\" href=\"../packaging/container-images/cloud-native-buildpacks.html\">云原生构建包</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Specifications</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/index.html\">Configuration Metadata</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/format.html\">Metadata Format</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/manual-hints.html\">Providing Manual Hints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/annotation-processor.html\">Generating Your Own Metadata by Using the Annotation Processor</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/index.html\">The Executable Jar Format</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/nested-jars.html\">Nested JARs</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/jarfile-class.html\">Spring Boot’s “NestedJarFile” Class</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/launching.html\">Launching Executable Jars</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/property-launcher.html\">PropertiesLauncher Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/restrictions.html\">Executable Jar Restrictions</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/alternatives.html\">Alternative Single Jar Solutions</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">规范</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/index.html\">配置元数据</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/format.html\">元数据格式</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/manual-hints.html\">提供手动提示</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/configuration-metadata/annotation-processor.html\">使用注解处理器生成自己的元数据</a>\n  </li>\n</ul>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/index.html\">可执行 JAR 格式</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/nested-jars.html\">嵌套 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/jarfile-class.html\">Spring Boot 的“NestedJarFile”类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/launching.html\">启动可执行 JAR</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/property-launcher.html\">PropertiesLauncher 功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/restrictions.html\">可执行 JAR 限制</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../specification/executable-jar/alternatives.html\">替代单 JAR 解决方案</a>\n  </li>\n</ul>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../features/index.html\">Core Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/external-config.html\">Externalized Configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/profiles.html\">Profiles</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/logging.html\">Logging</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/internationalization.html\">Internationalization</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/aop.html\">Aspect-Oriented Programming</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/task-execution-and-scheduling.html\">Task Execution and Scheduling</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/dev-services.html\">Development-time Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/developing-auto-configuration.html\">Creating Your Own Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/kotlin.html\">Kotlin Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../features/index.html\">核心功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/spring-application.html\">SpringApplication</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/external-config.html\">外部化配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/profiles.html\">Profile</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/logging.html\">日志记录</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/internationalization.html\">国际化</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/aop.html\">面向切面编程</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/json.html\">JSON</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/task-execution-and-scheduling.html\">任务执行与调度</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/dev-services.html\">开发时服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/developing-auto-configuration.html\">创建自己的自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/kotlin.html\">Kotlin 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../features/ssl.html\">SSL</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../actuator/index.html\">Production-ready Features</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/enabling.html\">Enabling Production-ready Features</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/endpoints.html\">Endpoints</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/monitoring.html\">Monitoring and Management Over HTTP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/jmx.html\">Monitoring and Management over JMX</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/observability.html\">Observability</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/loggers.html\">Loggers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/metrics.html\">Metrics</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/tracing.html\">Tracing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/auditing.html\">Auditing</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/http-exchanges.html\">Recording HTTP Exchanges</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/process-monitoring.html\">Process Monitoring</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/cloud-foundry.html\">Cloud Foundry Support</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../actuator/index.html\">生产就绪功能</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/enabling.html\">启用生产就绪功能</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/endpoints.html\">端点</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/monitoring.html\">通过 HTTP 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/jmx.html\">通过 JMX 进行监控和管理</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/observability.html\">可观测性</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/loggers.html\">日志记录器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/metrics.html\">指标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/tracing.html\">追踪</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/auditing.html\">审计</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/http-exchanges.html\">记录 HTTP 交换</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/process-monitoring.html\">进程监控</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../actuator/cloud-foundry.html\">Cloud Foundry 支持</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n  Spring Data\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/cassandra/reference/\">\n  Spring Data Cassandra\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/commons/reference/\">\n  Spring Data Commons\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/couchbase/reference/\">\n  Spring Data Couchbase\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/elasticsearch/reference/\">\n  Spring Data Elasticsearch\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/jpa/reference/\">\n  Spring Data JPA\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/keyvalue/reference/\">\n  Spring Data KeyValue\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/ldap/reference/\">\n  Spring Data LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/mongodb/reference/\">\n  Spring Data MongoDB\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/neo4j/reference/\">\n  Spring Data Neo4j\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/redis/reference/\">\n  Spring Data Redis\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/relational/reference/\">\n  Spring Data JDBC &amp; R2DBC\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-data/rest/reference/\">\n  Spring Data REST\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../using/index.html\">Developing with Spring Boot</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/build-systems.html\">Build Systems</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/structuring-your-code.html\">Structuring Your Code</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/configuration-classes.html\">Configuration Classes</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/auto-configuration.html\">Auto-configuration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/spring-beans-and-dependency-injection.html\">Spring Beans and Dependency Injection</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/using-the-springbootapplication-annotation.html\">Using the @SpringBootApplication Annotation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/running-your-application.html\">Running Your Application</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/devtools.html\">Developer Tools</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/packaging-for-production.html\">Packaging Your Application for Production</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../using/index.html\">使用 Spring Boot 进行开发</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/build-systems.html\">构建系统</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/structuring-your-code.html\">代码结构</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/configuration-classes.html\">配置类</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/auto-configuration.html\">自动配置</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/spring-beans-and-dependency-injection.html\">Spring Bean 和依赖注入</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/using-the-springbootapplication-annotation.html\">使用 @SpringBootApplication 注解</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/running-your-application.html\">运行您的应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/devtools.html\">开发者工具</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../using/packaging-for-production.html\">将您的应用程序打包用于生产环境</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/caching.html\">Caching</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/quartz.html\">Quartz Scheduler</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/email.html\">Sending Email</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/validation.html\">Validation</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/rest-client.html\">Calling REST Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/webservices.html\">Web Services</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/jta.html\">Distributed Transactions With JTA</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../io/index.html\">IO</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/caching.html\">缓存</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/spring-batch.html\">Spring Batch</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/hazelcast.html\">Hazelcast</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/quartz.html\">Quartz 调度器</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/email.html\">发送邮件</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/validation.html\">验证</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/rest-client.html\">调用 REST 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/webservices.html\">Web 服务</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../io/jta.html\">使用 JTA 进行分布式事务</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/servlet.html\">Servlet Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/reactive.html\">Reactive Web Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/graceful-shutdown.html\">Graceful Shutdown</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../web/index.html\">Web</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/servlet.html\">Servlet Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/reactive.html\">响应式 Web 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/graceful-shutdown.html\">优雅关闭</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-security.html\">Spring Security</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-session.html\">Spring Session</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-graphql.html\">Spring for GraphQL</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../web/spring-hateoas.html\">Spring HATEOAS</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../messaging/index.html\">Messaging</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/kafka.html\">Apache Kafka Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/pulsar.html\">Apache Pulsar Support</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../messaging/index.html\">消息传递</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/jms.html\">JMS</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/amqp.html\">AMQP</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/kafka.html\">Apache Kafka 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/pulsar.html\">Apache Pulsar 支持</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/rsocket.html\">RSocket</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/spring-integration.html\">Spring Integration</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../messaging/websockets.html\">WebSockets</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../testing/index.html\">Testing</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-modules.html\">Test Modules</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-scope-dependencies.html\">Test Scope Dependencies</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-applications.html\">Testing Spring Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-boot-applications.html\">Testing Spring Boot Applications</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-utilities.html\">Test Utilities</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../testing/index.html\">测试</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-modules.html\">测试模块</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-scope-dependencies.html\">测试作用域依赖项</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-applications.html\">测试 Spring 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/spring-boot-applications.html\">测试 Spring Boot 应用程序</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/testcontainers.html\">Testcontainers</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../testing/test-utilities.html\">测试工具</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "translation": "<a class=\"anchor\"><i aria-hidden=\"true\" class=\"fa fa-angle-right\"></i></a>\n<a href=\"https://docs.spring.io/spring-security/reference/\">\n  Spring Security\n</a>\n<ul>\n    <li>\n<a href=\"https://docs.spring.io/spring-authorization-server/reference/\">\n  Spring Authorization Server\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-ldap/reference/\">\n  Spring LDAP\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-security-kerberos/reference/\">\n  Spring Security Kerberos\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-session/reference/\">\n  Spring Session\n</a>\n</li>\n    <li>\n<a href=\"https://docs.spring.io/spring-vault/reference/\">\n  Spring Vault\n</a>\n</li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Java APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/java/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../gradle-plugin/api/java/index.html\" target=\"_blank\">Gradle Plugin</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../maven-plugin/api/java/index.html\" target=\"_blank\">Maven Plugin</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/installation.html\">Installing the CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/using-the-cli.html\">Using the CLI</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../cli/index.html\">Spring Boot CLI</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/installation.html\">安装 CLI</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../cli/using-the-cli.html\">使用 CLI</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/index.html\">Dependency Versions</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/coordinates.html\">Managed Dependency Coordinates</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/properties.html\">Version Properties</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/index.html\">依赖版本</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/coordinates.html\">托管依赖坐标</a>\n  </li>\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/dependency-versions/properties.html\">版本属性</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../tutorial/index.html\">Tutorials</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../tutorial/first-application/index.html\">Developing Your First Spring Boot Application</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../tutorial/index.html\">教程</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link\" href=\"../../tutorial/first-application/index.html\">开发您的第一个 Spring Boot 应用程序</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <span class=\"nav-text\">Kotlin APIs</span>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"2\">\n    <a class=\"nav-link link-external\" href=\"../../api/kotlin/index.html\" target=\"_blank\">Spring Boot</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/index.html\">Test Auto-configuration Annotations</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/slices.html\">Test Slices</a>\n  </li>\n</ul>",
+      "translation": "<button class=\"nav-item-toggle\"></button>\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/index.html\">测试自动配置注解</a>\n<ul class=\"nav-list\">\n  <li class=\"nav-item\" data-depth=\"3\">\n    <a class=\"nav-link\" href=\"../../appendix/test-auto-configuration/slices.html\">测试切片</a>\n  </li>\n</ul>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/auditevents.html\">Audit Events (<code>auditevents</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/auditevents.html\">审计事件（<code>auditevents</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/conditions.html\">Conditions Evaluation Report (<code>conditions</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/conditions.html\">条件评估报告 (<code>conditions</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/configprops.html\">Configuration Properties (<code>configprops</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/configprops.html\">配置属性 (<code>configprops</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/heapdump.html\">Heap Dump (<code>heapdump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/heapdump.html\">堆转储 (<code>heapdump</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/httpexchanges.html\">HTTP Exchanges (<code>httpexchanges</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/httpexchanges.html\">HTTP 交换记录（<code>httpexchanges</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/integrationgraph.html\">Spring Integration Graph (<code>integrationgraph</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/integrationgraph.html\">Spring Integration 图 (<code>integrationgraph</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/logfile.html\">Log File (<code>logfile</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/logfile.html\">日志文件（<code>logfile</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/sbom.html\">Software Bill of Materials (<code>sbom</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/sbom.html\">软件物料清单（<code>sbom</code>）</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/scheduledtasks.html\">Scheduled Tasks (<code>scheduledtasks</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/scheduledtasks.html\">定时任务 (<code>scheduledtasks</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/startup.html\">Application Startup (<code>startup</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/startup.html\">应用启动 (<code>startup</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../api/rest/actuator/threaddump.html\">Thread Dump (<code>threaddump</code>)</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../api/rest/actuator/threaddump.html\">线程转储 (<code>threaddump</code>)</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-server\" href=\"../../system-requirements.html\">System Requirements</a>",
+      "translation": "<a class=\"nav-link navtree-icon-server\" href=\"../../system-requirements.html\">系统要求</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-gift\" href=\"../../installing.html\">Installing Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-gift\" href=\"../../installing.html\">安装 Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link navtree-icon-rocket\" href=\"../../upgrading.html\">Upgrading Spring Boot</a>",
+      "translation": "<a class=\"nav-link navtree-icon-rocket\" href=\"../../upgrading.html\">升级 Spring Boot</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../appendix/application-properties/index.html\">Common Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../appendix/application-properties/index.html\">通用应用程序属性</a>",
+      "count": 1
+    },
+    {
+      "source": "<a class=\"nav-link\" href=\"../../appendix/deprecated-application-properties/index.html\">Deprecated Application Properties</a>",
+      "translation": "<a class=\"nav-link\" href=\"../../appendix/deprecated-application-properties/index.html\">已废弃的应用程序属性</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-boot/\">\n  Spring Boot\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-framework/reference/\">\n  Spring Framework\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-integration/reference/\">\n  Spring Integration\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-batch/reference/\">\n  Spring Batch\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-ai/reference/\">\n  Spring AI\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-amqp/reference/\">\n  Spring AMQP\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-cli/reference/\">\n  Spring CLI\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-graphql/reference/\">\n  Spring GraphQL\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-kafka/reference/\">\n  Spring for Apache Kafka\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">\n  Spring Modulith\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-modulith/reference/\">Spring Modulith</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-pulsar/reference/\">\n  Spring for Apache Pulsar\n</a>",
+      "count": 1
+    },
+    {
+      "source": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "translation": "<a href=\"https://docs.spring.io/spring-shell/reference/\">\n  Spring Shell\n</a>",
+      "count": 1
+    },
+    {
+      "source": "Why Spring",
+      "translation": "为什么选择 Spring",
+      "count": 1
+    },
+    {
+      "source": "Rest APIs",
+      "translation": "REST API",
+      "count": 1
+    },
+    {
+      "source": "Auto-configuration Classes",
+      "translation": "自动配置类",
+      "count": 1
+    },
+    {
+      "source": "All Docs...",
+      "translation": "所有文档...",
+      "count": 1
+    },
+    {
+      "source": "Related Spring Documentation",
+      "translation": "相关 Spring 文档",
+      "count": 1
+    }
+  ]
+}

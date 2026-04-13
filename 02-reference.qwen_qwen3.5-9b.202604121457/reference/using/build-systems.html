@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>构建系统 :: Spring Boot</title>
+    <link href="index.html" rel="prev"/>
+    <link href="structuring-your-code.html" rel="next"/>
+    <meta content="Antora 3.2.0-alpha.10" name="generator"/>
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link href="../../_/css/site.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/page-search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/asciidoctor-tabs.css" rel="stylesheet"/>
+
+    <meta content="v0.4.21" name="antora-ui-version"/> 
+    <meta content="4.0.0" name="version"/>
+    <meta content="" name="generation"/>
+    <meta content="undefined/undefined/reference/using/build-systems.html" name="versioned-url"/>
+    <meta content="boot" name="component"/>
+    <meta content="false" name="latest-version"/>
+    <link href="../../_/img/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img alt="Spring" class="block" id="springlogo" src="../../_/img/spring-logo.svg"/>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar-menu" id="topbar-nav">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">为什么选择 Spring</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.io/why-spring">概述</a>
+<a class="navbar-item" href="https://spring.io/microservices">微服务</a>
+<a class="navbar-item" href="https://spring.io/reactive">响应式</a>
+<a class="navbar-item" href="https://spring.io/event-driven">事件驱动</a>
+<a class="navbar-item" href="https://spring.io/cloud">云</a>
+<a class="navbar-item" href="https://spring.io/web-applications">Web 应用</a>
+<a class="navbar-item" href="https://spring.io/serverless">无服务器</a>
+<a class="navbar-item" href="https://spring.io/batch">批处理</a></div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a class="navbar-item" href="https://spring.io/quickstart">Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px"><a class="navbar-item" href="https://spring.io/projects">概览</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-boot">Spring Boot</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-framework">Spring Framework</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud">Spring Cloud</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud-dataflow">Spring Cloud Data Flow</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-data">Spring Data</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-integration">Spring Integration</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-batch">Spring Batch</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-security">Spring Security</a>
+<a class="navbar-item navbar-item-special" href="https://spring.io/projects">查看所有项目</a>
+<li class="navbar-item navbar-item-special-3">开发工具</li>
+<a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+<a class="navbar-item navbar-item-special-2" href="https://start.spring.io">Spring Initializr
+              <svg class="external-link-icon" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="15 10.94 15 15 1 15 1 1 5.06 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><polyline fill="none" points="8.93 1 15 1 15 7.07" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><line fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" x1="15" x2="8" y1="1" y2="8"></line></svg></a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.academy/courses">课程</a>
+<a class="navbar-item" href="https://spring.academy/learning-path">获取认证</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg"><a class="navbar-item" href="https://spring.io/solutions">概览</a>
+<a class="navbar-item" href="https://spring.io/support">Spring 运行时</a>
+<a class="navbar-item" href="https://spring.io/consulting">Spring 咨询</a>
+<a class="navbar-item" href="https://spring.academy/teams">Spring 团队学院</a>
+<a class="navbar-item" href="https://spring.io/security">安全公告</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/community">Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input id="switch-theme-checkbox" name="switch-theme-checkbox" type="checkbox"/>
+      <span class="icon"><svg aria-hidden="true" class="svg-inline--fa fa-moon moon" data-icon="moon" data-prefix="fas" focusable="false" role="img" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" fill="currentColor"></path>
+        </svg>
+        <svg aria-hidden="true" class="svg-inline--fa fa-sun sun" data-icon="sun" data-prefix="fas" focusable="false" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor"></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context"><span class="title">Spring Boot</span>
+<span class="version">4.0.0</span>
+<button class="browse-version" id="browse-version">
+<svg height="24px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="24px" xml:space="preserve"><g><path d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"></path><path d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"></path><path d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"></path></g></svg>
+</button></div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book" href="../../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question" href="../../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-server" href="../../system-requirements.html">系统要求</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-gift" href="../../installing.html">安装 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-rocket" href="../../upgrading.html">升级 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../tutorial/index.html">教程</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../tutorial/first-application/index.html">开发您的第一个 Spring Boot 应用程序</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="index.html">使用 Spring Boot 进行开发</a>
+<ul class="nav-list">
+<li class="nav-item is-current-page" data-depth="3">
+<a class="nav-link" href="build-systems.html">构建系统</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="structuring-your-code.html">代码结构</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="configuration-classes.html">配置类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="auto-configuration.html">自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="spring-beans-and-dependency-injection.html">Spring Bean 和依赖注入</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="using-the-springbootapplication-annotation.html">使用 @SpringBootApplication 注解</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="running-your-application.html">运行您的应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="devtools.html">开发者工具</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="packaging-for-production.html">将应用程序打包用于生产环境</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../features/index.html">核心功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/spring-application.html">SpringApplication</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/external-config.html">外部化配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/profiles.html">Profile</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/internationalization.html">国际化</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/aop.html">面向切面编程</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/json.html">JSON</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/task-execution-and-scheduling.html">任务执行与调度</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/dev-services.html">开发时服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/developing-auto-configuration.html">创建自己的自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/kotlin.html">Kotlin 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/ssl.html">SSL</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../web/index.html">Web</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/servlet.html">Servlet Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/reactive.html">响应式 Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/graceful-shutdown.html">优雅关闭</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-security.html">Spring Security</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-session.html">Spring Session</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-graphql.html">Spring for GraphQL</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-hateoas.html">Spring HATEOAS</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../data/index.html">数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/sql.html">SQL 数据库</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/nosql.html">使用 NoSQL 技术</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../io/index.html">IO</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/caching.html">缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/spring-batch.html">Spring Batch</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/hazelcast.html">Hazelcast</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/quartz.html">Quartz 调度器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/email.html">发送邮件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/validation.html">验证</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/rest-client.html">调用 REST 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/webservices.html">Web 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/jta.html">使用 JTA 进行分布式事务</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../messaging/index.html">消息传递</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/jms.html">JMS</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/amqp.html">AMQP</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/kafka.html">Apache Kafka 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/pulsar.html">Apache Pulsar 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/rsocket.html">RSocket</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/spring-integration.html">Spring Integration</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/websockets.html">WebSockets</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../testing/index.html">测试</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-modules.html">测试模块</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-scope-dependencies.html">测试作用域依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-applications.html">测试 Spring 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-boot-applications.html">测试 Spring Boot 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/testcontainers.html">Testcontainers</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-utilities.html">测试工具</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/index.html">打包 Spring Boot 应用程序</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/efficient.html">高效部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot.html">使用 JVM 进行提前处理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/native-image/index.html">GraalVM 原生镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/introducing-graalvm-native-images.html">介绍 GraalVM 原生镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/advanced-topics.html">高级原生镜像主题</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/checkpoint-restore.html">使用 JVM 进行检查点和恢复</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/container-images/index.html">容器镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/efficient-images.html">高效容器镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/dockerfiles.html">Dockerfiles</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/cloud-native-buildpacks.html">云原生构建包</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../actuator/index.html">生产就绪功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/enabling.html">启用生产就绪功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/endpoints.html">端点</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/monitoring.html">通过 HTTP 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/jmx.html">通过 JMX 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/observability.html">可观测性</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/loggers.html">日志记录器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/metrics.html">指标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/tracing.html">追踪</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/auditing.html">审计</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/http-exchanges.html">记录 HTTP 交换</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/process-monitoring.html">进程监控</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/cloud-foundry.html">Cloud Foundry 支持</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/index.html">操作指南</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/application.html">Spring Boot 应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/properties-and-configuration.html">属性与配置</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/webserver.html">嵌入式 Web 服务器</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/spring-mvc.html">Spring MVC</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/jersey.html">Jersey</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/http-clients.html">HTTP 客户端</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-access.html">数据访问</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-initialization.html">数据库初始化</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/nosql.html">NoSQL</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/messaging.html">消息传递</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/batch.html">批处理应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/actuator.html">Actuator</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/security.html">安全</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/hotswapping.html">热替换</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/testing.html">测试</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/build.html">构建</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot.html">提前处理 (AOT)</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/native-image/index.html">GraalVM 原生应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/developing-your-first-application.html">开发您的第一个 GraalVM 原生应用</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/testing-native-applications.html">测试 GraalVM 原生镜像</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/deployment/index.html">部署 Spring Boot 应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/traditional-deployment.html">传统部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/cloud.html">部署到云端</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/installing.html">安装 Spring Boot 应用</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/docker-compose.html">Docker Compose</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../build-tool-plugin/index.html">构建工具插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../maven-plugin/index.html">Maven 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/using.html">使用插件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/goals.html">目标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/run.html">使用 Maven 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/integration-tests.html">运行集成测试</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-info.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/help.html">帮助信息</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../gradle-plugin/index.html">Gradle 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/managing-dependencies.html">管理依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging-oci-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/publishing.html">发布应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/running.html">使用 Gradle 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/integrating-with-actuator.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/reacting.html">响应其他插件</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/antlib.html">Spring Boot AntLib 模块</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/other-build-systems.html">支持其他构建系统</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/installation.html">安装 CLI</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/using-the-cli.html">使用 CLI</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../api/rest/actuator/index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/auditevents.html">审计事件（<code>auditevents</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/conditions.html">条件评估报告 (<code>conditions</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/configprops.html">配置属性 (<code>configprops</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/heapdump.html">堆转储 (<code>heapdump</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/httpexchanges.html">HTTP 交换记录（<code>httpexchanges</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/integrationgraph.html">Spring Integration 图 (<code>integrationgraph</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/logfile.html">日志文件（<code>logfile</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/sbom.html">软件物料清单（<code>sbom</code>）</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/scheduledtasks.html">定时任务 (<code>scheduledtasks</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/startup.html">应用启动 (<code>startup</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/threaddump.html">线程转储 (<code>threaddump</code>)</a></li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/java/index.html" target="_blank">Spring Boot</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../gradle-plugin/api/java/index.html" target="_blank">Gradle Plugin</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../maven-plugin/api/java/index.html" target="_blank">Maven Plugin</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/kotlin/index.html" target="_blank">Spring Boot</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">规范</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/configuration-metadata/index.html">配置元数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/format.html">元数据格式</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/manual-hints.html">提供手动提示</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/annotation-processor.html">使用注解处理器生成自己的元数据</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/executable-jar/index.html">可执行 JAR 格式</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/nested-jars.html">嵌套 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/jarfile-class.html">Spring Boot 的“NestedJarFile”类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/launching.html">启动可执行 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/property-launcher.html">PropertiesLauncher 功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/restrictions.html">可执行 JAR 限制</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/alternatives.html">替代单 JAR 解决方案</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/application-properties/index.html">通用应用程序属性</a></li>
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/deprecated-application-properties/index.html">已废弃的应用程序属性</a></li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/index.html">自动配置类</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/test-auto-configuration/index.html">测试自动配置注解</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/test-auto-configuration/slices.html">测试切片</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/dependency-versions/index.html">依赖版本</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/coordinates.html">托管依赖坐标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/properties.html">版本属性</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button class="nav-toggle" id="nav-toggle-2"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle" id="nav-toggle-1"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div class="toc" data-levels="2" data-title="Build Systems">
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links"><a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/using/build-systems.adoc">
+<svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg>
+          编辑此页面
+        </a>
+<a href="https://github.com/doc2401/spring-boot" title="GitHub">
+<svg height="512px" id="Layer_1" version="1.1" viewbox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg"><style type="text/css">
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"></path></g></svg>
+          GitHub 项目
+        </a>
+<a href="https://stackoverflow.com/tags/spring-boot">
+<svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"></path></svg>
+          Stack Overflow
+        </a></div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container"><nav aria-label="面包屑" class="breadcrumbs">
+<ul>
+<li id="copy-url" title="复制带版本号的 URL"></li>
+<li><a href="../../index.html">Spring Boot</a></li>
+<li><a href="../index.html">参考</a></li>
+<li><a href="index.html">使用 Spring Boot 开发</a></li>
+<li><a href="build-systems.html">构建系统</a></li>
+</ul>
+</nav></div><h1 class="page" id="page-title">构建系统</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>强烈建议您选择一个支持<a href="#using.build-systems.dependency-management">依赖管理</a>并能消费发布到 Maven Central 仓库的构建工具。
+我们推荐使用 Maven 或 Gradle。
+虽然可以让 Spring Boot 与其他构建工具（例如 Ant）配合工作，但它们的支持并不完善。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using.build-systems.dependency-management"><a class="anchor" href="#using.build-systems.dependency-management"></a>依赖管理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Boot 的每个发行版都提供一份经过精选的支持依赖列表。在实际操作中，您无需在构建配置中为这些依赖指定版本，因为 Spring Boot 会为您进行管理。当您升级 Spring Boot 本身时，这些依赖也会以一致的方式得到升级。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您需要，仍然可以指定版本并覆盖 Spring Boot 的建议。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>精选列表包含了所有可与 Spring Boot 一起使用的 Spring 模块，以及经过筛选的第三方库列表。该列表以标准的物料清单（<code>spring-boot-dependencies</code>）形式提供，既可用于 <a href="#using.build-systems.maven">Maven</a>，也可用于 <a href="#using.build-systems.gradle">Gradle</a>。</p>
+</div>
+<div class="admonitionblock warning">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="警告"></i>
+</td>
+<td class="content">
+每个 Spring Boot 发行版都关联有一个 Spring Framework 的基础版本。
+我们<strong>强烈</strong>建议您不要指定其版本。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using.build-systems.maven"><a class="anchor" href="#using.build-systems.maven"></a>Maven</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>要了解如何使用 Spring Boot 与 Maven，请参阅 Spring Boot Maven 插件的文档：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a class="xref page" href="../../maven-plugin/index.html">Reference</a></p>
+</li>
+<li>
+<p><a class="xref page" href="../../maven-plugin/api/java/index.html">API</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using.build-systems.gradle"><a class="anchor" href="#using.build-systems.gradle"></a>Gradle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>要了解如何使用 Spring Boot 与 Gradle，请参阅 Spring Boot Gradle 插件的文档：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a class="xref page" href="../../gradle-plugin/index.html">Reference</a></p>
+</li>
+<li>
+<p><a class="xref page" href="../../gradle-plugin/api/java/index.html">API</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using.build-systems.ant"><a class="anchor" href="#using.build-systems.ant"></a>Ant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>可以使用 Apache Ant+Ivy 构建 Spring Boot 项目。`spring-boot-antlib`“AntLib”模块也可用于帮助 Ant 创建可执行的 jar 包。</p>
+</div>
+<div class="paragraph">
+<p>要声明依赖项，典型的<code>ivy.xml</code>文件看起来如下所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ivy-module version="2.0"&gt;
+	&lt;info organisation="org.springframework.boot" module="spring-boot-sample-ant" /&gt;
+	&lt;configurations&gt;
+		&lt;conf name="compile" description="everything needed to compile this module" /&gt;
+		&lt;conf name="runtime" extends="compile" description="everything needed to run this module" /&gt;
+	&lt;/configurations&gt;
+	&lt;dependencies&gt;
+		&lt;dependency org="org.springframework.boot" name="spring-boot-starter"
+			rev="${spring-boot.version}" conf="compile" /&gt;
+	&lt;/dependencies&gt;
+&lt;/ivy-module&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>一个典型的<code>build.xml</code>如下所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;project
+	xmlns:ivy="antlib:org.apache.ivy.ant"
+	xmlns:spring-boot="antlib:org.springframework.boot.ant"
+	name="myapp" default="build"&gt;
+
+	&lt;property name="spring-boot.version" value="4.0.0" /&gt;
+
+	&lt;target name="resolve" description="--&gt; retrieve dependencies with ivy"&gt;
+		&lt;ivy:retrieve pattern="lib/[conf]/[artifact]-[type]-[revision].[ext]" /&gt;
+	&lt;/target&gt;
+
+	&lt;target name="classpaths" depends="resolve"&gt;
+		&lt;path id="compile.classpath"&gt;
+			&lt;fileset dir="lib/compile" includes="*.jar" /&gt;
+		&lt;/path&gt;
+	&lt;/target&gt;
+
+	&lt;target name="init" depends="classpaths"&gt;
+		&lt;mkdir dir="build/classes" /&gt;
+	&lt;/target&gt;
+
+	&lt;target name="compile" depends="init" description="compile"&gt;
+		&lt;javac srcdir="src/main/java" destdir="build/classes" classpathref="compile.classpath" /&gt;
+	&lt;/target&gt;
+
+	&lt;target name="build" depends="compile"&gt;
+		&lt;spring-boot:exejar destfile="build/myapp.jar" classes="build/classes"&gt;
+			&lt;spring-boot:lib&gt;
+				&lt;fileset dir="lib/runtime" /&gt;
+			&lt;/spring-boot:lib&gt;
+		&lt;/spring-boot:exejar&gt;
+	&lt;/target&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如果您不想使用 <code>spring-boot-antlib</code> 模块，请参阅“操作指南”中的<a class="xref page" href="../../how-to/build.html#howto.build.build-an-executable-archive-with-ant-without-using-spring-boot-antlib">不使用 spring-boot-antlib 从 Ant 构建可执行归档</a>部分。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using.build-systems.starters"><a class="anchor" href="#using.build-systems.starters"></a>Starters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>启动器是一组便捷的依赖描述符，您可以将其包含在应用程序中。您无需通过示例代码搜寻并复制粘贴大量依赖描述符，即可一站式获取所需的所有 Spring 及相关技术。例如，如果您想开始使用 Spring 和 JPA 进行数据库访问，请在项目中包含 <code>spring-boot-starter-data-jpa</code> 依赖。</p>
+</div>
+<div class="paragraph">
+<p>启动器包含了大量您所需依赖项，可帮助您快速启动项目，并拥有一组一致且受支持的托管传递依赖项。</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">名字里有什么</div>
+<div class="paragraph">
+<p>所有<strong>官方</strong>启动器都遵循相似的命名模式：<code>spring-boot-starter-*</code>，其中<code>*</code>代表特定类型的应用程序。这种命名结构旨在帮助您查找所需的启动器。许多 IDE 中的 Maven 集成允许您按名称搜索依赖项。例如，安装了相应的 Eclipse 或 Spring Tools 插件后，您可以在 POM 编辑器中按下 <code>ctrl-space</code> 并输入“spring-boot-starter”以获取完整列表。</p>
+</div>
+<div class="paragraph">
+<p>正如<a class="xref page" href="../features/developing-auto-configuration.html#features.developing-auto-configuration.custom-starter">创建自己的 Starter</a>部分中所解释的，第三方 Starter 不应以<code>spring-boot</code>开头，因为该名称保留给官方的 Spring Boot 构件。相反，第三方 Starter 通常以项目名称开头。例如，一个名为<code>thirdpartyproject</code>的第三方 Starter 项目通常命名为<code>thirdpartyproject-spring-boot-starter</code>。</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>以下应用程序启动器由 Spring Boot 在<code>org.springframework.boot</code>组下提供：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 1. Spring Boot 应用启动器</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter"></a><code>spring-boot-starter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">核心启动器，包括自动配置支持、日志记录和 YAML。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-activemq"></a><code>spring-boot-starter-activemq</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Apache ActiveMQ 和 JMS 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-activemq-test"></a><code>spring-boot-starter-activemq-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试的启动器，基于 Apache ActiveMQ 和 JMS。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-actuator-test"></a><code>spring-boot-starter-actuator-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Boot 的 Actuator 的启动器，它提供了生产就绪功能，帮助您监控和管理应用程序。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-amqp"></a><code>spring-boot-starter-amqp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring AMQP 和 RabbitMQ 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-amqp-test"></a><code>spring-boot-starter-amqp-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring AMQP 和 RabbitMQ 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-artemis"></a><code>spring-boot-starter-artemis</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Apache Artemis 和 JMS 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-artemis-test"></a><code>spring-boot-starter-artemis-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Apache Artemis 和 JMS 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-aspectj"></a><code>spring-boot-starter-aspectj</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 AspectJ 进行面向切面编程的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-aspectj-test"></a><code>spring-boot-starter-aspectj-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 AspectJ 测试面向切面编程的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-batch"></a><code>spring-boot-starter-batch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Batch 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-batch-jdbc"></a><code>spring-boot-starter-batch-jdbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Batch 与 JDBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-batch-jdbc-test"></a><code>spring-boot-starter-batch-jdbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Spring Batch 和 JDBC 进行测试的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-batch-test"></a><code>spring-boot-starter-batch-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Spring Batch 进行测试的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cache"></a><code>spring-boot-starter-cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring 缓存支持的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cache-test"></a><code>spring-boot-starter-cache-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring 缓存支持的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cassandra"></a><code>spring-boot-starter-cassandra</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Cassandra 分布式数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cassandra-test"></a><code>spring-boot-starter-cassandra-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Cassandra 分布式数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-classic"></a><code>spring-boot-starter-classic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">核心经典启动器，包括完整的自动配置支持、日志记录和 YAML。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cloudfoundry"></a><code>spring-boot-starter-cloudfoundry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Cloud Foundry 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-cloudfoundry-test"></a><code>spring-boot-starter-cloudfoundry-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Cloud Foundry 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-couchbase"></a><code>spring-boot-starter-couchbase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Couchbase 文档型数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-couchbase-test"></a><code>spring-boot-starter-couchbase-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Couchbase 文档型数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-cassandra"></a><code>spring-boot-starter-data-cassandra</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Cassandra 分布式数据库和 Spring Data Cassandra 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-cassandra-reactive"></a><code>spring-boot-starter-data-cassandra-reactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Cassandra 分布式数据库和 Spring Data Cassandra Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-cassandra-reactive-test"></a><code>spring-boot-starter-data-cassandra-reactive-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Cassandra 分布式数据库和 Spring Data Cassandra Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-cassandra-test"></a><code>spring-boot-starter-data-cassandra-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Cassandra 分布式数据库和 Spring Data Cassandra 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-couchbase"></a><code>spring-boot-starter-data-couchbase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Couchbase 文档型数据库和 Spring Data Couchbase 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-couchbase-reactive"></a><code>spring-boot-starter-data-couchbase-reactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Couchbase 文档型数据库和 Spring Data Couchbase Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-couchbase-reactive-test"></a><code>spring-boot-starter-data-couchbase-reactive-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Couchbase 文档数据库和 Spring Data Couchbase Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-couchbase-test"></a><code>spring-boot-starter-data-couchbase-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Couchbase 文档型数据库和 Spring Data Couchbase 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-elasticsearch"></a><code>spring-boot-starter-data-elasticsearch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Elasticsearch 搜索和分析引擎以及 Spring Data Elasticsearch 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-elasticsearch-test"></a><code>spring-boot-starter-data-elasticsearch-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Elasticsearch 搜索和分析引擎以及 Spring Data Elasticsearch 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-jdbc"></a><code>spring-boot-starter-data-jdbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Data JDBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-jdbc-test"></a><code>spring-boot-starter-data-jdbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Data JDBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-jpa"></a><code>spring-boot-starter-data-jpa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用带有 Hibernate 的 Spring Data JPA 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-jpa-test"></a><code>spring-boot-starter-data-jpa-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试带有 Hibernate 的 Spring Data JPA 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-ldap"></a><code>spring-boot-starter-data-ldap</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Data LDAP 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-ldap-test"></a><code>spring-boot-starter-data-ldap-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Data LDAP 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-mongodb"></a><code>spring-boot-starter-data-mongodb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 MongoDB 面向文档数据库和 Spring Data MongoDB 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-mongodb-reactive"></a><code>spring-boot-starter-data-mongodb-reactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 MongoDB 面向文档数据库和 Spring Data MongoDB Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-mongodb-reactive-test"></a><code>spring-boot-starter-data-mongodb-reactive-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 MongoDB 面向文档数据库和 Spring Data MongoDB Reactive 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-mongodb-test"></a><code>spring-boot-starter-data-mongodb-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 MongoDB 文档型数据库和 Spring Data MongoDB 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-neo4j"></a><code>spring-boot-starter-data-neo4j</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Neo4j 图数据库和 Spring Data Neo4j 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-neo4j-test"></a><code>spring-boot-starter-data-neo4j-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Neo4j 图数据库和 Spring Data Neo4j 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-r2dbc"></a><code>spring-boot-starter-data-r2dbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Data R2DBC 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-r2dbc-test"></a><code>spring-boot-starter-data-r2dbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Data R2DBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-redis"></a><code>spring-boot-starter-data-redis</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Data Redis 和 Lettuce 客户端的 Redis 键值数据存储的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-redis-reactive"></a><code>spring-boot-starter-data-redis-reactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Data Redis 响应式客户端和 Lettuce 客户端的 Redis 键值数据存储的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-redis-reactive-test"></a><code>spring-boot-starter-data-redis-reactive-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试带有 Spring Data Redis 响应式支持和 Lettuce 客户端的 Redis 键值数据存储的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-redis-test"></a><code>spring-boot-starter-data-redis-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试基于 Spring Data Redis 和 Lettuce 客户端的 Redis 键值数据存储的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-rest"></a><code>spring-boot-starter-data-rest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于通过 Spring Data REST 和 Spring MVC 以 REST 方式暴露 Spring Data 存储库的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-data-rest-test"></a><code>spring-boot-starter-data-rest-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试通过 Spring Data REST 和 Spring MVC 暴露的 Spring Data 存储库的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-elasticsearch"></a><code>spring-boot-starter-elasticsearch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Elasticsearch 搜索和分析引擎的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-elasticsearch-test"></a><code>spring-boot-starter-elasticsearch-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Elasticsearch 搜索和分析引擎的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-flyway"></a><code>spring-boot-starter-flyway</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Flyway 数据库迁移的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-flyway-test"></a><code>spring-boot-starter-flyway-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Flyway 数据库迁移的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-freemarker"></a><code>spring-boot-starter-freemarker</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 FreeMarker 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-freemarker-test"></a><code>spring-boot-starter-freemarker-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 FreeMarker 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-graphql"></a><code>spring-boot-starter-graphql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Spring GraphQL 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-graphql-test"></a><code>spring-boot-starter-graphql-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring GraphQL 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-groovy-templates"></a><code>spring-boot-starter-groovy-templates</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Groovy 模板使用的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-groovy-templates-test"></a><code>spring-boot-starter-groovy-templates-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Groovy 模板的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-gson"></a><code>spring-boot-starter-gson</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 GSON 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-gson-test"></a><code>spring-boot-starter-gson-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 GSON 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-hateoas"></a><code>spring-boot-starter-hateoas</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于构建基于超媒体的 RESTful Spring MVC Web 应用程序的 Spring HATEOS Starter。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-hateoas-test"></a><code>spring-boot-starter-hateoas-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring HATEOAS 以构建基于超媒体的 RESTful Spring MVC Web 应用程序的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-hazelcast"></a><code>spring-boot-starter-hazelcast</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Hazelcast 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-hazelcast-test"></a><code>spring-boot-starter-hazelcast-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Hazelcast 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-integration"></a><code>spring-boot-starter-integration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Integration 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-integration-test"></a><code>spring-boot-starter-integration-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Integration 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jackson"></a><code>spring-boot-starter-jackson</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Jackson 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jackson-test"></a><code>spring-boot-starter-jackson-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Jackson 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jdbc"></a><code>spring-boot-starter-jdbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 HikariCP 连接池的 JDBC Starter。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jdbc-test"></a><code>spring-boot-starter-jdbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 HikariCP 连接池测试 JDBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jersey"></a><code>spring-boot-starter-jersey</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 JAX-RS 和 Jersey 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jersey-test"></a><code>spring-boot-starter-jersey-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 JAX-RS 和 Jersey 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jetty"></a><code>spring-boot-starter-jetty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于将 Jetty 作为嵌入式 Servlet 容器的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jms"></a><code>spring-boot-starter-jms</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 JMS 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jms-test"></a><code>spring-boot-starter-jms-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 JMS 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jooq"></a><code>spring-boot-starter-jooq</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于通过 JDBC 访问 SQL 数据库的 jOOQ 启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jooq-test"></a><code>spring-boot-starter-jooq-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于通过 JDBC 测试 jOOQ 访问 SQL 数据库的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-json"></a><code>spring-boot-starter-json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于读取和写入 JSON 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jsonb"></a><code>spring-boot-starter-jsonb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 JSON-B 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jsonb-test"></a><code>spring-boot-starter-jsonb-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 JSON-B 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-kafka"></a><code>spring-boot-starter-kafka</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Apache Kafka 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-kafka-test"></a><code>spring-boot-starter-kafka-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Apache Kafka 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-kotlin-serialization"></a><code>spring-boot-starter-kotlin-serialization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Kotlin Serialization 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-kotlin-serialization-test"></a><code>spring-boot-starter-kotlin-serialization-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Kotlin 序列化的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-ldap"></a><code>spring-boot-starter-ldap</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 LDAP 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-ldap-test"></a><code>spring-boot-starter-ldap-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 LDAP 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-liquibase"></a><code>spring-boot-starter-liquibase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Liquibase 数据库迁移的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-liquibase-test"></a><code>spring-boot-starter-liquibase-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Liquibase 数据库迁移的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mail"></a><code>spring-boot-starter-mail</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Java Mail 和 Spring Framework 电子邮件发送支持的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mail-test"></a><code>spring-boot-starter-mail-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Java Mail 和 Spring Framework 电子邮件发送支持的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-micrometer-metrics"></a><code>spring-boot-starter-micrometer-metrics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Micrometer Metrics 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-micrometer-metrics-test"></a><code>spring-boot-starter-micrometer-metrics-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Micrometer 指标的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mongodb"></a><code>spring-boot-starter-mongodb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 MongoDB 文档型数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mongodb-test"></a><code>spring-boot-starter-mongodb-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 MongoDB 文档型数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mustache"></a><code>spring-boot-starter-mustache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Mustache 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-mustache-test"></a><code>spring-boot-starter-mustache-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Mustache 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-neo4j"></a><code>spring-boot-starter-neo4j</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Neo4j 图数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-neo4j-test"></a><code>spring-boot-starter-neo4j-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Neo4j 图数据库的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-oauth2-authorization-server"></a><code>spring-boot-starter-oauth2-authorization-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Authorization Server 功能的启动器（已弃用，建议使用<a href="#spring-boot-starter-security-oauth2-authorization-server"><code>spring-boot-starter-security-oauth2-authorization-server</code></a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-oauth2-client"></a><code>spring-boot-starter-oauth2-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 的 OAuth2/OpenID Connect 客户端功能的启动器（已弃用，推荐使用<a href="#spring-boot-starter-security-oauth2-client"><code>spring-boot-starter-security-oauth2-client</code></a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-oauth2-resource-server"></a><code>spring-boot-starter-oauth2-resource-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 的 OAuth2 资源服务器功能的启动器（已弃用，推荐使用<a href="#spring-boot-starter-security-oauth2-resource-server"><code>spring-boot-starter-security-oauth2-resource-server</code></a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-opentelemetry"></a><code>spring-boot-starter-opentelemetry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 OpenTelemetry 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-opentelemetry-test"></a><code>spring-boot-starter-opentelemetry-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 OpenTelemetry 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-pulsar"></a><code>spring-boot-starter-pulsar</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于在 Apache Pulsar 中使用 Spring 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-pulsar-test"></a><code>spring-boot-starter-pulsar-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Apache Pulsar 的 Spring 启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-quartz"></a><code>spring-boot-starter-quartz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Quartz 调度器的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-quartz-test"></a><code>spring-boot-starter-quartz-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Quartz 调度器的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-r2dbc"></a><code>spring-boot-starter-r2dbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 R2DBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-r2dbc-test"></a><code>spring-boot-starter-r2dbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 R2DBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-reactor-netty"></a><code>spring-boot-starter-reactor-netty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reactor Netty 启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-restclient"></a><code>spring-boot-starter-restclient</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Spring 的阻塞式 HTTP 客户端（RestClient、RestTemplate 和 HTTP 服务客户端）的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-restclient-test"></a><code>spring-boot-starter-restclient-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring 阻塞式 HTTP 客户端（RestClient、RestTemplate 和 HTTP 服务客户端）的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-rsocket"></a><code>spring-boot-starter-rsocket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 RSocket 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-rsocket-test"></a><code>spring-boot-starter-rsocket-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 RSocket 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security"></a><code>spring-boot-starter-security</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-authorization-server"></a><code>spring-boot-starter-security-oauth2-authorization-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Authorization Server 功能的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-authorization-server-test"></a><code>spring-boot-starter-security-oauth2-authorization-server-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Authorization Server 功能的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-client"></a><code>spring-boot-starter-security-oauth2-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 的 OAuth2/OpenID Connect 客户端功能的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-client-test"></a><code>spring-boot-starter-security-oauth2-client-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Security 的 OAuth2/OpenID Connect 客户端功能的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-resource-server"></a><code>spring-boot-starter-security-oauth2-resource-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 的 OAuth2 资源服务器功能的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-oauth2-resource-server-test"></a><code>spring-boot-starter-security-oauth2-resource-server-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Security 的 OAuth2 资源服务器功能的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-saml2"></a><code>spring-boot-starter-security-saml2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Security 与 SAML2 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-saml2-test"></a><code>spring-boot-starter-security-saml2-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 SAML2 测试 Spring Security 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-security-test"></a><code>spring-boot-starter-security-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Security 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-sendgrid"></a><code>spring-boot-starter-sendgrid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于与 Sendgrid 一起使用 Spring Session 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-sendgrid-test"></a><code>spring-boot-starter-sendgrid-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Session 与 Sendgrid 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-session-data-redis"></a><code>spring-boot-starter-session-data-redis</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Session 与 Spring Data Redis 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-session-data-redis-test"></a><code>spring-boot-starter-session-data-redis-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Session 与 Spring Data Redis 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-session-jdbc"></a><code>spring-boot-starter-session-jdbc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Session 与 JDBC 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-session-jdbc-test"></a><code>spring-boot-starter-session-jdbc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 JDBC 测试 Spring Session 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-test"></a><code>spring-boot-starter-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试包含 JUnit Jupiter、Hamcrest 和 Mockito 等库的 Spring Boot 应用程序的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-test-classic"></a><code>spring-boot-starter-test-classic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试包含 JUnit Jupiter、Hamcrest 和 Mockito 等库的 Spring Boot 应用程序的经典启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-thymeleaf"></a><code>spring-boot-starter-thymeleaf</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Thymeleaf 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-thymeleaf-test"></a><code>spring-boot-starter-thymeleaf-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Thymeleaf 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-tomcat"></a><code>spring-boot-starter-tomcat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于将 Tomcat 作为嵌入式 Servlet 容器的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-validation"></a><code>spring-boot-starter-validation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Java Bean Validation 与 Hibernate Validator 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-validation-test"></a><code>spring-boot-starter-validation-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Java Bean Validation 与 Hibernate Validator 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-web"></a><code>spring-boot-starter-web</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于构建使用 Spring MVC 的 Web（包括 RESTful）应用程序的启动器。默认使用 Tomcat 作为嵌入式容器（已弃用，推荐使用 <a href="#spring-boot-starter-webmvc"><code>spring-boot-starter-webmvc</code></a>）。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-web-services"></a><code>spring-boot-starter-web-services</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Web Services 的启动器（已废弃，建议使用<a href="#spring-boot-starter-webservices"><code>spring-boot-starter-webservices</code></a>）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webclient"></a><code>spring-boot-starter-webclient</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Spring 的响应式 HTTP 客户端（WebClient 和 HTTP Service Clients）的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webclient-test"></a><code>spring-boot-starter-webclient-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring 响应式 HTTP 客户端（WebClient 和 HTTP Service Clients）的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webflux"></a><code>spring-boot-starter-webflux</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 WebFlux 和 Reactor Netty 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webflux-test"></a><code>spring-boot-starter-webflux-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 WebFlux 和 Reactor Netty 的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webmvc"></a><code>spring-boot-starter-webmvc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring MVC 和 Tomcat 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webmvc-test"></a><code>spring-boot-starter-webmvc-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring MVC 和 Tomcat 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webservices"></a><code>spring-boot-starter-webservices</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Web Services 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-webservices-test"></a><code>spring-boot-starter-webservices-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring Web Services 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-websocket"></a><code>spring-boot-starter-websocket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring MVC WebSocket 支持的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-websocket-test"></a><code>spring-boot-starter-websocket-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Spring MVC WebSocket 支持的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-zipkin"></a><code>spring-boot-starter-zipkin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Zipkin 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-zipkin-test"></a><code>spring-boot-starter-zipkin-test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于测试 Zipkin 的启动器</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>除了应用启动器之外，还可以使用以下启动器来添加<a class="xref page" href="../../how-to/actuator.html">生产就绪</a>功能：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 2. Spring Boot 生产启动器</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-actuator"></a><code>spring-boot-starter-actuator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Spring Boot 的 Actuator 的启动器，它提供生产就绪功能以帮助您监控和管理应用程序。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>最后，Spring Boot 还包含以下启动器，如果您想排除或替换特定的技术方面，可以使用它们：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">表 3. Spring Boot 技术启动器</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-jetty-runtime"></a><code>spring-boot-starter-jetty-runtime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jetty 运行时启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-log4j2"></a><code>spring-boot-starter-log4j2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于使用 Log4j2 的启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-logback"></a><code>spring-boot-starter-logback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 Logback 的日志启动器</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-logging"></a><code>spring-boot-starter-logging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于记录默认日志的启动器。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="spring-boot-starter-tomcat-runtime"></a><code>spring-boot-starter-tomcat-runtime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tomcat 运行时启动器</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>若要了解如何交换技术组件，请参阅关于<a class="xref page" href="../../how-to/webserver.html#howto.webserver.use-another">更换 Web 服务器</a>和<a class="xref page" href="../../how-to/logging.html#howto.logging.log4j">日志系统</a>的教程文档。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关其他社区贡献的启动器的列表，请查看 GitHub 上 <code>spring-boot-starters</code> 模块中的<a href="https://github.com/spring-projects/spring-boot/tree/main/spring-boot-project/spring-boot-starters/README.adoc">README 文件</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<nav class="pagination"><span class="prev"><a href="index.html">使用 Spring Boot 进行开发</a></span>
+<span class="next"><a href="structuring-your-code.html">组织代码结构</a></span></nav>
+</article>  </div>
+</main>
+<div aria-hidden="true" class="modal micromodal-slide" id="modal-versions">
+    <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+        <div aria-modal="true" class="modal__container" role="dialog">
+            <main class="modal__content" id="modal-versions-content">
+              <button class="modal-versions-close" data-micromodal-close="">
+                <svg height="28px" viewBox="0 0 32 32" width="28px" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title></title><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"></line><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"></line></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div><a class="title" href="../../index.html">Spring Boot</a></div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>相关 Spring 文档<ul class="projects-list">
+        <li><a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Cloud
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Data
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a></li>
+        <li><a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a></li>
+        <li><a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a></li>
+        <li><a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a></li>
+        <li><a href="https://docs.spring.io/spring-modulith/reference/">Spring Modulith</a></li>
+        <li><a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a></li>
+        <li><a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a></li>
+    </ul>
+  </li><a href="../../spring-projects.html">所有文档...</a>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img alt="Spring" id="springlogo" src="../../_/img/spring-logo.svg"/>
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href="https://www.vmware.com/help/legal.html">使用条款</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">隐私政策</a> • <a href="https://spring.io/trademarks">商标指南</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">致谢</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">您的加州隐私权利</a> • <a class="ot-sdk-show-settings">Cookie 设置</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。</p>
+    </div>
+    <div class="flex jc-between" id="social-icons">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="20" cy="20" r="20"></circle><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"></path></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"></path><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"></path></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"></circle><path class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z" data-name="Twitter" id="Twitter-2"></path></svg></a>
+    </div>
+</footer>
+<script src="../../_/js/vendor/import.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async="" src="../../_/js/vendor/highlight.js"></script>
+<script async="" data-sync-storage-key="docs:preferred-tab" src="../../_/js/vendor/asciidoctor-tabs.js"></script>
+  
+
+</body></html>

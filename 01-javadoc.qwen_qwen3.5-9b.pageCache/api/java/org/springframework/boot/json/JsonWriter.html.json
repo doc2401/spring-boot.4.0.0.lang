@@ -1,0 +1,191 @@
+{
+  "created_at": "2026-04-13 19:12:51",
+  "updated_at": "2026-04-13 19:12:51",
+  "stats": {
+    "total_entries": 35,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 64,
+    "entries_with_hits": 35,
+    "entries_without_hits": 0,
+    "hit_rate": 1.8285714285714285,
+    "usage_percentage": 0.0034999999999999996
+  },
+  "items": [
+    {
+      "source": "Return a new <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> instance that appends a new line after the JSON has\nbeen written.",
+      "translation": "返回一个新的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>实例，在写入 JSON 后追加一个新行。",
+      "count": 3
+    },
+    {
+      "source": "Return a new <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> instance that appends the given suffix after the\nJSON has been written.",
+      "translation": "返回一个新的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>实例，在写入 JSON 后追加给定的后缀。",
+      "count": 3
+    },
+    {
+      "source": "Provide a <a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> implementation that may be used to write the given\ninstance to various outputs.",
+      "translation": "提供一个<a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a>实现，可用于将给定的实例写入各种输出。",
+      "count": 3
+    },
+    {
+      "source": "<code>instance</code> - the instance to write (may be <code>null</code>)",
+      "translation": "<code>instance</code> - 要写入的实例（可为 <code>null</code>）",
+      "count": 3
+    },
+    {
+      "source": "For standard Java types, the <a href=\"#standard()\"><code>standard()</code></a> factory method may be used to obtain\nan instance of this interface. It supports <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html\" title=\"class or interface in java.lang\"><code>String</code></a>, <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html\" title=\"class or interface in java.lang\"><code>Number</code></a> and\n<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html\" title=\"class or interface in java.lang\"><code>Boolean</code></a> as well as <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html\" title=\"class or interface in java.util\"><code>Collection</code></a>, <code>Array</code>, <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a> and\n<a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> types. Typical usage would be:",
+      "translation": "对于标准 Java 类型，可以使用 <a href=\"#standard()\"><code>standard()</code></a> 工厂方法获取此接口的实例。它支持 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html\" title=\"class or interface in java.lang\"><code>String</code></a>、<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html\" title=\"class or interface in java.lang\"><code>Number</code></a> 和 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html\" title=\"class or interface in java.lang\"><code>Boolean</code></a>，以及 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html\" title=\"class or interface in java.util\"><code>Collection</code></a>、<code>Array</code>、<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\" title=\"class or interface in java.util\"><code>Map</code></a> 和 <a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> 类型。典型用法如下：",
+      "count": 2
+    },
+    {
+      "source": "The <a href=\"#writeToString(T)\"><code>writeToString(Object)</code></a> method can be used if you want to write the JSON\ndirectly to a <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html\" title=\"class or interface in java.lang\"><code>String</code></a>. To write to other types of output, the\n<a href=\"#write(T)\"><code>write(Object)</code></a> method may be used to obtain a <a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> instance.",
+      "translation": "如果要将 JSON 直接写入 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html\" title=\"class or interface in java.lang\"><code>String</code></a>`，可以使用 <a href=\"#writeToString(T)\"><code>writeToString(Object)</code></a> 方法。若要写入其他类型的输出，可使用 <a href=\"#write(T)\"><code>write(Object)</code></a> 方法获取一个 <a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> 实例。",
+      "count": 2
+    },
+    {
+      "source": "More complex mappings can be created using the <a href=\"#of(java.util.function.Consumer)\"><code>of(Consumer)</code></a> method with a\ncallback to configure the <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JSON members</code></a> that should be written. Typical\nusage would be:",
+      "translation": "更复杂的映射可以使用带有回调的<a href=\"#of(java.util.function.Consumer)\"><code>of(Consumer)</code></a>方法创建，该回调用于配置要写入的<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JSON members</code></a>。典型用法如下：",
+      "count": 2
+    },
+    {
+      "source": "Factory method to return a <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> with specific <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>member\nmapping</code></a>. See <code>class-level javadoc</code> and <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a> for\ndetails.",
+      "translation": "用于返回具有特定<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>member mapping</code></a>的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>的工厂方法。有关详细信息，请参阅<class-level javadoc>和<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Callback interface that can be <a href=\"JsonWriter.Members.html#applyingNameProcessor(org.springframework.boot.json.JsonWriter.NameProcessor)\"><code>applied</code></a> to <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a> to change names or filter members.",
+      "translation": "可应用于<a href=\"JsonWriter.Members.html#applyingNameProcessor(org.springframework.boot.json.JsonWriter.NameProcessor)\"><code>applied</code></a>的回调接口，以更改或过滤<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a>的成员。",
+      "count": 2
+    },
+    {
+      "source": "Callback interface that can be\n<a href=\"JsonWriter.Members.html#applyingValueProcessor(org.springframework.boot.json.JsonWriter.ValueProcessor)\"><code>applied</code></a> to <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a>\nto process values before they are written.",
+      "translation": "可应用于<a href=\"JsonWriter.Members.html#applyingValueProcessor(org.springframework.boot.json.JsonWriter.ValueProcessor)\"><code>applied</code></a>到<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>JsonWriter.Members</code></a>的回调接口，以便在写入之前处理值。",
+      "count": 2
+    },
+    {
+      "source": "Factory method to return a <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> with specific <a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>member\nmapping</code></a>.",
+      "translation": "工厂方法，用于返回具有特定<a href=\"JsonWriter.Members.html\" title=\"class in org.springframework.boot.json\"><code>member mapping</code></a>的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Factory method to return a <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> for standard Java types. See\n<code>class-level javadoc</code> for details.",
+      "translation": "工厂方法，用于返回标准 Java 类型的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>。有关详细信息，请参阅<class-level javadoc>。",
+      "count": 2
+    },
+    {
+      "source": "Factory method to return a <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> for standard Java types.",
+      "translation": "用于返回标准 Java 类型的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>的工厂方法。",
+      "count": 2
+    },
+    {
+      "source": "Write the given instance to the provided <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Appendable.html\" title=\"class or interface in java.lang\"><code>Appendable</code></a>.",
+      "translation": "将该实例写入提供的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Appendable.html\" title=\"class or interface in java.lang\"><code>Appendable</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Write the given instance to a JSON string.",
+      "translation": "将此实例写入 JSON 字符串。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-T\"><code>T</code> - the type being written</span>",
+      "translation": "<span id=\"type-param-T\"><code>T</code> - 被写入的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>instance</code> - the instance to write (may be <code>null</code>",
+      "translation": "<code>instance</code> - 要写入的实例（可能为 <code>null</code>）",
+      "count": 2
+    },
+    {
+      "source": "a <a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a> instance that may be used to write the JSON",
+      "translation": "一个<a href=\"WritableJson.html\" title=\"interface in org.springframework.boot.json\"><code>WritableJson</code></a>实例，可用于写入 JSON。",
+      "count": 2
+    },
+    {
+      "source": "a new <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> instance that appends a new line after the JSON",
+      "translation": "一个新的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>实例，在 JSON 后追加一个新行。",
+      "count": 2
+    },
+    {
+      "source": "a new <a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a> instance that appends a suffix after the JSON",
+      "translation": "一个新的<a href=\"JsonWriter.html\" title=\"interface in org.springframework.boot.json\"><code>JsonWriter</code></a>实例，在 JSON 后追加后缀。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"standard()-type-param-T\"><code>T</code> - the type to write</span>",
+      "translation": "<span id=\"standard()-type-param-T\"><code>T</code> - 要写入的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"of(java.util.function.Consumer)-type-param-T\"><code>T</code> - the type to write</span>",
+      "translation": "<span id=\"of(java.util.function.Consumer)-type-param-T\"><code>T</code> - 要写入的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>out</code> - the output that should receive the JSON",
+      "translation": "<code>out</code> - 应接收 JSON 的输出。",
+      "count": 2
+    },
+    {
+      "source": "<code>suffix</code> - the suffix to write, if any",
+      "translation": "<code>suffix</code> - 要写入的后缀（如果有）",
+      "count": 2
+    },
+    {
+      "source": "<code>members</code> - a consumer, which should configure the members",
+      "translation": "<code>members</code> - 一个消费者，应配置成员。",
+      "count": 2
+    },
+    {
+      "source": "Interface that can be used to extract one value from another.",
+      "translation": "可用于从另一个值中提取一个值的接口。",
+      "count": 1
+    },
+    {
+      "source": "A member that contributes JSON.",
+      "translation": "贡献 JSON 的成员。",
+      "count": 1
+    },
+    {
+      "source": "A path used to identify a specific JSON member.",
+      "translation": "用于标识特定 JSON 成员的路径。",
+      "count": 1
+    },
+    {
+      "source": "Callback used to configure JSON members.",
+      "translation": "用于配置 JSON 成员的回调。",
+      "count": 1
+    },
+    {
+      "source": "Interface that can be used to extract name/value pairs from an element.",
+      "translation": "可用于从元素中提取名称/值对的接口。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code> - on IO error",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code> - 在 IO 错误时",
+      "count": 1
+    },
+    {
+      "source": "This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.",
+      "translation": "这是一个函数式接口，因此可用作 Lambda 表达式或方法引用的赋值目标。",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Moritz Halbritter",
+      "translation": "Phillip Webb，Moritz Halbritter",
+      "count": 1
+    },
+    {
+      "source": "the JSON string",
+      "translation": "JSON 字符串",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

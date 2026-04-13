@@ -1,0 +1,146 @@
+{
+  "created_at": "2026-04-13 19:53:59",
+  "updated_at": "2026-04-13 19:53:59",
+  "stats": {
+    "total_entries": 26,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 56,
+    "entries_with_hits": 26,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1538461538461537,
+    "usage_percentage": 0.0026
+  },
+  "items": [
+    {
+      "source": "the JSON content",
+      "translation": "JSON 内容",
+      "count": 6
+    },
+    {
+      "source": "Create a new uninitialized <a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a> instance.",
+      "translation": "创建一个新的未初始化的<a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a> 实例。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a> instance that will load resources as UTF-8.",
+      "translation": "创建一个新的<a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a>实例，该实例将资源加载为 UTF-8。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a> instance.",
+      "translation": "创建一个新的<a href=\"BasicJsonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>BasicJsonTester</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "AssertJ based JSON tester that works with basic JSON strings. Allows testing of JSON\npayloads created from any source, for example:<pre class=\"code\">public class ExampleObjectJsonTests {\n\n    private BasicJsonTester json = new BasicJsonTester(getClass());\n\n    @Test\n    public void testWriteJson() throws IOException {\n        assertThat(json.from(\"example.json\")).extractingJsonPathStringValue(\"@.name\")\n                        .isEqualTo(\"Spring\");\n    }\n\n}\n</pre>\n\nSee <a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\"><code>AbstractJsonMarshalTester</code></a> for more details.",
+      "translation": "基于 AssertJ 的 JSON 测试器，适用于基本 JSON 字符串。允许测试来自任何源的 JSON 负载，例如：\n<pre class=\"code\">public class ExampleObjectJsonTests {\n\n    private BasicJsonTester json = new BasicJsonTester(getClass());\n\n    @Test\n    public void testWriteJson() throws IOException {\n        assertThat(json.from(\"example.json\")).extractingJsonPathStringValue(\"@.name\")\n                        .isEqualTo(\"Spring\");\n    }\n\n}\n</pre>\n有关更多详细信息，请参阅 <a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\"><code>AbstractJsonMarshalTester</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified String source. The source can contain the\nJSON itself or, if it ends with <code>.json</code>, the name of a resource to be loaded\nusing <code>resourceLoadClass</code>.",
+      "translation": "创建来自指定字符串源的 JSON 内容。该源可以包含 JSON 本身，或者如果它以 `<code>.json</code>` 结尾，则包含要使用 `<code>resourceLoadClass</code>` 加载的资源名称。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified JSON bytes.",
+      "translation": "从指定的 JSON 字节创建 JSON 内容。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified JSON file.",
+      "translation": "从指定的 JSON 文件创建 JSON 内容。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified JSON input stream.",
+      "translation": "从指定的 JSON 输入流创建 JSON 内容。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified resource path.",
+      "translation": "从指定的资源路径创建 JSON 内容。",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified JSON resource.",
+      "translation": "从指定的 JSON 资源创建 JSON 内容。",
+      "count": 2
+    },
+    {
+      "source": "Initialize the marshal tester for use, configuring it to load JSON resources as\nUTF-8.",
+      "translation": "初始化 marshal 测试器以启用其功能，并将其配置为加载 UTF-8 编码的 JSON 资源。",
+      "count": 2
+    },
+    {
+      "source": "Initialize the marshal tester for use.",
+      "translation": "初始化 Marshal 测试器以供使用。",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the JSON content or a <code>.json</code> resource name",
+      "translation": "<code>source</code> - JSON 内容或一个 <code>.json</code> 资源名称",
+      "count": 2
+    },
+    {
+      "source": "<code>resourceLoadClass</code> - the source class used to load resources",
+      "translation": "<code>resourceLoadClass</code> - 用于加载资源的源类",
+      "count": 2
+    },
+    {
+      "source": "<code>charset</code> - the charset used to load resources",
+      "translation": "<code>charset</code> - 用于加载资源的字符集",
+      "count": 2
+    },
+    {
+      "source": "<code>resourceLoadClass</code> - the source class used when loading relative classpath\nresources",
+      "translation": "<code>resourceLoadClass</code> - 加载相对类路径资源时使用的源类",
+      "count": 2
+    },
+    {
+      "source": "<code>charset</code> - the charset used when loading relative classpath resources",
+      "translation": "<code>charset</code> - 加载相对类路径资源时使用的字符集",
+      "count": 2
+    },
+    {
+      "source": "<code>path</code> - the path of the resource to load",
+      "translation": "<code>path</code> - 要加载的资源的路径",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the bytes of JSON",
+      "translation": "<code>source</code> - JSON 的字节",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the file containing JSON",
+      "translation": "<code>source</code> - 包含 JSON 的文件",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the input stream containing JSON",
+      "translation": "<code>source</code> - 包含 JSON 的输入流",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the resource containing JSON",
+      "translation": "<code>source</code> - 包含 JSON 的资源",
+      "count": 2
+    },
+    {
+      "source": "Create JSON content from the specified String source.",
+      "translation": "从指定的字符串源创建 JSON 内容。",
+      "count": 1
+    },
+    {
+      "source": "<code>resourceLoadClass</code> - the source class used to load the resource",
+      "translation": "<code>resourceLoadClass</code> - 用于加载资源的源类",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Andy Wilkinson",
+      "translation": "Phillip Webb，Andy Wilkinson",
+      "count": 1
+    }
+  ]
+}

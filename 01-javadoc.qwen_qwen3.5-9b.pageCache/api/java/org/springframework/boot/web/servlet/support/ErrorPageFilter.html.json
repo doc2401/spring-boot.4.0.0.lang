@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-04-13 20:10:19",
+  "updated_at": "2026-04-13 20:10:19",
+  "stats": {
+    "total_entries": 16,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 22,
+    "entries_with_hits": 16,
+    "entries_without_hits": 0,
+    "hit_rate": 1.375,
+    "usage_percentage": 0.0015999999999999999
+  },
+  "items": [
+    {
+      "source": "A Servlet <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\"><code>Filter</code></a> that provides an <a href=\"../../error/ErrorPageRegistry.html\" title=\"interface in org.springframework.boot.web.error\"><code>ErrorPageRegistry</code></a> for non-embedded\napplications (i.e. deployed WAR files). It registers error pages and handles\napplication errors by filtering requests and forwarding to the error pages instead of\nletting the server handle them. Error pages are a feature of the servlet spec but there\nis no Java API for registering them in the spec. This filter works around that by\naccepting error page registrations from Spring Boot's <a href=\"../../error/ErrorPageRegistrar.html\" title=\"interface in org.springframework.boot.web.error\"><code>ErrorPageRegistrar</code></a> (any\nbeans of that type in the context will be applied to this server).",
+      "translation": "一个 Servlet `<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\"><code>Filter</code></a>`，为非嵌入式应用程序（即部署的 WAR 文件）提供 `<a href=\"../../error/ErrorPageRegistry.html\" title=\"interface in org.springframework.boot.web.error\"><code>ErrorPageRegistry</code></a>`。它通过过滤请求并将它们转发到错误页面来处理应用程序错误，而不是让服务器处理这些错误。错误页面是 Servlet 规范的一项功能，但该规范中并没有用于注册它们的 Java API。此过滤器通过接受来自 Spring Boot 的 `<a href=\"../../error/ErrorPageRegistrar.html\" title=\"interface in org.springframework.boot.web.error\"><code>ErrorPageRegistrar</code></a>` 的错误页面注册来解决这一问题（上下文中的任何此类 Bean 都将应用于此服务器）。",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"../../error/ErrorPageRegistry.html#addErrorPages(org.springframework.boot.web.error.ErrorPage...)\">ErrorPageRegistry</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"../../error/ErrorPageRegistry.html#addErrorPages(org.springframework.boot.web.error.ErrorPage...)\">ErrorPageRegistry</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "Return the description for the given request. By default this method will return a\ndescription based on the request <code>servletPath</code> and <code>pathInfo</code>.",
+      "translation": "返回给定请求的描述。默认情况下，此方法将基于请求的 `<code>servletPath</code>` 和 `<code>pathInfo</code>` 返回描述。",
+      "count": 2
+    },
+    {
+      "source": "The name of the servlet attribute containing request URI.",
+      "translation": "包含请求 URI 的 Servlet 属性名称。",
+      "count": 2
+    },
+    {
+      "source": "Adds error pages that will be used when handling exceptions.",
+      "translation": "添加在异常处理时将使用的错误页面。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"../../error/ErrorPageRegistry.html#addErrorPages(org.springframework.boot.web.error.ErrorPage...)\">addErrorPages</a></code> in interface <code><a href=\"../../error/ErrorPageRegistry.html\" title=\"interface in org.springframework.boot.web.error\">ErrorPageRegistry</a></code>",
+      "translation": "`<code><a href=\"../../error/ErrorPageRegistry.html#addErrorPages(org.springframework.boot.web.error.ErrorPage...)\">addErrorPages</a></code>` 接口中的 `<code><a href=\"../../error/ErrorPageRegistry.html\" title=\"interface in org.springframework.boot.web.error\">ErrorPageRegistry</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "Return the description for the given request.",
+      "translation": "返回给定请求的描述。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#init(jakarta.servlet.FilterConfig)\" title=\"class or interface in jakarta.servlet\">init</a></code> in interface <code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#init(jakarta.servlet.FilterConfig)\" title=\"class or interface in jakarta.servlet\">init</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#doFilter(jakarta.servlet.ServletRequest,jakarta.servlet.ServletResponse,jakarta.servlet.FilterChain)\" title=\"class or interface in jakarta.servlet\">doFilter</a></code> in interface <code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#doFilter(jakarta.servlet.ServletRequest,jakarta.servlet.ServletResponse,jakarta.servlet.FilterChain)\" title=\"class or interface in jakarta.servlet\">doFilter</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#destroy()\" title=\"class or interface in jakarta.servlet\">destroy</a></code> in interface <code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html#destroy()\" title=\"class or interface in jakarta.servlet\">destroy</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\">Filter</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>request</code> - the source request",
+      "translation": "<code>request</code> - 源请求",
+      "count": 1
+    },
+    {
+      "source": "<code>errorPages</code> - the error pages",
+      "translation": "<code>errorPages</code> - 错误页面",
+      "count": 1
+    },
+    {
+      "source": "Dave Syer, Phillip Webb, Andy Wilkinson",
+      "translation": "Dave Syer, Phillip Webb, Andy Wilkinson",
+      "count": 1
+    },
+    {
+      "source": "the description",
+      "translation": "描述",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

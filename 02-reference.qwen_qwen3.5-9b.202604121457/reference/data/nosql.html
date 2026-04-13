@@ -1,0 +1,3554 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>与 NoSQL 技术一起使用 :: Spring Boot</title>
+    <link href="sql.html" rel="prev"/>
+    <link href="../io/index.html" rel="next"/>
+    <meta content="Antora 3.2.0-alpha.10" name="generator"/>
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link href="../../_/css/site.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/page-search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/asciidoctor-tabs.css" rel="stylesheet"/>
+
+    <meta content="v0.4.21" name="antora-ui-version"/> 
+    <meta content="4.0.0" name="version"/>
+    <meta content="" name="generation"/>
+    <meta content="undefined/undefined/reference/data/nosql.html" name="versioned-url"/>
+    <meta content="boot" name="component"/>
+    <meta content="false" name="latest-version"/>
+    <link href="../../_/img/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img alt="Spring" class="block" id="springlogo" src="../../_/img/spring-logo.svg"/>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar-menu" id="topbar-nav">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">为什么选择 Spring</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.io/why-spring">概述</a>
+<a class="navbar-item" href="https://spring.io/microservices">微服务</a>
+<a class="navbar-item" href="https://spring.io/reactive">响应式</a>
+<a class="navbar-item" href="https://spring.io/event-driven">事件驱动</a>
+<a class="navbar-item" href="https://spring.io/cloud">云</a>
+<a class="navbar-item" href="https://spring.io/web-applications">Web 应用</a>
+<a class="navbar-item" href="https://spring.io/serverless">无服务器</a>
+<a class="navbar-item" href="https://spring.io/batch">批处理</a></div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a class="navbar-item" href="https://spring.io/quickstart">Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px"><a class="navbar-item" href="https://spring.io/projects">概览</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-boot">Spring Boot</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-framework">Spring Framework</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud">Spring Cloud</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud-dataflow">Spring Cloud Data Flow</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-data">Spring Data</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-integration">Spring Integration</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-batch">Spring Batch</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-security">Spring Security</a>
+<a class="navbar-item navbar-item-special" href="https://spring.io/projects">查看所有项目</a>
+<li class="navbar-item navbar-item-special-3">开发工具</li>
+<a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+<a class="navbar-item navbar-item-special-2" href="https://start.spring.io">Spring Initializr
+              <svg class="external-link-icon" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="15 10.94 15 15 1 15 1 1 5.06 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><polyline fill="none" points="8.93 1 15 1 15 7.07" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><line fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" x1="15" x2="8" y1="1" y2="8"></line></svg></a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.academy/courses">课程</a>
+<a class="navbar-item" href="https://spring.academy/learning-path">获取认证</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg"><a class="navbar-item" href="https://spring.io/solutions">概览</a>
+<a class="navbar-item" href="https://spring.io/support">Spring 运行时</a>
+<a class="navbar-item" href="https://spring.io/consulting">Spring 咨询</a>
+<a class="navbar-item" href="https://spring.academy/teams">Spring 团队学院</a>
+<a class="navbar-item" href="https://spring.io/security">安全公告</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/community">Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input id="switch-theme-checkbox" name="switch-theme-checkbox" type="checkbox"/>
+      <span class="icon"><svg aria-hidden="true" class="svg-inline--fa fa-moon moon" data-icon="moon" data-prefix="fas" focusable="false" role="img" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" fill="currentColor"></path>
+        </svg>
+        <svg aria-hidden="true" class="svg-inline--fa fa-sun sun" data-icon="sun" data-prefix="fas" focusable="false" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor"></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context"><span class="title">Spring Boot</span>
+<span class="version">4.0.0</span>
+<button class="browse-version" id="browse-version">
+<svg height="24px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="24px" xml:space="preserve"><g><path d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"></path><path d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"></path><path d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"></path></g></svg>
+</button></div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book" href="../../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question" href="../../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-server" href="../../system-requirements.html">系统要求</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-gift" href="../../installing.html">安装 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-rocket" href="../../upgrading.html">升级 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../tutorial/index.html">教程</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../tutorial/first-application/index.html">开发您的第一个 Spring Boot 应用程序</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../using/index.html">使用 Spring Boot 进行开发</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/build-systems.html">构建系统</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/structuring-your-code.html">代码结构</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/configuration-classes.html">配置类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/auto-configuration.html">自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/spring-beans-and-dependency-injection.html">Spring Bean 和依赖注入</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/using-the-springbootapplication-annotation.html">使用 @SpringBootApplication 注解</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/running-your-application.html">运行您的应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/devtools.html">开发者工具</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/packaging-for-production.html">将您的应用程序打包用于生产环境</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../features/index.html">核心功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/spring-application.html">SpringApplication</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/external-config.html">外部化配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/profiles.html">Profile</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/internationalization.html">国际化</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/aop.html">面向切面编程</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/json.html">JSON</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/task-execution-and-scheduling.html">任务执行与调度</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/dev-services.html">开发时服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/developing-auto-configuration.html">创建自己的自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/kotlin.html">Kotlin 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/ssl.html">SSL</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../web/index.html">Web</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/servlet.html">Servlet Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/reactive.html">响应式 Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/graceful-shutdown.html">优雅关闭</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-security.html">Spring Security</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-session.html">Spring Session</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-graphql.html">Spring for GraphQL</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-hateoas.html">Spring HATEOAS</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="index.html">数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="sql.html">SQL 数据库</a>
+</li>
+<li class="nav-item is-current-page" data-depth="3">
+<a class="nav-link" href="nosql.html">使用 NoSQL 技术</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../io/index.html">IO</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/caching.html">缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/spring-batch.html">Spring Batch</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/hazelcast.html">Hazelcast</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/quartz.html">Quartz 调度器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/email.html">发送邮件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/validation.html">验证</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/rest-client.html">调用 REST 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/webservices.html">Web 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/jta.html">使用 JTA 进行分布式事务</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../messaging/index.html">消息传递</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/jms.html">JMS</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/amqp.html">AMQP</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/kafka.html">Apache Kafka 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/pulsar.html">Apache Pulsar 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/rsocket.html">RSocket</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/spring-integration.html">Spring Integration</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/websockets.html">WebSockets</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../testing/index.html">测试</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-modules.html">测试模块</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-scope-dependencies.html">测试作用域依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-applications.html">测试 Spring 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-boot-applications.html">测试 Spring Boot 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/testcontainers.html">Testcontainers</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-utilities.html">测试工具</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/index.html">打包 Spring Boot 应用程序</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/efficient.html">高效部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot.html">使用 JVM 进行提前处理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/native-image/index.html">GraalVM 原生镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/introducing-graalvm-native-images.html">介绍 GraalVM 原生镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/advanced-topics.html">高级原生镜像主题</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/checkpoint-restore.html">使用 JVM 进行检查点和恢复</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/container-images/index.html">容器镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/efficient-images.html">高效容器镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/dockerfiles.html">Dockerfiles</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/cloud-native-buildpacks.html">云原生构建包</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../actuator/index.html">生产就绪功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/enabling.html">启用生产就绪功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/endpoints.html">端点</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/monitoring.html">通过 HTTP 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/jmx.html">通过 JMX 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/observability.html">可观测性</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/loggers.html">日志记录器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/metrics.html">指标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/tracing.html">追踪</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/auditing.html">审计</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/http-exchanges.html">记录 HTTP 交换</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/process-monitoring.html">进程监控</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../actuator/cloud-foundry.html">Cloud Foundry 支持</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/index.html">操作指南</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/application.html">Spring Boot 应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/properties-and-configuration.html">属性与配置</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/webserver.html">嵌入式 Web 服务器</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/spring-mvc.html">Spring MVC</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/jersey.html">Jersey</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/http-clients.html">HTTP 客户端</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-access.html">数据访问</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-initialization.html">数据库初始化</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/nosql.html">NoSQL</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/messaging.html">消息传递</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/batch.html">批处理应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/actuator.html">Actuator</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/security.html">安全</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/hotswapping.html">热替换</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/testing.html">测试</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/build.html">构建</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot.html">提前处理 (AOT)</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/native-image/index.html">GraalVM 原生应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/developing-your-first-application.html">开发您的第一个 GraalVM 原生应用</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/testing-native-applications.html">测试 GraalVM 原生镜像</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/deployment/index.html">部署 Spring Boot 应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/traditional-deployment.html">传统部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/cloud.html">部署到云端</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/installing.html">安装 Spring Boot 应用</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/docker-compose.html">Docker Compose</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../build-tool-plugin/index.html">构建工具插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../maven-plugin/index.html">Maven 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/using.html">使用插件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/goals.html">目标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/run.html">使用 Maven 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/integration-tests.html">运行集成测试</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-info.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/help.html">帮助信息</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../gradle-plugin/index.html">Gradle 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/managing-dependencies.html">管理依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging-oci-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/publishing.html">发布应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/running.html">使用 Gradle 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/integrating-with-actuator.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/reacting.html">响应其他插件</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/antlib.html">Spring Boot AntLib 模块</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/other-build-systems.html">支持其他构建系统</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/installation.html">安装 CLI</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/using-the-cli.html">使用 CLI</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../api/rest/actuator/index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/auditevents.html">审计事件（<code>auditevents</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/conditions.html">条件评估报告 (<code>conditions</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/configprops.html">配置属性 (<code>configprops</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/heapdump.html">堆转储 (<code>heapdump</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/httpexchanges.html">HTTP 交换记录（<code>httpexchanges</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/integrationgraph.html">Spring Integration 图 (<code>integrationgraph</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/logfile.html">日志文件（<code>logfile</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/sbom.html">软件物料清单（<code>sbom</code>）</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/scheduledtasks.html">定时任务 (<code>scheduledtasks</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/startup.html">应用启动 (<code>startup</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/threaddump.html">线程转储 (<code>threaddump</code>)</a></li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/java/index.html" target="_blank">Spring Boot</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../gradle-plugin/api/java/index.html" target="_blank">Gradle Plugin</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../maven-plugin/api/java/index.html" target="_blank">Maven Plugin</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/kotlin/index.html" target="_blank">Spring Boot</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">规范</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/configuration-metadata/index.html">配置元数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/format.html">元数据格式</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/manual-hints.html">提供手动提示</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/annotation-processor.html">使用注解处理器生成自己的元数据</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/executable-jar/index.html">可执行 JAR 格式</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/nested-jars.html">嵌套 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/jarfile-class.html">Spring Boot 的“NestedJarFile”类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/launching.html">启动可执行 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/property-launcher.html">PropertiesLauncher 功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/restrictions.html">可执行 JAR 限制</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/alternatives.html">替代单 JAR 解决方案</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/application-properties/index.html">通用应用程序属性</a></li>
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/deprecated-application-properties/index.html">已废弃的应用程序属性</a></li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/index.html">自动配置类</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/test-auto-configuration/index.html">测试自动配置注解</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/test-auto-configuration/slices.html">测试切片</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/dependency-versions/index.html">依赖版本</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/coordinates.html">托管依赖坐标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/properties.html">版本属性</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button class="nav-toggle" id="nav-toggle-2"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle" id="nav-toggle-1"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div class="toc" data-levels="2" data-title="Working with NoSQL Technologies">
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links"><a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/data/nosql.adoc">
+<svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg>
+          编辑此页面
+        </a>
+<a href="https://github.com/doc2401/spring-boot" title="GitHub">
+<svg height="512px" id="Layer_1" version="1.1" viewbox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg"><style type="text/css">
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"></path></g></svg>
+          GitHub 项目
+        </a>
+<a href="https://stackoverflow.com/tags/spring-boot">
+<svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"></path></svg>
+          Stack Overflow
+        </a></div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container"><nav aria-label="面包屑" class="breadcrumbs">
+<ul>
+<li id="copy-url" title="复制带版本号的 URL"></li>
+<li><a href="../../index.html">Spring Boot</a></li>
+<li><a href="../index.html">参考</a></li>
+<li><a href="index.html">数据</a></li>
+<li><a href="nosql.html">使用 NoSQL 技术</a></li>
+</ul>
+</nav></div><h1 class="page" id="page-title">与 NoSQL 技术一起工作</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spring Data 提供了额外的项目，帮助您访问各种 NoSQL 技术，包括：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://spring.io/projects/spring-data-cassandra">Cassandra</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-couchbase">Couchbase</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-elasticsearch">Elasticsearch</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-geode">Geode</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-ldap">LDAP</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-mongodb">MongoDB</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-neo4j">Neo4J</a></p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-redis">Redis</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>在这些项目中，Spring Boot 为 Cassandra、Couchbase、Elasticsearch、LDAP、MongoDB、Neo4J 和 Redis 提供了自动配置。此外，<a href="https://github.com/spring-projects/spring-boot-data-geode">Spring Boot for Apache Geode</a> 提供了 <a href="https://docs.spring.io/spring-boot-data-geode-build/2.0.x/reference/html5#geode-repositories">Apache Geode 的自动配置</a>。您可以使用其他项目，但必须自行进行配置。请参阅 <a class="bare" href="https://spring.io/projects/spring-data">spring.io/projects/spring-data</a> 上的相应参考文档。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot 还为 InfluxDB 客户端提供了自动配置，但已弃用，转而推荐使用<a href="https://github.com/influxdata/influxdb-client-java">新的 InfluxDB Java 客户端</a>，它提供自己的 Spring Boot 集成。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.redis"><a class="anchor" href="#data.nosql.redis"></a>Redis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://redis.io/">Redis</a> 是一个缓存、消息代理以及功能丰富的键值存储。Spring Boot 为 <a href="https://github.com/redis/lettuce/">Lettuce</a> 和 <a href="https://github.com/redis/jedis/">Jedis</a> 客户端库提供了基本的自动配置，并为它们提供的由 <a href="https://github.com/spring-projects/spring-data-redis">Spring Data Redis</a> 实现的抽象也提供了基本支持。</p>
+</div>
+<div class="paragraph">
+<p>有一个 <code>spring-boot-starter-data-redis</code> 启动器，可以方便地收集依赖。默认情况下，它使用 <a href="https://github.com/redis/lettuce/">Lettuce</a>。该启动器同时支持传统和响应式应用程序。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+我们还提供了一个 <code>spring-boot-starter-data-redis-reactive</code> 启动器，以与其他支持响应式的存储保持一致。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.redis.connecting"><a class="anchor" href="#data.nosql.redis.connecting"></a>连接 Redis</h3>
+<div class="paragraph">
+<p>您可以像注入任何其他 Spring Bean 一样，注入自动配置的 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisConnectionFactory.html"><code>RedisConnectionFactory</code></a>、<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/core/StringRedisTemplate.html"><code>StringRedisTemplate</code></a> 或普通的 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/core/RedisTemplate.html"><code>RedisTemplate</code></a> 实例。
+以下示例展示了此类 Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_1">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_1_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_1_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_1_java" class="tabpanel" id="_tabs_1_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final StringRedisTemplate template;
+
+	public MyBean(StringRedisTemplate template) {
+		this.template = template;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public Boolean someMethod() {
+		return this.template.hasKey("spring");
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_1_kotlin" class="tabpanel" id="_tabs_1_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.data.redis.core.StringRedisTemplate
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val template: StringRedisTemplate) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): Boolean {
+		return template.hasKey("spring")
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>默认情况下，实例尝试连接到位于<code>localhost:6379</code>的 Redis 服务器。您可以使用<code>spring.data.redis.*</code>属性指定自定义连接详情，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_2">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_2_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_2_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_2_properties" class="tabpanel" id="_tabs_2_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.redis.host=localhost
+spring.data.redis.port=6379
+spring.data.redis.database=0
+spring.data.redis.username=user
+spring.data.redis.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_2_yaml" class="tabpanel" id="_tabs_2_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    redis:
+      host: "localhost"
+      port: 6379
+      database: 0
+      username: "user"
+      password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您也可以直接指定 Redis 服务器的 URL。设置 URL 时，host、port、username 和 password 属性将被忽略。示例如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_3">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_3_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_3_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_3_properties" class="tabpanel" id="_tabs_3_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.redis.url=redis://user:secret@localhost:6379
+spring.data.redis.database=0</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_3_yaml" class="tabpanel" id="_tabs_3_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    redis:
+      url: "redis://user:secret@localhost:6379"
+      database: 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+您还可以注册任意数量的实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/data/redis/autoconfigure/LettuceClientConfigurationBuilderCustomizer.html"><code>LettuceClientConfigurationBuilderCustomizer</code></a> 的 Bean，以实现更高级的自定义。
+<a class="apiref" href="https://javadoc.io/doc/io.lettuce/lettuce-core/6.8.1.RELEASE/io/lettuce/core/resource/ClientResources.html"><code>ClientResources</code></a> 也可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/data/redis/autoconfigure/ClientResourcesBuilderCustomizer.html"><code>ClientResourcesBuilderCustomizer</code></a> 进行自定义。
+如果您使用 Jedis，也可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/data/redis/autoconfigure/JedisClientConfigurationBuilderCustomizer.html"><code>JedisClientConfigurationBuilderCustomizer</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>或者，您可以注册类型为 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisStandaloneConfiguration.html"><code>RedisStandaloneConfiguration</code></a>、<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisSentinelConfiguration.html"><code>RedisSentinelConfiguration</code></a>、<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisClusterConfiguration.html"><code>RedisClusterConfiguration</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisStaticMasterReplicaConfiguration.html"><code>RedisStaticMasterReplicaConfiguration</code></a> 的 Bean，以完全控制配置。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Jedis 不支持 master/replica。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>如果您添加自己的任何自动配置类型的 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>`，它将替换默认值（除非是 `<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/core/RedisTemplate.html"><code>RedisTemplate</code></a>` 的情况，此时排除是基于 bean 名称 `redisTemplate`，而不是其类型）。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，如果类路径中包含 <code>commons-pool2</code>，则会自动配置连接池工厂。</p>
+</div>
+<div class="paragraph">
+<p>自动配置的<a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisConnectionFactory.html"><code>RedisConnectionFactory</code></a>可以通过设置如下示例所示的属性来配置为使用 SSL 与服务器通信：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_4">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_4_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_4_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_4_properties" class="tabpanel" id="_tabs_4_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.redis.ssl.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_4_yaml" class="tabpanel" id="_tabs_4_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    redis:
+      ssl:
+        enabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自定义 SSL 信任材料可以在 <a class="xref page" href="../features/ssl.html">SSL bundle</a> 中进行配置，并应用于 <a class="apiref" href="https://docs.spring.io/spring-data/redis/docs/4.0.x/api/org/springframework/data/redis/connection/RedisConnectionFactory.html"><code>RedisConnectionFactory</code></a>，示例如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_5">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_5_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_5_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_5_properties" class="tabpanel" id="_tabs_5_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.redis.ssl.bundle=example</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_5_yaml" class="tabpanel" id="_tabs_5_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    redis:
+      ssl:
+        bundle: "example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.mongodb"><a class="anchor" href="#data.nosql.mongodb"></a>MongoDB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.mongodb.com/">MongoDB</a> 是一个开源的 NoSQL 文档数据库，它使用类似 JSON 的模式而不是传统的基于表的关联数据。Spring Boot 为与 MongoDB 协作提供了多种便利，包括 <code>spring-boot-starter-data-mongodb</code> 和 <code>spring-boot-starter-data-mongodb-reactive</code> 启动器。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.mongodb.connecting"><a class="anchor" href="#data.nosql.mongodb.connecting"></a>连接 MongoDB 数据库</h3>
+<div class="paragraph">
+<p>要访问 MongoDB 数据库，您可以注入一个自动配置的<a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/MongoDatabaseFactory.html"><code>MongoDatabaseFactory</code></a>。
+默认情况下，该实例尝试连接到 <code>mongodb://localhost/test</code> 处的 MongoDB 服务器。
+以下示例展示了如何连接到 MongoDB 数据库：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_6">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_6_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_6_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_6_java" class="tabpanel" id="_tabs_6_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final MongoDatabaseFactory mongo;
+
+	public MyBean(MongoDatabaseFactory mongo) {
+		this.mongo = mongo;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public MongoCollection&lt;Document&gt; someMethod() {
+		MongoDatabase db = this.mongo.getMongoDatabase();
+		return db.getCollection("users");
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_6_kotlin" class="tabpanel" id="_tabs_6_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import com.mongodb.client.MongoCollection
+import org.bson.Document
+import org.springframework.data.mongodb.MongoDatabaseFactory
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val mongo: MongoDatabaseFactory) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): MongoCollection&lt;Document&gt; {
+		val db = mongo.mongoDatabase
+		return db.getCollection("users")
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您定义了自定义的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>，它将用于自动配置合适的<a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/MongoDatabaseFactory.html"><code>MongoDatabaseFactory</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>自动配置的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>是使用<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html"><code>MongoClientSettings</code></a>bean创建的。
+如果您定义了自己的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html"><code>MongoClientSettings</code></a>，它将未经修改地使用，并且会忽略<code>spring.data.mongodb</code>属性。
+否则，将自动配置一个<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html"><code>MongoClientSettings</code></a>，并将<code>spring.data.mongodb</code>属性应用其中。
+在任何一种情况下，您都可以声明一个或多个<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/mongodb/autoconfigure/MongoClientSettingsBuilderCustomizer.html"><code>MongoClientSettingsBuilderCustomizer</code></a>bean来微调<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html"><code>MongoClientSettings</code></a>配置。
+每个bean都将按顺序被调用，使用用于构建<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html"><code>MongoClientSettings</code></a>的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.Builder.html"><code>MongoClientSettings.Builder</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>您可以设置 <code>spring.mongodb.uri</code> 属性来更改 URL 并配置其他设置，例如 <em>副本集</em>（replica set），如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_7">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_7_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_7_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_7_properties" class="tabpanel" id="_tabs_7_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.mongodb.uri=mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_7_yaml" class="tabpanel" id="_tabs_7_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  mongodb:
+    uri: "mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>或者，您可以使用离散属性指定连接详细信息。例如，您可以在 <code>application.properties</code> 中声明以下设置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_8">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_8_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_8_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_8_properties" class="tabpanel" id="_tabs_8_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.mongodb.host=mongoserver1.example.com
+spring.mongodb.port=27017
+spring.mongodb.additional-hosts[0]=mongoserver2.example.com:23456
+spring.mongodb.database=test
+spring.mongodb.username=user
+spring.mongodb.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_8_yaml" class="tabpanel" id="_tabs_8_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  mongodb:
+    host: "mongoserver1.example.com"
+    port: 27017
+    additional-hosts:
+    - "mongoserver2.example.com:23456"
+    database: "test"
+    username: "user"
+    password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自动配置的<a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>可以通过设置如下示例所示的属性来配置为使用 SSL 与服务器通信：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_9">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_9_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_9_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_9_properties" class="tabpanel" id="_tabs_9_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.mongodb.uri=mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test
+spring.mongodb.ssl.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_9_yaml" class="tabpanel" id="_tabs_9_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  mongodb:
+    uri: "mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test"
+    ssl:
+      enabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自定义 SSL 信任材料可以在 <a class="xref page" href="../features/ssl.html">SSL bundle</a> 中进行配置，并应用于 <a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a>，示例如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_10">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_10_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_10_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_10_properties" class="tabpanel" id="_tabs_10_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.mongodb.uri=mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test
+spring.mongodb.ssl.bundle=example</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_10_yaml" class="tabpanel" id="_tabs_10_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  mongodb:
+    uri: "mongodb://user:secret@mongoserver1.example.com:27017,mongoserver2.example.com:23456/test"
+    ssl:
+      bundle: "example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>如果未指定 <code>spring.mongodb.port</code>`，则使用默认值 `<code>27017</code>。您可以从前面显示的示例中删除此行。</p>
+</div>
+<div class="paragraph">
+<p>您也可以使用 <code>host:port</code>` 语法将端口作为主机地址的一部分进行指定。如果您需要更改 `<code>additional-hosts</code> 条目的端口，则应使用此格式。</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如果您不使用 Spring Data MongoDB，可以注入一个 <a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a> Bean 来代替使用 <a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/MongoDatabaseFactory.html"><code>MongoDatabaseFactory</code></a>。
+如果您想完全控制建立 MongoDB 连接，也可以声明自己的 <a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/MongoDatabaseFactory.html"><code>MongoDatabaseFactory</code></a> 或 <a class="apiref" href="https://mongodb.github.io/mongo-java-driver/5.6/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html"><code>MongoClient</code></a> Bean。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您使用响应式驱动，则需要 Netty 来支持 SSL。
+如果 Netty 可用且尚未自定义要使用的工厂，自动配置将自动配置此工厂。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.mongodb.template"><a class="anchor" href="#data.nosql.mongodb.template"></a>MongoTemplate</h3>
+<div class="paragraph">
+<p><a href="https://spring.io/projects/spring-data-mongodb">Spring Data MongoDB</a> 提供了一个 <a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/core/MongoTemplate.html"><code>MongoTemplate</code></a> 类，其设计与 Spring 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html"><code>JdbcTemplate</code></a> 非常相似。
+与 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html"><code>JdbcTemplate</code></a> 一样，Spring Boot 会自动配置一个 Bean 供您注入模板，如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_11">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_11_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_11_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_11_java" class="tabpanel" id="_tabs_11_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final MongoTemplate mongoTemplate;
+
+	public MyBean(MongoTemplate mongoTemplate) {
+		this.mongoTemplate = mongoTemplate;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public MongoCollection&lt;Document&gt; someMethod() {
+		return this.mongoTemplate.getCollection("users");
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_11_kotlin" class="tabpanel" id="_tabs_11_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import com.mongodb.client.MongoCollection
+import org.bson.Document
+import org.springframework.data.mongodb.core.MongoTemplate
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val mongoTemplate: MongoTemplate) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): MongoCollection&lt;Document&gt; {
+		return mongoTemplate.getCollection("users")
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>请参阅<a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/core/MongoOperations.html"><code>MongoOperations</code></a> API 文档以获取完整详情。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.mongodb.repositories"><a class="anchor" href="#data.nosql.mongodb.repositories"></a>Spring Data MongoDB 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 MongoDB 的存储库支持。与前面讨论的 JPA 存储库一样，其基本原理是根据方法名自动构建查询。</p>
+</div>
+<div class="paragraph">
+<p>事实上，Spring Data JPA 和 Spring Data MongoDB 共享相同的底层基础设施。您可以沿用前面的 JPA 示例，假设 <code>City</code> 现在是一个 MongoDB 数据类而非 JPA <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a>，其工作方式完全相同，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_12">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_12_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_12_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_12_java" class="tabpanel" id="_tabs_12_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
+
+</span><span class="fold-block">public interface CityRepository extends Repository&lt;City, Long&gt; {
+
+	Page&lt;City&gt; findAll(Pageable pageable);
+
+	City findByNameAndStateAllIgnoringCase(String name, String state);
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_12_kotlin" class="tabpanel" id="_tabs_12_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.repository.Repository
+
+</span><span class="fold-block">interface CityRepository :
+	Repository&lt;City, Long&gt; {
+	fun findAll(pageable: Pageable?): Page&lt;City&gt;
+	fun findByNameAndStateAllIgnoringCase(name: String, state: String): City?
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>存储库和文档是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/mongodb/docs/5.0.x/api/org/springframework/data/mongodb/repository/config/EnableMongoRepositories.html"><code>@EnableMongoRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找存储库和文档的位置。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关 Spring Data MongoDB 的完整详细信息，包括其丰富的对象映射技术，请参阅其<a href="https://docs.spring.io/spring-data/mongodb/reference/5.0">参考文档</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.neo4j"><a class="anchor" href="#data.nosql.neo4j"></a>Neo4j</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://neo4j.com/">Neo4j</a> 是一个开源的 NoSQL 图数据库，它使用由一级关系连接的丰富数据模型（节点），这种模型比传统的 RDBMS 方法更适合处理关联大数据。Spring Boot 为与 Neo4j 协作提供了多种便利，包括 <code>spring-boot-starter-data-neo4j</code> 启动器。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.neo4j.connecting"><a class="anchor" href="#data.nosql.neo4j.connecting"></a>连接到 Neo4j 数据库</h3>
+<div class="paragraph">
+<p>要访问 Neo4j 服务器，您可以注入一个自动配置的 <a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Driver.html"><code>Driver</code></a>。
+默认情况下，该实例尝试使用 Bolt 协议连接到 <code>localhost:7687</code> 处的 Neo4j 服务器。
+以下示例展示了如何注入一个 Neo4j <a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Driver.html"><code>Driver</code></a>，该驱动除其他功能外，还提供对 <a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Session.html"><code>Session</code></a> 的访问：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_13">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_13_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_13_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_13_java" class="tabpanel" id="_tabs_13_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.neo4j.driver.Driver;
+import org.neo4j.driver.Session;
+import org.neo4j.driver.Values;
+
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final Driver driver;
+
+	public MyBean(Driver driver) {
+		this.driver = driver;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public String someMethod(String message) {
+		try (Session session = this.driver.session()) {
+			return session.executeWrite(
+					(transaction) -&gt; transaction
+						.run("CREATE (a:Greeting) SET a.message = $message RETURN a.message + ', from node ' + id(a)",
+								Values.parameters("message", message))
+						.single()
+						.get(0)
+						.asString());
+		}
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_13_kotlin" class="tabpanel" id="_tabs_13_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.neo4j.driver.Driver
+import org.neo4j.driver.TransactionContext
+import org.neo4j.driver.Values
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val driver: Driver) {
+</span><span class="fold-block is-hidden-unfolded">	// ...
+</span><span class="fold-block is-hidden-folded">	fun someMethod(message: String?): String {
+		driver.session().use { session -&gt;
+			return@someMethod session.executeWrite { transaction: TransactionContext -&gt;
+				transaction
+					.run(
+						"CREATE (a:Greeting) SET a.message = \$message RETURN a.message + ', from node ' + id(a)",
+						Values.parameters("message", message)
+					)
+					.single()[0].asString()
+			}
+		}
+	}
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以使用 <code>spring.neo4j.*</code> 属性配置驱动器的各个方面。以下示例展示了如何配置要使用的 URI 和凭据：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_14">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_14_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_14_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_14_properties" class="tabpanel" id="_tabs_14_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.neo4j.uri=bolt://my-server:7687
+spring.neo4j.authentication.username=neo4j
+spring.neo4j.authentication.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_14_yaml" class="tabpanel" id="_tabs_14_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  neo4j:
+    uri: "bolt://my-server:7687"
+    authentication:
+      username: "neo4j"
+      password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自动配置的<a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Driver.html"><code>Driver</code></a>是使用<code>org.neo4j.driver.Config$ConfigBuilder</code>创建的。
+若要微调其配置，请声明一个或多个<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/neo4j/autoconfigure/ConfigBuilderCustomizer.html"><code>ConfigBuilderCustomizer</code></a> Bean。
+每个 Bean 都将按顺序被调用，传入用于构建<a class="apiref" href="https://javadoc.io/doc/org.neo4j.driver/neo4j-java-driver/6.0.2/org/neo4j/driver/Driver.html"><code>Driver</code></a>的<code>org.neo4j.driver.Config$ConfigBuilder</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.neo4j.repositories"><a class="anchor" href="#data.nosql.neo4j.repositories"></a>Spring Data Neo4j 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 Neo4j 的存储库支持。有关 Spring Data Neo4j 的完整详细信息，请参阅<a href="https://docs.spring.io/spring-data/neo4j/reference/8.0">参考文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>Spring Data Neo4j 与其他许多 Spring Data 模块一样，与 Spring Data JPA 共享通用基础设施。您可以参考前面的 JPA 示例，将 <code>City</code> 定义为 Spring Data Neo4j 的 <a class="apiref" href="https://docs.spring.io/spring-data/neo4j/docs/8.0.x/api/org/springframework/data/neo4j/core/schema/Node.html"><code>@Node</code></a>，而不是 JPA 的 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a>，存储库抽象的工作方式也相同，如下面的示例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_15">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_15_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_15_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_15_java" class="tabpanel" id="_tabs_15_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import java.util.Optional;
+
+import org.springframework.data.neo4j.repository.Neo4jRepository;
+
+</span><span class="fold-block">public interface CityRepository extends Neo4jRepository&lt;City, Long&gt; {
+
+	Optional&lt;City&gt; findOneByNameAndState(String name, String state);
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_15_kotlin" class="tabpanel" id="_tabs_15_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.data.neo4j.repository.Neo4jRepository
+import java.util.Optional
+
+</span><span class="fold-block">interface CityRepository : Neo4jRepository&lt;City, Long&gt; {
+
+	fun findOneByNameAndState(name: String?, state: String?): Optional&lt;City?&gt;?
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><code>spring-boot-starter-data-neo4j</code> 启动器启用仓库支持以及事务管理。Spring Boot 同时支持经典和响应式 Neo4j 仓库，使用 <a class="apiref" href="https://docs.spring.io/spring-data/neo4j/docs/8.0.x/api/org/springframework/data/neo4j/core/Neo4jTemplate.html"><code>Neo4jTemplate</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-data/neo4j/docs/8.0.x/api/org/springframework/data/neo4j/core/ReactiveNeo4jTemplate.html"><code>ReactiveNeo4jTemplate</code></a> Bean。当 Project Reactor 存在于类路径中时，响应式风格也会自动配置。</p>
+</div>
+<div class="paragraph">
+<p>存储库和实体是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/neo4j/docs/8.0.x/api/org/springframework/data/neo4j/repository/config/EnableNeo4jRepositories.html"><code>@EnableNeo4jRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找存储库和实体的位置。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>在采用响应式风格的应用程序中，不会自动配置 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/transaction/ReactiveTransactionManager.html"><code>ReactiveTransactionManager</code></a>。
+若要启用事务管理，必须在您的配置中定义以下 Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_16">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_16_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_16_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_16_java" class="tabpanel" id="_tabs_16_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.neo4j.driver.Driver;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.neo4j.core.ReactiveDatabaseSelectionProvider;
+import org.springframework.data.neo4j.core.transaction.ReactiveNeo4jTransactionManager;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyNeo4jConfiguration {
+
+	@Bean
+	public ReactiveNeo4jTransactionManager reactiveTransactionManager(Driver driver,
+			ReactiveDatabaseSelectionProvider databaseNameProvider) {
+		return new ReactiveNeo4jTransactionManager(driver, databaseNameProvider);
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_16_kotlin" class="tabpanel" id="_tabs_16_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.neo4j.driver.Driver
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.data.neo4j.core.ReactiveDatabaseSelectionProvider
+import org.springframework.data.neo4j.core.transaction.ReactiveNeo4jTransactionManager
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyNeo4jConfiguration {
+
+	@Bean
+	fun reactiveTransactionManager(driver: Driver,
+			databaseNameProvider: ReactiveDatabaseSelectionProvider): ReactiveNeo4jTransactionManager {
+		return ReactiveNeo4jTransactionManager(driver, databaseNameProvider)
+	}
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.elasticsearch"><a class="anchor" href="#data.nosql.elasticsearch"></a>Elasticsearch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> 是一个开源、分布式、基于 REST 的搜索和分析引擎。Spring Boot 为 Elasticsearch 客户端提供了基本的自动配置功能。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot 支持多种客户端：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>官方低级 REST 客户端</p>
+</li>
+<li>
+<p>官方 Java API 客户端</p>
+</li>
+<li>
+<p>由 Spring Data Elasticsearch 提供的 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html"><code>ReactiveElasticsearchClient</code></a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spring Boot 提供了一个专用的启动器，<code>spring-boot-starter-data-elasticsearch</code>。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.elasticsearch.connecting-using-rest"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest"></a>使用 REST 客户端连接 Elasticsearch</h3>
+<div class="paragraph">
+<p>Elasticsearch 提供两种不同的 REST 客户端，可用于查询集群：<a href="https://www.elastic.co/docs/reference/elasticsearch/clients/java/transport/rest5-client/">低级客户端</a>和<a href="https://www.elastic.co/docs/reference/elasticsearch/clients/java">Java API 客户端</a>。
+Java API 客户端由 <code>co.elastic.clients:elasticsearch-java</code> 模块提供，而低级客户端由 <code>co.elastic.clients:elasticsearch-rest5-client</code> 模块提供。
+此外，Spring Boot 支持来自 <code>org.springframework.data:spring-data-elasticsearch</code> 模块的反应式客户端。
+默认情况下，客户端将针对 <code><a class="bare" href="http://localhost:9200">localhost:9200</a></code>。
+您可以使用 <code>spring.elasticsearch.*</code> 属性进一步调整客户端的配置方式，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_17">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_17_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_17_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_17_properties" class="tabpanel" id="_tabs_17_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.elasticsearch.uris=https://search.example.com:9200
+spring.elasticsearch.socket-timeout=10s
+spring.elasticsearch.username=user
+spring.elasticsearch.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_17_yaml" class="tabpanel" id="_tabs_17_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  elasticsearch:
+    uris: "https://search.example.com:9200"
+    socket-timeout: "10s"
+    username: "user"
+    password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data.nosql.elasticsearch.connecting-using-rest.restclient"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest.restclient"></a>使用 Rest5Client 连接到 Elasticsearch</h4>
+<div class="paragraph">
+<p>如果类路径中包含 <code>co.elastic.clients:elasticsearch-rest5-client</code>，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a> Bean。
+除了前面描述的属性外，您可以通过注册任意数量的实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/elasticsearch/autoconfigure/Rest5ClientBuilderCustomizer.html"><code>Rest5ClientBuilderCustomizer</code></a> 的 Bean 来对 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a> 进行更精细的调整，以实现更高级的自定义。
+若要完全控制客户端的配置，请定义一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5ClientBuilder.html"><code>Rest5ClientBuilder</code></a> Bean。</p>
+</div>
+<div class="paragraph">
+<p>此外，<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/sniffer/Sniffer.html"><code>Sniffer</code></a> 可以自动配置，以自动发现运行中的 Elasticsearch 集群中的节点，并将其设置到 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a> 组件上。
+您可以进一步调整 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/sniffer/Sniffer.html"><code>Sniffer</code></a> 的配置方式，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_18">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_18_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_18_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_18_properties" class="tabpanel" id="_tabs_18_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.elasticsearch.restclient.sniffer.enabled=true
+spring.elasticsearch.restclient.sniffer.interval=10m
+spring.elasticsearch.restclient.sniffer.delay-after-failure=30s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_18_yaml" class="tabpanel" id="_tabs_18_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  elasticsearch:
+    restclient:
+      sniffer:
+        enabled: true
+        interval: "10m"
+        delay-after-failure: "30s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data.nosql.elasticsearch.connecting-using-rest.javaapiclient"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest.javaapiclient"></a>使用 ElasticsearchClient 连接到 Elasticsearch</h4>
+<div class="paragraph">
+<p>如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 `<code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean。</p>
+</div>
+<div class="paragraph">
+<p>`ElasticsearchClient` 使用依赖于前述 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a>` 的传输层。因此，可以以前述描述的属性来配置 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>`。此外，您可以定义一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/Rest5ClientOptions.html"><code>Rest5ClientOptions</code></a>` Bean 以进一步控制传输层的行为。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data.nosql.elasticsearch.connecting-using-rest.reactiveclient"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest.reactiveclient"></a>使用 ReactiveElasticsearchClient 连接到 Elasticsearch</h4>
+<div class="paragraph">
+<p><a href="https://spring.io/projects/spring-data-elasticsearch">Spring Data Elasticsearch</a> 提供 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html"><code>ReactiveElasticsearchClient</code></a>，用于以响应式方式查询 Elasticsearch 实例。
+如果您的类路径中包含 Spring Data Elasticsearch 和 Reactor，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html"><code>ReactiveElasticsearchClient</code></a>。</p>
+</div>
+<div class="paragraph">
+<p>`ReactiveElasticsearchClient` 使用依赖于前述 <code>Rest5Client</code>` 的传输层。因此，可以以前述所述属性来配置 `<code>ReactiveElasticsearchClient``。此外，您可以定义一个 `<code>Rest5ClientOptions</code> Bean 以进一步控制传输的行为。</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.elasticsearch.connecting-using-spring-data"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-spring-data"></a>使用 Spring Data 连接 Elasticsearch</h3>
+<div class="paragraph">
+<p>要连接到 Elasticsearch，必须定义一个 `<a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>` Bean，该 Bean 由 Spring Boot 自动配置或由应用程序手动提供（参见前面的章节）。有了此配置，就可以像注入任何其他 Spring Bean 一样注入一个 `<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ElasticsearchTemplate.html"><code>ElasticsearchTemplate</code></a>`，如下面的示例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_19">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_19_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_19_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_19_java" class="tabpanel" id="_tabs_19_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final ElasticsearchTemplate template;
+
+	public MyBean(ElasticsearchTemplate template) {
+		this.template = template;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public boolean someMethod(String id) {
+		return this.template.exists(id, User.class);
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_19_kotlin" class="tabpanel" id="_tabs_19_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val template: org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate ) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(id: String): Boolean {
+		return template.exists(id, User::class.java)
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>在存在 <code>spring-data-elasticsearch</code> 和 Reactor 的情况下，Spring Boot 还可以自动配置一个 <a href="#data.nosql.elasticsearch.connecting-using-rest.reactiveclient"><code>ReactiveElasticsearchClient</code></a> 和一个 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchTemplate.html"><code>ReactiveElasticsearchTemplate</code></a> 作为 Bean。它们是其他 REST 客户端的响应式等效版本。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.elasticsearch.repositories"><a class="anchor" href="#data.nosql.elasticsearch.repositories"></a>Spring Data Elasticsearch 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 Elasticsearch 的存储库支持。与前面讨论的 JPA 存储库一样，其基本原理是根据方法名自动为您构建查询。</p>
+</div>
+<div class="paragraph">
+<p>事实上，Spring Data JPA 和 Spring Data Elasticsearch 共享相同的底层基础设施。您可以沿用前面的 JPA 示例，假设 <code>City</code> 现在是一个 Elasticsearch <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/annotations/Document.html"><code>@Document</code></a> 类而非 JPA <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a>，其工作方式完全相同。</p>
+</div>
+<div class="paragraph">
+<p>存储库和文档是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/repository/config/EnableElasticsearchRepositories.html"><code>@EnableElasticsearchRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找存储库和文档的位置。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关 Spring Data Elasticsearch 的完整详细信息，请参阅<a href="https://docs.spring.io/spring-data/elasticsearch/reference/6.0">参考文档</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Spring Boot 支持经典和响应式 Elasticsearch 仓库，使用 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ElasticsearchTemplate.html"><code>ElasticsearchTemplate</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchTemplate.html"><code>ReactiveElasticsearchTemplate</code></a> Bean。
+通常情况下，只要存在所需的依赖项，这些 Bean 就会由 Spring Boot 自动配置。</p>
+</div>
+<div class="paragraph">
+<p>如果您希望使用自己的模板来备份 Elasticsearch 存储库，可以添加您自己的<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ElasticsearchTemplate.html"><code>ElasticsearchTemplate</code></a>或<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/core/ElasticsearchOperations.html"><code>ElasticsearchOperations</code></a><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>，只要将其命名为<code>"elasticsearchTemplate"</code>。
+同样的规则也适用于<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchTemplate.html"><code>ReactiveElasticsearchTemplate</code></a>和<a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/core/ReactiveElasticsearchOperations.html"><code>ReactiveElasticsearchOperations</code></a>，其 Bean 名称为<code>"reactiveElasticsearchTemplate"</code>。</p>
+</div>
+<div class="paragraph">
+<p>您可以通过以下属性禁用仓库支持：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_20">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_20_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_20_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_20_properties" class="tabpanel" id="_tabs_20_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.elasticsearch.repositories.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_20_yaml" class="tabpanel" id="_tabs_20_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.cassandra"><a class="anchor" href="#data.nosql.cassandra"></a>Cassandra</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://cassandra.apache.org/">Cassandra</a> 是一个开源的分布式数据库管理系统，旨在处理分布在许多通用服务器上的大量数据。Spring Boot 为 Cassandra 提供了自动配置功能，以及由 <a href="https://spring.io/projects/spring-data-cassandra">Spring Data Cassandra</a> 提供的抽象层。有一个 <code>spring-boot-starter-data-cassandra</code> Starter，可以方便地收集依赖项。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.cassandra.connecting"><a class="anchor" href="#data.nosql.cassandra.connecting"></a>连接 Cassandra</h3>
+<div class="paragraph">
+<p>您可以像使用任何其他 Spring Bean 一样，注入自动配置的<a class="apiref" href="https://docs.spring.io/spring-data/cassandra/docs/5.0.x/api/org/springframework/data/cassandra/core/cql/CqlTemplate.html"><code>CqlTemplate</code></a>、<a class="apiref" href="https://docs.spring.io/spring-data/cassandra/docs/5.0.x/api/org/springframework/data/cassandra/core/CassandraTemplate.html"><code>CassandraTemplate</code></a>或 Cassandra <code>CqlSession</code> 实例。
+可以使用 <code>spring.cassandra.*</code> 属性来自定义连接。
+通常，您需要提供<code>keyspace-name</code>和<code>contact-points</code>以及本地数据中心名称，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_21">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_21_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_21_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_21_properties" class="tabpanel" id="_tabs_21_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.cassandra.keyspace-name=mykeyspace
+spring.cassandra.contact-points=cassandrahost1:9042,cassandrahost2:9042
+spring.cassandra.local-datacenter=datacenter1</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_21_yaml" class="tabpanel" id="_tabs_21_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  cassandra:
+    keyspace-name: "mykeyspace"
+    contact-points: "cassandrahost1:9042,cassandrahost2:9042"
+    local-datacenter: "datacenter1"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果所有联系点的端口相同，您可以使用快捷方式，仅指定主机名，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_22">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_22_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_22_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_22_properties" class="tabpanel" id="_tabs_22_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.cassandra.keyspace-name=mykeyspace
+spring.cassandra.contact-points=cassandrahost1,cassandrahost2
+spring.cassandra.local-datacenter=datacenter1</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_22_yaml" class="tabpanel" id="_tabs_22_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  cassandra:
+    keyspace-name: "mykeyspace"
+    contact-points: "cassandrahost1,cassandrahost2"
+    local-datacenter: "datacenter1"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+这两个示例是相同的，因为端口默认为 <code>9042</code>。
+如果需要配置端口，请使用 <code>spring.cassandra.port</code>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>自动配置的 <code>CqlSession</code> 可以通过设置如下示例所示的属性来配置为使用 SSL 与服务器通信：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_23">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_23_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_23_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_23_properties" class="tabpanel" id="_tabs_23_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.cassandra.keyspace-name=mykeyspace
+spring.cassandra.contact-points=cassandrahost1,cassandrahost2
+spring.cassandra.local-datacenter=datacenter1
+spring.cassandra.ssl.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_23_yaml" class="tabpanel" id="_tabs_23_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  cassandra:
+    keyspace-name: "mykeyspace"
+    contact-points: "cassandrahost1,cassandrahost2"
+    local-datacenter: "datacenter1"
+    ssl:
+      enabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>自定义 SSL 信任材料可以在<a class="xref page" href="../features/ssl.html">SSL 包</a>中进行配置，并应用于<code>CqlSession</code>，示例如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_24">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_24_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_24_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_24_properties" class="tabpanel" id="_tabs_24_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.cassandra.keyspace-name=mykeyspace
+spring.cassandra.contact-points=cassandrahost1,cassandrahost2
+spring.cassandra.local-datacenter=datacenter1
+spring.cassandra.ssl.bundle=example</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_24_yaml" class="tabpanel" id="_tabs_24_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  cassandra:
+    keyspace-name: "mykeyspace"
+    contact-points: "cassandrahost1,cassandrahost2"
+    local-datacenter: "datacenter1"
+    ssl:
+      bundle: "example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Cassandra 驱动程序拥有自己的配置基础设施，会在类路径根目录加载一个 <code>application.conf</code> 文件。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot 默认不会查找此类文件，但可以使用 <code>spring.cassandra.config</code>` 加载一个。如果某个属性同时存在于 `<code>spring.cassandra.*</code>` 和配置文件中，则 `<code>spring.cassandra.*</code> 中的值优先。</p>
+</div>
+<div class="paragraph">
+<p>对于更高级的驱动程序自定义，您可以注册任意数量的实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cassandra/autoconfigure/DriverConfigLoaderBuilderCustomizer.html"><code>DriverConfigLoaderBuilderCustomizer</code></a> 的 Bean。
+<code>CqlSession</code> 可以使用类型为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cassandra/autoconfigure/CqlSessionBuilderCustomizer.html"><code>CqlSessionBuilderCustomizer</code></a> 的 Bean 进行自定义。</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您使用 <code>CqlSessionBuilder</code> 创建多个 <code>CqlSession</code> Bean，请记住该构建器是可变的，因此请确保为每个会话注入一个新的副本。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>以下代码示例展示了如何注入 Cassandra bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_25">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_25_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_25_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_25_java" class="tabpanel" id="_tabs_25_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.data.cassandra.core.CassandraTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final CassandraTemplate template;
+
+	public MyBean(CassandraTemplate template) {
+		this.template = template;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public long someMethod() {
+		return this.template.count(User.class);
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_25_kotlin" class="tabpanel" id="_tabs_25_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.data.cassandra.core.CassandraTemplate
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val template: CassandraTemplate) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): Long {
+		return template.count(User::class.java)
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您添加自己的类型为 <a class="apiref" href="https://docs.spring.io/spring-data/cassandra/docs/5.0.x/api/org/springframework/data/cassandra/core/CassandraTemplate.html"><code>CassandraTemplate</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>，它将替换默认配置。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.cassandra.repositories"><a class="anchor" href="#data.nosql.cassandra.repositories"></a>Spring Data Cassandra 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 Cassandra 的基本存储库支持。目前，其功能比之前讨论的 JPA 存储库更为有限，需要带有 <a class="apiref" href="https://docs.spring.io/spring-data/cassandra/docs/5.0.x/api/org/springframework/data/cassandra/repository/Query.html"><code>@Query</code></a> 注解的查找方法。</p>
+</div>
+<div class="paragraph">
+<p>存储库和实体是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/cassandra/docs/5.0.x/api/org/springframework/data/cassandra/repository/config/EnableCassandraRepositories.html"><code>@EnableCassandraRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找存储库和实体的位置。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关 Spring Data Cassandra 的完整详细信息，请参阅<a href="https://docs.spring.io/spring-data/cassandra/reference/5.0">参考文档</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.couchbase"><a class="anchor" href="#data.nosql.couchbase"></a>Couchbase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.couchbase.com/">Couchbase</a> 是一个开源的、分布式的、多模型 NoSQL 文档型数据库，专为交互式应用程序进行了优化。Spring Boot 为 Couchbase 提供了自动配置功能，以及由 <a href="https://github.com/spring-projects/spring-data-couchbase">Spring Data Couchbase</a> 提供的抽象层。有 <code>spring-boot-starter-data-couchbase</code> 和 <code>spring-boot-starter-data-couchbase-reactive</code> 启动器，以便以方便的方式收集依赖项。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.couchbase.connecting"><a class="anchor" href="#data.nosql.couchbase.connecting"></a>连接至 Couchbase</h3>
+<div class="paragraph">
+<p>您可以通过添加 Couchbase SDK 和一些配置来获取一个 <a class="apiref" href="https://javadoc.io/doc/com.couchbase.client/java-client/3.9.2/com/couchbase/client/java/Cluster.html"><code>Cluster</code></a>。
+<code>spring.couchbase.*</code> 属性可用于自定义连接。
+通常，您需要提供 <a href="https://docs.couchbase.com/dotnet-sdk/current/howtos/managing-connections.html">连接字符串</a> 和用于身份验证的凭据。基本身份验证（使用用户名和密码）的配置方式如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_26">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_26_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_26_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_26_properties" class="tabpanel" id="_tabs_26_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.couchbase.connection-string=couchbase://192.168.1.123
+spring.couchbase.username=user
+spring.couchbase.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_26_yaml" class="tabpanel" id="_tabs_26_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  couchbase:
+    connection-string: "couchbase://192.168.1.123"
+    username: "user"
+    password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.couchbase.com/server/current/manage/manage-security/configure-client-certificates.html">客户端证书</a> 可用于身份验证，替代用户名和密码。
+包含客户端证书的 Java KeyStore 的位置和密码可以按以下示例进行配置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_27">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_27_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_27_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_27_properties" class="tabpanel" id="_tabs_27_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.couchbase.connection-string=couchbase://192.168.1.123
+spring.couchbase.env.ssl.enabled=true
+spring.couchbase.authentication.jks.location=classpath:client.p12
+spring.couchbase.authentication.jks.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_27_yaml" class="tabpanel" id="_tabs_27_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  couchbase:
+    connection-string: "couchbase://192.168.1.123"
+    env:
+      ssl:
+        enabled: true
+    authentication:
+      jks:
+        location: "classpath:client.p12"
+        password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>PEM 编码的证书和私钥可以按以下示例进行配置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_28">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_28_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_28_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_28_properties" class="tabpanel" id="_tabs_28_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.couchbase.connection-string=couchbase://192.168.1.123
+spring.couchbase.env.ssl.enabled=true
+spring.couchbase.authentication.pem.certificates=classpath:client.crt
+spring.couchbase.authentication.pem.private-key=classpath:client.key</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_28_yaml" class="tabpanel" id="_tabs_28_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  couchbase:
+    connection-string: "couchbase://192.168.1.123"
+    env:
+      ssl:
+        enabled: true
+    authentication:
+      pem:
+        certificates: "classpath:client.crt"
+        private-key: "classpath:client.key"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>还可以自定义一些<a class="apiref" href="https://javadoc.io/doc/com.couchbase.client/java-client/3.9.2/com/couchbase/client/java/env/ClusterEnvironment.html"><code>ClusterEnvironment</code></a>设置。例如，以下配置将打开新<a class="apiref" href="https://javadoc.io/doc/com.couchbase.client/java-client/3.9.2/com/couchbase/client/java/Bucket.html"><code>Bucket</code></a>的超时时间更改为，并启用对已配置的<a class="xref page" href="../features/ssl.html">SSL 包</a>的 SSL 支持：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_29">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_29_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_29_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_29_properties" class="tabpanel" id="_tabs_29_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.couchbase.env.timeouts.connect=3s
+spring.couchbase.env.ssl.bundle=example</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_29_yaml" class="tabpanel" id="_tabs_29_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  couchbase:
+    env:
+      timeouts:
+        connect: "3s"
+      ssl:
+        bundle: "example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关更多详细信息，请检查 <code>spring.couchbase.env.*</code> 属性。
+若要获得更灵活的控制，可以使用一个或多个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/couchbase/autoconfigure/ClusterEnvironmentBuilderCustomizer.html"><code>ClusterEnvironmentBuilderCustomizer</code></a> Bean。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.couchbase.repositories"><a class="anchor" href="#data.nosql.couchbase.repositories"></a>Spring Data Couchbase 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 Couchbase 的存储库支持。</p>
+</div>
+<div class="paragraph">
+<p>仓库和文档是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/repository/config/EnableCouchbaseRepositories.html"><code>@EnableCouchbaseRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找仓库和文档的位置。</p>
+</div>
+<div class="paragraph">
+<p>有关 Spring Data Couchbase 的完整详细信息，请参阅<a href="https://docs.spring.io/spring-data/couchbase/reference/6.0">参考文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>您可以像使用任何其他 Spring Bean 一样，注入一个自动配置的 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a> 实例，前提是存在一个 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/CouchbaseClientFactory.html"><code>CouchbaseClientFactory</code></a> Bean。
+当如上所述存在一个 <a class="apiref" href="https://javadoc.io/doc/com.couchbase.client/java-client/3.9.2/com/couchbase/client/java/Cluster.html"><code>Cluster</code></a> 且已指定 bucket 名称时，就会发生这种情况：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_30">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_30_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_30_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_30_properties" class="tabpanel" id="_tabs_30_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.data.couchbase.bucket-name=my-bucket</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_30_yaml" class="tabpanel" id="_tabs_30_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  data:
+    couchbase:
+      bucket-name: "my-bucket"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>以下示例展示了如何注入一个 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a>` 类型的 Bean：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_31">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_31_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_31_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_31_java" class="tabpanel" id="_tabs_31_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.data.couchbase.core.CouchbaseTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final CouchbaseTemplate template;
+
+	public MyBean(CouchbaseTemplate template) {
+		this.template = template;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public String someMethod() {
+		return this.template.getBucketName();
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_31_kotlin" class="tabpanel" id="_tabs_31_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.data.couchbase.core.CouchbaseTemplate
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val template: CouchbaseTemplate) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): String {
+		return template.bucketName
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以在自己的配置中定义一些 Bean 来覆盖自动配置提供的 Bean：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>一个名为 `couchbaseMappingContext` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/mapping/CouchbaseMappingContext.html"><code>CouchbaseMappingContext</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</li>
+<li>
+<p>一个名为 `couchbaseCustomConversions` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/convert/CustomConversions.html"><code>CustomConversions</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</li>
+<li>
+<p>一个名为 `couchbaseTemplate` 的 `<a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/core/CouchbaseTemplate.html"><code>CouchbaseTemplate</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>为避免在您的配置中硬编码这些名称，您可以重用 Spring Data Couchbase 提供的 <a class="apiref" href="https://docs.spring.io/spring-data/couchbase/docs/6.0.x/api/org/springframework/data/couchbase/config/BeanNames.html"><code>BeanNames</code></a>。
+例如，您可以按如下方式自定义要使用的转换器：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_32">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_32_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_32_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_32_java" class="tabpanel" id="_tabs_32_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.assertj.core.util.Arrays;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.couchbase.config.BeanNames;
+import org.springframework.data.couchbase.core.convert.CouchbaseCustomConversions;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MyCouchbaseConfiguration {
+
+	@Bean(BeanNames.COUCHBASE_CUSTOM_CONVERSIONS)
+	public CouchbaseCustomConversions myCustomConversions() {
+		return new CouchbaseCustomConversions(Arrays.asList(new MyConverter()));
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_32_kotlin" class="tabpanel" id="_tabs_32_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.assertj.core.util.Arrays
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.data.couchbase.config.BeanNames
+import org.springframework.data.couchbase.core.convert.CouchbaseCustomConversions
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MyCouchbaseConfiguration {
+
+	@Bean(BeanNames.COUCHBASE_CUSTOM_CONVERSIONS)
+	fun myCustomConversions(): CouchbaseCustomConversions {
+		return CouchbaseCustomConversions(Arrays.asList(MyConverter()))
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data.nosql.ldap"><a class="anchor" href="#data.nosql.ldap"></a>LDAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol">LDAP</a>（轻量级目录访问协议）是一种开放、厂商中立、行业标准的应用层协议，用于通过 IP 网络访问和维护分布式目录信息服务。Spring Boot 为任何符合规范的 LDAP 服务器提供自动配置支持，同时也支持来自 <a href="https://ldap.com/unboundid-ldap-sdk-for-java/">UnboundID</a> 的嵌入式内存 LDAP 服务器。</p>
+</div>
+<div class="paragraph">
+<p>LDAP 抽象由 <a href="https://github.com/spring-projects/spring-data-ldap">Spring Data LDAP</a> 提供。有一个 <code>spring-boot-starter-data-ldap</code> 启动器，用于方便地收集依赖项。</p>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.ldap.connecting"><a class="anchor" href="#data.nosql.ldap.connecting"></a>连接到 LDAP 服务器</h3>
+<div class="paragraph">
+<p>要连接到 LDAP 服务器，请确保声明了对 <code>spring-boot-starter-data-ldap</code>` 启动器或 `<code>spring-ldap-core</code> 的依赖，然后在您的 `application.properties` 中声明服务器的 URL，如下面的示例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_33">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_33_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_33_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_33_properties" class="tabpanel" id="_tabs_33_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.ldap.urls=ldap://myserver:1235
+spring.ldap.username=admin
+spring.ldap.password=secret</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_33_yaml" class="tabpanel" id="_tabs_33_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  ldap:
+    urls: "ldap://myserver:1235"
+    username: "admin"
+    password: "secret"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code>` 和 `<code>spring.ldap.base-environment</code> 属性。</p>
+</div>
+<div class="paragraph">
+<p>`LdapContextSource` 会根据这些设置进行自动配置。如果存在 `DirContextAuthenticationStrategy` Bean，它将与自动配置的 `LdapContextSource` 关联。如果您需要对其进行自定义（例如使用 `PooledContextSource`），仍然可以注入自动配置的 `LdapContextSource`。请确保将自定义的 `ContextSource` 标记为 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a>`，以便自动配置的 `<a class="apiref" href="https://docs.spring.io/spring-ldap/docs/4.0.x/api/org/springframework/ldap/core/LdapTemplate.html"><code>LdapTemplate</code></a>` 使用它。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.ldap.repositories"><a class="anchor" href="#data.nosql.ldap.repositories"></a>Spring Data LDAP 存储库</h3>
+<div class="paragraph">
+<p>Spring Data 包含对 LDAP 的存储库支持。</p>
+</div>
+<div class="paragraph">
+<p>存储库和文档是通过扫描找到的。默认情况下，会扫描<a class="xref page" href="../using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>。您可以使用<a class="apiref" href="https://docs.spring.io/spring-data/ldap/docs/4.0.x/api/org/springframework/data/ldap/repository/config/EnableLdapRepositories.html"><code>@EnableLdapRepositories</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/persistence/autoconfigure/EntityScan.html"><code>@EntityScan</code></a>分别自定义查找存储库和文档的位置。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关 Spring Data LDAP 的完整详细信息，请参阅<a href="https://docs.spring.io/spring-data/ldap/reference/4.0">参考文档</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>您也可以像使用任何其他 Spring Bean 一样，注入一个自动配置的 <a class="apiref" href="https://docs.spring.io/spring-ldap/docs/4.0.x/api/org/springframework/ldap/core/LdapTemplate.html"><code>LdapTemplate</code></a> 实例，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_34">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_34_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_34_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_34_java" class="tabpanel" id="_tabs_34_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import java.util.List;
+
+import org.springframework.ldap.core.LdapTemplate;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyBean {
+
+	private final LdapTemplate template;
+
+	public MyBean(LdapTemplate template) {
+		this.template = template;
+	}
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	public List&lt;User&gt; someMethod() {
+		return this.template.findAll(User.class);
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_34_kotlin" class="tabpanel" id="_tabs_34_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.ldap.core.LdapTemplate
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyBean(private val template: LdapTemplate) {
+
+</span><span class="fold-block is-hidden-unfolded">	// ...
+
+</span><span class="fold-block is-hidden-folded">	fun someMethod(): List&lt;User&gt; {
+		return template.findAll(User::class.java)
+	}
+
+</span><span class="fold-block">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data.nosql.ldap.embedded"><a class="anchor" href="#data.nosql.ldap.embedded"></a>嵌入式内存 LDAP 服务器</h3>
+<div class="paragraph">
+<p>出于测试目的，Spring Boot 支持自动配置来自<a href="https://ldap.com/unboundid-ldap-sdk-for-java/">UnboundID</a>的内存 LDAP 服务器。
+要配置该服务器，请向<code>com.unboundid:unboundid-ldapsdk</code>添加依赖项，并声明一个<code>spring.ldap.embedded.base-dn</code>属性，如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_35">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_35_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_35_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_35_properties" class="tabpanel" id="_tabs_35_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.ldap.embedded.base-dn=dc=spring,dc=io</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_35_yaml" class="tabpanel" id="_tabs_35_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring:
+  ldap:
+    embedded:
+      base-dn: "dc=spring,dc=io"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>可以定义多个 base-dn 值，但由于区分名称通常包含逗号，因此必须使用正确的语法进行定义。</p>
+</div>
+<div class="paragraph">
+<p>在 YAML 文件中，您可以使用 YAML 列表表示法。在属性文件中，必须将索引包含在属性名中：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_36">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_36_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_36_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_36_properties" class="tabpanel" id="_tabs_36_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.ldap.embedded.base-dn[0]=dc=spring,dc=io
+spring.ldap.embedded.base-dn[1]=dc=vmware,dc=com</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_36_yaml" class="tabpanel" id="_tabs_36_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">spring.ldap.embedded.base-dn:
+- "dc=spring,dc=io"
+- "dc=vmware,dc=com"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>默认情况下，服务器会在随机端口上启动并触发常规 LDAP 支持。无需指定 <code>spring.ldap.urls</code> 属性。</p>
+</div>
+<div class="paragraph">
+<p>如果您的类路径上存在 <code>schema.ldif</code>` 文件，它将用于初始化服务器。如果您想从不同的资源加载初始化脚本，也可以使用 `<code>spring.ldap.embedded.ldif</code> 属性。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，使用标准模式来验证 <code>LDIF</code>` 文件。您可以通过设置 `<code>spring.ldap.embedded.validation.enabled</code>` 属性来完全关闭验证。如果您有自定义属性，可以使用 `<code>spring.ldap.embedded.validation.schema</code> 来定义自定义属性类型或对象类。</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination"><span class="prev"><a href="sql.html">SQL 数据库</a></span>
+<span class="next"><a href="../io/index.html">IO</a></span></nav>
+</article>  </div>
+</main>
+<div aria-hidden="true" class="modal micromodal-slide" id="modal-versions">
+    <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+        <div aria-modal="true" class="modal__container" role="dialog">
+            <main class="modal__content" id="modal-versions-content">
+              <button class="modal-versions-close" data-micromodal-close="">
+                <svg height="28px" viewBox="0 0 32 32" width="28px" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title></title><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"></line><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"></line></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div><a class="title" href="../../index.html">Spring Boot</a></div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>相关 Spring 文档<ul class="projects-list">
+        <li><a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Cloud
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Data
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a></li>
+        <li><a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a></li>
+        <li><a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a></li>
+        <li><a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a></li>
+        <li><a href="https://docs.spring.io/spring-modulith/reference/">Spring Modulith</a></li>
+        <li><a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a></li>
+        <li><a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a></li>
+    </ul>
+  </li><a href="../../spring-projects.html">所有文档...</a>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img alt="Spring" id="springlogo" src="../../_/img/spring-logo.svg"/>
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href="https://www.vmware.com/help/legal.html">使用条款</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">隐私政策</a> • <a href="https://spring.io/trademarks">商标指南</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">致谢</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">您的加州隐私权利</a> • <a class="ot-sdk-show-settings">Cookie 设置</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。</p>
+    </div>
+    <div class="flex jc-between" id="social-icons">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="20" cy="20" r="20"></circle><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"></path></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"></path><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"></path></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"></circle><path class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z" data-name="Twitter" id="Twitter-2"></path></svg></a>
+    </div>
+</footer>
+<script src="../../_/js/vendor/import.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async="" src="../../_/js/vendor/highlight.js"></script>
+<script async="" data-sync-storage-key="docs:preferred-tab" src="../../_/js/vendor/asciidoctor-tabs.js"></script>
+  
+
+</body></html>

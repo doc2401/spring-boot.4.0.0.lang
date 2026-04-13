@@ -1,0 +1,4050 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>端点 :: Spring Boot</title>
+    <link href="enabling.html" rel="prev"/>
+    <link href="monitoring.html" rel="next"/>
+    <meta content="Antora 3.2.0-alpha.10" name="generator"/>
+    <script>
+!function (theme, navWidth) {
+  if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+  if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'),
+  localStorage && localStorage.getItem('nav-width'))
+    </script>
+    <link href="../../_/css/site.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/page-search.css" rel="stylesheet"/>
+    <link href="../../_/css/vendor/asciidoctor-tabs.css" rel="stylesheet"/>
+
+    <meta content="v0.4.21" name="antora-ui-version"/> 
+    <meta content="4.0.0" name="version"/>
+    <meta content="" name="generation"/>
+    <meta content="undefined/undefined/reference/actuator/endpoints.html" name="versioned-url"/>
+    <meta content="boot" name="component"/>
+    <meta content="false" name="latest-version"/>
+    <link href="../../_/img/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://spring.io">
+        <img alt="Spring" class="block" id="springlogo" src="../../_/img/spring-logo.svg"/>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar-menu" id="topbar-nav">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">为什么选择 Spring</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.io/why-spring">概述</a>
+<a class="navbar-item" href="https://spring.io/microservices">微服务</a>
+<a class="navbar-item" href="https://spring.io/reactive">响应式</a>
+<a class="navbar-item" href="https://spring.io/event-driven">事件驱动</a>
+<a class="navbar-item" href="https://spring.io/cloud">云</a>
+<a class="navbar-item" href="https://spring.io/web-applications">Web 应用</a>
+<a class="navbar-item" href="https://spring.io/serverless">无服务器</a>
+<a class="navbar-item" href="https://spring.io/batch">批处理</a></div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Learn</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/learn">Overview</a>
+            <a class="navbar-item" href="https://spring.io/quickstart">Quickstart</a>
+            <a class="navbar-item" href="https://spring.io/guides">Guides</a>
+            <a class="navbar-item" href="https://spring.io/blog">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown" style="min-width: 280px"><a class="navbar-item" href="https://spring.io/projects">概览</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-boot">Spring Boot</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-framework">Spring Framework</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud">Spring Cloud</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-cloud-dataflow">Spring Cloud Data Flow</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-data">Spring Data</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-integration">Spring Integration</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-batch">Spring Batch</a>
+<a class="navbar-item" href="https://spring.io/projects/spring-security">Spring Security</a>
+<a class="navbar-item navbar-item-special" href="https://spring.io/projects">查看所有项目</a>
+<li class="navbar-item navbar-item-special-3">开发工具</li>
+<a class="navbar-item" href="https://spring.io/tools">Spring Tools 4</a>
+<a class="navbar-item navbar-item-special-2" href="https://start.spring.io">Spring Initializr
+              <svg class="external-link-icon" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" points="15 10.94 15 15 1 15 1 1 5.06 1" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><polyline fill="none" points="8.93 1 15 1 15 7.07" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></polyline><line fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" x1="15" x2="8" y1="1" y2="8"></line></svg></a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Academy</a>
+          <div class="navbar-dropdown"><a class="navbar-item" href="https://spring.academy/courses">课程</a>
+<a class="navbar-item" href="https://spring.academy/learning-path">获取认证</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solutions</a>
+          <div class="navbar-dropdown lg"><a class="navbar-item" href="https://spring.io/solutions">概览</a>
+<a class="navbar-item" href="https://spring.io/support">Spring 运行时</a>
+<a class="navbar-item" href="https://spring.io/consulting">Spring 咨询</a>
+<a class="navbar-item" href="https://spring.academy/teams">Spring 团队学院</a>
+<a class="navbar-item" href="https://spring.io/security">安全公告</a></div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable is-community">
+          <a class="navbar-link" href="#">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://spring.io/community">Overview</a>
+            <a class="navbar-item" href="https://spring.io/events">Events</a>
+            <a class="navbar-item" href="https://spring.io/team">Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="theme-toggler">
+      <input id="switch-theme-checkbox" name="switch-theme-checkbox" type="checkbox"/>
+      <span class="icon"><svg aria-hidden="true" class="svg-inline--fa fa-moon moon" data-icon="moon" data-prefix="fas" focusable="false" role="img" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" fill="currentColor"></path>
+        </svg>
+        <svg aria-hidden="true" class="svg-inline--fa fa-sun sun" data-icon="sun" data-prefix="fas" focusable="false" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor"></path>
+        </svg></span>
+      <span class="text">light</span>
+    </label>
+  </nav>
+</header>
+<script>
+!function (theme) {
+  if (theme === 'dark') {
+    document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
+  }
+}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)')?.matches && 'dark'))
+</script>
+<div class="body">
+<div class="nav-container" data-component="boot" data-version="4.0.0">
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+<div class="context"><span class="title">Spring Boot</span>
+<span class="version">4.0.0</span>
+<button class="browse-version" id="browse-version">
+<svg height="24px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="24px" xml:space="preserve"><g><path d="M256,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S273.7,224,256,224L256,224z"></path><path d="M128.4,224c-17.7,0-32,14.3-32,32s14.3,32,32,32c17.7,0,32-14.3,32-32S146,224,128.4,224L128.4,224z"></path><path d="M384,224c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S401.7,224,384,224L384,224z"></path></g></svg>
+</button></div><ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-home" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-book" href="../../documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link navtree-icon-question" href="../../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-server" href="../../system-requirements.html">系统要求</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-gift" href="../../installing.html">安装 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><a class="nav-link navtree-icon-rocket" href="../../upgrading.html">升级 Spring Boot</a></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../tutorial/index.html">教程</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../tutorial/first-application/index.html">开发您的第一个 Spring Boot 应用程序</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../using/index.html">使用 Spring Boot 进行开发</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/build-systems.html">构建系统</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/structuring-your-code.html">代码结构</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/configuration-classes.html">配置类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/auto-configuration.html">自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/spring-beans-and-dependency-injection.html">Spring Bean 和依赖注入</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/using-the-springbootapplication-annotation.html">使用 @SpringBootApplication 注解</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/running-your-application.html">运行您的应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/devtools.html">开发者工具</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../using/packaging-for-production.html">将您的应用程序打包用于生产环境</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../features/index.html">核心功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/spring-application.html">SpringApplication</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/external-config.html">外部化配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/profiles.html">Profile</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/internationalization.html">国际化</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/aop.html">面向切面编程</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/json.html">JSON</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/task-execution-and-scheduling.html">任务执行与调度</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/dev-services.html">开发时服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/developing-auto-configuration.html">创建自己的自动配置</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/kotlin.html">Kotlin 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../features/ssl.html">SSL</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../web/index.html">Web</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/servlet.html">Servlet Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/reactive.html">响应式 Web 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/graceful-shutdown.html">优雅关闭</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-security.html">Spring Security</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-session.html">Spring Session</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-graphql.html">Spring for GraphQL</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../web/spring-hateoas.html">Spring HATEOAS</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../data/index.html">数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/sql.html">SQL 数据库</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../data/nosql.html">使用 NoSQL 技术</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../io/index.html">IO</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/caching.html">缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/spring-batch.html">Spring Batch</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/hazelcast.html">Hazelcast</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/quartz.html">Quartz 调度器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/email.html">发送邮件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/validation.html">验证</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/rest-client.html">调用 REST 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/webservices.html">Web 服务</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../io/jta.html">使用 JTA 进行分布式事务</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../messaging/index.html">消息传递</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/jms.html">JMS</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/amqp.html">AMQP</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/kafka.html">Apache Kafka 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/pulsar.html">Apache Pulsar 支持</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/rsocket.html">RSocket</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/spring-integration.html">Spring Integration</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../messaging/websockets.html">WebSockets</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../testing/index.html">测试</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-modules.html">测试模块</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-scope-dependencies.html">测试作用域依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-applications.html">测试 Spring 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/spring-boot-applications.html">测试 Spring Boot 应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/testcontainers.html">Testcontainers</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../testing/test-utilities.html">测试工具</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/index.html">打包 Spring Boot 应用程序</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/efficient.html">高效部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/aot.html">使用 JVM 进行提前处理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/native-image/index.html">GraalVM 原生镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/introducing-graalvm-native-images.html">介绍 GraalVM 原生镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/native-image/advanced-topics.html">高级原生镜像主题</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../packaging/checkpoint-restore.html">使用 JVM 进行检查点和恢复</a>
+</li>
+<li class="nav-item" data-depth="3">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../packaging/container-images/index.html">容器镜像</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/efficient-images.html">高效容器镜像</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/dockerfiles.html">Dockerfiles</a>
+</li>
+<li class="nav-item" data-depth="4">
+<a class="nav-link" href="../packaging/container-images/cloud-native-buildpacks.html">云原生构建包</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="index.html">生产就绪功能</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="enabling.html">启用生产就绪功能</a>
+</li>
+<li class="nav-item is-current-page" data-depth="3">
+<a class="nav-link" href="endpoints.html">端点</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="monitoring.html">通过 HTTP 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="jmx.html">通过 JMX 进行监控和管理</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="observability.html">可观测性</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="loggers.html">日志记录器</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="metrics.html">指标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="tracing.html">追踪</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="auditing.html">审计</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="http-exchanges.html">记录 HTTP 交换</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="process-monitoring.html">进程监控</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="cloud-foundry.html">Cloud Foundry 支持</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/index.html">操作指南</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/application.html">Spring Boot 应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/properties-and-configuration.html">属性与配置</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/webserver.html">嵌入式 Web 服务器</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/spring-mvc.html">Spring MVC</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/jersey.html">Jersey</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/http-clients.html">HTTP 客户端</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/logging.html">日志记录</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-access.html">数据访问</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/data-initialization.html">数据库初始化</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/nosql.html">NoSQL</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/messaging.html">消息传递</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/batch.html">批处理应用</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/actuator.html">Actuator</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/security.html">安全</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/hotswapping.html">热替换</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/testing.html">测试</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/build.html">构建</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot.html">提前处理 (AOT)</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/native-image/index.html">GraalVM 原生应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/developing-your-first-application.html">开发您的第一个 GraalVM 原生应用</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/native-image/testing-native-applications.html">测试 GraalVM 原生镜像</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/aot-cache.html">AOT 缓存</a>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../how-to/deployment/index.html">部署 Spring Boot 应用</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/traditional-deployment.html">传统部署</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/cloud.html">部署到云端</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../how-to/deployment/installing.html">安装 Spring Boot 应用</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../how-to/docker-compose.html">Docker Compose</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../build-tool-plugin/index.html">构建工具插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../maven-plugin/index.html">Maven 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/using.html">使用插件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/goals.html">目标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/run.html">使用 Maven 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/integration-tests.html">运行集成测试</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/build-info.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../maven-plugin/help.html">帮助信息</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../gradle-plugin/index.html">Gradle 插件</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/getting-started.html">入门指南</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/managing-dependencies.html">管理依赖项</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging.html">打包可执行归档文件</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/packaging-oci-image.html">打包 OCI 镜像</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/publishing.html">发布应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/running.html">使用 Gradle 运行应用程序</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/aot.html">提前处理 (Ahead-of-Time Processing)</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/integrating-with-actuator.html">与 Actuator 集成</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../gradle-plugin/reacting.html">响应其他插件</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/antlib.html">Spring Boot AntLib 模块</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../build-tool-plugin/other-build-systems.html">支持其他构建系统</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../cli/index.html">Spring Boot CLI</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/installation.html">安装 CLI</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link" href="../../cli/using-the-cli.html">使用 CLI</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../api/rest/actuator/index.html">Actuator</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/auditevents.html">审计事件（<code>auditevents</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/beans.html">Beans (<code>beans</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/caches.html">Caches (<code>caches</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/conditions.html">条件评估报告 (<code>conditions</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/configprops.html">配置属性 (<code>configprops</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/env.html">Environment (<code>env</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/flyway.html">Flyway (<code>flyway</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/health.html">Health (<code>health</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/heapdump.html">堆转储 (<code>heapdump</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/httpexchanges.html">HTTP 交换记录（<code>httpexchanges</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/info.html">Info (<code>info</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/integrationgraph.html">Spring Integration 图 (<code>integrationgraph</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/liquibase.html">Liquibase (<code>liquibase</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/logfile.html">日志文件（<code>logfile</code>）</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/loggers.html">Loggers (<code>loggers</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/mappings.html">Mappings (<code>mappings</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/metrics.html">Metrics (<code>metrics</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/prometheus.html">Prometheus (<code>prometheus</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/quartz.html">Quartz (<code>quartz</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/sbom.html">软件物料清单（<code>sbom</code>）</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/scheduledtasks.html">定时任务 (<code>scheduledtasks</code>)</a></li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/sessions.html">Sessions (<code>sessions</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../api/rest/actuator/shutdown.html">Shutdown (<code>shutdown</code>)</a>
+  </li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/startup.html">应用启动 (<code>startup</code>)</a></li>
+  <li class="nav-item" data-depth="3"><a class="nav-link" href="../../api/rest/actuator/threaddump.html">线程转储 (<code>threaddump</code>)</a></li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Java APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/java/index.html" target="_blank">Spring Boot</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../gradle-plugin/api/java/index.html" target="_blank">Gradle Plugin</a>
+</li>
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../maven-plugin/api/java/index.html" target="_blank">Maven Plugin</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">Kotlin APIs</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<a class="nav-link link-external" href="../../api/kotlin/index.html" target="_blank">Spring Boot</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1"><button class="nav-item-toggle"></button>
+<span class="nav-text">规范</span>
+<ul class="nav-list">
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/configuration-metadata/index.html">配置元数据</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/format.html">元数据格式</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/manual-hints.html">提供手动提示</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/configuration-metadata/annotation-processor.html">使用注解处理器生成自己的元数据</a>
+</li>
+</ul>
+</li>
+<li class="nav-item" data-depth="2">
+<button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../specification/executable-jar/index.html">可执行 JAR 格式</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/nested-jars.html">嵌套 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/jarfile-class.html">Spring Boot 的“NestedJarFile”类</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/launching.html">启动可执行 JAR</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/property-launcher.html">PropertiesLauncher 功能</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/restrictions.html">可执行 JAR 限制</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../specification/executable-jar/alternatives.html">替代单 JAR 解决方案</a>
+</li>
+</ul>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/application-properties/index.html">通用应用程序属性</a></li>
+  <li class="nav-item" data-depth="2"><a class="nav-link" href="../../appendix/deprecated-application-properties/index.html">已废弃的应用程序属性</a></li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/index.html">自动配置类</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-activemq.html">spring-boot-activemq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-actuator-autoconfigure.html">spring-boot-actuator-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-amqp.html">spring-boot-amqp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-artemis.html">spring-boot-artemis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-autoconfigure.html">spring-boot-autoconfigure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch.html">spring-boot-batch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-batch-jdbc.html">spring-boot-batch-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cache.html">spring-boot-cache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cassandra.html">spring-boot-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-cloudfoundry.html">spring-boot-cloudfoundry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-couchbase.html">spring-boot-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-cassandra.html">spring-boot-data-cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-commons.html">spring-boot-data-commons</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-couchbase.html">spring-boot-data-couchbase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-elasticsearch.html">spring-boot-data-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jdbc.html">spring-boot-data-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-jpa.html">spring-boot-data-jpa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-ldap.html">spring-boot-data-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-mongodb.html">spring-boot-data-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-neo4j.html">spring-boot-data-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-r2dbc.html">spring-boot-data-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-redis.html">spring-boot-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-data-rest.html">spring-boot-data-rest</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-devtools.html">spring-boot-devtools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-elasticsearch.html">spring-boot-elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-flyway.html">spring-boot-flyway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-freemarker.html">spring-boot-freemarker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-graphql.html">spring-boot-graphql</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-groovy-templates.html">spring-boot-groovy-templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-gson.html">spring-boot-gson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-h2console.html">spring-boot-h2console</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hateoas.html">spring-boot-hateoas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hazelcast.html">spring-boot-hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-health.html">spring-boot-health</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-hibernate.html">spring-boot-hibernate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-client.html">spring-boot-http-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-codec.html">spring-boot-http-codec</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-http-converter.html">spring-boot-http-converter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-integration.html">spring-boot-integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson.html">spring-boot-jackson</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jackson2.html">spring-boot-jackson2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jdbc.html">spring-boot-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jersey.html">spring-boot-jersey</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jetty.html">spring-boot-jetty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jms.html">spring-boot-jms</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jooq.html">spring-boot-jooq</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-jsonb.html">spring-boot-jsonb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kafka.html">spring-boot-kafka</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-kotlinx-serialization-json.html">spring-boot-kotlinx-serialization-json</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-ldap.html">spring-boot-ldap</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-liquibase.html">spring-boot-liquibase</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mail.html">spring-boot-mail</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-metrics.html">spring-boot-micrometer-metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-observation.html">spring-boot-micrometer-observation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing.html">spring-boot-micrometer-tracing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-brave.html">spring-boot-micrometer-tracing-brave</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-micrometer-tracing-opentelemetry.html">spring-boot-micrometer-tracing-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mongodb.html">spring-boot-mongodb</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-mustache.html">spring-boot-mustache</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-neo4j.html">spring-boot-neo4j</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-netty.html">spring-boot-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-opentelemetry.html">spring-boot-opentelemetry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-persistence.html">spring-boot-persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-pulsar.html">spring-boot-pulsar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-quartz.html">spring-boot-quartz</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-r2dbc.html">spring-boot-r2dbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor.html">spring-boot-reactor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-reactor-netty.html">spring-boot-reactor-netty</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-restclient.html">spring-boot-restclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-resttestclient.html">spring-boot-resttestclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-rsocket.html">spring-boot-rsocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security.html">spring-boot-security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-authorization-server.html">spring-boot-security-oauth2-authorization-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-client.html">spring-boot-security-oauth2-client</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-oauth2-resource-server.html">spring-boot-security-oauth2-resource-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-security-saml2.html">spring-boot-security-saml2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-sendgrid.html">spring-boot-sendgrid</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-servlet.html">spring-boot-servlet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session.html">spring-boot-session</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-data-redis.html">spring-boot-session-data-redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-session-jdbc.html">spring-boot-session-jdbc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-testcontainers.html">spring-boot-testcontainers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-thymeleaf.html">spring-boot-thymeleaf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-tomcat.html">spring-boot-tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-transaction.html">spring-boot-transaction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-validation.html">spring-boot-validation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webclient.html">spring-boot-webclient</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webflux.html">spring-boot-webflux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webmvc.html">spring-boot-webmvc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-webservices.html">spring-boot-webservices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-websocket.html">spring-boot-websocket</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../appendix/auto-configuration-classes/spring-boot-zipkin.html">spring-boot-zipkin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/test-auto-configuration/index.html">测试自动配置注解</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/test-auto-configuration/slices.html">测试切片</a>
+</li>
+</ul></li>
+  <li class="nav-item" data-depth="2"><button class="nav-item-toggle"></button>
+<a class="nav-link" href="../../appendix/dependency-versions/index.html">依赖版本</a>
+<ul class="nav-list">
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/coordinates.html">托管依赖坐标</a>
+</li>
+<li class="nav-item" data-depth="3">
+<a class="nav-link" href="../../appendix/dependency-versions/properties.html">版本属性</a>
+</li>
+</ul></li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+          <div class="toggle-sm">
+            <button class="nav-toggle" id="nav-toggle-2"></button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-collapse">
+        <button id="nav-collapse-toggle"><span></span></button>        
+      </div>
+    </div>
+    <div class="nav-resize"></div>
+  </aside>
+</div>
+<script>
+!function (sidebar) {
+  if (sidebar) {
+    document.body.classList.add('nav-sm')
+  }
+}(localStorage && localStorage.getItem('sidebar') === 'close')
+</script><main class="article">
+<div class="toolbar" role="navigation">
+  <button class="nav-toggle" id="nav-toggle-1"></button>
+</div>
+  <div class="content">
+<aside class="sidebar">
+  <div class="content">
+    <div class="toc" data-levels="2" data-title="Endpoints">
+      <div class="toc-menu"></div>
+    </div>
+    <div class="sidebar-links"><a href="file:///workspaces/spring-boot/documentation/spring-boot-docs/src/docs/antora/modules/reference/pages/actuator/endpoints.adoc">
+<svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg>
+          编辑此页面
+        </a>
+<a href="https://github.com/doc2401/spring-boot" title="GitHub">
+<svg height="512px" id="Layer_1" version="1.1" viewbox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg"><style type="text/css">
+              .st0{fill-rule:evenodd;clip-rule:evenodd;} </style><g><path class="st0" d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"></path></g></svg>
+          GitHub 项目
+        </a>
+<a href="https://stackoverflow.com/tags/spring-boot">
+<svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"></path></svg>
+          Stack Overflow
+        </a></div>
+  </div>
+</aside>
+<article class="doc">
+<div class="breadcrumbs-container"><nav aria-label="面包屑" class="breadcrumbs">
+<ul>
+<li id="copy-url" title="复制带版本号的 URL"></li>
+<li><a href="../../index.html">Spring Boot</a></li>
+<li><a href="../index.html">参考</a></li>
+<li><a href="index.html">生产就绪功能</a></li>
+<li><a href="endpoints.html">端点</a></li>
+</ul>
+</nav></div><h1 class="page" id="page-title">Endpoints</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Actuator 端点允许您监控并与应用程序交互。
+Spring Boot 包含多个内置端点，并允许您添加自己的端点。
+例如，`health` 端点提供基本的应用程序健康信息。</p>
+</div>
+<div class="paragraph">
+<p>您可以<a href="#actuator.endpoints.controlling-access">控制每个端点的访问权限</a>，并<a href="#actuator.endpoints.exposing">通过 HTTP 或 JMX 暴露它们（使其可远程访问）</a>。
+当允许访问且已暴露时，端点被视为可用。
+内置端点仅在可用时才会进行自动配置。
+大多数应用程序选择通过 HTTP 进行暴露，其中端点的 ID 和 <code>/actuator</code> 前缀被映射到 URL。
+例如，默认情况下，<code>health</code> 端点被映射到 <code>/actuator/health</code>。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+要了解有关 Actuator 端点及其请求和响应格式的更多信息，请参阅 <a class="xref page" href="../../api/rest/actuator/index.html">API 文档</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>以下是可用的与特定技术无关的端点：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;"/>
+<col style="width: 71.4286%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>auditevents</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露当前应用程序的审计事件信息。需要 <code>AuditEventRepository</code> 类型的 Bean。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>beans</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示应用程序中所有 Spring 豆的完整列表。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>caches</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露可用的缓存。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conditions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示在配置类和自动配置类上评估的条件，以及它们匹配或不匹配的原因。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configprops</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示所有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 的汇总列表。
+受<a href="#actuator.endpoints.sanitization">清理</a>约束。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>env</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露来自 Spring 的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html"><code>ConfigurableEnvironment</code></a>的属性。受<a href="#actuator.endpoints.sanitization">清理</a>约束。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flyway</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的任何 Flyway 数据库迁移。需要一个或多个 `<a class="apiref" href="https://javadoc.io/doc/org.flywaydb/flyway-core/11.14.1/org/flywaydb/core/Flyway.html"><code>Flyway</code></a>` Bean。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>health</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示应用程序健康信息。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>httpexchanges</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 HTTP 交换信息（默认情况下，显示最后 100 次 HTTP 请求 - 响应交换）。需要 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/web/exchanges/HttpExchangeRepository.html"><code>HttpExchangeRepository</code></a>` Bean。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示任意应用程序信息。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>integrationgraph</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 Spring Integration 图。
+需要依赖 <code>spring-integration-core</code>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>loggers</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示并修改应用程序中日志记录器的配置。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>liquibase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的 Liquibase 数据库迁移。需要一个或多个 `<a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/Liquibase.html"><code>Liquibase</code></a>` Bean。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metrics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示当前应用程序的“指标”信息，以诊断该应用程序已记录的指标。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mappings</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示所有 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html"><code>@RequestMapping</code></a> 路径的汇总列表。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quartz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 Quartz 调度器作业的信息。
+受<a href="#actuator.endpoints.sanitization">清理</a>限制。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scheduledtasks</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示应用程序中的计划任务。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sessions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">允许从基于 Spring Session 的会话存储中检索和删除用户会话。需要一个使用 Spring Session 的基于 Servlet 的 Web 应用程序。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>shutdown</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使应用程序优雅关闭。
+仅在使用 jar 打包时有效。
+默认禁用。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>startup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html"><code>ApplicationStartup</code></a> 收集的<a class="xref page" href="../features/spring-application.html#features.spring-application.startup-tracking">启动步骤数据</a>。
+需要配置 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/metrics/buffering/BufferingApplicationStartup.html"><code>BufferingApplicationStartup</code></a>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threaddump</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">执行线程转储。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>如果您的应用程序是 Web 应用程序（Spring MVC、Spring WebFlux 或 Jersey），您可以使用以下附加端点：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;"/>
+<col style="width: 71.4286%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>heapdump</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">返回堆转储文件。
+在 HotSpot JVM 上，返回 `HPROF` 格式的文件。
+在 OpenJ9 JVM 上，返回 `PHD` 格式的文件。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>logfile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">返回日志文件的内容（如果已设置 <code>logging.file.name</code>` 或 `<code>logging.file.path</code>` 属性）。支持使用 HTTP `<code>Range</code> 头来获取日志文件的部分内容。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>prometheus</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">以 Prometheus 服务器可抓取的形式暴露指标。需要依赖 <code>micrometer-registry-prometheus</code>。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.controlling-access"><a class="anchor" href="#actuator.endpoints.controlling-access"></a>控制端点访问</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>默认情况下，除 <code>shutdown</code>` 和 `<code>heapdump</code>` 之外的所有端点访问均不受限制。要配置对某个端点的允许访问权限，请使用其 `<code>management.endpoint.&lt;id&gt;.access</code>` 属性。以下示例允许对 `<code>shutdown</code> 端点进行无限制访问：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_1">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_1_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_1_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_1_properties" class="tabpanel" id="_tabs_1_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.shutdown.access=unrestricted</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_1_yaml" class="tabpanel" id="_tabs_1_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    shutdown:
+      access: unrestricted</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您希望采用“显式允许”而非“默认拒绝”的访问模式，请将 <code>management.endpoints.access.default</code>` 属性设置为 `<code>none</code>`，并使用各个端点的 `<code>access</code>` 属性来重新启用访问。以下示例允许对 `<code>loggers</code> 端点进行只读访问，并拒绝所有其他端点的访问：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_2">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_2_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_2_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_2_properties" class="tabpanel" id="_tabs_2_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.access.default=none
+management.endpoint.loggers.access=read-only</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_2_yaml" class="tabpanel" id="_tabs_2_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    access:
+      default: none
+  endpoint:
+    loggers:
+      access: read-only</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+无法访问的端点会从应用程序上下文中完全移除。
+如果您只想更改端点暴露的技术，请使用<a href="#actuator.endpoints.exposing"><code>include</code> 和<code>exclude</code> 属性</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.controlling-access.limiting"><a class="anchor" href="#actuator.endpoints.controlling-access.limiting"></a>限制访问</h3>
+<div class="paragraph">
+<p>可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code>` 可使所有端点不可访问。将其设置为 `<code>read-only</code> 则仅允许对端点进行只读访问。</p>
+</div>
+<div class="paragraph">
+<p>对于 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html"><code>@JmxEndpoint</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>`，读访问权限等同于带有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>` 注解的端点方法。
+对于 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html"><code>@ControllerEndpoint</code></a>` 和 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html"><code>@RestControllerEndpoint</code></a>`，读访问权限等同于能够处理 <code>GET</code>` 和 `<code>HEAD</code> 请求的请求映射。
+对于 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html"><code>@ServletEndpoint</code></a>`，读访问权限等同于 <code>GET</code>` 和 `<code>HEAD</code> 请求。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.exposing"><a class="anchor" href="#actuator.endpoints.exposing"></a>暴露端点</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>默认情况下，仅通过 HTTP 和 JMX 暴露健康端点。由于端点可能包含敏感信息，您应仔细考虑何时暴露它们。</p>
+</div>
+<div class="paragraph">
+<p>要更改暴露的端点，请使用以下特定于技术的 <code>include</code>` 和 `<code>exclude</code> 属性：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;"/>
+<col style="width: 25%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.endpoints.jmx.exposure.exclude</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.endpoints.jmx.exposure.include</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>health</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.endpoints.web.exposure.exclude</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>management.endpoints.web.exposure.include</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>health</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>include</code> 属性列出已公开的端点 ID。
+<code>exclude</code> 属性列出不应公开的端点 ID。
+<code>exclude</code> 属性的优先级高于 <code>include</code> 属性。
+您可以使用端点 ID 列表同时配置 <code>include</code> 和 <code>exclude</code> 属性。</p>
+</div>
+<div class="paragraph">
+<p>例如，要仅通过 JMX 暴露 <code>health</code>` 和 `<code>info</code> 端点，请使用以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_3">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_3_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_3_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_3_properties" class="tabpanel" id="_tabs_3_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.jmx.exposure.include=health,info</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_3_yaml" class="tabpanel" id="_tabs_3_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "health,info"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>`*` 可用于选择所有端点。例如，若要通过 HTTP 暴露除 `env` 和 `beans` 端点之外的所有内容，请使用以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_4">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_4_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_4_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_4_properties" class="tabpanel" id="_tabs_4_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.web.exposure.include=*
+management.endpoints.web.exposure.exclude=env,beans</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_4_yaml" class="tabpanel" id="_tabs_4_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>*</code> 在 YAML 中具有特殊含义，因此如果希望包含（或排除）所有端点，请务必添加引号。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您的应用程序对外公开，我们强烈建议您同时<a href="#actuator.endpoints.security">保护您的端点</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如果您想实现自定义的端点暴露策略，可以注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/EndpointFilter.html"><code>EndpointFilter</code></a> Bean。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.security"><a class="anchor" href="#actuator.endpoints.security"></a>Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>出于安全考虑，默认情况下仅通过 HTTP 公开 <code>/health</code>` 端点。您可以使用 `<code>management.endpoints.web.exposure.include</code> 属性来配置要公开的端点。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+在设置 <code>management.endpoints.web.exposure.include</code> 之前，请确保暴露的端点不包含敏感信息，并通过将其置于防火墙之后或使用 Spring Security 等机制进行保护。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>如果类路径中包含 Spring Security 且不存在其他 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> Bean，则除 `/health` 之外的所有端点均由 Spring Boot 自动配置进行保护。
+如果您定义了自定义的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> Bean，Spring Boot 自动配置将退让，让您完全控制端点访问规则。</p>
+</div>
+<div class="paragraph">
+<p>如果您希望为 HTTP 端点配置自定义安全设置（例如，仅允许具有特定角色的用户访问），Spring Boot 提供了一些方便的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/util/matcher/RequestMatcher.html"><code>RequestMatcher</code></a> 对象，您可以将其与 Spring Security 结合使用。</p>
+</div>
+<div class="paragraph">
+<p>典型的 Spring Security 配置可能如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_5">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_5_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_5_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_5_java" class="tabpanel" id="_tabs_5_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MySecurityConfiguration {
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
+		http.securityMatcher(EndpointRequest.toAnyEndpoint());
+		http.authorizeHttpRequests((requests) -&gt; requests.anyRequest().hasRole("ENDPOINT_ADMIN"));
+		http.httpBasic(withDefaults());
+		return http.build();
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_5_kotlin" class="tabpanel" id="_tabs_5_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.security.config.Customizer.withDefaults
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.web.SecurityFilterChain
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MySecurityConfiguration {
+
+	@Bean
+	fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
+		http.securityMatcher(EndpointRequest.toAnyEndpoint()).authorizeHttpRequests { requests -&gt;
+			requests.anyRequest().hasRole("ENDPOINT_ADMIN")
+		}
+		http.httpBasic(withDefaults())
+		return http.build()
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code>` 将请求匹配到任意端点，然后确保所有端点都具有 `<code>ENDPOINT_ADMIN</code> 角色。
+`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html"><code>EndpointRequest</code></a>` 上还提供其他几种匹配器方法。
+有关详细信息，请参阅 <a class="xref page" href="../../api/rest/actuator/index.html">API 文档</a>。</p>
+</div>
+<div class="paragraph">
+<p>如果您在防火墙后部署应用程序，可能希望所有端点无需身份验证即可访问。您可以通过更改 <code>management.endpoints.web.exposure.include</code> 属性来实现，如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_6">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_6_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_6_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_6_properties" class="tabpanel" id="_tabs_6_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.web.exposure.include=*</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_6_yaml" class="tabpanel" id="_tabs_6_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>此外，如果存在 Spring Security，您需要添加自定义安全配置以允许未认证用户访问这些端点，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_7">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_7_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_7_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_7_java" class="tabpanel" id="_tabs_7_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+public class MySecurityConfiguration {
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
+		http.securityMatcher(EndpointRequest.toAnyEndpoint());
+		http.authorizeHttpRequests((requests) -&gt; requests.anyRequest().permitAll());
+		return http.build();
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_7_kotlin" class="tabpanel" id="_tabs_7_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.web.SecurityFilterChain
+
+</span><span class="fold-block">@Configuration(proxyBeanMethods = false)
+class MySecurityConfiguration {
+
+	@Bean
+	fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
+		http.securityMatcher(EndpointRequest.toAnyEndpoint()).authorizeHttpRequests { requests -&gt;
+			requests.anyRequest().permitAll()
+		}
+		return http.build()
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+在前面的两个示例中，配置仅适用于端点。由于 Spring Boot 的安全配置在存在任何 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> Bean 时会完全退让，因此您需要配置一个额外的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> Bean，并设置适用于应用程序其余部分的规则。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.security.csrf"><a class="anchor" href="#actuator.endpoints.security.csrf"></a>跨站请求伪造保护</h3>
+<div class="paragraph">
+<p>由于 Spring Boot 依赖于 Spring Security 的默认设置，因此默认情况下会启用 CSRF 保护。这意味着当使用默认安全配置时，需要 <code>POST</code>（关闭和日志记录器端点）、<code>PUT</code> 或 <code>DELETE</code> 的监控端点会出现 403（禁止）错误。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+我们建议仅在创建由非浏览器客户端使用的服务时，才完全禁用 CSRF 保护。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>您可以在<a href="https://docs.spring.io/spring-security/reference/7.0/features/exploits/csrf.html">Spring Security 参考指南</a>中查找有关 CSRF 保护的更多信息。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.caching"><a class="anchor" href="#actuator.endpoints.caching"></a>配置端点</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>端点会自动缓存不带任何参数的读取操作的响应。要配置端点缓存响应的时长，请使用其 <code>cache.time-to-live</code>` 属性。以下示例将 `<code>beans</code> 端点的缓存时间设置为 10 秒：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_8">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_8_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_8_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_8_properties" class="tabpanel" id="_tabs_8_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.beans.cache.time-to-live=10s</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_8_yaml" class="tabpanel" id="_tabs_8_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    beans:
+      cache:
+        time-to-live: "10s"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>management.endpoint.&lt;name&gt;</code> 前缀唯一标识正在配置的端点。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.sanitization"><a class="anchor" href="#actuator.endpoints.sanitization"></a>敏感值脱敏</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>`/env`、`/configprops` 和 `/quartz` 端点返回的信息可能包含敏感数据，因此默认情况下值始终会完全脱敏（替换为 <code>******</code>）。</p>
+</div>
+<div class="paragraph">
+<p>值仅在以下情况下可以以未清理的形式查看：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>show-values</code> 属性已设置为非 <code>never</code> 的值。</p>
+</li>
+<li>
+<p>没有自定义的<a class="xref page" href="../../how-to/actuator.html#howto.actuator.customizing-sanitization"><code>SanitizingFunction</code></a>bean 适用。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>show-values</code> 属性可针对可清理端点配置为以下值之一：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>never</code> - 值始终完全脱敏（替换为 <code>******</code>）</p>
+</li>
+<li>
+<p><code>always</code> - 值会显示给所有用户（只要没有应用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/SanitizingFunction.html"><code>SanitizingFunction</code></a> Bean）。</p>
+</li>
+<li>
+<p><code>when-authorized</code> - 值仅显示给授权用户（只要没有应用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/SanitizingFunction.html"><code>SanitizingFunction</code></a> Bean）。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>对于 HTTP 端点，如果用户已进行身份验证并且拥有由端点的 roles 属性配置的权限角色，则该用户被视为已授权。默认情况下，任何已认证的用户均被视为已授权。</p>
+</div>
+<div class="paragraph">
+<p>对于 JMX 端点，所有用户始终具有授权。</p>
+</div>
+<div class="paragraph">
+<p>以下示例允许所有具有 <code>admin</code>` 角色的用户以原始形式查看来自 `/env` 端点的值。未授权的用户或没有 `<code>admin</code> 角色的用户将仅看到经过清理的值。</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_9">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_9_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_9_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_9_properties" class="tabpanel" id="_tabs_9_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.env.show-values=when-authorized
+management.endpoint.env.roles=admin</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_9_yaml" class="tabpanel" id="_tabs_9_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    env:
+      show-values: when-authorized
+      roles: "admin"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+本示例假设尚未定义任何 <a class="xref page" href="../../how-to/actuator.html#howto.actuator.customizing-sanitization"><code>SanitizingFunction</code></a> Bean。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.hypermedia"><a class="anchor" href="#actuator.endpoints.hypermedia"></a>Actuator 网络端点的超媒体</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>添加了“发现页面”，其中包含所有端点的链接。默认情况下，“发现页面”位于`/actuator`。</p>
+</div>
+<div class="paragraph">
+<p>要禁用“发现页面”，请在您的应用程序属性中添加以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_10">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_10_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_10_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_10_properties" class="tabpanel" id="_tabs_10_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.web.discovery.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_10_yaml" class="tabpanel" id="_tabs_10_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    web:
+      discovery:
+        enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>当配置了自定义管理上下文路径时，“发现页面”会自动从 <code>/actuator</code>` 移动到管理上下文的根目录。例如，如果管理上下文路径为 `<code>/management</code>`，则发现页面可从 `<code>/management</code>` 访问。当管理上下文路径设置为 `<code>/</code> 时，会禁用发现页面，以防止与其他映射发生冲突。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.cors"><a class="anchor" href="#actuator.endpoints.cors"></a>CORS 支持</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">跨域资源共享</a> (CORS) 是一项 <a href="https://www.w3.org/TR/cors/">W3C 规范</a>，允许您以灵活的方式指定哪些跨域请求被授权。
+如果您使用 Spring MVC 或 Spring WebFlux，可以配置 Actuator 的 Web 端点以支持此类场景。</p>
+</div>
+<div class="paragraph">
+<p>CORS 支持默认处于禁用状态，只有在设置了 <code>management.endpoints.web.cors.allowed-origins</code>` 属性后才启用。以下配置允许来自 `<code>example.com</code>` 域的 `<code>GET</code>` 和 `<code>POST</code> 调用：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_11">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_11_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_11_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_11_properties" class="tabpanel" id="_tabs_11_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoints.web.cors.allowed-origins=https://example.com
+management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_11_yaml" class="tabpanel" id="_tabs_11_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoints:
+    web:
+      cors:
+        allowed-origins: "https://example.com"
+        allowed-methods: "GET,POST"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关完整选项列表，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/endpoint/web/CorsEndpointProperties.html"><code>CorsEndpointProperties</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.json"><a class="anchor" href="#actuator.endpoints.json"></a>JSON</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在使用 JSON 时，Jackson 用于序列化和反序列化。默认情况下，使用一个隔离的<a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper.html"><code>JsonMapper</code></a>。这种隔离意味着它不与应用程序的<code>JsonMapper</code>共享相同的配置，并且不受<code>spring.jackson.*</code>属性的影响。要禁用此行为并配置 Actuator 使用应用程序的<code>JsonMapper</code>，请将<code>management.endpoints.jackson.isolated-json-mapper</code>设置为<code>false</code>。或者，您可以定义自己的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jackson/EndpointJsonMapper.html"><code>EndpointJsonMapper</code></a>bean，该 bean 生成一个符合您需求的<code>JsonMapper</code>。Actuator 将使用它进行 JSON 处理。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.implementing-custom"><a class="anchor" href="#actuator.endpoints.implementing-custom"></a>实现自定义端点</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如果您添加了一个带有 `<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 注解且该注解上标注了 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>` 的类，那么任何带有 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>` 注解的方法都会自动通过 JMX 暴露，并且在 Web 应用程序中也会通过 HTTP 暴露。
+可以通过使用 Jersey、Spring MVC 或 Spring WebFlux 将端点通过 HTTP 暴露。
+如果同时存在 Jersey 和 Spring MVC，则使用 Spring MVC。</p>
+</div>
+<div class="paragraph">
+<p>以下示例展示了一个返回自定义对象的读取操作：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_12">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_12_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_12_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_12_java" class="tabpanel" id="_tabs_12_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">	@ReadOperation
+	public CustomData getData() {
+		return new CustomData("test", 5);
+	}</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_12_kotlin" class="tabpanel" id="_tabs_12_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">	@ReadOperation
+	fun getData(): CustomData {
+		return CustomData("test", 5)
+	}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>您还可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html"><code>@JmxEndpoint</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a> 编写特定于技术的端点。
+这些端点仅限于其各自的技术。
+例如，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a> 仅通过 HTTP 暴露，而不过 JMX。</p>
+</div>
+<div class="paragraph">
+<p>您可以通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/EndpointWebExtension.html"><code>@EndpointWebExtension</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/EndpointJmxExtension.html"><code>@EndpointJmxExtension</code></a> 编写特定于技术的扩展。这些注解允许您提供特定于技术的操作来增强现有端点。每个端点最多只能有一个每种类型的扩展。</p>
+</div>
+<div class="paragraph">
+<p>最后，如果您需要访问特定于 Web 框架的功能，可以以牺牲其在 JMX 上的可用性或在其他 Web 框架中使用时不可用为代价，实现 Servlet 或 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/annotation/RestController.html"><code>@RestController</code></a> 端点。</p>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.implementing-custom.input"><a class="anchor" href="#actuator.endpoints.implementing-custom.input"></a>接收输入</h3>
+<div class="paragraph">
+<p>对端点的操作通过其参数接收输入。
+当通过 Web 暴露时，这些参数的值取自 URL 的查询参数和 JSON 请求体。
+当通过 JMX 暴露时，参数映射到 MBean 操作的参数。
+默认情况下，参数是必需的。
+可以通过使用 JSpecify 的 <a class="apiref" href="https://jspecify.dev/docs/api/org/jspecify/annotations/Nullable.html"><code>@Nullable</code></a> 注解将其设为可选。
+也支持 Kotlin 的空安全。</p>
+</div>
+<div class="paragraph">
+<p>您可以将 JSON 请求体中的每个根属性映射到端点的参数。
+考虑以下 JSON 请求体：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+	"name": "test",
+	"counter": 42
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>您可以使用此方法调用一个写操作，该操作接受 <code>String name</code>` 和 `<code>int counter</code> 参数，如下例所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_13">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_13_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_13_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_13_java" class="tabpanel" id="_tabs_13_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">	@WriteOperation
+	public void updateData(String name, int counter) {
+		// injects "test" and 42
+	}</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_13_kotlin" class="tabpanel" id="_tabs_13_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">	@WriteOperation
+	fun updateData(name: String?, counter: Int) {
+		// injects "test" and 42
+	}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+由于端点与特定技术无关，方法签名中只能指定简单类型。
+特别是，不支持声明一个带有 <a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/report/CustomData.html"><code>CustomData</code></a> 类型的单个参数，该类型定义了 <code>name</code> 和 <code>counter</code> 属性。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+为了让输入能够映射到操作方法的参数，实现端点的 Java 代码应使用 <code>-parameters</code> 进行编译。
+对于 Kotlin 代码，请查阅 Spring Framework 参考中的<a href="https://docs.spring.io/spring-framework/reference/7.0/languages/kotlin/classes-interfaces.html">相关建议</a>。
+如果您使用 Spring Boot 的 Gradle 插件，或者使用 Maven 和 <code>spring-boot-starter-parent</code>，此操作将自动完成。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.input.conversion"><a class="anchor" href="#actuator.endpoints.implementing-custom.input.conversion"></a>输入类型转换</h4>
+<div class="paragraph">
+<p>传递给端点操作方法的参数，如有必要，会自动转换为所需的类型。在调用操作方法之前，通过 JMX 或 HTTP 接收到的输入会由 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/ApplicationConversionService.html"><code>ApplicationConversionService</code></a> 的实例以及任何带有 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/Converter.html"><code>@EndpointConverter</code></a> 限定符的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/Converter.html"><code>Converter</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/GenericConverter.html"><code>GenericConverter</code></a> Bean 转换为所需的类型。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.implementing-custom.web"><a class="anchor" href="#actuator.endpoints.implementing-custom.web"></a>自定义 Web 端点</h3>
+<div class="paragraph">
+<p>对 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>`、`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/EndpointWebExtension.html"><code>@EndpointWebExtension</code></a>` 的操作会自动通过 Jersey、Spring MVC 或 Spring WebFlux 以 HTTP 形式暴露。如果同时存在 Jersey 和 Spring MVC，则使用 Spring MVC。</p>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.request-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.request-predicates"></a>Web 端点请求谓词</h4>
+<div class="paragraph">
+<p>每个 Web 公开端点的操作都会自动生成一个请求谓词。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.path-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.path-predicates"></a>Path</h4>
+<div class="paragraph">
+<p>谓词的路径由端点的 ID 和 Web 暴露端点的基础路径决定。默认基础路径为 <code>/actuator</code>`。例如，ID 为 `<code>sessions</code>` 的端点在谓词中使用 `<code>/actuator/sessions</code> 作为其路径。</p>
+</div>
+<div class="paragraph">
+<p>您可以通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Selector.html"><code>@Selector</code></a> 注解操作方法的参数来进一步自定义路径。
+此类参数作为路径变量添加到路径谓词中。
+当调用端点操作时，变量的值会传递给操作方法。
+如果您要捕获所有剩余的路径元素，可以在最后一个参数上添加 <code>@Selector(Match=ALL_REMAINING)</code> 并将其类型设置为与 <code>String[]</code> 转换兼容的类型。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.method-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.method-predicates"></a>HTTP 方法</h4>
+<div class="paragraph">
+<p>谓词的 HTTP 方法由操作类型决定，如下表所示：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;"/>
+<col style="width: 25%;"/>
+</colgroup>
+<thead><tr>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">HTTP 方法</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DELETE</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.consumes-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.consumes-predicates"></a>Consumes</h4>
+<div class="paragraph">
+<p>对于使用请求体的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>`（HTTP <code>POST</code>`），谓词的 `consumes` 子句为 `<code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。
+对于所有其他操作，`consumes` 子句为空。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.produces-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.produces-predicates"></a>Produces</h4>
+<div class="paragraph">
+<p>谓词的 `produces` 子句可由 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a> 注解的 `produces` 属性确定。
+该属性为可选。
+如果未使用，则自动确定 `produces` 子句。</p>
+</div>
+<div class="paragraph">
+<p>如果操作方法的返回类型为 <code>void</code>` 或 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html"><code>Void</code></a>，则 `<code>produces</code> 子句为空。
+如果操作方法的返回类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html"><code>Resource</code></a>，则 <code>produces</code>` 子句为 `<code>application/octet-stream</code>。
+对于其他所有操作，<code>produces</code>` 子句为 `<code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.response-status"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.response-status"></a>Web 端点响应状态</h4>
+<div class="paragraph">
+<p>端点操作的默认响应状态取决于操作类型（读取、写入或删除）以及该操作返回的内容（如果有）。</p>
+</div>
+<div class="paragraph">
+<p>如果 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>` 返回一个值，响应状态码将为 200 (OK)。如果它不返回任何值，响应状态码将为 404 (Not Found)。</p>
+</div>
+<div class="paragraph">
+<p>如果 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>` 返回了值，响应状态码将为 200 (OK)。如果未返回值，响应状态码将为 204 (No Content)。</p>
+</div>
+<div class="paragraph">
+<p>如果调用操作时缺少必需参数，或提供的参数无法转换为所需类型，则不会调用操作方法，响应状态码将为 400（请求无效）。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.range-requests"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.range-requests"></a>Web 端点范围请求</h4>
+<div class="paragraph">
+<p>您可以使用 HTTP 范围请求来请求 HTTP 资源的一部分。在使用 Spring MVC 或 Spring Web Flux 时，返回 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html"><code>Resource</code></a> 的操作会自动支持范围请求。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+使用 Jersey 时不支持范围请求。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator.endpoints.implementing-custom.web.security"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.security"></a>Web 端点安全</h4>
+<div class="paragraph">
+<p>对 Web 端点或特定于 Web 的端点扩展的操作可以将当前的 `<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Principal.html"><code>Principal</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/SecurityContext.html"><code>SecurityContext</code></a>` 作为方法参数接收。
+前者通常与 `<a class="apiref" href="https://jspecify.dev/docs/api/org/jspecify/annotations/Nullable.html"><code>@Nullable</code></a>` 结合使用，以针对已认证和未认证用户提供不同的行为。
+后者通常用于通过其 <code>isUserInRole(String)</code> 方法执行授权检查。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.health"><a class="anchor" href="#actuator.endpoints.health"></a>健康信息</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用健康信息来检查正在运行的应用程序的状态。它通常被监控软件用来在生产系统宕机时发出警报。<code>health</code> 端点暴露的信息取决于 <code>management.endpoint.health.show-details</code> 和 <code>management.endpoint.health.show-components</code> 属性，这些属性可以配置为以下值之一：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;"/>
+<col style="width: 75%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>never</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">从不显示详细信息。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>when-authorized</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">详细信息仅向授权用户显示。可以通过使用 <code>management.endpoint.health.roles</code> 来配置授权角色。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>always</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">详细信息对所有用户可见。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>默认值为 <code>never</code>。
+当用户处于端点的一个或多个角色中时，该用户被视为已授权。
+如果端点未配置任何角色（即默认情况），则所有经过身份验证的用户均被视为已授权。
+您可以通过使用 <code>management.endpoint.health.roles</code> 属性来配置角色。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您已保护应用程序并希望使用 <code>always</code>，则您的安全配置必须允许身份验证和未身份验证用户访问健康端点。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>健康信息是从<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/registry/HealthContributorRegistry.html"><code>HealthContributorRegistry</code></a>的内容中收集的（默认情况下，收集您在<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>中定义的所有<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>实例）。Spring Boot 包含一些自动配置的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>Bean，您也可以编写自己的 Bean。</p>
+</div>
+<div class="paragraph">
+<p>`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>` 可以是 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` 或 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>`。
+`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` 提供实际的健康信息，包括 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>`。
+`<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>` 提供其他 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>` 实例的复合体。
+综合起来，贡献者形成一棵树结构，以表示整个系统的健康状况。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，最终的系统健康状态由一个<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>推导得出，该组件根据有序的状态列表对每个<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>的状态进行排序。
+排序列表中的第一个状态被用作整体健康状态。
+如果没有<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>返回一个为<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>所知的状态，则使用<code>UNKNOWN</code>状态。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+您可以使用<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/registry/HealthContributorRegistry.html"><code>HealthContributorRegistry</code></a>在运行时注册和注销健康指示器。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.auto-configured-health-indicators"><a class="anchor" href="#actuator.endpoints.health.auto-configured-health-indicators"></a>自动配置的 HealthIndicators</h3>
+<div class="paragraph">
+<p>在适当的情况下，Spring Boot 会自动配置以下表格中列出的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> Bean。
+您也可以通过配置 <code>management.health.key.enabled</code> 来启用或禁用选定的指标，其中 <code>key</code> 列于以下表格中：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 50.0001%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cassandra</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/cassandra/CassandraDriverHealthIndicator.html"><code>CassandraDriverHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Cassandra 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>couchbase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/couchbase/CouchbaseHealthIndicator.html"><code>CouchbaseHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Couchbase 集群是否处于运行状态。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>db</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/jdbc/DataSourceHealthIndicator.html"><code>DataSourceHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查是否可以获取到与<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>的连接。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>diskspace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/info/DiskSpaceHealthIndicator.html"><code>DiskSpaceHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查磁盘空间不足的情况。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>elasticsearch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/elasticsearch/ElasticsearchRestClientHealthIndicator.html"><code>ElasticsearchRestClientHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Elasticsearch 集群是否已启动。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hazelcast</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/hazelcast/HazelcastHealthIndicator.html"><code>HazelcastHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Hazelcast 服务器是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>jms</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/jms/JmsHealthIndicator.html"><code>JmsHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 JMS 代理是否处于运行状态。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ldap</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/ldap/LdapHealthIndicator.html"><code>LdapHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 LDAP 服务器是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mail</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/mail/MailHealthIndicator.html"><code>MailHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查邮件服务器是否在线。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mongo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/data/mongo/MongoHealthIndicator.html"><code>MongoHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 MongoDB 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>neo4j</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/neo4j/Neo4jHealthIndicator.html"><code>Neo4jHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Neo4j 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ping</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/contributor/PingHealthIndicator.html"><code>PingHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">始终响应 <code>UP</code>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rabbit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/amqp/RabbitHealthIndicator.html"><code>RabbitHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Rabbit 服务器是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redis</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/data/redis/RedisHealthIndicator.html"><code>RedisHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Redis 服务器是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ssl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/info/SslHealthIndicator.html"><code>SslHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 SSL 证书是否有效。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+您可以通过设置 <code>management.health.defaults.enabled</code> 属性来禁用它们。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+<code>ssl</code> <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 有一个名为 <code>management.health.ssl.certificate-validity-warning-threshold</code> 的“警告阈值”属性。
+您可以使用该阈值，为自己预留足够的时间来轮换即将过期的证书。
+如果 SSL 证书将在该阈值定义的期限内失效，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 将在其响应的详细信息部分报告此情况，其中 <code>details.validChains.certificates.[*].validity.status</code> 的值将为 <code>WILL_EXPIRE_SOON</code>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>默认情况下，会启用额外的 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` Bean：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 23.0769%;"/>
+<col style="width: 30.7692%;"/>
+<col style="width: 46.1539%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>livenessstate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/application/LivenessStateHealthIndicator.html"><code>LivenessStateHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露“存活性”应用可用性状态。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>readinessstate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/application/ReadinessStateHealthIndicator.html"><code>ReadinessStateHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露“就绪”应用程序可用性状态。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>这些可以通过使用 <code>management.endpoint.health.probes.enabled</code> 配置属性来禁用。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.writing-custom-health-indicators"><a class="anchor" href="#actuator.endpoints.health.writing-custom-health-indicators"></a>编写自定义 HealthIndicator</h3>
+<div class="paragraph">
+<p>要提供自定义健康信息，您可以注册实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 接口的 Spring Bean。
+您需要提供 <code>health()</code> 方法的实现，并返回一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Health.html"><code>Health</code></a> 响应。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Health.html"><code>Health</code></a> 响应应包含状态，并可选项包含要显示的附加详细信息。
+以下代码显示了一个示例 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 实现：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_14">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_14_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_14_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_14_java" class="tabpanel" id="_tabs_14_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import org.springframework.boot.health.contributor.Health;
+import org.springframework.boot.health.contributor.HealthIndicator;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyHealthIndicator implements HealthIndicator {
+
+	@Override
+	public Health health() {
+		int errorCode = check();
+		if (errorCode != 0) {
+			return Health.down().withDetail("Error Code", errorCode).build();
+		}
+		return Health.up().build();
+	}
+
+	private int check() {
+		// perform some specific health check
+		return ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_14_kotlin" class="tabpanel" id="_tabs_14_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.health.contributor.Health
+import org.springframework.boot.health.contributor.HealthIndicator
+import org.springframework.stereotype.Component
+
+</span><span class="fold-block">@Component
+class MyHealthIndicator : HealthIndicator {
+
+	override fun health(): Health {
+		val errorCode = check()
+		if (errorCode != 0) {
+			return Health.down().withDetail("Error Code", errorCode).build()
+		}
+		return Health.up().build()
+	}
+
+	private fun check(): Int {
+		// perform some specific health check
+		return  ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+给定<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>的标识符是 bean 的名称，如果存在则不带 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 后缀。
+在前面的示例中，健康信息位于名为<code>my</code>的条目中。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+健康指标通常通过 HTTP 调用，需要在任何连接超时之前响应。
+如果某个健康指标的响应时间超过 10 秒，Spring Boot 将记录一条警告消息。
+如果您想配置此阈值，可以使用 <code>management.endpoint.health.logging.slow-indicator-threshold</code> 属性。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>除了 Spring Boot 预定义的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>类型外，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Health.html"><code>Health</code></a>还可以返回一个代表新系统状态的自定义<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>。
+在这种情况下，您还需要提供<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>接口的自定义实现，或者必须使用<code>management.endpoint.health.status.order</code>配置属性来配置默认实现。</p>
+</div>
+<div class="paragraph">
+<p>例如，假设您的某个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 实现中使用了代码为 <code>FATAL</code> 的新 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>。要配置严重性顺序，请在应用程序属性中添加以下属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_15">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_15_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_15_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_15_properties" class="tabpanel" id="_tabs_15_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.status.order=fatal,down,out-of-service,unknown,up</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_15_yaml" class="tabpanel" id="_tabs_15_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      status:
+        order: "fatal,down,out-of-service,unknown,up"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>响应中的 HTTP 状态码反映了整体健康状态。
+默认情况下，<code>OUT_OF_SERVICE</code> 和 <code>DOWN</code> 映射到 503。
+任何未映射的健康状态（包括 <code>UP</code>）均映射到 200。
+如果您通过 HTTP 访问健康端点，可能还需要注册自定义状态映射。
+配置自定义映射将禁用 <code>DOWN</code> 和 <code>OUT_OF_SERVICE</code> 的默认映射。
+如果希望保留默认映射，则必须显式配置它们，连同任何自定义映射一起。
+例如，以下属性将 <code>FATAL</code> 映射到 503（服务不可用），并保留 <code>DOWN</code> 和 <code>OUT_OF_SERVICE</code> 的默认映射：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_16">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_16_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_16_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_16_properties" class="tabpanel" id="_tabs_16_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.status.http-mapping.down=503
+management.endpoint.health.status.http-mapping.fatal=503
+management.endpoint.health.status.http-mapping.out-of-service=503</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_16_yaml" class="tabpanel" id="_tabs_16_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      status:
+        http-mapping:
+          down: 503
+          fatal: 503
+          out-of-service: 503</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如果您需要更多控制，可以定义自己的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HttpCodeStatusMapper.html"><code>HttpCodeStatusMapper</code></a> Bean。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>下表显示了内置状态的默认状态映射：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;"/>
+<col style="width: 75%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOWN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SERVICE_UNAVAILABLE</code> (<code>503</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OUT_OF_SERVICE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SERVICE_UNAVAILABLE</code> (<code>503</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UP</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">默认情况下没有映射，因此 HTTP 状态为<code>200</code>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UNKNOWN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">默认情况下没有映射，因此 HTTP 状态为<code>200</code>。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.reactive-health-indicators"><a class="anchor" href="#actuator.endpoints.health.reactive-health-indicators"></a>响应式健康指标</h3>
+<div class="paragraph">
+<p>对于使用 Spring WebFlux 等技术的响应式应用程序，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/ReactiveHealthContributor.html"><code>ReactiveHealthContributor</code></a> 提供了获取应用程序健康状态的非阻塞接口。与传统<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>类似，健康信息是从<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/registry/ReactiveHealthContributorRegistry.html"><code>ReactiveHealthContributorRegistry</code></a>的内容中收集的（默认情况下，会收集您在<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>中定义的所有<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/ReactiveHealthContributor.html"><code>ReactiveHealthContributor</code></a>实例）。未针对响应式 API 进行检查的常规<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>实例将在弹性调度器上执行。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+在响应式应用中，您应使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/registry/ReactiveHealthContributorRegistry.html"><code>ReactiveHealthContributorRegistry</code></a> 在运行时注册和注销健康指示器。
+如果您需要注册一个普通的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>，您应使用 <code>ReactiveHealthContributor#adapt</code> 对其进行包装。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>要从反应式 API 提供自定义健康信息，您可以注册实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/ReactiveHealthIndicator.html"><code>ReactiveHealthIndicator</code></a> 接口的 Spring Bean。
+以下代码展示了一个示例 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/ReactiveHealthIndicator.html"><code>ReactiveHealthIndicator</code></a> 实现：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_17">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_17_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_17_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_17_java" class="tabpanel" id="_tabs_17_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import reactor.core.publisher.Mono;
+
+import org.springframework.boot.health.contributor.Health;
+import org.springframework.boot.health.contributor.ReactiveHealthIndicator;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyReactiveHealthIndicator implements ReactiveHealthIndicator {
+
+	@Override
+	public Mono&lt;Health&gt; health() {
+		return doHealthCheck().onErrorResume((exception) -&gt;
+			Mono.just(new Health.Builder().down(exception).build()));
+	}
+
+	private Mono&lt;Health&gt; doHealthCheck() {
+		// perform some specific health check
+		return ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_17_kotlin" class="tabpanel" id="_tabs_17_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.health.contributor.Health
+import org.springframework.boot.health.contributor.ReactiveHealthIndicator
+import org.springframework.stereotype.Component
+import reactor.core.publisher.Mono
+
+</span><span class="fold-block">@Component
+class MyReactiveHealthIndicator : ReactiveHealthIndicator {
+
+	override fun health(): Mono&lt;Health&gt; {
+		return doHealthCheck().onErrorResume { exception: Throwable -&gt;
+			Mono.just(Health.Builder().down(exception).build())
+		}
+	}
+
+	private fun doHealthCheck(): Mono&lt;Health&gt; {
+		// perform some specific health check
+		return  ...
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+若要自动处理错误，请考虑继承自 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/AbstractReactiveHealthIndicator.html"><code>AbstractReactiveHealthIndicator</code></a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.auto-configured-reactive-health-indicators"><a class="anchor" href="#actuator.endpoints.health.auto-configured-reactive-health-indicators"></a>自动配置的 ReactiveHealthIndicators</h3>
+<div class="paragraph">
+<p>在适当的情况下，Spring Boot 会自动配置以下 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/ReactiveHealthIndicator.html"><code>ReactiveHealthIndicator</code></a> Bean：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 50.0001%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cassandra</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/cassandra/CassandraDriverReactiveHealthIndicator.html"><code>CassandraDriverReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Cassandra 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>couchbase</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/couchbase/CouchbaseReactiveHealthIndicator.html"><code>CouchbaseReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Couchbase 集群是否处于运行状态。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>elasticsearch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/data/elasticsearch/ElasticsearchReactiveHealthIndicator.html"><code>ElasticsearchReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Elasticsearch 集群是否已启动。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mongo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/data/mongo/MongoReactiveHealthIndicator.html"><code>MongoReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 MongoDB 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>neo4j</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/neo4j/Neo4jReactiveHealthIndicator.html"><code>Neo4jReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Neo4j 数据库是否正常运行。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>redis</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/data/redis/RedisReactiveHealthIndicator.html"><code>RedisReactiveHealthIndicator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">检查 Redis 服务器是否正常运行。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如有必要，响应式指示器将替换常规指示器。
+此外，任何未显式处理的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 都会自动包装。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.groups"><a class="anchor" href="#actuator.endpoints.health.groups"></a>健康组</h3>
+<div class="paragraph">
+<p>有时将健康指标组织成组，以便用于不同的目的，会很有用。</p>
+</div>
+<div class="paragraph">
+<p>要创建健康指示器组，您可以使用 <code>management.endpoint.health.group.&lt;name&gt;</code>` 属性，并指定要 `<code>include</code>` 或 `<code>exclude</code> 的健康指示器 ID 列表。例如，要创建一个仅包含数据库指示器的组，可以定义如下内容：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_18">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_18_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_18_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_18_properties" class="tabpanel" id="_tabs_18_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.custom.include=db</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_18_yaml" class="tabpanel" id="_tabs_18_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      group:
+        custom:
+          include: "db"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>然后，您可以通过访问 <code><a class="bare" href="http://localhost:8080/actuator/health/custom">localhost:8080/actuator/health/custom</a></code> 来检查结果。</p>
+</div>
+<div class="paragraph">
+<p>同样，若要创建一个排除数据库指标并包含所有其他指标的组，您可以定义以下内容：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_19">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_19_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_19_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_19_properties" class="tabpanel" id="_tabs_19_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.custom.exclude=db</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_19_yaml" class="tabpanel" id="_tabs_19_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      group:
+        custom:
+          exclude: "db"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>默认情况下，如果健康组包含或排除了不存在的健康指示器，启动将失败。要禁用此行为，请将 <code>management.endpoint.health.validate-group-membership</code>` 设置为 `<code>false</code>。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，组继承与系统健康相同的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HttpCodeStatusMapper.html"><code>HttpCodeStatusMapper</code></a>设置。
+不过，您也可以针对每个组定义这些设置。
+如果需要使用，您还可以覆盖<code>show-details</code>和<code>roles</code>属性：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_20">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_20_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_20_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_20_properties" class="tabpanel" id="_tabs_20_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.custom.show-details=when-authorized
+management.endpoint.health.group.custom.roles=admin
+management.endpoint.health.group.custom.status.order=fatal,up
+management.endpoint.health.group.custom.status.http-mapping.fatal=500
+management.endpoint.health.group.custom.status.http-mapping.out-of-service=500</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_20_yaml" class="tabpanel" id="_tabs_20_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      group:
+        custom:
+          show-details: "when-authorized"
+          roles: "admin"
+          status:
+            order: "fatal,up"
+            http-mapping:
+              fatal: 500
+              out-of-service: 500</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+如果您需要为组注册自定义的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>或<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HttpCodeStatusMapper.html"><code>HttpCodeStatusMapper</code></a>bean，可以使用<code>@Qualifier("groupname")</code>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>健康组也可以包含或排除一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>。
+您也可以仅包含或排除 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a> 的某个特定组件。
+可以通过使用组件的全限定名来实现，如下所示：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.custom.include="test/primary"
+management.endpoint.health.group.custom.exclude="test/primary/b"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在上面的示例中，<code>custom</code> 组将包含名为 <code>primary</code> 的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>，它是复合项 <code>test</code> 的一部分。在此处，<code>primary</code> 本身是一个复合项，而名为 <code>b</code> 的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a> 将被排除在 <code>custom</code> 组之外。</p>
+</div>
+<div class="paragraph">
+<p>健康组可以在主端口或管理端口的附加路径上提供。这在 Kubernetes 等云环境中非常有用，因为出于安全目的，通常使用单独的管理端口来提供 actuator 端点。如果拥有单独的端口，可能会导致不可靠的健康检查，因为即使健康检查成功，主应用程序也可能无法正常工作。可以通过以下方式配置带有附加路径的健康组：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.live.additional-path="server:/healthz"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这将使 <code>live</code>` 健康组在主服务器端口上的 `/healthz` 处可用。前缀是强制性的，必须是 `<code>server:</code>`（代表主服务器端口）或 `<code>management:</code>（如果已配置，则代表管理端口）。路径必须是一个单一的路径段。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.health.datasource"><a class="anchor" href="#actuator.endpoints.health.datasource"></a>数据源健康状态</h3>
+<div class="paragraph">
+<p>`<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。
+路由数据源的健康状况包括其每个目标数据源的健康状况。
+在健康端点的响应中，路由数据源的每个目标均通过其路由键命名。
+如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code>` 设置为 `<code>true</code>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.kubernetes-probes"><a class="anchor" href="#actuator.endpoints.kubernetes-probes"></a>Kubernetes 探针</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>部署在 Kubernetes 上的应用程序可以通过<a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes">容器探针</a>提供其内部状态信息。根据<a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/">您的 Kubernetes 配置</a>，kubelet 会调用这些探针并根据结果做出反应。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，Spring Boot 管理您的<a class="xref page" href="../features/spring-application.html#features.spring-application.application-availability">应用可用性</a>状态。如果部署在 Kubernetes 环境中，Actuator 会从<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/ApplicationAvailability.html"><code>ApplicationAvailability</code></a>接口收集“存活”和“就绪”信息，并将其用于专用的<a href="#actuator.endpoints.health.auto-configured-health-indicators">健康指示器</a>：<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/application/LivenessStateHealthIndicator.html"><code>LivenessStateHealthIndicator</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/application/ReadinessStateHealthIndicator.html"><code>ReadinessStateHealthIndicator</code></a>。这些指示器显示在整体健康端点（<code>/actuator/health</code>）上。此外，通过使用<a href="#actuator.endpoints.health.groups">健康组</a>，它们也作为单独的 HTTP 探针暴露：<code>/actuator/health/liveness</code>和<code>/actuator/health/readiness</code>。</p>
+</div>
+<div class="paragraph">
+<p>然后，您可以使用以下端点信息配置您的 Kubernetes 基础设施：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">livenessProbe:
+  httpGet:
+    path: "/actuator/health/liveness"
+    port: &lt;actuator-port&gt;
+  failureThreshold: ...
+  periodSeconds: ...
+
+readinessProbe:
+  httpGet:
+    path: "/actuator/health/readiness"
+    port: &lt;actuator-port&gt;
+  failureThreshold: ...
+  periodSeconds: ...</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>&lt;actuator-port&gt;</code> 应设置为 actuator 端点可用的端口。
+如果已设置 <code>"management.server.port"</code> 属性，它可以是主 Web 服务器端口或单独的管理端口。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>这些健康组会自动启用。您可以通过使用 <code>management.endpoint.health.probes.enabled</code> 配置属性来禁用它们。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果应用程序的启动时间超过配置的存活探测周期，Kubernetes 会提及使用 <code>"startupProbe"</code> 作为可能的解决方案。
+一般来说，在这种情况下并不需要 <code>"startupProbe"</code>，因为只要所有启动任务未完成，<code>"readinessProbe"</code> 就会失败。
+这意味着您的应用程序在准备好之前不会接收流量。
+然而，如果您的应用程序启动时间较长，请考虑使用 <code>"startupProbe"</code>，以确保 Kubernetes 不会在应用程序启动过程中将其终止。
+请参阅描述探测行为如何随应用程序生命周期变化的章节：<a href="#actuator.endpoints.kubernetes-probes.lifecycle">应用程序生命周期期间的探测行为</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>如果您的 Actuator 端点部署在独立的管理上下文中，则这些端点不会使用与主应用程序相同的 Web 基础设施（端口、连接池、框架组件）。在这种情况下，探针检查可能会在主应用程序无法正常工作（例如，无法接受新连接）时仍然成功。因此，建议将 <code>liveness</code>` 和 `<code>readiness</code> 健康组在主服务器端口上可用。可以通过设置以下属性来实现：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.probes.add-additional-paths=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这将使 <code>liveness</code>` 组在主要服务器端口上可用，路径为 `/livez`，而 `<code>readiness</code>` 组的路径为 `/readyz`。可以使用每个组上的 `<code>additional-path</code> 属性来自定义路径，有关详细信息请参阅 <a href="#actuator.endpoints.health.groups">健康检查组</a>。</p>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.kubernetes-probes.external-state"><a class="anchor" href="#actuator.endpoints.kubernetes-probes.external-state"></a>使用 Kubernetes 探针检查外部状态</h3>
+<div class="paragraph">
+<p>Actuator 将“存活”和“就绪”探针配置为健康组。这意味着它们可以使用所有<a href="#actuator.endpoints.health.groups">健康组功能</a>。例如，您可以配置额外的健康指标：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_21">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_21_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_21_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_21_properties" class="tabpanel" id="_tabs_21_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.group.readiness.include=readinessState,customCheck</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_21_yaml" class="tabpanel" id="_tabs_21_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    health:
+      group:
+        readiness:
+          include: "readinessState,customCheck"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>默认情况下，Spring Boot 不会向这些组添加其他健康指标。</p>
+</div>
+<div class="paragraph">
+<p>“存活”探测不应依赖于外部系统的健康检查。如果<a class="xref page" href="../features/spring-application.html#features.spring-application.application-availability.liveness">应用程序的存活状态</a>异常，Kubernetes 会尝试通过重启应用程序实例来解决该问题。这意味着，如果外部系统（例如数据库、Web API 或外部缓存）发生故障，Kubernetes 可能会重启所有应用程序实例，从而导致级联故障。</p>
+</div>
+<div class="paragraph">
+<p>关于“就绪”探测，应用程序开发人员必须谨慎选择是否检查外部系统。因此，Spring Boot 未在就绪探测中包含任何额外的健康检查。如果<a class="xref page" href="../features/spring-application.html#features.spring-application.application-availability.readiness">应用程序实例的就绪状态</a>为未就绪，Kubernetes 不会将流量路由到该实例。某些外部系统可能不被所有应用程序实例共享，在这种情况下可以将其包含在就绪探测中。其他外部系统可能对应用程序并非至关重要（应用程序可能已配置熔断器和降级方案），在这种情况下则绝对不应将其包含在内。不幸的是，被所有应用程序实例共享的外部系统很常见，您必须做出判断：将其包含在就绪探测中，并预期当外部服务中断时应用程序会被移出服务；或者将其排除在外，并在更高层处理故障，例如通过在调用方使用熔断器。</p>
+</div>
+<div class="admonitionblock note">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果应用程序的所有实例均处于未就绪状态，则具有 <code>type=ClusterIP</code> 或 <code>NodePort</code> 的 Kubernetes Service 不会接受任何传入连接。
+由于没有建立连接，因此不会出现 HTTP 错误响应（如 503 等）。
+对于具有 <code>type=LoadBalancer</code> 的服务，是否接受连接取决于提供商。
+具有显式 <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">ingress</a> 的服务也会以依赖于实现的方式响应——ingress 服务本身必须决定如何处理来自下游的“连接被拒绝”。
+在负载均衡器和 ingress 的情况下，出现 HTTP 503 的可能性很大。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>此外，如果应用程序使用 Kubernetes <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">自动扩展</a>，则根据其自动扩展器配置，该应用程序对从负载均衡器中移除应用程序的反应可能不同。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.kubernetes-probes.lifecycle"><a class="anchor" href="#actuator.endpoints.kubernetes-probes.lifecycle"></a>应用程序生命周期和探针状态</h3>
+<div class="paragraph">
+<p>Kubernetes 探针支持的一个重要方面是其与应用生命周期的协调性。<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityState.html"><code>AvailabilityState</code></a>（即应用的内存内部状态）与实际探针（用于暴露该状态）之间存在显著差异。根据应用生命周期的不同阶段，探针可能不可用。</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot 在启动和关闭期间发布<a class="xref page" href="../features/spring-application.html#features.spring-application.application-events-and-listeners">应用程序事件</a>，探针可以监听这些事件并公开<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityState.html"><code>AvailabilityState</code></a>信息。</p>
+</div>
+<div class="paragraph">
+<p>下表显示了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/availability/AvailabilityState.html"><code>AvailabilityState</code></a> 以及 HTTP 连接器在不同阶段的状态。</p>
+</div>
+<div class="paragraph">
+<p>当 Spring Boot 应用程序启动时：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;"/>
+<col style="width: 14.2857%;"/>
+<col style="width: 14.2857%;"/>
+<col style="width: 21.4285%;"/>
+<col style="width: 35.7144%;"/>
+</colgroup>
+<thead><tr>
+<th class="tableblock halign-left valign-top">启动阶段</th>
+<th class="tableblock halign-left valign-top">LivenessState</th>
+<th class="tableblock halign-left valign-top">ReadinessState</th>
+<th class="tableblock halign-left valign-top">HTTP 服务器</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BROKEN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REFUSING_TRAFFIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">未开始</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kubernetes 检查“存活”探测，如果该探测耗时过长，则重启应用程序。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Started</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CORRECT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REFUSING_TRAFFIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">拒绝请求</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">应用程序上下文已刷新。应用程序正在执行启动任务，尚未接收流量。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ready</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CORRECT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ACCEPTING_TRAFFIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">接受请求</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">启动任务已完成。应用程序正在接收流量。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>当 Spring Boot 应用程序关闭时：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;"/>
+<col style="width: 14.2857%;"/>
+<col style="width: 14.2857%;"/>
+<col style="width: 21.4285%;"/>
+<col style="width: 35.7144%;"/>
+</colgroup>
+<thead><tr>
+<th class="tableblock halign-left valign-top">关闭阶段</th>
+<th class="tableblock halign-left valign-top">存活状态</th>
+<th class="tableblock halign-left valign-top">就绪状态</th>
+<th class="tableblock halign-left valign-top">HTTP 服务器</th>
+<th class="tableblock halign-left valign-top">备注</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Running</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CORRECT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ACCEPTING_TRAFFIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">接受请求</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已请求关闭。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">优雅关闭</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CORRECT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REFUSING_TRAFFIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新请求被拒绝</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">如果启用，<a class="xref page" href="../web/graceful-shutdown.html">优雅关闭进程中的请求</a>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">关闭完成</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服务器已关闭</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">应用程序上下文已关闭，应用程序正在关闭。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+有关 Kubernetes 部署的更多信息，请参阅<a class="xref page" href="../../how-to/deployment/cloud.html#howto.deployment.cloud.kubernetes.container-lifecycle">Kubernetes 容器生命周期</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.info"><a class="anchor" href="#actuator.endpoints.info"></a>应用信息</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>应用程序信息会暴露从您在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 中定义的所有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/InfoContributor.html"><code>InfoContributor</code></a> Bean 收集的各种信息。Spring Boot 包含多个自动配置的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/InfoContributor.html"><code>InfoContributor</code></a> Bean，您也可以编写自己的 Bean。</p>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.auto-configured-info-contributors"><a class="anchor" href="#actuator.endpoints.info.auto-configured-info-contributors"></a>自动配置的 InfoContributor</h3>
+<div class="paragraph">
+<p>在适当的情况下，Spring 会自动配置以下 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/InfoContributor.html"><code>InfoContributor</code></a> Bean：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 5.8823%;"/>
+<col style="width: 23.5294%;"/>
+<col style="width: 47.0588%;"/>
+<col style="width: 23.5295%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Prerequisites</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>build</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/BuildInfoContributor.html"><code>BuildInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示构建信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>META-INF/build-info.properties</code> resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>env</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/EnvironmentInfoContributor.html"><code>EnvironmentInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露任何名称以<code>info.</code>开头的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>属性。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>git</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/GitInfoContributor.html"><code>GitInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 Git 信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>git.properties</code> resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/JavaInfoContributor.html"><code>JavaInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">暴露 Java 运行时信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>os</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/OsInfoContributor.html"><code>OsInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示操作系统信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>process</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/ProcessInfoContributor.html"><code>ProcessInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示进程信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ssl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/SslInfoContributor.html"><code>SslInfoContributor</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 SSL 证书信息。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">已配置 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL 包</a>。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>个人贡献者是否启用由其 <code>management.info.&lt;id&gt;.enabled</code> 属性控制。不同的贡献者根据其先决条件及其所公开信息的性质，对该属性具有不同的默认值。</p>
+</div>
+<div class="paragraph">
+<p>在没有指示需要启用它们的前置条件时，`env`、`java`、`os` 和 `process` 贡献者默认处于禁用状态。`ssl` 贡献者的前置条件是已配置一个 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL Bundle</a>，但它默认也是禁用的。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 `<code>true</code> 来启用每一个贡献者。</p>
+</div>
+<div class="paragraph">
+<p><code>build</code> 和 <code>git</code> 信息贡献者默认已启用。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 `<code>false</code>` 来禁用每一个贡献者。或者，要禁用所有通常默认启用的贡献者，请将 `<code>management.info.defaults.enabled</code>` 属性设置为 `<code>false</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.custom-application-information"><a class="anchor" href="#actuator.endpoints.info.custom-application-information"></a>自定义应用程序信息</h3>
+<div class="paragraph">
+<p>当启用 <code>env`</code> 贡献器时，您可以通过设置 `<code>info.*</code>` Spring 属性来自定义由 `<code>info</code> 端点暴露的数据。
+所有位于 <code>info</code> 键下的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 属性都会自动暴露。
+例如，您可以在 <code>application.properties</code> 文件中添加以下设置：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_22">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_22_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_22_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_22_properties" class="tabpanel" id="_tabs_22_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">info.app.encoding=UTF-8
+info.app.java.source=17
+info.app.java.target=17</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_22_yaml" class="tabpanel" id="_tabs_22_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">info:
+  app:
+    encoding: "UTF-8"
+    java:
+      source: "17"
+      target: "17"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>与其硬编码这些值，您也可以选择在构建时<a class="xref page" href="../../how-to/properties-and-configuration.html#howto.properties-and-configuration.expand-properties">扩展信息属性</a>。</p>
+</div>
+<div class="paragraph">
+<p>假设您使用 Maven，可以将上述示例重写如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_23">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_23_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_23_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_23_properties" class="tabpanel" id="_tabs_23_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">info.app.encoding=@project.build.sourceEncoding@
+info.app.java.source=@java.version@
+info.app.java.target=@java.version@</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_23_yaml" class="tabpanel" id="_tabs_23_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">info:
+  app:
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.git-commit-information"><a class="anchor" href="#actuator.endpoints.info.git-commit-information"></a>Git 提交信息</h3>
+<div class="paragraph">
+<p>`info` 端点的另一个有用功能是，当构建项目时，它可以发布有关您的 `git` 源代码仓库状态的信息。如果存在 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/GitProperties.html"><code>GitProperties</code></a>` Bean，您可以使用 `info` 端点来公开这些属性。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+如果类路径根目录处存在 <code>git.properties</code> 文件，则会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/GitProperties.html"><code>GitProperties</code></a> Bean。
+有关更多详细信息，请参阅<a class="xref page" href="../../how-to/build.html#howto.build.generate-git-info">生成 Git 信息</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>默认情况下，如果存在，该端点会暴露 `git.branch`、`git.commit.id` 和 `git.commit.time` 属性。如果您不希望这些属性出现在端点响应中，则需要将它们从 `git.properties` 文件中排除。如果您想显示完整的 Git 信息（即 `git.properties` 的完整内容），请使用 `management.info.git.mode` 属性，如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_24">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_24_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_24_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_24_properties" class="tabpanel" id="_tabs_24_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.info.git.mode=full</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_24_yaml" class="tabpanel" id="_tabs_24_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  info:
+    git:
+      mode: "full"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>要完全禁用来自 <code>info</code>` 端点的 git 提交信息，请将 `<code>management.info.git.enabled</code> 属性设置为 `<code>false</code>，如下所示：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_25">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_25_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_25_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_25_properties" class="tabpanel" id="_tabs_25_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.info.git.enabled=false</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_25_yaml" class="tabpanel" id="_tabs_25_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  info:
+    git:
+      enabled: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.build-information"><a class="anchor" href="#actuator.endpoints.info.build-information"></a>构建信息</h3>
+<div class="paragraph">
+<p>如果存在 `<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html"><code>BuildProperties</code></a>` Bean，<code>info</code> 端点还可以发布有关构建的信息。
+如果类路径中存在 <code>META-INF/build-info.properties</code> 文件，就会发生这种情况。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+Maven 和 Gradle 插件都可以生成该文件。
+有关更多详细信息，请参阅<a class="xref page" href="../../how-to/build.html#howto.build.generate-info">生成构建信息</a>。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.java-information"><a class="anchor" href="#actuator.endpoints.info.java-information"></a>Java 信息</h3>
+<div class="paragraph">
+<p>`info` 端点发布有关您的 Java 运行环境的信息，有关更多详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/JavaInfo.html"><code>JavaInfo</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.os-information"><a class="anchor" href="#actuator.endpoints.info.os-information"></a>操作系统信息</h3>
+<div class="paragraph">
+<p>`info` 端点发布有关您操作系统的信息，有关更多详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/OsInfo.html"><code>OsInfo</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.process-information"><a class="anchor" href="#actuator.endpoints.info.process-information"></a>进程信息</h3>
+<div class="paragraph">
+<p>`info` 端点发布有关您进程的信息，有关更多详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/ProcessInfo.html"><code>ProcessInfo</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.ssl-information"><a class="anchor" href="#actuator.endpoints.info.ssl-information"></a>SSL 信息</h3>
+<div class="paragraph">
+<p>`info` 端点发布有关您的 SSL 证书的信息（这些证书是通过 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL Bundles</a> 配置的），有关更多详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/SslInfo.html"><code>SslInfo</code></a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.info.writing-custom-info-contributors"><a class="anchor" href="#actuator.endpoints.info.writing-custom-info-contributors"></a>编写自定义 InfoContributor</h3>
+<div class="paragraph">
+<p>要提供自定义的应用程序信息，您可以注册实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/info/InfoContributor.html"><code>InfoContributor</code></a> 接口的 Spring  Bean。</p>
+</div>
+<div class="paragraph">
+<p>以下示例贡献了一个包含单个值的<code>example</code>条目：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_26">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_26_java">
+<p>Java</p>
+</li>
+<li class="tab" id="_tabs_26_kotlin">
+<p>Kotlin</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_26_java" class="tabpanel" id="_tabs_26_java--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"><span class="fold-block is-hidden-folded">import java.util.Collections;
+
+import org.springframework.boot.actuate.info.Info;
+import org.springframework.boot.actuate.info.InfoContributor;
+import org.springframework.stereotype.Component;
+
+</span><span class="fold-block">@Component
+public class MyInfoContributor implements InfoContributor {
+
+	@Override
+	public void contribute(Info.Builder builder) {
+		builder.withDetail("example", Collections.singletonMap("key", "value"));
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_26_kotlin" class="tabpanel" id="_tabs_26_kotlin--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"><span class="fold-block is-hidden-folded">import org.springframework.boot.actuate.info.Info
+import org.springframework.boot.actuate.info.InfoContributor
+import org.springframework.stereotype.Component
+import java.util.Collections
+
+</span><span class="fold-block">@Component
+class MyInfoContributor : InfoContributor {
+
+	override fun contribute(builder: Info.Builder) {
+		builder.withDetail("example", Collections.singletonMap("key", "value"))
+	}
+
+}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>如果您到达 <code>info</code> 端点，您应该看到一个包含以下额外条目的响应：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+	"example": {
+		"key" : "value"
+	}
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actuator.endpoints.sbom"><a class="anchor" href="#actuator.endpoints.sbom"></a>软件物料清单 (SBOM)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The `<code>sbom`</code> 端点暴露了<a href="https://en.wikipedia.org/wiki/Software_supply_chain">软件物料清单</a>。CycloneDX SBOM 可以自动检测，但也可以手动配置其他格式。</p>
+</div>
+<div class="paragraph">
+<p><code>sbom</code> 激活器端点随后将暴露一个名为"application"的 SBOM，其中描述了您应用程序的内容。</p>
+</div>
+<div class="admonitionblock tip">
+<table><tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="提示"></i>
+</td>
+<td class="content">
+若要自动在项目构建时生成 CycloneDX SBOM，请参阅<a class="xref page" href="../../how-to/build.html#howto.build.generate-cyclonedx-sbom">生成 CycloneDX SBOM</a>部分。
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.sbom.other-formats"><a class="anchor" href="#actuator.endpoints.sbom.other-formats"></a>其他 SBOM 格式</h3>
+<div class="paragraph">
+<p>如果您要以不同的格式发布 SBOM，可以使用一些配置属性。</p>
+</div>
+<div class="paragraph">
+<p>配置属性 <code>management.endpoint.sbom.application.location</code>` 用于设置应用程序 SBOM 的位置。例如，将其设置为 `<code>classpath:sbom.json</code> 将使用类路径上 `/sbom.json` 资源的内容。</p>
+</div>
+<div class="paragraph">
+<p>CycloneDX、SPDX 和 Syft 格式的 SBOM 媒体类型会自动检测。若要覆盖自动检测的媒体类型，请使用配置属性 <code>management.endpoint.sbom.application.media-type</code>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="actuator.endpoints.sbom.additional"><a class="anchor" href="#actuator.endpoints.sbom.additional"></a>附加 SBOM</h3>
+<div class="paragraph">
+<p>执行器端点可以处理多个 SBOM。要添加 SBOM，请使用配置属性 <code>management.endpoint.sbom.additional</code>，示例如下：</p>
+</div>
+<div class="openblock tabs is-sync is-loading" id="_tabs_27">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li class="tab" id="_tabs_27_properties">
+<p>Properties</p>
+</li>
+<li class="tab" id="_tabs_27_yaml">
+<p>YAML</p>
+</li>
+</ul>
+</div>
+<div aria-labelledby="_tabs_27_properties" class="tabpanel" id="_tabs_27_properties--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.sbom.additional.system.location=optional:file:/system.spdx.json
+management.endpoint.sbom.additional.system.media-type=application/spdx+json</code></pre>
+</div>
+</div>
+</div>
+<div aria-labelledby="_tabs_27_yaml" class="tabpanel" id="_tabs_27_yaml--panel">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">management:
+  endpoint:
+    sbom:
+      additional:
+        system:
+          location: "optional:file:/system.spdx.json"
+          media-type: "application/spdx+json"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>这将添加一个名为"system"的 SBOM，存储在 <code>/system.spdx.json</code>` 中。可以使用 `<code>optional:</code> 前缀来防止文件不存在时启动失败。</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination"><span class="prev"><a href="enabling.html">启用生产就绪功能</a></span>
+<span class="next"><a href="monitoring.html">通过 HTTP 进行监控和管理</a></span></nav>
+</article>  </div>
+</main>
+<div aria-hidden="true" class="modal micromodal-slide" id="modal-versions">
+    <div class="modal__overlay" data-micromodal-close="" tabindex="-1">
+        <div aria-modal="true" class="modal__container" role="dialog">
+            <main class="modal__content" id="modal-versions-content">
+              <button class="modal-versions-close" data-micromodal-close="">
+                <svg height="28px" viewBox="0 0 32 32" width="28px" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1h{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title></title><g id="cross"><line class="cls-1h" x1="7" x2="25" y1="7" y2="25"></line><line class="cls-1h" x1="7" x2="25" y1="25" y2="7"></line></g></svg>
+              </button>
+              <div class="colset">
+                <div class="col-left">
+
+                  <ul class="nav-versions">
+                      <li class="component">
+                        <div><a class="title" href="../../index.html">Spring Boot</a></div>                        <div class="version-item is-active">
+                          <div>
+                            <button class="version-toggle" type="button">
+                              <span></span>
+                              Stable
+                            </button>
+                          </div>
+                          <ul class="versions">
+  <li class="version">
+    <a href="../../index.html">
+      4.0.0
+    </a>
+  </li>
+</ul>                        </div>
+                        
+                      </li>
+                  </ul>
+                </div>
+                <div class="col-right">
+                  <ul class="projects">
+  <li>相关 Spring 文档<ul class="projects-list">
+        <li><a href="https://docs.spring.io/spring-boot/">
+  Spring Boot
+</a></li>
+        <li><a href="https://docs.spring.io/spring-framework/reference/">
+  Spring Framework
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Cloud
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-cloud-build/reference/">
+  Spring Cloud Build
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-bus/reference/">
+  Spring Cloud Bus
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-circuitbreaker/reference/">
+  Spring Cloud Circuit Breaker
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-commons/reference/">
+  Spring Cloud Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-config/reference/">
+  Spring Cloud Config
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-consul/reference/">
+  Spring Cloud Consul
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-contract/reference/">
+  Spring Cloud Contract
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-function/reference/">
+  Spring Cloud Function
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-gateway/reference/">
+  Spring Cloud Gateway
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-kubernetes/reference/">
+  Spring Cloud Kubernetes
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-netflix/reference/">
+  Spring Cloud Netflix
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-openfeign/reference/">
+  Spring Cloud OpenFeign
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-stream/reference/">
+  Spring Cloud Stream
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-task/reference/">
+  Spring Cloud Task
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-vault/reference/">
+  Spring Cloud Vault
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-cloud-zookeeper/reference/">
+  Spring Cloud Zookeeper
+</a>
+</li>
+</ul></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+  Spring Data
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-data/cassandra/reference/">
+  Spring Data Cassandra
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/commons/reference/">
+  Spring Data Commons
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/couchbase/reference/">
+  Spring Data Couchbase
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/elasticsearch/reference/">
+  Spring Data Elasticsearch
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/jpa/reference/">
+  Spring Data JPA
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/keyvalue/reference/">
+  Spring Data KeyValue
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/ldap/reference/">
+  Spring Data LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/mongodb/reference/">
+  Spring Data MongoDB
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/neo4j/reference/">
+  Spring Data Neo4j
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/redis/reference/">
+  Spring Data Redis
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/relational/reference/">
+  Spring Data JDBC &amp; R2DBC
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-data/rest/reference/">
+  Spring Data REST
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-integration/reference/">
+  Spring Integration
+</a></li>
+        <li><a href="https://docs.spring.io/spring-batch/reference/">
+  Spring Batch
+</a></li>
+        <li><a class="anchor"><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+<a href="https://docs.spring.io/spring-security/reference/">
+  Spring Security
+</a>
+<ul>
+<li>
+<a href="https://docs.spring.io/spring-authorization-server/reference/">
+  Spring Authorization Server
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-ldap/reference/">
+  Spring LDAP
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-security-kerberos/reference/">
+  Spring Security Kerberos
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-session/reference/">
+  Spring Session
+</a>
+</li>
+<li>
+<a href="https://docs.spring.io/spring-vault/reference/">
+  Spring Vault
+</a>
+</li>
+</ul></li>
+        <li><a href="https://docs.spring.io/spring-ai/reference/">
+  Spring AI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-amqp/reference/">
+  Spring AMQP
+</a></li>
+        <li><a href="https://docs.spring.io/spring-cli/reference/">
+  Spring CLI
+</a></li>
+        <li><a href="https://docs.spring.io/spring-graphql/reference/">
+  Spring GraphQL
+</a></li>
+        <li><a href="https://docs.spring.io/spring-kafka/reference/">
+  Spring for Apache Kafka
+</a></li>
+        <li><a href="https://docs.spring.io/spring-modulith/reference/">Spring Modulith</a></li>
+        <li><a href="https://docs.spring.io/spring-pulsar/reference/">
+  Spring for Apache Pulsar
+</a></li>
+        <li><a href="https://docs.spring.io/spring-shell/reference/">
+  Spring Shell
+</a></li>
+    </ul>
+  </li><a href="../../spring-projects.html">所有文档...</a>
+</ul>
+                </div>
+              </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer class="footer flex">
+    <div id="spring-links flex">
+        <img alt="Spring" id="springlogo" src="../../_/img/spring-logo.svg"/>
+        <p class="smallest antialiased">Copyright © 2005 - <script>var d = new Date();
+        document.write(d.getFullYear());</script> Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.<br/><a href="https://www.vmware.com/help/legal.html">使用条款</a> • <a href="https://www.vmware.com/help/privacy.html" rel="noopener noreferrer">隐私政策</a> • <a href="https://spring.io/trademarks">商标指南</a> <span id="thank-you-mobile">• <a href="https://spring.io/thank-you">致谢</a></span> • <a href="https://www.vmware.com/help/privacy/california-privacy-rights.html">您的加州隐私权利</a> • <a class="ot-sdk-show-settings">Cookie 设置</a> <span id="teconsent"></span></p>
+        <p class="smallest antialiased has-gray-text">Apache®、Apache Tomcat®、Apache Kafka®、Apache Cassandra™ 和 Apache Geode™ 是美国及其他/某些国家的 Apache Software Foundation 的商标或注册商标。Java™、Java™ SE、Java™ EE 和 OpenJDK™ 是 Oracle 及其附属公司的商标。Kubernetes® 是 Linux Foundation 在美国和其他国家的注册商标。Linux® 是 Linus Torvalds 在美国和其他国家的注册商标。Windows® 和 Microsoft® Azure 是 Microsoft Corporation 的注册商标。“AWS”和“Amazon Web Services"是 Amazon.com Inc. 或其附属公司的商标或注册商标。所有其他商标和版权均归其各自所有者所有，仅用于说明目的。其他名称可能是其各自所有者的商标。</p>
+    </div>
+    <div class="flex jc-between" id="social-icons">
+        <a href="https://www.youtube.com/user/SpringSourceDev" title="Youtube"><svg id="youtube-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="20" cy="20" r="20"></circle><path class="cls-2" d="M30.91,14.53a2.89,2.89,0,0,0-2-2C27.12,12,20,12,20,12s-7.12,0-8.9.47a2.9,2.9,0,0,0-2,2A30.56,30.56,0,0,0,8.63,20a30.44,30.44,0,0,0,.46,5.47,2.89,2.89,0,0,0,2,2C12.9,28,20,28,20,28s7.12,0,8.9-.47a2.87,2.87,0,0,0,2-2A30.56,30.56,0,0,0,31.37,20,28.88,28.88,0,0,0,30.91,14.53ZM17.73,23.41V16.59L23.65,20Z"></path></svg></a>
+        <a href="https://github.com/spring-projects" title="GitHub"><svg id="github-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><path class="cls-1" d="M38,0a38,38,0,1,0,38,38A38,38,0,0,0,38,0Z"></path><path class="cls-2" d="M38,15.59A22.95,22.95,0,0,0,30.71,60.3c1.15.21,1.57-.5,1.57-1.11s0-2,0-3.9c-6.38,1.39-7.73-3.07-7.73-3.07A6.09,6.09,0,0,0,22,48.86c-2.09-1.42.15-1.39.15-1.39a4.81,4.81,0,0,1,3.52,2.36c2,3.5,5.37,2.49,6.67,1.91a4.87,4.87,0,0,1,1.46-3.07c-5.09-.58-10.45-2.55-10.45-11.34a8.84,8.84,0,0,1,2.36-6.15,8.29,8.29,0,0,1,.23-6.07s1.92-.62,6.3,2.35a21.82,21.82,0,0,1,11.49,0c4.38-3,6.3-2.35,6.3-2.35a8.29,8.29,0,0,1,.23,6.07,8.84,8.84,0,0,1,2.36,6.15c0,8.81-5.37,10.75-10.48,11.32a5.46,5.46,0,0,1,1.56,4.25c0,3.07,0,5.54,0,6.29s.42,1.33,1.58,1.1A22.94,22.94,0,0,0,38,15.59Z"></path></svg></a>
+        <a href="https://twitter.com/springcentral" title="Twitter"><svg id="twitter-icon" viewBox="0 0 75.93 75.93" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="37.97" cy="37.97" r="37.97"></circle><path class="cls-2" d="M55.2,22.73a15.43,15.43,0,0,1-4.88,1.91,7.56,7.56,0,0,0-5.61-2.49A7.78,7.78,0,0,0,37,30a7.56,7.56,0,0,0,.2,1.79,21.63,21.63,0,0,1-15.84-8.23,8,8,0,0,0,2.37,10.52,7.66,7.66,0,0,1-3.48-1v.09A7.84,7.84,0,0,0,26.45,41a7.54,7.54,0,0,1-2,.28A7.64,7.64,0,0,1,23,41.09a7.71,7.71,0,0,0,7.18,5.47,15.21,15.21,0,0,1-9.55,3.37,15.78,15.78,0,0,1-1.83-.11,21.41,21.41,0,0,0,11.78,3.54c14.13,0,21.86-12,21.86-22.42,0-.34,0-.68,0-1a15.67,15.67,0,0,0,3.83-4.08,14.9,14.9,0,0,1-4.41,1.24A7.8,7.8,0,0,0,55.2,22.73Z" data-name="Twitter" id="Twitter-2"></path></svg></a>
+    </div>
+</footer>
+<script src="../../_/js/vendor/import.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async="" src="../../_/js/vendor/highlight.js"></script>
+<script async="" data-sync-storage-key="docs:preferred-tab" src="../../_/js/vendor/asciidoctor-tabs.js"></script>
+  
+
+</body></html>

@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-04-13 19:11:03",
+  "updated_at": "2026-04-13 19:11:03",
+  "stats": {
+    "total_entries": 13,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 20,
+    "entries_with_hits": 13,
+    "entries_without_hits": 0,
+    "hit_rate": 1.5384615384615385,
+    "usage_percentage": 0.0013
+  },
+  "items": [
+    {
+      "source": "Note that <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Session.html#SESSION_TRANSACTED\" title=\"class or interface in jakarta.jms\"><code>Session.SESSION_TRANSACTED</code></a> is not defined. It should be\nhandled through a call to <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/support/JmsAccessor.html#setSessionTransacted(boolean)\" title=\"class or interface in org.springframework.jms.support\"><code>JmsAccessor.setSessionTransacted(boolean)</code></a>.",
+      "translation": "注意，`<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Session.html#SESSION_TRANSACTED\" title=\"class or interface in jakarta.jms\"><code>Session.SESSION_TRANSACTED</code></a>` 未定义。应通过调用 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jms/support/JmsAccessor.html#setSessionTransacted(boolean)\" title=\"class or interface in org.springframework.jms.support\"><code>JmsAccessor.setSessionTransacted(boolean)</code></a>` 来处理。",
+      "count": 2
+    },
+    {
+      "source": "Creates an <code>AcknowledgeMode</code> of the given <code>mode</code>. The mode may be\n<code>auto</code>, <code>client</code>, <code>dupsok</code> or a non-standard acknowledge mode\nthat can be <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String,int)\" title=\"class or interface in java.lang\"><code>parsed as an integer</code></a>.",
+      "translation": "创建给定<code>mode</code>的<AcknowledgeMode</code>。该模式可以是<code>auto</code>、<code>client</code>、<code>dupsok</code>，或是一个非标准的确认模式，可以<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String,int)\" title=\"class or interface in java.lang\"><code>解析为整数</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Messages are acknowledged once the message listener implementation has called\n<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Message.html#acknowledge()\" title=\"class or interface in jakarta.jms\"><code>Message.acknowledge()</code></a>. This mode gives the application (rather\nthan the JMS provider) complete control over message acknowledgement.",
+      "translation": "消息在消息监听器实现调用了<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Message.html#acknowledge()\" title=\"class or interface in jakarta.jms\"><code>Message.acknowledge()</code></a>后得到确认。此模式使应用程序（而非 JMS 提供者）能够完全控制消息的确认。",
+      "count": 2
+    },
+    {
+      "source": "Messages sent or received from the session are automatically acknowledged. This is\nthe simplest mode and enables once-only message delivery guarantee.",
+      "translation": "从会话发送或接收的消息会自动确认。这是最简单的模式，可提供一次消息投递保证。",
+      "count": 2
+    },
+    {
+      "source": "Similar to auto acknowledgment except that said acknowledgment is lazy. As a\nconsequence, the messages might be delivered more than once. This mode enables\nat-least-once message delivery guarantee.",
+      "translation": "与自动确认类似，但所述确认为惰性确认。因此，消息可能会被多次投递。此模式启用至少一次消息投递保证。",
+      "count": 2
+    },
+    {
+      "source": "<code>mode</code> - the mode",
+      "translation": "<code>mode</code> - 模式",
+      "count": 2
+    },
+    {
+      "source": "the acknowledge mode",
+      "translation": "确认模式",
+      "count": 2
+    },
+    {
+      "source": "Messages are acknowledged once the message listener implementation has called\n<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Message.html#acknowledge()\" title=\"class or interface in jakarta.jms\"><code>Message.acknowledge()</code></a>.",
+      "translation": "消息在消息监听器实现调用了<a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/jms/Message.html#acknowledge()\" title=\"class or interface in jakarta.jms\"><code>Message.acknowledge()</code></a>后得到确认。",
+      "count": 1
+    },
+    {
+      "source": "Creates an <code>AcknowledgeMode</code> of the given <code>mode</code>.",
+      "translation": "创建给定<code>mode</code>的<code>AcknowledgeMode</code>。",
+      "count": 1
+    },
+    {
+      "source": "Messages sent or received from the session are automatically acknowledged.",
+      "translation": "从会话发送或接收的消息会自动确认。",
+      "count": 1
+    },
+    {
+      "source": "Similar to auto acknowledgment except that said acknowledgment is lazy.",
+      "translation": "与自动确认类似，但所述确认为惰性确认。",
+      "count": 1
+    },
+    {
+      "source": "Andy Wilkinson",
+      "translation": "Andy Wilkinson",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

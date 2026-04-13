@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-04-13 19:28:24",
+  "updated_at": "2026-04-13 19:28:24",
+  "stats": {
+    "total_entries": 2,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 4,
+    "entries_with_hits": 2,
+    "entries_without_hits": 0,
+    "hit_rate": 2.0,
+    "usage_percentage": 0.00019999999999999998
+  },
+  "items": [
+    {
+      "source": "<a href=\"../../../../../autoconfigure/EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>Auto-configuration</code></a> for exporting traces with OTLP.\nBrave does not support OTLP, so we only configure it for OpenTelemetry. OTLP defines\nthree transports that are supported: gRPC (/protobuf), HTTP/protobuf, HTTP/JSON. From\nthese transports HTTP/JSON is not supported by the OTel Java SDK, and it seems there\nare no plans supporting it in the future, see: <a href=\"https://github.com/open-telemetry/opentelemetry-java/issues/3651\">opentelemetry-java#3651</a>.\nBecause this class configures components from the OTel SDK, it can't support HTTP/JSON.\nBy default, we auto-configure HTTP/protobuf. If you want to use gRPC, you need to set\n<code>management.opentelemetry.tracing.export.otlp.transport=grpc</code>. If you define a\n<code>OtlpHttpSpanExporter</code> or <code>OtlpGrpcSpanExporter</code>, this auto-configuration\nwill back off.",
+      "translation": "<a href=\"../../../../../autoconfigure/EnableAutoConfiguration.html\" title=\"annotation interface in org.springframework.boot.autoconfigure\"><code>Auto-configuration</code></a> 用于使用 OTLP 导出跟踪。Brave 不支持 OTLP，因此我们仅针对 OpenTelemetry 进行配置。OTLP 定义了三种支持的传输方式：gRPC (/protobuf)、HTTP/protobuf 和 HTTP/JSON。在这些传输方式中，HTTP/JSON 不受 OTel Java SDK 支持，且似乎未来也没有支持它的计划，参见：<a href=\"https://github.com/open-telemetry/opentelemetry-java/issues/3651\">opentelemetry-java#3651</a>。由于该类配置了来自 OTel SDK 的组件，因此无法支持 HTTP/JSON。默认情况下，我们自动配置 HTTP/protobuf。如果您想使用 gRPC，需要设置<code>management.opentelemetry.tracing.export.otlp.transport=grpc</code>。如果您定义了<code>OtlpHttpSpanExporter</code>或<code>OtlpGrpcSpanExporter</code>，此自动配置将回退。",
+      "count": 2
+    },
+    {
+      "source": "Jonatan Ivanov, Moritz Halbritter, Eddú Meléndez",
+      "translation": "Jonatan Ivanov, Moritz Halbritter, Eddú Meléndez",
+      "count": 2
+    }
+  ]
+}

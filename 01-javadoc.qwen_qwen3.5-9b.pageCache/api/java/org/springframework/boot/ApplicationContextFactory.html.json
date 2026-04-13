@@ -1,0 +1,116 @@
+{
+  "created_at": "2026-04-13 07:59:21",
+  "updated_at": "2026-04-13 19:08:03",
+  "stats": {
+    "total_entries": 20,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 46,
+    "entries_with_hits": 20,
+    "entries_without_hits": 0,
+    "hit_rate": 2.3,
+    "usage_percentage": 0.002
+  },
+  "items": [
+    {
+      "source": "Creates the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>application context</code></a> for a\n<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>, respecting the given <code>webApplicationType</code>.",
+      "translation": "为 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>application context</code></a>` 创建 `<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>`，并尊重给定的 `<code>webApplicationType</code>`。",
+      "count": 3
+    },
+    {
+      "source": "A default <a href=\"ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a> implementation that will create an\nappropriate context for the <a href=\"WebApplicationType.html\" title=\"enum class in org.springframework.boot\"><code>WebApplicationType</code></a>.",
+      "translation": "一个默认的<a href=\"ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a>实现，它将创建适合<a href=\"WebApplicationType.html\" title=\"enum class in org.springframework.boot\"><code>WebApplicationType</code></a>的上下文。",
+      "count": 3
+    },
+    {
+      "source": "<code>webApplicationType</code> - the web application type or <code>null</code>",
+      "translation": "<code>webApplicationType</code> -  Web 应用程序类型或<code>null</code>",
+      "count": 3
+    },
+    {
+      "source": "the factory that will instantiate the context class",
+      "translation": "实例化上下文类的工厂",
+      "count": 3
+    },
+    {
+      "source": "Creates an <code>ApplicationContextFactory</code> that will create contexts by calling\nthe given <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html\" title=\"class or interface in java.util.function\"><code>Supplier</code></a>.",
+      "translation": "创建一个 `<code>ApplicationContextFactory`</code>，该工厂将通过调用给定的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html\" title=\"class or interface in java.util.function\"><code>Supplier</code></a> 来创建上下文。",
+      "count": 3
+    },
+    {
+      "source": "Creates an <code>ApplicationContextFactory</code> that will create contexts by\ninstantiating the given <code>contextClass</code> through its primary constructor.",
+      "translation": "创建一个 `<code>ApplicationContextFactory</code>`，该工厂将通过其主构造函数实例化给定的 `<code>contextClass</code>` 来创建上下文。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> to be set on the\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> application context. The result of this\nmethod must match the type returned by\n<a href=\"#getEnvironmentType(org.springframework.boot.WebApplicationType)\"><code>getEnvironmentType(WebApplicationType)</code></a>.",
+      "translation": "创建一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 并将其设置到\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> 应用程序上下文中。此方法的返回值必须与\n<a href=\"#getEnvironmentType(org.springframework.boot.WebApplicationType)\"><code>getEnvironmentType(WebApplicationType)</code></a> 返回的类型相匹配。",
+      "count": 2
+    },
+    {
+      "source": "Strategy interface for creating the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ConfigurableApplicationContext</code></a> used by a\n<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>. Created contexts should be returned in their default form,\nwith the <code>SpringApplication</code> responsible for configuring and refreshing the\ncontext.",
+      "translation": "用于创建由<a href=\"SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>使用的<code>ConfigurableApplicationContext</code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\">的 Strategy 接口</a>。创建的上下文应以其默认形式返回，由<code>SpringApplication</code>负责配置和刷新该上下文。",
+      "count": 2
+    },
+    {
+      "source": "Create a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> to be set on the\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> application context.",
+      "translation": "创建一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 并将其设置到\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> 应用程序上下文中。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> type expected to be set on the\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> application context.",
+      "translation": "返回预期设置在 `<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a>` 应用上下文上的`<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>`类型。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> type expected to be set on the\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> application context. The result of this\nmethod can be used to convert an existing environment instance to the correct type.",
+      "translation": "返回预期设置在 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 类型的\n<a href=\"#create(org.springframework.boot.WebApplicationType)\"><code>created</code></a> 应用上下文。此方法的结果可用于将现有的环境实例转换为正确的类型。",
+      "count": 2
+    },
+    {
+      "source": "<code>supplier</code> - the context supplier, for example\n<code>AnnotationConfigApplicationContext::new</code>",
+      "translation": "<code>supplier</code> - 上下文供应者，例如<code>AnnotationConfigApplicationContext::new</code>",
+      "count": 2
+    },
+    {
+      "source": "the expected application context type or <code>null</code> to use the default",
+      "translation": "预期的应用程序上下文类型或<code>null</code>以使用默认值。",
+      "count": 2
+    },
+    {
+      "source": "an environment instance or <code>null</code> to use the default",
+      "translation": "环境实例或<code>null</code>以使用默认值",
+      "count": 2
+    },
+    {
+      "source": "<code>webApplicationType</code> - the web application type",
+      "translation": "<code>webApplicationType</code> -  Web 应用程序类型",
+      "count": 2
+    },
+    {
+      "source": "<code>contextClass</code> - the context class",
+      "translation": "<code>contextClass</code> - 上下文类",
+      "count": 2
+    },
+    {
+      "source": "the newly created application context",
+      "translation": "新创建的应用程序上下文",
+      "count": 2
+    },
+    {
+      "source": "This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.",
+      "translation": "这是一个函数式接口，因此可用作 Lambda 表达式或方法引用的赋值目标。",
+      "count": 2
+    },
+    {
+      "source": "Andy Wilkinson, Phillip Webb",
+      "translation": "Andy Wilkinson, Phillip Webb",
+      "count": 2
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-04-13 08:52:41",
+  "updated_at": "2026-04-13 19:09:12",
+  "stats": {
+    "total_entries": 10,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 22,
+    "entries_with_hits": 10,
+    "entries_without_hits": 0,
+    "hit_rate": 2.2,
+    "usage_percentage": 0.001
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"CloudFoundryVcapEnvironmentPostProcessor.html\" title=\"class in org.springframework.boot.cloud\"><code>CloudFoundryVcapEnvironmentPostProcessor</code></a> instance.",
+      "translation": "创建一个新的<a href=\"CloudFoundryVcapEnvironmentPostProcessor.html\" title=\"class in org.springframework.boot.cloud\"><code>CloudFoundryVcapEnvironmentPostProcessor</code></a> 实例。",
+      "count": 3
+    },
+    {
+      "source": "Post-process the given <code>environment</code>.",
+      "translation": "后处理给定的<code>environment</code>。",
+      "count": 3
+    },
+    {
+      "source": "An <a href=\"../EnvironmentPostProcessor.html\" title=\"interface in org.springframework.boot\"><code>EnvironmentPostProcessor</code></a> that knows where to find VCAP (a.k.a. Cloud\nFoundry) metadata in the existing environment. It parses out the VCAP_APPLICATION and\nVCAP_SERVICES metadata and dumps it in a form that is easily consumed by\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> users. If the app is running in Cloud Foundry then both metadata\nitems are JSON objects encoded in OS environment variables. VCAP_APPLICATION is a\nshallow hash with basic information about the application (name, instance id, instance\nindex, etc.), and VCAP_SERVICES is a hash of lists where the keys are service labels\nand the values are lists of hashes of service instance metadata. Examples are:\n\n<pre class=\"code\">VCAP_APPLICATION: {\"instance_id\":\"2ce0ac627a6c8e47e936d829a3a47b5b\",\"instance_index\":0,\n  \"version\":\"0138c4a6-2a73-416b-aca0-572c09f7ca53\",\"name\":\"foo\",\n  \"uris\":[\"foo.cfapps.io\"], ...}\nVCAP_SERVICES: {\"rds-mysql-1.0\":[{\"name\":\"mysql\",\"label\":\"rds-mysql-1.0\",\"plan\":\"10mb\",\n  \"credentials\":{\"name\":\"d04fb13d27d964c62b267bbba1cffb9da\",\"hostname\":\"mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\",\n  \"host\":\"mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\",\"port\":3306,\"user\":\"urpRuqTf8Cpe6\",\n  \"username\":\"urpRuqTf8Cpe6\",\"password\":\"pxLsGVpsC9A5S\"}\n}]}\n</pre>\n\nThese objects are flattened into properties. The VCAP_APPLICATION object goes straight\nto <code>vcap.application.*</code> in a fairly obvious way, and the VCAP_SERVICES object is\nunwrapped so that it is a hash of objects with key equal to the service instance name\n(e.g. \"mysql\" in the example above), and value equal to that instances properties, and\nthen flattened in the same way. E.g.\n\n<pre class=\"code\">vcap.application.instance_id: 2ce0ac627a6c8e47e936d829a3a47b5b\nvcap.application.version: 0138c4a6-2a73-416b-aca0-572c09f7ca53\nvcap.application.name: foo\nvcap.application.uris[0]: foo.cfapps.io\n\nvcap.services.mysql.name: mysql\nvcap.services.mysql.label: rds-mysql-1.0\nvcap.services.mysql.credentials.name: d04fb13d27d964c62b267bbba1cffb9da\nvcap.services.mysql.credentials.port: 3306\nvcap.services.mysql.credentials.host: mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\nvcap.services.mysql.credentials.username: urpRuqTf8Cpe6\nvcap.services.mysql.credentials.password: pxLsGVpsC9A5S\n...\n</pre>\n\nN.B. this initializer is mainly intended for informational use (the application and\ninstance ids are particularly useful). For service binding you might find that Spring\nCloud is more convenient and more robust against potential changes in Cloud Foundry.",
+      "translation": "一个知道如何在现有环境中找到 VCAP（即 Cloud Foundry）元数据的<a href=\"../EnvironmentPostProcessor.html\" title=\"interface in org.springframework.boot\"><code>EnvironmentPostProcessor</code></a>。它解析出 VCAP_APPLICATION 和 VCAP_SERVICES 元数据，并将其转换为易于被<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>用户消费的形式。如果应用程序在 Cloud Foundry 中运行，则这两个元数据项都是编码在操作系统环境变量中的 JSON 对象。VCAP_APPLICATION 是一个包含有关应用程序基本信息（名称、实例 ID、实例索引等）的浅层哈希，而 VCAP_SERVICES 是一个哈希列表，其键为服务标签，值为服务实例元数据的哈希列表。示例如下：\n\n<pre class=\"code\">VCAP_APPLICATION: {\"instance_id\":\"2ce0ac627a6c8e47e936d829a3a47b5b\",\"instance_index\":0,\n  \"version\":\"0138c4a6-2a73-416b-aca0-572c09f7ca53\",\"name\":\"foo\",\n  \"uris\":[\"foo.cfapps.io\"], ...}\nVCAP_SERVICES: {\"rds-mysql-1.0\":[{\"name\":\"mysql\",\"label\":\"rds-mysql-1.0\",\"plan\":\"10mb\",\n  \"credentials\":{\"name\":\"d04fb13d27d964c62b267bbba1cffb9da\",\"hostname\":\"mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\",\n  \"host\":\"mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\",\"port\":3306,\"user\":\"urpRuqTf8Cpe6\",\n  \"username\":\"urpRuqTf8Cpe6\",\"password\":\"pxLsGVpsC9A5S\"}\n}]}\n</pre>\n\n这些对象被展平为属性。VCAP_APPLICATION 对象以相当明显的方式直接映射到<code>vcap.application.*</code>，而 VCAP_SERVICES 对象会被解包，使其成为一个哈希对象，其键等于服务实例名称（例如上面示例中的 \"mysql\"），值等于该实例的属性，然后以相同方式展平。例如：\n\n<pre class=\"code\">vcap.application.instance_id: 2ce0ac627a6c8e47e936d829a3a47b5b\nvcap.application.version: 0138c4a6-2a73-416b-aca0-572c09f7ca53\nvcap.application.name: foo\nvcap.application.uris[0]: foo.cfapps.io\n\nvcap.services.mysql.name: mysql\nvcap.services.mysql.label: rds-mysql-1.0\nvcap.services.mysql.credentials.name: d04fb13d27d964c62b267bbba1cffb9da\nvcap.services.mysql.credentials.port: 3306\nvcap.services.mysql.credentials.host: mysql-service-public.clqg2e2w3ecf.us-east-1.rds.amazonaws.com\nvcap.services.mysql.credentials.username: urpRuqTf8Cpe6\nvcap.services.mysql.credentials.password: pxLsGVpsC9A5S\n...\n</pre>\n\n注意：此初始化程序主要用于信息用途（应用程序和实例 ID 特别有用）。对于服务绑定，您可能会发现 Spring Cloud 更方便且更能抵御 Cloud Foundry 的潜在变化。",
+      "count": 2
+    },
+    {
+      "source": "<code>logFactory</code> - the log factory to use",
+      "translation": "<code>logFactory</code> - 要使用的日志工厂",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"../EnvironmentPostProcessor.html#postProcessEnvironment(org.springframework.core.env.ConfigurableEnvironment,org.springframework.boot.SpringApplication)\">EnvironmentPostProcessor</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"../EnvironmentPostProcessor.html#postProcessEnvironment(org.springframework.core.env.ConfigurableEnvironment,org.springframework.boot.SpringApplication)\">EnvironmentPostProcessor</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()\" title=\"class or interface in org.springframework.core\">getOrder</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html\" title=\"class or interface in org.springframework.core\">Ordered</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"../EnvironmentPostProcessor.html#postProcessEnvironment(org.springframework.core.env.ConfigurableEnvironment,org.springframework.boot.SpringApplication)\">postProcessEnvironment</a></code> in interface <code><a href=\"../EnvironmentPostProcessor.html\" title=\"interface in org.springframework.boot\">EnvironmentPostProcessor</a></code>",
+      "translation": "`<code><a href=\"../EnvironmentPostProcessor.html#postProcessEnvironment(org.springframework.core.env.ConfigurableEnvironment,org.springframework.boot.SpringApplication)\">postProcessEnvironment</a></code>` 接口 `<code><a href=\"../EnvironmentPostProcessor.html\" title=\"interface in org.springframework.boot\">EnvironmentPostProcessor</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code>environment</code> - the environment to post-process",
+      "translation": "<code>environment</code> - 用于后处理的环境",
+      "count": 2
+    },
+    {
+      "source": "<code>application</code> - the application to which the environment belongs",
+      "translation": "<code>application</code> - 该环境所属的应用程序",
+      "count": 2
+    },
+    {
+      "source": "Dave Syer, Andy Wilkinson",
+      "translation": "Dave Syer，Andy Wilkinson",
+      "count": 2
+    }
+  ]
+}

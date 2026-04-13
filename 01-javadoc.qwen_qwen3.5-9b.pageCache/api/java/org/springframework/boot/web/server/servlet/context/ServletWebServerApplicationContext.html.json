@@ -1,0 +1,206 @@
+{
+  "created_at": "2026-04-13 20:07:56",
+  "updated_at": "2026-04-13 20:07:56",
+  "stats": {
+    "total_entries": 38,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 56,
+    "entries_with_hits": 38,
+    "entries_without_hits": 0,
+    "hit_rate": 1.4736842105263157,
+    "usage_percentage": 0.0038000000000000004
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"ServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>ServletWebServerApplicationContext</code></a> with the given\n<code>DefaultListableBeanFactory</code>.",
+      "translation": "创建一个新的带有给定 `<code>DefaultListableBeanFactory</code>` 的 <a href=\"ServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>ServletWebServerApplicationContext</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"ServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>ServletWebServerApplicationContext</code></a>.",
+      "translation": "创建一个新的<a href=\"ServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>ServletWebServerApplicationContext</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "This context will create, initialize and run an <a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a> by searching for a\nsingle <a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> bean within the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>\nitself. The <a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> is free to use standard Spring concepts\n(such as dependency injection, lifecycle callbacks and property placeholder variables).",
+      "translation": "此上下文将搜索 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 中的单个 <a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> bean，并由此创建、初始化并运行一个 <a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a>。<a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> 可以自由使用标准的 Spring 概念（例如依赖注入、生命周期回调和属性占位符变量）。",
+      "count": 2
+    },
+    {
+      "source": "For more advanced configuration, the context can instead define beans that implement\nthe <a href=\"../../../servlet/ServletContextInitializer.html\" title=\"interface in org.springframework.boot.web.servlet\"><code>ServletContextInitializer</code></a> interface (most often\n<a href=\"../../../servlet/ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a>s and/or <a href=\"../../../servlet/FilterRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>FilterRegistrationBean</code></a>s). To prevent\ndouble registration, the use of <a href=\"../../../servlet/ServletContextInitializer.html\" title=\"interface in org.springframework.boot.web.servlet\"><code>ServletContextInitializer</code></a> beans will disable\nautomatic Servlet and Filter bean registration.",
+      "translation": "对于更高级的配置，上下文可以定义实现<a href=\"../../../servlet/ServletContextInitializer.html\" title=\"interface in org.springframework.boot.web.servlet\"><code>ServletContextInitializer</code></a>接口的 Bean（通常是<a href=\"../../../servlet/ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a>s 和/或<a href=\"../../../servlet/FilterRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>FilterRegistrationBean</code></a>s）。为了防止重复注册，使用<a href=\"../../../servlet/ServletContextInitializer.html\" title=\"interface in org.springframework.boot.web.servlet\"><code>ServletContextInitializer</code></a> Bean 将禁用 Servlet 和 Filter Bean 的自动注册。",
+      "count": 2
+    },
+    {
+      "source": "In addition, any <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a> or <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\"><code>Filter</code></a> beans defined in the context will be\nautomatically registered with the web server. In the case of a single Servlet bean, the\n'/' mapping will be used. If multiple Servlet beans are found then the lowercase bean\nname will be used as a mapping prefix. Any Servlet named 'dispatcherServlet' will\nalways be mapped to '/'. Filter beans will be mapped to all URLs ('/*').",
+      "translation": "此外，上下文中定义的任意 <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Servlet.html\" title=\"class or interface in jakarta.servlet\"><code>Servlet</code></a> 或 <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/Filter.html\" title=\"class or interface in jakarta.servlet\"><code>Filter</code></a> Bean 都将被自动注册到 Web 服务器。对于单个 Servlet Bean，将使用 '/' 映射。如果发现多个 Servlet Bean，则使用小写的 Bean 名称作为映射前缀。任何名为 'dispatcherServlet' 的 Servlet 始终将映射到 '/'。Filter Bean 将映射到所有 URL ('/*')。",
+      "count": 2
+    },
+    {
+      "source": "Although this context can be used directly, most developers should consider using the\n<a href=\"AnnotationConfigServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>AnnotationConfigServletWebServerApplicationContext</code></a> or\n<a href=\"XmlServletWebServerApplicationContext.html\" title=\"class in org.springframework.boot.web.server.servlet.context\"><code>XmlServletWebServerApplicationContext</code></a> variants.",
+      "translation": "尽管此上下文可直接使用，但大多数开发人员应考虑使用`AnnotationConfigServletWebServerApplicationContext`或`XmlServletWebServerApplicationContext`变体。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> that should be used to create the\nembedded <a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a>. By default this method searches for a suitable bean in\nthe context itself.",
+      "translation": "返回用于创建嵌入式<a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a> 的<a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a>。默认情况下，此方法会在上下文中搜索合适的 Bean。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a> that was created by the context or <code>null</code> if\nthe server has not yet been created.",
+      "translation": "返回由上下文创建的<a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a>，或者如果服务器尚未创建则返回<code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "Constant value for the DispatcherServlet bean name. A Servlet bean with this name\nis deemed to be the \"main\" servlet and is automatically given a mapping of \"/\" by\ndefault. To change the default behavior you can use a\n<a href=\"../../../servlet/ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a> or a different bean name.",
+      "translation": "DispatcherServlet 的 Bean 名称常量值。具有此名称的 Servlet Bean 被视为“主”Servlet，默认会自动分配\"/\"映射。若要更改默认行为，可以使用<a href=\"../../../servlet/ServletRegistrationBean.html\" title=\"class in org.springframework.boot.web.servlet\"><code>ServletRegistrationBean</code></a>或不同的 Bean 名称。",
+      "count": 2
+    },
+    {
+      "source": "Register ServletContextAwareProcessor.",
+      "translation": "注册 ServletContextAwareProcessor。",
+      "count": 2
+    },
+    {
+      "source": "Set the server namespace of the context.",
+      "translation": "设置上下文的服务器命名空间。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#getResourceByPath(java.lang.String)\" title=\"class or interface in org.springframework.web.context.support\">getResourceByPath</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#getResourceByPath(java.lang.String)\" title=\"class or interface in org.springframework.web.context.support\">getResourceByPath</a></code>` 类中的 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html#setServletConfig(jakarta.servlet.ServletConfig)\" title=\"class or interface in org.springframework.web.context\">setServletConfig</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\">ConfigurableWebApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html#setServletConfig(jakarta.servlet.ServletConfig)\" title=\"class or interface in org.springframework.web.context\">setServletConfig</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\">ConfigurableWebApplicationContext</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#setServletConfig(jakarta.servlet.ServletConfig)\" title=\"class or interface in org.springframework.web.context.support\">setServletConfig</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#setServletConfig(jakarta.servlet.ServletConfig)\" title=\"class or interface in org.springframework.web.context.support\">setServletConfig</a></code>` 方法在类 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>` 中。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html#getServletConfig()\" title=\"class or interface in org.springframework.web.context\">getServletConfig</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\">ConfigurableWebApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html#getServletConfig()\" title=\"class or interface in org.springframework.web.context\">getServletConfig</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/ConfigurableWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\">ConfigurableWebApplicationContext</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#getServletConfig()\" title=\"class or interface in org.springframework.web.context.support\">getServletConfig</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#getServletConfig()\" title=\"class or interface in org.springframework.web.context.support\">getServletConfig</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a> that should be used to create the\nembedded <a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a>.",
+      "translation": "返回用于创建嵌入式<a href=\"../../WebServer.html\" title=\"interface in org.springframework.boot.web.server\"><code>WebServer</code></a> 的<a href=\"../ServletWebServerFactory.html\" title=\"interface in org.springframework.boot.web.server.servlet\"><code>ServletWebServerFactory</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"../../context/WebServerApplicationContext.html#getServerNamespace()\">WebServerApplicationContext</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"../../context/WebServerApplicationContext.html#getServerNamespace()\">WebServerApplicationContext</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"../../context/ConfigurableWebServerApplicationContext.html#setServerNamespace(java.lang.String)\">ConfigurableWebServerApplicationContext</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从接口复制：<code><a href=\"../../context/ConfigurableWebServerApplicationContext.html#setServerNamespace(java.lang.String)\">ConfigurableWebServerApplicationContext</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "Returns the namespace of the web server application context or <code>null</code> if no\nnamespace has been set.",
+      "translation": "返回 Web 服务器应用程序上下文的命名空间，或者如果未设置命名空间则返回 `<code>null</code>`。",
+      "count": 1
+    },
+    {
+      "source": "Returns the namespace of the web server application context or <code>null</code> if no\nnamespace has been set. Used for disambiguation when multiple web servers are\nrunning in the same application (for example a management context running on a\ndifferent port).",
+      "translation": "返回 Web 服务器应用程序上下文的命名空间，如果未设置命名空间则返回`null`。当同一应用程序中运行多个 Web 服务器时（例如在管理上下文使用不同端口上运行的情况），用于消除歧义。",
+      "count": 1
+    },
+    {
+      "source": "Utility class to store and restore any user defined scopes.",
+      "translation": "用于存储和恢复任何用户定义作用域的实用类。",
+      "count": 1
+    },
+    {
+      "source": "Constant value for the DispatcherServlet bean name.",
+      "translation": "DispatcherServlet  Bean 名称的常量值。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)\" title=\"class or interface in org.springframework.web.context.support\">postProcessBeanFactory</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)\" title=\"class or interface in org.springframework.web.context.support\">postProcessBeanFactory</a></code>` 方法在类 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html\" title=\"class or interface in org.springframework.web.context.support\">GenericWebApplicationContext</a></code>` 中。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#refresh()\" title=\"class or interface in org.springframework.context\">refresh</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\">ConfigurableApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#refresh()\" title=\"class or interface in org.springframework.context\">refresh</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html\" title=\"class or interface in org.springframework.context\">ConfigurableApplicationContext</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()\" title=\"class or interface in org.springframework.context.support\">refresh</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()\" title=\"class or interface in org.springframework.context.support\">refresh</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a></code>",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#onRefresh()\" title=\"class or interface in org.springframework.context.support\">onRefresh</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#onRefresh()\" title=\"class or interface in org.springframework.context.support\">onRefresh</a></code>` 类中的 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#doClose()\" title=\"class or interface in org.springframework.context.support\">doClose</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#doClose()\" title=\"class or interface in org.springframework.context.support\">doClose</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html\" title=\"class or interface in org.springframework.context.support\">AbstractApplicationContext</a></code>",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"../../context/WebServerApplicationContext.html#getServerNamespace()\">getServerNamespace</a></code> in interface <code><a href=\"../../context/WebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">WebServerApplicationContext</a></code>",
+      "translation": "`<code><a href=\"../../context/WebServerApplicationContext.html#getServerNamespace()\">getServerNamespace</a></code>` 接口 `<code><a href=\"../../context/WebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">WebServerApplicationContext</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"../../context/ConfigurableWebServerApplicationContext.html#setServerNamespace(java.lang.String)\">setServerNamespace</a></code> in interface <code><a href=\"../../context/ConfigurableWebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">ConfigurableWebServerApplicationContext</a></code>",
+      "translation": "`<code><a href=\"../../context/ConfigurableWebServerApplicationContext.html#setServerNamespace(java.lang.String)\">setServerNamespace</a></code>` 接口 `<code><a href=\"../../context/ConfigurableWebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">ConfigurableWebServerApplicationContext</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"../../context/WebServerApplicationContext.html#getWebServer()\">getWebServer</a></code> in interface <code><a href=\"../../context/WebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">WebServerApplicationContext</a></code>",
+      "translation": "`<code><a href=\"../../context/WebServerApplicationContext.html#getWebServer()\">getWebServer</a></code>` 接口 `<code><a href=\"../../context/WebServerApplicationContext.html\" title=\"interface in org.springframework.boot.web.server.context\">WebServerApplicationContext</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>beanFactory</code> - the DefaultListableBeanFactory instance to use for this context",
+      "translation": "<code>beanFactory</code> - 用于此上下文的 DefaultListableBeanFactory 实例",
+      "count": 1
+    },
+    {
+      "source": "<code>serverNamespace</code> - the server namespace",
+      "translation": "<code>serverNamespace</code> - 服务器命名空间",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Dave Syer, Scott Frederick",
+      "translation": "Phillip Webb, Dave Syer, Scott Frederick",
+      "count": 1
+    },
+    {
+      "source": "the server namespace",
+      "translation": "服务器命名空间",
+      "count": 1
+    },
+    {
+      "source": "the embedded web server",
+      "translation": "嵌入式 Web 服务器",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

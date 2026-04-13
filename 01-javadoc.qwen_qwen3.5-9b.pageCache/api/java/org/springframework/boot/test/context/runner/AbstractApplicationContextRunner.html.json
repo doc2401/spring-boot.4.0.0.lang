@@ -1,0 +1,336 @@
+{
+  "created_at": "2026-04-13 19:52:55",
+  "updated_at": "2026-04-13 19:52:55",
+  "stats": {
+    "total_entries": 64,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 141,
+    "entries_with_hits": 64,
+    "entries_without_hits": 0,
+    "hit_rate": 2.203125,
+    "usage_percentage": 0.0063999999999999994
+  },
+  "items": [
+    {
+      "source": "Such beans are registered after regular <a href=\"#withUserConfiguration(java.lang.Class...)\">user configurations</a> in the order of registration.",
+      "translation": "此类 Bean 在常规<a href=\"#withUserConfiguration(java.lang.Class...)\">用户配置</a>之后注册，注册顺序为：",
+      "count": 5
+    },
+    {
+      "source": "Create a new <a href=\"AbstractApplicationContextRunner.html\" title=\"class in org.springframework.boot.test.context.runner\"><code>AbstractApplicationContextRunner</code></a> instance.",
+      "translation": "创建一个新的<a href=\"AbstractApplicationContextRunner.html\" title=\"class in org.springframework.boot.test.context.runner\"><code>AbstractApplicationContextRunner</code></a>实例。",
+      "count": 5
+    },
+    {
+      "source": "<code>type</code> - the type of the bean",
+      "translation": "<code>type</code> - 该 Bean 的类型",
+      "count": 5
+    },
+    {
+      "source": "a new instance with the updated bean",
+      "translation": "包含更新后 Bean 的新实例",
+      "count": 5
+    },
+    {
+      "source": "Register the specified user bean with the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "将指定的用户 bean 注册到 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 4
+    },
+    {
+      "source": "<code>customizers</code> - one or more callbacks for customizing the factory's\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html\" title=\"class or interface in org.springframework.beans.factory.config\"><code>BeanDefinition</code></a>, e.g. setting a lazy-init or primary flag",
+      "translation": "<code>customizers</code> - 一个或多个用于自定义工厂的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html\" title=\"class or interface in org.springframework.beans.factory.config\"><code>BeanDefinition</code></a>的回调，例如设置懒加载或主标志。",
+      "count": 3
+    },
+    {
+      "source": "<code>consumer</code> - the consumer of the created <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>",
+      "translation": "<code>consumer</code> - 创建的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 的消费者",
+      "count": 3
+    },
+    {
+      "source": "<code>constructorArgs</code> - custom argument values to be fed into Spring's constructor\nresolution algorithm, resolving either all arguments or just specific ones, with\nthe rest to be resolved through regular autowiring (may be <code>null</code> or empty)",
+      "translation": "<code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 `<code>null</code>` 或为空）。",
+      "count": 3
+    },
+    {
+      "source": "<code>name</code> - the bean name or <code>null</code> to use a generated name",
+      "translation": "<code>name</code> - 豆名称或 <code>null</code>（使用生成的名称）",
+      "count": 3
+    },
+    {
+      "source": "<code>instanceFactory</code> - the factory used to create new instance of the runner",
+      "translation": "<code>instanceFactory</code> - 用于创建 runner 新实例的工厂",
+      "count": 3
+    },
+    {
+      "source": "<code>supplier</code> - a supplier for the bean",
+      "translation": "<code>supplier</code> - 该 Bean 的供应器",
+      "count": 3
+    },
+    {
+      "source": "a new instance with the updated configuration",
+      "translation": "具有更新配置的新实例",
+      "count": 3
+    },
+    {
+      "source": "The test above has changed the <code>spring.foo</code> property to <code>biz</code> and is\nasserting that the context contains a single <code>MyBean</code> bean. The\n<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> method takes a <a href=\"ContextConsumer.html\" title=\"interface in org.springframework.boot.test.context.runner\"><code>ContextConsumer</code></a> that can apply\nassertions to the context. Upon completion, the context is automatically closed.",
+      "translation": "上面的测试已将 `<code>spring.foo</code>` 属性更改为 `<code>biz</code>`，并断言上下文包含单个 `<code>MyBean</code>` Bean。<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> 方法接受一个 <a href=\"ContextConsumer.html\" title=\"interface in org.springframework.boot.test.context.runner\"><code>ContextConsumer</code></a>，该对象可对上下文应用断言。完成后，上下文将自动关闭。",
+      "count": 2
+    },
+    {
+      "source": "If the application context fails to start the <code>#run(ContextConsumer)</code> method is\ncalled with a \"failed\" application context. Calls to the context will throw an\n<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\"><code>IllegalStateException</code></a> and assertions that expect a running context will fail.\nThe <a href=\"../assertj/ApplicationContextAssert.html#getFailure()\"><code>getFailure()</code></a> assertion can be used if\nfurther checks are required on the cause of the failure:",
+      "translation": "如果应用程序上下文启动失败，则调用 `<code>#run(ContextConsumer)</code>` 方法时传入一个“失败”的应用程序上下文。对上下文的调用将抛出 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\"><code>IllegalStateException</code></a>，且期望运行中上下文的断言将会失败。如果需要对失败原因进行进一步检查，可以使用 <a href=\"../assertj/ApplicationContextAssert.html#getFailure()\"><code>getFailure()</code></a> 断言：",
+      "count": 2
+    },
+    {
+      "source": "The initialization above makes sure to register <code>MyConfiguration</code> for all tests\nand set the <code>spring.foo</code> property to <code>bar</code> unless specified otherwise.",
+      "translation": "上面的初始化确保为所有测试注册了 `<code>MyConfiguration</code>`，并将 `<code>spring.foo</code>` 属性设置为 `<code>bar</code>`，除非另有指定。",
+      "count": 2
+    },
+    {
+      "source": "Based on the configuration above, a specific test can simulate what will happen when\nthe context runs, perhaps with overridden property values:",
+      "translation": "基于上述配置，特定的测试可以模拟上下文运行时会发生的情况，或许使用覆盖的属性值：",
+      "count": 2
+    },
+    {
+      "source": "Prepare a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> based on the current state of this loader.\nThe context is consumed by the specified <code>consumer</code> and closed upon\ncompletion. Unlike <a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run(ContextConsumer)</code></a>, this method does not refresh the\nconsumed context.",
+      "translation": "基于此加载器的当前状态，准备一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。该上下文由指定的 <code>consumer</code> 消费，并在完成后关闭。与 <a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run(ContextConsumer)</code></a> 不同，此方法不会刷新所消费的上下文。",
+      "count": 2
+    },
+    {
+      "source": "Customize the <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassLoader.html\" title=\"class or interface in java.lang\"><code>ClassLoader</code></a> that the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> should use\nfor resource loading and bean class loading.",
+      "translation": "自定义 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassLoader.html\" title=\"class or interface in java.lang\"><code>ClassLoader</code></a>，供 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> 用于资源加载和 Bean 类加载。",
+      "count": 2
+    },
+    {
+      "source": "Configure the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#setParent(org.springframework.context.ApplicationContext)\" title=\"class or interface in org.springframework.context\"><code>parent</code></a> of the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "配置 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#setParent(org.springframework.context.ApplicationContext)\" title=\"class or interface in org.springframework.context\"><code>parent</code></a>` 的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "Add the specified <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html\" title=\"class or interface in java.lang\"><code>System</code></a> property pairs. Key-value pairs can be specified\nwith colon (\":\") or equals (\"=\") separators. System properties are added before the\ncontext is <a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> and restored when the context is\nclosed.",
+      "translation": "添加指定的<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html\" title=\"class or interface in java.lang\"><code>System</code></a>属性对。键值对可以使用冒号（\":\"）或等号（\"=\"）分隔符指定。系统属性会在上下文<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a>之前添加，并在上下文关闭时恢复。",
+      "count": 2
+    },
+    {
+      "source": "Create and refresh a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> based on the current state of\nthis loader. The context is consumed by the specified <code>consumer</code> and closed\nupon completion.",
+      "translation": "创建并刷新一个基于当前加载器状态的新的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。该上下文由指定的<code>consumer</code>消费，并在完成后关闭。",
+      "count": 2
+    },
+    {
+      "source": "Register the specified configuration classes with the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "将指定的配置类注册到<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Add an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a> to be called when the context is\ncreated.",
+      "translation": "添加一个 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContextInitializer</code></a>`，以便在上下文创建时调用。",
+      "count": 2
+    },
+    {
+      "source": "Register the specified user configuration classes with the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>.",
+      "translation": "将指定的用户配置类注册到<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Add the specified <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property pairs. Key-value pairs can be\nspecified with colon (\":\") or equals (\"=\") separators. Override matching keys that\nmight have been specified previously.",
+      "translation": "添加指定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性对。键值对可以使用冒号 (\":\") 或等号 (\"=\") 分隔符指定。覆盖之前可能已指定的匹配键。",
+      "count": 2
+    },
+    {
+      "source": "Apply customization to this runner.",
+      "translation": "对此运行器应用自定义设置。",
+      "count": 2
+    },
+    {
+      "source": "Specify if bean definition overriding, by registering a definition with the same\nname as an existing definition, should be allowed.",
+      "translation": "指定是否允许通过注册与现有定义具有相同名称的定义来覆盖 Bean 定义。",
+      "count": 2
+    },
+    {
+      "source": "Specify if circular references between beans should be allowed.",
+      "translation": "指定是否允许 Bean 之间的循环引用。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-SELF\"><code>SELF</code> - the \"self\" type for this runner</span>",
+      "translation": "<span id=\"type-param-SELF\"><code>SELF</code> - 此运行器的 \"self\" 类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-C\"><code>C</code> - the context type</span>",
+      "translation": "<span id=\"type-param-C\"><code>C</code> - 上下文类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"type-param-A\"><code>A</code> - the application context assertion provider</span>",
+      "translation": "<span id=\"type-param-A\"><code>A</code> - 应用程序上下文断言提供者</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>classLoader</code> - the classloader to use (or <code>null</code> to use the default)",
+      "translation": "<code>classLoader</code> - 要使用的类加载器（或为 <code>null</code> 以使用默认值）",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"withBean(java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the bean</span>",
+      "translation": "<span id=\"withBean(java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - 该 Bean 的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"withBean(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - the type of the bean</span>",
+      "translation": "<span id=\"withBean(java.lang.String,java.lang.Class,java.lang.Object...)-type-param-T\"><code>T</code> - Bean 的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"withBean(java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)-type-param-T\"><code>T</code> - the type of the bean</span>",
+      "translation": "<span id=\"withBean(java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)-type-param-T\"><code>T</code> - 该 Bean 的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"withBean(java.lang.String,java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)-type-param-T\"><code>T</code> - the type of the bean</span>",
+      "translation": "<span id=\"withBean(java.lang.String,java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)-type-param-T\"><code>T</code> - 该 Bean 的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>contextFactory</code> - the factory used to create the actual context",
+      "translation": "<code>contextFactory</code> - 用于创建实际上下文的工厂",
+      "count": 2
+    },
+    {
+      "source": "<code>additionalContextInterfaces</code> - any additional application context interfaces to\nbe added to the application context proxy",
+      "translation": "<code>additionalContextInterfaces</code> - 要添加到应用程序上下文代理的任何其他应用程序上下文接口",
+      "count": 2
+    },
+    {
+      "source": "<code>configuration</code> - the configuration for the runner to use",
+      "translation": "<code>configuration</code> - 用于启动器的配置",
+      "count": 2
+    },
+    {
+      "source": "<code>allowBeanDefinitionOverriding</code> - if bean overriding is allowed",
+      "translation": "<code>allowBeanDefinitionOverriding</code> - 如果允许覆盖 Bean 定义",
+      "count": 2
+    },
+    {
+      "source": "<code>allowCircularReferences</code> - if circular references between beans are allowed",
+      "translation": "<code>allowCircularReferences</code> - 如果允许 Bean 之间的循环引用",
+      "count": 2
+    },
+    {
+      "source": "<code>initializer</code> - the initializer to add",
+      "translation": "<code>initializer</code> - 要添加的初始化器",
+      "count": 2
+    },
+    {
+      "source": "<code>pairs</code> - the key-value pairs for properties that need to be added to the\nenvironment",
+      "translation": "<code>pairs</code> - 需要添加到环境中的属性的键值对",
+      "count": 2
+    },
+    {
+      "source": "<code>pairs</code> - the key-value pairs for properties that need to be added to the system",
+      "translation": "<code>pairs</code> - 需要添加到系统中的属性的键值对",
+      "count": 2
+    },
+    {
+      "source": "<code>parent</code> - the parent",
+      "translation": "<code>parent</code> - 父对象",
+      "count": 2
+    },
+    {
+      "source": "<code>configurationClasses</code> - the user configuration classes to add",
+      "translation": "<code>configurationClasses</code> - 要添加的用户配置类",
+      "count": 2
+    },
+    {
+      "source": "<code>customizer</code> - the customizer to call",
+      "translation": "<code>customizer</code> - 要调用的自定义器",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated bean definition overriding policy",
+      "translation": "带有更新后的 Bean 定义覆盖策略的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated circular references policy",
+      "translation": "带有更新后的循环引用策略的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated initializers",
+      "translation": "包含更新后的初始化器的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated property values",
+      "translation": "具有更新后的属性值的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated system properties",
+      "translation": "包含更新后系统属性的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated class loader",
+      "translation": "带有更新后的类加载器的新实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the updated parent",
+      "translation": "包含更新后父对象的实例",
+      "count": 2
+    },
+    {
+      "source": "a new instance with the customizations applied",
+      "translation": "一个应用了自定义的新实例",
+      "count": 2
+    },
+    {
+      "source": "this instance",
+      "translation": "此实例",
+      "count": 2
+    },
+    {
+      "source": "Prepare a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> based on the current state of this loader.",
+      "translation": "基于此加载器的当前状态，准备一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Create and refresh a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> based on the current state of\nthis loader.",
+      "translation": "基于此加载器的当前状态，创建并刷新一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Add the specified <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property pairs.",
+      "translation": "添加指定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性对。",
+      "count": 1
+    },
+    {
+      "source": "Add the specified <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html\" title=\"class or interface in java.lang\"><code>System</code></a> property pairs.",
+      "translation": "添加指定的 `<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html\" title=\"class or interface in java.lang\"><code>System</code></a>` 属性对。",
+      "count": 1
+    },
+    {
+      "source": "A Bean registration to be applied when the context loaded.",
+      "translation": "在上下文加载时应用的 Bean 注册。",
+      "count": 1
+    },
+    {
+      "source": "<code>configurations</code> - the configurations to add",
+      "translation": "<code>configurations</code> - 要添加的配置",
+      "count": 1
+    },
+    {
+      "source": "Stephane Nicoll, Andy Wilkinson, Phillip Webb",
+      "translation": "Stephane Nicoll, Andy Wilkinson, Phillip Webb",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-04-13 08:27:07",
+  "updated_at": "2026-04-13 19:08:39",
+  "stats": {
+    "total_entries": 10,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 21,
+    "entries_with_hits": 10,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1,
+    "usage_percentage": 0.001
+  },
+  "items": [
+    {
+      "source": "The classes names that must be present.",
+      "translation": "必须存在的类名。",
+      "count": 3
+    },
+    {
+      "source": "A <code>Class</code> <a href=\"#value()\"><code>value</code></a> can be safely specified on\n<code>@Configuration</code> classes as the annotation metadata is parsed by using ASM before\nthe class is loaded. If a class reference cannot be used then a <a href=\"#name()\"><code>name</code></a>\n<code>String</code> attribute can be used.",
+      "translation": "`Class` 类型的 `<a href=\"#value()\"><code>value</code></a>` 可以安全地指定在 `<code>@Configuration</code>` 类上，因为注解元数据是使用 ASM 解析的，而这是在类加载之前进行的。如果无法使用类引用，则可以使用 `<a href=\"#name()\"><code>name</code></a>` `String` 属性。",
+      "count": 2
+    },
+    {
+      "source": "<b>Note:</b> Extra care must be taken when using <code>@ConditionalOnClass</code> on\n<code>@Bean</code> methods where typically the return type is the target of the condition.\nBefore the condition on the method applies, the JVM will have loaded the class and\npotentially processed method references which will fail if the class is not present. To\nhandle this scenario, a separate <code>@Configuration</code> class should be used to isolate\nthe condition. For example:",
+      "translation": "<b>注意：</b>在使用 `@ConditionalOnClass` 注解于通常以目标类型作为条件的 `@Bean` 方法时，必须格外小心。在方法的条件生效之前，JVM 将已加载该类并可能处理了方法引用；若该类不存在，这些操作将会失败。为处理此场景，应使用单独的 `<code>@Configuration</code>` 类来隔离该条件。例如：",
+      "count": 2
+    },
+    {
+      "source": "The classes that must be present. Since this annotation is parsed by loading class\nbytecode, it is safe to specify classes here that may ultimately not be on the\nclasspath, only if this annotation is directly on the affected component and\n<b>not</b> if this annotation is used as a composed, meta-annotation. In order to\nuse this annotation as a meta-annotation, only use the <a href=\"#name()\"><code>name()</code></a> attribute.",
+      "translation": "必须存在的类。由于此注解是通过加载类字节码进行解析的，因此如果此注解直接位于受影响的组件上（且<b>不是</b>作为组合元注解使用），则可以在此处指定最终可能不在类路径中的类。若要使用此注解作为元注解，仅可使用 <a href=\"#name()\"><code>name()</code></a> 属性。",
+      "count": 2
+    },
+    {
+      "source": "the classes that must be present",
+      "translation": "必须存在的类",
+      "count": 2
+    },
+    {
+      "source": "the class names that must be present.",
+      "translation": "必须存在的类名。",
+      "count": 2
+    },
+    {
+      "source": "The classes that must be present.",
+      "translation": "必须存在的类。",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb",
+      "translation": "Phillip Webb",
+      "count": 2
+    },
+    {
+      "source": "Optional Element Summary",
+      "translation": "可选元素摘要",
+      "count": 2
+    },
+    {
+      "source": "Element Details",
+      "translation": "元素详情",
+      "count": 2
+    }
+  ]
+}

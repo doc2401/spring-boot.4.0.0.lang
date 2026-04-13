@@ -1,0 +1,126 @@
+{
+  "created_at": "2026-04-13 09:08:56",
+  "updated_at": "2026-04-13 19:09:29",
+  "stats": {
+    "total_entries": 22,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 47,
+    "entries_with_hits": 22,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1363636363636362,
+    "usage_percentage": 0.0022
+  },
+  "items": [
+    {
+      "source": "Determines if the specific <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> is the\n<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> that was <a href=\"#attach(org.springframework.core.env.Environment)\"><code>attached</code></a>\nto the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "确定特定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> 是否是已 <a href=\"#attach(org.springframework.core.env.Environment)\"><code>附加</code></a>\n到 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 的\n<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Return a set of <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> instances that have previously\nbeen <a href=\"#attach(org.springframework.core.env.Environment)\"><code>attached</code></a> to the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "返回一组已<a href=\"#attach(org.springframework.core.env.Environment)\"><code>attached</code></a>到<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>的<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>实例。",
+      "count": 3
+    },
+    {
+      "source": "<code>environment</code> - the source environment (must be an instance of\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a>)",
+      "translation": "<code>environment</code> - 源环境（必须是 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a> 的实例）",
+      "count": 3
+    },
+    {
+      "source": "This method will flatten any nested property sources and will filter all\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.StubPropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>stub property sources</code></a>. Updates to the underlying source,\nidentified by changes in the sources returned by its iterator, will be\nautomatically tracked. The underlying source should be thread safe, for example a\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/MutablePropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>MutablePropertySources</code></a>",
+      "translation": "此方法将展平任何嵌套的属性源，并过滤所有\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.StubPropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>stub property sources</code></a>。对底层源的更新，通过其迭代器返回的源中的变化来识别，将被自动跟踪。底层源应该是线程安全的，例如一个\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/MutablePropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>MutablePropertySources</code></a>",
+      "count": 2
+    },
+    {
+      "source": "The attached resolver will dynamically track any additions or removals from the\nunderlying <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property sources.",
+      "translation": "附加的解析器将动态跟踪底层 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性源的任何添加或删除。",
+      "count": 2
+    },
+    {
+      "source": "Create a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertyResolver</code></a> that resolves property values against an\nunderlying set of <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a>. Provides an\n<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> aware and optimized alternative to\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySourcesPropertyResolver</code></a>.",
+      "translation": "创建一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertyResolver</code></a>，该解析器针对底层的一组 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a> 解析属性值。提供了一个对 <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> 感知且优化的替代方案，用于替代 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySourcesPropertyResolver</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a> containing a single new <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>\nadapted from the given Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a>. The single element can be\n<code>null</code> if the source cannot be adapted.",
+      "translation": "返回一个包含单个新 <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> 的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a>，该元素是从给定的 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> 适配而来的。如果无法适配该源，则单个元素可以是 <code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "Return <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a> containing new <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>\ninstances adapted from the given Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a>.",
+      "translation": "返回包含从给定的 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a> 适配而来的新 <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> 实例的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a> containing a single new <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>\nadapted from the given Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a>.",
+      "translation": "返回一个包含单个新 <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> 的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a>，该新对象是根据给定的 Spring <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> 适配而成的。",
+      "count": 2
+    },
+    {
+      "source": "Attach a <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a> support to the specified\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>.",
+      "translation": "将 `<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>` 支持附加到指定的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "Provides access to <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a>.",
+      "translation": "提供对<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a>的访问。",
+      "count": 2
+    },
+    {
+      "source": "<code>propertySources</code> - the set of <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> objects to use",
+      "translation": "<code>propertySources</code> - 要使用的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySource</code></a> 对象集合",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if this is the attached <a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>",
+      "translation": "如果这是附加的<a href=\"ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySource</code></a>，则为<code>true</code>。",
+      "count": 2
+    },
+    {
+      "source": "an <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a> containing a single newly adapted\n<code>SpringConfigurationPropertySource</code>",
+      "translation": "包含单个新适配的 <code>SpringConfigurationPropertySource</code> 的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a>",
+      "count": 2
+    },
+    {
+      "source": "an <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a> containing newly adapted\n<code>SpringConfigurationPropertySource</code> instances",
+      "translation": "一个包含新适配的 `<code>SpringConfigurationPropertySource`</code> 实例的 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html\" title=\"class or interface in java.lang\"><code>Iterable</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\">IllegalStateException</a></code> - if not configuration property sources have been\nattached",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\">IllegalStateException</a></code> - 如果未附加任何配置属性源",
+      "count": 2
+    },
+    {
+      "source": "<code>propertySource</code> - the property source to test",
+      "translation": "<code>propertySource</code> - 要测试的属性源",
+      "count": 2
+    },
+    {
+      "source": "<code>sources</code> - the Spring property sources to adapt",
+      "translation": "<code>sources</code> - 要适配的 Spring 属性源",
+      "count": 2
+    },
+    {
+      "source": "an iterable set of configuration property sources",
+      "translation": "一个可迭代的配置属性源集合",
+      "count": 2
+    },
+    {
+      "source": "Create a new <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertyResolver</code></a> that resolves property values against an\nunderlying set of <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a>.",
+      "translation": "创建一个新的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertyResolver.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertyResolver</code></a>，该解析器针对底层的一组 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySources.html\" title=\"class or interface in org.springframework.core.env\"><code>PropertySources</code></a> 解析属性值。",
+      "count": 2
+    },
+    {
+      "source": "<code>source</code> - the Spring property source to adapt",
+      "translation": "<code>source</code> - 要适配的 Spring 属性源",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb",
+      "translation": "Phillip Webb",
+      "count": 2
+    }
+  ]
+}

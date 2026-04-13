@@ -1,0 +1,151 @@
+{
+  "created_at": "2026-04-13 19:50:12",
+  "updated_at": "2026-04-13 19:50:12",
+  "stats": {
+    "total_entries": 27,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 52,
+    "entries_with_hits": 27,
+    "entries_without_hits": 0,
+    "hit_rate": 1.9259259259259258,
+    "usage_percentage": 0.0026999999999999997
+  },
+  "items": [
+    {
+      "source": "The loader supports both standard <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/MergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context\"><code>MergedContextConfiguration</code></a> as well as\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/web/WebMergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context.web\"><code>WebMergedContextConfiguration</code></a>. If <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/web/WebMergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context.web\"><code>WebMergedContextConfiguration</code></a> is used\nthe context will either use a mock servlet environment, or start the full embedded web\nserver.",
+      "translation": "加载器同时支持标准的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/MergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context\"><code>MergedContextConfiguration</code></a> 以及\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/web/WebMergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context.web\"><code>WebMergedContextConfiguration</code></a>。如果使用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/web/WebMergedContextConfiguration.html\" title=\"class or interface in org.springframework.test.context.web\"><code>WebMergedContextConfiguration</code></a>，\n上下文将使用模拟的 Servlet 环境，或者启动完整的嵌入式 Web 服务器。",
+      "count": 2
+    },
+    {
+      "source": "If <code>@ActiveProfiles</code> are provided in the test class they will be used to create\nthe application context.",
+      "translation": "如果测试类中提供了<code>@ActiveProfiles</code>，它们将用于创建应用程序上下文。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>initializers</code></a> that will be applied\nto the context. By default this method will adapt <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/ContextCustomizer.html\" title=\"class or interface in org.springframework.test.context\"><code>context\ncustomizers</code></a>, add <a href=\"../../SpringApplication.html#getInitializers()\"><code>application\ninitializers</code></a> and add\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/MergedContextConfiguration.html#getContextInitializerClasses()\" title=\"class or interface in org.springframework.test.context\"><code>initializers\nspecified on the test</code></a>.",
+      "translation": "返回将应用于上下文的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>initializers</code></a>。默认情况下，此方法将适配 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/ContextCustomizer.html\" title=\"class or interface in org.springframework.test.context\"><code>context\ncustomizers</code></a>，添加 <a href=\"../../SpringApplication.html#getInitializers()\"><code>application\ninitializers</code></a> 并添加\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/MergedContextConfiguration.html#getContextInitializerClasses()\" title=\"class or interface in org.springframework.test.context\"><code>initializers\nspecified on the test</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a href=\"../../ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a> that should be used for the test. By\ndefault this method will return a factory that will create an appropriate\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> for the <a href=\"../../WebApplicationType.html\" title=\"enum class in org.springframework.boot\"><code>WebApplicationType</code></a>.",
+      "translation": "返回用于测试的<a href=\"../../ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a>。默认情况下，此方法将返回一个工厂，该工厂会针对<a href=\"../../WebApplicationType.html\" title=\"enum class in org.springframework.boot\"><code>WebApplicationType</code></a>创建适当的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a> instance that should be applied to\n<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> or <code>null</code> to use the default.",
+      "translation": "返回应应用于 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a>` 的实例，或返回 `<code>null</code>` 以使用默认值。",
+      "count": 2
+    },
+    {
+      "source": "Builds new <a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance. This method\nis only called when a <code>main</code> method isn't being used to create the\n<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>.",
+      "translation": "构建新的<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>实例。此方法仅在未使用<code>main</code>方法来创建<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>时被调用。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a> instance that should be applied to\n<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> or <code>null</code> to use the default. You can override this\nmethod if you need a custom environment.",
+      "translation": "返回应应用于 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html\" title=\"class or interface in org.springframework.core.env\"><code>ConfigurableEnvironment</code></a>` 的实例，或返回 `<code>null</code>` 以使用默认值。如果您需要自定义环境，可以覆盖此方法。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a href=\"../../ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a> that should be used for the test.",
+      "translation": "返回用于测试的<a href=\"../../ApplicationContextFactory.html\" title=\"interface in org.springframework.boot\"><code>ApplicationContextFactory</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Builds new <a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> instance.",
+      "translation": "构建新的<a href=\"../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a> 实例。",
+      "count": 2
+    },
+    {
+      "source": "Detect the default configuration classes for the supplied test class. By default\nsimply delegates to\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AnnotationConfigContextLoaderUtils.html#detectDefaultConfigurationClasses(java.lang.Class)\" title=\"class or interface in org.springframework.test.context.support\"><code>AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(Class)</code></a>.",
+      "translation": "检测为提供的测试类配置的默认配置类。默认情况下，直接委托给\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AnnotationConfigContextLoaderUtils.html#detectDefaultConfigurationClasses(java.lang.Class)\" title=\"class or interface in org.springframework.test.context.support\"><code>AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses(Class)</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html#loadContext(org.springframework.test.context.MergedContextConfiguration)\" title=\"class or interface in org.springframework.test.context\">loadContext</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html\" title=\"class or interface in org.springframework.test.context\">SmartContextLoader</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html#loadContext(org.springframework.test.context.MergedContextConfiguration)\" title=\"class or interface in org.springframework.test.context\">loadContext</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html\" title=\"class or interface in org.springframework.test.context\">SmartContextLoader</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html#loadContextForAotProcessing(org.springframework.test.context.MergedContextConfiguration,org.springframework.aot.hint.RuntimeHints)\" title=\"class or interface in org.springframework.test.context.aot\">loadContextForAotProcessing</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html\" title=\"class or interface in org.springframework.test.context.aot\">AotContextLoader</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html#loadContextForAotProcessing(org.springframework.test.context.MergedContextConfiguration,org.springframework.aot.hint.RuntimeHints)\" title=\"class or interface in org.springframework.test.context.aot\">loadContextForAotProcessing</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html\" title=\"class or interface in org.springframework.test.context.aot\">AotContextLoader</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html#loadContextForAotRuntime(org.springframework.test.context.MergedContextConfiguration,org.springframework.context.ApplicationContextInitializer)\" title=\"class or interface in org.springframework.test.context.aot\">loadContextForAotRuntime</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html\" title=\"class or interface in org.springframework.test.context.aot\">AotContextLoader</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html#loadContextForAotRuntime(org.springframework.test.context.MergedContextConfiguration,org.springframework.context.ApplicationContextInitializer)\" title=\"class or interface in org.springframework.test.context.aot\">loadContextForAotRuntime</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/aot/AotContextLoader.html\" title=\"class or interface in org.springframework.test.context.aot\">AotContextLoader</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html#processContextConfiguration(org.springframework.test.context.ContextConfigurationAttributes)\" title=\"class or interface in org.springframework.test.context\">processContextConfiguration</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html\" title=\"class or interface in org.springframework.test.context\">SmartContextLoader</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html#processContextConfiguration(org.springframework.test.context.ContextConfigurationAttributes)\" title=\"class or interface in org.springframework.test.context\">processContextConfiguration</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/SmartContextLoader.html\" title=\"class or interface in org.springframework.test.context\">SmartContextLoader</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#processContextConfiguration(org.springframework.test.context.ContextConfigurationAttributes)\" title=\"class or interface in org.springframework.test.context.support\">processContextConfiguration</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#processContextConfiguration(org.springframework.test.context.ContextConfigurationAttributes)\" title=\"class or interface in org.springframework.test.context.support\">processContextConfiguration</a></code>` 类中的 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>`",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#getResourceSuffixes()\" title=\"class or interface in org.springframework.test.context.support\">getResourceSuffixes</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#getResourceSuffixes()\" title=\"class or interface in org.springframework.test.context.support\">getResourceSuffixes</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#getResourceSuffix()\" title=\"class or interface in org.springframework.test.context.support\">getResourceSuffix</a></code> in class <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html#getResourceSuffix()\" title=\"class or interface in org.springframework.test.context.support\">getResourceSuffix</a></code> 类中的 <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/test/context/support/AbstractContextLoader.html\" title=\"class or interface in org.springframework.test.context.support\">AbstractContextLoader</a></code>",
+      "count": 2
+    },
+    {
+      "source": "<code>declaringClass</code> - the test class that declared <code>@ContextConfiguration</code>",
+      "translation": "<code>declaringClass</code> - 声明了 <code>@ContextConfiguration</code> 的测试类",
+      "count": 2
+    },
+    {
+      "source": "<code>mergedConfig</code> - the merged context configuration",
+      "translation": "<code>mergedConfig</code> - 合并后的上下文配置",
+      "count": 2
+    },
+    {
+      "source": "<code>mergedConfig</code> - the source context configuration",
+      "translation": "<code>mergedConfig</code> - 源上下文配置",
+      "count": 2
+    },
+    {
+      "source": "<code>application</code> - the application instance",
+      "translation": "<code>application</code> - 应用程序实例",
+      "count": 2
+    },
+    {
+      "source": "an array of default configuration classes, potentially empty but never\n<code>null</code>",
+      "translation": "一个默认配置类数组，可能为空但绝不会为 <code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "Dave Syer, Phillip Webb, Andy Wilkinson, Stephane Nicoll, Madhura Bhave, Scott Frederick",
+      "translation": "Dave Syer, Phillip Webb, Andy Wilkinson, Stephane Nicoll, Madhura Bhave, Scott Frederick",
+      "count": 2
+    },
+    {
+      "source": "the application context factory to use",
+      "translation": "要使用的应用程序上下文工厂",
+      "count": 2
+    },
+    {
+      "source": "the initializers to apply",
+      "translation": "要应用的初始化器",
+      "count": 2
+    },
+    {
+      "source": "Return the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>initializers</code></a> that will be applied\nto the context.",
+      "translation": "返回将应用于上下文的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContextInitializer.html\" title=\"class or interface in org.springframework.context\"><code>initializers</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Detect the default configuration classes for the supplied test class.",
+      "translation": "检测为提供的测试类配置的默认配置类。",
+      "count": 1
+    }
+  ]
+}

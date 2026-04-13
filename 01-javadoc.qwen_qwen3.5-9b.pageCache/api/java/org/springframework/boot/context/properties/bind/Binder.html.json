@@ -1,0 +1,181 @@
+{
+  "created_at": "2026-04-13 09:00:31",
+  "updated_at": "2026-04-13 19:09:23",
+  "stats": {
+    "total_entries": 33,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 144,
+    "entries_with_hits": 33,
+    "entries_without_hits": 0,
+    "hit_rate": 4.363636363636363,
+    "usage_percentage": 0.0033000000000000004
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a> instance for the specified sources.",
+      "translation": "为指定的源创建一个新的<a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a>实例。",
+      "count": 15
+    },
+    {
+      "source": "<code>name</code> - the configuration property name to bind",
+      "translation": "<code>name</code> - 要绑定的配置属性名称",
+      "count": 10
+    },
+    {
+      "source": "Bind the specified target <a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a> using this binder's\n<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a>.",
+      "translation": "使用此绑定器的<code>property sources</code><a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\">属性源</a>来绑定指定的目标<a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a>。",
+      "count": 9
+    },
+    {
+      "source": "<code>sources</code> - the sources used for binding",
+      "translation": "<code>sources</code> - 用于绑定的源",
+      "count": 9
+    },
+    {
+      "source": "<code>target</code> - the target bindable",
+      "translation": "<code>target</code> - 目标绑定项",
+      "count": 8
+    },
+    {
+      "source": "Bind the specified target <a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a> using this binder's\n<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a> or create a new instance using\nthe type of the <a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a> if the result of the binding is <code>null</code>.",
+      "translation": "使用此绑定器的<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a>绑定指定的目标 <a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a>，或者如果绑定结果为<code>null</code>，则使用<a href=\"Bindable.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Bindable</code></a>的类型创建新实例。",
+      "count": 7
+    },
+    {
+      "source": "<code>placeholdersResolver</code> - strategy to resolve any property placeholders",
+      "translation": "<code>placeholdersResolver</code> - 用于解析任何属性占位符的策略",
+      "count": 7
+    },
+    {
+      "source": "the binding result (never <code>null</code>)",
+      "translation": "绑定结果（永远不会为<code>null</code>）",
+      "count": 6
+    },
+    {
+      "source": "Create a new <a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a> instance from the specified environment.",
+      "translation": "从指定的环境创建一个新的<a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a>实例。",
+      "count": 5
+    },
+    {
+      "source": "<code>conversionService</code> - the conversion service to convert values (or <code>null</code>\nto use <a href=\"../../../convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a>)",
+      "translation": "<code>conversionService</code> - 用于转换值的转换器（或为使用<a href=\"../../../convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a>而将值转换为 <code>null</code>）",
+      "count": 5
+    },
+    {
+      "source": "<code>propertyEditorInitializer</code> - initializer used to configure the property editors\nthat can convert values (or <code>null</code> if no initialization is required). Often\nused to call <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/ConfigurableBeanFactory.html#copyRegisteredEditorsTo(org.springframework.beans.PropertyEditorRegistry)\" title=\"class or interface in org.springframework.beans.factory.config\"><code>ConfigurableBeanFactory.copyRegisteredEditorsTo(PropertyEditorRegistry)</code></a>.",
+      "translation": "<code>propertyEditorInitializer</code> - 用于配置可转换值的属性编辑器的初始化器（如果不需要初始化，则为 <code>null</code>）。通常用于调用 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/ConfigurableBeanFactory.html#copyRegisteredEditorsTo(org.springframework.beans.PropertyEditorRegistry)\" title=\"class or interface in org.springframework.beans.factory.config\"><code>ConfigurableBeanFactory.copyRegisteredEditorsTo(PropertyEditorRegistry)</code></a>。",
+      "count": 5
+    },
+    {
+      "source": "<code>defaultBindHandler</code> - the default bind handler to use if none is specified when\nbinding",
+      "translation": "<code>defaultBindHandler</code> - 如果在绑定时未指定，则使用的默认绑定处理器。",
+      "count": 5
+    },
+    {
+      "source": "the bound or created object",
+      "translation": "已绑定或创建的对象",
+      "count": 5
+    },
+    {
+      "source": "<code>handler</code> - the bind handler (may be <code>null</code>)",
+      "translation": "<code>handler</code> - 绑定处理器（可为 <code>null</code>）",
+      "count": 4
+    },
+    {
+      "source": "Bind the specified target <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a> using this binder's\n<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a> or create a new instance of\nthe specified target <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a> if the result of the binding is <code>null</code>.",
+      "translation": "使用此绑定器的<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a>绑定指定的目标<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a>，或者如果绑定结果为<code>null</code>，则创建指定目标<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a>的新实例。",
+      "count": 3
+    },
+    {
+      "source": "Bind the specified target <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a> using this binder's\n<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a>.",
+      "translation": "使用此绑定器的 <a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>property sources</code></a> 来绑定指定的目标 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Create a new <a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a> instance for the specified sources. A\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/format/support/DefaultFormattingConversionService.html\" title=\"class or interface in org.springframework.format.support\"><code>DefaultFormattingConversionService</code></a> will be used for all conversion.",
+      "translation": "为指定的源创建一个新的<a href=\"Binder.html\" title=\"class in org.springframework.boot.context.properties.bind\"><code>Binder</code></a>实例。将使用一个<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/format/support/DefaultFormattingConversionService.html\" title=\"class or interface in org.springframework.format.support\"><code>DefaultFormattingConversionService</code></a>进行所有转换。",
+      "count": 3
+    },
+    {
+      "source": "<code>environment</code> - the environment source (must have attached\n<a href=\"../source/ConfigurationPropertySources.html\" title=\"class in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a>)",
+      "translation": "`environment` - 环境源（必须附加了 <a href=\"../source/ConfigurationPropertySources.html\" title=\"class in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a>）",
+      "count": 3
+    },
+    {
+      "source": "<code>constructorProvider</code> - the constructor provider which provides the bind\nconstructor to use when binding",
+      "translation": "<code>constructorProvider</code> - 构造函数提供者，用于在绑定过程中提供要使用的绑定构造函数。",
+      "count": 3
+    },
+    {
+      "source": "<code>target</code> - the target class",
+      "translation": "<code>target</code> - 目标类",
+      "count": 3
+    },
+    {
+      "source": "<code>conversionServices</code> - the conversion services to convert values (or\n<code>null</code> to use <a href=\"../../../convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a>)",
+      "translation": "`conversionServices` - 用于转换值的转换服务（或为 `null` 以使用 <a href=\"../../../convert/ApplicationConversionService.html\" title=\"class in org.springframework.boot.convert\"><code>ApplicationConversionService</code></a>）",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bind(java.lang.String,java.lang.Class)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bind(java.lang.String,java.lang.Class)-type-param-T\"><code>T</code> - 绑定类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bind(java.lang.String,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bind(java.lang.String,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - 绑定的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bind(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bind(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - 绑定类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bind(java.lang.String,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bind(java.lang.String,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - 绑定的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bind(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bind(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - 绑定类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bindOrCreate(java.lang.String,java.lang.Class)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bindOrCreate(java.lang.String,java.lang.Class)-type-param-T\"><code>T</code> - 绑定类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bindOrCreate(java.lang.String,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bindOrCreate(java.lang.String,org.springframework.boot.context.properties.bind.Bindable)-type-param-T\"><code>T</code> - 绑定的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bindOrCreate(java.lang.String,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - the bound type</span>",
+      "translation": "<span id=\"bindOrCreate(java.lang.String,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - 绑定类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"bindOrCreate(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - the bound or created type</span>",
+      "translation": "<span id=\"bindOrCreate(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindHandler)-type-param-T\"><code>T</code> - 绑定或创建的类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>handler</code> - the bind handler",
+      "translation": "<code>handler</code> - 绑定处理器",
+      "count": 2
+    },
+    {
+      "source": "A container object which Binds objects from one or more\n<a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a>.",
+      "translation": "一个容器对象，它将来自一个或多个 <a href=\"../source/ConfigurationPropertySource.html\" title=\"interface in org.springframework.boot.context.properties.source\"><code>ConfigurationPropertySources</code></a> 的对象绑定在一起。",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb, Madhura Bhave",
+      "translation": "Phillip Webb，Madhura Bhave",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "created_at": "2026-04-13 08:41:00",
+  "updated_at": "2026-04-13 19:08:54",
+  "stats": {
+    "total_entries": 22,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 52,
+    "entries_with_hits": 22,
+    "entries_without_hits": 0,
+    "hit_rate": 2.3636363636363638,
+    "usage_percentage": 0.0022
+  },
+  "items": [
+    {
+      "source": "<code>type</code> - the instance type",
+      "translation": "<code>type</code> - 实例类型",
+      "count": 5
+    },
+    {
+      "source": "Add an <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a> that will be called with a\n<a href=\"BootstrapContextClosedEvent.html\" title=\"class in org.springframework.boot.bootstrap\"><code>BootstrapContextClosedEvent</code></a> when the <a href=\"BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a> is closed and\nthe <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> has been prepared.",
+      "translation": "添加一个 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationListener</code></a>`，当 `<a href=\"BootstrapContextClosedEvent.html\" title=\"class in org.springframework.boot.bootstrap\"><code>BootstrapContextClosedEvent</code></a>` 被调用时，该监听器将在 `<a href=\"BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a>` 关闭且 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 已准备就绪时被调用。",
+      "count": 3
+    },
+    {
+      "source": "Return any existing <a href=\"BootstrapRegistry.InstanceSupplier.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry.InstanceSupplier</code></a> for the given type.",
+      "translation": "返回给定类型的任何现有<a href=\"BootstrapRegistry.InstanceSupplier.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry.InstanceSupplier</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "<code>instanceSupplier</code> - the instance supplier",
+      "translation": "<code>instanceSupplier</code> - 实例供应器",
+      "count": 3
+    },
+    {
+      "source": "Return if a registration exists for the given type.",
+      "translation": "如果给定类型存在注册，则返回。",
+      "count": 3
+    },
+    {
+      "source": "Register a specific type with the registry if one is not already present.",
+      "translation": "如果尚未注册，则向注册表注册特定类型。",
+      "count": 3
+    },
+    {
+      "source": "The <a href=\"#addCloseListener(org.springframework.context.ApplicationListener)\"><code>addCloseListener(ApplicationListener)</code></a> method can be used to add a listener\nthat can perform actions when <a href=\"BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a> has been closed and the\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> is fully prepared. For example, an instance may choose to\nregister itself as a regular Spring bean so that it is available for the application to\nuse.",
+      "translation": "`<a href=\"#addCloseListener(org.springframework.context.ApplicationListener)\"><code>addCloseListener(ApplicationListener)</code></a>` 方法可用于添加一个监听器，当 `<a href=\"BootstrapContext.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapContext</code></a>` 已关闭且 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 完全准备就绪时，该监听器可执行操作。例如，一个实例可以选择将自己注册为普通的 Spring Bean，以便应用程序可以使用它。",
+      "count": 2
+    },
+    {
+      "source": "Can be used to register instances that may be expensive to create, or need to be shared\nbefore the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a> is available.",
+      "translation": "可用于注册那些创建成本高昂，或需要在 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>` 可用之前共享的实例。",
+      "count": 2
+    },
+    {
+      "source": "The registry uses <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a> as a key, meaning that only a single instance of a\ngiven type can be stored.",
+      "translation": "注册表使用 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html\" title=\"class or interface in java.lang\"><code>Class</code></a> 作为键，这意味着只能存储给定类型的单个实例。",
+      "count": 2
+    },
+    {
+      "source": "Register a specific type with the registry. If the specified type has already been\nregistered and has not been obtained as a <a href=\"BootstrapRegistry.Scope.html#SINGLETON\"><code>singleton</code></a>, it\nwill be replaced.",
+      "translation": "向注册表注册特定类型。如果指定的类型已经注册且未作为<a href=\"BootstrapRegistry.Scope.html#SINGLETON\"><code>singleton</code></a>获取，则将被替换。",
+      "count": 2
+    },
+    {
+      "source": "the registered <a href=\"BootstrapRegistry.InstanceSupplier.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry.InstanceSupplier</code></a> or <code>null</code>",
+      "translation": "已注册的<a href=\"BootstrapRegistry.InstanceSupplier.html\" title=\"interface in org.springframework.boot.bootstrap\"><code>BootstrapRegistry.InstanceSupplier</code></a>或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"register(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T\"><code>T</code> - the instance type</span>",
+      "translation": "<span id=\"register(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T\"><code>T</code> - 实例类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"registerIfAbsent(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T\"><code>T</code> - the instance type</span>",
+      "translation": "<span id=\"registerIfAbsent(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T\"><code>T</code> - 实例类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"getRegisteredInstanceSupplier(java.lang.Class)-type-param-T\"><code>T</code> - the instance type</span>",
+      "translation": "<span id=\"getRegisteredInstanceSupplier(java.lang.Class)-type-param-T\"><code>T</code> - 实例类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>listener</code> - the listener to add",
+      "translation": "<code>listener</code> - 要添加的监听器",
+      "count": 2
+    },
+    {
+      "source": "Supplier used to provide the actual instance when needed.",
+      "translation": "供应商以前会在需要时提供实际实例。",
+      "count": 2
+    },
+    {
+      "source": "The scope of an instance.",
+      "translation": "实例的作用域。",
+      "count": 2
+    },
+    {
+      "source": "Register a specific type with the registry.",
+      "translation": "向注册表注册特定类型。",
+      "count": 2
+    },
+    {
+      "source": "<span id=\"isRegistered(java.lang.Class)-type-param-T\"><code>T</code> - the instance type</span>",
+      "translation": "<span id=\"isRegistered(java.lang.Class)-type-param-T\"><code>T</code> - 实例类型</span>",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if the type has already been registered",
+      "translation": "<code>true</code> 如果该类型已经注册",
+      "count": 2
+    },
+    {
+      "source": "Phillip Webb",
+      "translation": "Phillip Webb",
+      "count": 2
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 2
+    }
+  ]
+}

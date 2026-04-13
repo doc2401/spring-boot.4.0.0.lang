@@ -1,0 +1,116 @@
+{
+  "created_at": "2026-04-13 19:39:32",
+  "updated_at": "2026-04-13 19:39:32",
+  "stats": {
+    "total_entries": 20,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 39,
+    "entries_with_hits": 20,
+    "entries_without_hits": 0,
+    "hit_rate": 1.95,
+    "usage_percentage": 0.002
+  },
+  "items": [
+    {
+      "source": "the configured <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a>",
+      "translation": "配置的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a>",
+      "count": 4
+    },
+    {
+      "source": "<code>endpoints</code> - the endpoints to include",
+      "translation": "<code>endpoints</code> - 要包含的端点",
+      "count": 4
+    },
+    {
+      "source": "Returns a matcher that includes additional paths under a <a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\"><code>WebServerNamespace</code></a>\nfor the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.",
+      "translation": "返回一个匹配器，包含指定<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>下的<code>WebServerNamespace</code><a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\">。</a>",
+      "count": 3
+    },
+    {
+      "source": "Returns a matcher that includes the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.",
+      "translation": "返回一个包含指定<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>的匹配器。",
+      "count": 3
+    },
+    {
+      "source": "Returns a matcher that matches only on the links endpoint. It can be used when\nsecurity configuration for the links endpoint is different from the other\n<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>. The\n<a href=\"EndpointRequest.EndpointServerWebExchangeMatcher.html#excludingLinks()\"><code>excludingLinks</code></a> method can\nbe used in combination with this to remove the links endpoint from\n<a href=\"#toAnyEndpoint()\"><code>toAnyEndpoint</code></a>. For example:\n<pre class=\"code\">EndpointRequest.toLinks()\n</pre>",
+      "translation": "返回一个仅匹配链接端点的匹配器。当链接端点的安全配置与其他 <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a> 不同时，可以使用它。<a href=\"EndpointRequest.EndpointServerWebExchangeMatcher.html#excludingLinks()\"><code>excludingLinks</code></a> 方法可以与该匹配器结合使用，以从 <a href=\"#toAnyEndpoint()\"><code>toAnyEndpoint</code></a> 中移除链接端点。例如：\n<pre class=\"code\">EndpointRequest.toLinks()\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes all <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>. It also\nincludes the links endpoint which is present at the base path of the actuator\nendpoints. The <a href=\"EndpointRequest.EndpointServerWebExchangeMatcher.html#excluding(java.lang.Class...)\"><code>excluding</code></a> method can be used to further remove specific endpoints if required. For\nexample: <pre class=\"code\">EndpointRequest.toAnyEndpoint().excluding(ShutdownEndpoint.class)\n</pre>",
+      "translation": "返回一个包含所有<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>的匹配器。它还包含位于 actuator 端点基础路径上的 links 端点。如果需要，可以使用<a href=\"EndpointRequest.EndpointServerWebExchangeMatcher.html#excluding(java.lang.Class...)\"><code>excluding</code></a>方法进一步移除特定端点。例如：<pre class=\"code\">EndpointRequest.toAnyEndpoint().excluding(ShutdownEndpoint.class)\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes additional paths under a <a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\"><code>WebServerNamespace</code></a>\nfor the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>. For example:\n<pre class=\"code\">EndpointRequest.toAdditionalPaths(WebServerNamespace.SERVER, \"health\")\n</pre>",
+      "translation": "返回一个包含指定 <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a> 下 <a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\"><code>WebServerNamespace</code></a> 的额外路径的匹配器。例如：\n<pre class=\"code\">EndpointRequest.toAdditionalPaths(WebServerNamespace.SERVER, \"health\")\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes additional paths under a <a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\"><code>WebServerNamespace</code></a>\nfor the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>. For example:\n<pre class=\"code\">EndpointRequest.toAdditionalPaths(WebServerNamespace.SERVER, HealthEndpoint.class)\n</pre>",
+      "translation": "返回一个包含指定 <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a> 下 <a href=\"../../../../../actuate/endpoint/web/WebServerNamespace.html\" title=\"class in org.springframework.boot.actuate.endpoint.web\"><code>WebServerNamespace</code></a> 的额外路径的匹配器。例如：\n<pre class=\"code\">EndpointRequest.toAdditionalPaths(WebServerNamespace.SERVER, HealthEndpoint.class)\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.\nFor example: <pre class=\"code\">EndpointRequest.to(ShutdownEndpoint.class, HealthEndpoint.class)\n</pre>",
+      "translation": "返回一个包含指定<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>的匹配器。例如：<pre class=\"code\">EndpointRequest.to(ShutdownEndpoint.class, HealthEndpoint.class)\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes the specified <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.\nFor example: <pre class=\"code\">EndpointRequest.to(\"shutdown\", \"health\")\n</pre>",
+      "translation": "返回一个包含指定<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>的匹配器。例如：<pre class=\"code\">EndpointRequest.to(\"shutdown\", \"health\")\n</pre>",
+      "count": 2
+    },
+    {
+      "source": "Returns a matcher that includes all <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.",
+      "translation": "返回一个包含所有<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"org.springframework.boot.actuate.endpoint.annotation 中的注解接口\"><code>actuator endpoints</code></a>的匹配器。",
+      "count": 2
+    },
+    {
+      "source": "the configured <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/util/matcher/RequestMatcher.html\" title=\"class or interface in org.springframework.security.web.util.matcher\"><code>RequestMatcher</code></a>",
+      "translation": "配置的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/util/matcher/RequestMatcher.html\" title=\"class or interface in org.springframework.security.web.util.matcher\"><code>RequestMatcher</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code>webServerNamespace</code> - the web server namespace",
+      "translation": "<code>webServerNamespace</code> - Web 服务器命名空间",
+      "count": 2
+    },
+    {
+      "source": "The <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a> used to match against additional paths for\n<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>.",
+      "translation": "用于匹配针对 <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a> 的额外路径的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "The <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a> used to match against <a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator\nendpoints</code></a>.",
+      "translation": "用于与<a href=\"../../../../../actuate/endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>actuator endpoints</code></a>进行匹配的<code>ServerWebExchangeMatcher</code><a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\">。</a>",
+      "count": 1
+    },
+    {
+      "source": "Factory that can be used to create a <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a> for actuator\nendpoint locations.",
+      "translation": "用于为监控端点位置创建 <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a> 的工厂。",
+      "count": 1
+    },
+    {
+      "source": "The <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a> used to match against the links endpoint.",
+      "translation": "用于匹配链接端点的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html\" title=\"class or interface in org.springframework.security.web.server.util.matcher\"><code>ServerWebExchangeMatcher</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Returns a matcher that matches only on the links endpoint.",
+      "translation": "返回一个仅匹配链接端点的匹配器。",
+      "count": 1
+    },
+    {
+      "source": "Madhura Bhave, Phillip Webb, Chris Bono",
+      "translation": "Madhura Bhave, Phillip Webb, Chris Bono",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

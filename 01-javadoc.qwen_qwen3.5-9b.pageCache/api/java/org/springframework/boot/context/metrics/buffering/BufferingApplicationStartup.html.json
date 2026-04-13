@@ -1,0 +1,116 @@
+{
+  "created_at": "2026-04-13 08:57:50",
+  "updated_at": "2026-04-13 19:09:20",
+  "stats": {
+    "total_entries": 20,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 41,
+    "entries_with_hits": 20,
+    "entries_without_hits": 0,
+    "hit_rate": 2.05,
+    "usage_percentage": 0.002
+  },
+  "items": [
+    {
+      "source": "Create a new buffered <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a> with a limited capacity and starts\nthe recording of steps.",
+      "translation": "创建一个具有有限容量的新缓冲 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\"><code>ApplicationStartup</code></a> 并开始记录步骤。",
+      "count": 3
+    },
+    {
+      "source": "Once recording has been <a href=\"#startRecording()\"><code>started</code></a>, steps are buffered up until\nthe configured <a href=\"#%3Cinit%3E(int)\"><code>capacity</code></a>; after that, new\nsteps are not recorded.",
+      "translation": "一旦开始<a href=\"#startRecording()\"><code>记录</code></a>，步骤会被缓冲，直到达到配置的<a href=\"#%3Cinit%3E(int)\"><code>容量</code></a>；此后，不再记录新步骤。",
+      "count": 2
+    },
+    {
+      "source": "A <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\" title=\"class or interface in org.springframework.core.metrics\"><code>step</code></a> that doesn't match all filters will not be recorded.",
+      "translation": "与所有过滤器不匹配的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\" title=\"class or interface in org.springframework.core.metrics\"><code>step</code></a>` 将不会被记录。",
+      "count": 2
+    },
+    {
+      "source": "This will not remove steps from the buffer, see <a href=\"#drainBufferedTimeline()\"><code>drainBufferedTimeline()</code></a>\nfor its counterpart.",
+      "translation": "这将不会从缓冲区中移除步骤，请参阅其对应方法 <a href=\"#drainBufferedTimeline()\"><code>drainBufferedTimeline()</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "This removes steps from the buffer, see <a href=\"#getBufferedTimeline()\"><code>getBufferedTimeline()</code></a> for its\nread-only counterpart.",
+      "translation": "此操作会从缓冲区中移除步骤，请参阅其只读对应项 <a href=\"#getBufferedTimeline()\"><code>getBufferedTimeline()</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "There are several ways to keep the buffer size low:",
+      "translation": "有几种方法可以保持缓冲区大小较低：",
+      "count": 2
+    },
+    {
+      "source": "Return the <a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>timeline</code></a> by pulling steps from the buffer.",
+      "translation": "通过从缓冲区中提取步骤来返回<a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>timeline</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Return the <a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>timeline</code></a> as a snapshot of currently buffered\nsteps.",
+      "translation": "返回 `<a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>timeline</code></a>` 作为当前缓冲步骤的快照。",
+      "count": 2
+    },
+    {
+      "source": "Start the recording of steps and mark the beginning of the <a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>StartupTimeline</code></a>.",
+      "translation": "开始记录步骤并标记<code>StartupTimeline</code><a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\">类</a>的开始。",
+      "count": 2
+    },
+    {
+      "source": "Start the recording of steps and mark the beginning of the <a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>StartupTimeline</code></a>.\nThe class constructor already implicitly calls this, but it is possible to reset it\nas long as steps have not been recorded already.",
+      "translation": "开始记录步骤并标记 <a href=\"StartupTimeline.html\" title=\"class in org.springframework.boot.context.metrics.buffering\"><code>StartupTimeline</code></a> 的开始。类构造函数已隐式调用此操作，但只要尚未记录步骤，就可以对其进行重置。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\">IllegalStateException</a></code> - if called and <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\" title=\"class or interface in org.springframework.core.metrics\"><code>StartupStep</code></a> have been recorded\nalready.",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\">IllegalStateException</a></code> - 如果已调用且已经记录了 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/StartupStep.html\" title=\"class or interface in org.springframework.core.metrics\"><code>StartupStep</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html#start(java.lang.String)\" title=\"class or interface in org.springframework.core.metrics\">start</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\">ApplicationStartup</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html#start(java.lang.String)\" title=\"class or interface in org.springframework.core.metrics\">start</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/ApplicationStartup.html\" title=\"class or interface in org.springframework.core.metrics\">ApplicationStartup</a></code>` 中",
+      "count": 2
+    },
+    {
+      "source": "configuring <a href=\"#addFilter(java.util.function.Predicate)\"><code>filters</code></a> to only record steps that are\nrelevant to us.",
+      "translation": "配置<a href=\"#addFilter(java.util.function.Predicate)\"><code>filters</code></a>，仅记录与我们相关的步骤。",
+      "count": 2
+    },
+    {
+      "source": "<a href=\"#drainBufferedTimeline()\"><code>draining</code></a> the buffered steps.",
+      "translation": "<a href=\"#drainBufferedTimeline()\">`draining`</a> 缓冲步骤。",
+      "count": 2
+    },
+    {
+      "source": "<code>capacity</code> - the configured capacity; once reached, new steps are not recorded.",
+      "translation": "<code>capacity</code> - 配置的容量；一旦达到该容量，将不再记录新步骤。",
+      "count": 2
+    },
+    {
+      "source": "<code>filter</code> - the predicate filter to add.",
+      "translation": "<code>filter</code> - 要添加的谓词过滤器。",
+      "count": 2
+    },
+    {
+      "source": "a snapshot of currently buffered steps.",
+      "translation": "当前缓冲步骤的快照。",
+      "count": 2
+    },
+    {
+      "source": "buffered steps drained from the buffer.",
+      "translation": "从缓冲区中排空的缓冲步骤。",
+      "count": 2
+    },
+    {
+      "source": "Add a predicate filter to the list of existing ones.",
+      "translation": "向现有谓词过滤器列表中添加一个谓词过滤器。",
+      "count": 2
+    },
+    {
+      "source": "Brian Clozel, Phillip Webb",
+      "translation": "布莱恩·克洛泽尔，菲利普·韦伯",
+      "count": 2
+    }
+  ]
+}

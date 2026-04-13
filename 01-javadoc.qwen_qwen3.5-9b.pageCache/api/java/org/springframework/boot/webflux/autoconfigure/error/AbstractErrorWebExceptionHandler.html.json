@@ -1,0 +1,241 @@
+{
+  "created_at": "2026-04-13 20:12:14",
+  "updated_at": "2026-04-13 20:12:14",
+  "stats": {
+    "total_entries": 45,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 90,
+    "entries_with_hits": 45,
+    "entries_without_hits": 0,
+    "hit_rate": 2.0,
+    "usage_percentage": 0.0045000000000000005
+  },
+  "items": [
+    {
+      "source": "<code>request</code> - the source request",
+      "translation": "<code>request</code> - 源请求",
+      "count": 6
+    },
+    {
+      "source": "a Publisher of the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>ServerResponse</code></a>",
+      "translation": "一个 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>ServerResponse</code></a>` 的发布者。",
+      "count": 3
+    },
+    {
+      "source": "<code>responseBody</code> - the error response being built",
+      "translation": "<code>responseBody</code> - 正在构建的错误响应",
+      "count": 3
+    },
+    {
+      "source": "<code>error</code> - the error data as a map",
+      "translation": "<code>error</code> - 错误数据作为映射",
+      "count": 3
+    },
+    {
+      "source": "If the returned <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a> doesn't route to a <code>HandlerFunction</code>,\nthe original exception is propagated in the pipeline and can be processed by other\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\" title=\"class or interface in org.springframework.web.server\"><code>WebExceptionHandler</code></a>s.",
+      "translation": "如果返回的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a> 未路由到 <code>HandlerFunction</code>，\n则原始异常将在管道中传播，并可由其他\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\" title=\"class or interface in org.springframework.web.server\"><code>WebExceptionHandler</code></a> 处理。",
+      "count": 2
+    },
+    {
+      "source": "Useful when no other error view is available in the application.",
+      "translation": "当应用程序中无其他错误视图可用时，此功能非常有用。",
+      "count": 2
+    },
+    {
+      "source": "Logs the <code>throwable</code> error for the given <code>request</code> and <code>response</code>\nexchange. The default implementation logs all errors at debug level. Additionally,\nany internal server error (500) is logged at error level.",
+      "translation": "记录给定 `<code>request</code>` 和 `<code>response</code>` 交换中的 `<code>throwable</code>` 错误。默认实现以调试级别记录所有错误。此外，任何内部服务器错误（500）均以错误级别记录。",
+      "count": 2
+    },
+    {
+      "source": "Abstract base class for <a href=\"../../error/ErrorWebExceptionHandler.html\" title=\"interface in org.springframework.boot.webflux.error\"><code>ErrorWebExceptionHandler</code></a> implementations.",
+      "translation": "用于 `<a href=\"../../error/ErrorWebExceptionHandler.html\" title=\"interface in org.springframework.boot.webflux.error\"><code>ErrorWebExceptionHandler</code></a>` 实现的抽象基类。",
+      "count": 2
+    },
+    {
+      "source": "Configure the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/result/view/ViewResolver.html\" title=\"class or interface in org.springframework.web.reactive.result.view\"><code>ViewResolver</code></a> to use for rendering views.",
+      "translation": "配置 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/result/view/ViewResolver.html\" title=\"class or interface in org.springframework.web.reactive.result.view\"><code>ViewResolver</code></a> 用于渲染视图。",
+      "count": 2
+    },
+    {
+      "source": "Create a new <code>AbstractErrorWebExceptionHandler</code>.",
+      "translation": "创建一个新的<code>AbstractErrorWebExceptionHandler</code>。",
+      "count": 2
+    },
+    {
+      "source": "Render the given error data as a view, using a template view if available or a\nstatic HTML file if available otherwise. This will return an empty\n<code>Publisher</code> if none of the above are available.",
+      "translation": "将给定的错误数据渲染为视图，如果可用则使用模板视图，否则使用静态 HTML 文件。如果以上均不可用，这将返回一个空的 `<code>Publisher`。",
+      "count": 2
+    },
+    {
+      "source": "Extract the original error from the current request.",
+      "translation": "从当前请求中提取原始错误。",
+      "count": 2
+    },
+    {
+      "source": "Extract the error attributes from the current request, to be used to populate error\nviews or JSON payloads.",
+      "translation": "从当前请求中提取错误属性，用于填充错误视图或 JSON 负载。",
+      "count": 2
+    },
+    {
+      "source": "Check whether the errors attribute has been set on the given request.",
+      "translation": "检查给定请求的 errors 属性是否已设置。",
+      "count": 2
+    },
+    {
+      "source": "Check whether the message attribute has been set on the given request.",
+      "translation": "检查给定请求上是否已设置消息属性。",
+      "count": 2
+    },
+    {
+      "source": "Check whether the path attribute has been set on the given request.",
+      "translation": "检查给定请求是否已设置 path 属性。",
+      "count": 2
+    },
+    {
+      "source": "Check whether the trace attribute has been set on the given request.",
+      "translation": "检查给定请求上是否已设置 trace 属性。",
+      "count": 2
+    },
+    {
+      "source": "Configure HTTP message readers to deserialize the request body with.",
+      "translation": "配置 HTTP 消息读取器以使用其反序列化请求体。",
+      "count": 2
+    },
+    {
+      "source": "Configure HTTP message writers to serialize the response body with.",
+      "translation": "配置 HTTP 消息写入器以使用 [serialize](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpMessageWriter.html#serialize-java.lang.Object-org.springframework.http.HttpOutputMessage-org.springframework.http.MediaType-) 序列化响应体。",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html#handle(org.springframework.web.server.ServerWebExchange,java.lang.Throwable)\" title=\"class or interface in org.springframework.web.server\">handle</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\" title=\"class or interface in org.springframework.web.server\">WebExceptionHandler</a></code>",
+      "translation": "`<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html#handle(org.springframework.web.server.ServerWebExchange,java.lang.Throwable)\" title=\"class or interface in org.springframework.web.server\">handle</a>` 接口中的 `<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html\" title=\"class or interface in org.springframework.web.server\">WebExceptionHandler</a>`",
+      "count": 2
+    },
+    {
+      "source": "<code>messageWriters</code> - the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html\" title=\"class or interface in org.springframework.http.codec\"><code>HttpMessageWriter</code></a>s to use",
+      "translation": "<code>messageWriters</code> - 要使用的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html\" title=\"class or interface in org.springframework.http.codec\"><code>HttpMessageWriter</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code>messageReaders</code> - the <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html\" title=\"class or interface in org.springframework.http.codec\"><code>HttpMessageReader</code></a>s to use",
+      "translation": "<code>messageReaders</code> - 要使用的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html\" title=\"class or interface in org.springframework.http.codec\"><code>HttpMessageReader</code></a>",
+      "count": 2
+    },
+    {
+      "source": "<code>viewResolvers</code> - the list of <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/result/view/ViewResolver.html\" title=\"class or interface in org.springframework.web.reactive.result.view\"><code>ViewResolver</code></a>s to use",
+      "translation": "<code>viewResolvers</code> - 要使用的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/result/view/ViewResolver.html\" title=\"class or interface in org.springframework.web.reactive.result.view\"><code>ViewResolver</code></a> 列表",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if the error trace has been requested, <code>false</code> otherwise",
+      "translation": "<code>true</code> 表示已请求错误堆栈跟踪，否则为 <code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if the message attribute has been requested, <code>false</code>\notherwise",
+      "translation": "<code>true</code> 如果已请求消息属性，否则为 <code>false</code>",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if the errors attribute has been requested, <code>false</code>\notherwise",
+      "translation": "如果已请求 errors 属性，则为 <code>true</code>；否则为 <code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code>true</code> if the path attribute has been requested, <code>false</code>\notherwise",
+      "translation": "如果已请求 path 属性，则为 <code>true</code>；否则为 <code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "<code>errorAttributes</code> - the <code>ErrorAttributes</code> instance to use to extract error\ninformation",
+      "translation": "<code>errorAttributes</code> - 用于提取错误信息的 <code>ErrorAttributes</code> 实例",
+      "count": 2
+    },
+    {
+      "source": "a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a> that routes and handles errors",
+      "translation": "一个用于路由和错误处理的<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "<code>errorAttributes</code> - the error attributes",
+      "translation": "<code>errorAttributes</code> - 错误属性",
+      "count": 2
+    },
+    {
+      "source": "<code>resources</code> - the resources configuration properties",
+      "translation": "<code>resources</code> - 资源配置属性",
+      "count": 2
+    },
+    {
+      "source": "<code>options</code> - options to control error attributes",
+      "translation": "<code>options</code> - 用于控制错误属性的选项",
+      "count": 2
+    },
+    {
+      "source": "<code>viewName</code> - the view name",
+      "translation": "<code>viewName</code> - 视图名称",
+      "count": 2
+    },
+    {
+      "source": "<code>request</code> - the request that was being handled",
+      "translation": "<code>request</code> - 正在处理的请求",
+      "count": 2
+    },
+    {
+      "source": "<code>response</code> - the response that was being sent",
+      "translation": "<code>response</code> - 正在发送的响应",
+      "count": 2
+    },
+    {
+      "source": "<code>throwable</code> - the error to be logged",
+      "translation": "<code>throwable</code> - 要记录的错误",
+      "count": 2
+    },
+    {
+      "source": "Brian Clozel, Scott Frederick, Moritz Halbritter",
+      "translation": "Brian Clozel，Scott Frederick，Moritz Halbritter",
+      "count": 2
+    },
+    {
+      "source": "the error attributes as a Map",
+      "translation": "将错误属性作为 Map",
+      "count": 2
+    },
+    {
+      "source": "Logs the <code>throwable</code> error for the given <code>request</code> and <code>response</code>\nexchange.",
+      "translation": "记录给定 `<code>request</code>` 和 `<code>response</code>` 交换中的 `<code>throwable</code>` 错误。",
+      "count": 1
+    },
+    {
+      "source": "Create a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a> that can route and handle errors as JSON responses\nor HTML views.",
+      "translation": "创建一个 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html\" title=\"class or interface in org.springframework.web.reactive.function.server\"><code>RouterFunction</code></a>，以便将路由和错误处理为 JSON 响应或 HTML 视图。",
+      "count": 1
+    },
+    {
+      "source": "Render a default HTML \"Whitelabel Error Page\".",
+      "translation": "渲染一个默认的 HTML“白标错误页面”。",
+      "count": 1
+    },
+    {
+      "source": "Render the given error data as a view, using a template view if available or a\nstatic HTML file if available otherwise.",
+      "translation": "将给定的错误数据渲染为视图，如果存在模板视图则使用模板视图，否则使用静态 HTML 文件。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html#afterPropertiesSet()\" title=\"class or interface in org.springframework.beans.factory\">afterPropertiesSet</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html\" title=\"class or interface in org.springframework.beans.factory\">InitializingBean</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html#afterPropertiesSet()\" title=\"class or interface in org.springframework.beans.factory\">afterPropertiesSet</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html\" title=\"class or interface in org.springframework.beans.factory\">InitializingBean</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "<code>applicationContext</code> - the application context",
+      "translation": "<code>applicationContext</code> - 应用程序上下文",
+      "count": 1
+    },
+    {
+      "source": "the error",
+      "translation": "错误",
+      "count": 1
+    }
+  ]
+}

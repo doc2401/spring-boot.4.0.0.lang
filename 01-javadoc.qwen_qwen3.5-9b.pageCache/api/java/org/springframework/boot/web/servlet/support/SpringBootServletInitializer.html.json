@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-04-13 20:10:39",
+  "updated_at": "2026-04-13 20:10:39",
+  "stats": {
+    "total_entries": 21,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 39,
+    "entries_with_hits": 21,
+    "entries_without_hits": 0,
+    "hit_rate": 1.8571428571428572,
+    "usage_percentage": 0.0021
+  },
+  "items": [
+    {
+      "source": "Called to run a fully configured <a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>.",
+      "translation": "调用以运行完全配置的<a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "<code>servletContext</code> - the web application's servlet context",
+      "translation": "<code>servletContext</code> - 该 Web 应用程序的 Servlet 上下文",
+      "count": 3
+    },
+    {
+      "source": "To configure the application either override the\n<a href=\"#configure(org.springframework.boot.builder.SpringApplicationBuilder)\"><code>configure(SpringApplicationBuilder)</code></a> method (calling\n<a href=\"../../../builder/SpringApplicationBuilder.html#sources(java.lang.Class...)\"><code>SpringApplicationBuilder.sources(Class...)</code></a>) or make the initializer itself a\n<code>@Configuration</code>. If you are using <a href=\"SpringBootServletInitializer.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>SpringBootServletInitializer</code></a> in\ncombination with other <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html\" title=\"class or interface in org.springframework.web\"><code>WebApplicationInitializers</code></a> you\nmight also want to add an <code>@Ordered</code> annotation to configure a specific startup\norder.",
+      "translation": "要配置应用程序，可以重写<a href=\"#configure(org.springframework.boot.builder.SpringApplicationBuilder)\"><code>configure(SpringApplicationBuilder)</code></a>方法（调用<a href=\"../../../builder/SpringApplicationBuilder.html#sources(java.lang.Class...)\"><code>SpringApplicationBuilder.sources(Class...)</code></a>），或者使初始化器本身成为一个<code>@Configuration</code>。如果您将 <a href=\"SpringBootServletInitializer.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>SpringBootServletInitializer</code></a> 与其他 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html\" title=\"class or interface in org.springframework.web\"><code>WebApplicationInitializers</code></a> 结合使用，您可能还需要添加一个 <code>@Ordered</code> 注解来配置特定的启动顺序。",
+      "count": 2
+    },
+    {
+      "source": "Note that a WebApplicationInitializer is only needed if you are building a war file and\ndeploying it. If you prefer to run an embedded web server then you won't need this at\nall.",
+      "translation": "请注意，只有在构建 WAR 文件并部署它时才需要 `WebApplicationInitializer`。如果您更喜欢运行嵌入式 Web 服务器，则完全不需要它。",
+      "count": 2
+    },
+    {
+      "source": "Deregisters the JDBC drivers that were registered by the application represented by\nthe given <code>servletContext</code>. The default implementation\n<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/DriverManager.html#deregisterDriver(java.sql.Driver)\" title=\"class or interface in java.sql\"><code>deregisters</code></a> every <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Driver.html\" title=\"class or interface in java.sql\"><code>Driver</code></a>\nthat was loaded by the <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html#getClassLoader()\" title=\"class or interface in jakarta.servlet\"><code>web application's class\nloader</code></a>.",
+      "translation": "注销由给定 <code>servletContext</code> 所表示的应用程序注册的 JDBC 驱动程序。默认实现会注销由 <a class=\"external-link\" href=\"https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html#getClassLoader()\" title=\"class or interface in jakarta.servlet\"><code>web application's class\nloader</code></a> 加载的每个 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Driver.html\" title=\"class or interface in java.sql\"><code>Driver</code></a>，方法是调用 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/DriverManager.html#deregisterDriver(java.sql.Driver)\" title=\"class or interface in java.sql\"><code>deregisters</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <code>SpringApplicationBuilder</code> that is used to configure and create\nthe <a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>. The default implementation returns a new\n<code>SpringApplicationBuilder</code> in its default state.",
+      "translation": "返回用于配置和创建<a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>的<code>SpringApplicationBuilder</code>。默认实现在其默认状态下返回一个新的<code>SpringApplicationBuilder</code>。",
+      "count": 2
+    },
+    {
+      "source": "Returns the <code>SpringApplicationBuilder</code> that is used to configure and create\nthe <a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>.",
+      "translation": "返回用于配置和创建<a href=\"../../../SpringApplication.html\" title=\"class in org.springframework.boot\"><code>SpringApplication</code></a>的<code>SpringApplicationBuilder</code>。",
+      "count": 2
+    },
+    {
+      "source": "Set if the <a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a> should be registered. Set to <code>false</code> if\nerror page mappings should be handled through the server and not Spring Boot.",
+      "translation": "设置是否注册<a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a>。如果错误页面映射应由服务器而非 Spring Boot 处理，则设置为<code>false</code>。",
+      "count": 2
+    },
+    {
+      "source": "Shuts down the reactor <code>Schedulers</code> that were initialized by\n<code>Schedulers.boundedElastic()</code> (or similar). The default implementation\n<code>Schedulers.shutdownNow()</code> schedulers if they were initialized on this web\napplication's class loader.",
+      "translation": "关闭由 <code>Schedulers.boundedElastic()</code>（或类似方法）初始化的 <code>Schedulers</code> 反应器。默认实现 <code>Schedulers.shutdownNow()</code> 会关闭在此 Web 应用程序的类加载器上初始化的调度器。",
+      "count": 2
+    },
+    {
+      "source": "Set if the <a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a> should be registered.",
+      "translation": "设置是否应注册 `<a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "Configure the application. Normally all you would need to do is to add sources\n(e.g. config classes) because other settings have sensible defaults. You might\nchoose (for instance) to add default command line arguments, or set an active\nSpring profile.",
+      "translation": "配置应用程序。通常，您只需添加源（例如配置类），因为其他设置具有合理的默认值。您可能选择（例如）添加默认命令行参数，或设置活动的 Spring 配置文件。",
+      "count": 2
+    },
+    {
+      "source": "<code>registerErrorPageFilter</code> - if the <a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a> should be registered.",
+      "translation": "`registerErrorPageFilter` - 如果应该注册 `<a href=\"ErrorPageFilter.html\" title=\"class in org.springframework.boot.web.servlet.support\"><code>ErrorPageFilter</code></a>`。",
+      "count": 2
+    },
+    {
+      "source": "<code>application</code> - the application to run",
+      "translation": "<code>application</code> - 要运行的应用程序",
+      "count": 2
+    },
+    {
+      "source": "<code>builder</code> - a builder for the application context",
+      "translation": "<code>builder</code> - 应用程序上下文的构建器",
+      "count": 2
+    },
+    {
+      "source": "Dave Syer, Phillip Webb, Andy Wilkinson, Brian Clozel",
+      "translation": "Dave Syer, Phillip Webb, Andy Wilkinson, Brian Clozel",
+      "count": 2
+    },
+    {
+      "source": "the application builder",
+      "translation": "应用程序构建器",
+      "count": 2
+    },
+    {
+      "source": "Shuts down the reactor <code>Schedulers</code> that were initialized by\n<code>Schedulers.boundedElastic()</code> (or similar).",
+      "translation": "关闭由 `<code>Schedulers.boundedElastic()</code>`（或类似方法）初始化的 `<code>Schedulers</code>` 反应器。",
+      "count": 1
+    },
+    {
+      "source": "Deregisters the JDBC drivers that were registered by the application represented by\nthe given <code>servletContext</code>.",
+      "translation": "注销由给定<servletContext>所表示的应用程序注册的 JDBC 驱动程序。",
+      "count": 1
+    },
+    {
+      "source": "Configure the application.",
+      "translation": "配置应用程序。",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html#onStartup(jakarta.servlet.ServletContext)\" title=\"class or interface in org.springframework.web\">onStartup</a></code> in interface <code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html\" title=\"class or interface in org.springframework.web\">WebApplicationInitializer</a></code>",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html#onStartup(jakarta.servlet.ServletContext)\" title=\"class or interface in org.springframework.web\">onStartup</a></code>` 接口 `<code><a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html\" title=\"class or interface in org.springframework.web\">WebApplicationInitializer</a></code>` 中",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}

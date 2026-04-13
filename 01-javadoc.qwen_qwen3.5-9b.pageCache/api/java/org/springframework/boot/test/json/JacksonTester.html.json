@@ -1,0 +1,216 @@
+{
+  "created_at": "2026-04-13 19:54:32",
+  "updated_at": "2026-04-13 19:54:32",
+  "stats": {
+    "total_entries": 40,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 71,
+    "entries_with_hits": 40,
+    "entries_without_hits": 0,
+    "hit_rate": 1.775,
+    "usage_percentage": 0.004
+  },
+  "items": [
+    {
+      "source": "Create a new <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a> instance.",
+      "translation": "创建一个新的<a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a>实例。",
+      "count": 6
+    },
+    {
+      "source": "<code>jsonMapper</code> - the Jackson JSON mapper",
+      "translation": "<code>jsonMapper</code> - Jackson JSON 映射器",
+      "count": 4
+    },
+    {
+      "source": "Utility method to initialize <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a> fields. See <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>class-level documentation</code></a> for example usage.",
+      "translation": "用于初始化 `<a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a>` 字段的实用方法。有关使用示例，请参见 <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>类级别文档</code></a>。",
+      "count": 3
+    },
+    {
+      "source": "Returns a new instance of <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a> with the view that should be used\nfor json serialization/deserialization.",
+      "translation": "返回一个新的 <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a> 实例，用于指定 JSON 序列化/反序列化时应使用的视图。",
+      "count": 3
+    },
+    {
+      "source": "Utility method to initialize <a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a> fields.",
+      "translation": "用于初始化 `<a href=\"JacksonTester.html\" title=\"class in org.springframework.boot.test.json\"><code>JacksonTester</code></a>` 字段的实用方法。",
+      "count": 3
+    },
+    {
+      "source": "<code>type</code> - the resulting type (never <code>null</code>)",
+      "translation": "<code>type</code> - 结果类型（永远不会为 <code>null</code>）",
+      "count": 3
+    },
+    {
+      "source": "AssertJ based JSON tester backed by Jackson. Usually instantiated via\n<a href=\"#initFields(java.lang.Object,tools.jackson.databind.json.JsonMapper)\"><code>initFields(Object, JsonMapper)</code></a>, for example: <pre class=\"code\">public class ExampleObjectJsonTests {\n\n    private JacksonTester&lt;ExampleObject&gt; json;\n\n    @Before\n    public void setup() {\n        JsonMapper jsonMapper = new JsonMapper();\n        JacksonTester.initFields(this, jsonMapper);\n    }\n\n    @Test\n    public void testWriteJson() throws IOException {\n        ExampleObject object = //...\n        assertThat(json.write(object)).isEqualToJson(\"expected.json\");\n    }\n\n}\n</pre>\n\nSee <a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\"><code>AbstractJsonMarshalTester</code></a> for more details.",
+      "translation": "基于 Jackson 的 AssertJ JSON 测试器。通常通过<a href=\"#initFields(java.lang.Object,tools.jackson.databind.json.JsonMapper)\"><code>initFields(Object, JsonMapper)</code></a>实例化，例如：<pre class=\"code\">public class ExampleObjectJsonTests {\n\n    private JacksonTester&lt;ExampleObject&gt; json;\n\n    @Before\n    public void setup() {\n        JsonMapper jsonMapper = new JsonMapper();\n        JacksonTester.initFields(this, jsonMapper);\n    }\n\n    @Test\n    public void testWriteJson() throws IOException {\n        ExampleObject object = //...\n        assertThat(json.write(object)).isEqualToJson(\"expected.json\");\n    }\n\n}\n</pre>\n\n有关更多详细信息，请参阅<a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\"><code>AbstractJsonMarshalTester</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Factory method used to get a <a href=\"JsonContent.html\" title=\"class in org.springframework.boot.test.json\"><code>JsonContent</code></a> instance from a source JSON\nstring.",
+      "translation": "用于从源 JSON 字符串获取<a href=\"JsonContent.html\" title=\"class in org.springframework.boot.test.json\"><code>JsonContent</code></a>实例的工厂方法。",
+      "count": 2
+    },
+    {
+      "source": "Read from the specified reader to create an object of the specified type.",
+      "translation": "从指定的读取器中读取以创建指定类型的对象。",
+      "count": 2
+    },
+    {
+      "source": "Write the specified object to a JSON string.",
+      "translation": "将指定的对象写入 JSON 字符串。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"AbstractJsonMarshalTester.html#getJsonContent(java.lang.String)\">getJsonContent</a></code> in class <code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>",
+      "translation": "`getJsonContent` 在类 `<a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;` 中。",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.InputStream,org.springframework.core.ResolvableType)\">readObject</a></code> in class <code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>",
+      "translation": "`readObject` 在类 `<code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.Reader,org.springframework.core.ResolvableType)\">readObject</a></code> in class <code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>",
+      "translation": "`readObject` 在类 `<code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a href=\"AbstractJsonMarshalTester.html#writeObject(T,org.springframework.core.ResolvableType)\">writeObject</a></code> in class <code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>",
+      "translation": "`<code><a href=\"AbstractJsonMarshalTester.html#writeObject(T,org.springframework.core.ResolvableType)\">writeObject</a></code>` 在类 `<code><a href=\"AbstractJsonMarshalTester.html\" title=\"class in org.springframework.boot.test.json\">AbstractJsonMarshalTester</a>&lt;<a href=\"#type-param-T\" title=\"type parameter in JacksonTester\">T</a>&gt;</code>` 中",
+      "count": 2
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code> - on read error",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"java.io 中的类或接口\">IOException</a></code> - 读取错误时",
+      "count": 2
+    },
+    {
+      "source": "<code>resourceLoadClass</code> - the source class used to load resources",
+      "translation": "<code>resourceLoadClass</code> - 用于加载资源的源类",
+      "count": 2
+    },
+    {
+      "source": "<code>type</code> - the type under test",
+      "translation": "<code>type</code> - 待测试的类型",
+      "count": 2
+    },
+    {
+      "source": "<code>testInstance</code> - the test instance",
+      "translation": "<code>testInstance</code> - 测试实例",
+      "count": 2
+    },
+    {
+      "source": "<code>jsonMapper</code> - the JSON mapper",
+      "translation": "<code>jsonMapper</code> - JSON 映射器",
+      "count": 2
+    },
+    {
+      "source": "<code>jsonMapperFactory</code> - a factory to create the JSON mapper",
+      "translation": "<code>jsonMapperFactory</code> - 用于创建 JSON 映射器的工厂",
+      "count": 2
+    },
+    {
+      "source": "the resulting object",
+      "translation": "生成的对象",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"AbstractJsonMarshalTester.html#getJsonContent(java.lang.String)\">AbstractJsonMarshalTester</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"AbstractJsonMarshalTester.html#getJsonContent(java.lang.String)\">AbstractJsonMarshalTester</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.InputStream,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.InputStream,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.Reader,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"AbstractJsonMarshalTester.html#readObject(java.io.Reader,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"AbstractJsonMarshalTester.html#writeObject(T,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"AbstractJsonMarshalTester.html#writeObject(T,org.springframework.core.ResolvableType)\">AbstractJsonMarshalTester</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "Read from the specified input stream to create an object of the specified type. The\ndefault implementation delegates to <a href=\"AbstractJsonMarshalTester.html#readObject(java.io.Reader,org.springframework.core.ResolvableType)\"><code>AbstractJsonMarshalTester.readObject(Reader, ResolvableType)</code></a>.",
+      "translation": "从指定的输入流读取以创建指定类型的对象。默认实现委托给 <a href=\"AbstractJsonMarshalTester.html#readObject(java.io.Reader,org.springframework.core.ResolvableType)\"><code>AbstractJsonMarshalTester.readObject(Reader, ResolvableType)</code></a>。",
+      "count": 1
+    },
+    {
+      "source": "Read from the specified input stream to create an object of the specified type.",
+      "translation": "从指定的输入流读取以创建指定类型的对象。",
+      "count": 1
+    },
+    {
+      "source": "<span id=\"type-param-T\"><code>T</code> - the type under test</span>",
+      "translation": "<span id=\"type-param-T\"><code>T</code> - 待测试的类型</span>",
+      "count": 1
+    },
+    {
+      "source": "a new <a href=\"JsonContent.html\" title=\"class in org.springframework.boot.test.json\"><code>JsonContent</code></a> instance",
+      "translation": "一个新的<a href=\"JsonContent.html\" title=\"class in org.springframework.boot.test.json\"><code>JsonContent</code></a>实例",
+      "count": 1
+    },
+    {
+      "source": "<code>inputStream</code> - the source input stream (never <code>null</code>)",
+      "translation": "<code>inputStream</code> - 源输入流（永远不为 <code>null</code>）",
+      "count": 1
+    },
+    {
+      "source": "<code>reader</code> - the source reader (never <code>null</code>)",
+      "translation": "<code>reader</code> - 源读取器（永远不为 <code>null</code>）",
+      "count": 1
+    },
+    {
+      "source": "<code>value</code> - the source value (never <code>null</code>)",
+      "translation": "<code>value</code> - 源值（永远不为 <code>null</code>）",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code> - on write error",
+      "translation": "`<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html\" title=\"class or interface in java.io\">IOException</a></code>` - 写入错误时",
+      "count": 1
+    },
+    {
+      "source": "<code>view</code> - the JSON view",
+      "translation": "<code>view</code> - JSON 视图",
+      "count": 1
+    },
+    {
+      "source": "<code>json</code> - the source JSON",
+      "translation": "<code>json</code> - 源 JSON",
+      "count": 1
+    },
+    {
+      "source": "<code>view</code> - the view class",
+      "translation": "<code>view</code> - 视图类",
+      "count": 1
+    },
+    {
+      "source": "Phillip Webb, Madhura Bhave, Diego Berrueta",
+      "translation": "Phillip Webb, Madhura Bhave, Diego Berrueta",
+      "count": 1
+    },
+    {
+      "source": "the JSON string",
+      "translation": "JSON 字符串",
+      "count": 1
+    },
+    {
+      "source": "the new instance",
+      "translation": "新实例",
+      "count": 1
+    },
+    {
+      "source": "Nested Class Summary",
+      "translation": "嵌套类摘要",
+      "count": 1
+    }
+  ]
+}

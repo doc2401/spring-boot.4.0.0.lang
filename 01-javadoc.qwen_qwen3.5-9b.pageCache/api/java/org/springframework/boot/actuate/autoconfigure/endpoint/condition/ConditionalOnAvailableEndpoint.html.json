@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-04-13 08:03:07",
+  "updated_at": "2026-04-13 19:08:09",
+  "stats": {
+    "total_entries": 16,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 35,
+    "entries_with_hits": 16,
+    "entries_without_hits": 0,
+    "hit_rate": 2.1875,
+    "usage_percentage": 0.0015999999999999999
+  },
+  "items": [
+    {
+      "source": "Alias for <a href=\"#endpoint()\"><code>endpoint()</code></a>.",
+      "translation": "`<a href=\"#endpoint()\"><code>endpoint()</code></a>` 的别名。",
+      "count": 3
+    },
+    {
+      "source": "the endpoint type to check",
+      "translation": "要检查的端点类型",
+      "count": 3
+    },
+    {
+      "source": "Technologies to check the exposure of the endpoint on while considering it to be\navailable.",
+      "translation": "用于在将端点视为可用时检查其暴露情况的技术。",
+      "count": 3
+    },
+    {
+      "source": "Matches access according to the endpoint's specific <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property,\nfalling back to <code>management.endpoints.default-access</code> or failing that\n<a href=\"../../../endpoint/annotation/Endpoint.html#defaultAccess()\"><code>Endpoint.defaultAccess()</code></a>.",
+      "translation": "根据端点特定的 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性匹配访问权限，\n否则回退到 <code>management.endpoints.default-access</code>，\n若仍失败则使用 <a href=\"../../../endpoint/annotation/Endpoint.html#defaultAccess()\"><code>Endpoint.defaultAccess()</code></a>。",
+      "count": 2
+    },
+    {
+      "source": "Matches exposure according to any of the <code>management.endpoints.web.exposure.&lt;id&gt;</code>\nor <code>management.endpoints.jmx.exposure.&lt;id&gt;</code> specific properties or failing that\nto whether any <a href=\"EndpointExposureOutcomeContributor.html\" title=\"interface in org.springframework.boot.actuate.autoconfigure.endpoint.condition\"><code>EndpointExposureOutcomeContributor</code></a> exposes the endpoint.",
+      "translation": "根据 `<code>management.endpoints.web.exposure.&lt;id&gt;</code>` 或 `<code>management.endpoints.jmx.exposure.&lt;id&gt;</code>` 的特定属性匹配端点暴露情况，若未找到则取决于是否有任何 <a href=\"EndpointExposureOutcomeContributor.html\" title=\"interface in org.springframework.boot.actuate.autoconfigure.endpoint.condition\"><code>EndpointExposureOutcomeContributor</code></a> 暴露该端点。",
+      "count": 2
+    },
+    {
+      "source": "In the sample above, <code>MyEndpointWebExtension</code> will be created if the endpoint is\navailable as defined by the rules above. <code>MyEndpointWebExtension</code> must be a\nregular extension that refers to an endpoint, something like:",
+      "translation": "在上面的示例中，如果端点符合上述规则定义且可用，将创建 `<code>MyEndpointWebExtension</code>`。<code>MyEndpointWebExtension</code> 必须是一个引用端点的普通扩展，类似于：",
+      "count": 2
+    },
+    {
+      "source": "When placed on a <code>@Bean</code> method, the endpoint defaults to the return type of the\nfactory method:",
+      "translation": "当放置在<code>@Bean</code>方法上时，端点默认使用工厂方法的返回类型：",
+      "count": 2
+    },
+    {
+      "source": "Both enablement and exposure conditions should match for the endpoint to be considered\navailable.",
+      "translation": "启用条件和暴露条件均应匹配，端点才被视为可用。",
+      "count": 2
+    },
+    {
+      "source": "It is also possible to use the same mechanism for extensions:",
+      "translation": "同样，也可以使用相同的机制进行扩展：",
+      "count": 2
+    },
+    {
+      "source": "Alternatively, the target endpoint can be manually specified for components that should\nonly be created when a given endpoint is available:",
+      "translation": "或者，可以手动指定目标端点，以便仅在给定端点可用时才创建相应的组件：",
+      "count": 2
+    },
+    {
+      "source": "The endpoint type that should be checked. Inferred when the return type of the\n<code>@Bean</code> method is either an <a href=\"../../../endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@Endpoint</code></a> or an\n<a href=\"../../../endpoint/annotation/EndpointExtension.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@EndpointExtension</code></a>.",
+      "translation": "要检查的端点类型。当<code>@Bean</code>方法的返回类型为<a href=\"../../../endpoint/annotation/Endpoint.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@Endpoint</code></a>或<a href=\"../../../endpoint/annotation/EndpointExtension.html\" title=\"annotation interface in org.springframework.boot.actuate.endpoint.annotation\"><code>@EndpointExtension</code></a>时，会自动推断。",
+      "count": 2
+    },
+    {
+      "source": "Brian Clozel, Stephane Nicoll, Andy Wilkinson, Phillip Webb",
+      "translation": "Brian Clozel, Stephane Nicoll, Andy Wilkinson, Phillip Webb",
+      "count": 2
+    },
+    {
+      "source": "the technologies to check",
+      "translation": "要检查的技术",
+      "count": 2
+    },
+    {
+      "source": "The endpoint type that should be checked.",
+      "translation": "应检查的端点类型。",
+      "count": 2
+    },
+    {
+      "source": "Optional Element Summary",
+      "translation": "可选元素摘要",
+      "count": 2
+    },
+    {
+      "source": "Element Details",
+      "translation": "元素详情",
+      "count": 2
+    }
+  ]
+}

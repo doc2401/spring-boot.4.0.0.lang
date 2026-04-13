@@ -1,0 +1,131 @@
+{
+  "created_at": "2026-04-13 18:42:06",
+  "updated_at": "2026-04-13 19:10:27",
+  "stats": {
+    "total_entries": 23,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 49,
+    "entries_with_hits": 23,
+    "entries_without_hits": 0,
+    "hit_rate": 2.130434782608696,
+    "usage_percentage": 0.0023
+  },
+  "items": [
+    {
+      "source": "Return the current number of active connections that have been allocated from the\ndata source or <code>null</code> if that information is not available.",
+      "translation": "返回已从数据源分配的活动连接数，如果该信息不可用则返回`null`。",
+      "count": 3
+    },
+    {
+      "source": "Return the minimum number of idle connections in the pool or <code>null</code> if that\ninformation is not available.",
+      "translation": "返回池中空闲连接的最小数量，如果该信息不可用则返回 `null`。",
+      "count": 3
+    },
+    {
+      "source": "Return the query to use to validate that a connection is valid or <code>null</code> if\nthat information is not available.",
+      "translation": "返回用于验证连接是否有效的查询，或者如果该信息不可用则返回 `null`。",
+      "count": 3
+    },
+    {
+      "source": "<a href=\"DataSourcePoolMetadata.html\" title=\"interface in org.springframework.boot.jdbc.metadata\"><code>DataSourcePoolMetadata</code></a> for a Hikari <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\" title=\"class or interface in javax.sql\"><code>DataSource</code></a>.",
+      "translation": "",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getActive()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getActive()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getIdle()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getIdle()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getMax()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getMax()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getMin()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getMin()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getValidationQuery()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getValidationQuery()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from interface: <code><a href=\"DataSourcePoolMetadata.html#getDefaultAutoCommit()\">DataSourcePoolMetadata</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述复制自接口：<code><a href=\"DataSourcePoolMetadata.html#getDefaultAutoCommit()\">DataSourcePoolMetadata</a></code></span>",
+      "count": 2
+    },
+    {
+      "source": "Return the maximum number of active connections that can be allocated at the same\ntime or <code>-1</code> if there is no limit. Can also return <code>null</code> if that\ninformation is not available.",
+      "translation": "返回可以同时分配的最大活动连接数，如果没有限制则返回 `<code>-1</code>`。如果该信息不可用，也可以返回 `<code>null</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Return the maximum number of active connections that can be allocated at the same\ntime or <code>-1</code> if there is no limit.",
+      "translation": "返回可同时分配的最大活动连接数，或者如果没有限制则返回 `<code>-1</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Return the number of established but idle connections. Can also return <code>null</code>\nif that information is not available.",
+      "translation": "返回已建立但空闲的连接数。如果该信息不可用，也可以返回 `<code>null</code>`。",
+      "count": 2
+    },
+    {
+      "source": "The default auto-commit state of connections created by this pool. If not set\n(<code>null</code>), default is JDBC driver default (If set to null then the\njava.sql.Connection.setAutoCommit(boolean) method will not be called.)",
+      "translation": "此连接池创建的连接的默认自动提交状态。如果未设置（<code>null</code>），则默认为 JDBC 驱动程序的默认值（如果设置为 null，则不会调用 java.sql.Connection.setAutoCommit(boolean) 方法。）",
+      "count": 2
+    },
+    {
+      "source": "The default auto-commit state of connections created by this pool.",
+      "translation": "此池创建的连接的默认自动提交状态。",
+      "count": 2
+    },
+    {
+      "source": "Return the number of established but idle connections.",
+      "translation": "返回已建立但空闲的连接数。",
+      "count": 2
+    },
+    {
+      "source": "the number of active connections or <code>null</code>",
+      "translation": "活动连接数或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the number of established but idle connections or <code>null</code>",
+      "translation": "已建立但空闲的连接数或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the maximum number of active connections or <code>null</code>",
+      "translation": "最大活动连接数或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the minimum number of active connections or <code>null</code>",
+      "translation": "最小活动连接数或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the validation query or <code>null</code>",
+      "translation": "验证查询或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "the default auto-commit state or <code>null</code>",
+      "translation": "默认自动提交状态或<code>null</code>",
+      "count": 2
+    },
+    {
+      "source": "Stephane Nicoll",
+      "translation": "Stephane Nicoll",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "created_at": "2026-04-13 19:16:01",
+  "updated_at": "2026-04-13 19:16:01",
+  "stats": {
+    "total_entries": 37,
+    "maxsize": 1000000,
+    "cache_full": false,
+    "total_hits": 52,
+    "entries_with_hits": 37,
+    "entries_without_hits": 0,
+    "hit_rate": 1.4054054054054055,
+    "usage_percentage": 0.0036999999999999997
+  },
+  "items": [
+    {
+      "source": "Looks in various places for a properties file to extract loader settings, defaulting to\n<code>loader.properties</code> either on the current classpath or in the current working\ndirectory. The name of the properties file can be changed by setting a System property\n<code>loader.config.name</code> (e.g. <code>-Dloader.config.name=my</code> will look for\n<code>my.properties</code>. If that file doesn't exist then tries\n<code>loader.config.location</code> (with allowed prefixes <code>classpath:</code> and\n<code>file:</code> or any valid URL). Once that file is located turns it into Properties and\nextracts optional values (which can also be provided overridden as System properties in\ncase the file doesn't exist):",
+      "translation": "在多个位置查找属性文件以提取加载器设置，默认情况下在当前类路径或当前工作目录中查找 `<code>loader.properties</code>`。可以通过设置系统属性 `<code>loader.config.name</code>` 来更改属性文件的名称（例如，`<code>-Dloader.config.name=my</code>` 将查找 `<code>my.properties</code>`）。如果该文件不存在，则尝试使用 `<code>loader.config.location</code>`（允许的前缀为 `<code>classpath:</code>` 和 `<code>file:</code>` 或任何有效的 URL）。一旦找到该文件，将其转换为 Properties 对象并提取可选值（如果文件不存在，这些值也可以作为系统属性提供覆盖）：",
+      "count": 2
+    },
+    {
+      "source": "Properties key for home directory. This is the location of external configuration\nif not on classpath, and also the base path for any relative paths in the\n<a href=\"#PATH\"><code>loader path</code></a>. Defaults to current working directory (\n<code>${user.dir}</code>).",
+      "translation": "主目录的 Properties 键。如果外部配置不在类路径中，这是其位置，同时也是 <a href=\"#PATH\"><code>加载器路径</code></a> 中任何相对路径的基础路径。默认为当前工作目录 (<code>${user.dir}</code>)。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for name of external configuration file (excluding suffix). Defaults\nto \"application\". Ignored if <a href=\"#CONFIG_LOCATION\"><code>loader config location</code></a> is\nprovided instead.",
+      "translation": "外部配置文件名称的 Properties 键（不包括后缀）。默认为\"application\"。如果提供了<a href=\"#CONFIG_LOCATION\"><code>加载器配置位置</code></a>，则会被忽略。",
+      "count": 2
+    },
+    {
+      "source": "Return the archive being launched or <code>null</code> if there is no archive.",
+      "translation": "返回正在启动的存档，或者如果没有存档则返回<code>null</code>。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for main class. As a manifest entry can also be specified as\n<code>Start-Class</code>.",
+      "translation": "主类的属性键。作为清单条目，也可指定为 `<code>Start-Class</code>`。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for classpath entries (directories possibly containing jars or\njars). Multiple entries can be specified using a comma-separated list. <code>\nBOOT-INF/classes,BOOT-INF/lib</code> in the application archive are always used.",
+      "translation": "类路径条目（可能包含 jar 或 jar）的属性键。可以使用逗号分隔列表指定多个条目。<code>BOOT-INF/classes,BOOT-INF/lib</code> 始终在应用程序归档中使用。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for config file location (including optional classpath:, file: or\nURL prefix).",
+      "translation": "配置文件中属性键（包括可选的类路径前缀：classpath:、文件前缀：file: 或 URL 前缀）。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for boolean flag (default false) which, if set, will cause the\nexternal configuration properties to be copied to System properties (assuming that\nis allowed by Java security).",
+      "translation": "布尔标志的 Properties 键（默认值为 false），如果设置该值，则会将外部配置属性复制到系统属性中（前提是 Java 安全策略允许）。",
+      "count": 2
+    },
+    {
+      "source": "Create a classloader for the specified archives.",
+      "translation": "为指定的归档文件创建类加载器。",
+      "count": 2
+    },
+    {
+      "source": "Returns the archives that will be used to construct the class path.",
+      "translation": "返回将用于构建类路径的归档文件。",
+      "count": 2
+    },
+    {
+      "source": "Returns the main class that should be launched.",
+      "translation": "返回应启动的主类。",
+      "count": 2
+    },
+    {
+      "source": "Properties key for default command line arguments. These arguments (if present) are\nprepended to the main method arguments before launching.",
+      "translation": "默认命令行参数的 Properties 键。如果存在这些参数，它们将在启动前附加到主方法参数之前。",
+      "count": 2
+    },
+    {
+      "source": "<code>loader.main</code>: the main method to delegate execution to once the class loader\nis set up. No default, but will fall back to looking for a <code>Start-Class</code> in a\n<code>MANIFEST.MF</code>, if there is one in <code>${loader.home}/META-INF</code>.",
+      "translation": "`loader.main`：类加载器设置好后，将委托执行的主方法。没有默认值，但如果 `${loader.home}/META-INF` 中存在一个 `MANIFEST.MF`，则会回退到查找其中的 `<code>Start-Class</code>`。",
+      "count": 2
+    },
+    {
+      "source": "<code>loader.path</code>: a comma-separated list of directories (containing file\nresources and/or nested archives in *.jar or *.zip or archives) or archives to append\nto the classpath. <code>BOOT-INF/classes,BOOT-INF/lib</code> in the application archive are\nalways used",
+      "translation": "<code>loader.path</code>：一个逗号分隔的目录列表（包含文件资源，和/或嵌套在 *.jar 或 *.zip 或归档中的归档），用于追加到类路径。应用程序归档中的 <code>BOOT-INF/classes,BOOT-INF/lib</code> 始终被使用。",
+      "count": 2
+    },
+    {
+      "source": "Dave Syer, Janne Valkealahti, Andy Wilkinson, Phillip Webb, Scott Frederick",
+      "translation": "Dave Syer, Janne Valkealahti, Andy Wilkinson, Phillip Webb, Scott Frederick",
+      "count": 2
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">Launcher</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">Launcher</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"Launcher.html#getArchive()\">Launcher</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"Launcher.html#getArchive()\">Launcher</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"Launcher.html#getMainClass()\">Launcher</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"Launcher.html#getMainClass()\">Launcher</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "<span class=\"description-from-type-label\">Description copied from class: <code><a href=\"Launcher.html#getClassPathUrls()\">Launcher</a></code></span>",
+      "translation": "<span class=\"description-from-type-label\">描述从类复制：<code><a href=\"Launcher.html#getClassPathUrls()\">Launcher</a></code></span>",
+      "count": 1
+    },
+    {
+      "source": "Properties key for default command line arguments.",
+      "translation": "命令行默认参数的属性键。",
+      "count": 1
+    },
+    {
+      "source": "Properties key for name of external configuration file (excluding suffix).",
+      "translation": "外部配置文件名称的属性键（不包括后缀）。",
+      "count": 1
+    },
+    {
+      "source": "Properties key for home directory.",
+      "translation": "主目录的 Properties 键。",
+      "count": 1
+    },
+    {
+      "source": "Properties key for main class.",
+      "translation": "主类的属性键。",
+      "count": 1
+    },
+    {
+      "source": "Properties key for classpath entries (directories possibly containing jars or\njars).",
+      "translation": "类路径条目（可能包含 jar 或 jar）的属性键。",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">createClassLoader</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
+      "translation": "`<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">createClassLoader</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"Launcher.html#getArchive()\">getArchive</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
+      "translation": "`<code><a href=\"Launcher.html#getArchive()\">getArchive</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"Launcher.html#getMainClass()\">getMainClass</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
+      "translation": "`<code><a href=\"Launcher.html#getMainClass()\">getMainClass</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a href=\"Launcher.html#getClassPathUrls()\">getClassPathUrls</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
+      "translation": "`<code><a href=\"Launcher.html#getClassPathUrls()\">getClassPathUrls</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - if the classloader cannot be created",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - 如果无法创建类加载器",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - if the main class cannot be obtained",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - 如果无法获取主类",
+      "count": 1
+    },
+    {
+      "source": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - if the class path archives cannot be obtained",
+      "translation": "<code><a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html\" title=\"class or interface in java.lang\">Exception</a></code> - 如果无法获取类路径归档",
+      "count": 1
+    },
+    {
+      "source": "<code>urls</code> - the classpath URLs",
+      "translation": "<code>urls</code> - 类路径 URL",
+      "count": 1
+    },
+    {
+      "source": "the classloader",
+      "translation": "类加载器",
+      "count": 1
+    },
+    {
+      "source": "the launched archive",
+      "translation": "已启动的归档",
+      "count": 1
+    },
+    {
+      "source": "the name of the main class",
+      "translation": "主类的名称",
+      "count": 1
+    },
+    {
+      "source": "the class path archives",
+      "translation": "类路径归档",
+      "count": 1
+    },
+    {
+      "source": "Field Details",
+      "translation": "字段详情",
+      "count": 1
+    }
+  ]
+}
