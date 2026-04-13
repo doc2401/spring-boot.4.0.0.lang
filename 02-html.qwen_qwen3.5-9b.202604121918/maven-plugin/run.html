@@ -1116,10 +1116,10 @@
 此外，还明确支持 <a href="#run.examples.system-properties">系统属性</a> 和 <a href="#run.examples.environment-variables">环境变量</a>。</p>
 </div>
 <div class="paragraph">
-<p>由于启用配置文件非常常见，因此提供了专用的 <code>profiles</code>` 属性，可作为 `<code>-Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev"</code> 的快捷方式，请参阅 <a href="#run.examples.specify-active-profiles">指定活动配置文件</a>。</p>
+<p>由于启用配置文件非常常见，因此提供了专用的 <code>profiles</code>` 属性，可作为 <code>-Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev"</code> 的快捷方式，请参阅 <a href="#run.examples.specify-active-profiles">指定活动配置文件</a>。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot `<code>devtools` 是一个模块，用于在使用 Spring Boot 应用程序时改善开发体验。要启用它，只需将以下依赖添加到您的项目中：</code></p>
+<p>Spring Boot <code>devtools` 是一个模块，用于在使用 Spring Boot 应用程序时改善开发体验。要启用它，只需将以下依赖添加到您的项目中：</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1163,7 +1163,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>当启用 <code>addResources</code>` 时，任何 `<code>src/main/resources</code> 目录都会在运行应用程序时被添加到应用程序类路径中，并且输出类中的任何重复项都会被移除。
+<p>当启用 <code>addResources</code>` 时，任何 <code>src/main/resources</code> 目录都会在运行应用程序时被添加到应用程序类路径中，并且输出类中的任何重复项都会被移除。
 这允许资源的热刷新，在开发 Web 应用程序时非常有用。
 例如，您可以对 HTML、CSS 或 JavaScript 文件进行修改并立即看到更改效果，而无需重新编译应用程序。
 这也是让前端开发人员无需下载和安装 Java IDE 即可工作的一个有帮助的方式。</p>
@@ -1180,7 +1180,7 @@
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>为了与 `<code>repackage`</code> 目标保持一致，`<code>run`</code> 目标构建类路径的方式使得在插件配置中排除的任何依赖也会从类路径中排除。
+<p>为了与 <code>repackage`</code> 目标保持一致，<code>run`</code> 目标构建类路径的方式使得在插件配置中排除的任何依赖也会从类路径中排除。
 有关详细信息，请参阅<a class="xref page" href="packaging.html#packaging.examples.exclude-dependency">专用示例</a>。</p>
 </div>
 <div class="paragraph">
@@ -1335,7 +1335,7 @@
 <div class="sect3">
 <h4 id="run.run-goal.parameter-details.add-resources"><a class="anchor" href="#run.run-goal.parameter-details.add-resources"></a><code>addResources</code></h4>
 <div class="paragraph">
-<p>直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 `<code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 `<code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。</p>
+<p>直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 <code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 <code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2128,7 +2128,7 @@
 <div class="sect3">
 <h4 id="run.test-run-goal.parameter-details.add-resources"><a class="anchor" href="#run.test-run-goal.parameter-details.add-resources"></a><code>addResources</code></h4>
 <div class="paragraph">
-<p>直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 `<code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 `<code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。</p>
+<p>直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 <code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 <code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2842,7 +2842,7 @@
 <p>如果值为空或未定义（即 `<my-property></my-property>`），系统属性将以空字符串作为值进行设置。Maven 会修剪 pom 中指定的值，因此无法通过此机制指定需要以空格开头或结尾的系统属性：请考虑使用 `jvmArguments` 代替。</p>
 </div>
 <div class="paragraph">
-<p>任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 `<code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。</p>
+<p>任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 <code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。</p>
 </div>
 <div class="paragraph">
 <p><code>jvmArguments</code> 参数的优先级高于通过上述机制定义的系统属性。在以下示例中，<code>property1</code> 的值为 <code>overridden</code>：</p>
@@ -2884,7 +2884,7 @@
 <p>如果值为空或未定义（即 `<my_env></my_env>`），则环境变量将设置为空字符串作为其值。Maven 会修剪 pom 中指定的值，因此无法指定需要以空格开头或结尾的环境变量。</p>
 </div>
 <div class="paragraph">
-<p>任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 `<code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。</p>
+<p>任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 <code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。</p>
 </div>
 <div class="paragraph">
 <p>以此方式定义的环境变量优先于现有值。</p>
@@ -2916,7 +2916,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>在命令行中，参数之间用空格分隔，方式与 `<code>jvmArguments` 相同。如果参数包含空格，请确保对其进行引用。在以下示例中，有两个参数可用：<code>property1</code> 和 <code>property2=Hello World</code>：</code></p>
+<p>在命令行中，参数之间用空格分隔，方式与 <code>jvmArguments` 相同。如果参数包含空格，请确保对其进行引用。在以下示例中，有两个参数可用：<code>property1</code> 和 <code>property2=Hello World</code>：</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2930,7 +2930,7 @@
 <p>特定应用程序要使用的活动配置文件，可以使用 <code>profiles</code> 参数指定。</p>
 </div>
 <div class="paragraph">
-<p>以下配置启用 <code>local</code>` 和 `<code>dev</code> 配置文件：</p>
+<p>以下配置启用 <code>local</code>` 和 <code>dev</code> 配置文件：</p>
 </div>
 <div class="listingblock">
 <div class="content">

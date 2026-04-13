@@ -24,7 +24,7 @@
     },
     {
       "source": "The example above produces configuration properties for <code>my.properties.name</code> and <code>my.properties.nested.number</code>.\nWithout the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> annotation on the <code>nested</code> field, the <code>my.properties.nested.number</code> property would not be bindable in a native image.\nYou can also annotate the getter method.",
-      "translation": "上面的示例为 <code>my.properties.name</code>` 和 `<code>my.properties.nested.number</code>` 生成配置属性。如果在 `<code>nested</code>` 字段上没有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> 注解，则无法在原生镜像中绑定 `<code>my.properties.nested.number</code> 属性。您也可以对 getter 方法添加该注解。",
+      "translation": "上面的示例为 <code>my.properties.name</code>` 和 <code>my.properties.nested.number</code>` 生成配置属性。如果在 <code>nested</code>` 字段上没有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> 注解，则无法在原生镜像中绑定 <code>my.properties.nested.number</code> 属性。您也可以对 getter 方法添加该注解。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "If you prefer, custom hints can be provided statically in one or more GraalVM JSON hint files.\nSuch files should be placed in <code>src/main/resources/</code> within a <code>META-INF/native-image/*/*/</code> directory.\nThe <a class=\"xref page\" href=\"introducing-graalvm-native-images.html#packaging.native-image.introducing-graalvm-native-images.understanding-aot-processing\">hints generated during AOT processing</a> are written to a directory named <code>META-INF/native-image/{groupId}/{artifactId}/</code>.\nPlace your static hint files in a directory that does not clash with this location, such as <code>META-INF/native-image/{groupId}/{artifactId}-additional-hints/</code>.",
-      "translation": "如果您偏好，可以静态地在 GraalVM JSON 提示文件中提供一个或多个自定义提示。这些文件应放置在 <code>src/main/resources/</code>` 下的 `<code>META-INF/native-image/*/*/</code>` 目录中。<a class=\"xref page\" href=\"introducing-graalvm-native-images.html#packaging.native-image.introducing-graalvm-native-images.understanding-aot-processing\">AOT 处理期间生成的提示</a>会写入名为 `<code>META-INF/native-image/{groupId}/{artifactId}/</code>` 的目录。请将您的静态提示文件放置在不与该位置冲突的目录中，例如 `<code>META-INF/native-image/{groupId}/{artifactId}-additional-hints/</code>。",
+      "translation": "如果您偏好，可以静态地在 GraalVM JSON 提示文件中提供一个或多个自定义提示。这些文件应放置在 <code>src/main/resources/</code>` 下的 <code>META-INF/native-image/*/*/</code>` 目录中。<a class=\"xref page\" href=\"introducing-graalvm-native-images.html#packaging.native-image.introducing-graalvm-native-images.understanding-aot-processing\">AOT 处理期间生成的提示</a>会写入名为 <code>META-INF/native-image/{groupId}/{artifactId}/</code>` 的目录。请将您的静态提示文件放置在不与该位置冲突的目录中，例如 <code>META-INF/native-image/{groupId}/{artifactId}-additional-hints/</code>。",
       "count": 2
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "source": "Once <code>pack</code> has finished, you can launch the application using <code>docker run</code>:",
-      "translation": "一旦 <code>pack</code>` 完成，您可以使用 `<code>docker run</code> 启动应用程序：",
+      "translation": "一旦 <code>pack</code>` 完成，您可以使用 <code>docker run</code> 启动应用程序：",
       "count": 2
     },
     {

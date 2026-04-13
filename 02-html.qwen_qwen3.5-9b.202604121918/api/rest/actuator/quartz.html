@@ -1108,7 +1108,7 @@
 <h2 id="quartz.report"><a class="anchor" href="#quartz.report"></a>检索已注册的组</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>任务和触发器以组的形式进行管理。要获取已注册的任务和触发器组的列表，请向 <code>/actuator/quartz</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>任务和触发器以组的形式进行管理。要获取已注册的任务和触发器组的列表，请向 <code>/actuator/quartz</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1172,7 +1172,7 @@ Content-Length: 120
 <h2 id="quartz.job-groups"><a class="anchor" href="#quartz.job-groups"></a>检索已注册的作业名称</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取已注册作业名称的列表，请向 <code>/actuator/quartz/jobs</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取已注册作业名称的列表，请向 <code>/actuator/quartz/jobs</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1238,7 +1238,7 @@ Content-Length: 137
 <h2 id="quartz.trigger-groups"><a class="anchor" href="#quartz.trigger-groups"></a>检索已注册的触发器名称</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取已注册的触发器名称列表，请向 <code>/actuator/quartz/triggers</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取已注册的触发器名称列表，请向 <code>/actuator/quartz/triggers</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1311,7 +1311,7 @@ Content-Length: 229
 <h2 id="quartz.job-group"><a class="anchor" href="#quartz.job-group"></a>获取作业组概述</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取特定组中作业的概览，请向 <code>/actuator/quartz/jobs/{groupName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取特定组中作业的概览，请向 <code>/actuator/quartz/jobs/{groupName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1385,7 +1385,7 @@ Content-Length: 201
 <h2 id="quartz.trigger-group"><a class="anchor" href="#quartz.trigger-group"></a>获取触发器组的概览</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取特定组中触发器的概览，请向 <code>/actuator/quartz/triggers/{groupName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取特定组中触发器的概览，请向 <code>/actuator/quartz/triggers/{groupName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1642,7 +1642,7 @@ Content-Length: 1233
 <h2 id="quartz.job"><a class="anchor" href="#quartz.job"></a>获取作业详情</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取特定作业的详细信息，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取特定作业的详细信息，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1650,7 +1650,7 @@ Content-Length: 1233
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例检索了由 `<code>samples`</code> 组和 `<code>jobOne`</code> 名称标识的作业的详细信息。
+<p>前面的示例检索了由 <code>samples`</code> 组和 <code>jobOne`</code> 名称标识的作业的详细信息。
 生成的响应类似于以下内容：</p>
 </div>
 <div class="listingblock">
@@ -1783,7 +1783,7 @@ Content-Length: 594
 <h2 id="quartz.trigger-job"><a class="anchor" href="#quartz.trigger-job"></a>按需触发 Quartz 作业</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要触发特定的 Quartz 作业，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 `<code>POST</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要触发特定的 Quartz 作业，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 <code>POST</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1793,7 +1793,7 @@ Content-Length: 594
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例演示了如何触发属于 <code>samples</code>` 组且名为 `<code>jobOne</code> 的任务。</p>
+<p>前面的示例演示了如何触发属于 <code>samples</code>` 组且名为 <code>jobOne</code> 的任务。</p>
 </div>
 <div class="paragraph">
 <p>响应将类似于以下内容：</p>
@@ -1816,7 +1816,7 @@ Content-Length: 169
 <h3 id="quartz.trigger-job.request-structure"><a class="anchor" href="#quartz.trigger-job.request-structure"></a>请求结构</h3>
 <div class="paragraph">
 <p>该请求指定了与特定任务关联的期望 <code>state</code>`。
-发送一个包含 `<code>"state": "running"</code> 正文的 HTTP 请求，表示应立即运行该任务。
+发送一个包含 <code>"state": "running"</code> 正文的 HTTP 请求，表示应立即运行该任务。
 下表描述了请求的结构：</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1889,7 +1889,7 @@ Content-Length: 169
 <h2 id="quartz.trigger"><a class="anchor" href="#quartz.trigger"></a>获取触发器详情</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取特定触发器的详细信息，请向 <code>/actuator/quartz/triggers/{groupName}/{triggerName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取特定触发器的详细信息，请向 <code>/actuator/quartz/triggers/{groupName}/{triggerName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1897,7 +1897,7 @@ Content-Length: 169
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例检索了由 <code>samples</code>` 组和 `<code>example</code> 名称标识的触发器的详细信息。</p>
+<p>前面的示例检索了由 <code>samples</code>` 组和 <code>example</code> 名称标识的触发器的详细信息。</p>
 </div>
 <div class="sect2">
 <h3 id="quartz.trigger.common-response-structure"><a class="anchor" href="#quartz.trigger.common-response-structure"></a>通用响应结构</h3>
@@ -2009,17 +2009,17 @@ Content-Length: 169
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>calendarInterval</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日历时间间隔触发器详情（如有）。当 <code>type</code>` 为 `<code>calendarInterval</code> 时显示。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日历时间间隔触发器详情（如有）。当 <code>type</code>` 为 <code>calendarInterval</code> 时显示。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">自定义触发器详细信息（如有）。当 <code>type</code>` 为 `<code>custom</code> 时显示。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">自定义触发器详细信息（如有）。当 <code>type</code>` 为 <code>custom</code> 时显示。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cron</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cron 触发器详情（如有）。当 <code>type</code>` 为 `<code>cron</code> 时显示。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cron 触发器详情（如有）。当 <code>type</code>` 为 <code>cron</code> 时显示。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dailyTimeInterval</code></p></td>
@@ -2029,7 +2029,7 @@ Content-Length: 169
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>simple</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">简单触发器详情（如有）。当 <code>type</code>` 为 `<code>simple</code> 时显示。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">简单触发器详情（如有）。当 <code>type</code>` 为 <code>simple</code> 时显示。</p></td>
 </tr>
 </tbody>
 </table>

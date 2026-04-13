@@ -1119,7 +1119,7 @@
 <p>默认属性（通过设置 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#setDefaultProperties(java.util.Map)"><code>SpringApplication.setDefaultProperties(Map)</code></a> 指定）。</p>
 </li>
 <li>
-<p>在您的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 类上使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a> 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code>` 和 `<code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。</p>
+<p>在您的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 类上使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a> 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code>` 和 <code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。</p>
 </li>
 <li>
 <p>配置数据（例如 <code>application.properties</code> 文件）。</p>
@@ -1271,8 +1271,8 @@ class MyBean {
 </div>
 </div>
 <div class="paragraph">
-<p>在您的应用程序类路径中（例如，在您的 jar 内部），可以包含一个 <code>application.properties</code>` 文件，为 `<code>name</code> 提供合理的默认属性值。
-在新环境中运行时，可以在 jar 外部提供一个 <code>application.properties</code>` 文件来覆盖 `<code>name</code>。
+<p>在您的应用程序类路径中（例如，在您的 jar 内部），可以包含一个 <code>application.properties</code>` 文件，为 <code>name</code> 提供合理的默认属性值。
+在新环境中运行时，可以在 jar 外部提供一个 <code>application.properties</code>` 文件来覆盖 <code>name</code>。
 对于一次性测试，您可以使用特定的命令行开关启动（例如，<code>java -jar app.jar --name="Spring"</code>）。</p>
 </div>
 <div class="admonitionblock tip">
@@ -1307,7 +1307,7 @@ class MyBean {
 <p>环境变量和系统属性通常存在限制，导致某些属性名称无法使用。为此，Spring Boot 允许您将一组属性编码为单个 JSON 结构。</p>
 </div>
 <div class="paragraph">
-<p>当您的应用程序启动时，任何 <code>spring.application.json</code>` 或 `<code>SPRING_APPLICATION_JSON</code> 属性都将被解析并添加到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>。</p>
+<p>当您的应用程序启动时，任何 <code>spring.application.json</code>` 或 <code>SPRING_APPLICATION_JSON</code> 属性都将被解析并添加到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>。</p>
 </div>
 <div class="paragraph">
 <p>例如，可以在 UN*X 命令行中作为环境变量提供 <code>SPRING_APPLICATION_JSON</code> 属性：</p>
@@ -1357,7 +1357,7 @@ class MyBean {
 <h2 id="features.external-config.files"><a class="anchor" href="#features.external-config.files"></a>外部应用程序属性</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>当您的应用程序启动时，Spring Boot 会自动从以下位置查找并加载 <code>application.properties</code>` 和 `<code>application.yaml</code> 文件：</p>
+<p>当您的应用程序启动时，Spring Boot 会自动从以下位置查找并加载 <code>application.properties</code>` 和 <code>application.yaml</code> 文件：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1396,7 +1396,7 @@ class MyBean {
 <p>列表按优先级排序（较低项的值会覆盖较早项的值）。从加载的文件中读取的文档作为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html"><code>PropertySource</code></a> 实例添加到 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>如果您不喜欢将配置文件命名为 <code>application</code>`，可以通过指定 `<code>spring.config.name</code>` 环境变量属性来切换到其他文件名。例如，若要查找 `<code>myproject.properties</code>` 和 `<code>myproject.yaml</code> 文件，可以按以下方式运行应用程序：</p>
+<p>如果您不喜欢将配置文件命名为 <code>application</code>`，可以通过指定 <code>spring.config.name</code>` 环境变量属性来切换到其他文件名。例如，若要查找 <code>myproject.properties</code>` 和 <code>myproject.yaml</code> 文件，可以按以下方式运行应用程序：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1440,7 +1440,7 @@ class MyBean {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果 <code>spring.config.location</code>` 包含目录（而非文件），则它们应以 `<code>/</code>` 结尾。在运行时，这些目录将附加由 `<code>spring.config.name</code>` 生成的名称，然后再被加载。`<code>spring.config.location</code> 中指定的文件将被直接导入。</p>
+<p>如果 <code>spring.config.location</code>` 包含目录（而非文件），则它们应以 <code>/</code>` 结尾。在运行时，这些目录将附加由 <code>spring.config.name</code>` 生成的名称，然后再被加载。<code>spring.config.location</code> 中指定的文件将被直接导入。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -1464,7 +1464,7 @@ class MyBean {
 有关更多详细信息，请参阅<a href="#features.external-config.files.profile-specific">Profile Specific Files</a>部分中的示例。</p>
 </div>
 <div class="paragraph">
-<p>使用 <code>spring.config.location</code>` 配置的 Locations 会替换默认 Locations。例如，如果 `<code>spring.config.location</code>` 配置为值 `<code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整 Locations 集合为：</p>
+<p>使用 <code>spring.config.location</code>` 配置的 Locations 会替换默认 Locations。例如，如果 <code>spring.config.location</code>` 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整 Locations 集合为：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1477,7 +1477,7 @@ class MyBean {
 </ol>
 </div>
 <div class="paragraph">
-<p>如果您希望添加额外位置而不是替换它们，可以使用 <code>spring.config.additional-location</code>`。从额外位置加载的属性可以覆盖默认位置的属性。例如，如果 `<code>spring.config.additional-location</code>` 配置为值 `<code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整位置集为：</p>
+<p>如果您希望添加额外位置而不是替换它们，可以使用 <code>spring.config.additional-location</code>`。从额外位置加载的属性可以覆盖默认位置的属性。例如，如果 <code>spring.config.additional-location</code>` 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整位置集为：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1496,7 +1496,7 @@ class MyBean {
 </ol>
 </div>
 <div class="paragraph">
-<p>此搜索顺序允许您在其中一个配置文件指定默认值，然后在另一个配置文件中选择性地覆盖这些值。您可以在默认位置之一的 <code>application.properties</code>`（或您通过 `<code>spring.config.name</code> 选择的任何其他基名）中提供应用程序的默认值。这些默认值可以在运行时通过位于自定义位置之一的不同文件进行覆盖。</p>
+<p>此搜索顺序允许您在其中一个配置文件指定默认值，然后在另一个配置文件中选择性地覆盖这些值。您可以在默认位置之一的 <code>application.properties</code>`（或您通过 <code>spring.config.name</code> 选择的任何其他基名）中提供应用程序的默认值。这些默认值可以在运行时通过位于自定义位置之一的不同文件进行覆盖。</p>
 </div>
 <div class="sect2">
 <h3 id="features.external-config.files.optional-prefix"><a class="anchor" href="#features.external-config.files.optional-prefix"></a>可选位置</h3>
@@ -1504,7 +1504,7 @@ class MyBean {
 <p>默认情况下，如果指定的配置数据位置不存在，Spring Boot 将抛出 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/config/ConfigDataLocationNotFoundException.html"><code>ConfigDataLocationNotFoundException</code></a>，并且您的应用程序将无法启动。</p>
 </div>
 <div class="paragraph">
-<p>如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code>` 前缀。您可以将此前缀与 `<code>spring.config.location</code>` 和 `<code>spring.config.additional-location</code> 属性一起使用，也可以与 <a href="#features.external-config.files.importing"><code>spring.config.import</code></a> 声明一起使用。</p>
+<p>如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code>` 前缀。您可以将此前缀与 <code>spring.config.location</code>` 和 <code>spring.config.additional-location</code> 属性一起使用，也可以与 <a href="#features.external-config.files.importing"><code>spring.config.import</code></a> 声明一起使用。</p>
 </div>
 <div class="paragraph">
 <p>例如，<code>spring.config.import</code> 的值为 <code>optional:file:./myconfig.properties</code> 时，即使缺少 <code>myconfig.properties</code> 文件，您的应用程序也能启动。</p>
@@ -1520,13 +1520,13 @@ class MyBean {
 <p>如果配置文件位置包含最后一个路径段的 <code>*</code> 字符，则被视为通配符位置。加载配置时会展开通配符，以便同时检查直接子目录。在存在多个配置属性来源的环境中（例如 Kubernetes），通配符位置特别有用。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您有一些 Redis 配置和一些 MySQL 配置，您可能希望将这两部分配置分开，同时要求它们都存在于 <code>application.properties</code>` 文件中。这可能会导致两个独立的 `<code>application.properties</code>` 文件挂载在不同的位置，如 `<code>/config/redis/application.properties</code>` 和 `<code>/config/mysql/application.properties</code>`。在这种情况下，使用通配符位置 `<code>config/*/</code> 将导致这两个文件都被处理。</p>
+<p>例如，如果您有一些 Redis 配置和一些 MySQL 配置，您可能希望将这两部分配置分开，同时要求它们都存在于 <code>application.properties</code>` 文件中。这可能会导致两个独立的 <code>application.properties</code>` 文件挂载在不同的位置，如 <code>/config/redis/application.properties</code>` 和 <code>/config/mysql/application.properties</code>`。在这种情况下，使用通配符位置 <code>config/*/</code> 将导致这两个文件都被处理。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下，Spring Boot 会在默认搜索位置中包含 <code>config/*/</code>。这意味着将搜索您 jar 文件之外的 `/config` 目录下的所有子目录。</p>
 </div>
 <div class="paragraph">
-<p>您可以使用 <code>spring.config.location</code>` 和 `<code>spring.config.additional-location</code> 属性自行配置通配符位置。</p>
+<p>您可以使用 <code>spring.config.location</code>` 和 <code>spring.config.additional-location</code> 属性自行配置通配符位置。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -1556,7 +1556,7 @@ class MyBean {
 <div class="sect2">
 <h3 id="features.external-config.files.profile-specific"><a class="anchor" href="#features.external-config.files.profile-specific"></a>配置文件特定文件</h3>
 <div class="paragraph">
-<p>除了 <code>application</code>` 属性文件外，Spring Boot 还将尝试使用命名约定 `<code>application-{profile}</code>` 加载特定于配置文件的文件。例如，如果您的应用程序激活了名为 `<code>prod</code>` 的配置 profile 并使用 YAML 文件，那么 `<code>application.yaml</code>` 和 `<code>application-prod.yaml</code> 都将被考虑。</p>
+<p>除了 <code>application</code>` 属性文件外，Spring Boot 还将尝试使用命名约定 <code>application-{profile}</code>` 加载特定于配置文件的文件。例如，如果您的应用程序激活了名为 <code>prod</code>` 的配置 profile 并使用 YAML 文件，那么 <code>application.yaml</code>` 和 <code>application-prod.yaml</code> 都将被考虑。</p>
 </div>
 <div class="paragraph">
 <p>特定于配置文件的属性从与标准 `application.properties` 相同的位置加载，且特定于配置文件的文件始终覆盖非特定于配置文件的那些。
@@ -1602,7 +1602,7 @@ class MyBean {
 </ol>
 </div>
 <div class="paragraph">
-<p>当使用 <code>classpath:/cfg/;classpath:/ext/</code>`（以 `<code>;</code>` 作为分隔符）时，我们会在同一级别处理 `<code>/cfg</code>` 和 `<code>/ext</code>：</p>
+<p>当使用 <code>classpath:/cfg/;classpath:/ext/</code>`（以 <code>;</code>` 作为分隔符）时，我们会在同一级别处理 <code>/cfg</code>` 和 <code>/ext</code>：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1622,7 +1622,7 @@ class MyBean {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 具有一组默认配置文件（默认为 <code>[default]</code>`），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 `<code>application-default</code> 的属性。</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 具有一组默认配置文件（默认为 <code>[default]</code>`），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 <code>application-default</code> 的属性。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -1681,7 +1681,7 @@ spring.config.import=optional:file:./dev.properties</code></pre>
 <div class="paragraph">
 <p>这将触发在当前目录中导入 <code>dev.properties</code> 文件（如果存在该文件）。
 从导入的 <code>dev.properties</code> 中获取的值将覆盖触发导入的文件中的值。
-在上述示例中，<code>dev.properties</code>` 可以将 `<code>spring.application.name</code> 重新定义为不同的值。</p>
+在上述示例中，<code>dev.properties</code>` 可以将 <code>spring.application.name</code> 重新定义为不同的值。</p>
 </div>
 <div class="paragraph">
 <p>导入项无论声明多少次，都只会导入一次。</p>
@@ -1708,7 +1708,7 @@ spring.config.import=optional:file:./dev.properties</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>例如，假设我们有一个包含 `application.jar` 文件的 <code>/demo</code>` 目录。我们可以添加一个 `<code>/demo/application.properties</code> 文件，内容如下：</p>
+<p>例如，假设我们有一个包含 `application.jar` 文件的 <code>/demo</code>` 目录。我们可以添加一个 <code>/demo/application.properties</code> 文件，内容如下：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1728,7 +1728,7 @@ spring.config.import=optional:file:./dev.properties</code></pre>
 </div>
 <div class="paragraph">
 <p>它将尝试加载 <code>/demo/core/extra/extra.properties</code>。
-<code>optional:extra/extra.properties</code>` 相对于 `<code>/demo/core/core.properties</code>`，因此完整目录为 `<code>/demo/core/</code>` + `<code>extra/extra.properties</code>。</p>
+<code>optional:extra/extra.properties</code>` 相对于 <code>/demo/core/core.properties</code>`，因此完整目录为 <code>/demo/core/</code>` + <code>extra/extra.properties</code>。</p>
 </div>
 </div>
 <div class="sect3">
@@ -1848,7 +1848,7 @@ spring:
 <p>某些云平台无法为挂载的文件添加文件扩展名。要导入这些无扩展名的文件，您需要向 Spring Boot 提供提示，以便它知道如何加载它们。您可以通过在方括号中添加扩展名提示来实现此操作。</p>
 </div>
 <div class="paragraph">
-<p>例如，假设您有一个希望作为 YAML 导入的 <code>/etc/config/myconfig</code>` 文件。您可以使用以下内容从您的 `<code>application.properties</code> 中导入它：</p>
+<p>例如，假设您有一个希望作为 YAML 导入的 <code>/etc/config/myconfig</code>` 文件。您可以使用以下内容从您的 <code>application.properties</code> 中导入它：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">
@@ -1887,7 +1887,7 @@ spring:
 <p>在云平台上运行应用程序（例如 Kubernetes）时，您通常需要读取平台提供的配置值。您可以使用环境变量来实现此目的，或者使用<a href="#features.external-config.files.configtree">配置树</a>。</p>
 </div>
 <div class="paragraph">
-<p>您甚至可以将整个配置以属性或 YAML 格式存储在（多行）环境变量中，并使用 <code>env:</code>` 前缀加载它们。假设有一个名为 `<code>MY_CONFIGURATION</code> 的环境变量，其内容如下：</p>
+<p>您甚至可以将整个配置以属性或 YAML 格式存储在（多行）环境变量中，并使用 <code>env:</code>` 前缀加载它们。假设有一个名为 <code>MY_CONFIGURATION</code> 的环境变量，其内容如下：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1980,7 +1980,7 @@ my.cluster=Cluster1</code></pre>
 <p><code>username</code> 文件的内容将是一个配置值，而 <code>password</code> 的内容将是一个密钥。</p>
 </div>
 <div class="paragraph">
-<p>要导入这些属性，您可以在 <code>application.properties</code>` 或 `<code>application.yaml</code> 文件中添加以下内容：</p>
+<p>要导入这些属性，您可以在 <code>application.properties</code>` 或 <code>application.yaml</code> 文件中添加以下内容：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_7">
 <div class="content">
@@ -2103,7 +2103,7 @@ config 树下的文件夹和文件名构成了属性名称。
 </div>
 </div>
 <div class="paragraph">
-<p>这将添加 <code>db.username</code>`、`<code>db.password</code>`、`<code>mq.username</code>` 和 `<code>mq.password</code> 属性。</p>
+<p>这将添加 <code>db.username</code>`、<code>db.password</code>`、<code>mq.username</code>` 和 <code>mq.password</code> 属性。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2118,7 +2118,7 @@ config 树下的文件夹和文件名构成了属性名称。
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>配置树也可用于 Docker 机密。当授予 Docker Swarm 服务访问某个机密的权限时，该机密会被挂载到容器中。例如，如果名为 <code>db.password</code>` 的机密被挂载到位置 `<code>/run/secrets/</code>，您可以使用以下方法将其提供给 Spring 环境：</p>
+<p>配置树也可用于 Docker 机密。当授予 Docker Swarm 服务访问某个机密的权限时，该机密会被挂载到容器中。例如，如果名为 <code>db.password</code>` 的机密被挂载到位置 <code>/run/secrets/</code>，您可以使用以下方法将其提供给 Spring 环境：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_9">
 <div class="content">
@@ -2193,7 +2193,7 @@ app.description=${app.name} is a Spring Boot application written by ${username:U
 </div>
 </div>
 <div class="paragraph">
-<p>假设 <code>username</code>` 属性未在别处设置，则 `<code>app.description</code>` 的值将为 `<code>MyApp is a Spring Boot application written by Unknown</code>。</p>
+<p>假设 <code>username</code>` 属性未在别处设置，则 <code>app.description</code>` 的值将为 <code>MyApp is a Spring Boot application written by Unknown</code>。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2253,7 +2253,7 @@ spring:
 </div>
 </div>
 <div class="paragraph">
-<p>对于 <code>application.properties</code>` 文件，使用特殊的 `<code>#---</code>` 或 `<code>!---</code> 注释来标记文档分割：</p>
+<p>对于 <code>application.properties</code>` 文件，使用特殊的 <code>#---</code>` 或 <code>!---</code> 注释来标记文档分割：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2538,7 +2538,7 @@ my.number-in-range=${random.int[1024,65536]}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>`random.int*` 语法为 <code>OPEN value (,max) CLOSE</code>`，其中 `<code>OPEN,CLOSE</code>` 可以是任意字符，而 `<code>value,max</code>` 是整数。如果提供了 `<code>max</code>`，则 `<code>value</code>` 是最小值，`<code>max</code> 是最大值（不包含）。</p>
+<p>`random.int*` 语法为 <code>OPEN value (,max) CLOSE</code>`，其中 <code>OPEN,CLOSE</code>` 可以是任意字符，而 <code>value,max</code>` 是整数。如果提供了 <code>max</code>`，则 <code>value</code>` 是最小值，<code>max</code> 是最大值（不包含）。</p>
 </div>
 </div>
 </div>
@@ -2549,7 +2549,7 @@ my.number-in-range=${random.int[1024,65536]}</code></pre>
 <p>Spring Boot 支持为环境属性设置前缀。如果系统环境由多个具有不同配置需求的 Spring Boot 应用程序共享，这将非常有用。可以在运行应用程序之前，通过调用 <code>setEnvironmentPrefix(…​)</code> 方法直接在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 上设置系统环境属性的前缀。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您将前缀设置为 <code>input</code>`，则属性如 `<code>remote.timeout</code>` 将在系统环境中解析为 `<code>INPUT_REMOTE_TIMEOUT</code>。</p>
+<p>例如，如果您将前缀设置为 <code>input</code>`，则属性如 <code>remote.timeout</code>` 将在系统环境中解析为 <code>INPUT_REMOTE_TIMEOUT</code>。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -3226,7 +3226,7 @@ class MyApplication</span></code></pre>
 <p>当使用配置属性扫描或通过<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/EnableConfigurationProperties.html"><code>@EnableConfigurationProperties</code></a>注册带有<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>的 Bean 时，该 Bean 具有约定名称：<code>&lt;prefix&gt;-&lt;fqn&gt;</code>，其中<code>&lt;prefix&gt;</code>是<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>注解中指定的环境键前缀，而<code>&lt;fqn&gt;</code>是 Bean 的全限定名。如果注解未提供任何前缀，则仅使用 Bean 的全限定名。</p>
 </div>
 <div class="paragraph">
-<p>假设其位于 <code>com.example.app</code>` 包中，上述 `<code>SomeProperties</code>` 示例的 Bean 名称为 `<code>some.properties-com.example.app.SomeProperties</code>。</p>
+<p>假设其位于 <code>com.example.app</code>` 包中，上述 <code>SomeProperties</code>` 示例的 Bean 名称为 <code>some.properties-com.example.app.SomeProperties</code>。</p>
 </div>
 </td>
 </tr>
@@ -3392,7 +3392,7 @@ class ThirdPartyConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>任何带有 <code>another</code>` 前缀的 JavaBean 属性都将以与前述 `<code>SomeProperties</code>` 示例类似的方式映射到该 `<code>AnotherComponent</code> Bean。</p>
+<p>任何带有 <code>another</code>` 前缀的 JavaBean 属性都将以与前述 <code>SomeProperties</code>` 示例类似的方式映射到该 <code>AnotherComponent</code> Bean。</p>
 </div>
 </div>
 <div class="sect2">
@@ -3548,7 +3548,7 @@ class MyPersonProperties {
 <div class="sect3">
 <h4 id="features.external-config.typesafe-configuration-properties.relaxed-binding.maps"><a class="anchor" href="#features.external-config.typesafe-configuration-properties.relaxed-binding.maps"></a>绑定映射</h4>
 <div class="paragraph">
-<p>绑定到 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code>` 值。如果键未被 `<code>[]</code>` 包围，任何非字母数字、`<code>-</code>` 或 `<code>.</code> 的字符都将被移除。</p>
+<p>绑定到 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code>` 值。如果键未被 <code>[]</code>` 包围，任何非字母数字、<code>-</code>` 或 <code>.</code> 的字符都将被移除。</p>
 </div>
 <div class="paragraph">
 <p>例如，考虑将以下属性绑定到 <code>Map<string,string></string,string></code>：</p>
@@ -3603,7 +3603,7 @@ my.map./key3=value3</code></pre>
 由于 `key3` 未被方括号包围，因此已从其上去除了斜杠。</p>
 </div>
 <div class="paragraph">
-<p>绑定标量值时，键中包含 <code>.</code>` 的无需被 `<code>[]</code>` 包围。标量值包括枚举以及 `<code>java.lang</code>` 包中的所有类型，但 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html"><code>Object</code></a> 除外。将 `<code>a.b=c</code>` 绑定到 `<code>Map&lt;String, String&gt;</code>` 会保留键中的 `<code>.</code>`，并返回包含条目 `<code>{"a.b"="c"}</code>` 的 Map。对于任何其他类型，如果您的 `<code>key</code>` 包含 `<code>.</code>`，则需要使用方括号表示法。例如，将 `<code>a.b=c</code>` 绑定到 `<code>Map&lt;String, Object&gt;</code>` 会返回包含条目 `<code>{"a"={"b"="c"}}</code>` 的 Map，而 `<code>[a.b]=c</code>` 则会返回包含条目 `<code>{"a.b"="c"}</code> 的 Map。</p>
+<p>绑定标量值时，键中包含 <code>.</code>` 的无需被 <code>[]</code>` 包围。标量值包括枚举以及 <code>java.lang</code>` 包中的所有类型，但 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html"><code>Object</code></a> 除外。将 <code>a.b=c</code>` 绑定到 <code>Map&lt;String, String&gt;</code>` 会保留键中的 <code>.</code>`，并返回包含条目 <code>{"a.b"="c"}</code>` 的 Map。对于任何其他类型，如果您的 <code>key</code>` 包含 <code>.</code>`，则需要使用方括号表示法。例如，将 <code>a.b=c</code>` 绑定到 <code>Map&lt;String, Object&gt;</code>` 会返回包含条目 <code>{"a"={"b"="c"}}</code>` 的 Map，而 <code>[a.b]=c</code>` 则会返回包含条目 <code>{"a.b"="c"}</code> 的 Map。</p>
 </div>
 </div>
 <div class="sect3">
@@ -3631,16 +3631,16 @@ my.map./key3=value3</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>例如，配置属性 <code>spring.main.log-startup-info</code>` 将对应名为 `<code>SPRING_MAIN_LOGSTARTUPINFO</code> 的环境变量。</p>
+<p>例如，配置属性 <code>spring.main.log-startup-info</code>` 将对应名为 <code>SPRING_MAIN_LOGSTARTUPINFO</code> 的环境变量。</p>
 </div>
 <div class="paragraph">
 <p>环境变量也可用于绑定对象列表。要绑定到 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html"><code>List</code></a>，变量名中的元素编号应使用下划线包围。</p>
 </div>
 <div class="paragraph">
-<p>例如，配置属性 <code>my.service[0].other</code>` 会使用名为 `<code>MY_SERVICE_0_OTHER</code> 的环境变量。</p>
+<p>例如，配置属性 <code>my.service[0].other</code>` 会使用名为 <code>MY_SERVICE_0_OTHER</code> 的环境变量。</p>
 </div>
 <div class="paragraph">
-<p>支持从环境变量进行绑定，适用于 <code>systemEnvironment</code>` 属性源以及任何名称以 `<code>-systemEnvironment</code> 结尾的附加属性源。</p>
+<p>支持从环境变量进行绑定，适用于 <code>systemEnvironment</code>` 属性源以及任何名称以 <code>-systemEnvironment</code> 结尾的附加属性源。</p>
 </div>
 </div>
 <div class="sect3">
@@ -3702,10 +3702,10 @@ class MyMapsProperties {
 </div>
 </div>
 <div class="paragraph">
-<p>设置 <code>MY_PROPS_VALUES_KEY=value</code>` 时，`<code>values</code>` <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 包含一个 `<code>{"key"="value"}</code> 条目。</p>
+<p>设置 <code>MY_PROPS_VALUES_KEY=value</code>` 时，<code>values</code>` <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 包含一个 <code>{"key"="value"}</code> 条目。</p>
 </div>
 <div class="paragraph">
-<p>只有环境变量名 `<strong>name</strong>` 会被转换为小写，而值不会。当设置 <code>MY_PROPS_VALUES_KEY=VALUE</code>` 时，`<code>values</code>` <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 包含一个 `<code>{"key"="VALUE"}</code> 条目。</p>
+<p>只有环境变量名 `<strong>name</strong>` 会被转换为小写，而值不会。当设置 <code>MY_PROPS_VALUES_KEY=VALUE</code>` 时，<code>values</code>` <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html"><code>Map</code></a> 包含一个 <code>{"key"="VALUE"}</code> 条目。</p>
 </div>
 </div>
 <div class="sect3">
@@ -3819,7 +3819,7 @@ my:
 </div>
 </div>
 <div class="paragraph">
-<p>如果未激活 <code>dev</code>` 配置文件，则 `<code>MyProperties.list</code>` 包含一个先前定义的 `<code>MyPojo</code>` 条目。然而，如果启用了 `<code>dev</code>` 配置文件，`<code>list</code>` <em>仍然</em>仅包含一个条目（名称为 `<code>my another name</code>`，描述为 `<code>null</code>`）。此配置 <em>不会</em>向列表添加第二个 `<code>MyPojo</code> 实例，也不会合并项目。</p>
+<p>如果未激活 <code>dev</code>` 配置文件，则 <code>MyProperties.list</code>` 包含一个先前定义的 <code>MyPojo</code>` 条目。然而，如果启用了 <code>dev</code>` 配置文件，<code>list</code>` <em>仍然</em>仅包含一个条目（名称为 <code>my another name</code>`，描述为 <code>null</code>`）。此配置 <em>不会</em>向列表添加第二个 <code>MyPojo</code> 实例，也不会合并项目。</p>
 </div>
 <div class="paragraph">
 <p>当在多个配置文件中指定了 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html"><code>List</code></a> 时，仅使用优先级最高的那一个。考虑以下示例：</p>
@@ -3872,7 +3872,7 @@ my:
 </div>
 </div>
 <div class="paragraph">
-<p>在前面的示例中，如果激活了 <code>dev</code>` 配置文件，则 `<code>MyProperties.list</code>` 包含 <em>一个</em> `<code>MyPojo</code>` 条目（名称为 `<code>my another name</code>`，描述为 `<code>null</code>）。
+<p>在前面的示例中，如果激活了 <code>dev</code>` 配置文件，则 <code>MyProperties.list</code>` 包含 <em>一个</em> <code>MyPojo</code>` 条目（名称为 <code>my another name</code>`，描述为 <code>null</code>）。
 对于 YAML，可以使用逗号分隔列表或 YAML 列表来完全覆盖列表的内容。</p>
 </div>
 <div class="paragraph">
@@ -3981,8 +3981,8 @@ my:
 </div>
 </div>
 <div class="paragraph">
-<p>如果未激活 <code>dev</code>` 配置文件，则 `<code>MyProperties.map</code>` 包含一个条目，其键为 `<code>key1</code>`（名称为 `<code>my name 1</code>`，描述为 `<code>my description 1</code>）。
-然而，如果启用了 <code>dev</code>` 配置文件，则 `<code>map</code>` 包含两个条目：键为 `<code>key1</code>`（名称为 `<code>dev name 1</code>`，描述为 `<code>my description 1</code>`）和键为 `<code>key2</code>`（名称为 `<code>dev name 2</code>`，描述为 `<code>dev description 2</code>）。</p>
+<p>如果未激活 <code>dev</code>` 配置文件，则 <code>MyProperties.map</code>` 包含一个条目，其键为 <code>key1</code>`（名称为 <code>my name 1</code>`，描述为 <code>my description 1</code>）。
+然而，如果启用了 <code>dev</code>` 配置文件，则 <code>map</code>` 包含两个条目：键为 <code>key1</code>`（名称为 <code>dev name 1</code>`，描述为 <code>my description 1</code>`）和键为 <code>key2</code>`（名称为 <code>dev name 2</code>`，描述为 <code>dev description 2</code>）。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -4038,7 +4038,7 @@ my:
 <div class="ulist">
 <ul>
 <li>
-<p>常规的 `<code>long`</code> 表示形式（默认单位为毫秒，除非已指定 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html"><code>@DurationUnit</code></a>）</p>
+<p>常规的 <code>long`</code> 表示形式（默认单位为毫秒，除非已指定 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html"><code>@DurationUnit</code></a>）</p>
 </li>
 <li>
 <p>标准 ISO-8601 格式 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)">由 </a><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html"><code>Duration</code></a> 使用</p>
@@ -4251,7 +4251,7 @@ class MyProperties(@param:DurationUnit(ChronoUnit.SECONDS) @param:DefaultValue("
 <div class="ulist">
 <ul>
 <li>
-<p>一个常规的 `<code>int`</code> 表示形式（除非已指定了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/PeriodUnit.html"><code>@PeriodUnit</code></a>，否则默认单位为天）</p>
+<p>一个常规的 <code>int`</code> 表示形式（除非已指定了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/PeriodUnit.html"><code>@PeriodUnit</code></a>，否则默认单位为天）</p>
 </li>
 <li>
 <p>标准 ISO-8601 格式 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html#parse(java.lang.CharSequence)">由 </a><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html"><code>Period</code></a> 使用</p>
@@ -4497,7 +4497,7 @@ class MyProperties(@param:DataSizeUnit(DataUnit.MEGABYTES) @param:DefaultValue("
 <div class="sect3">
 <h4 id="features.external-config.typesafe-configuration-properties.conversion.base64"><a class="anchor" href="#features.external-config.typesafe-configuration-properties.conversion.base64"></a>Base64 数据转换</h4>
 <div class="paragraph">
-<p>Spring Boot 支持解析经过 Base64 编码的二进制数据。如果您公开一个 <code>Resource</code>` 属性，则可以提供带有 `<code>base64:</code> 前缀的 Base64 编码文本作为其值，如下例所示：</p>
+<p>Spring Boot 支持解析经过 Base64 编码的二进制数据。如果您公开一个 <code>Resource</code>` 属性，则可以提供带有 <code>base64:</code> 前缀的 Base64 编码文本作为其值，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_34">
 <div class="content">

@@ -1186,7 +1186,7 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 <div class="paragraph">
 <p>下一步是更新构建配置，使项目生成 WAR 文件而不是 JAR 文件。
-如果您使用 Maven 和 <code>spring-boot-starter-parent</code>`（它会自动配置 Maven 的 WAR 插件），您只需修改 `<code>pom.xml</code> 将打包方式改为 war，如下所示：</p>
+如果您使用 Maven 和 <code>spring-boot-starter-parent</code>`（它会自动配置 Maven 的 WAR 插件），您只需修改 <code>pom.xml</code> 将打包方式改为 war，如下所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1246,7 +1246,7 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 <div class="paragraph">
 <p>如果您使用 Spring Boot <a class="xref page" href="../../build-tool-plugin/index.html">构建工具插件</a>，将嵌入式 Servlet 容器依赖标记为 provided 会生成一个可执行的 war 文件，其中提供的依赖被打包在 <code>lib-provided</code>` 目录中。
-这意味着，除了可以部署到 Servlet 容器之外，您还可以在命令行中使用 `<code>java -jar</code> 运行您的应用程序。</p>
+这意味着，除了可以部署到 Servlet 容器之外，您还可以在命令行中使用 <code>java -jar</code> 运行您的应用程序。</p>
 </div>
 </div>
 </div>
@@ -1327,7 +1327,7 @@ class MyApplication : SpringBootServletInitializer() {
 您可能稍后可以移除一些 Bean，并让 Spring Boot 为其提供自己的默认值，但在您这样做之前，应该能够使其先运行起来。</p>
 </div>
 <div class="paragraph">
-<p>静态资源可以移动到类路径根目录下的 <code>/public</code>`（或 `<code>/static</code>` 或 `<code>/resources</code>` 或 `<code>/META-INF/resources</code>）。
+<p>静态资源可以移动到类路径根目录下的 <code>/public</code>`（或 <code>/static</code>` 或 <code>/resources</code>` 或 <code>/META-INF/resources</code>）。
 `messages.properties` 也适用此规则（Spring Boot 会自动在类路径根目录下检测该文件）。</p>
 </div>
 <div class="paragraph">
@@ -1347,7 +1347,7 @@ class MyApplication : SpringBootServletInitializer() {
 </ul>
 </div>
 <div class="paragraph">
-<p>一旦 WAR 文件可以正常运行，您可以通过在 <code>Application</code>` 中添加一个 `<code>main</code> 方法使其可执行，如下例所示：</p>
+<p>一旦 WAR 文件可以正常运行，您可以通过在 <code>Application</code>` 中添加一个 <code>main</code> 方法使其可执行，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_3">
 <div class="content">

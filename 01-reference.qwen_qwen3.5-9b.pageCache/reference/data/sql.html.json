@@ -39,7 +39,7 @@
     },
     {
       "source": "Spring Data JPA repositories support three different modes of bootstrapping: default, deferred, and lazy.\nTo enable deferred or lazy bootstrapping, set the <code>spring.data.jpa.repositories.bootstrap-mode</code> property to <code>deferred</code> or <code>lazy</code> respectively.\nWhen using deferred or lazy bootstrapping, the auto-configured <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html\"><code>EntityManagerFactoryBuilder</code></a> will use the context’s <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html\"><code>AsyncTaskExecutor</code></a>, if any, as the bootstrap executor.\nIf more than one exists, the one named <code>applicationTaskExecutor</code> will be used.",
-      "translation": "Spring Data JPA 仓库支持三种不同的引导模式：默认、延迟和惰性。\n要启用延迟或惰性引导，请将 <code>spring.data.jpa.repositories.bootstrap-mode</code>` 属性设置为 `<code>deferred</code>` 或 `<code>lazy</code>`。\n在使用延迟或惰性引导时，自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html\"><code>EntityManagerFactoryBuilder</code></a> 将使用上下文中存在的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html\"><code>AsyncTaskExecutor</code></a>（如果有）作为引导执行器。\n如果存在多个，将使用名为 `<code>applicationTaskExecutor</code> 的那个。",
+      "translation": "Spring Data JPA 仓库支持三种不同的引导模式：默认、延迟和惰性。\n要启用延迟或惰性引导，请将 <code>spring.data.jpa.repositories.bootstrap-mode</code>` 属性设置为 <code>deferred</code>` 或 <code>lazy</code>`。\n在使用延迟或惰性引导时，自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html\"><code>EntityManagerFactoryBuilder</code></a> 将使用上下文中存在的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html\"><code>AsyncTaskExecutor</code></a>（如果有）作为引导执行器。\n如果存在多个，将使用名为 <code>applicationTaskExecutor</code> 的那个。",
       "count": 2
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "source": "In order to use jOOQ type-safe queries, you need to generate Java classes from your database schema.\nYou can follow the instructions in the <a href=\"https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3\">jOOQ user manual</a>.\nIf you use the <code>jooq-codegen-maven</code> plugin and you also use the <code>spring-boot-starter-parent</code> “parent POM”, you can safely omit the plugin’s <code>&lt;version&gt;</code> tag.\nYou can also use Spring Boot-defined version variables (such as <code>h2.version</code>) to declare the plugin’s database dependency.\nThe following listing shows an example:",
-      "translation": "为了使用 jOOQ 的类型安全查询，您需要从数据库架构生成 Java 类。您可以遵循<a href=\"https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3\">jOOQ 用户手册</a>中的说明。如果您使用 <code>jooq-codegen-maven</code>` 插件，并且也使用了 `<code>spring-boot-starter-parent</code>`“父 POM\"，则可以安全地省略插件的`<code>&lt;version&gt;</code>`标签。您还可以使用 Spring Boot 定义版本变量（例如 `<code>h2.version</code>）来声明插件的数据库依赖项。以下示例展示了这一点：",
+      "translation": "为了使用 jOOQ 的类型安全查询，您需要从数据库架构生成 Java 类。您可以遵循<a href=\"https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3\">jOOQ 用户手册</a>中的说明。如果您使用 <code>jooq-codegen-maven</code>` 插件，并且也使用了 <code>spring-boot-starter-parent</code>`“父 POM\"，则可以安全地省略插件的<code>&lt;version&gt;</code>`标签。您还可以使用 Spring Boot 定义版本变量（例如 <code>h2.version</code>）来声明插件的数据库依赖项。以下示例展示了这一点：",
       "count": 2
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "source": "By default, JPA databases are automatically created <strong>only</strong> if you use an embedded database (H2, HSQL, or Derby).\nYou can explicitly configure JPA settings by using <code>spring.jpa.*</code> properties.\nFor example, to create and drop tables you can add the following line to your <code>application.properties</code>:",
-      "translation": "默认情况下，仅在使用嵌入式数据库（H2、HSQL 或 Derby）时才会自动创建 JPA 数据库。\n您可以使用 <code>spring.jpa.*</code>` 属性显式配置 JPA 设置。\n例如，若要创建并删除表，您可以在 `<code>application.properties</code> 中添加以下行：",
+      "translation": "默认情况下，仅在使用嵌入式数据库（H2、HSQL 或 Derby）时才会自动创建 JPA 数据库。\n您可以使用 <code>spring.jpa.*</code>` 属性显式配置 JPA 设置。\n例如，若要创建并删除表，您可以在 <code>application.properties</code> 中添加以下行：",
       "count": 2
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "source": "If you are using this feature in your tests, you may notice that the same database is reused by your whole test suite regardless of the number of application contexts that you use.\nIf you want to make sure that each context has a separate embedded database, you should set <code>spring.datasource.generate-unique-name</code> to <code>true</code>.",
-      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.datasource.generate-unique-name</code>` 设置为 `<code>true</code>。",
+      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.datasource.generate-unique-name</code>` 设置为 <code>true</code>。",
       "count": 2
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "source": "DataSource configuration is controlled by external configuration properties in <code>spring.datasource.*</code>.\nFor example, you might declare the following section in <code>application.properties</code>:",
-      "translation": "数据源配置由 <code>spring.datasource.*</code>` 中的外部配置属性控制。例如，您可以在 `<code>application.properties</code> 中声明以下部分：",
+      "translation": "数据源配置由 <code>spring.datasource.*</code>` 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：",
       "count": 2
     },
     {
@@ -189,7 +189,7 @@
     },
     {
       "source": "If tuning of SQL exceptions is required, you can define your own <code>SQLExceptionTranslator</code> bean so that it is associated with the auto-configured <code>JdbcTemplate</code>.",
-      "translation": "如果需要调整 SQL 异常，您可以定义自己的 <code>SQLExceptionTranslator`</code> Bean，以便将其与自动配置的 `<code>JdbcTemplate</code> 关联。",
+      "translation": "如果需要调整 SQL 异常，您可以定义自己的 <code>SQLExceptionTranslator`</code> Bean，以便将其与自动配置的 <code>JdbcTemplate</code> 关联。",
       "count": 2
     },
     {
@@ -209,7 +209,7 @@
     },
     {
       "source": "The line in the preceding example passes a value of <code>true</code> for the <code>hibernate.globally_quoted_identifiers</code> property to the Hibernate entity manager.",
-      "translation": "前例中的行向 Hibernate 实体管理器传递了值为 <code>true</code>` 的 `<code>hibernate.globally_quoted_identifiers</code> 属性。",
+      "translation": "前例中的行向 Hibernate 实体管理器传递了值为 <code>true</code>` 的 <code>hibernate.globally_quoted_identifiers</code> 属性。",
       "count": 2
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "source": "set the header <code>X-Frame-Options</code> to <code>SAMEORIGIN</code> on responses from the console.",
-      "translation": "在来自控制台的响应中，将标头 <code>X-Frame-Options</code>` 设置为 `<code>SAMEORIGIN</code>。",
+      "translation": "在来自控制台的响应中，将标头 <code>X-Frame-Options</code>` 设置为 <code>SAMEORIGIN</code>。",
       "count": 2
     },
     {
@@ -254,12 +254,12 @@
     },
     {
       "source": "Unless the <code>spring.jooq.sql-dialect</code> property has been configured, Spring Boot determines the SQL dialect to use for your datasource.\nIf Spring Boot could not detect the dialect, it uses <code>DEFAULT</code>.",
-      "translation": "除非已配置 <code>spring.jooq.sql-dialect</code>` 属性，否则 Spring Boot 将确定用于数据源的 SQL 方言。如果 Spring Boot 无法检测到方言，它将使用 `<code>DEFAULT</code>。",
+      "translation": "除非已配置 <code>spring.jooq.sql-dialect</code>` 属性，否则 Spring Boot 将确定用于数据源的 SQL 方言。如果 Spring Boot 无法检测到方言，它将使用 <code>DEFAULT</code>。",
       "count": 2
     },
     {
       "source": "If you are using this feature in your tests, you may notice that the same database is reused by your whole test suite regardless of the number of application contexts that you use.\nIf you want to make sure that each context has a separate embedded database, you should set <code>spring.r2dbc.generate-unique-name</code> to <code>true</code>.",
-      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.r2dbc.generate-unique-name</code>` 设置为 `<code>true</code>。",
+      "translation": "如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.r2dbc.generate-unique-name</code>` 设置为 <code>true</code>。",
       "count": 2
     },
     {

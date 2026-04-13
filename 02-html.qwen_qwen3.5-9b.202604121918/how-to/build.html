@@ -1170,7 +1170,7 @@
 <h2 id="howto.build.generate-git-info"><a class="anchor" href="#howto.build.generate-git-info"></a>生成 Git 信息</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Maven 和 Gradle 都允许在构建项目时生成包含您的 <code>git</code>` 源代码仓库状态信息的 `<code>git.properties</code> 文件。</p>
+<p>Maven 和 Gradle 都允许在构建项目时生成包含您的 <code>git</code>` 源代码仓库状态信息的 <code>git.properties</code> 文件。</p>
 </div>
 <div class="paragraph">
 <p>对于 Maven 用户，`spring-boot-starter-parent` POM 包含一个预配置的插件，用于生成 `git.properties` 文件。要使用它，请将以下声明添加到您的 POM 中，以引入<a href="https://github.com/git-commit-id/git-commit-id-maven-plugin"><code>Git Commit Id Plugin</code></a>：</p>
@@ -1461,16 +1461,16 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>如果您正在构建 jar，请将应用程序的类和资源打包到嵌套的 <code>BOOT-INF/classes</code>` 目录中。如果您正在构建 war，则像往常一样将应用程序的类打包到嵌套的 `<code>WEB-INF/classes</code> 目录中。</p>
+<p>如果您正在构建 jar，请将应用程序的类和资源打包到嵌套的 <code>BOOT-INF/classes</code>` 目录中。如果您正在构建 war，则像往常一样将应用程序的类打包到嵌套的 <code>WEB-INF/classes</code> 目录中。</p>
 </li>
 <li>
-<p>在 jar 的嵌套 <code>BOOT-INF/lib</code>` 目录或 war 的 `<code>WEB-INF/lib</code> 中添加运行时依赖项。请记住<strong>不要</strong>压缩归档中的条目。</p>
+<p>在 jar 的嵌套 <code>BOOT-INF/lib</code>` 目录或 war 的 <code>WEB-INF/lib</code> 中添加运行时依赖项。请记住<strong>不要</strong>压缩归档中的条目。</p>
 </li>
 <li>
-<p>在嵌套的 <code>BOOT-INF/lib</code>` 目录（针对 jar）或 `<code>WEB-INF/lib-provided</code>` 目录（针对 war）中添加 `<code>provided</code>（嵌入式容器）依赖项。请记住<strong>不要</strong>压缩归档中的条目。</p>
+<p>在嵌套的 <code>BOOT-INF/lib</code>` 目录（针对 jar）或 <code>WEB-INF/lib-provided</code>` 目录（针对 war）中添加 <code>provided</code>（嵌入式容器）依赖项。请记住<strong>不要</strong>压缩归档中的条目。</p>
 </li>
 <li>
-<p>在归档的根目录添加 <code>spring-boot-loader</code>` 类（以便可用 `<code>Main-Class</code>）。</p>
+<p>在归档的根目录添加 <code>spring-boot-loader</code>` 类（以便可用 <code>Main-Class</code>）。</p>
 </li>
 <li>
 <p>使用适当的启动器（例如，对于 jar 文件使用<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/loader/launch/JarLauncher.html"><code>JarLauncher</code></a>）作为清单中的<code>Main-Class</code>属性，并将其所需的其他属性指定为清单条目——主要是通过设置一个<code>Start-Class</code>属性。</p>

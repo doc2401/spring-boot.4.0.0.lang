@@ -75,7 +75,7 @@ the actual binding processes, but it is used by the
 <code>spring-boot-configuration-processor</code> as a hint that a property is not bound as a
 single value. When this is specified, a nested group is created for the property and
 its type is harvested.
-<p>在下例中，`Host` 使用其字段被标记为嵌套属性，并创建一个包含 `Host` 定义的任何属性的 `<code>example.server.host</code>` 嵌套组：</p><pre><code class="java">@ConfigurationProperties("example.server")
+<p>在下例中，`Host` 使用其字段被标记为嵌套属性，并创建一个包含 `Host` 定义的任何属性的 <code>example.server.host</code>` 嵌套组：</p><pre><code class="java">@ConfigurationProperties("example.server")
 class ServerProperties {
 
     @NestedConfigurationProperty

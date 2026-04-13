@@ -89,12 +89,12 @@
     },
     {
       "source": "As the <code>BeanFactory</code> is fully prepared at build-time, conditions are also evaluated.\nThis has an important difference compared to what a regular Spring Boot application does at runtime.\nFor instance, if you want to opt-in or opt-out for certain features, you need to configure the environment used at build time to do so.\nThe <code>process-aot</code> goal shares a number of properties with the <a class=\"xref page\" href=\"run.html\">run goal</a> for that reason.",
-      "translation": "由于 <code>BeanFactory`</code> 在构建时已完全准备就绪，因此条件也会被评估。这与常规 Spring Boot 应用在运行时所做的操作存在重要区别。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。出于这一原因，`<code>process-aot</code> 目标与 <a class=\"xref page\" href=\"run.html\">run goal</a> 共享许多属性。",
+      "translation": "由于 <code>BeanFactory`</code> 在构建时已完全准备就绪，因此条件也会被评估。这与常规 Spring Boot 应用在运行时所做的操作存在重要区别。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。出于这一原因，<code>process-aot</code> 目标与 <a class=\"xref page\" href=\"run.html\">run goal</a> 共享许多属性。",
       "count": 2
     },
     {
       "source": "If you use <code>spring-boot-starter-parent</code> as the <code>parent</code> of your project, a <code>native</code> profile can be used to streamline the steps required to build a native image.",
-      "translation": "如果您将 <code>spring-boot-starter-parent</code>` 用作项目的 `<code>parent</code>`，则可以使用 `<code>native</code> profile 来简化构建原生镜像所需的步骤。",
+      "translation": "如果您将 <code>spring-boot-starter-parent</code>` 用作项目的 <code>parent</code>`，则可以使用 <code>native</code> profile 来简化构建原生镜像所需的步骤。",
       "count": 2
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "source": "The use of the raw classpath means that native image does not know about the generated <code>MANIFEST.MF</code>.\nIf you need to read the content of the manifest in a native image, for instance to get the implementation version of your application, configure the <code>classesDirectory</code> option to use the regular jar.",
-      "translation": "使用原始类路径意味着原生镜像不知道生成的 <code>MANIFEST.MF</code>`。如果您需要在原生镜像中读取清单内容（例如获取应用程序的实现版本），请配置 `<code>classesDirectory</code> 选项以使用常规 jar。",
+      "translation": "使用原始类路径意味着原生镜像不知道生成的 <code>MANIFEST.MF</code>`。如果您需要在原生镜像中读取清单内容（例如获取应用程序的实现版本），请配置 <code>classesDirectory</code> 选项以使用常规 jar。",
       "count": 2
     },
     {
@@ -114,7 +114,7 @@
     },
     {
       "source": "To use the <code>native</code> profile with a multi-modules project, you can create a customization of the <code>native</code> profile so that it invokes your preferred technique.",
-      "translation": "要与多模块项目一起使用 <code>native</code>` 配置文件，您可以创建一个自定义的 `<code>native</code> 配置文件，以便调用您首选的技术。",
+      "translation": "要与多模块项目一起使用 <code>native</code>` 配置文件，您可以创建一个自定义的 <code>native</code> 配置文件，以便调用您首选的技术。",
       "count": 2
     },
     {

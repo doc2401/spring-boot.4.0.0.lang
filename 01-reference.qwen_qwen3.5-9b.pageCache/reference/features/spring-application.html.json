@@ -29,7 +29,7 @@
     },
     {
       "source": "If you need to access the application arguments that were passed to <code>SpringApplication.run(…​)</code>, you can inject a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> bean.\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> interface provides access to both the raw <code>String[]</code> arguments as well as parsed <code>option</code> and <code>non-option</code> arguments, as shown in the following example:",
-      "translation": "如果您需要访问传递给 <code>SpringApplication.run(…​)</code>` 的应用程序参数，可以注入一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> Bean。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> 接口提供了对原始 `<code>String[]</code>` 参数以及解析后的 `<code>option</code>` 和 `<code>non-option</code> 参数的访问，如下例所示：",
+      "translation": "如果您需要访问传递给 <code>SpringApplication.run(…​)</code>` 的应用程序参数，可以注入一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> Bean。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> 接口提供了对原始 <code>String[]</code>` 参数以及解析后的 <code>option</code>` 和 <code>non-option</code> 参数的访问，如下例所示：",
       "count": 2
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "source": "The <code>application.title</code>, <code>application.version</code>, and <code>application.formatted-version</code> properties are only available if you are using <code>java -jar</code> or <code>java -cp</code> with Spring Boot launchers.\nThe values will not be resolved if you are running an unpacked jar and starting it with <code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code>\nor running your application as a native image.",
-      "translation": "`application.title`、`application.version` 和 `application.formatted-version` 属性仅在您使用 <code>java -jar</code>` 或 `<code>java -cp</code>` 配合 Spring Boot 启动器时可用。\n如果您解压 jar 包并使用 `<code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code> 启动，或将应用程序作为原生镜像运行，则这些值将不会被解析。",
+      "translation": "`application.title`、`application.version` 和 `application.formatted-version` 属性仅在您使用 <code>java -jar</code>` 或 <code>java -cp</code>` 配合 Spring Boot 启动器时可用。\n如果您解压 jar 包并使用 <code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code> 启动，或将应用程序作为原生镜像运行，则这些值将不会被解析。",
       "count": 2
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "source": "By default, <code>INFO</code> logging messages are shown, including some relevant startup details, such as the user that launched the application.\nIf you need a log level other than <code>INFO</code>, you can set it, as described in <a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">Log Levels</a>.\nThe application version is determined using the implementation version from the main application class’s package.\nStartup information logging can be turned off by setting <code>spring.main.log-startup-info</code> to <code>false</code>.\nThis will also turn off logging of the application’s active profiles.",
-      "translation": "默认情况下，会显示 `<code>INFO`</code> 级别的日志消息，其中包括一些相关的启动详细信息，例如启动应用程序的用户。\n如果您需要设置除 `<code>INFO`</code> 以外的日志级别，可以参照<a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">日志级别</a>中的说明进行设置。\n应用程序版本是根据主应用程序类所在包中的实现版本确定的。\n可以通过将 <code>spring.main.log-startup-info</code> 设置为 <code>false</code> 来关闭启动信息日志记录。\n这也将关闭应用程序活动配置文件的日志记录。",
+      "translation": "默认情况下，会显示 <code>INFO`</code> 级别的日志消息，其中包括一些相关的启动详细信息，例如启动应用程序的用户。\n如果您需要设置除 <code>INFO`</code> 以外的日志级别，可以参照<a class=\"xref page\" href=\"logging.html#features.logging.log-levels\">日志级别</a>中的说明进行设置。\n应用程序版本是根据主应用程序类所在包中的实现版本确定的。\n可以通过将 <code>spring.main.log-startup-info</code> 设置为 <code>false</code> 来关闭启动信息日志记录。\n这也将关闭应用程序活动配置文件的日志记录。",
       "count": 2
     },
     {
@@ -109,7 +109,7 @@
     },
     {
       "source": "To use the <code>application.*</code> properties, launch your application as a packed jar using <code>java -jar</code> or as an unpacked jar using <code>java org.springframework.boot.loader.launch.JarLauncher</code>.\nThis will initialize the <code>application.*</code> banner properties before building the classpath and launching your app.",
-      "translation": "要使用 <code>application.*</code>` 属性，请使用 `<code>java -jar</code>` 将应用程序打包为 jar 文件运行，或使用 `<code>java org.springframework.boot.loader.launch.JarLauncher</code>` 将其作为未打包的 jar 运行。这将在使用类路径构建并启动应用程序之前初始化 `<code>application.*</code> 横幅属性。",
+      "translation": "要使用 <code>application.*</code>` 属性，请使用 <code>java -jar</code>` 将应用程序打包为 jar 文件运行，或使用 <code>java org.springframework.boot.loader.launch.JarLauncher</code>` 将其作为未打包的 jar 运行。这将在使用类路径构建并启动应用程序之前初始化 <code>application.*</code> 横幅属性。",
       "count": 2
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> lets you chain together multiple method calls and includes <code>parent</code> and <code>child</code> methods that let you create a hierarchy, as shown in the following example:",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> 允许您链接多个方法调用，并包含 <code>parent</code>` 和 `<code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> 允许您链接多个方法调用，并包含 <code>parent</code>` 和 <code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "The banner that is printed on start up can be changed by adding a <code>banner.txt</code> file to your classpath or by setting the <code>spring.banner.location</code> property to the location of such a file.\nIf the file has an encoding other than UTF-8, you can set <code>spring.banner.charset</code>.",
-      "translation": "启动时打印的横幅可以通过在类路径中添加 <code>banner.txt</code>` 文件，或将 `<code>spring.banner.location</code>` 属性设置为该文件的位置来更改。如果文件的编码不是 UTF-8，您可以设置 `<code>spring.banner.charset</code>。",
+      "translation": "启动时打印的横幅可以通过在类路径中添加 <code>banner.txt</code>` 文件，或将 <code>spring.banner.location</code>` 属性设置为该文件的位置来更改。如果文件的编码不是 UTF-8，您可以设置 <code>spring.banner.charset</code>。",
       "count": 2
     },
     {
@@ -199,7 +199,7 @@
     },
     {
       "source": "The version number of your application, as declared in <code>MANIFEST.MF</code> and formatted for display (surrounded with brackets and prefixed with <code>v</code>).\n  For example <code>(v1.0)</code>.",
-      "translation": "您的应用程序版本号，在 <code>MANIFEST.MF</code>` 中声明并格式化用于显示（用括号包围并以 `<code>v</code>` 开头）。例如 `<code>(v1.0)</code>。",
+      "translation": "您的应用程序版本号，在 <code>MANIFEST.MF</code>` 中声明并格式化用于显示（用括号包围并以 <code>v</code>` 开头）。例如 <code>(v1.0)</code>。",
       "count": 2
     },
     {
@@ -209,7 +209,7 @@
     },
     {
       "source": "The title of your application, as declared in <code>MANIFEST.MF</code>.\n  For example <code>Implementation-Title: MyApp</code> is printed as <code>MyApp</code>.",
-      "translation": "您的应用程序标题，在 <code>MANIFEST.MF</code>` 中声明。例如，`<code>Implementation-Title: MyApp</code>` 会显示为 `<code>MyApp</code>。",
+      "translation": "您的应用程序标题，在 <code>MANIFEST.MF</code>` 中声明。例如，<code>Implementation-Title: MyApp</code>` 会显示为 <code>MyApp</code>。",
       "count": 2
     },
     {
@@ -244,7 +244,7 @@
     },
     {
       "source": "For instance, if you are running your application by using <code>java -jar</code>, you can enable the <code>debug</code> property as follows:",
-      "translation": "例如，如果您使用 <code>java -jar</code>` 运行应用程序，可以按以下方式启用 `<code>debug</code> 属性：",
+      "translation": "例如，如果您使用 <code>java -jar</code>` 运行应用程序，可以按以下方式启用 <code>debug</code> 属性：",
       "count": 2
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "source": "The Spring Boot version that you are using, formatted for display (surrounded with brackets and prefixed with <code>v</code>).\n  For example <code>(v4.0.0)</code>.",
-      "translation": "您正在使用的 Spring Boot 版本，格式化为显示形式（用括号包围并前缀为 <code>v</code>`）。例如 `<code>(v4.0.0)</code>。",
+      "translation": "您正在使用的 Spring Boot 版本，格式化为显示形式（用括号包围并前缀为 <code>v</code>`）。例如 <code>(v4.0.0)</code>。",
       "count": 2
     },
     {
@@ -334,7 +334,7 @@
     },
     {
       "source": "Virtual threads require Java 21 or later.\nFor the best experience, Java 24 or later is strongly recommended.\nTo enable virtual threads, set the <code>spring.threads.virtual.enabled</code> property to <code>true</code>.",
-      "translation": "虚拟线程需要 Java 21 或更高版本。为了获得最佳体验，强烈建议使用 Java 24 或更高版本。要启用虚拟线程，请将 <code>spring.threads.virtual.enabled</code>` 属性设置为 `<code>true</code>。",
+      "translation": "虚拟线程需要 Java 21 或更高版本。为了获得最佳体验，强烈建议使用 Java 24 或更高版本。要启用虚拟线程，请将 <code>spring.threads.virtual.enabled</code>` 属性设置为 <code>true</code>。",
       "count": 2
     },
     {

@@ -24,7 +24,7 @@
     },
     {
       "source": "Any String typed Maven variable can be passed as system properties.\nAny attempt to pass any other Maven variable type (for example a <code>List</code> or a <code>URL</code> variable) will cause the variable expression to be passed literally (unevaluated).",
-      "translation": "任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 `<code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。",
+      "translation": "任何类型的 Maven 字符串变量都可以作为系统属性传递。尝试传递任何其他类型的 Maven 变量（例如 <code>List</code>` 或 <code>URL</code> 变量）将导致变量表达式以字面形式（未求值）传递。",
       "count": 3
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "Add maven resources to the classpath directly, this allows live in-place editing of resources. Duplicate resources are removed from <code>target/classes</code> to prevent them from appearing twice if <code>ClassLoader.getResources()</code> is called. Please consider adding <code>spring-boot-devtools</code> to your project instead as it provides this feature and many more.",
-      "translation": "直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 `<code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 `<code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。",
+      "translation": "直接将 Maven 资源添加到类路径中，这允许对资源进行实时原地编辑。重复的资源会从 <code>target/classes</code>` 中移除，以防止在调用 <code>ClassLoader.getResources()</code>` 时出现两次。请考虑将 <code>spring-boot-devtools</code> 添加到您的项目中，因为它提供了此功能以及更多功能。",
       "count": 3
     },
     {
@@ -129,12 +129,12 @@
     },
     {
       "source": "As enabling a profile is quite common, there is dedicated <code>profiles</code> property that offers a shortcut for <code>-Dspring-boot.run.jvmArguments=\"-Dspring.profiles.active=dev\"</code>, see <a href=\"#run.examples.specify-active-profiles\">Specify active profiles</a>.",
-      "translation": "由于启用配置文件非常常见，因此提供了专用的 <code>profiles</code>` 属性，可作为 `<code>-Dspring-boot.run.jvmArguments=\"-Dspring.profiles.active=dev\"</code> 的快捷方式，请参阅 <a href=\"#run.examples.specify-active-profiles\">指定活动配置文件</a>。",
+      "translation": "由于启用配置文件非常常见，因此提供了专用的 <code>profiles</code>` 属性，可作为 <code>-Dspring-boot.run.jvmArguments=\"-Dspring.profiles.active=dev\"</code> 的快捷方式，请参阅 <a href=\"#run.examples.specify-active-profiles\">指定活动配置文件</a>。",
       "count": 2
     },
     {
       "source": "In order to be consistent with the <code>repackage</code> goal, the <code>run</code> goal builds the classpath in such a way that any dependency that is excluded in the plugin’s configuration gets excluded from the classpath as well.\nFor more details, see <a class=\"xref page\" href=\"packaging.html#packaging.examples.exclude-dependency\">the dedicated example</a>.",
-      "translation": "为了与 `<code>repackage`</code> 目标保持一致，`<code>run`</code> 目标构建类路径的方式使得在插件配置中排除的任何依赖也会从类路径中排除。\n有关详细信息，请参阅<a class=\"xref page\" href=\"packaging.html#packaging.examples.exclude-dependency\">专用示例</a>。",
+      "translation": "为了与 <code>repackage`</code> 目标保持一致，<code>run`</code> 目标构建类路径的方式使得在插件配置中排除的任何依赖也会从类路径中排除。\n有关详细信息，请参阅<a class=\"xref page\" href=\"packaging.html#packaging.examples.exclude-dependency\">专用示例</a>。",
       "count": 2
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "source": "On the command-line, arguments are separated by a space the same way <code>jvmArguments</code> are.\nIf an argument contains a space, make sure to quote it.\nIn the following example, two arguments are available: <code>property1</code> and <code>property2=Hello World</code>:",
-      "translation": "在命令行中，参数之间用空格分隔，方式与 `<code>jvmArguments` 相同。如果参数包含空格，请确保对其进行引用。在以下示例中，有两个参数可用：<code>property1</code> 和 <code>property2=Hello World</code>：",
+      "translation": "在命令行中，参数之间用空格分隔，方式与 <code>jvmArguments` 相同。如果参数包含空格，请确保对其进行引用。在以下示例中，有两个参数可用：<code>property1</code> 和 <code>property2=Hello World</code>：",
       "count": 2
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "source": "When <code>addResources</code> is enabled, any <code>src/main/resources</code> directory will be added to the application classpath when you run the application and any duplicate found in the classes output will be removed.\nThis allows hot refreshing of resources which can be very useful when developing web applications.\nFor example, you can work on HTML, CSS or JavaScript files and see your changes immediately without recompiling your application.\nIt is also a helpful way of allowing your front end developers to work without needing to download and install a Java IDE.",
-      "translation": "当启用 <code>addResources</code>` 时，任何 `<code>src/main/resources</code> 目录都会在运行应用程序时被添加到应用程序类路径中，并且输出类中的任何重复项都会被移除。\n这允许资源的热刷新，在开发 Web 应用程序时非常有用。\n例如，您可以对 HTML、CSS 或 JavaScript 文件进行修改并立即看到更改效果，而无需重新编译应用程序。\n这也是让前端开发人员无需下载和安装 Java IDE 即可工作的一个有帮助的方式。",
+      "translation": "当启用 <code>addResources</code>` 时，任何 <code>src/main/resources</code> 目录都会在运行应用程序时被添加到应用程序类路径中，并且输出类中的任何重复项都会被移除。\n这允许资源的热刷新，在开发 Web 应用程序时非常有用。\n例如，您可以对 HTML、CSS 或 JavaScript 文件进行修改并立即看到更改效果，而无需重新编译应用程序。\n这也是让前端开发人员无需下载和安装 Java IDE 即可工作的一个有帮助的方式。",
       "count": 2
     },
     {
@@ -179,12 +179,12 @@
     },
     {
       "source": "The following configuration enables the <code>local</code> and <code>dev</code> profiles:",
-      "translation": "以下配置启用 <code>local</code>` 和 `<code>dev</code> 配置文件：",
+      "translation": "以下配置启用 <code>local</code>` 和 <code>dev</code> 配置文件：",
       "count": 2
     },
     {
       "source": "Spring Boot <code>devtools</code> is a module to improve the development-time experience when working on Spring Boot applications.\nTo enable it, just add the following dependency to your project:",
-      "translation": "Spring Boot `<code>devtools` 是一个模块，用于在使用 Spring Boot 应用程序时改善开发体验。要启用它，只需将以下依赖添加到您的项目中：",
+      "translation": "Spring Boot <code>devtools` 是一个模块，用于在使用 Spring Boot 应用程序时改善开发体验。要启用它，只需将以下依赖添加到您的项目中：",
       "count": 2
     },
     {

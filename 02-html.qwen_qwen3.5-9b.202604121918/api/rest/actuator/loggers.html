@@ -1108,7 +1108,7 @@
 <h2 id="loggers.all"><a class="anchor" href="#loggers.all"></a>获取所有 Logger</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取应用程序的日志记录器，请向 <code>/actuator/loggers</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取应用程序的日志记录器，请向 <code>/actuator/loggers</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1214,7 +1214,7 @@ Content-Length: 791
 <h2 id="loggers.single"><a class="anchor" href="#loggers.single"></a>获取单个 Logger</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取单个日志记录器，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取单个日志记录器，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1276,7 +1276,7 @@ Content-Length: 61
 <h2 id="loggers.group"><a class="anchor" href="#loggers.group"></a>检索单个组</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取单个组，请向 <code>/actuator/loggers/{group.name}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取单个组，请向 <code>/actuator/loggers/{group.name}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1337,7 +1337,7 @@ Content-Length: 82
 <h2 id="loggers.setting-level"><a class="anchor" href="#loggers.setting-level"></a>设置日志级别</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要设置日志记录器的级别，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个 `<code>POST</code> 请求，并在 JSON 正文中指定该日志记录器的配置级别，如下面的基于 curl 的示例所示：</p>
+<p>要设置日志记录器的级别，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个 <code>POST</code> 请求，并在 JSON 正文中指定该日志记录器的配置级别，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1347,7 +1347,7 @@ Content-Length: 82
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例将 <code>com.example</code>` 日志记录器的 `<code>configuredLevel</code>` 设置为 `<code>DEBUG</code>。</p>
+<p>前面的示例将 <code>com.example</code>` 日志记录器的 <code>configuredLevel</code>` 设置为 <code>DEBUG</code>。</p>
 </div>
 <div class="sect2">
 <h3 id="loggers.setting-level.request-structure"><a class="anchor" href="#loggers.setting-level.request-structure"></a>请求结构</h3>
@@ -1382,7 +1382,7 @@ Content-Length: 82
 <h2 id="loggers.group-setting-level"><a class="anchor" href="#loggers.group-setting-level"></a>为组设置日志级别</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要设置日志记录器的级别，请向 <code>/actuator/loggers/{group.name}</code>` 发送一个 `<code>POST</code> 请求，并在 JSON 正文中指定该日志记录器组的配置级别，如下面的基于 curl 的示例所示：</p>
+<p>要设置日志记录器的级别，请向 <code>/actuator/loggers/{group.name}</code>` 发送一个 <code>POST</code> 请求，并在 JSON 正文中指定该日志记录器组的配置级别，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1392,7 +1392,7 @@ Content-Length: 82
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例将 <code>test` 日志记录器组的 `<code>configuredLevel</code>` 设置为 `<code>DEBUG</code>。</code></p>
+<p>前面的示例将 <code>test` 日志记录器组的 <code>configuredLevel</code>` 设置为 <code>DEBUG</code>。</code></p>
 </div>
 <div class="sect2">
 <h3 id="loggers.group-setting-level.request-structure"><a class="anchor" href="#loggers.group-setting-level.request-structure"></a>请求结构</h3>
@@ -1427,7 +1427,7 @@ Content-Length: 82
 <h2 id="loggers.clearing-level"><a class="anchor" href="#loggers.clearing-level"></a>清除日志级别</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要清除日志记录器的级别，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个包含空对象的 JSON 体的 `<code>POST</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要清除日志记录器的级别，请向 <code>/actuator/loggers/{logger.name}</code>` 发送一个包含空对象的 JSON 体的 <code>POST</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">

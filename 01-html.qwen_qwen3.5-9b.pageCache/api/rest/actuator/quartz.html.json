@@ -119,77 +119,77 @@
     },
     {
       "source": "Jobs and triggers are managed in groups.\nTo retrieve the list of registered job and trigger groups, make a <code>GET</code> request to <code>/actuator/quartz</code>, as shown in the following curl-based example:",
-      "translation": "任务和触发器以组的形式进行管理。要获取已注册的任务和触发器组的列表，请向 <code>/actuator/quartz</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "任务和触发器以组的形式进行管理。要获取已注册的任务和触发器组的列表，请向 <code>/actuator/quartz</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "To retrieve the list of registered job names, make a <code>GET</code> request to <code>/actuator/quartz/jobs</code>, as shown in the following curl-based example:",
-      "translation": "要获取已注册作业名称的列表，请向 <code>/actuator/quartz/jobs</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取已注册作业名称的列表，请向 <code>/actuator/quartz/jobs</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "To retrieve the list of registered trigger names, make a <code>GET</code> request to <code>/actuator/quartz/triggers</code>, as shown in the following curl-based example:",
-      "translation": "要获取已注册的触发器名称列表，请向 <code>/actuator/quartz/triggers</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取已注册的触发器名称列表，请向 <code>/actuator/quartz/triggers</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "To retrieve an overview of the jobs in a particular group, make a <code>GET</code> request to <code>/actuator/quartz/jobs/{groupName}</code>, as shown in the following curl-based example:",
-      "translation": "要获取特定组中作业的概览，请向 <code>/actuator/quartz/jobs/{groupName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取特定组中作业的概览，请向 <code>/actuator/quartz/jobs/{groupName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "To retrieve an overview of the triggers in a particular group, make a <code>GET</code> request to <code>/actuator/quartz/triggers/{groupName}</code>, as shown in the following curl-based example:",
-      "translation": "要获取特定组中触发器的概览，请向 <code>/actuator/quartz/triggers/{groupName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取特定组中触发器的概览，请向 <code>/actuator/quartz/triggers/{groupName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "To retrieve the details about a particular job, make a <code>GET</code> request to <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>, as shown in the following curl-based example:",
-      "translation": "要获取特定作业的详细信息，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取特定作业的详细信息，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "The preceding example retrieves the details of the job identified by the <code>samples</code> group and <code>jobOne</code> name.\nThe resulting response is similar to the following:",
-      "translation": "前面的示例检索了由 `<code>samples`</code> 组和 `<code>jobOne`</code> 名称标识的作业的详细信息。\n生成的响应类似于以下内容：",
+      "translation": "前面的示例检索了由 <code>samples`</code> 组和 <code>jobOne`</code> 名称标识的作业的详细信息。\n生成的响应类似于以下内容：",
       "count": 2
     },
     {
       "source": "To trigger a particular Quartz job, make a <code>POST</code> request to <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>, as shown in the following curl-based example:",
-      "translation": "要触发特定的 Quartz 作业，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 `<code>POST</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要触发特定的 Quartz 作业，请向 <code>/actuator/quartz/jobs/{groupName}/{jobName}</code>` 发送一个 <code>POST</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "The preceding example demonstrates how to trigger a job that belongs to the <code>samples</code> group and is named <code>jobOne</code>.",
-      "translation": "前面的示例演示了如何触发属于 <code>samples</code>` 组且名为 `<code>jobOne</code> 的任务。",
+      "translation": "前面的示例演示了如何触发属于 <code>samples</code>` 组且名为 <code>jobOne</code> 的任务。",
       "count": 2
     },
     {
       "source": "The request specifies a desired <code>state</code> associated with a particular job.\nSending an HTTP request with a <code>\"state\": \"running\"</code> body indicates that the job should be run now.\nThe following table describes the structure of the request:",
-      "translation": "该请求指定了与特定任务关联的期望 <code>state</code>`。\n发送一个包含 `<code>\"state\": \"running\"</code> 正文的 HTTP 请求，表示应立即运行该任务。\n下表描述了请求的结构：",
+      "translation": "该请求指定了与特定任务关联的期望 <code>state</code>`。\n发送一个包含 <code>\"state\": \"running\"</code> 正文的 HTTP 请求，表示应立即运行该任务。\n下表描述了请求的结构：",
       "count": 2
     },
     {
       "source": "To retrieve the details about a particular trigger, make a <code>GET</code> request to <code>/actuator/quartz/triggers/{groupName}/{triggerName}</code>, as shown in the following curl-based example:",
-      "translation": "要获取特定触发器的详细信息，请向 <code>/actuator/quartz/triggers/{groupName}/{triggerName}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：",
+      "translation": "要获取特定触发器的详细信息，请向 <code>/actuator/quartz/triggers/{groupName}/{triggerName}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：",
       "count": 2
     },
     {
       "source": "The preceding example retrieves the details of trigger identified by the <code>samples</code> group and <code>example</code> name.",
-      "translation": "前面的示例检索了由 <code>samples</code>` 组和 `<code>example</code> 名称标识的触发器的详细信息。",
+      "translation": "前面的示例检索了由 <code>samples</code>` 组和 <code>example</code> 名称标识的触发器的详细信息。",
       "count": 2
     },
     {
       "source": "Calendar time interval trigger details, if any. Present when <code>type</code> is <code>calendarInterval</code>.",
-      "translation": "日历时间间隔触发器详情（如有）。当 <code>type</code>` 为 `<code>calendarInterval</code> 时显示。",
+      "translation": "日历时间间隔触发器详情（如有）。当 <code>type</code>` 为 <code>calendarInterval</code> 时显示。",
       "count": 2
     },
     {
       "source": "Custom trigger details, if any. Present when <code>type</code> is <code>custom</code>.",
-      "translation": "自定义触发器详细信息（如有）。当 <code>type</code>` 为 `<code>custom</code> 时显示。",
+      "translation": "自定义触发器详细信息（如有）。当 <code>type</code>` 为 <code>custom</code> 时显示。",
       "count": 2
     },
     {
       "source": "Cron trigger details, if any. Present when <code>type</code> is <code>cron</code>.",
-      "translation": "Cron 触发器详情（如有）。当 <code>type</code>` 为 `<code>cron</code> 时显示。",
+      "translation": "Cron 触发器详情（如有）。当 <code>type</code>` 为 <code>cron</code> 时显示。",
       "count": 2
     },
     {
@@ -199,7 +199,7 @@
     },
     {
       "source": "Simple trigger details, if any. Present when <code>type</code> is <code>simple</code>.",
-      "translation": "简单触发器详情（如有）。当 <code>type</code>` 为 `<code>simple</code> 时显示。",
+      "translation": "简单触发器详情（如有）。当 <code>type</code>` 为 <code>simple</code> 时显示。",
       "count": 2
     },
     {

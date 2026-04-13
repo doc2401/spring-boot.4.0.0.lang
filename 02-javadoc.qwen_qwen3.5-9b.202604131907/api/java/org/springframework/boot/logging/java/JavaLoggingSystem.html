@@ -270,7 +270,7 @@ loadScripts(document, 'script');</script>
 <div class="block">返回此系统的标准配置位置。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../AbstractLoggingSystem.html#getStandardConfigLocations()">getStandardConfigLocations</a></code>` 类中的 `<code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
+<dd><code><a href="../AbstractLoggingSystem.html#getStandardConfigLocations()">getStandardConfigLocations</a></code>` 类中的 <code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
 <dt>Returns:</dt>
 <dd>标准配置位置</dd>
 <dt>See Also:</dt>
@@ -292,7 +292,7 @@ loadScripts(document, 'script');</script>
 <div class="block">重置日志系统以限制输出。此方法可在调用 <a href="../LoggingSystem.html#initialize(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)"><code>LoggingSystem.initialize(LoggingInitializationContext, String, LogFile)</code></a> 之前执行，以减少系统在完全初始化之前的日志噪音。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../AbstractLoggingSystem.html#beforeInitialize()">beforeInitialize</a></code>` 类中的 `<code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
+<dd><code><a href="../AbstractLoggingSystem.html#beforeInitialize()">beforeInitialize</a></code>` 类中的 <code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
 </dl>
 </div>
 </section>
@@ -326,7 +326,7 @@ loadScripts(document, 'script');</script>
 <div class="block">加载特定配置。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../AbstractLoggingSystem.html#loadConfiguration(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)">loadConfiguration</a></code>` 类中的 `<code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
+<dd><code><a href="../AbstractLoggingSystem.html#loadConfiguration(org.springframework.boot.logging.LoggingInitializationContext,java.lang.String,org.springframework.boot.logging.LogFile)">loadConfiguration</a></code>` 类中的 <code><a href="../AbstractLoggingSystem.html" title="class in org.springframework.boot.logging">AbstractLoggingSystem</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>initializationContext</code> - 日志初始化上下文</dd>
 <dd><code>location</code> - 要加载的配置的位置（永远不为 <code>null</code>）</dd>
@@ -353,7 +353,7 @@ loadScripts(document, 'script');</script>
 <div class="block">返回一个由日志系统实际支持的<a href="../LogLevel.html" title="enum class in org.springframework.boot.logging"><code>LogLevels</code></a>组成的集合。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#getSupportedLogLevels()">getSupportedLogLevels</a></code>` 在类 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>` 中</dd>
+<dd><code><a href="../LoggingSystem.html#getSupportedLogLevels()">getSupportedLogLevels</a></code>` 在类 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>支持的级别</dd>
 </dl>
@@ -370,7 +370,7 @@ loadScripts(document, 'script');</script>
 <div class="block">为指定的记录器设置日志级别。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#setLogLevel(java.lang.String,org.springframework.boot.logging.LogLevel)">setLogLevel</a></code>` 类中的 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
+<dd><code><a href="../LoggingSystem.html#setLogLevel(java.lang.String,org.springframework.boot.logging.LogLevel)">setLogLevel</a></code>` 类中的 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>loggerName</code> - 要设置的日志记录器名称（对于根日志记录器，可以使用 <code>null</code>）。</dd>
 <dd><code>level</code> - 日志级别（可使用 <code>null</code> 移除自定义级别，转而使用默认配置）</dd>
@@ -387,7 +387,7 @@ loadScripts(document, 'script');</script>
 <div class="block">返回当前所有 <a href="../LoggingSystem.html" title="class in org.springframework.boot.logging"><code>LoggingSystem</code></a> 的日志记录器的配置集合。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#getLoggerConfigurations()">getLoggerConfigurations</a></code>` 类中的 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
+<dd><code><a href="../LoggingSystem.html#getLoggerConfigurations()">getLoggerConfigurations</a></code>` 类中的 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
 <dt>Returns:</dt>
 <dd>当前配置</dd>
 </dl>
@@ -403,7 +403,7 @@ loadScripts(document, 'script');</script>
 <div class="block">返回 <a href="../LoggingSystem.html" title="class in org.springframework.boot.logging"><code>LoggingSystem</code></a> 的日志记录器的当前配置。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#getLoggerConfiguration(java.lang.String)">getLoggerConfiguration</a></code>` 类中的 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
+<dd><code><a href="../LoggingSystem.html#getLoggerConfiguration(java.lang.String)">getLoggerConfiguration</a></code>` 类中的 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>loggerName</code> - 日志记录器的名称</dd>
 <dt>Returns:</dt>
@@ -418,10 +418,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang">Runnable</a></span> <span class="element-name">getShutdownHandler</span>()</div>
 <div class="block"><span class="description-from-type-label">描述从类复制：<code><a href="../LoggingSystem.html#getShutdownHandler()">LoggingSystem</a></code></span></div>
-<div class="block">返回一个 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang"><code>Runnable</code></a>，用于在 JVM 退出时处理此日志系统的关闭。默认实现返回 `<code>null</code>`，表示不需要关闭。</div>
+<div class="block">返回一个 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang"><code>Runnable</code></a>，用于在 JVM 退出时处理此日志系统的关闭。默认实现返回 <code>null</code>`，表示不需要关闭。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#getShutdownHandler()">getShutdownHandler</a></code>` 类中的 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
+<dd><code><a href="../LoggingSystem.html#getShutdownHandler()">getShutdownHandler</a></code>` 类中的 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
 <dt>Returns:</dt>
 <dd>关闭处理器，或<code>null</code></dd>
 </dl>
@@ -437,7 +437,7 @@ loadScripts(document, 'script');</script>
 <div class="block">清理日志系统。默认实现不执行任何操作。子类应重写此方法以执行特定于日志系统的清理工作。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a href="../LoggingSystem.html#cleanUp()">cleanUp</a></code>` 类中的 `<code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
+<dd><code><a href="../LoggingSystem.html#cleanUp()">cleanUp</a></code>` 类中的 <code><a href="../LoggingSystem.html" title="class in org.springframework.boot.logging">LoggingSystem</a></code>`</dd>
 </dl>
 </div>
 </section>

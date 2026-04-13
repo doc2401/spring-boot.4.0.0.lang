@@ -1114,7 +1114,7 @@
 <p>Docker Compose 是一项流行的技术，可用于定义和管理应用程序所需服务的多个容器。通常会在应用程序旁边创建一个 <code>compose.yml</code> 文件，用于定义和配置服务容器。</p>
 </div>
 <div class="paragraph">
-<p>使用 Docker Compose 的典型工作流程是运行 <code>docker compose up</code>`，通过连接到已启动的服务来开发您的应用程序，然后在完成后运行 `<code>docker compose down</code>。</p>
+<p>使用 Docker Compose 的典型工作流程是运行 <code>docker compose up</code>`，通过连接到已启动的服务来开发您的应用程序，然后在完成后运行 <code>docker compose down</code>。</p>
 </div>
 <div class="paragraph">
 <p>`spring-boot-docker-compose` 模块可以包含在项目中，以提供使用 Docker Compose 操作容器的支持。
@@ -1160,7 +1160,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>如果启动应用程序时 Docker Compose 服务已经在运行，Spring Boot 将为每个支持的容器仅创建服务连接 Bean。它不会再次调用 <code>docker compose up</code>`，并且在应用程序关闭时也不会调用 `<code>docker compose stop</code>。</p>
+<p>如果启动应用程序时 Docker Compose 服务已经在运行，Spring Boot 将为每个支持的容器仅创建服务连接 Bean。它不会再次调用 <code>docker compose up</code>`，并且在应用程序关闭时也不会调用 <code>docker compose stop</code>。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1179,7 +1179,7 @@
 <div class="sect2">
 <h3 id="features.dev-services.docker-compose.prerequisites"><a class="anchor" href="#features.dev-services.docker-compose.prerequisites"></a>Prerequisites</h3>
 <div class="paragraph">
-<p>您需要将 <code>docker</code>` 和 `<code>docker compose</code>`（或 `<code>docker-compose</code>）CLI 应用程序添加到您的路径中。最低支持的 Docker Compose 版本为 2.2.0。</p>
+<p>您需要将 <code>docker</code>` 和 <code>docker compose</code>`（或 <code>docker-compose</code>）CLI 应用程序添加到您的路径中。最低支持的 Docker Compose 版本为 2.2.0。</p>
 </div>
 </div>
 <div class="sect2">
@@ -1457,7 +1457,7 @@ secrets:
 <p>有时您可能需要使用自己的镜像版本来提供服务。只要自定义镜像的行为与标准镜像一致，您就可以使用任何自定义镜像。具体来说，您的自定义镜像也必须使用标准镜像支持的所有环境变量。</p>
 </div>
 <div class="paragraph">
-<p>如果您的镜像使用了不同的名称，您可以在 <code>compose.yml</code>` 文件中使用标签，以便 Spring Boot 提供服务连接。使用名为 `<code>org.springframework.boot.service-connection</code> 的标签来提供服务名称。</p>
+<p>如果您的镜像使用了不同的名称，您可以在 <code>compose.yml</code>` 文件中使用标签，以便 Spring Boot 提供服务连接。使用名为 <code>org.springframework.boot.service-connection</code> 的标签来提供服务名称。</p>
 </div>
 <div class="paragraph">
 <p>例如：</p>
@@ -1477,7 +1477,7 @@ secrets:
 <div class="sect2">
 <h3 id="features.dev-services.docker-compose.skipping"><a class="anchor" href="#features.dev-services.docker-compose.skipping"></a>跳过特定容器</h3>
 <div class="paragraph">
-<p>如果您在 <code>compose.yml</code>` 中定义了一个容器镜像，但不希望将其与您的应用程序连接，可以使用标签来忽略它。任何标记有 `<code>org.springframework.boot.ignore</code> 的容器都将被 Spring Boot 忽略。</p>
+<p>如果您在 <code>compose.yml</code>` 中定义了一个容器镜像，但不希望将其与您的应用程序连接，可以使用标签来忽略它。任何标记有 <code>org.springframework.boot.ignore</code> 的容器都将被 Spring Boot 忽略。</p>
 </div>
 <div class="paragraph">
 <p>例如：</p>
@@ -1497,7 +1497,7 @@ secrets:
 <div class="sect2">
 <h3 id="features.dev-services.docker-compose.specific-file"><a class="anchor" href="#features.dev-services.docker-compose.specific-file"></a>使用特定的 Compose 文件</h3>
 <div class="paragraph">
-<p>如果您的 compose 文件不在应用程序的同一目录中，或者名称不同，您可以在 <code>application.properties</code>` 或 `<code>application.yaml</code>` 中使用 `<code>spring.docker.compose.file</code> 指向不同的文件。属性可以定义为确切路径或相对于应用程序的路径。</p>
+<p>如果您的 compose 文件不在应用程序的同一目录中，或者名称不同，您可以在 <code>application.properties</code>` 或 <code>application.yaml</code>` 中使用 <code>spring.docker.compose.file</code> 指向不同的文件。属性可以定义为确切路径或相对于应用程序的路径。</p>
 </div>
 <div class="paragraph">
 <p>例如：</p>
@@ -1537,10 +1537,10 @@ secrets:
 <div class="sect2">
 <h3 id="features.dev-services.docker-compose.readiness"><a class="anchor" href="#features.dev-services.docker-compose.readiness"></a>等待容器就绪</h3>
 <div class="paragraph">
-<p>Docker Compose 启动的容器可能需要一些时间才能完全就绪。检查就绪状态的最佳方法是在您的 <code>compose.yml</code>` 文件中的服务定义下添加一个 `<code>healthcheck</code> 部分。</p>
+<p>Docker Compose 启动的容器可能需要一些时间才能完全就绪。检查就绪状态的最佳方法是在您的 <code>compose.yml</code>` 文件中的服务定义下添加一个 <code>healthcheck</code> 部分。</p>
 </div>
 <div class="paragraph">
-<p>由于在 <code>compose.yml</code>` 文件中省略 `<code>healthcheck</code> 配置的情况很常见，Spring Boot 还会直接检查服务的就绪状态。默认情况下，当能够与其映射端口建立 TCP/IP 连接时，容器即被视为已就绪。</p>
+<p>由于在 <code>compose.yml</code>` 文件中省略 <code>healthcheck</code> 配置的情况很常见，Spring Boot 还会直接检查服务的就绪状态。默认情况下，当能够与其映射端口建立 TCP/IP 连接时，容器即被视为已就绪。</p>
 </div>
 <div class="paragraph">
 <p>您可以通过在 <code>compose.yml</code> 文件中添加 `org.springframework.boot.readiness-check.tcp.disable` 标签，按容器禁用此功能。</p>
@@ -1623,8 +1623,8 @@ spring.docker.compose.readiness.tcp.read-timeout=5s</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>此外，您可以使用 <code>spring.docker.compose.start.command</code>` 属性来更改是使用 `<code>docker compose up</code>` 还是 `<code>docker compose start</code>。
-<code>spring.docker.compose.stop.command</code>` 允许您配置是使用 `<code>docker compose down</code>` 还是 `<code>docker compose stop</code>。</p>
+<p>此外，您可以使用 <code>spring.docker.compose.start.command</code>` 属性来更改是使用 <code>docker compose up</code>` 还是 <code>docker compose start</code>。
+<code>spring.docker.compose.stop.command</code>` 允许您配置是使用 <code>docker compose down</code>` 还是 <code>docker compose stop</code>。</p>
 </div>
 <div class="paragraph">
 <p>以下示例展示了如何配置生命周期管理：</p>
@@ -1716,7 +1716,7 @@ spring.docker.compose.stop.timeout=1m</code></pre>
 <p>要在测试中启用 Docker Compose 支持，请将 <code>spring.docker.compose.skip.in-tests</code> 设置为 <code>false</code>。</p>
 </div>
 <div class="paragraph">
-<p>使用 Gradle 时，您还需要将 <code>spring-boot-docker-compose</code>` 依赖的配置从 `<code>developmentOnly</code>` 更改为 `<code>testAndDevelopmentOnly</code>：</p>
+<p>使用 Gradle 时，您还需要将 <code>spring-boot-docker-compose</code>` 依赖的配置从 <code>developmentOnly</code>` 更改为 <code>testAndDevelopmentOnly</code>：</p>
 </div>
 <div class="listingblock">
 <div class="title">Gradle</div>
@@ -1744,7 +1744,7 @@ spring.docker.compose.stop.timeout=1m</code></pre>
 <p>要在开发时使用 Testcontainers，您需要使用“test”类路径而不是“main”来启动应用程序。这将允许您访问所有声明的测试依赖项，并为您提供一个自然的编写测试配置的位置。</p>
 </div>
 <div class="paragraph">
-<p>要创建应用程序的可测试发布版本，您应在 <code>src/test</code>` 目录中创建一个“Application”类。例如，如果您的主应用程序位于 `<code>src/main/java/com/example/MyApplication.java</code>`，则应创建 `<code>src/test/java/com/example/TestMyApplication.java</code>。</p>
+<p>要创建应用程序的可测试发布版本，您应在 <code>src/test</code>` 目录中创建一个“Application”类。例如，如果您的主应用程序位于 <code>src/main/java/com/example/MyApplication.java</code>`，则应创建 <code>src/test/java/com/example/TestMyApplication.java</code>。</p>
 </div>
 <div class="paragraph">
 <p><code>TestMyApplication</code> 类可以使用 <code>SpringApplication.from(…​)</code> 方法来启动真实的应用程序：</p>
@@ -1923,7 +1923,7 @@ import org.springframework.boot.with
 </div>
 </div>
 <div class="paragraph">
-<p>您现在可以像启动任何常规的 Java <code>main</code> 方法应用程序一样，启动 `<code>TestMyApplication` 来运行您的应用程序及其所需的容器。</code></p>
+<p>您现在可以像启动任何常规的 Java <code>main</code> 方法应用程序一样，启动 <code>TestMyApplication` 来运行您的应用程序及其所需的容器。</code></p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -2037,7 +2037,7 @@ class MyContainersConfiguration {
 它们也可以声明在父类或测试所实现的接口上。</p>
 </div>
 <div class="paragraph">
-<p>例如，以下 <code>MyContainers</code>` 接口声明了 `<code>mongo</code>` 和 `<code>neo4j</code> 容器：</p>
+<p>例如，以下 <code>MyContainers</code>` 接口声明了 <code>mongo</code>` 和 <code>neo4j</code> 容器：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_9">
 <div class="content">

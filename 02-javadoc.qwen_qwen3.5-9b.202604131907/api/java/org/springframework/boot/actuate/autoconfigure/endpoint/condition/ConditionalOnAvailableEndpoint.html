@@ -82,7 +82,7 @@ endpoint is considered available if it is both enabled and exposed on the specif
 technologies.
 <p>根据端点特定的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html" title="class or interface in org.springframework.core.env"><code>Environment</code></a> 属性匹配访问权限，
 否则回退到 <code>management.endpoints.default-access</code>，
-若仍失败则使用 <a href="../../../endpoint/annotation/Endpoint.html#defaultAccess()"><code>Endpoint.defaultAccess()</code></a>。</p><p>根据 `<code>management.endpoints.web.exposure.&lt;id&gt;</code>` 或 `<code>management.endpoints.jmx.exposure.&lt;id&gt;</code>` 的特定属性匹配端点暴露情况，若未找到则取决于是否有任何 <a href="EndpointExposureOutcomeContributor.html" title="interface in org.springframework.boot.actuate.autoconfigure.endpoint.condition"><code>EndpointExposureOutcomeContributor</code></a> 暴露该端点。</p><p>启用条件和暴露条件均应匹配，端点才被视为可用。</p><p>当放置在<code>@Bean</code>方法上时，端点默认使用工厂方法的返回类型：</p><pre class="code">@Configuration
+若仍失败则使用 <a href="../../../endpoint/annotation/Endpoint.html#defaultAccess()"><code>Endpoint.defaultAccess()</code></a>。</p><p>根据 <code>management.endpoints.web.exposure.&lt;id&gt;</code>` 或 <code>management.endpoints.jmx.exposure.&lt;id&gt;</code>` 的特定属性匹配端点暴露情况，若未找到则取决于是否有任何 <a href="EndpointExposureOutcomeContributor.html" title="interface in org.springframework.boot.actuate.autoconfigure.endpoint.condition"><code>EndpointExposureOutcomeContributor</code></a> 暴露该端点。</p><p>启用条件和暴露条件均应匹配，端点才被视为可用。</p><p>当放置在<code>@Bean</code>方法上时，端点默认使用工厂方法的返回类型：</p><pre class="code">@Configuration
 public class MyConfiguration {
 
     @ConditionalOnAvailableEndpoint
@@ -102,7 +102,7 @@ public class MyConfiguration {
     }
 
 }</pre>
-<p>在上面的示例中，如果端点符合上述规则定义且可用，将创建 `<code>MyEndpointWebExtension</code>`。<code>MyEndpointWebExtension</code> 必须是一个引用端点的普通扩展，类似于：</p><pre class="code">@EndpointWebExtension(endpoint = MyEndpoint.class)
+<p>在上面的示例中，如果端点符合上述规则定义且可用，将创建 <code>MyEndpointWebExtension</code>`。<code>MyEndpointWebExtension</code> 必须是一个引用端点的普通扩展，类似于：</p><pre class="code">@EndpointWebExtension(endpoint = MyEndpoint.class)
 public class MyEndpointWebExtension {
 
 }</pre>

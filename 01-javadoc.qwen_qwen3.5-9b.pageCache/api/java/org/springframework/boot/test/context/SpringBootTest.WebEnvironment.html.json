@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Creates a <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/WebApplicationContext.html\" title=\"class or interface in org.springframework.web.context\"><code>WebApplicationContext</code></a> with a mock servlet environment if\nservlet APIs are on the classpath, a <a href=\"../../web/context/reactive/ReactiveWebApplicationContext.html\" title=\"interface in org.springframework.boot.web.context.reactive\"><code>ReactiveWebApplicationContext</code></a> if\nSpring WebFlux is on the classpath or a regular <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\" title=\"class or interface in org.springframework.context\"><code>ApplicationContext</code></a>\notherwise.",
-      "translation": "创建一个带有模拟 Servlet 环境的 `<code>WebApplicationContext</code>`，前提是 Servlet API 在类路径中；如果 Spring WebFlux 在类路径中，则创建 `<code>ReactiveWebApplicationContext</code>`；否则，创建常规的 `<code>ApplicationContext</code>`。",
+      "translation": "创建一个带有模拟 Servlet 环境的 <code>WebApplicationContext</code>`，前提是 Servlet API 在类路径中；如果 Spring WebFlux 在类路径中，则创建 <code>ReactiveWebApplicationContext</code>`；否则，创建常规的 <code>ApplicationContext</code>`。",
       "count": 3
     },
     {
@@ -24,12 +24,12 @@
     },
     {
       "source": "Creates a web application context (reactive or servlet based) and sets a\n<code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property (which usually triggers\nlistening on a random port). Requires a dependency on\n<code>spring-boot-web-server</code>. Often used in conjunction with a\n<code>@LocalServerPort</code> injected field on the test.",
-      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。需要依赖 `<code>spring-boot-web-server`》。通常与测试类上注入的 `<code>@LocalServerPort</code>` 字段配合使用。",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置 <code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。需要依赖 <code>spring-boot-web-server`》。通常与测试类上注入的 <code>@LocalServerPort</code>` 字段配合使用。",
       "count": 2
     },
     {
       "source": "Creates a web application context (reactive or servlet based) without defining\nany <code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property. Requires a dependency\non <code>spring-boot-web-server</code>.",
-      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而无需定义任何 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。需要依赖 `<code>spring-boot-web-server</code>`。",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而无需定义任何 <code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。需要依赖 <code>spring-boot-web-server</code>`。",
       "count": 2
     },
     {
@@ -49,12 +49,12 @@
     },
     {
       "source": "Creates a web application context (reactive or servlet based) without defining\nany <code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property.",
-      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而不定义任何 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，而不定义任何 <code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性。",
       "count": 1
     },
     {
       "source": "Creates a web application context (reactive or servlet based) and sets a\n<code>server.port=0</code> <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> property (which usually triggers\nlistening on a random port).",
-      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置一个 `<code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。",
+      "translation": "创建一个基于响应式或 Servlet 的 Web 应用程序上下文，并设置一个 <code>server.port=0</code>` <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\" title=\"class or interface in org.springframework.core.env\"><code>Environment</code></a> 属性（这通常会触发监听随机端口）。",
       "count": 1
     },
     {

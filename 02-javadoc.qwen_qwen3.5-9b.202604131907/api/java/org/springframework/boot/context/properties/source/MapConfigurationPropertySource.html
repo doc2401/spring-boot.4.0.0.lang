@@ -162,7 +162,7 @@ implements <a href="IterableConfigurationPropertySource.html" title="interface i
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream">Stream</a><wbr/>&lt;<a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyName</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#stream()">stream</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回一个按顺序的 `<code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
+<div class="block">返回一个按顺序的 <code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
 </div>
 </div>
 </div>
@@ -254,7 +254,7 @@ implements <a href="IterableConfigurationPropertySource.html" title="interface i
 <div class="block">返回实际提供这些属性的底层源。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#getUnderlyingSource()">getUnderlyingSource</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#getUnderlyingSource()">getUnderlyingSource</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>底层属性源或<code>null</code>。</dd>
 </dl>
@@ -270,7 +270,7 @@ implements <a href="IterableConfigurationPropertySource.html" title="interface i
 <div class="block">返回源中的一个<a href="ConfigurationProperty.html" title="class in org.springframework.boot.context.properties.source"><code>ConfigurationProperty</code></a>，如果找不到属性则返回<code>null</code>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#getConfigurationProperty(org.springframework.boot.context.properties.source.ConfigurationPropertyName)">getConfigurationProperty</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#getConfigurationProperty(org.springframework.boot.context.properties.source.ConfigurationPropertyName)">getConfigurationProperty</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 属性的名称</dd>
 <dt>Returns:</dt>
@@ -290,7 +290,7 @@ implements <a href="IterableConfigurationPropertySource.html" title="interface i
 <dt>Specified by:</dt>
 <dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html#iterator()" title="class or interface in java.lang">iterator</a></code> 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang">Iterable</a>&lt;<a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyName</a>&gt;</code> 中</dd>
 <dt>Specified by:</dt>
-<dd>`<code><a href="IterableConfigurationPropertySource.html#iterator()">iterator</a></code>` 接口 `<code><a href="IterableConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">IterableConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="IterableConfigurationPropertySource.html#iterator()">iterator</a></code>` 接口 <code><a href="IterableConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">IterableConfigurationPropertySource</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>迭代器（永远不为<code>null</code>）</dd>
 </dl>
@@ -303,10 +303,10 @@ implements <a href="IterableConfigurationPropertySource.html" title="interface i
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream">Stream</a>&lt;<a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyName</a>&gt;</span> <span class="element-name">stream</span>()</div>
 <div class="block"><span class="description-from-type-label">描述从接口复制：<code><a href="IterableConfigurationPropertySource.html#stream()">IterableConfigurationPropertySource</a></code></span></div>
-<div class="block">返回一个按顺序的 `<code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
+<div class="block">返回一个按顺序的 <code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="IterableConfigurationPropertySource.html#stream()">stream</a></code>` 接口 `<code><a href="IterableConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">IterableConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="IterableConfigurationPropertySource.html#stream()">stream</a></code>` 接口 <code><a href="IterableConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">IterableConfigurationPropertySource</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>一个名称流（永远不为<code>null</code>）</dd>
 </dl>

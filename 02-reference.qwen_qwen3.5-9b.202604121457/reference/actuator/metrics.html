@@ -2540,7 +2540,7 @@ management.newrelic.metrics.export.account-id=YOUR_ACCOUNT_ID</code></pre>
 <p>自定义标头（例如用于身份验证）也可以通过 `management.otlp.metrics.export.headers.*` 属性提供。</p>
 </div>
 <div class="paragraph">
-<p>如果存在 <code>OtlpMetricsSender</code> Bean，它将被配置在由 Spring Boot 自动配置的 `<code>OtlpMeterRegistry` 上。</code></p>
+<p>如果存在 <code>OtlpMetricsSender</code> Bean，它将被配置在由 Spring Boot 自动配置的 <code>OtlpMeterRegistry` 上。</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -2560,7 +2560,7 @@ management.newrelic.metrics.export.account-id=YOUR_ACCOUNT_ID</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>以下示例会添加到 <code>prometheus.yml</code>` 中的 `<code>scrape_config</code>：</p>
+<p>以下示例会添加到 <code>prometheus.yml</code>` 中的 <code>scrape_config</code>：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2589,7 +2589,7 @@ management.newrelic.metrics.export.account-id=YOUR_ACCOUNT_ID</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>当类路径上存在 Prometheus Pushgateway 依赖，且 <code>management.prometheus.metrics.export.pushgateway.enabled</code>` 属性设置为 `<code>true</code> 时，会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a> Bean。该 Bean 负责将指标推送到 Prometheus Pushgateway。</p>
+<p>当类路径上存在 Prometheus Pushgateway 依赖，且 <code>management.prometheus.metrics.export.pushgateway.enabled</code>` 属性设置为 <code>true</code> 时，会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a> Bean。该 Bean 负责将指标推送到 Prometheus Pushgateway。</p>
 </div>
 <div class="paragraph">
 <p>您可以通过 <code>management.prometheus.metrics.export.pushgateway</code> 下的属性来调整 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a>。对于高级配置，您还可以提供自己的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html"><code>PrometheusPushGatewayManager</code></a> Bean。</p>
@@ -2831,7 +2831,7 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <div class="sect2">
 <h3 id="actuator.metrics.supported.system"><a class="anchor" href="#actuator.metrics.supported.system"></a>系统指标</h3>
 <div class="paragraph">
-<p>自动配置通过核心 Micrometer 类启用系统指标。系统指标发布在 <code>system.</code>`、`<code>process.</code>` 和 `<code>disk.</code> 计量器名称下。</p>
+<p>自动配置通过核心 Micrometer 类启用系统指标。系统指标发布在 <code>system.</code>`、<code>process.</code>` 和 <code>disk.</code> 计量器名称下。</p>
 </div>
 <div class="paragraph">
 <p>以下是提供的系统指标：</p>
@@ -2875,7 +2875,7 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <div class="sect2">
 <h3 id="actuator.metrics.supported.logger"><a class="anchor" href="#actuator.metrics.supported.logger"></a>日志记录器指标</h3>
 <div class="paragraph">
-<p>自动配置可启用 Logback 和 Log4J2 的事件指标。详细信息发布在 <code>log4j2.events.</code>` 或 `<code>logback.events.</code> 计量器名称下。</p>
+<p>自动配置可启用 Logback 和 Log4J2 的事件指标。详细信息发布在 <code>log4j2.events.</code>` 或 <code>logback.events.</code> 计量器名称下。</p>
 </div>
 </div>
 <div class="sect2">
@@ -2935,7 +2935,7 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <div class="sect2">
 <h3 id="actuator.metrics.supported.spring-webflux"><a class="anchor" href="#actuator.metrics.supported.spring-webflux"></a>Spring WebFlux 指标</h3>
 <div class="paragraph">
-<p>自动配置可启用对 Spring WebFlux 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
+<p>自动配置可启用对 Spring WebFlux 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 <code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
 </div>
 <div class="paragraph">
 <p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-server.reactive">Spring 框架参考文档</a>。</p>
@@ -2959,7 +2959,7 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <div class="sect2">
 <h3 id="actuator.metrics.supported.jersey"><a class="anchor" href="#actuator.metrics.supported.jersey"></a>Jersey 服务器指标</h3>
 <div class="paragraph">
-<p>自动配置可启用对 Jersey JAX-RS 实现处理的所有请求的监控。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
+<p>自动配置可启用对 Jersey JAX-RS 实现处理的所有请求的监控。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 <code>management.observations.http.server.requests.name</code> 属性来自定义名称。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下，Jersey 服务器指标会标记以下信息：</p>
@@ -2986,11 +2986,11 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outcome</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">请求的结果基于响应的状态码。1xx 为 `<code>INFORMATIONAL`，2xx 为 `<code>SUCCESS`，3xx 为 `<code>REDIRECTION`，4xx 为 `<code>CLIENT_ERROR`，5xx 为 `<code>SERVER_ERROR`。</code></code></code></code></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">请求的结果基于响应的状态码。1xx 为 <code>INFORMATIONAL`，2xx 为 <code>SUCCESS`，3xx 为 <code>REDIRECTION`，4xx 为 <code>CLIENT_ERROR`，5xx 为 <code>SERVER_ERROR`。</code></code></code></code></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">响应的 HTTP 状态码（例如 <code>200</code>` 或 `<code>500</code>）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">响应的 HTTP 状态码（例如 <code>200</code>` 或 <code>500</code>）</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>uri</code></p></td>
@@ -3059,7 +3059,7 @@ management.statsd.metrics.export.protocol=udp</code></pre>
 <p>您也可以手动应用负责此仪器化的自定义器，即 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/client/ObservationRestTemplateCustomizer.html"><code>ObservationRestTemplateCustomizer</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/reactive/client/ObservationWebClientCustomizer.html"><code>ObservationWebClientCustomizer</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/web/client/ObservationRestClientCustomizer.html"><code>ObservationRestClientCustomizer</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>默认情况下，指标生成的名称为 <code>http.client.requests</code>`。您可以通过设置 `<code>management.observations.http.client.requests.name</code> 属性来自定义该名称。</p>
+<p>默认情况下，指标生成的名称为 <code>http.client.requests</code>`。您可以通过设置 <code>management.observations.http.client.requests.name</code> 属性来自定义该名称。</p>
 </div>
 <div class="paragraph">
 <p>有关生成的观测信息，请参阅<a href="https://docs.spring.io/spring-framework/reference/7.0/integration/observability.html#observability.http-client">Spring 框架参考文档</a>。</p>
@@ -3173,7 +3173,7 @@ Cache 的仪器化针对一组基本指标进行了标准化。
 <div class="sect2">
 <h3 id="actuator.metrics.supported.hibernate"><a class="anchor" href="#actuator.metrics.supported.hibernate"></a>Hibernate 指标</h3>
 <div class="paragraph">
-<p>如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 实例都将使用名为 `<code>hibernate</code> 的指标进行仪器化。</p>
+<p>如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 实例都将使用名为 <code>hibernate</code> 的指标进行仪器化。</p>
 </div>
 <div class="paragraph">
 <p>指标还通过 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> 的名称进行标记，该名称源自 Bean 名称。</p>
@@ -3840,7 +3840,7 @@ management.metrics.tags.stack=prod</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例为所有值为 <code>us-east-1</code>` 和 `<code>prod</code>` 的计量器添加了 `<code>region</code>` 和 `<code>stack</code> 标签。</p>
+<p>前面的示例为所有值为 <code>us-east-1</code>` 和 <code>prod</code>` 的计量器添加了 <code>region</code>` 和 <code>stack</code> 标签。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -3936,7 +3936,7 @@ management.metrics.tags.stack=prod</code></pre>
 </tbody>
 </table>
 <div class="paragraph">
-<p>有关 <code>percentiles-histogram`、`<code>percentiles</code>` 和 `<code>slo</code> 背后概念的更多详细信息，请参阅 Micrometer 文档中的 <a href="https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html">直方图和分位数</a> 部分。</code></p>
+<p>有关 <code>percentiles-histogram`、<code>percentiles</code>` 和 <code>slo</code> 背后概念的更多详细信息，请参阅 Micrometer 文档中的 <a href="https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html">直方图和分位数</a> 部分。</code></p>
 </div>
 </div>
 </div>
@@ -3945,10 +3945,10 @@ management.metrics.tags.stack=prod</code></pre>
 <h2 id="actuator.metrics.endpoint"><a class="anchor" href="#actuator.metrics.endpoint"></a>指标端点</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot 提供了一个 `<code>metrics`</code> 端点，您可以使用它来诊断性地检查应用程序收集的指标。该端点默认不可用，必须将其暴露。有关更多详细信息，请参阅<a class="xref page" href="endpoints.html#actuator.endpoints.exposing">暴露端点</a>。</p>
+<p>Spring Boot 提供了一个 <code>metrics`</code> 端点，您可以使用它来诊断性地检查应用程序收集的指标。该端点默认不可用，必须将其暴露。有关更多详细信息，请参阅<a class="xref page" href="endpoints.html#actuator.endpoints.exposing">暴露端点</a>。</p>
 </div>
 <div class="paragraph">
-<p>导航到 <code>/actuator/metrics</code>` 会显示可用计量器名称的列表。您可以通过提供其名称作为选择器来深入查看特定计量器的信息——例如，`<code>/actuator/metrics/jvm.memory.max</code>。</p>
+<p>导航到 <code>/actuator/metrics</code>` 会显示可用计量器名称的列表。您可以通过提供其名称作为选择器来深入查看特定计量器的信息——例如，<code>/actuator/metrics/jvm.memory.max</code>。</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -3958,7 +3958,7 @@ management.metrics.tags.stack=prod</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>此处使用的名称应与代码中使用的名称匹配，而不是与它被规范化命名约定后用于监控系统的名称匹配。换句话说，如果 <code>jvm.memory.max</code>` 在 Prometheus 中因蛇形命名约定而显示为 `<code>jvm_memory_max</code>`，您在检查 `<code>metrics</code>` 端点中的仪表时，仍应使用 `<code>jvm.memory.max</code> 作为选择器。</p>
+<p>此处使用的名称应与代码中使用的名称匹配，而不是与它被规范化命名约定后用于监控系统的名称匹配。换句话说，如果 <code>jvm.memory.max</code>` 在 Prometheus 中因蛇形命名约定而显示为 <code>jvm_memory_max</code>`，您在检查 <code>metrics</code>` 端点中的仪表时，仍应使用 <code>jvm.memory.max</code> 作为选择器。</p>
 </div>
 </td>
 </tr>
@@ -3976,8 +3976,8 @@ management.metrics.tags.stack=prod</code></pre>
 <td class="content">
 <div class="paragraph">
 <p>报告的测量值是匹配计量器名称和所有已应用标签的计量器的统计数据的<em>总和</em>。  
-在前面的示例中，返回的 `<code>Value` 统计数据是堆中“Code Cache”、“Compressed Class Space"和“Metaspace"区域的最大内存占用量的总和。  
-如果您只想查看“Metaspace"的最大大小，可以添加额外的 <code>tag=id:Metaspace</code>`——即 `<code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>。</code></p>
+在前面的示例中，返回的 <code>Value` 统计数据是堆中“Code Cache”、“Compressed Class Space"和“Metaspace"区域的最大内存占用量的总和。  
+如果您只想查看“Metaspace"的最大大小，可以添加额外的 <code>tag=id:Metaspace</code>`——即 <code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>。</code></p>
 </div>
 </td>
 </tr>

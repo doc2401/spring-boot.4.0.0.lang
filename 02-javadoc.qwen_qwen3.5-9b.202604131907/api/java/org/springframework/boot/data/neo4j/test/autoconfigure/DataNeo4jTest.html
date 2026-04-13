@@ -88,7 +88,7 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">DataNeo4jTest</span></div>
 <div class="block">Annotation that can be used for a Neo4j test that focuses <strong>only</strong> on
 Neo4j components.
-<p>仅使用此注解可启用与 Data Neo4j 测试相关的自动配置。同样，组件扫描仅限于 Neo4j 仓库和实体（`@Node` 和 `@RelationshipProperties`）。</p><p>默认情况下，使用 <code>@DataNeo4jTest</code> 注解的测试是事务性的，具有通常的测试相关语义（即默认回滚）。此功能不支持反应式访问，因此应通过用 <code>@Transactional(propagation = Propagation.NOT_SUPPORTED)</code> 注解测试类来禁用该功能。</p><p>在使用 JUnit 4 时，此注解应与 `<code>@RunWith(SpringRunner.class)</code>` 结合使用。</p></div>
+<p>仅使用此注解可启用与 Data Neo4j 测试相关的自动配置。同样，组件扫描仅限于 Neo4j 仓库和实体（`@Node` 和 `@RelationshipProperties`）。</p><p>默认情况下，使用 <code>@DataNeo4jTest</code> 注解的测试是事务性的，具有通常的测试相关语义（即默认回滚）。此功能不支持反应式访问，因此应通过用 <code>@Transactional(propagation = Propagation.NOT_SUPPORTED)</code> 注解测试类来禁用该功能。</p><p>在使用 JUnit 4 时，此注解应与 <code>@RunWith(SpringRunner.class)</code>` 结合使用。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>4.0.0</dd>

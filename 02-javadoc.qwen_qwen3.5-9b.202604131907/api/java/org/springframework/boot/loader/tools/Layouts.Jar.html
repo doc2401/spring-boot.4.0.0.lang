@@ -154,7 +154,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getLayersIndexFileLocation()">getLayersIndexFileLocation</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回应写入的图层索引文件的位置，或者如果不需要索引则返回 `<code>null</code>`。</div>
+<div class="block">返回应写入的图层索引文件的位置，或者如果不需要索引则返回 <code>null</code>`。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getLibraryLocation(java.lang.String,org.springframework.boot.loader.tools.LibraryScope)">getLibraryLocation</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> libraryName,
@@ -214,7 +214,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回此布局的启动器类名。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#getLauncherClassName()">getLauncherClassName</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#getLauncherClassName()">getLauncherClassName</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>启动器类名</dd>
 </dl>
@@ -231,12 +231,12 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回给定库的目的地路径。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#getLibraryLocation(java.lang.String,org.springframework.boot.loader.tools.LibraryScope)">getLibraryLocation</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#getLibraryLocation(java.lang.String,org.springframework.boot.loader.tools.LibraryScope)">getLibraryLocation</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>libraryName</code> - 库的名称（不包括任何路径）</dd>
 <dd><code>scope</code> - 库的作用域</dd>
 <dt>Returns:</dt>
-<dd>库相对于归档根目录的位置（应以 '/' 结尾），或者如果不应包含该库，则为 `<code>null</code>`。</dd>
+<dd>库相对于归档根目录的位置（应以 '/' 结尾），或者如果不应包含该库，则为 <code>null</code>`。</dd>
 </dl>
 </div>
 </section>
@@ -250,7 +250,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回归档中类的路径。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#getClassesLocation()">getClassesLocation</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#getClassesLocation()">getClassesLocation</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>类的位置</dd>
 </dl>
@@ -266,7 +266,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回应移动类的目标位置。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="RepackagingLayout.html#getRepackagedClassesLocation()">getRepackagedClassesLocation</a></code>` 接口 `<code><a href="RepackagingLayout.html" title="interface in org.springframework.boot.loader.tools">RepackagingLayout</a></code>` 中</dd>
+<dd><code><a href="RepackagingLayout.html#getRepackagedClassesLocation()">getRepackagedClassesLocation</a></code>` 接口 <code><a href="RepackagingLayout.html" title="interface in org.springframework.boot.loader.tools">RepackagingLayout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>重新打包的类位置</dd>
 </dl>
@@ -282,7 +282,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回应写入的类路径索引文件的位置，或者如果不需要索引则返回`null`。结果应包含文件名，并且相对于 jar 的根目录。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#getClasspathIndexFileLocation()">getClasspathIndexFileLocation</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#getClasspathIndexFileLocation()">getClasspathIndexFileLocation</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>类路径索引文件位置</dd>
 </dl>
@@ -298,7 +298,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回应写入的图层索引文件的位置，或者如果不需要索引则返回`null`。结果应包含文件名，并且相对于 jar 的根目录。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#getLayersIndexFileLocation()">getLayersIndexFileLocation</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#getLayersIndexFileLocation()">getLayersIndexFileLocation</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>层索引文件位置</dd>
 </dl>
@@ -314,7 +314,7 @@ implements <a href="RepackagingLayout.html" title="interface in org.springframew
 <div class="block">返回是否应包含加载器类以使归档可执行。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="Layout.html#isExecutable()">isExecutable</a></code>` 接口 `<code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
+<dd><code><a href="Layout.html#isExecutable()">isExecutable</a></code>` 接口 <code><a href="Layout.html" title="interface in org.springframework.boot.loader.tools">Layout</a></code>` 中</dd>
 <dt>Returns:</dt>
 <dd>如果布局是可执行的</dd>
 </dl>

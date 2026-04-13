@@ -69,8 +69,8 @@ loadScripts(document, 'script');</script>
 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation">@Documented</a>
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">ConfigurationPropertiesSource</span></div>
 <div class="block">Indicates that the annotated type is a source of configuration properties metadata.
-<p>此注解对实际的绑定过程没有影响，但作为提示供 `<code>spring-boot-configuration-processor</code>` 为该类型生成完整的元数据。</p><p>通常，此注解仅对位于引用它们的 `<code>@ConfigurationProperties` 类所在模块之外的类型是必需的。当两个类型都在同一模块中时，只要源代码可用，注解处理器即可自动发现完整元数据。</code></p><p>使用此注解来获取模块外部类型的元数据：</p><ol>
-<li>由 `<code>@NestedConfigurationProperty</code>` 注解的嵌套类型</li>
+<p>此注解对实际的绑定过程没有影响，但作为提示供 <code>spring-boot-configuration-processor</code>` 为该类型生成完整的元数据。</p><p>通常，此注解仅对位于引用它们的 <code>@ConfigurationProperties` 类所在模块之外的类型是必需的。当两个类型都在同一模块中时，只要源代码可用，注解处理器即可自动发现完整元数据。</code></p><p>使用此注解来获取模块外部类型的元数据：</p><ol>
+<li>由 <code>@NestedConfigurationProperty</code>` 注解的嵌套类型</li>
 <li>`@ConfigurationProperties` 注解的类型所继承的基类</li>
 </ol>
 <p>在下例中，<code>ServerProperties</code> 位于模块"A"，而<code>Host</code>位于模块"B"：</p><pre><code class="java">@ConfigurationProperties("example.server")
@@ -95,13 +95,13 @@ class Host {
     // Other properties, getter, setter.
 
 }</code></pre>
-<p>同样，可以检测到 `<code>@ConfigurationProperties</code>` 注解类型所继承的基类的元数据。考虑以下示例：</p><pre><code class="java">@ConfigurationProperties("example.client.github")
+<p>同样，可以检测到 <code>@ConfigurationProperties</code>` 注解类型所继承的基类的元数据。考虑以下示例：</p><pre><code class="java">@ConfigurationProperties("example.client.github")
 class GitHubClientProperties extends AbstractClientProperties {
 
     // Additional properties, getter, setter.
 
 }</code></pre>
-<p>与嵌套类型一样，向`AbstractClientProperties` 添加 `<code>@ConfigurationPropertiesSource</code>`，并向其模块添加 `<code>spring-boot-configuration-processor</code>`，可确保生成完整的元数据。</p></div>
+<p>与嵌套类型一样，向`AbstractClientProperties` 添加 <code>@ConfigurationPropertiesSource</code>`，并向其模块添加 <code>spring-boot-configuration-processor</code>`，可确保生成完整的元数据。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>4.0.0</dd>

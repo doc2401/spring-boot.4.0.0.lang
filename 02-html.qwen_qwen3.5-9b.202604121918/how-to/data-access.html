@@ -1381,7 +1381,7 @@ class MyDataSourceConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>不幸的是，这种基本设置无法工作，因为 Hikari 没有 <code>url</code>` 属性。相反，它有一个 `<code>jdbc-url</code> 属性，这意味着您必须按以下方式重写配置：</p>
+<p>不幸的是，这种基本设置无法工作，因为 Hikari 没有 <code>url</code>` 属性。相反，它有一个 <code>jdbc-url</code> 属性，这意味着您必须按以下方式重写配置：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_6">
 <div class="content">
@@ -1502,7 +1502,7 @@ class MyDataSourceConfiguration {
 </div>
 <div class="paragraph">
 <p>此配置与 Spring Boot 默认为您执行的操作等效，不同之处在于池的类型在代码中指定，其设置暴露为 <code>app.datasource.configuration.*</code>` 属性。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html"><code>DataSourceProperties</code></a> 负责处理 `<code>url</code>` 到 `<code>jdbc-url</code> 的转换，因此您可以按如下方式配置它：</p>
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html"><code>DataSourceProperties</code></a> 负责处理 <code>url</code>` 到 <code>jdbc-url</code> 的转换，因此您可以按如下方式配置它：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">
@@ -1799,7 +1799,7 @@ class MyCompleteAdditionalDataSourceConfiguration {
 <p>Spring Data 可以创建各种风格的 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a> 接口的实现。只要这些 <a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a> 实现包含在某个<a class="xref page" href="../reference/using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>中，Spring Boot 就会为您处理所有相关事务。通常，该包（或子包）是您主应用程序类所在的包，且该类已标注了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/SpringBootApplication.html"><code>@SpringBootApplication</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/EnableAutoConfiguration.html"><code>@EnableAutoConfiguration</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>对于许多应用程序，您只需在类路径上添加正确的 Spring Data 依赖项即可。JPA 有 <code>spring-boot-starter-data-jpa</code>`，MongoDB 有 `<code>spring-boot-starter-data-mongodb</code>，以及各种其他支持技术的启动器。要开始使用，请创建一些仓库接口来处理您的 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a> 对象。</p>
+<p>对于许多应用程序，您只需在类路径上添加正确的 Spring Data 依赖项即可。JPA 有 <code>spring-boot-starter-data-jpa</code>`，MongoDB 有 <code>spring-boot-starter-data-mongodb</code>，以及各种其他支持技术的启动器。要开始使用，请创建一些仓库接口来处理您的 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a> 对象。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 通过扫描<a class="xref page" href="../reference/using/auto-configuration.html#using.auto-configuration.packages">自动配置包</a>来确定您的<a class="apiref" href="https://docs.spring.io/spring-data/commons/docs/4.0.x/api/org/springframework/data/repository/Repository.html"><code>Repository</code></a>实现的位置。
@@ -1995,7 +1995,7 @@ spring.jpa.show-sql=true</code></pre>
 <p>您需要确保在 <code>spring.jpa.properties.*</code> 下定义的名称与您的 JPA 提供者所期望的名称完全匹配。Spring Boot 不会对这些条目尝试任何形式的宽松绑定。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您要配置 Hibernate 的批量大小，必须使用 <code>spring.jpa.properties.hibernate.jdbc.batch_size</code>`。如果使用其他形式，如 `<code>batchSize</code>` 或 `<code>batch-size</code>，Hibernate 将不会应用该设置。</p>
+<p>例如，如果您要配置 Hibernate 的批量大小，必须使用 <code>spring.jpa.properties.hibernate.jdbc.batch_size</code>`。如果使用其他形式，如 <code>batchSize</code>` 或 <code>batch-size</code>，Hibernate 将不会应用该设置。</p>
 </div>
 </td>
 </tr>
@@ -2445,9 +2445,9 @@ class MyAdditionalEntityManagerFactoryConfiguration {
 </div>
 <div class="paragraph">
 <p>上面的示例使用带有 <code>@Qualifier("second")</code>` 限定符的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> Bean 创建了一个 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>。
-它扫描与 `<code>Order</code>` 位于同一包中的实体。
-可以使用 `<code>app.jpa</code>` 命名空间来映射额外的 JPA 属性。
-使用 `<code>@Bean(defaultCandidate=false)</code>` 允许定义 `<code>secondJpaProperties</code>` 和 `<code>secondEntityManagerFactory</code> Bean，而不会干扰同类型的自动配置 Bean。</p>
+它扫描与 <code>Order</code>` 位于同一包中的实体。
+可以使用 <code>app.jpa</code>` 命名空间来映射额外的 JPA 属性。
+使用 <code>@Bean(defaultCandidate=false)</code>` 允许定义 <code>secondJpaProperties</code>` 和 <code>secondEntityManagerFactory</code> Bean，而不会干扰同类型的自动配置 Bean。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2552,7 +2552,7 @@ class CustomerConfiguration</span></code></pre>
 <h2 id="howto.data-access.use-traditional-persistence-xml"><a class="anchor" href="#howto.data-access.use-traditional-persistence-xml"></a>使用传统的 persistence.xml 文件</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot 默认不会搜索或使用 `<code>META-INF/persistence.xml</code>。如果您更喜欢使用传统的 `<code>persistence.xml</code>，您需要定义一个类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 的自定义 Bean（ID 为 'entityManagerFactory'），其类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.html"><code>LocalEntityManagerFactoryBean</code></a>，并在那里设置持久化单元名称。</p>
+<p>Spring Boot 默认不会搜索或使用 <code>META-INF/persistence.xml</code>。如果您更喜欢使用传统的 <code>persistence.xml</code>，您需要定义一个类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 的自定义 Bean（ID 为 'entityManagerFactory'），其类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.html"><code>LocalEntityManagerFactoryBean</code></a>，并在那里设置持久化单元名称。</p>
 </div>
 <div class="paragraph">
 <p>有关默认设置，请参见 <a href="https://github.com/spring-projects/spring-boot/tree/v4.0.0/module/spring-boot-jpa/src/main/java/org/springframework/boot/jpa/autoconfigure/JpaBaseConfiguration.java"><code>JpaBaseConfiguration</code></a>。</p>
@@ -2579,7 +2579,7 @@ class CustomerConfiguration</span></code></pre>
 <div class="paragraph">
 <p>Spring Data 提供了 Web 支持，简化了在 Web 应用程序中使用 Spring Data 存储库。
 Spring Boot 在 <code>spring.data.web</code>` 命名空间中提供了属性，用于自定义其配置。
-请注意，如果您使用的是 Spring Data REST，则必须使用 `<code>spring.data.rest</code> 命名空间中的属性。</p>
+请注意，如果您使用的是 Spring Data REST，则必须使用 <code>spring.data.rest</code> 命名空间中的属性。</p>
 </div>
 </div>
 </div>

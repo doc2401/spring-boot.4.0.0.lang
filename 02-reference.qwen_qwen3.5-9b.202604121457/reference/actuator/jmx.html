@@ -1100,7 +1100,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Java 管理扩展 (JMX) 提供了一种标准机制来监视和管理应用程序。默认情况下，此功能未启用。您可以通过将 <code>spring.jmx.enabled</code>` 配置属性设置为 `<code>true</code>` 来启用它。Spring Boot 会将最合适的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html"><code>MBeanServer</code></a> 暴露为一个 ID 为 `<code>mbeanServer</code> 的 Bean。任何带有 Spring JMX 注解（<code>@org.springframework.jmx.export.annotation.ManagedResource</code>、<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedAttribute.html"><code>@ManagedAttribute</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html"><code>@ManagedOperation</code></a>）的 Bean 都会暴露给该 MBeanServer。</p>
+<p>Java 管理扩展 (JMX) 提供了一种标准机制来监视和管理应用程序。默认情况下，此功能未启用。您可以通过将 <code>spring.jmx.enabled</code>` 配置属性设置为 <code>true</code>` 来启用它。Spring Boot 会将最合适的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html"><code>MBeanServer</code></a> 暴露为一个 ID 为 <code>mbeanServer</code> 的 Bean。任何带有 Spring JMX 注解（<code>@org.springframework.jmx.export.annotation.ManagedResource</code>、<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedAttribute.html"><code>@ManagedAttribute</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html"><code>@ManagedOperation</code></a>）的 Bean 都会暴露给该 MBeanServer。</p>
 </div>
 <div class="paragraph">
 <p>如果您的平台提供了标准的<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html"><code>MBeanServer</code></a>，Spring Boot 将使用该服务器，并在必要时默认使用 VM <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html"><code>MBeanServer</code></a>。如果上述所有方法均失败，则会创建一个新的<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html"><code>MBeanServer</code></a>。</p>
@@ -1128,7 +1128,7 @@
 <h2 id="actuator.jmx.custom-mbean-names"><a class="anchor" href="#actuator.jmx.custom-mbean-names"></a>自定义 MBean 名称</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MBean 的名称通常由端点的 <code>id</code>` 生成。例如，`<code>health</code>` 端点以 `<code>org.springframework.boot:type=Endpoint,name=Health</code> 的形式暴露。</p>
+<p>MBean 的名称通常由端点的 <code>id</code>` 生成。例如，<code>health</code>` 端点以 <code>org.springframework.boot:type=Endpoint,name=Health</code> 的形式暴露。</p>
 </div>
 <div class="paragraph">
 <p>如果您的应用程序包含多个 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>，您可能会发现名称发生冲突。为了解决此问题，您可以将 <code>spring.jmx.unique-names</code> 属性设置为 <code>true</code>，以确保 MBean 名称始终唯一。</p>
@@ -1177,7 +1177,7 @@ management:
 <h2 id="actuator.jmx.disable-jmx-endpoints"><a class="anchor" href="#actuator.jmx.disable-jmx-endpoints"></a>禁用 JMX 端点</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您不想通过 JMX 暴露端点，可以将 <code>management.endpoints.jmx.exposure.exclude</code>` 属性设置为 `<code>*</code>，如下例所示：</p>
+<p>如果您不想通过 JMX 暴露端点，可以将 <code>management.endpoints.jmx.exposure.exclude</code>` 属性设置为 <code>*</code>，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_2">
 <div class="content">

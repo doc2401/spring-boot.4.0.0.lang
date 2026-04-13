@@ -128,7 +128,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#create(org.springframework.boot.WebApplicationType)">create</a><wbr/>(@Nullable <a href="WebApplicationType.html" title="enum class in org.springframework.boot">WebApplicationType</a> webApplicationType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context"><code>application context</code></a> 创建 <a href="SpringApplication.html" title="class in org.springframework.boot"><code>SpringApplication</code></a>，并尊重给定的 `<code>webApplicationType</code>`。</div>
+<div class="block">为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context"><code>application context</code></a> 创建 <a href="SpringApplication.html" title="class in org.springframework.boot"><code>SpringApplication</code></a>，并尊重给定的 <code>webApplicationType</code>`。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default @Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html" title="class or interface in org.springframework.core.env">ConfigurableEnvironment</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#createEnvironment(org.springframework.boot.WebApplicationType)">createEnvironment</a><wbr/>(@Nullable <a href="WebApplicationType.html" title="enum class in org.springframework.boot">WebApplicationType</a> webApplicationType)</code></div>
@@ -144,12 +144,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="ApplicationContextFactory.html" title="interface in org.springframework.boot">ApplicationContextFactory</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a class="member-name-link" href="#of(java.util.function.Supplier)">of</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function">Supplier</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a>&gt; supplier)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
-<div class="block">创建一个 `<code>ApplicationContextFactory`</code>，该工厂将通过调用给定的 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function"><code>Supplier</code></a> 来创建上下文。</div>
+<div class="block">创建一个 <code>ApplicationContextFactory`</code>，该工厂将通过调用给定的 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function"><code>Supplier</code></a> 来创建上下文。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="ApplicationContextFactory.html" title="interface in org.springframework.boot">ApplicationContextFactory</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a class="member-name-link" href="#ofContextClass(java.lang.Class)">ofContextClass</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a>&gt; contextClass)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
-<div class="block">创建一个 `<code>ApplicationContextFactory</code>`，该工厂将通过其主构造函数实例化给定的 `<code>contextClass</code>` 来创建上下文。</div>
+<div class="block">创建一个 <code>ApplicationContextFactory</code>`，该工厂将通过其主构造函数实例化给定的 <code>contextClass</code>` 来创建上下文。</div>
 </div>
 </div>
 </div>
@@ -224,7 +224,7 @@ loadScripts(document, 'script');</script>
 <h3>create</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a></span> <span class="element-name">create</span><wbr/><span class="parameters">(@Nullable <a href="WebApplicationType.html" title="enum class in org.springframework.boot">WebApplicationType</a> webApplicationType)</span></div>
-<div class="block">为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context"><code>application context</code></a> 创建 <a href="SpringApplication.html" title="class in org.springframework.boot"><code>SpringApplication</code></a>，并尊重给定的 `<code>webApplicationType</code>`。</div>
+<div class="block">为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context"><code>application context</code></a> 创建 <a href="SpringApplication.html" title="class in org.springframework.boot"><code>SpringApplication</code></a>，并尊重给定的 <code>webApplicationType</code>`。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>webApplicationType</code> -  Web 应用程序类型</dd>
@@ -239,7 +239,7 @@ loadScripts(document, 'script');</script>
 <h3>ofContextClass</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">static</span> <span class="return-type"><a href="ApplicationContextFactory.html" title="interface in org.springframework.boot">ApplicationContextFactory</a></span> <span class="element-name">ofContextClass</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a>&gt; contextClass)</span></div>
-<div class="block">创建一个 `<code>ApplicationContextFactory</code>`，该工厂将通过其主构造函数实例化给定的 `<code>contextClass</code>` 来创建上下文。</div>
+<div class="block">创建一个 <code>ApplicationContextFactory</code>`，该工厂将通过其主构造函数实例化给定的 <code>contextClass</code>` 来创建上下文。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>contextClass</code> - 上下文类</dd>
@@ -260,7 +260,7 @@ loadScripts(document, 'script');</script>
 <h3>of</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">static</span> <span class="return-type"><a href="ApplicationContextFactory.html" title="interface in org.springframework.boot">ApplicationContextFactory</a></span> <span class="element-name">of</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function">Supplier</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a>&gt; supplier)</span></div>
-<div class="block">创建一个 `<code>ApplicationContextFactory`</code>，该工厂将通过调用给定的 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function"><code>Supplier</code></a> 来创建上下文。</div>
+<div class="block">创建一个 <code>ApplicationContextFactory`</code>，该工厂将通过调用给定的 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function"><code>Supplier</code></a> 来创建上下文。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>supplier</code> - 上下文供应者，例如<code>AnnotationConfigApplicationContext::new</code></dd>

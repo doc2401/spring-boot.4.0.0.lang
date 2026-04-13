@@ -19,7 +19,7 @@
     },
     {
       "source": "Sometimes, it is useful to have properties that <strong>add</strong> to the active profiles rather than replace them.\nThe <code>spring.profiles.include</code> property can be used to add active profiles on top of those activated by the <code>spring.profiles.active</code> property.\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> entry point also has a Java API for setting additional profiles.\nSee the <code>setAdditionalProfiles()</code> method in <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>.",
-      "translation": "有时，拥有能够<strong>添加</strong>到活动配置文件而非替换它们的属性是有用的。\n可以使用 <code>spring.profiles.include</code>` 属性在由 `<code>spring.profiles.active</code>` 属性激活的配置文件之上添加活动配置文件。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 入口点也提供了用于设置额外配置文件的 Java API。\n请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 中的 `<code>setAdditionalProfiles()</code> 方法。",
+      "translation": "有时，拥有能够<strong>添加</strong>到活动配置文件而非替换它们的属性是有用的。\n可以使用 <code>spring.profiles.include</code>` 属性在由 <code>spring.profiles.active</code>` 属性激活的配置文件之上添加活动配置文件。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 入口点也提供了用于设置额外配置文件的 Java API。\n请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 中的 <code>setAdditionalProfiles()</code> 方法。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "You can use a <code>spring.profiles.active</code> <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> property to specify which profiles are active.\nYou can specify the property in any of the ways described earlier in this chapter.\nFor example, you could include it in your <code>application.properties</code>, as shown in the following example:",
-      "translation": "您可以使用 <code>spring.profiles.active</code>` <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性来指定哪些配置文件处于活动状态。\n您可以按照本章前面描述的任意一种方式来设置该属性。\n例如，您可以将其包含在您的 `<code>application.properties</code> 文件中，如下例所示：",
+      "translation": "您可以使用 <code>spring.profiles.active</code>` <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性来指定哪些配置文件处于活动状态。\n您可以按照本章前面描述的任意一种方式来设置该属性。\n例如，您可以将其包含在您的 <code>application.properties</code> 文件中，如下例所示：",
       "count": 2
     },
     {
@@ -54,12 +54,12 @@
     },
     {
       "source": "This restriction helps to prevent common parsing issues.\nif, however, you prefer more flexible profile names you can set <code>spring.profiles.validate</code> to <code>false</code> in your <code>application.properties</code> or <code>application.yaml</code> file:",
-      "translation": "此限制有助于防止常见的解析问题。如果，不过，您更喜欢更灵活的配置文件名称，您可以在 `application.properties` 或 `application.yaml` 文件中将 <code>spring.profiles.validate</code>` 设置为 `<code>false</code>：",
+      "translation": "此限制有助于防止常见的解析问题。如果，不过，您更喜欢更灵活的配置文件名称，您可以在 `application.properties` 或 `application.yaml` 文件中将 <code>spring.profiles.validate</code>` 设置为 <code>false</code>：",
       "count": 2
     },
     {
       "source": "Our application can now be started using <code>--spring.profiles.active=production</code> to activate the <code>production</code>, <code>proddb</code> and <code>prodmq</code> profiles in one hit.",
-      "translation": "我们的应用程序现在可以使用 <code>--spring.profiles.active=production</code>` 一次性激活 `<code>production</code>`、`<code>proddb</code>` 和 `<code>prodmq</code> 配置文件。",
+      "translation": "我们的应用程序现在可以使用 <code>--spring.profiles.active=production</code>` 一次性激活 <code>production</code>`、<code>proddb</code>` 和 <code>prodmq</code> 配置文件。",
       "count": 2
     },
     {

@@ -24,12 +24,12 @@
     },
     {
       "source": "You can set <code>spring.jpa.hibernate.ddl-auto</code> to control Hibernate’s database initialization.\nSupported values are <code>none</code>, <code>validate</code>, <code>update</code>, <code>create</code>, and <code>create-drop</code>.\nSpring Boot chooses a default value for you based on whether you are using an embedded database.\nAn embedded database is identified by looking at the <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html\"><code>Connection</code></a> type and JDBC url.\n<code>hsqldb</code>, <code>h2</code>, or <code>derby</code> are embedded databases and others are not.\nIf an embedded database is identified and no schema manager (Flyway or Liquibase) has been detected, <code>ddl-auto</code> defaults to <code>create-drop</code>.\nIn all other cases, it defaults to <code>none</code>.",
-      "translation": "您可以将 <code>spring.jpa.hibernate.ddl-auto</code>` 设置为控制 Hibernate 的数据库初始化。支持的值为 `<code>none</code>`、`<code>validate</code>`、`<code>update</code>`、`<code>create</code>` 和 `<code>create-drop</code>`。Spring Boot 会根据您是否使用嵌入式数据库为您选择一个默认值。嵌入式数据库是通过检查 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html\"><code>Connection</code></a> 类型和 JDBC URL 来识别的。<code>hsqldb</code>、`<code>h2</code>` 或 `<code>derby</code>` 是嵌入式数据库，其他则不是。如果检测到嵌入式数据库且未检测到任何架构管理工具（Flyway 或 Liquibase），则 `<code>ddl-auto</code>` 的默认值为 `<code>create-drop</code>`。在所有其他情况下，其默认值为 `<code>none</code>。",
+      "translation": "您可以将 <code>spring.jpa.hibernate.ddl-auto</code>` 设置为控制 Hibernate 的数据库初始化。支持的值为 <code>none</code>`、<code>validate</code>`、<code>update</code>`、<code>create</code>` 和 <code>create-drop</code>`。Spring Boot 会根据您是否使用嵌入式数据库为您选择一个默认值。嵌入式数据库是通过检查 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html\"><code>Connection</code></a> 类型和 JDBC URL 来识别的。<code>hsqldb</code>、<code>h2</code>` 或 <code>derby</code>` 是嵌入式数据库，其他则不是。如果检测到嵌入式数据库且未检测到任何架构管理工具（Flyway 或 Liquibase），则 <code>ddl-auto</code>` 的默认值为 <code>create-drop</code>`。在所有其他情况下，其默认值为 <code>none</code>。",
       "count": 2
     },
     {
       "source": "Script-based <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> initialization is performed, by default, before any JPA <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> beans are created.\n<code>schema.sql</code> can be used to create the schema for JPA-managed entities and <code>data.sql</code> can be used to populate it.\nWhile we do not recommend using multiple data source initialization technologies, if you want script-based <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> initialization to be able to build upon the schema creation performed by Hibernate, set <code>spring.jpa.defer-datasource-initialization</code> to <code>true</code>.\nThis will defer data source initialization until after any <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> beans have been created and initialized.\n<code>schema.sql</code> can then be used to make additions to any schema creation performed by Hibernate and <code>data.sql</code> can be used to populate it.",
-      "translation": "基于脚本的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 初始化默认会在任何 JPA <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> Bean 创建之前执行。\n可以使用 <code>schema.sql</code>` 为 JPA 管理的实体创建架构，并使用 `<code>data.sql</code>` 填充数据。\n虽然我们不推荐使用多种数据源初始化技术，但如果您希望基于脚本的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 初始化能够建立在 Hibernate 执行的架构创建之上，请将 `<code>spring.jpa.defer-datasource-initialization</code>` 设置为 `<code>true</code>`。\n这将把数据源初始化推迟到任何 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> Bean 创建并初始化之后执行。\n此时，可以使用 `<code>schema.sql</code>` 对 Hibernate 执行的任何架构创建进行增补，并使用 `<code>data.sql</code> 填充数据。",
+      "translation": "基于脚本的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 初始化默认会在任何 JPA <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> Bean 创建之前执行。\n可以使用 <code>schema.sql</code>` 为 JPA 管理的实体创建架构，并使用 <code>data.sql</code>` 填充数据。\n虽然我们不推荐使用多种数据源初始化技术，但如果您希望基于脚本的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 初始化能够建立在 Hibernate 执行的架构创建之上，请将 <code>spring.jpa.defer-datasource-initialization</code>` 设置为 <code>true</code>`。\n这将把数据源初始化推迟到任何 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> Bean 创建并初始化之后执行。\n此时，可以使用 <code>schema.sql</code>` 对 Hibernate 执行的任何架构创建进行增补，并使用 <code>data.sql</code> 填充数据。",
       "count": 2
     },
     {
@@ -39,12 +39,12 @@
     },
     {
       "source": "In addition, Spring Boot processes the <code>optional:classpath*:schema-${platform}.sql</code> and <code>optional:classpath*:data-${platform}.sql</code> files (if present), where <code>${platform}</code> is the value of <code>spring.sql.init.platform</code>.\nThis allows you to switch to database-specific scripts if necessary.\nFor example, you might choose to set it to the vendor name of the database (<code>hsqldb</code>, <code>h2</code>, <code>oracle</code>, <code>mysql</code>, <code>postgresql</code>, and so on).",
-      "translation": "此外，Spring Boot 还会处理（如果存在）`optional:classpath*:schema-${platform}.sql` 和 `optional:classpath*:data-${platform}.sql` 文件，其中 `${platform}` 是 <code>spring.sql.init.platform</code>` 的值。这允许您在必要时切换到特定于数据库的脚本。例如，您可以将其设置为数据库供应商的名称（如 `<code>hsqldb</code>`、`<code>h2</code>`、`<code>oracle</code>`、`<code>mysql</code>`、`<code>postgresql</code> 等）。",
+      "translation": "此外，Spring Boot 还会处理（如果存在）`optional:classpath*:schema-${platform}.sql` 和 `optional:classpath*:data-${platform}.sql` 文件，其中 `${platform}` 是 <code>spring.sql.init.platform</code>` 的值。这允许您在必要时切换到特定于数据库的脚本。例如，您可以将其设置为数据库供应商的名称（如 <code>hsqldb</code>`、<code>h2</code>`、<code>oracle</code>`、<code>mysql</code>`、<code>postgresql</code> 等）。",
       "count": 2
     },
     {
       "source": "Typically, migrations are scripts in the form <code>V&lt;VERSION&gt;__&lt;NAME&gt;.sql</code> (with <code>&lt;VERSION&gt;</code> an underscore-separated version, such as ‘1’ or ‘2_1’).\nBy default, they are in a directory called <code>classpath:db/migration</code>, but you can modify that location by setting <code>spring.flyway.locations</code>.\nThis is a comma-separated list of one or more <code>classpath:</code> or <code>filesystem:</code> locations.\nFor example, the following configuration would search for scripts in both the default classpath location and the <code>/opt/migration</code> directory:",
-      "translation": "通常，迁移脚本采用 <code>V&lt;VERSION&gt;__&lt;NAME&gt;.sql</code>` 的形式（其中 `<code>&lt;VERSION&gt;</code>` 为下划线分隔的版本号，例如 '1' 或 '2_1'）。默认情况下，它们位于名为 `<code>classpath:db/migration</code>` 的目录中，但您可以通过设置 `<code>spring.flyway.locations</code>` 来修改该位置。这是一个包含一个或多个 `<code>classpath:</code>` 或 `<code>filesystem:</code> 位置的逗号分隔列表。例如，以下配置将在默认类路径位置和 `/opt/migration` 目录中同时搜索脚本：",
+      "translation": "通常，迁移脚本采用 <code>V&lt;VERSION&gt;__&lt;NAME&gt;.sql</code>` 的形式（其中 <code>&lt;VERSION&gt;</code>` 为下划线分隔的版本号，例如 '1' 或 '2_1'）。默认情况下，它们位于名为 <code>classpath:db/migration</code>` 的目录中，但您可以通过设置 <code>spring.flyway.locations</code>` 来修改该位置。这是一个包含一个或多个 <code>classpath:</code>` 或 <code>filesystem:</code> 位置的逗号分隔列表。例如，以下配置将在默认类路径位置和 `/opt/migration` 目录中同时搜索脚本：",
       "count": 2
     },
     {
@@ -54,12 +54,12 @@
     },
     {
       "source": "By default, it loads schema scripts from <code>optional:classpath*:schema.sql</code> and data scripts from <code>optional:classpath*:data.sql</code>.\nThe locations of these schema and data scripts can be customized using <code>spring.sql.init.schema-locations</code> and <code>spring.sql.init.data-locations</code> respectively.\nThe <code>optional:</code> prefix means that the application will start even when the files do not exist.\nTo have the application fail to start when the files are absent, remove the <code>optional:</code> prefix.",
-      "translation": "默认情况下，它会从 <code>optional:classpath*:schema.sql</code>` 加载模式脚本，并从 `<code>optional:classpath*:data.sql</code>` 加载数据脚本。可以使用 `<code>spring.sql.init.schema-locations</code>` 和 `<code>spring.sql.init.data-locations</code> 分别自定义这些模式和数据脚本的位置。<code>optional:</code> 前缀表示即使文件不存在，应用程序也会启动。若要使应用程序在文件缺失时无法启动，请移除 <code>optional:</code> 前缀。",
+      "translation": "默认情况下，它会从 <code>optional:classpath*:schema.sql</code>` 加载模式脚本，并从 <code>optional:classpath*:data.sql</code>` 加载数据脚本。可以使用 <code>spring.sql.init.schema-locations</code>` 和 <code>spring.sql.init.data-locations</code> 分别自定义这些模式和数据脚本的位置。<code>optional:</code> 前缀表示即使文件不存在，应用程序也会启动。若要使应用程序在文件缺失时无法启动，请移除 <code>optional:</code> 前缀。",
       "count": 2
     },
     {
       "source": "By default, SQL database initialization is only performed when using an embedded in-memory database.\nTo always initialize an SQL database, irrespective of its type, set <code>spring.sql.init.mode</code> to <code>always</code>.\nSimilarly, to disable initialization, set <code>spring.sql.init.mode</code> to <code>never</code>.\nBy default, Spring Boot enables the fail-fast feature of its script-based database initializer.\nThis means that, if the scripts cause exceptions, the application fails to start.\nYou can tune that behavior by setting <code>spring.sql.init.continue-on-error</code>.",
-      "translation": "默认情况下，仅在使用嵌入式内存数据库时执行 SQL 数据库初始化。\n若要始终初始化 SQL 数据库（无论其类型如何），请将 <code>spring.sql.init.mode</code>` 设置为 `<code>always</code>`。\n同样地，若要禁用初始化，请将 `<code>spring.sql.init.mode</code>` 设置为 `<code>never</code>`。\n默认情况下，Spring Boot 会启用其基于脚本的数据库初始化的快速失败（fail-fast）功能。\n这意味着，如果脚本引发异常，应用程序将无法启动。\n您可以通过设置 `<code>spring.sql.init.continue-on-error</code> 来调整此行为。",
+      "translation": "默认情况下，仅在使用嵌入式内存数据库时执行 SQL 数据库初始化。\n若要始终初始化 SQL 数据库（无论其类型如何），请将 <code>spring.sql.init.mode</code>` 设置为 <code>always</code>`。\n同样地，若要禁用初始化，请将 <code>spring.sql.init.mode</code>` 设置为 <code>never</code>`。\n默认情况下，Spring Boot 会启用其基于脚本的数据库初始化的快速失败（fail-fast）功能。\n这意味着，如果脚本引发异常，应用程序将无法启动。\n您可以通过设置 <code>spring.sql.init.continue-on-error</code> 来调整此行为。",
       "count": 2
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "source": "To automatically run Flyway database migrations on startup, add the appropriate Flyway module to your classpath.\nIn-memory and file-based databases are supported by <code>org.flywaydb:flyway-core</code>.\nOtherwise, a database-specific module is required.\nFor example, use <code>org.flywaydb:flyway-database-postgresql</code> with PostgreSQL and <code>org.flywaydb:flyway-mysql</code> with MySQL.\nSee <a href=\"https://documentation.red-gate.com/fd/supported-databases-and-versions-143754067.html\">the Flyway Documentation</a> for further details.",
-      "translation": "要在启动时自动运行 Flyway 数据库迁移，请将相应的 Flyway 模块添加到您的类路径中。\n内存和文件型数据库由 <code>org.flywaydb:flyway-core</code>` 支持。\n否则，需要特定的数据库模块。\n例如，PostgreSQL 使用 `<code>org.flywaydb:flyway-database-postgresql</code>`，MySQL 使用 `<code>org.flywaydb:flyway-mysql</code>。\n有关更多详细信息，请参阅 <a href=\"https://documentation.red-gate.com/fd/supported-databases-and-versions-143754067.html\">Flyway 文档</a>。",
+      "translation": "要在启动时自动运行 Flyway 数据库迁移，请将相应的 Flyway 模块添加到您的类路径中。\n内存和文件型数据库由 <code>org.flywaydb:flyway-core</code>` 支持。\n否则，需要特定的数据库模块。\n例如，PostgreSQL 使用 <code>org.flywaydb:flyway-database-postgresql</code>`，MySQL 使用 <code>org.flywaydb:flyway-mysql</code>。\n有关更多详细信息，请参阅 <a href=\"https://documentation.red-gate.com/fd/supported-databases-and-versions-143754067.html\">Flyway 文档</a>。",
       "count": 2
     },
     {
       "source": "Rather than using <code>db/migration</code>, the preceding configuration sets the directory to use according to the type of the database (such as <code>db/migration/mysql</code> for MySQL).\nThe list of supported databases is available in <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DatabaseDriver.html\"><code>DatabaseDriver</code></a>.",
-      "translation": "与其使用 <code>db/migration</code>`，上述配置会根据数据库类型（例如 MySQL 的 `<code>db/migration/mysql</code>）设置要使用的目录。支持的数据库列表可在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DatabaseDriver.html\"><code>DatabaseDriver</code></a> 中查看。",
+      "translation": "与其使用 <code>db/migration</code>`，上述配置会根据数据库类型（例如 MySQL 的 <code>db/migration/mysql</code>）设置要使用的目录。支持的数据库列表可在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DatabaseDriver.html\"><code>DatabaseDriver</code></a> 中查看。",
       "count": 2
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "source": "When you add the <code>org.liquibase:liquibase-core</code> to your classpath, database migrations run by default for both during application startup and before your tests run.\nThis behavior can be customized by using the <code>spring.liquibase.enabled</code> property, setting different values in the <code>main</code> and <code>test</code> configurations.\nIt is not possible to use two different ways to initialize the database (for example Liquibase for application startup, JPA for test runs).",
-      "translation": "将 <code>org.liquibase:liquibase-core</code>` 添加到类路径后，默认情况下会在应用程序启动期间和测试运行之前执行数据库迁移。\n您可以通过使用 `<code>spring.liquibase.enabled</code>` 属性并在 `<code>main</code>` 和 `<code>test</code> 配置中设置不同的值来自定义此行为。\n无法使用两种不同的方式来初始化数据库（例如，应用程序启动时使用 Liquibase，测试运行时使用 JPA）。",
+      "translation": "将 <code>org.liquibase:liquibase-core</code>` 添加到类路径后，默认情况下会在应用程序启动期间和测试运行之前执行数据库迁移。\n您可以通过使用 <code>spring.liquibase.enabled</code>` 属性并在 <code>main</code>` 和 <code>test</code> 配置中设置不同的值来自定义此行为。\n无法使用两种不同的方式来初始化数据库（例如，应用程序启动时使用 Liquibase，测试运行时使用 JPA）。",
       "count": 2
     },
     {
@@ -119,7 +119,7 @@
     },
     {
       "source": "You can also use Flyway to provide data for specific scenarios.\nFor example, you can place test-specific migrations in <code>src/test/resources</code> and they are run only when your application starts for testing.\nAlso, you can use profile-specific configuration to customize <code>spring.flyway.locations</code> so that certain migrations run only when a particular profile is active.\nFor example, in <code>application-dev.properties</code>, you might specify the following setting:",
-      "translation": "您还可以使用 Flyway 为特定场景提供数据。例如，您可以在 <code>src/test/resources</code>` 中放置针对测试的迁移脚本，这些脚本仅在应用程序启动进行测试时运行。此外，您可以使用特定于环境的配置来自定义 `<code>spring.flyway.locations</code>`，以便在某个特定环境激活时仅运行某些迁移脚本。例如，在 `<code>application-dev.properties</code> 中，您可能指定以下设置：",
+      "translation": "您还可以使用 Flyway 为特定场景提供数据。例如，您可以在 <code>src/test/resources</code>` 中放置针对测试的迁移脚本，这些脚本仅在应用程序启动进行测试时运行。此外，您可以使用特定于环境的配置来自定义 <code>spring.flyway.locations</code>`，以便在某个特定环境激活时仅运行某些迁移脚本。例如，在 <code>application-dev.properties</code> 中，您可能指定以下设置：",
       "count": 2
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "source": "You can also switch off the initialization explicitly by setting <code>spring.batch.jdbc.initialize-schema</code> to <code>never</code>.",
-      "translation": "您也可以通过将 <code>spring.batch.jdbc.initialize-schema</code>` 设置为 `<code>never</code> 来显式关闭初始化。",
+      "translation": "您也可以通过将 <code>spring.batch.jdbc.initialize-schema</code>` 设置为 <code>never</code> 来显式关闭初始化。",
       "count": 2
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "source": "By default, the master change log is read from <code>db/changelog/db.changelog-master.yaml</code>, but you can change the location by setting <code>spring.liquibase.change-log</code>.\nIn addition to YAML, Liquibase also supports JSON, XML, and SQL change log formats.",
-      "translation": "默认情况下，主变更日志从 <code>db/changelog/db.changelog-master.yaml</code>` 读取，但您可以通过设置 `<code>spring.liquibase.change-log</code> 来更改其位置。此外，除了 YAML 格式外，Liquibase 还支持 JSON、XML 和 SQL 变更日志格式。",
+      "translation": "默认情况下，主变更日志从 <code>db/changelog/db.changelog-master.yaml</code>` 读取，但您可以通过设置 <code>spring.liquibase.change-log</code> 来更改其位置。此外，除了 YAML 格式外，Liquibase 还支持 JSON、XML 和 SQL 变更日志格式。",
       "count": 2
     },
     {
@@ -174,12 +174,12 @@
     },
     {
       "source": "If you want to create Flyway migrations which populate your test database, place them in <code>src/test/resources/db/migration</code>.\nA file named, for example, <code>src/test/resources/db/migration/V9999__test-data.sql</code> will be executed after your production migrations and only if you’re running the tests.\nYou can use this file to create the needed test data.\nThis file will not be packaged in your uber jar or your container.",
-      "translation": "如果您想创建用于填充测试数据库的 Flyway 迁移，请将它们放置在 <code>src/test/resources/db/migration</code>` 中。\n例如，名为 `<code>src/test/resources/db/migration/V9999__test-data.sql</code> 的文件将在生产迁移之后执行，且仅在运行测试时执行。\n您可以使用此文件创建所需的测试数据。\n此文件不会打包到您的 uber jar 或容器中。",
+      "translation": "如果您想创建用于填充测试数据库的 Flyway 迁移，请将它们放置在 <code>src/test/resources/db/migration</code>` 中。\n例如，名为 <code>src/test/resources/db/migration/V9999__test-data.sql</code> 的文件将在生产迁移之后执行，且仅在运行测试时执行。\n您可以使用此文件创建所需的测试数据。\n此文件不会打包到您的 uber jar 或容器中。",
       "count": 2
     },
     {
       "source": "First, you need to configure Liquibase to use a different changelog when running the tests.\nOne way to do this is to create a Spring Boot <code>test</code> profile and put the Liquibase properties in there.\nFor that, create a file named <code>src/test/resources/application-test.properties</code> and put the following property in there:",
-      "translation": "首先，您需要配置 Liquibase 在运行测试时使用不同的变更日志。一种方法是创建一个 Spring Boot <code>test</code>` 配置文件，并将 Liquibase 属性放置其中。为此，请创建一个名为 `<code>src/test/resources/application-test.properties</code> 的文件，并在其中添加以下属性：",
+      "translation": "首先，您需要配置 Liquibase 在运行测试时使用不同的变更日志。一种方法是创建一个 Spring Boot <code>test</code>` 配置文件，并将 Liquibase 属性放置其中。为此，请创建一个名为 <code>src/test/resources/application-test.properties</code> 的文件，并在其中添加以下属性：",
       "count": 2
     },
     {

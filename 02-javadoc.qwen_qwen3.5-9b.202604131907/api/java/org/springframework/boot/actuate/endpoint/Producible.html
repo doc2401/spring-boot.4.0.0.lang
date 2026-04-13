@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Producible&lt;E extends <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang">Enum</a>&lt;E&gt; &amp; Producible&lt;E&gt;&gt;</span></div>
 <div class="block">Interface that can be implemented by any <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang"><code>Enum</code></a> that represents a finite set of
 producible mime-types.
-<p>可与 <a href="annotation/ReadOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@ReadOperation</code></a>、<a href="annotation/WriteOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@WriteOperation</code></a> 和 <a href="annotation/DeleteOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@DeleteOperation</code></a> 注解配合使用，以快速定义一组 `<code>produces</code>` 值。</p><p><a href="Producible.html" title="interface in org.springframework.boot.actuate.endpoint"><code>Producible</code></a> 类型也可以在底层技术支持内容协商时注入到操作中。例如，对于基于 Web 的端点，<code>Producible</code> 枚举的值是使用请求的 <code>Accept</code> 头解析的。当多个值同样可接受时，使用具有最高<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()" title="class or interface in java.lang"><code>ordinal</code></a> 的值。</p></div>
+<p>可与 <a href="annotation/ReadOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@ReadOperation</code></a>、<a href="annotation/WriteOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@WriteOperation</code></a> 和 <a href="annotation/DeleteOperation.html" title="annotation interface in org.springframework.boot.actuate.endpoint.annotation"><code>@DeleteOperation</code></a> 注解配合使用，以快速定义一组 <code>produces</code>` 值。</p><p><a href="Producible.html" title="interface in org.springframework.boot.actuate.endpoint"><code>Producible</code></a> 类型也可以在底层技术支持内容协商时注入到操作中。例如，对于基于 Web 的端点，<code>Producible</code> 枚举的值是使用请求的 <code>Accept</code> 头解析的。当多个值同样可接受时，使用具有最高<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()" title="class or interface in java.lang"><code>ordinal</code></a> 的值。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2.5.0</dd>
@@ -112,7 +112,7 @@ producible mime-types.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#isDefault()">isDefault</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">如果提供了 `*/*` 的接受头，或者缺少 `<code>Accept</code>` 头，则返回此枚举值是否应作为默认值。</div>
+<div class="block">如果提供了 `*/*` 的接受头，或者缺少 <code>Accept</code>` 头，则返回此枚举值是否应作为默认值。</div>
 </div>
 </div>
 </div>
@@ -146,7 +146,7 @@ producible mime-types.
 <h3>isDefault</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">boolean</span> <span class="element-name">isDefault</span>()</div>
-<div class="block">如果提供了 `Accept` 头为 `*/*`，或者 `<code>Accept</code>` 头缺失时，应返回此枚举值作为默认值。只能标记一个值为默认值。如果没有标记任何值，则使用具有最高 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()" title="class or interface in java.lang"><code>ordinal</code></a> 的值作为默认值。</div>
+<div class="block">如果提供了 `Accept` 头为 `*/*`，或者 <code>Accept</code>` 头缺失时，应返回此枚举值作为默认值。只能标记一个值为默认值。如果没有标记任何值，则使用具有最高 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html#ordinal()" title="class or interface in java.lang"><code>ordinal</code></a> 的值作为默认值。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>如果该值应作为默认值使用</dd>

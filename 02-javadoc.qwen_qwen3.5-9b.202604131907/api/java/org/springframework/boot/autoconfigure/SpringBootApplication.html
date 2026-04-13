@@ -238,7 +238,7 @@ scan for annotated components. The package of each class specified will be scann
 </span><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/support/BeanNameGenerator.html" title="class or interface in org.springframework.beans.factory.support">BeanNameGenerator</a>&gt;</span> <span class="element-name">nameGenerator</span></div>
 <div class="block">The <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/support/BeanNameGenerator.html" title="class or interface in org.springframework.beans.factory.support"><code>BeanNameGenerator</code></a> class to be used for naming detected components
 within the Spring container.
-<p><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/support/BeanNameGenerator.html" title="class or interface in org.springframework.beans.factory.support"><code>BeanNameGenerator</code></a> 接口本身的默认值表明，用于处理此 `<code>@SpringBootApplication</code> 注解的扫描器应使用其继承的 bean 名称生成器，例如默认的
+<p><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/support/BeanNameGenerator.html" title="class or interface in org.springframework.beans.factory.support"><code>BeanNameGenerator</code></a> 接口本身的默认值表明，用于处理此 <code>@SpringBootApplication</code> 注解的扫描器应使用其继承的 bean 名称生成器，例如默认的
 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationBeanNameGenerator.html" title="class or interface in org.springframework.context.annotation"><code>AnnotationBeanNameGenerator</code></a>，或在引导时向应用程序上下文提供的任何自定义实例。</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -271,10 +271,10 @@ case of direct <code>@Bean</code> method calls in user code. This feature requir
 method interception, implemented through a runtime-generated CGLIB subclass which
 comes with limitations such as the configuration class and its methods not being
 allowed to declare <code>final</code>.
-<p>默认值为 `<code>true</code>`，允许在配置类内部使用“bean 之间的引用”，也允许外部调用此配置的`<code>@Bean</code>`方法（例如从另一个配置类中调用）。如果不需要此功能，因为该特定配置的每个`<code>@Bean</code>`方法都是自包含的，并设计为容器使用的普通工厂方法，请将此标志切换为 `<code>false</code>` 以避免 CGLIB 子类处理。</p><p>关闭 Bean 方法拦截可单独处理 `<code>@Bean</code>` 方法，就像在非 `<code>@Configuration</code>` 类上声明时一样，即所谓的"@Bean Lite Mode"（参见 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean 的 javadoc</code></a>）。因此，其行为等效于移除 `<code>@Configuration</code>` 元数据。</p></div>
+<p>默认值为 <code>true</code>`，允许在配置类内部使用“bean 之间的引用”，也允许外部调用此配置的<code>@Bean</code>`方法（例如从另一个配置类中调用）。如果不需要此功能，因为该特定配置的每个<code>@Bean</code>`方法都是自包含的，并设计为容器使用的普通工厂方法，请将此标志切换为 <code>false</code>` 以避免 CGLIB 子类处理。</p><p>关闭 Bean 方法拦截可单独处理 <code>@Bean</code>` 方法，就像在非 <code>@Configuration</code>` 类上声明时一样，即所谓的"@Bean Lite Mode"（参见 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean 的 javadoc</code></a>）。因此，其行为等效于移除 <code>@Configuration</code>` 元数据。</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>是否代理 `<code>@Bean</code>` 方法</dd>
+<dd>是否代理 <code>@Bean</code>` 方法</dd>
 <dt>Since:</dt>
 <dd>2.2</dd>
 </dl>

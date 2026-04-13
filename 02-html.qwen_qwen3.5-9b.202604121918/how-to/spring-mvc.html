@@ -1160,7 +1160,7 @@ class MyController {
 </div>
 </div>
 <div class="paragraph">
-<p>只要 Jackson 3 能够序列化 <code>MyThing</code>`（对于普通 POJO 或 Groovy 对象为真），则默认情况下，`<code><a class="bare" href="http://localhost:8080/thing">localhost:8080/thing</a></code> 会提供其 JSON 表示。
+<p>只要 Jackson 3 能够序列化 <code>MyThing</code>`（对于普通 POJO 或 Groovy 对象为真），则默认情况下，<code><a class="bare" href="http://localhost:8080/thing">localhost:8080/thing</a></code> 会提供其 JSON 表示。
 请注意，在浏览器中，您有时可能会看到 XML 响应，因为浏览器往往会发送偏好 XML 的 accept 头。</p>
 </div>
 </div>
@@ -1326,13 +1326,13 @@ class MyThing {
 </tbody>
 </table>
 <div class="paragraph">
-<p>例如，要启用美化打印，请设置 <code>spring.jackson.serialization.indent_output=true</code>`。请注意，由于使用了<a class="xref page" href="../reference/features/external-config.html#features.external-config.typesafe-configuration-properties.relaxed-binding">宽松绑定</a>，`<code>indent_output</code>`的大小写不必与相应的枚举常量 `<code>INDENT_OUTPUT</code> 的大小写匹配。</p>
+<p>例如，要启用美化打印，请设置 <code>spring.jackson.serialization.indent_output=true</code>`。请注意，由于使用了<a class="xref page" href="../reference/features/external-config.html#features.external-config.typesafe-configuration-properties.relaxed-binding">宽松绑定</a>，<code>indent_output</code>`的大小写不必与相应的枚举常量 <code>INDENT_OUTPUT</code> 的大小写匹配。</p>
 </div>
 <div class="paragraph">
 <p>此基于环境的配置应用于自动配置的 <a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper/Builder.html"><code>Builder</code></a>  Bean，并适用于使用构建器创建的任何映射器，包括自动配置的 <a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper.html"><code>JsonMapper</code></a> Bean。</p>
 </div>
 <div class="paragraph">
-<p>为便于在使用先前采用 Jackson 2 的应用程序时进行迁移，可以配置自动配置的 <code>JsonMapper``，使其默认值尽可能接近 Spring Boot 用于 Jackson 2 的默认值。要启用这些默认值，请将 `<code>spring.jackson.use-jackson2-defaults</code>` 设置为 `<code>true</code>。</code></p>
+<p>为便于在使用先前采用 Jackson 2 的应用程序时进行迁移，可以配置自动配置的 <code>JsonMapper``，使其默认值尽可能接近 Spring Boot 用于 Jackson 2 的默认值。要启用这些默认值，请将 <code>spring.jackson.use-jackson2-defaults</code>` 设置为 <code>true</code>。</code></p>
 </div>
 <div class="paragraph">
 <p>上下文的<a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper/Builder.html"><code>Builder</code></a>可以通过一个或多个<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jackson/autoconfigure/JsonMapperBuilderCustomizer.html"><code>JsonMapperBuilderCustomizer</code></a>bean进行自定义。这些自定义器bean可以排序（Boot 自身的自定义器顺序为 0），从而允许在 Boot 的自定义之前和之后应用额外的自定义。</p>
@@ -1342,7 +1342,7 @@ class MyThing {
 这提供了一种应用程序范围的机制，以便在为新应用程序添加功能时贡献自定义模块。</p>
 </div>
 <div class="paragraph">
-<p>参与 Java <code>ServiceLoader` 机制的任何模块默认都会被发现并添加到自动配置的<a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper/Builder.html"><code>Builder</code></a>中。若要禁用此行为，请将 `<code>spring.jackson.find-and-add-modules</code>` 设置为 `<code>false</code>。</code></p>
+<p>参与 Java <code>ServiceLoader` 机制的任何模块默认都会被发现并添加到自动配置的<a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper/Builder.html"><code>Builder</code></a>中。若要禁用此行为，请将 <code>spring.jackson.find-and-add-modules</code>` 设置为 <code>false</code>。</code></p>
 </div>
 <div class="paragraph">
 <p>如果您想完全替换默认的 <a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper.html"><code>JsonMapper</code></a>，请定义该类型的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>，或者如果您更喜欢基于构建器的方法，请定义一个 <a class="apiref" href="https://javadoc.io/doc/tools.jackson.core/jackson-databind/3.0.2/tools/jackson/databind/json/JsonMapper/Builder.html"><code>Builder</code></a> <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>。
@@ -1564,7 +1564,7 @@ class MyThing {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>使用您自己的模板技术覆盖错误页面取决于所使用的模板技术。例如，如果您使用 Thymeleaf，可以添加一个 <code>error.html</code>` 模板。如果您使用 FreeMarker，则可以添加一个 `<code>error.ftlh</code>` 模板。通常，您需要一个解析名为 `<code>error</code>` 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html"><code>View</code></a>，或者一个处理 `<code>/error</code>` 路径的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a>。除非您替换了一些默认配置，否则应该在您的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 中找到一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/BeanNameViewResolver.html"><code>BeanNameViewResolver</code></a>，因此一个名为 `<code>error</code> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 是实现这一目标的一种方式。有关更多选项，请参阅 <a href="https://github.com/spring-projects/spring-boot/tree/v4.0.0/module/spring-boot-webmvc/src/main/java/org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration.java"><code>ErrorMvcAutoConfiguration</code></a>。</p>
+<p>使用您自己的模板技术覆盖错误页面取决于所使用的模板技术。例如，如果您使用 Thymeleaf，可以添加一个 <code>error.html</code>` 模板。如果您使用 FreeMarker，则可以添加一个 <code>error.ftlh</code>` 模板。通常，您需要一个解析名为 <code>error</code>` 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html"><code>View</code></a>，或者一个处理 <code>/error</code>` 路径的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a>。除非您替换了一些默认配置，否则应该在您的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 中找到一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/BeanNameViewResolver.html"><code>BeanNameViewResolver</code></a>，因此一个名为 <code>error</code> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 是实现这一目标的一种方式。有关更多选项，请参阅 <a href="https://github.com/spring-projects/spring-boot/tree/v4.0.0/module/spring-boot-webmvc/src/main/java/org/springframework/boot/webmvc/autoconfigure/error/ErrorMvcAutoConfiguration.java"><code>ErrorMvcAutoConfiguration</code></a>。</p>
 </div>
 <div class="paragraph">
 <p>另请参阅<a class="xref page" href="../reference/web/servlet.html#web.servlet.spring-mvc.error-handling">错误处理</a>部分，以了解如何在 Servlet 容器中注册处理程序的详细信息。</p>

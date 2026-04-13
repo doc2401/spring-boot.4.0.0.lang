@@ -34,7 +34,7 @@
     },
     {
       "source": "The example above creates an <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> using the <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> bean qualified with <code>@Qualifier(\"second\")</code>.\nIt scans entities located in the same package as <code>Order</code>.\nIt is possible to map additional JPA properties using the <code>app.jpa</code> namespace.\nThe use of <code>@Bean(defaultCandidate=false)</code> allows the <code>secondJpaProperties</code> and <code>secondEntityManagerFactory</code> beans to be defined without interfering with auto-configured beans of the same type.",
-      "translation": "上面的示例使用带有 <code>@Qualifier(\"second\")</code>` 限定符的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> Bean 创建了一个 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a>。\n它扫描与 `<code>Order</code>` 位于同一包中的实体。\n可以使用 `<code>app.jpa</code>` 命名空间来映射额外的 JPA 属性。\n使用 `<code>@Bean(defaultCandidate=false)</code>` 允许定义 `<code>secondJpaProperties</code>` 和 `<code>secondEntityManagerFactory</code> Bean，而不会干扰同类型的自动配置 Bean。",
+      "translation": "上面的示例使用带有 <code>@Qualifier(\"second\")</code>` 限定符的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> Bean 创建了一个 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a>。\n它扫描与 <code>Order</code>` 位于同一包中的实体。\n可以使用 <code>app.jpa</code>` 命名空间来映射额外的 JPA 属性。\n使用 <code>@Bean(defaultCandidate=false)</code>` 允许定义 <code>secondJpaProperties</code>` 和 <code>secondEntityManagerFactory</code> Bean，而不会干扰同类型的自动配置 Bean。",
       "count": 2
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "source": "Spring Boot will not search for or use a <code>META-INF/persistence.xml</code> by default.\nIf you prefer to use a traditional <code>persistence.xml</code>, you need to define your own <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a> of type <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.html\"><code>LocalEntityManagerFactoryBean</code></a> (with an ID of ‘entityManagerFactory’) and set the persistence unit name there.",
-      "translation": "Spring Boot 默认不会搜索或使用 `<code>META-INF/persistence.xml</code>。如果您更喜欢使用传统的 `<code>persistence.xml</code>，您需要定义一个类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a> 的自定义 Bean（ID 为 'entityManagerFactory'），其类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.html\"><code>LocalEntityManagerFactoryBean</code></a>，并在那里设置持久化单元名称。",
+      "translation": "Spring Boot 默认不会搜索或使用 <code>META-INF/persistence.xml</code>。如果您更喜欢使用传统的 <code>persistence.xml</code>，您需要定义一个类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\"><code>@Bean</code></a> 的自定义 Bean（ID 为 'entityManagerFactory'），其类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/LocalEntityManagerFactoryBean.html\"><code>LocalEntityManagerFactoryBean</code></a>，并在那里设置持久化单元名称。",
       "count": 2
     },
     {
       "source": "This setup is equivalent to what Spring Boot does for you by default, except that the pool’s type is specified in code and its settings are exposed as <code>app.datasource.configuration.*</code> properties.\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html\"><code>DataSourceProperties</code></a> takes care of the <code>url</code> to <code>jdbc-url</code> translation, so you can configure it as follows:",
-      "translation": "此配置与 Spring Boot 默认为您执行的操作等效，不同之处在于池的类型在代码中指定，其设置暴露为 <code>app.datasource.configuration.*</code>` 属性。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html\"><code>DataSourceProperties</code></a> 负责处理 `<code>url</code>` 到 `<code>jdbc-url</code> 的转换，因此您可以按如下方式配置它：",
+      "translation": "此配置与 Spring Boot 默认为您执行的操作等效，不同之处在于池的类型在代码中指定，其设置暴露为 <code>app.datasource.configuration.*</code>` 属性。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/autoconfigure/DataSourceProperties.html\"><code>DataSourceProperties</code></a> 负责处理 <code>url</code>` 到 <code>jdbc-url</code> 的转换，因此您可以按如下方式配置它：",
       "count": 2
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "source": "For many applications, all you need is to put the right Spring Data dependencies on your classpath.\nThere is a <code>spring-boot-starter-data-jpa</code> for JPA, <code>spring-boot-starter-data-mongodb</code> for Mongodb, and various other starters for supported technologies.\nTo get started, create some repository interfaces to handle your <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html\"><code>@Entity</code></a> objects.",
-      "translation": "对于许多应用程序，您只需在类路径上添加正确的 Spring Data 依赖项即可。JPA 有 <code>spring-boot-starter-data-jpa</code>`，MongoDB 有 `<code>spring-boot-starter-data-mongodb</code>，以及各种其他支持技术的启动器。要开始使用，请创建一些仓库接口来处理您的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html\"><code>@Entity</code></a> 对象。",
+      "translation": "对于许多应用程序，您只需在类路径上添加正确的 Spring Data 依赖项即可。JPA 有 <code>spring-boot-starter-data-jpa</code>`，MongoDB 有 <code>spring-boot-starter-data-mongodb</code>，以及各种其他支持技术的启动器。要开始使用，请创建一些仓库接口来处理您的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html\"><code>@Entity</code></a> 对象。",
       "count": 2
     },
     {
@@ -189,7 +189,7 @@
     },
     {
       "source": "For example, if you want to configure Hibernate’s batch size you must use <code>spring.jpa.properties.hibernate.jdbc.batch_size</code>.\nIf you use other forms, such as <code>batchSize</code> or <code>batch-size</code>, Hibernate will not apply the setting.",
-      "translation": "例如，如果您要配置 Hibernate 的批量大小，必须使用 <code>spring.jpa.properties.hibernate.jdbc.batch_size</code>`。如果使用其他形式，如 `<code>batchSize</code>` 或 `<code>batch-size</code>，Hibernate 将不会应用该设置。",
+      "translation": "例如，如果您要配置 Hibernate 的批量大小，必须使用 <code>spring.jpa.properties.hibernate.jdbc.batch_size</code>`。如果使用其他形式，如 <code>batchSize</code>` 或 <code>batch-size</code>，Hibernate 将不会应用该设置。",
       "count": 2
     },
     {
@@ -219,7 +219,7 @@
     },
     {
       "source": "Unfortunately, this basic setup does not work because Hikari has no <code>url</code> property.\nInstead, it has a <code>jdbc-url</code> property which means that you must rewrite your configuration as follows:",
-      "translation": "不幸的是，这种基本设置无法工作，因为 Hikari 没有 <code>url</code>` 属性。相反，它有一个 `<code>jdbc-url</code> 属性，这意味着您必须按以下方式重写配置：",
+      "translation": "不幸的是，这种基本设置无法工作，因为 Hikari 没有 <code>url</code>` 属性。相反，它有一个 <code>jdbc-url</code> 属性，这意味着您必须按以下方式重写配置：",
       "count": 2
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "source": "Spring Data provides web support that simplifies the use of Spring Data repositories in a web application.\nSpring Boot provides properties in the <code>spring.data.web</code> namespace for customizing its configuration.\nNote that if you are using Spring Data REST, you must use the properties in the <code>spring.data.rest</code> namespace instead.",
-      "translation": "Spring Data 提供了 Web 支持，简化了在 Web 应用程序中使用 Spring Data 存储库。\nSpring Boot 在 <code>spring.data.web</code>` 命名空间中提供了属性，用于自定义其配置。\n请注意，如果您使用的是 Spring Data REST，则必须使用 `<code>spring.data.rest</code> 命名空间中的属性。",
+      "translation": "Spring Data 提供了 Web 支持，简化了在 Web 应用程序中使用 Spring Data 存储库。\nSpring Boot 在 <code>spring.data.web</code>` 命名空间中提供了属性，用于自定义其配置。\n请注意，如果您使用的是 Spring Data REST，则必须使用 <code>spring.data.rest</code> 命名空间中的属性。",
       "count": 2
     },
     {

@@ -1108,7 +1108,7 @@
 <h2 id="metrics.retrieving-names"><a class="anchor" href="#metrics.retrieving-names"></a>检索指标名称</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取可用指标的名称，请向 <code>/actuator/metrics</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取可用指标的名称，请向 <code>/actuator/metrics</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1162,7 +1162,7 @@ Content-Length: 154
 <h2 id="metrics.retrieving-metric"><a class="anchor" href="#metrics.retrieving-metric"></a>获取指标</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取指标，请向 <code>/actuator/metrics/{metric.name}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取指标，请向 <code>/actuator/metrics/{metric.name}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1295,7 +1295,7 @@ Content-Length: 555
 <h2 id="metrics.drilling-down"><a class="anchor" href="#metrics.drilling-down"></a>下钻</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要深入查看某个指标，请使用 `tag` 查询参数向 <code>/actuator/metrics/{metric.name}</code>` 发送一个 `<code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要深入查看某个指标，请使用 `tag` 查询参数向 <code>/actuator/metrics/{metric.name}</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1303,7 +1303,7 @@ Content-Length: 555
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例检索了 <code>jvm.memory.max</code>` 指标，其中 `<code>area</code>` 标签的值为 `<code>nonheap</code>`，且 `<code>id</code>` 属性的值为 `<code>Compressed Class Space</code>。
+<p>前面的示例检索了 <code>jvm.memory.max</code>` 指标，其中 <code>area</code>` 标签的值为 <code>nonheap</code>`，且 <code>id</code>` 属性的值为 <code>Compressed Class Space</code>。
 返回结果类似于以下内容：</p>
 </div>
 <div class="listingblock">

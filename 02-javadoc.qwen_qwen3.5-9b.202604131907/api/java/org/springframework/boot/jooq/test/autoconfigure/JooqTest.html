@@ -87,7 +87,7 @@ loadScripts(document, 'script');</script>
 <a href="../../../autoconfigure/ImportAutoConfiguration.html" title="annotation interface in org.springframework.boot.autoconfigure">@ImportAutoConfiguration</a>
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">JooqTest</span></div>
 <div class="block">Annotation for a jOOQ test that focuses <strong>only</strong> on jOOQ-based components.
-<p>使用此注解仅启用与 jOOQ 测试相关的自动配置。同样，组件扫描被配置为跳过常规组件和配置属性。</p><p>默认情况下，带有 `<code>@JooqTest</code>` 注解的测试会使用配置的数据库。如果您想通过嵌入式内存数据库替换任何显式或通常自动配置的 DataSource，可以使用 <a href="../../../jdbc/test/autoconfigure/AutoConfigureTestDatabase.html" title="annotation interface in org.springframework.boot.jdbc.test.autoconfigure"><code>@AutoConfigureTestDatabase</code></a> 注解来覆盖这些设置。</p><p>在使用 JUnit 4 时，此注解应与 `<code>@RunWith(SpringRunner.class)</code>` 结合使用。</p></div>
+<p>使用此注解仅启用与 jOOQ 测试相关的自动配置。同样，组件扫描被配置为跳过常规组件和配置属性。</p><p>默认情况下，带有 <code>@JooqTest</code>` 注解的测试会使用配置的数据库。如果您想通过嵌入式内存数据库替换任何显式或通常自动配置的 DataSource，可以使用 <a href="../../../jdbc/test/autoconfigure/AutoConfigureTestDatabase.html" title="annotation interface in org.springframework.boot.jdbc.test.autoconfigure"><code>@AutoConfigureTestDatabase</code></a> 注解来覆盖这些设置。</p><p>在使用 JUnit 4 时，此注解应与 <code>@RunWith(SpringRunner.class)</code>` 结合使用。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>4.0.0</dd>

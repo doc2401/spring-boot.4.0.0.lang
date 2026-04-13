@@ -94,7 +94,7 @@ extends <a class="external-link" href="https://docs.spring.io/spring-framework/d
 <div class="block">An <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a> that additionally supports AssertJ style assertions. Can
 be used to decorate an existing application context or an application context that
 failed to start.
-<p>断言可以使用标准的 AssertJ `<code>assertThat(...)</code>` 风格应用（有关完整列表，请参阅 <a href="ApplicationContextAssert.html" title="class in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssert</code></a>）。例如：</p><pre class="code">assertThat(applicationContext).hasSingleBean(MyBean.class);
+<p>断言可以使用标准的 AssertJ <code>assertThat(...)</code>` 风格应用（有关完整列表，请参阅 <a href="ApplicationContextAssert.html" title="class in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssert</code></a>）。例如：</p><pre class="code">assertThat(applicationContext).hasSingleBean(MyBean.class);
 </pre>
 <p>如果出于任何原因需要原始的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>，可以使用<a href="#getSourceApplicationContext()"><code>getSourceApplicationContext()</code></a> 方法。</p><p>任何在启动失败的上下文中调用的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a> 方法都会抛出 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang"><code>IllegalStateException</code></a>。</p></div>
 <dl class="notes">
@@ -180,7 +180,7 @@ failed to start.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#getStartupFailure()">getStartupFailure</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">返回导致应用程序上下文失败的失败信息，或者如果上下文启动没有问题则返回 `<code>null</code>`。</div>
+<div class="block">返回导致应用程序上下文失败的失败信息，或者如果上下文启动没有问题则返回 <code>null</code>`。</div>
 </div>
 </div>
 </div>
@@ -231,7 +231,7 @@ failed to start.
             <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang">forRemoval</a>=false)
 </span><span class="return-type"><a href="ApplicationContextAssert.html" title="class in org.springframework.boot.test.context.assertj">ApplicationContextAssert</a>&lt;<a href="#type-param-C" title="type parameter in ApplicationContextAssertProvider">C</a>&gt;</span> <span class="element-name">assertThat</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">为防止意外使用，请改用标准的 AssertJ `<code>assertThat(context)...</code>` 调用。</div>
+<div class="deprecation-comment">为防止意外使用，请改用标准的 AssertJ <code>assertThat(context)...</code>` 调用。</div>
 </div>
 <div class="block">为 AspectJ 返回一个断言。</div>
 <dl class="notes">
@@ -282,7 +282,7 @@ failed to start.
 <h3>getStartupFailure</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a></span> <span class="element-name">getStartupFailure</span>()</div>
-<div class="block">返回导致应用程序上下文失败的失败信息，或者如果上下文启动没有问题则返回 `<code>null</code>`。</div>
+<div class="block">返回导致应用程序上下文失败的失败信息，或者如果上下文启动没有问题则返回 <code>null</code>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>启动失败或<code>null</code></dd>
@@ -297,9 +297,9 @@ failed to start.
 <div class="member-signature"><span class="return-type">void</span> <span class="element-name">close</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang">close</a></code>` 接口 `<code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang">AutoCloseable</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang">close</a></code>` 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang">AutoCloseable</a></code>` 中</dd>
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()" title="class or interface in java.io">close</a></code>` 接口 `<code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html" title="class or interface in java.io">Closeable</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()" title="class or interface in java.io">close</a></code>` 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html" title="class or interface in java.io">Closeable</a></code>` 中</dd>
 </dl>
 </div>
 </section>
@@ -318,7 +318,7 @@ failed to start.
 <dd><span id="get(java.lang.Class,java.lang.Class,java.util.function.Supplier)-type-param-T"><code>T</code> - 断言提供者类型</span></dd>
 <dd><span id="get(java.lang.Class,java.lang.Class,java.util.function.Supplier)-type-param-C"><code>C</code> - 上下文类型</span></dd>
 <dt>Parameters:</dt>
-<dd>`<code>type</code>` - 所需的 <a href="ApplicationContextAssertProvider.html" title="interface in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssertProvider</code></a> 类型（必须是接口）</dd>
+<dd><code>type</code>` - 所需的 <a href="ApplicationContextAssertProvider.html" title="interface in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssertProvider</code></a> 类型（必须是接口）</dd>
 <dd><code>contextType</code> - 被管理的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a> 的类型（必须是接口）</dd>
 <dd><code>contextSupplier</code> - 一个供应者，它将返回一个完全配置的<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>，或者在上下文启动失败时抛出异常。</dd>
 <dt>Returns:</dt>
@@ -342,7 +342,7 @@ failed to start.
 <dd><span id="get(java.lang.Class,java.lang.Class,java.util.function.Supplier,java.lang.Class...)-type-param-T"><code>T</code> - 断言提供者类型</span></dd>
 <dd><span id="get(java.lang.Class,java.lang.Class,java.util.function.Supplier,java.lang.Class...)-type-param-C"><code>C</code> - 上下文类型</span></dd>
 <dt>Parameters:</dt>
-<dd>`<code>type</code>` - 所需的 <a href="ApplicationContextAssertProvider.html" title="interface in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssertProvider</code></a> 类型（必须是接口）</dd>
+<dd><code>type</code>` - 所需的 <a href="ApplicationContextAssertProvider.html" title="interface in org.springframework.boot.test.context.assertj"><code>ApplicationContextAssertProvider</code></a> 类型（必须是接口）</dd>
 <dd><code>contextType</code> - 被管理的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a> 的类型（必须是接口）</dd>
 <dd><code>contextSupplier</code> - 一个供应者，它将返回一个完全配置的<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a>，或者在上下文启动失败时抛出异常。</dd>
 <dd><code>additionalContextInterfaces</code> - 要添加到代理的额外上下文接口。</dd>

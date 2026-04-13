@@ -1114,10 +1114,10 @@
 <h2 id="io.jta.jakartaee"><a class="anchor" href="#io.jta.jakartaee"></a>使用 Jakarta EE 托管事务管理器</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您将 Spring Boot 应用程序打包为 <code>war</code>` 或 `<code>ear</code> 文件并部署到 Jakarta EE 应用服务器，您可以使用应用服务器内置的事务管理器。
-Spring Boot 会尝试通过查找常见的 JNDI 位置（如 <code>java:comp/UserTransaction</code>`、`<code>java:comp/TransactionManager</code> 等）来自动配置事务管理器。
+<p>如果您将 Spring Boot 应用程序打包为 <code>war</code>` 或 <code>ear</code> 文件并部署到 Jakarta EE 应用服务器，您可以使用应用服务器内置的事务管理器。
+Spring Boot 会尝试通过查找常见的 JNDI 位置（如 <code>java:comp/UserTransaction</code>`、<code>java:comp/TransactionManager</code> 等）来自动配置事务管理器。
 当使用应用服务器提供的事务服务时，通常还需要确保所有资源均由服务器管理并通过 JNDI 暴露。
-Spring Boot 会尝试通过查找 JNDI 路径（<code>java:/JmsXA</code>` 或 `<code>java:/XAConnectionFactory</code>）上的 <a class="apiref" href="https://jakarta.ee/specifications/messaging/3.1/apidocs/jakarta.messaging/jakarta/jms/ConnectionFactory.html"><code>ConnectionFactory</code></a> 来自动配置 JMS，您可以使用 <a class="xref page" href="../data/sql.html#data.sql.datasource.jndi"><code>spring.datasource.jndi-name</code> 属性</a> 来配置您的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>。</p>
+Spring Boot 会尝试通过查找 JNDI 路径（<code>java:/JmsXA</code>` 或 <code>java:/XAConnectionFactory</code>）上的 <a class="apiref" href="https://jakarta.ee/specifications/messaging/3.1/apidocs/jakarta.messaging/jakarta/jms/ConnectionFactory.html"><code>ConnectionFactory</code></a> 来自动配置 JMS，您可以使用 <a class="xref page" href="../data/sql.html#data.sql.datasource.jndi"><code>spring.datasource.jndi-name</code> 属性</a> 来配置您的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>。</p>
 </div>
 </div>
 </div>

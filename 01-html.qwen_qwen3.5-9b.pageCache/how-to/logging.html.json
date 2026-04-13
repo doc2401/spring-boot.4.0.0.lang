@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Spring Boot has no mandatory logging dependency, except for the Commons Logging API, which is typically provided by Spring Framework’s <code>spring-jcl</code> module.\nTo use <a href=\"https://logback.qos.ch\">Logback</a>, you need to include it and <code>spring-jcl</code> on the classpath.\nThe recommended way to do that is through the starters, which all depend on <code>spring-boot-starter-logging</code>.\nFor a web application, you only need <code>spring-boot-starter-web</code>, since it depends transitively on the logging starter.\nIf you use Maven, the following dependency adds logging for you:",
-      "translation": "Spring Boot 没有强制的日志依赖，除了 Commons Logging API，它通常由 Spring Framework 的 `<code>spring-jcl`</code> 模块提供。\n若要使用 <a href=\"https://logback.qos.ch\">Logback</a>，您需要将其和 `<code>spring-jcl`</code> 添加到类路径中。\n推荐的方式是通过 starter 来实现，它们都依赖于 `<code>spring-boot-starter-logging`</code>。\n对于 Web 应用程序，您只需要 `<code>spring-boot-starter-web`</code>，因为它通过传递依赖包含了日志 starter。\n如果您使用 Maven，以下依赖会自动为您添加日志功能：",
+      "translation": "Spring Boot 没有强制的日志依赖，除了 Commons Logging API，它通常由 Spring Framework 的 <code>spring-jcl`</code> 模块提供。\n若要使用 <a href=\"https://logback.qos.ch\">Logback</a>，您需要将其和 <code>spring-jcl`</code> 添加到类路径中。\n推荐的方式是通过 starter 来实现，它们都依赖于 <code>spring-boot-starter-logging`</code>。\n对于 Web 应用程序，您只需要 <code>spring-boot-starter-web`</code>，因为它通过传递依赖包含了日志 starter。\n如果您使用 Maven，以下依赖会自动为您添加日志功能：",
       "count": 2
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "source": "If you need to apply customizations to logback beyond those that can be achieved with <code>application.properties</code>, you will need to add a standard logback configuration file.\nYou can add a <code>logback.xml</code> file to the root of your classpath for logback to find.\nYou can also use <code>logback-spring.xml</code> if you want to use the Spring Boot <a class=\"xref page\" href=\"../reference/features/logging.html#features.logging.logback-extensions\">Logback Extensions</a>.",
-      "translation": "如果需要对 logback 进行无法通过 <code>application.properties</code>` 实现的自定义，您需要添加一个标准的 logback 配置文件。\n您可以将 `<code>logback.xml</code>` 文件添加到类路径的根目录中，以便 logback 查找。\n如果您想使用 Spring Boot <a class=\"xref page\" href=\"../reference/features/logging.html#features.logging.logback-extensions\">Logback Extensions</a>，也可以使用 `<code>logback-spring.xml</code>。",
+      "translation": "如果需要对 logback 进行无法通过 <code>application.properties</code>` 实现的自定义，您需要添加一个标准的 logback 配置文件。\n您可以将 <code>logback.xml</code>` 文件添加到类路径的根目录中，以便 logback 查找。\n如果您想使用 Spring Boot <a class=\"xref page\" href=\"../reference/features/logging.html#features.logging.logback-extensions\">Logback Extensions</a>，也可以使用 <code>logback-spring.xml</code>。",
       "count": 2
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "source": "If you want to disable console logging and write output only to a file, you need a custom <code>logback-spring.xml</code> that imports <code>file-appender.xml</code> but not <code>console-appender.xml</code>, as shown in the following example:",
-      "translation": "如果您想禁用控制台日志并将输出仅写入文件，您需要一个自定义的 `<code>logback-spring.xml`</code> 来导入 `<code>file-appender.xml`</code> 但不导入 `<code>console-appender.xml`</code>，如下例所示：",
+      "translation": "如果您想禁用控制台日志并将输出仅写入文件，您需要一个自定义的 <code>logback-spring.xml`</code> 来导入 <code>file-appender.xml`</code> 但不导入 <code>console-appender.xml`</code>，如下例所示：",
       "count": 2
     },
     {
@@ -59,12 +59,12 @@
     },
     {
       "source": "Log4j 2 has support for combining multiple configuration files into a single composite configuration.\nTo use this support in Spring Boot, configure <code>logging.log4j2.config.override</code> with the locations of one or more secondary configuration files.\nThe secondary configuration files will be merged with the primary configuration, whether the primary’s source is Spring Boot’s defaults, a standard location such as <code>log4j.xml</code>, or the location configured by the <code>logging.config</code> property.",
-      "translation": "Log4j 2 支持将多个配置文件合并为单个组合配置。要在 Spring Boot 中使用此功能，请配置 <code>logging.log4j2.config.override</code>` 以指定一个或多个次要配置文件的位置。无论主配置的来源是 Spring Boot 的默认值、标准位置（如 `<code>log4j.xml</code>`）还是由 `<code>logging.config</code> 属性配置的位置，这些次要配置文件都会与主配置合并。",
+      "translation": "Log4j 2 支持将多个配置文件合并为单个组合配置。要在 Spring Boot 中使用此功能，请配置 <code>logging.log4j2.config.override</code>` 以指定一个或多个次要配置文件的位置。无论主配置的来源是 Spring Boot 的默认值、标准位置（如 <code>log4j.xml</code>`）还是由 <code>logging.config</code> 属性配置的位置，这些次要配置文件都会与主配置合并。",
       "count": 2
     },
     {
       "source": "Log4j2 override configuration file locations can be prefixed with <code>optional:</code>.\nFor example, <code>optional:classpath:log4j2-override.xml</code> indicates that <code>log4j2-override.xml</code> should only be loaded if the resource exists.",
-      "translation": "Log4j2 覆盖配置文件位置可以以 <code>optional:</code>` 作为前缀。例如，`<code>optional:classpath:log4j2-override.xml</code>` 表示仅当资源存在时才加载 `<code>log4j2-override.xml</code>。",
+      "translation": "Log4j2 覆盖配置文件位置可以以 <code>optional:</code>` 作为前缀。例如，<code>optional:classpath:log4j2-override.xml</code>` 表示仅当资源存在时才加载 <code>log4j2-override.xml</code>。",
       "count": 2
     },
     {

@@ -1177,8 +1177,8 @@ fun main(args: Array&lt;String&gt;) {
 </div>
 </div>
 <div class="paragraph">
-<p>默认情况下，会显示 `<code>INFO`</code> 级别的日志消息，其中包括一些相关的启动详细信息，例如启动应用程序的用户。
-如果您需要设置除 `<code>INFO`</code> 以外的日志级别，可以参照<a class="xref page" href="logging.html#features.logging.log-levels">日志级别</a>中的说明进行设置。
+<p>默认情况下，会显示 <code>INFO`</code> 级别的日志消息，其中包括一些相关的启动详细信息，例如启动应用程序的用户。
+如果您需要设置除 <code>INFO`</code> 以外的日志级别，可以参照<a class="xref page" href="logging.html#features.logging.log-levels">日志级别</a>中的说明进行设置。
 应用程序版本是根据主应用程序类所在包中的实现版本确定的。
 可以通过将 <code>spring.main.log-startup-info</code> 设置为 <code>false</code> 来关闭启动信息日志记录。
 这也将关闭应用程序活动配置文件的日志记录。</p>
@@ -1233,7 +1233,7 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 <p>如果没有任何失败分析器能够处理该异常，您仍然可以显示完整的条件报告以更好地理解问题所在。为此，您需要 <a class="xref page" href="external-config.html">启用<code>debug</code>属性</a> 或为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/logging/ConditionEvaluationReportLoggingListener.html"><code>ConditionEvaluationReportLoggingListener</code></a> <a class="xref page" href="logging.html#features.logging.log-levels">启用<code>DEBUG</code>日志记录</a>。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您使用 <code>java -jar</code>` 运行应用程序，可以按以下方式启用 `<code>debug</code> 属性：</p>
+<p>例如，如果您使用 <code>java -jar</code>` 运行应用程序，可以按以下方式启用 <code>debug</code> 属性：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1304,7 +1304,7 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 <h2 id="features.spring-application.banner"><a class="anchor" href="#features.spring.application.banner"></a>自定义横幅</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>启动时打印的横幅可以通过在类路径中添加 <code>banner.txt</code>` 文件，或将 `<code>spring.banner.location</code>` 属性设置为该文件的位置来更改。如果文件的编码不是 UTF-8，您可以设置 `<code>spring.banner.charset</code>。</p>
+<p>启动时打印的横幅可以通过在类路径中添加 <code>banner.txt</code>` 文件，或将 <code>spring.banner.location</code>` 属性设置为该文件的位置来更改。如果文件的编码不是 UTF-8，您可以设置 <code>spring.banner.charset</code>。</p>
 </div>
 <div class="paragraph">
 <p>在您的 <code>banner.txt</code> 文件中，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 中可用的任何键，以及以下任意占位符：</p>
@@ -1328,7 +1328,7 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${application.formatted-version}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您的应用程序版本号，在 <code>MANIFEST.MF</code>` 中声明并格式化用于显示（用括号包围并以 `<code>v</code>` 开头）。例如 `<code>(v1.0)</code>。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">您的应用程序版本号，在 <code>MANIFEST.MF</code>` 中声明并格式化用于显示（用括号包围并以 <code>v</code>` 开头）。例如 <code>(v1.0)</code>。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${spring-boot.version}</code></p></td>
@@ -1336,7 +1336,7 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${spring-boot.formatted-version}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您正在使用的 Spring Boot 版本，格式化为显示形式（用括号包围并前缀为 <code>v</code>`）。例如 `<code>(v4.0.0)</code>。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">您正在使用的 Spring Boot 版本，格式化为显示形式（用括号包围并前缀为 <code>v</code>`）。例如 <code>(v4.0.0)</code>。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${Ansi.NAME}</code> (or <code>${AnsiColor.NAME}</code>, <code>${AnsiBackground.NAME}</code>, <code>${AnsiStyle.NAME}</code>)</p></td>
@@ -1344,7 +1344,7 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${application.title}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">您的应用程序标题，在 <code>MANIFEST.MF</code>` 中声明。例如，`<code>Implementation-Title: MyApp</code>` 会显示为 `<code>MyApp</code>。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">您的应用程序标题，在 <code>MANIFEST.MF</code>` 中声明。例如，<code>Implementation-Title: MyApp</code>` 会显示为 <code>MyApp</code>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1373,11 +1373,11 @@ Spring Boot 提供了许多 <a class="apiref" href="https://docs.spring.io/sprin
 </td>
 <td class="content">
 <div class="paragraph">
-<p>`application.title`、`application.version` 和 `application.formatted-version` 属性仅在您使用 <code>java -jar</code>` 或 `<code>java -cp</code> 配合 Spring Boot 启动器时可用。
+<p>`application.title`、`application.version` 和 `application.formatted-version` 属性仅在您使用 <code>java -jar</code>` 或 <code>java -cp</code> 配合 Spring Boot 启动器时可用。
 如果您解压 jar 包并使用 <code>java -cp &lt;classpath&gt; &lt;mainclass&gt;</code> 启动，或将应用程序作为原生镜像运行，则这些值将不会被解析。</p>
 </div>
 <div class="paragraph">
-<p>要使用 <code>application.*</code>` 属性，请使用 `<code>java -jar</code>` 将应用程序打包为 jar 文件运行，或使用 `<code>java org.springframework.boot.loader.launch.JarLauncher</code>` 将其作为未打包的 jar 运行。这将在使用类路径构建并启动应用程序之前初始化 `<code>application.*</code> 横幅属性。</p>
+<p>要使用 <code>application.*</code>` 属性，请使用 <code>java -jar</code>` 将应用程序打包为 jar 文件运行，或使用 <code>java org.springframework.boot.loader.launch.JarLauncher</code>` 将其作为未打包的 jar 运行。这将在使用类路径构建并启动应用程序之前初始化 <code>application.*</code> 横幅属性。</p>
 </div>
 </td>
 </tr>
@@ -1472,7 +1472,7 @@ fun main(args: Array&lt;String&gt;) {
 <p>如果您需要构建一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 层次结构（具有父/子关系的多重上下文），或者您更喜欢使用流式构建器 API，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html"><code>SpringApplicationBuilder</code></a>。</p>
 </div>
 <div class="paragraph">
-<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html"><code>SpringApplicationBuilder</code></a> 允许您链接多个方法调用，并包含 <code>parent</code>` 和 `<code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：</p>
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html"><code>SpringApplicationBuilder</code></a> 允许您链接多个方法调用，并包含 <code>parent</code>` 和 <code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_4">
 <div class="content">
@@ -1884,7 +1884,7 @@ class MyLocalCacheVerifier(private val eventPublisher: ApplicationEventPublisher
 <div class="sectionbody">
 <div class="paragraph">
 <p>如果您需要访问传递给 <code>SpringApplication.run(…​)</code> 的应用程序参数，可以注入一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html"><code>ApplicationArguments</code></a> Bean。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html"><code>ApplicationArguments</code></a> 接口提供了对原始 <code>String[]</code>` 参数以及解析后的 `<code>option</code>` 和 `<code>non-option</code> 参数的访问，如下例所示：</p>
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html"><code>ApplicationArguments</code></a> 接口提供了对原始 <code>String[]</code>` 参数以及解析后的 <code>option</code>` 和 <code>non-option</code> 参数的访问，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_7">
 <div class="content">
@@ -2220,7 +2220,7 @@ fun main(args: Array&lt;String&gt;) {
 <h2 id="features.spring-application.virtual-threads"><a class="anchor" href="#features.spring.application.virtual.threads"></a>虚拟线程</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>虚拟线程需要 Java 21 或更高版本。为了获得最佳体验，强烈建议使用 Java 24 或更高版本。要启用虚拟线程，请将 <code>spring.threads.virtual.enabled</code>` 属性设置为 `<code>true</code>。</p>
+<p>虚拟线程需要 Java 21 或更高版本。为了获得最佳体验，强烈建议使用 Java 24 或更高版本。要启用虚拟线程，请将 <code>spring.threads.virtual.enabled</code>` 属性设置为 <code>true</code>。</p>
 </div>
 <div class="paragraph">
 <p>在为您的应用程序启用此选项之前，您应该考虑<a href="https://docs.oracle.com/en/java/javase/24/core/virtual-threads.html">阅读官方 Java 虚拟线程文档</a>。

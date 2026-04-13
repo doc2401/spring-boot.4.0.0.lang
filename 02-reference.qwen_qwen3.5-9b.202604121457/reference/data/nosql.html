@@ -1652,10 +1652,10 @@ spring.mongodb.ssl.bundle=example</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果未指定 <code>spring.mongodb.port</code>`，则使用默认值 `<code>27017</code>。您可以从前面显示的示例中删除此行。</p>
+<p>如果未指定 <code>spring.mongodb.port</code>`，则使用默认值 <code>27017</code>。您可以从前面显示的示例中删除此行。</p>
 </div>
 <div class="paragraph">
-<p>您也可以使用 <code>host:port</code>` 语法将端口作为主机地址的一部分进行指定。如果您需要更改 `<code>additional-hosts</code> 条目的端口，则应使用此格式。</p>
+<p>您也可以使用 <code>host:port</code>` 语法将端口作为主机地址的一部分进行指定。如果您需要更改 <code>additional-hosts</code> 条目的端口，则应使用此格式。</p>
 </div>
 </td>
 </tr>
@@ -2218,7 +2218,7 @@ spring.elasticsearch.restclient.sniffer.delay-after-failure=30s</code></pre>
 <div class="sect3">
 <h4 id="data.nosql.elasticsearch.connecting-using-rest.javaapiclient"><a class="anchor" href="#data.nosql.elasticsearch.connecting-using-rest.javaapiclient"></a>使用 ElasticsearchClient 连接到 Elasticsearch</h4>
 <div class="paragraph">
-<p>如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 `<code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a> Bean。</p>
+<p>如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 <code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a> Bean。</p>
 </div>
 <div class="paragraph">
 <p>`ElasticsearchClient` 使用依赖于前述 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html"><code>Rest5Client</code></a> 的传输层。因此，可以以前述描述的属性来配置 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html"><code>ElasticsearchClient</code></a>。此外，您可以定义一个 <a class="apiref" href="https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/Rest5ClientOptions.html"><code>Rest5ClientOptions</code></a> Bean 以进一步控制传输层的行为。</p>
@@ -2231,7 +2231,7 @@ spring.elasticsearch.restclient.sniffer.delay-after-failure=30s</code></pre>
 如果您的类路径中包含 Spring Data Elasticsearch 和 Reactor，Spring Boot 将自动配置并注册一个 <a class="apiref" href="https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html"><code>ReactiveElasticsearchClient</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>`ReactiveElasticsearchClient` 使用依赖于前述 <code>Rest5Client</code>` 的传输层。因此，可以以前述所述属性来配置 `<code>ReactiveElasticsearchClient``。此外，您可以定义一个 `<code>Rest5ClientOptions</code> Bean 以进一步控制传输的行为。</code></p>
+<p>`ReactiveElasticsearchClient` 使用依赖于前述 <code>Rest5Client</code>` 的传输层。因此，可以以前述所述属性来配置 <code>ReactiveElasticsearchClient``。此外，您可以定义一个 <code>Rest5ClientOptions</code> Bean 以进一步控制传输的行为。</code></p>
 </div>
 </div>
 </div>
@@ -2556,7 +2556,7 @@ spring.cassandra.ssl.bundle=example</code></pre>
 <p>Cassandra 驱动程序拥有自己的配置基础设施，会在类路径根目录加载一个 <code>application.conf</code> 文件。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 默认不会查找此类文件，但可以使用 <code>spring.cassandra.config</code>` 加载一个。如果某个属性同时存在于 `<code>spring.cassandra.*</code>` 和配置文件中，则 `<code>spring.cassandra.*</code> 中的值优先。</p>
+<p>Spring Boot 默认不会查找此类文件，但可以使用 <code>spring.cassandra.config</code>` 加载一个。如果某个属性同时存在于 <code>spring.cassandra.*</code>` 和配置文件中，则 <code>spring.cassandra.*</code> 中的值优先。</p>
 </div>
 <div class="paragraph">
 <p>对于更高级的驱动程序自定义，您可以注册任意数量的实现 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cassandra/autoconfigure/DriverConfigLoaderBuilderCustomizer.html"><code>DriverConfigLoaderBuilderCustomizer</code></a> 的 Bean。
@@ -3048,7 +3048,7 @@ class MyCouchbaseConfiguration {
 <div class="sect2">
 <h3 id="data.nosql.ldap.connecting"><a class="anchor" href="#data.nosql.ldap.connecting"></a>连接到 LDAP 服务器</h3>
 <div class="paragraph">
-<p>要连接到 LDAP 服务器，请确保声明了对 <code>spring-boot-starter-data-ldap</code>` 启动器或 `<code>spring-ldap-core</code> 的依赖，然后在您的 `application.properties` 中声明服务器的 URL，如下面的示例所示：</p>
+<p>要连接到 LDAP 服务器，请确保声明了对 <code>spring-boot-starter-data-ldap</code>` 启动器或 <code>spring-ldap-core</code> 的依赖，然后在您的 `application.properties` 中声明服务器的 URL，如下面的示例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_33">
 <div class="content">
@@ -3085,7 +3085,7 @@ spring.ldap.password=secret</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code>` 和 `<code>spring.ldap.base-environment</code> 属性。</p>
+<p>如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code>` 和 <code>spring.ldap.base-environment</code> 属性。</p>
 </div>
 <div class="paragraph">
 <p>`LdapContextSource` 会根据这些设置进行自动配置。如果存在 `DirContextAuthenticationStrategy` Bean，它将与自动配置的 `LdapContextSource` 关联。如果您需要对其进行自定义（例如使用 `PooledContextSource`），仍然可以注入自动配置的 `LdapContextSource`。请确保将自定义的 `ContextSource` 标记为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a>，以便自动配置的 <a class="apiref" href="https://docs.spring.io/spring-ldap/docs/4.0.x/api/org/springframework/ldap/core/LdapTemplate.html"><code>LdapTemplate</code></a> 使用它。</p>
@@ -3263,10 +3263,10 @@ spring.ldap.embedded.base-dn[1]=dc=vmware,dc=com</code></pre>
 <p>默认情况下，服务器会在随机端口上启动并触发常规 LDAP 支持。无需指定 <code>spring.ldap.urls</code> 属性。</p>
 </div>
 <div class="paragraph">
-<p>如果您的类路径上存在 <code>schema.ldif</code>` 文件，它将用于初始化服务器。如果您想从不同的资源加载初始化脚本，也可以使用 `<code>spring.ldap.embedded.ldif</code> 属性。</p>
+<p>如果您的类路径上存在 <code>schema.ldif</code>` 文件，它将用于初始化服务器。如果您想从不同的资源加载初始化脚本，也可以使用 <code>spring.ldap.embedded.ldif</code> 属性。</p>
 </div>
 <div class="paragraph">
-<p>默认情况下，使用标准模式来验证 <code>LDIF</code>` 文件。您可以通过设置 `<code>spring.ldap.embedded.validation.enabled</code>` 属性来完全关闭验证。如果您有自定义属性，可以使用 `<code>spring.ldap.embedded.validation.schema</code> 来定义自定义属性类型或对象类。</p>
+<p>默认情况下，使用标准模式来验证 <code>LDIF</code>` 文件。您可以通过设置 <code>spring.ldap.embedded.validation.enabled</code>` 属性来完全关闭验证。如果您有自定义属性，可以使用 <code>spring.ldap.embedded.validation.schema</code> 来定义自定义属性类型或对象类。</p>
 </div>
 </div>
 </div>

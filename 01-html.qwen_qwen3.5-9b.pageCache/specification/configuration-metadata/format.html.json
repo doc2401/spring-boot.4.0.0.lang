@@ -19,7 +19,7 @@
     },
     {
       "source": "The “hints” are additional information used to assist the user in configuring a given property.\nFor example, when a developer is configuring the <code>spring.jpa.hibernate.ddl-auto</code> property, a tool can use the hints to offer some auto-completion help for the <code>none</code>, <code>validate</code>, <code>update</code>, <code>create</code>, and <code>create-drop</code> values.",
-      "translation": "“提示”是用于协助用户配置特定属性的附加信息。例如，当开发人员正在配置 <code>spring.jpa.hibernate.ddl-auto</code>` 属性时，工具可以使用这些提示为 `<code>none</code>`、`<code>validate</code>`、`<code>update</code>`、`<code>create</code>` 和 `<code>create-drop</code> 值提供自动完成帮助。",
+      "translation": "“提示”是用于协助用户配置特定属性的附加信息。例如，当开发人员正在配置 <code>spring.jpa.hibernate.ddl-auto</code>` 属性时，工具可以使用这些提示为 <code>none</code>`、<code>validate</code>`、<code>update</code>`、<code>create</code>` 和 <code>create-drop</code> 值提供自动完成帮助。",
       "count": 2
     },
     {
@@ -29,12 +29,12 @@
     },
     {
       "source": "The full name of the property to which this hint refers.\n  Names are in lower-case period-separated form (such as <code>spring.mvc.servlet.path</code>).\n  If the property refers to a map (such as <code>system.contexts</code>), the hint either applies to the <em>keys</em> of the map (<code>system.contexts.keys</code>) or the <em>values</em> (<code>system.contexts.values</code>) of the map.\n  This attribute is mandatory.",
-      "translation": "该提示所引用的属性的完整名称。\n名称采用小写点分隔形式（例如 <code>spring.mvc.servlet.path</code>`）。\n如果该属性引用一个 Map（例如 `<code>system.contexts</code>`），则该提示适用于该 Map 的 <em>键</em>（`<code>system.contexts.keys</code>`）或 <em>值</em>（`<code>system.contexts.values</code>）。\n此属性为必选。",
+      "translation": "该提示所引用的属性的完整名称。\n名称采用小写点分隔形式（例如 <code>spring.mvc.servlet.path</code>`）。\n如果该属性引用一个 Map（例如 <code>system.contexts</code>`），则该提示适用于该 Map 的 <em>键</em>（<code>system.contexts.keys</code>`）或 <em>值</em>（<code>system.contexts.values</code>）。\n此属性为必选。",
       "count": 2
     },
     {
       "source": "The preceding code makes sure that the deprecated property still works (delegating to the <code>name</code> property behind the scenes).\nOnce the <code>getTarget</code> and <code>setTarget</code> methods can be removed from your public API, the automatic deprecation hint in the metadata goes away as well.\nIf you want to keep a hint, adding manual metadata with an <code>error</code> deprecation level ensures that users are still informed about that property.\nDoing so is particularly useful when a <code>replacement</code> is provided.",
-      "translation": "前面的代码确保弃用的属性仍然有效（在幕后委托给 <code>name</code>` 属性）。  \n一旦可以从公共 API 中移除 `<code>getTarget</code>` 和 `<code>setTarget</code>` 方法，元数据中的自动弃用提示也会随之消失。  \n如果您希望保留提示，可以添加带有 `<code>error</code>` 弃用级别的手动元数据，以确保用户仍会收到关于该属性的通知。  \n这样做在提供 `<code>replacement</code> 时尤其有用。",
+      "translation": "前面的代码确保弃用的属性仍然有效（在幕后委托给 <code>name</code>` 属性）。  \n一旦可以从公共 API 中移除 <code>getTarget</code>` 和 <code>setTarget</code>` 方法，元数据中的自动弃用提示也会随之消失。  \n如果您希望保留提示，可以添加带有 <code>error</code>` 弃用级别的手动元数据，以确保用户仍会收到关于该属性的通知。  \n这样做在提供 <code>replacement</code> 时尤其有用。",
       "count": 2
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "source": "The level of deprecation, which can be either <code>warning</code> (the default) or <code>error</code>.\n  When a property has a <code>warning</code> deprecation level, it should still be bound in the environment.\n  However, when it has an <code>error</code> deprecation level, the property is no longer managed and is not bound.",
-      "translation": "弃用级别可以是 `<code>warning`（默认值）或 `<code>error`。当属性的弃用级别为 `<code>warning` 时，它仍应在环境中绑定。然而，当其弃用级别为 `<code>error` 时，该属性不再受管理且不会进行绑定。",
+      "translation": "弃用级别可以是 <code>warning`（默认值）或 <code>error`。当属性的弃用级别为 <code>warning` 时，它仍应在环境中绑定。然而，当其弃用级别为 <code>error` 时，该属性不再受管理且不会进行绑定。",
       "count": 2
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "source": "Specify whether the property is deprecated.\n  If the field is not deprecated or if that information is not known, it may be omitted.\n  The next table offers more detail about the <code>deprecation</code> attribute.",
-      "translation": "指定该属性是否已弃用。\n如果该字段未弃用或未知此信息，则可以省略。\n下表提供了有关 `<code>deprecation`</code> 属性的更多详细信息。",
+      "translation": "指定该属性是否已弃用。\n如果该字段未弃用或未知此信息，则可以省略。\n下表提供了有关 <code>deprecation`</code> 属性的更多详细信息。",
       "count": 2
     },
     {
@@ -149,12 +149,12 @@
     },
     {
       "source": "A list of valid values as defined by the <code>ValueHint</code> object (described in the next table).\n  Each entry defines the value and may have a description.",
-      "translation": "由 `<code>ValueHint`</code> 对象（在下表中描述）定义的合法值列表。每个条目定义一个值，并可能包含描述。",
+      "translation": "由 <code>ValueHint`</code> 对象（在下表中描述）定义的合法值列表。每个条目定义一个值，并可能包含描述。",
       "count": 2
     },
     {
       "source": "A list of providers as defined by the <code>ValueProvider</code> object (described later in this document).\n  Each entry defines the name of the provider and its parameters, if any.",
-      "translation": "由 `<code>ValueProvider`</code> 对象（本文档稍后描述）定义的一组提供者。每个条目定义了提供者的名称及其参数（如果有）。",
+      "translation": "由 <code>ValueProvider`</code> 对象（本文档稍后描述）定义的一组提供者。每个条目定义了提供者的名称及其参数（如果有）。",
       "count": 2
     },
     {

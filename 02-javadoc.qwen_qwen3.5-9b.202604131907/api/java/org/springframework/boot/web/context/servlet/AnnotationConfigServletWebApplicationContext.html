@@ -112,7 +112,7 @@ particular <a class="external-link" href="https://docs.spring.io/spring-framewor
 <code>javax.inject</code> annotations. Allows for registering classes one by one (specifying
 class names as config location) as well as for classpath scanning (specifying base
 packages as config location).
-<p>注意：如果有多个 `<code>@Configuration</code>` 类，后来加载的 `<code>@Bean</code>` 定义将覆盖早期文件中定义的 Bean。这可以通过额外的配置类来故意覆盖某些 Bean 定义。</p></div>
+<p>注意：如果有多个 <code>@Configuration</code>` 类，后来加载的 <code>@Bean</code>` 定义将覆盖早期文件中定义的 Bean。这可以通过额外的配置类来故意覆盖某些 Bean 定义。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2.2.0</dd>
@@ -176,7 +176,7 @@ packages as config location).
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a class="member-name-link" href="#%3Cinit%3E()">AnnotationConfigServletWebApplicationContext</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">创建一个需要通过 `<code>register(Class...)</code>` 调用填充，然后手动 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support">刷新</a> 的新 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
+<div class="block">创建一个需要通过 <code>register(Class...)</code>` 调用填充，然后手动 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support">刷新</a> 的新 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a class="member-name-link" href="#%3Cinit%3E(java.lang.Class...)">AnnotationConfigServletWebApplicationContext</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;?&gt;... annotatedClasses)</code></div>
 <div class="col-last odd-row-color">
@@ -188,7 +188,7 @@ packages as config location).
 </div>
 <div class="col-constructor-name odd-row-color"><code><a class="member-name-link" href="#%3Cinit%3E(org.springframework.beans.factory.support.DefaultListableBeanFactory)">AnnotationConfigServletWebApplicationContext</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/support/DefaultListableBeanFactory.html" title="class or interface in org.springframework.beans.factory.support">DefaultListableBeanFactory</a> beanFactory)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">创建一个新的带有给定 `<code>DefaultListableBeanFactory</code>` 的 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
+<div class="block">创建一个新的带有给定 <code>DefaultListableBeanFactory</code>` 的 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
 </div>
 </div>
 </section>
@@ -312,7 +312,7 @@ packages as config location).
 <h3>AnnotationConfigServletWebApplicationContext</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="element-name">AnnotationConfigServletWebApplicationContext</span>()</div>
-<div class="block">创建一个需要通过 `<code>register(Class...)</code>` 调用填充，然后手动 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support">刷新</a> 的新 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
+<div class="block">创建一个需要通过 <code>register(Class...)</code>` 调用填充，然后手动 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support">刷新</a> 的新 <a href="AnnotationConfigServletWebApplicationContext.html" title="class in org.springframework.boot.web.context.servlet"><code>AnnotationConfigServletWebApplicationContext</code></a>。</div>
 </div>
 </section>
 </li>
@@ -372,7 +372,7 @@ packages as config location).
 <p>委托给底层 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotatedBeanDefinitionReader.html" title="class or interface in org.springframework.context.annotation"><code>AnnotatedBeanDefinitionReader</code></a> 和 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html" title="class or interface in org.springframework.context.annotation"><code>ClassPathBeanDefinitionScanner</code></a> 成员的环境。</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#setEnvironment(org.springframework.core.env.ConfigurableEnvironment)" title="class or interface in org.springframework.context">setEnvironment</a></code>` 接口 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a></code>`</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html#setEnvironment(org.springframework.core.env.ConfigurableEnvironment)" title="class or interface in org.springframework.context">setEnvironment</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ConfigurableApplicationContext.html" title="class or interface in org.springframework.context">ConfigurableApplicationContext</a></code>`</dd>
 <dt>Overrides:</dt>
 <dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#setEnvironment(org.springframework.core.env.ConfigurableEnvironment)" title="class or interface in org.springframework.context.support">setEnvironment</a></code> 类中的 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html" title="class or interface in org.springframework.context.support">AbstractApplicationContext</a></code></dd>
 </dl>
@@ -424,10 +424,10 @@ packages as config location).
 <div class="block">Register one or more annotated classes to be processed. Note that
 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support"><code>AbstractApplicationContext.refresh()</code></a> must be called in order for the context to fully process the new
 class.
-<p>对 `<code>#register</code>` 的调用是幂等的；多次添加同一个已标注的类不会产生额外效果。</p></div>
+<p>对 <code>#register</code>` 的调用是幂等的；多次添加同一个已标注的类不会产生额外效果。</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html#register(java.lang.Class...)" title="class or interface in org.springframework.context.annotation">register</a></code>` 接口 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html" title="class or interface in org.springframework.context.annotation">AnnotationConfigRegistry</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html#register(java.lang.Class...)" title="class or interface in org.springframework.context.annotation">register</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html" title="class or interface in org.springframework.context.annotation">AnnotationConfigRegistry</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>annotatedClasses</code> - 一个或多个已注解的类，例如 <code>@Configuration</code> 类。</dd>
 <dt>See Also:</dt>
@@ -449,7 +449,7 @@ class.
 <div class="block">在指定的基础包内执行扫描。请注意，必须调用<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/AbstractApplicationContext.html#refresh()" title="class or interface in org.springframework.context.support"><code>AbstractApplicationContext.refresh()</code></a>，以便上下文能够完全处理新类。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html#scan(java.lang.String...)" title="class or interface in org.springframework.context.annotation">scan</a></code>` 接口 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html" title="class or interface in org.springframework.context.annotation">AnnotationConfigRegistry</a></code>`</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html#scan(java.lang.String...)" title="class or interface in org.springframework.context.annotation">scan</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigRegistry.html" title="class or interface in org.springframework.context.annotation">AnnotationConfigRegistry</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>basePackages</code> - 要检查已注解类的包</dd>
 <dt>See Also:</dt>
@@ -482,7 +482,7 @@ class.
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">void</span> <span class="element-name">postProcessBeanFactory</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/ConfigurableListableBeanFactory.html" title="class or interface in org.springframework.beans.factory.config">ConfigurableListableBeanFactory</a> beanFactory)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)" title="class or interface in org.springframework.web.context.support">postProcessBeanFactory</a></code>` 方法在类 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html" title="class or interface in org.springframework.web.context.support">GenericWebApplicationContext</a></code>` 中。</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html#postProcessBeanFactory(org.springframework.beans.factory.config.ConfigurableListableBeanFactory)" title="class or interface in org.springframework.web.context.support">postProcessBeanFactory</a></code>` 方法在类 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/context/support/GenericWebApplicationContext.html" title="class or interface in org.springframework.web.context.support">GenericWebApplicationContext</a></code>` 中。</dd>
 </dl>
 </div>
 </section>
@@ -497,7 +497,7 @@ class.
  <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinitionCustomizer.html" title="class or interface in org.springframework.beans.factory.config">BeanDefinitionCustomizer</a>... customizers)</span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/GenericApplicationContext.html#registerBean(java.lang.String,java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)" title="class or interface in org.springframework.context.support">registerBean</a></code>` 类中的 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/GenericApplicationContext.html" title="class or interface in org.springframework.context.support">GenericApplicationContext</a></code>`</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/GenericApplicationContext.html#registerBean(java.lang.String,java.lang.Class,java.util.function.Supplier,org.springframework.beans.factory.config.BeanDefinitionCustomizer...)" title="class or interface in org.springframework.context.support">registerBean</a></code>` 类中的 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/support/GenericApplicationContext.html" title="class or interface in org.springframework.context.support">GenericApplicationContext</a></code>`</dd>
 </dl>
 </div>
 </section>

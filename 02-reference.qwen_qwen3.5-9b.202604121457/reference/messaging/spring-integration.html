@@ -1107,7 +1107,7 @@ Spring Integration 提供了对消息传递以及其他传输（如 HTTP、TCP �
 默认的<a class="apiref" href="https://docs.spring.io/spring-integration/docs/7.0.x/api/org/springframework/integration/scheduling/PollerMetadata.html"><code>PollerMetadata</code></a>（每秒无限制地轮询消息数量）可以通过<code>spring.integration.poller.*</code>配置属性进行自定义。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 还会配置一些由额外的 Spring Integration 模块的存在所触发的功能。如果 <code>spring-integration-jmx</code>` 也在类路径中，则通过 JMX 发布消息处理统计信息。如果 `<code>spring-integration-jdbc</code> 可用，则可以在启动时创建默认数据库模式，如下所示：</p>
+<p>Spring Boot 还会配置一些由额外的 Spring Integration 模块的存在所触发的功能。如果 <code>spring-integration-jmx</code>` 也在类路径中，则通过 JMX 发布消息处理统计信息。如果 <code>spring-integration-jdbc</code> 可用，则可以在启动时创建默认数据库模式，如下所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1141,7 +1141,7 @@ Spring Integration 提供了对消息传递以及其他传输（如 HTTP、TCP �
 </div>
 </div>
 <div class="paragraph">
-<p>如果可用 <code>spring-integration-rsocket</code>`，开发人员可以使用 `<code>spring.rsocket.server.*</code> 属性配置 RSocket 服务器，并让其使用 <a class="apiref" href="https://docs.spring.io/spring-integration/docs/7.0.x/api/org/springframework/integration/rsocket/IntegrationRSocketEndpoint.html"><code>IntegrationRSocketEndpoint</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-integration/docs/7.0.x/api/org/springframework/integration/rsocket/outbound/RSocketOutboundGateway.html"><code>RSocketOutboundGateway</code></a> 组件来处理传入的 RSocket 消息。
+<p>如果可用 <code>spring-integration-rsocket</code>`，开发人员可以使用 <code>spring.rsocket.server.*</code> 属性配置 RSocket 服务器，并让其使用 <a class="apiref" href="https://docs.spring.io/spring-integration/docs/7.0.x/api/org/springframework/integration/rsocket/IntegrationRSocketEndpoint.html"><code>IntegrationRSocketEndpoint</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-integration/docs/7.0.x/api/org/springframework/integration/rsocket/outbound/RSocketOutboundGateway.html"><code>RSocketOutboundGateway</code></a> 组件来处理传入的 RSocket 消息。
 该基础设施可以处理 Spring Integration RSocket 通道适配器以及 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/messaging/handler/annotation/MessageMapping.html"><code>@MessageMapping</code></a> 处理器（前提是配置了 <code>spring.integration.rsocket.server.message-mapping-enabled</code>）。</p>
 </div>
 <div class="paragraph">

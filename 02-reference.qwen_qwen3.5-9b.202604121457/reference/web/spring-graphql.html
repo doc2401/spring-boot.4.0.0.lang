@@ -1147,7 +1147,7 @@ Spring for GraphQL 项目基于 <a href="https://github.com/graphql-java/graphql
 <h2 id="web.graphql.schema"><a class="anchor" href="#web.graphql.schema"></a>GraphQL 模式</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring GraphQL 应用程序在启动时需要定义模式。默认情况下，您可以在 <code>src/main/resources/graphql/**</code>` 下编写 ".graphqls" 或 ".gqls" 模式文件，Spring Boot 会自动加载它们。您可以通过 `<code>spring.graphql.schema.locations</code>` 自定义位置，并通过 `<code>spring.graphql.schema.file-extensions</code> 自定义文件扩展名。</p>
+<p>Spring GraphQL 应用程序在启动时需要定义模式。默认情况下，您可以在 <code>src/main/resources/graphql/**</code>` 下编写 ".graphqls" 或 ".gqls" 模式文件，Spring Boot 会自动加载它们。您可以通过 <code>spring.graphql.schema.locations</code>` 自定义位置，并通过 <code>spring.graphql.schema.file-extensions</code> 自定义文件扩展名。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -1311,7 +1311,7 @@ class GreetingController {
 <div class="sect2">
 <h3 id="web.graphql.transports.http-websocket"><a class="anchor" href="#web.graphql.transports.http-websocket"></a>HTTP 和 WebSocket</h3>
 <div class="paragraph">
-<p>GraphQL HTTP 端点默认位于 HTTP POST <code>/graphql</code>`。它还仅针对订阅支持通过 Server Sent Events 使用`<code>"text/event-stream"</code>`媒体类型。路径可以通过 `<code>spring.graphql.http.path</code>进行自定义。</p>
+<p>GraphQL HTTP 端点默认位于 HTTP POST <code>/graphql</code>`。它还仅针对订阅支持通过 Server Sent Events 使用<code>"text/event-stream"</code>`媒体类型。路径可以通过 <code>spring.graphql.http.path</code>进行自定义。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1461,7 +1461,7 @@ Spring Boot 将自动检测 <a class="apiref" href="https://docs.spring.io/sprin
 默认实现在开发期间非常有用，这就是为什么它在开发期间会随 <a class="xref page" href="../using/devtools.html"><code>spring-boot-devtools</code></a> 自动暴露的原因。</p>
 </div>
 <div class="paragraph">
-<p>当启用 <code>spring.graphql.schema.printer.enabled</code>` 属性时，您还可以选择以文本格式在 `<code>/graphql/schema</code> 处暴露 GraphQL 架构。</p>
+<p>当启用 <code>spring.graphql.schema.printer.enabled</code>` 属性时，您还可以选择以文本格式在 <code>/graphql/schema</code> 处暴露 GraphQL 架构。</p>
 </div>
 </div>
 </div>

@@ -118,14 +118,14 @@ configuration required for the test:
             .withUserConfiguration(MyConfiguration.class);
 }</pre>
 
-<p>上面的初始化确保为所有测试注册了 `<code>MyConfiguration</code>`，并将 `<code>spring.foo</code>` 属性设置为 `<code>bar</code>`，除非另有指定。</p><p>基于上述配置，特定的测试可以模拟上下文运行时会发生的情况，或许使用覆盖的属性值：</p><pre class="code">@Test
+<p>上面的初始化确保为所有测试注册了 <code>MyConfiguration</code>`，并将 <code>spring.foo</code>` 属性设置为 <code>bar</code>`，除非另有指定。</p><p>基于上述配置，特定的测试可以模拟上下文运行时会发生的情况，或许使用覆盖的属性值：</p><pre class="code">@Test
 public someTest() {
     this.contextRunner.withPropertyValues("spring.foo=biz").run((context) -&gt; {
         assertThat(context).containsSingleBean(MyBean.class);
         // other assertions
     });
 }</pre>
-<p>上面的测试已将 `<code>spring.foo</code>` 属性更改为 `<code>biz</code>`，并断言上下文包含单个 `<code>MyBean</code>` Bean。<a href="#run(org.springframework.boot.test.context.runner.ContextConsumer)"><code>run</code></a> 方法接受一个 <a href="ContextConsumer.html" title="interface in org.springframework.boot.test.context.runner"><code>ContextConsumer</code></a>，该对象可对上下文应用断言。完成后，上下文将自动关闭。</p><p>如果应用程序上下文启动失败，则调用 `<code>#run(ContextConsumer)</code>` 方法时传入一个“失败”的应用程序上下文。对上下文的调用将抛出 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang"><code>IllegalStateException</code></a>，且期望运行中上下文的断言将会失败。如果需要对失败原因进行进一步检查，可以使用 <a href="../assertj/ApplicationContextAssert.html#getFailure()"><code>getFailure()</code></a> 断言：</p><pre class="code">@Test
+<p>上面的测试已将 <code>spring.foo</code>` 属性更改为 <code>biz</code>`，并断言上下文包含单个 <code>MyBean</code>` Bean。<a href="#run(org.springframework.boot.test.context.runner.ContextConsumer)"><code>run</code></a> 方法接受一个 <a href="ContextConsumer.html" title="interface in org.springframework.boot.test.context.runner"><code>ContextConsumer</code></a>，该对象可对上下文应用断言。完成后，上下文将自动关闭。</p><p>如果应用程序上下文启动失败，则调用 <code>#run(ContextConsumer)</code>` 方法时传入一个“失败”的应用程序上下文。对上下文的调用将抛出 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang"><code>IllegalStateException</code></a>，且期望运行中上下文的断言将会失败。如果需要对失败原因进行进一步检查，可以使用 <a href="../assertj/ApplicationContextAssert.html#getFailure()"><code>getFailure()</code></a> 断言：</p><pre class="code">@Test
 public someTest() {
     this.context.withPropertyValues("spring.foo=fails").run((loaded) -&gt; {
         assertThat(loaded).getFailure().hasCauseInstanceOf(BadPropertyException.class);
@@ -513,7 +513,7 @@ context.
 <dd><span id="withBean(java.lang.Class,java.lang.Object...)-type-param-T"><code>T</code> - 该 Bean 的类型</span></dd>
 <dt>Parameters:</dt>
 <dd><code>type</code> - 该 Bean 的类型</dd>
-<dd><code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 `<code>null</code>` 或为空）。</dd>
+<dd><code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 <code>null</code>` 或为空）。</dd>
 <dt>Returns:</dt>
 <dd>包含更新后 Bean 的新实例</dd>
 </dl>
@@ -535,7 +535,7 @@ context.
 <dt>Parameters:</dt>
 <dd><code>name</code> - 豆名称或 <code>null</code>（使用生成的名称）</dd>
 <dd><code>type</code> - 该 Bean 的类型</dd>
-<dd><code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 `<code>null</code>` 或为空）。</dd>
+<dd><code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 <code>null</code>` 或为空）。</dd>
 <dt>Returns:</dt>
 <dd>包含更新后 Bean 的新实例</dd>
 </dl>

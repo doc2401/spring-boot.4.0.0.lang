@@ -102,7 +102,7 @@ MyBean bean = new MyBean(new RestTemplateBuilder(customizer));
 customizer.getServer().expect(requestTo("/hello")).andRespond(withSuccess());
 bean.makeRestCall();
 </pre>
-<p>如果自定义器仅使用一次，可以使用<a href="#getServer()"><code>getServer()</code></a>方法获取模拟服务器。如果自定义器已使用多次，则必须使用<a href="#getServer(org.springframework.web.client.RestTemplate)"><code>getServer(RestTemplate)</code></a>或<a href="#getServers()"><code>getServers()</code></a>方法来访问相关的服务器。</p><p>如果在一个测试类中的多个测试用例使用模拟服务器，则可能需要使用 `<code>getServer().reset()</code>` 或 `<code>getServer(restTemplate).reset()</code>` 在测试之间重置服务器上的期望。</p></div>
+<p>如果自定义器仅使用一次，可以使用<a href="#getServer()"><code>getServer()</code></a>方法获取模拟服务器。如果自定义器已使用多次，则必须使用<a href="#getServer(org.springframework.web.client.RestTemplate)"><code>getServer(RestTemplate)</code></a>或<a href="#getServers()"><code>getServers()</code></a>方法来访问相关的服务器。</p><p>如果在一个测试类中的多个测试用例使用模拟服务器，则可能需要使用 <code>getServer().reset()</code>` 或 <code>getServer(restTemplate).reset()</code>` 在测试之间重置服务器上的期望。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>4.0.0</dd>
@@ -276,7 +276,7 @@ bean.makeRestCall();
 <div class="block">回调用于自定义 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html" title="class or interface in org.springframework.web.client"><code>RestTemplate</code></a> 实例。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../RestTemplateCustomizer.html#customize(org.springframework.web.client.RestTemplate)">customize</a></code>` 接口 `<code><a href="../RestTemplateCustomizer.html" title="interface in org.springframework.boot.restclient">RestTemplateCustomizer</a></code>` 中</dd>
+<dd><code><a href="../RestTemplateCustomizer.html#customize(org.springframework.web.client.RestTemplate)">customize</a></code>` 接口 <code><a href="../RestTemplateCustomizer.html" title="interface in org.springframework.boot.restclient">RestTemplateCustomizer</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>restTemplate</code> - 要自定义的模板</dd>
 </dl>

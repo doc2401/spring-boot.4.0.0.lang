@@ -1452,7 +1452,7 @@ class MyWebIntegrationTests {
 <h2 id="howto.webserver.configure-ssl"><a class="anchor" href="#howto.webserver.configure-ssl"></a>配置 SSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SSL 可以通过设置各种 <code>server.ssl.*</code>` 属性进行声明式配置，通常是在 `<code>application.properties</code>` 或 `<code>application.yaml</code> 中。有关所有支持属性的详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html"><code>Ssl</code></a>。</p>
+<p>SSL 可以通过设置各种 <code>server.ssl.*</code>` 属性进行声明式配置，通常是在 <code>application.properties</code>` 或 <code>application.yaml</code> 中。有关所有支持属性的详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html"><code>Ssl</code></a>。</p>
 </div>
 <div class="paragraph">
 <p>以下示例展示了如何使用 Java KeyStore 文件设置 SSL 属性：</p>
@@ -1494,14 +1494,14 @@ server.ssl.key-password=another-secret</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>使用前述示例中的配置意味着应用程序不再支持端口 8080 上的纯 HTTP 连接器。Spring Boot 不支持通过 `<code>application.properties` 同时配置 HTTP 连接器和 HTTPS 连接器。如果您需要两者，则需要通过编程方式配置其中之一。我们建议使用 `<code>application.properties` 来配置 HTTPS，因为 HTTP 连接器在编程配置上更为简单。</code></code></p>
+<p>使用前述示例中的配置意味着应用程序不再支持端口 8080 上的纯 HTTP 连接器。Spring Boot 不支持通过 <code>application.properties` 同时配置 HTTP 连接器和 HTTPS 连接器。如果您需要两者，则需要通过编程方式配置其中之一。我们建议使用 <code>application.properties` 来配置 HTTPS，因为 HTTP 连接器在编程配置上更为简单。</code></code></p>
 </div>
 <div class="sect2">
 <h3 id="howto.webserver.configure-ssl.pem-files"><a class="anchor" href="#howto.webserver.configure-ssl.pem-files"></a>使用 PEM 编码的文件</h3>
 <div class="paragraph">
 <p>您可以使用 PEM 编码文件代替 Java KeyStore 文件。
 应尽可能使用 PKCS#8 密钥文件。
-PEM 编码的 PKCS#8 密钥文件以 <code>-----BEGIN PRIVATE KEY-----</code>` 或 `<code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> 开头。</p>
+PEM 编码的 PKCS#8 密钥文件以 <code>-----BEGIN PRIVATE KEY-----</code>` 或 <code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> 开头。</p>
 </div>
 <div class="paragraph">
 <p>如果您有其他格式的文件，例如 PKCS#1（<code>-----BEGIN RSA PRIVATE KEY-----</code>）或 SEC 1（<code>-----BEGIN EC PRIVATE KEY-----</code>），您可以使用 OpenSSL 将其转换为 PKCS#8：</p>
@@ -1599,8 +1599,8 @@ server.ssl.bundle=example</code></pre>
 <p><code>server.ssl.bundle</code> 属性不能与<code>server.ssl</code>下的离散 Java KeyStore 或 PEM 属性选项结合使用。</p>
 </div>
 <div class="paragraph">
-<p>使用包时，也会忽略 <code>server.ssl.ciphers</code>`、`<code>server.ssl.enabled-protocols</code>` 和 `<code>server.ssl.protocol</code>` 属性。  
-相反，应使用 `<code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> 属性来定义这些属性。</p>
+<p>使用包时，也会忽略 <code>server.ssl.ciphers</code>`、<code>server.ssl.enabled-protocols</code>` 和 <code>server.ssl.protocol</code>` 属性。  
+相反，应使用 <code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> 属性来定义这些属性。</p>
 </div>
 </td>
 </tr>
@@ -1657,7 +1657,7 @@ server.ssl.server-name-bundles[1].bundle=web-alt2</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>使用 <code>server.ssl.bundle</code>` 指定的捆绑包将用于默认主机以及任何支持 SNI 的客户端。如果配置了任何 `<code>server.ssl.server-name-bundles</code>，则必须配置此默认捆绑包。</p>
+<p>使用 <code>server.ssl.bundle</code>` 指定的捆绑包将用于默认主机以及任何支持 SNI 的客户端。如果配置了任何 <code>server.ssl.server-name-bundles</code>，则必须配置此默认捆绑包。</p>
 </div>
 </div>
 </div>
@@ -1667,15 +1667,15 @@ server.ssl.server-name-bundles[1].bundle=web-alt2</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>您可以在 Spring Boot 应用程序中通过 <code>server.http2.enabled</code>` 配置属性启用 HTTP/2 支持。
-同时支持 `<code>h2</code>`（基于 TLS 的 HTTP/2）和 `<code>h2c</code>`（基于 TCP 的 HTTP/2）。
-若要使用 `<code>h2</code>`，还必须启用 SSL。
-当未启用 SSL 时，将使用 `<code>h2c</code>`。
-例如，当您的应用程序在代理服务器后面运行且该代理服务器执行 TLS 终止时，您可能希望使用 `<code>h2c</code>（<a href="#howto.webserver.use-behind-a-proxy-server">running behind a proxy server</a>）。</p>
+同时支持 <code>h2</code>`（基于 TLS 的 HTTP/2）和 <code>h2c</code>`（基于 TCP 的 HTTP/2）。
+若要使用 <code>h2</code>`，还必须启用 SSL。
+当未启用 SSL 时，将使用 <code>h2c</code>`。
+例如，当您的应用程序在代理服务器后面运行且该代理服务器执行 TLS 终止时，您可能希望使用 <code>h2c</code>（<a href="#howto.webserver.use-behind-a-proxy-server">running behind a proxy server</a>）。</p>
 </div>
 <div class="sect2">
 <h3 id="howto.webserver.configure-http2.tomcat"><a class="anchor" href="#howto.webserver.configure-http2.tomcat"></a>使用 Tomcat 的 HTTP/2</h3>
 <div class="paragraph">
-<p>Spring Boot 默认随附 Tomcat 11.0.x，该版本原生支持 <code>h2c</code>` 和 `<code>h2`。或者，如果主机操作系统上已安装该库及其依赖项，您可以使用 `<code>libtcnative</code> 来支持 `<code>h2`。</code></code></p>
+<p>Spring Boot 默认随附 Tomcat 11.0.x，该版本原生支持 <code>h2c</code>` 和 <code>h2`。或者，如果主机操作系统上已安装该库及其依赖项，您可以使用 <code>libtcnative</code> 来支持 <code>h2`。</code></code></p>
 </div>
 <div class="paragraph">
 <p>库目录必须（如果尚未）添加到 JVM 库路径中。您可以使用如下 JVM 参数来实现：<code>-Djava.library.path=/usr/local/opt/tomcat-native/lib</code>。有关更多信息，请参阅<a href="https://tomcat.apache.org/tomcat-11.0-doc/apr.html">官方 Tomcat 文档</a>。</p>
@@ -1685,8 +1685,8 @@ server.ssl.server-name-bundles[1].bundle=web-alt2</code></pre>
 <h3 id="howto.webserver.configure-http2.jetty"><a class="anchor" href="#howto.webserver.configure-http2.jetty"></a>Jetty 中的 HTTP/2</h3>
 <div class="paragraph">
 <p>对于 HTTP/2 支持，Jetty 需要额外的 <code>org.eclipse.jetty.http2:jetty-http2-server</code>` 依赖。
-要使用 `<code>h2c</code>`，不需要其他依赖。
-要使用 `<code>h2</code>，您还需要根据您的部署情况选择以下依赖之一：</p>
+要使用 <code>h2c</code>`，不需要其他依赖。
+要使用 <code>h2</code>，您还需要根据您的部署情况选择以下依赖之一：</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1714,9 +1714,9 @@ server.ssl.server-name-bundles[1].bundle=web-alt2</code></pre>
 <h2 id="howto.webserver.configure"><a class="anchor" href="#howto.webserver.configure"></a>配置 Web 服务器</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>通常，您应首先考虑使用许多可用的配置键之一，并通过在 <code>application.properties</code>` 或 `<code>application.yaml</code>` 文件中添加新条目来自定义 Web 服务器。
+<p>通常，您应首先考虑使用许多可用的配置键之一，并通过在 <code>application.properties</code>` 或 <code>application.yaml</code>` 文件中添加新条目来自定义 Web 服务器。
 请参阅 <a class="xref page" href="properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties">发现外部属性的内置选项</a>。
-`<code>server.*</code>` 命名空间在此非常有用，它包括 `<code>server.tomcat.*</code>`、`<code>server.jetty.*</code> 等用于特定服务器功能的命名空间。
+<code>server.*</code>` 命名空间在此非常有用，它包括 <code>server.tomcat.*</code>`、<code>server.jetty.*</code> 等用于特定服务器功能的命名空间。
 请参阅 <a class="xref page" href="../appendix/application-properties/index.html">常用应用程序属性</a> 列表。</p>
 </div>
 <div class="paragraph">
@@ -1832,7 +1832,7 @@ Spring Boot 在内部使用该基础设施来自动配置服务器。自动配�
 <h2 id="howto.webserver.add-servlet-filter-listener"><a class="anchor" href="#howto.webserver.add-servlet-filter-listener"></a>向应用程序添加 Servlet、Filter 或 Listener</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>在包含 `<code>spring-boot-starter-web` 的 servlet 栈应用程序中，有两种方式将 <a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html"><code>Servlet</code></a>、<a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html"><code>Filter</code></a>、<a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html"><code>ServletContextListener</code></a> 以及 Servlet API 支持的其他监听器添加到您的应用程序中：</code></p>
+<p>在包含 <code>spring-boot-starter-web` 的 servlet 栈应用程序中，有两种方式将 <a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html"><code>Servlet</code></a>、<a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html"><code>Filter</code></a>、<a class="apiref" href="https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html"><code>ServletContextListener</code></a> 以及 Servlet API 支持的其他监听器添加到您的应用程序中：</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1865,7 +1865,7 @@ Spring Boot 在内部使用该基础设施来自动配置服务器。自动配�
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果过滤器注册时未指定 <code>dispatcherType</code>`，则使用 `<code>REQUEST</code>。这与 Servlet 规范中的默认分发类型一致。</p>
+<p>如果过滤器注册时未指定 <code>dispatcherType</code>`，则使用 <code>REQUEST</code>。这与 Servlet 规范中的默认分发类型一致。</p>
 </div>
 </td>
 </tr>
@@ -2050,13 +2050,13 @@ server.jetty.accesslog.filename=/var/log/jetty-access.log</code></pre>
 <h2 id="howto.webserver.use-behind-a-proxy-server"><a class="anchor" href="#howto.webserver.use-behind-a-proxy-server"></a>在反向代理服务器后运行</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您的应用程序运行在代理、负载均衡器或云环境之后，请求信息（如主机名、端口、协议等）可能会在传输过程中发生变化。您的应用程序可能运行在 <code>10.10.10.10:8080</code>`，但 HTTP 客户端应仅看到 `<code>example.org</code>。</p>
+<p>如果您的应用程序运行在代理、负载均衡器或云环境之后，请求信息（如主机名、端口、协议等）可能会在传输过程中发生变化。您的应用程序可能运行在 <code>10.10.10.10:8080</code>`，但 HTTP 客户端应仅看到 <code>example.org</code>。</p>
 </div>
 <div class="paragraph">
-<p><a href="https://tools.ietf.org/html/rfc7239">RFC7239 "Forwarded Headers"</a> 定义了 <code>Forwarded</code>` HTTP 标头；代理可以使用此标头提供有关原始请求的信息。您可以配置应用程序读取这些标头，并在创建链接以及通过 HTTP 302 响应、JSON 文档或 HTML 页面将它们发送给客户端时自动使用该信息。此外，还有非标准标头，如 `<code>X-Forwarded-Host</code>`、`<code>X-Forwarded-Port</code>`、`<code>X-Forwarded-Proto</code>`、`<code>X-Forwarded-Ssl</code>` 和 `<code>X-Forwarded-Prefix</code>。</p>
+<p><a href="https://tools.ietf.org/html/rfc7239">RFC7239 "Forwarded Headers"</a> 定义了 <code>Forwarded</code>` HTTP 标头；代理可以使用此标头提供有关原始请求的信息。您可以配置应用程序读取这些标头，并在创建链接以及通过 HTTP 302 响应、JSON 文档或 HTML 页面将它们发送给客户端时自动使用该信息。此外，还有非标准标头，如 <code>X-Forwarded-Host</code>`、<code>X-Forwarded-Port</code>`、<code>X-Forwarded-Proto</code>`、<code>X-Forwarded-Ssl</code>` 和 <code>X-Forwarded-Prefix</code>。</p>
 </div>
 <div class="paragraph">
-<p>如果代理添加了常用的 <code>X-Forwarded-For</code>` 和 `<code>X-Forwarded-Proto</code>` 标头，只需将 `<code>server.forward-headers-strategy</code>` 设置为 `<code>NATIVE</code> 即可支持这些标头。使用此选项时，Web 服务器本身原生支持该功能；您可以查阅其具体文档以了解特定行为。</p>
+<p>如果代理添加了常用的 <code>X-Forwarded-For</code>` 和 <code>X-Forwarded-Proto</code>` 标头，只需将 <code>server.forward-headers-strategy</code>` 设置为 <code>NATIVE</code> 即可支持这些标头。使用此选项时，Web 服务器本身原生支持该功能；您可以查阅其具体文档以了解特定行为。</p>
 </div>
 <div class="paragraph">
 <p>如果这还不够，Spring Framework 为 Servlet 堆栈提供了<a href="https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/filters.html#filters-forwarded-headers">ForwardedHeaderFilter</a>，为响应式堆栈提供了<a href="https://docs.spring.io/spring-framework/reference/7.0/web/webflux/reactive-spring.html#webflux-forwarded-headers">ForwardedHeaderTransformer</a>。

@@ -64,7 +64,7 @@
     },
     {
       "source": "If you want to display a custom HTML error page for a given status code, you can add views that resolve from <code>error/*</code>, for example by adding files to a <code>/error</code> directory.\nError pages can either be static HTML (that is, added under any of the static resource directories) or built with templates.\nThe name of the file should be the exact status code, a status code series mask, or <code>error</code> for a default if nothing else matches.\nNote that the path to the default error view is <code>error/error</code>, whereas with Spring MVC the default error view is <code>error</code>.",
-      "translation": "如果您想为特定状态码显示自定义 HTML 错误页面，可以添加从 <code>error/*</code>` 解析的视图，例如向 `<code>/error</code>` 目录添加文件。\n错误页面可以是静态 HTML（即添加到任何静态资源目录中），也可以使用模板构建。\n文件的名称应为确切的状态码、状态码系列掩码，或者如果其他内容都不匹配则为 `<code>error</code>` 作为默认值。\n请注意，默认错误视图的路径是 `<code>error/error</code>`，而在 Spring MVC 中默认错误视图是 `<code>error</code>。",
+      "translation": "如果您想为特定状态码显示自定义 HTML 错误页面，可以添加从 <code>error/*</code>` 解析的视图，例如向 <code>/error</code>` 目录添加文件。\n错误页面可以是静态 HTML（即添加到任何静态资源目录中），也可以使用模板构建。\n文件的名称应为确切的状态码、状态码系列掩码，或者如果其他内容都不匹配则为 <code>error</code>` 作为默认值。\n请注意，默认错误视图的路径是 <code>error/error</code>`，而在 Spring MVC 中默认错误视图是 <code>error</code>。",
       "count": 2
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "source": "Spring Boot provides dedicated configuration properties for codecs, <code>spring.http.codecs.*</code>.\nIt also applies further customization by using <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a> instances.\nFor example, <code>spring.jackson.*</code> configuration keys are applied to the Jackson codec.",
-      "translation": "Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a> 实例来应用进一步的自定义。例如，`<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。",
+      "translation": "Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html\"><code>CodecCustomizer</code></a> 实例来应用进一步的自定义。例如，<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。",
       "count": 2
     },
     {
@@ -129,12 +129,12 @@
     },
     {
       "source": "You can also customize the static resource locations by using <code>spring.web.resources.static-locations</code>.\nDoing so replaces the default values with a list of directory locations.\nIf you do so, the default welcome page detection switches to your custom locations.\nSo, if there is an <code>index.html</code> in any of your locations on startup, it is the home page of the application.",
-      "translation": "您还可以通过使用 <code>spring.web.resources.static-locations</code>` 来自定义静态资源位置。这样做会用目录位置列表替换默认值。如果这样做了，默认的欢迎页面检测将切换到您的自定义位置。因此，如果在启动时您的任何位置中存在 `<code>index.html</code>，它将是应用程序的主页。",
+      "translation": "您还可以通过使用 <code>spring.web.resources.static-locations</code>` 来自定义静态资源位置。这样做会用目录位置列表替换默认值。如果这样做了，默认的欢迎页面检测将切换到您的自定义位置。因此，如果在启动时您的任何位置中存在 <code>index.html</code>，它将是应用程序的主页。",
       "count": 2
     },
     {
       "source": "Spring Boot supports both static and templated welcome pages.\nIt first looks for an <code>index.html</code> file in the configured static content locations.\nIf one is not found, it then looks for an <code>index</code> template.\nIf either is found, it is automatically used as the welcome page of the application.",
-      "translation": "Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 `<code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。",
+      "translation": "Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。",
       "count": 2
     },
     {
@@ -159,7 +159,7 @@
     },
     {
       "source": "This support can be enabled by setting <code>spring.webflux.problemdetails.enabled</code> to <code>true</code>.",
-      "translation": "此支持可通过将 <code>spring.webflux.problemdetails.enabled</code>` 设置为 `<code>true</code> 来启用。",
+      "translation": "此支持可通过将 <code>spring.webflux.problemdetails.enabled</code>` 设置为 <code>true</code> 来启用。",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "For example, the following will use an <code>X-Version</code> HTTP header to obtain version information and default to <code>1.0.0</code> when no header is sent.",
-      "translation": "例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 `<code>1.0.0</code>。",
+      "translation": "例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。",
       "count": 2
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "source": "Spring WebFlux supports API versioning which can be used to evolve an HTTP API over time.\nThe same <code>@Controller</code> path can be mapped multiple times to support different versions of the API.",
-      "translation": "Spring WebFlux 支持 API 版本控制，可用于随时间演进 HTTP API。相同的 `<code>@Controller`</code> 路径可以映射多次以支持不同版本的 API。",
+      "translation": "Spring WebFlux 支持 API 版本控制，可用于随时间演进 HTTP API。相同的 <code>@Controller`</code> 路径可以映射多次以支持不同版本的 API。",
       "count": 2
     },
     {

@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Looks in various places for a properties file to extract loader settings, defaulting to\n<code>loader.properties</code> either on the current classpath or in the current working\ndirectory. The name of the properties file can be changed by setting a System property\n<code>loader.config.name</code> (e.g. <code>-Dloader.config.name=my</code> will look for\n<code>my.properties</code>. If that file doesn't exist then tries\n<code>loader.config.location</code> (with allowed prefixes <code>classpath:</code> and\n<code>file:</code> or any valid URL). Once that file is located turns it into Properties and\nextracts optional values (which can also be provided overridden as System properties in\ncase the file doesn't exist):",
-      "translation": "在多个位置查找属性文件以提取加载器设置，默认情况下在当前类路径或当前工作目录中查找 `<code>loader.properties</code>`。可以通过设置系统属性 `<code>loader.config.name</code>` 来更改属性文件的名称（例如，`<code>-Dloader.config.name=my</code>` 将查找 `<code>my.properties</code>`）。如果该文件不存在，则尝试使用 `<code>loader.config.location</code>`（允许的前缀为 `<code>classpath:</code>` 和 `<code>file:</code>` 或任何有效的 URL）。一旦找到该文件，将其转换为 Properties 对象并提取可选值（如果文件不存在，这些值也可以作为系统属性提供覆盖）：",
+      "translation": "在多个位置查找属性文件以提取加载器设置，默认情况下在当前类路径或当前工作目录中查找 <code>loader.properties</code>`。可以通过设置系统属性 <code>loader.config.name</code>` 来更改属性文件的名称（例如，<code>-Dloader.config.name=my</code>` 将查找 <code>my.properties</code>`）。如果该文件不存在，则尝试使用 <code>loader.config.location</code>`（允许的前缀为 <code>classpath:</code>` 和 <code>file:</code>` 或任何有效的 URL）。一旦找到该文件，将其转换为 Properties 对象并提取可选值（如果文件不存在，这些值也可以作为系统属性提供覆盖）：",
       "count": 2
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "source": "Properties key for main class. As a manifest entry can also be specified as\n<code>Start-Class</code>.",
-      "translation": "主类的属性键。作为清单条目，也可指定为 `<code>Start-Class</code>`。",
+      "translation": "主类的属性键。作为清单条目，也可指定为 <code>Start-Class</code>`。",
       "count": 2
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "source": "<code>loader.main</code>: the main method to delegate execution to once the class loader\nis set up. No default, but will fall back to looking for a <code>Start-Class</code> in a\n<code>MANIFEST.MF</code>, if there is one in <code>${loader.home}/META-INF</code>.",
-      "translation": "`loader.main`：类加载器设置好后，将委托执行的主方法。没有默认值，但如果 `${loader.home}/META-INF` 中存在一个 `MANIFEST.MF`，则会回退到查找其中的 `<code>Start-Class</code>`。",
+      "translation": "`loader.main`：类加载器设置好后，将委托执行的主方法。没有默认值，但如果 `${loader.home}/META-INF` 中存在一个 `MANIFEST.MF`，则会回退到查找其中的 <code>Start-Class</code>`。",
       "count": 2
     },
     {
@@ -134,22 +134,22 @@
     },
     {
       "source": "<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">createClassLoader</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
-      "translation": "`<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">createClassLoader</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "translation": "<code><a href=\"Launcher.html#createClassLoader(java.util.Collection)\">createClassLoader</a></code>` 类中的 <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
       "count": 1
     },
     {
       "source": "<code><a href=\"Launcher.html#getArchive()\">getArchive</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
-      "translation": "`<code><a href=\"Launcher.html#getArchive()\">getArchive</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "translation": "<code><a href=\"Launcher.html#getArchive()\">getArchive</a></code>` 类中的 <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
       "count": 1
     },
     {
       "source": "<code><a href=\"Launcher.html#getMainClass()\">getMainClass</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
-      "translation": "`<code><a href=\"Launcher.html#getMainClass()\">getMainClass</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "translation": "<code><a href=\"Launcher.html#getMainClass()\">getMainClass</a></code>` 类中的 <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
       "count": 1
     },
     {
       "source": "<code><a href=\"Launcher.html#getClassPathUrls()\">getClassPathUrls</a></code> in class <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>",
-      "translation": "`<code><a href=\"Launcher.html#getClassPathUrls()\">getClassPathUrls</a></code>` 类中的 `<code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
+      "translation": "<code><a href=\"Launcher.html#getClassPathUrls()\">getClassPathUrls</a></code>` 类中的 <code><a href=\"Launcher.html\" title=\"class in org.springframework.boot.loader.launch\">Launcher</a></code>`",
       "count": 1
     },
     {

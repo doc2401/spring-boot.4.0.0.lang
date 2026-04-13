@@ -39,22 +39,22 @@
     },
     {
       "source": "You can enable HTTP/2 support in your Spring Boot application with the <code>server.http2.enabled</code> configuration property.\nBoth <code>h2</code> (HTTP/2 over TLS) and <code>h2c</code> (HTTP/2 over TCP) are supported.\nTo use <code>h2</code>, SSL must also be enabled.\nWhen SSL is not enabled, <code>h2c</code> will be used.\nYou may, for example, want to use <code>h2c</code> when your application is <a href=\"#howto.webserver.use-behind-a-proxy-server\">running behind a proxy server</a> that is performing TLS termination.",
-      "translation": "您可以在 Spring Boot 应用程序中通过 <code>server.http2.enabled</code>` 配置属性启用 HTTP/2 支持。\n同时支持 `<code>h2</code>`（基于 TLS 的 HTTP/2）和 `<code>h2c</code>`（基于 TCP 的 HTTP/2）。\n若要使用 `<code>h2</code>`，还必须启用 SSL。\n当未启用 SSL 时，将使用 `<code>h2c</code>`。\n例如，当您的应用程序在代理服务器后面运行且该代理服务器执行 TLS 终止时，您可能希望使用 `<code>h2c</code>（<a href=\"#howto.webserver.use-behind-a-proxy-server\">running behind a proxy server</a>）。",
+      "translation": "您可以在 Spring Boot 应用程序中通过 <code>server.http2.enabled</code>` 配置属性启用 HTTP/2 支持。\n同时支持 <code>h2</code>`（基于 TLS 的 HTTP/2）和 <code>h2c</code>`（基于 TCP 的 HTTP/2）。\n若要使用 <code>h2</code>`，还必须启用 SSL。\n当未启用 SSL 时，将使用 <code>h2c</code>`。\n例如，当您的应用程序在代理服务器后面运行且该代理服务器执行 TLS 终止时，您可能希望使用 <code>h2c</code>（<a href=\"#howto.webserver.use-behind-a-proxy-server\">running behind a proxy server</a>）。",
       "count": 2
     },
     {
       "source": "Generally, you should first consider using one of the many available configuration keys and customize your web server by adding new entries in your <code>application.properties</code> or <code>application.yaml</code> file.\nSee <a class=\"xref page\" href=\"properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties\">Discover Built-in Options for External Properties</a>).\nThe <code>server.*</code> namespace is quite useful here, and it includes namespaces like <code>server.tomcat.*</code>, <code>server.jetty.*</code> and others, for server-specific features.\nSee the list of <a class=\"xref page\" href=\"../appendix/application-properties/index.html\">Common Application Properties</a>.",
-      "translation": "通常，您应首先考虑使用许多可用的配置键之一，并通过在 <code>application.properties</code>` 或 `<code>application.yaml</code>` 文件中添加新条目来自定义 Web 服务器。\n请参阅 <a class=\"xref page\" href=\"properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties\">发现外部属性的内置选项</a>。\n`<code>server.*</code>` 命名空间在此非常有用，它包括 `<code>server.tomcat.*</code>`、`<code>server.jetty.*</code> 等用于特定服务器功能的命名空间。\n请参阅 <a class=\"xref page\" href=\"../appendix/application-properties/index.html\">常用应用程序属性</a> 列表。",
+      "translation": "通常，您应首先考虑使用许多可用的配置键之一，并通过在 <code>application.properties</code>` 或 <code>application.yaml</code>` 文件中添加新条目来自定义 Web 服务器。\n请参阅 <a class=\"xref page\" href=\"properties-and-configuration.html#howto.properties-and-configuration.discover-build-in-options-for-external-properties\">发现外部属性的内置选项</a>。\n<code>server.*</code>` 命名空间在此非常有用，它包括 <code>server.tomcat.*</code>`、<code>server.jetty.*</code> 等用于特定服务器功能的命名空间。\n请参阅 <a class=\"xref page\" href=\"../appendix/application-properties/index.html\">常用应用程序属性</a> 列表。",
       "count": 2
     },
     {
       "source": "In a servlet stack application, that is with the <code>spring-boot-starter-web</code>, there are two ways to add <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>, <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>, <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html\"><code>ServletContextListener</code></a>, and the other listeners supported by the Servlet API to your application:",
-      "translation": "在包含 `<code>spring-boot-starter-web` 的 servlet 栈应用程序中，有两种方式将 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html\"><code>ServletContextListener</code></a> 以及 Servlet API 支持的其他监听器添加到您的应用程序中：",
+      "translation": "在包含 <code>spring-boot-starter-web` 的 servlet 栈应用程序中，有两种方式将 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContextListener.html\"><code>ServletContextListener</code></a> 以及 Servlet API 支持的其他监听器添加到您的应用程序中：",
       "count": 2
     },
     {
       "source": "<a href=\"https://tools.ietf.org/html/rfc7239\">RFC7239 \"Forwarded Headers\"</a> defines the <code>Forwarded</code> HTTP header; proxies can use this header to provide information about the original request.\nYou can configure your application to read those headers and automatically use that information when creating links and sending them to clients in HTTP 302 responses, JSON documents or HTML pages.\nThere are also non-standard headers, like <code>X-Forwarded-Host</code>, <code>X-Forwarded-Port</code>, <code>X-Forwarded-Proto</code>, <code>X-Forwarded-Ssl</code>, and <code>X-Forwarded-Prefix</code>.",
-      "translation": "<a href=\"https://tools.ietf.org/html/rfc7239\">RFC7239 \"Forwarded Headers\"</a> 定义了 <code>Forwarded</code>` HTTP 标头；代理可以使用此标头提供有关原始请求的信息。您可以配置应用程序读取这些标头，并在创建链接以及通过 HTTP 302 响应、JSON 文档或 HTML 页面将它们发送给客户端时自动使用该信息。此外，还有非标准标头，如 `<code>X-Forwarded-Host</code>`、`<code>X-Forwarded-Port</code>`、`<code>X-Forwarded-Proto</code>`、`<code>X-Forwarded-Ssl</code>` 和 `<code>X-Forwarded-Prefix</code>。",
+      "translation": "<a href=\"https://tools.ietf.org/html/rfc7239\">RFC7239 \"Forwarded Headers\"</a> 定义了 <code>Forwarded</code>` HTTP 标头；代理可以使用此标头提供有关原始请求的信息。您可以配置应用程序读取这些标头，并在创建链接以及通过 HTTP 302 响应、JSON 文档或 HTML 页面将它们发送给客户端时自动使用该信息。此外，还有非标准标头，如 <code>X-Forwarded-Host</code>`、<code>X-Forwarded-Port</code>`、<code>X-Forwarded-Proto</code>`、<code>X-Forwarded-Ssl</code>` 和 <code>X-Forwarded-Prefix</code>。",
       "count": 2
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "source": "SSL can be configured declaratively by setting the various <code>server.ssl.*</code> properties, typically in <code>application.properties</code> or <code>application.yaml</code>.\nSee <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html\"><code>Ssl</code></a> for details of all of the supported properties.",
-      "translation": "SSL 可以通过设置各种 <code>server.ssl.*</code>` 属性进行声明式配置，通常是在 `<code>application.properties</code>` 或 `<code>application.yaml</code> 中。有关所有支持属性的详细信息，请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html\"><code>Ssl</code></a>。",
+      "translation": "SSL 可以通过设置各种 <code>server.ssl.*</code>` 属性进行声明式配置，通常是在 <code>application.properties</code>` 或 <code>application.yaml</code> 中。有关所有支持属性的详细信息，请参阅 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/Ssl.html\"><code>Ssl</code></a>。",
       "count": 2
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "source": "The <code>server.ssl.ciphers</code>, <code>server.ssl.enabled-protocols</code>, <code>server.ssl.protocol</code> properties are also ignored when using a bundle.\nThese properties should instead be defined using <code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> properties.",
-      "translation": "使用包时，也会忽略 <code>server.ssl.ciphers</code>`、`<code>server.ssl.enabled-protocols</code>` 和 `<code>server.ssl.protocol</code>` 属性。  \n相反，应使用 `<code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> 属性来定义这些属性。",
+      "translation": "使用包时，也会忽略 <code>server.ssl.ciphers</code>`、<code>server.ssl.enabled-protocols</code>` 和 <code>server.ssl.protocol</code>` 属性。  \n相反，应使用 <code>spring.ssl.bundle.&lt;type&gt;.&lt;name&gt;.options</code> 属性来定义这些属性。",
       "count": 2
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "source": "Spring Boot ships by default with Tomcat 11.0.x which supports <code>h2c</code> and <code>h2</code> out of the box.\nAlternatively, you can use <code>libtcnative</code> for <code>h2</code> support if the library and its dependencies are installed on the host operating system.",
-      "translation": "Spring Boot 默认随附 Tomcat 11.0.x，该版本原生支持 <code>h2c</code>` 和 `<code>h2`。或者，如果主机操作系统上已安装该库及其依赖项，您可以使用 `<code>libtcnative</code> 来支持 `<code>h2`。",
+      "translation": "Spring Boot 默认随附 Tomcat 11.0.x，该版本原生支持 <code>h2c</code>` 和 <code>h2`。或者，如果主机操作系统上已安装该库及其依赖项，您可以使用 <code>libtcnative</code> 来支持 <code>h2`。",
       "count": 2
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "source": "If the proxy adds the commonly used <code>X-Forwarded-For</code> and <code>X-Forwarded-Proto</code> headers, setting <code>server.forward-headers-strategy</code> to <code>NATIVE</code> is enough to support those.\nWith this option, the Web servers themselves natively support this feature; you can check their specific documentation to learn about specific behavior.",
-      "translation": "如果代理添加了常用的 <code>X-Forwarded-For</code>` 和 `<code>X-Forwarded-Proto</code>` 标头，只需将 `<code>server.forward-headers-strategy</code>` 设置为 `<code>NATIVE</code> 即可支持这些标头。使用此选项时，Web 服务器本身原生支持该功能；您可以查阅其具体文档以了解特定行为。",
+      "translation": "如果代理添加了常用的 <code>X-Forwarded-For</code>` 和 <code>X-Forwarded-Proto</code>` 标头，只需将 <code>server.forward-headers-strategy</code>` 设置为 <code>NATIVE</code> 即可支持这些标头。使用此选项时，Web 服务器本身原生支持该功能；您可以查阅其具体文档以了解特定行为。",
       "count": 2
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "source": "For HTTP/2 support, Jetty requires the additional <code>org.eclipse.jetty.http2:jetty-http2-server</code> dependency.\nTo use <code>h2c</code> no other dependencies are required.\nTo use <code>h2</code>, you also need to choose one of the following dependencies, depending on your deployment:",
-      "translation": "对于 HTTP/2 支持，Jetty 需要额外的 <code>org.eclipse.jetty.http2:jetty-http2-server</code>` 依赖。\n要使用 `<code>h2c</code>`，不需要其他依赖。\n要使用 `<code>h2</code>，您还需要根据您的部署情况选择以下依赖之一：",
+      "translation": "对于 HTTP/2 支持，Jetty 需要额外的 <code>org.eclipse.jetty.http2:jetty-http2-server</code>` 依赖。\n要使用 <code>h2c</code>`，不需要其他依赖。\n要使用 <code>h2</code>，您还需要根据您的部署情况选择以下依赖之一：",
       "count": 2
     },
     {
@@ -164,12 +164,12 @@
     },
     {
       "source": "Using configuration such as the preceding example means the application no longer supports a plain HTTP connector at port 8080.\nSpring Boot does not support the configuration of both an HTTP connector and an HTTPS connector through <code>application.properties</code>.\nIf you want to have both, you need to configure one of them programmatically.\nWe recommend using <code>application.properties</code> to configure HTTPS, as the HTTP connector is the easier of the two to configure programmatically.",
-      "translation": "使用前述示例中的配置意味着应用程序不再支持端口 8080 上的纯 HTTP 连接器。Spring Boot 不支持通过 `<code>application.properties` 同时配置 HTTP 连接器和 HTTPS 连接器。如果您需要两者，则需要通过编程方式配置其中之一。我们建议使用 `<code>application.properties` 来配置 HTTPS，因为 HTTP 连接器在编程配置上更为简单。",
+      "translation": "使用前述示例中的配置意味着应用程序不再支持端口 8080 上的纯 HTTP 连接器。Spring Boot 不支持通过 <code>application.properties` 同时配置 HTTP 连接器和 HTTPS 连接器。如果您需要两者，则需要通过编程方式配置其中之一。我们建议使用 <code>application.properties` 来配置 HTTPS，因为 HTTP 连接器在编程配置上更为简单。",
       "count": 2
     },
     {
       "source": "You can use PEM-encoded files instead of Java KeyStore files.\nYou should use PKCS#8 key files wherever possible.\nPEM-encoded PKCS#8 key files start with a <code>-----BEGIN PRIVATE KEY-----</code> or <code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> header.",
-      "translation": "您可以使用 PEM 编码文件代替 Java KeyStore 文件。\n应尽可能使用 PKCS#8 密钥文件。\nPEM 编码的 PKCS#8 密钥文件以 <code>-----BEGIN PRIVATE KEY-----</code>` 或 `<code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> 开头。",
+      "translation": "您可以使用 PEM 编码文件代替 Java KeyStore 文件。\n应尽可能使用 PKCS#8 密钥文件。\nPEM 编码的 PKCS#8 密钥文件以 <code>-----BEGIN PRIVATE KEY-----</code>` 或 <code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code> 开头。",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "The bundle specified with <code>server.ssl.bundle</code> will be used for the default host, and for any client that does support SNI.\nThis default bundle must be configured if any <code>server.ssl.server-name-bundles</code> are configured.",
-      "translation": "使用 <code>server.ssl.bundle</code>` 指定的捆绑包将用于默认主机以及任何支持 SNI 的客户端。如果配置了任何 `<code>server.ssl.server-name-bundles</code>，则必须配置此默认捆绑包。",
+      "translation": "使用 <code>server.ssl.bundle</code>` 指定的捆绑包将用于默认主机以及任何支持 SNI 的客户端。如果配置了任何 <code>server.ssl.server-name-bundles</code>，则必须配置此默认捆绑包。",
       "count": 2
     },
     {
@@ -219,7 +219,7 @@
     },
     {
       "source": "If no <code>dispatcherType</code> is specified on a filter registration, <code>REQUEST</code> is used.\nThis aligns with the servlet specification’s default dispatcher type.",
-      "translation": "如果过滤器注册时未指定 <code>dispatcherType</code>`，则使用 `<code>REQUEST</code>。这与 Servlet 规范中的默认分发类型一致。",
+      "translation": "如果过滤器注册时未指定 <code>dispatcherType</code>`，则使用 <code>REQUEST</code>。这与 Servlet 规范中的默认分发类型一致。",
       "count": 2
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "source": "If your application is running behind a proxy, a load-balancer or in the cloud, the request information (like the host, port, scheme…​) might change along the way.\nYour application may be running on <code>10.10.10.10:8080</code>, but HTTP clients should only see <code>example.org</code>.",
-      "translation": "如果您的应用程序运行在代理、负载均衡器或云环境之后，请求信息（如主机名、端口、协议等）可能会在传输过程中发生变化。您的应用程序可能运行在 <code>10.10.10.10:8080</code>`，但 HTTP 客户端应仅看到 `<code>example.org</code>。",
+      "translation": "如果您的应用程序运行在代理、负载均衡器或云环境之后，请求信息（如主机名、端口、协议等）可能会在传输过程中发生变化。您的应用程序可能运行在 <code>10.10.10.10:8080</code>`，但 HTTP 客户端应仅看到 <code>example.org</code>。",
       "count": 2
     },
     {

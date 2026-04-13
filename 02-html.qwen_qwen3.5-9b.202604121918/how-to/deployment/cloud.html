@@ -1122,9 +1122,9 @@ Cloud Foundry <a href="https://github.com/cloudfoundry/java-buildpack">Java 构�
 您可以部署独立的可执行 jar 应用程序以及传统的<code>.war</code>打包应用程序。</p>
 </div>
 <div class="paragraph">
-<p>构建完应用程序（例如使用 <code>mvn clean package</code>`）并<a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">安装了<code>cf</code>命令行工具</a>后，请使用 `<code>cf push</code>` 命令部署您的应用程序，并将编译后的 `<code>.jar</code>` 路径作为参数替换。
-在推送应用程序之前，请确保已通过 `<code>cf</code> 命令行客户端<a href="https://docs.cloudfoundry.org/cf-cli/getting-started.html#login">登录</a>。
-以下行展示了如何使用 `<code>cf push</code> 命令部署应用程序：</p>
+<p>构建完应用程序（例如使用 <code>mvn clean package</code>`）并<a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">安装了<code>cf</code>命令行工具</a>后，请使用 <code>cf push</code>` 命令部署您的应用程序，并将编译后的 <code>.jar</code>` 路径作为参数替换。
+在推送应用程序之前，请确保已通过 <code>cf</code> 命令行客户端<a href="https://docs.cloudfoundry.org/cf-cli/getting-started.html#login">登录</a>。
+以下行展示了如何使用 <code>cf push</code> 命令部署应用程序：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1284,7 +1284,7 @@ class MyBean : EnvironmentAware {
 <h2 id="howto.deployment.cloud.kubernetes"><a class="anchor" href="#howto.deployment.cloud.kubernetes"></a>Kubernetes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code>` 和 `<code>*_SERVICE_PORT</code>` 变量来自动检测 Kubernetes 部署环境。您可以通过 `<code>spring.main.cloud-platform</code> 配置属性覆盖此检测。</p>
+<p>Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code>` 和 <code>*_SERVICE_PORT</code>` 变量来自动检测 Kubernetes 部署环境。您可以通过 <code>spring.main.cloud-platform</code> 配置属性覆盖此检测。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 帮助您<a class="xref page" href="../../reference/features/spring-application.html#features.spring-application.application-availability">管理应用程序的状态</a>，并使用 <a class="xref page" href="../../reference/actuator/endpoints.html#actuator.endpoints.kubernetes-probes">Actuator 导出 HTTP Kubernetes Probes</a>。</p>
@@ -1349,7 +1349,7 @@ class MyBean : EnvironmentAware {
 <td class="content">
 当 Kubernetes 向 Pod 发送 SIGTERM 信号时，它会等待一段指定的时间，称为终止宽限期（默认值为 30 秒）。
 如果宽限期过后容器仍在运行，它们将收到 SIGKILL 信号并被强制移除。
-如果 Pod 的关闭时间超过 30 秒（这可能是因为你增加了 <code>spring.lifecycle.timeout-per-shutdown-phase`），请确保通过设置 Pod YAML 中的 `<code>terminationGracePeriodSeconds</code> 选项来增加终止宽限期。
+如果 Pod 的关闭时间超过 30 秒（这可能是因为你增加了 <code>spring.lifecycle.timeout-per-shutdown-phase`），请确保通过设置 Pod YAML 中的 <code>terminationGracePeriodSeconds</code> 选项来增加终止宽限期。
 </code></td>
 </tr>
 </tbody></table>
@@ -1362,8 +1362,8 @@ class MyBean : EnvironmentAware {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Heroku 是另一个流行的 PaaS 平台。
-要自定义 Heroku 构建，您需要提供一个 `<code>Procfile`》，其中包含部署应用程序所需的咒语。
-Heroku 会为 Java 应用程序分配一个 `<code>port`</code>，然后确保路由到外部 URI 正常工作。</code></p>
+要自定义 Heroku 构建，您需要提供一个 <code>Procfile`》，其中包含部署应用程序所需的咒语。
+Heroku 会为 Java 应用程序分配一个 <code>port`</code>，然后确保路由到外部 URI 正常工作。</code></p>
 </div>
 <div class="paragraph">
 <p>您必须配置应用程序以监听正确的端口。以下示例展示了我们 Starter REST 应用程序的<code>Procfile</code>：</p>
@@ -1615,7 +1615,7 @@ Deployment completed successfully. axelfontaine/myapp:1.0 is up and running at h
 <p>要将您的第一个应用程序部署到 App Engine 标准环境，请遵循<a href="https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot#0">此教程</a>。</p>
 </div>
 <div class="paragraph">
-<p>或者，App Engine Flex 需要您创建一个 <code>app.yaml</code>` 文件来描述应用程序所需的资源。通常，您将此文件放在 `<code>src/main/appengine</code> 中，其内容应类似于以下文件：</p>
+<p>或者，App Engine Flex 需要您创建一个 <code>app.yaml</code>` 文件来描述应用程序所需的资源。通常，您将此文件放在 <code>src/main/appengine</code> 中，其内容应类似于以下文件：</p>
 </div>
 <div class="listingblock">
 <div class="content">

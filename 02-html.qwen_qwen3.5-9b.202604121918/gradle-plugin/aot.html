@@ -1164,15 +1164,15 @@ plugins {
 <h2 id="aot.processing-applications"><a class="anchor" href="#aot.processing-applications"></a>处理应用程序</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>基于带有 <code>@SpringBootApplication</code>` 注解的主类，`<code>processAot</code> 任务以尽可能简化 Bean 实例化的方式，生成了运行时将要贡献的 Bean 的持久化视图。
+<p>基于带有 <code>@SpringBootApplication</code>` 注解的主类，<code>processAot</code> 任务以尽可能简化 Bean 实例化的方式，生成了运行时将要贡献的 Bean 的持久化视图。
 可以使用回调对工厂进行额外的后处理。
 例如，这些回调用于生成 GraalVM 在原生镜像中初始化上下文所需的反射配置。</p>
 </div>
 <div class="paragraph">
-<p>由于 <code>BeanFactory</code>` 在构建时已完全准备就绪，因此条件也会在构建时进行评估。这与常规 Spring Boot 应用在运行时执行的操作存在重要差异。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。为此，`<code>processAot</code> 任务是一个 <a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html"><code>JavaExec</code></a> 任务，可以根据需要配置环境变量、系统属性和参数。</p>
+<p>由于 <code>BeanFactory</code>` 在构建时已完全准备就绪，因此条件也会在构建时进行评估。这与常规 Spring Boot 应用在运行时执行的操作存在重要差异。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。为此，<code>processAot</code> 任务是一个 <a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html"><code>JavaExec</code></a> 任务，可以根据需要配置环境变量、系统属性和参数。</p>
 </div>
 <div class="paragraph">
-<p>GraalVM Native Image 插件的 <code>nativeCompile</code>` 任务会自动配置为使用 `<code>processAot</code> 任务的输出。</p>
+<p>GraalVM Native Image 插件的 <code>nativeCompile</code>` 任务会自动配置为使用 <code>processAot</code> 任务的输出。</p>
 </div>
 </div>
 </div>
@@ -1181,12 +1181,12 @@ plugins {
 <div class="sectionbody">
 <div class="paragraph">
 <p>AOT 引擎可应用于使用 Spring Test Context Framework 的 JUnit 5 测试。
-合适的测试将由 <code>processTestAot</code>` 任务处理，以生成 `<code>ApplicationContextInitializer</code>` 代码。
-与应用 AOT 处理一样，`<code>BeanFactory</code>` 将在构建时完全准备就绪。
-与 `<code>processAot</code>` 类似，`<code>processTestAot</code>` 任务是 `<code>JavaExec</code> 的子类，可根据需要进行配置以影响此处理过程。</p>
+合适的测试将由 <code>processTestAot</code>` 任务处理，以生成 <code>ApplicationContextInitializer</code>` 代码。
+与应用 AOT 处理一样，<code>BeanFactory</code>` 将在构建时完全准备就绪。
+与 <code>processAot</code>` 类似，<code>processTestAot</code>` 任务是 <code>JavaExec</code> 的子类，可根据需要进行配置以影响此处理过程。</p>
 </div>
 <div class="paragraph">
-<p>GraalVM Native Image 插件的 <code>nativeTest</code>` 任务已自动配置为使用 `<code>processAot</code>` 和 `<code>processTestAot</code> 任务的输出。</p>
+<p>GraalVM Native Image 插件的 <code>nativeTest</code>` 任务已自动配置为使用 <code>processAot</code>` 和 <code>processTestAot</code> 任务的输出。</p>
 </div>
 </div>
 </div>

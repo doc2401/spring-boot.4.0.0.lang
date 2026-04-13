@@ -186,7 +186,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#taskDecorator(org.springframework.core.task.TaskDecorator)">taskDecorator</a><wbr/>(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 <code>null</code>` 以不使用任何装饰器。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#taskTerminationTimeout(java.time.Duration)">taskTerminationTimeout</a><wbr/>(@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time">Duration</a> taskTerminationTimeout)</code></div>
@@ -271,7 +271,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <h3>cancelRemainingTasksOnClose</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></span> <span class="element-name">cancelRemainingTasksOnClose</span><wbr/><span class="parameters">(boolean cancelRemainingTasksOnClose)</span></div>
-<div class="block">设置是否在关闭时取消剩余任务。默认值为 `<code>false</code>`，即完全不跟踪活动线程，或者仅中断在指定<a href="#taskTerminationTimeout(java.time.Duration)"><code>taskTerminationTimeout</code></a>之后仍未完成的任何剩余线程。将此选项切换为`<code>true</code>`以在关闭时立即中断，具体是结合随后的终止超时使用，还是完全不等待，取决于是否已指定了 `<code>taskTerminationTimeout</code>`。</div>
+<div class="block">设置是否在关闭时取消剩余任务。默认值为 <code>false</code>`，即完全不跟踪活动线程，或者仅中断在指定<a href="#taskTerminationTimeout(java.time.Duration)"><code>taskTerminationTimeout</code></a>之后仍未完成的任何剩余线程。将此选项切换为<code>true</code>`以在关闭时立即中断，具体是结合随后的终止超时使用，还是完全不等待，取决于是否已指定了 <code>taskTerminationTimeout</code>`。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cancelRemainingTasksOnClose</code> - 关闭时是否取消剩余任务</dd>
@@ -320,7 +320,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <h3>taskDecorator</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></span> <span class="element-name">taskDecorator</span><wbr/><span class="parameters">(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</span></div>
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 <code>null</code>` 以不使用任何装饰器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>taskDecorator</code> - 要使用的任务装饰器</dd>

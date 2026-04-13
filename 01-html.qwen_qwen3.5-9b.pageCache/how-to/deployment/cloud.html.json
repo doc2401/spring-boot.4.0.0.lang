@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Once you have built your application (by using, for example, <code>mvn clean package</code>) and have <a href=\"https://docs.cloudfoundry.org/cf-cli/install-go-cli.html\">installed the <code>cf</code> command line tool</a>, deploy your application by using the <code>cf push</code> command, substituting the path to your compiled <code>.jar</code>.\nBe sure to have <a href=\"https://docs.cloudfoundry.org/cf-cli/getting-started.html#login\">logged in with your <code>cf</code> command line client</a> before pushing an application.\nThe following line shows using the <code>cf push</code> command to deploy an application:",
-      "translation": "构建完应用程序（例如使用 <code>mvn clean package</code>`）并<a href=\"https://docs.cloudfoundry.org/cf-cli/install-go-cli.html\">安装了<code>cf</code>命令行工具</a>后，请使用 `<code>cf push</code>` 命令部署您的应用程序，并将编译后的 `<code>.jar</code>` 路径作为参数替换。\n在推送应用程序之前，请确保已通过 `<code>cf</code> 命令行客户端<a href=\"https://docs.cloudfoundry.org/cf-cli/getting-started.html#login\">登录</a>。\n以下行展示了如何使用 `<code>cf push</code> 命令部署应用程序：",
+      "translation": "构建完应用程序（例如使用 <code>mvn clean package</code>`）并<a href=\"https://docs.cloudfoundry.org/cf-cli/install-go-cli.html\">安装了<code>cf</code>命令行工具</a>后，请使用 <code>cf push</code>` 命令部署您的应用程序，并将编译后的 <code>.jar</code>` 路径作为参数替换。\n在推送应用程序之前，请确保已通过 <code>cf</code> 命令行客户端<a href=\"https://docs.cloudfoundry.org/cf-cli/getting-started.html#login\">登录</a>。\n以下行展示了如何使用 <code>cf push</code> 命令部署应用程序：",
       "count": 2
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "source": "Spring Boot auto-detects Kubernetes deployment environments by checking the environment for <code>\"*_SERVICE_HOST\"</code> and <code>\"*_SERVICE_PORT\"</code> variables.\nYou can override this detection with the <code>spring.main.cloud-platform</code> configuration property.",
-      "translation": "Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code>` 和 `<code>*_SERVICE_PORT</code>` 变量来自动检测 Kubernetes 部署环境。您可以通过 `<code>spring.main.cloud-platform</code> 配置属性覆盖此检测。",
+      "translation": "Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code>` 和 <code>*_SERVICE_PORT</code>` 变量来自动检测 Kubernetes 部署环境。您可以通过 <code>spring.main.cloud-platform</code> 配置属性覆盖此检测。",
       "count": 2
     },
     {
@@ -79,7 +79,7 @@
     },
     {
       "source": "Heroku is another popular PaaS platform.\nTo customize Heroku builds, you provide a <code>Procfile</code>, which provides the incantation required to deploy an application.\nHeroku assigns a <code>port</code> for the Java application to use and then ensures that routing to the external URI works.",
-      "translation": "Heroku 是另一个流行的 PaaS 平台。\n要自定义 Heroku 构建，您需要提供一个 `<code>Procfile`》，其中包含部署应用程序所需的咒语。\nHeroku 会为 Java 应用程序分配一个 `<code>port`</code>，然后确保路由到外部 URI 正常工作。",
+      "translation": "Heroku 是另一个流行的 PaaS 平台。\n要自定义 Heroku 构建，您需要提供一个 <code>Procfile`》，其中包含部署应用程序所需的咒语。\nHeroku 会为 Java 应用程序分配一个 <code>port`</code>，然后确保路由到外部 URI 正常工作。",
       "count": 2
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "source": "Alternatively, App Engine Flex requires you to create an <code>app.yaml</code> file to describe the resources your app requires.\nNormally, you put this file in <code>src/main/appengine</code>, and it should resemble the following file:",
-      "translation": "或者，App Engine Flex 需要您创建一个 <code>app.yaml</code>` 文件来描述应用程序所需的资源。通常，您将此文件放在 `<code>src/main/appengine</code> 中，其内容应类似于以下文件：",
+      "translation": "或者，App Engine Flex 需要您创建一个 <code>app.yaml</code>` 文件来描述应用程序所需的资源。通常，您将此文件放在 <code>src/main/appengine</code> 中，其内容应类似于以下文件：",
       "count": 2
     },
     {
@@ -294,7 +294,7 @@
     },
     {
       "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\nWhen Kubernetes sends a SIGTERM signal to the pod, it waits for a specified time called the termination grace period (the default for which is 30 seconds).\nIf the containers are still running after the grace period, they are sent the SIGKILL signal and forcibly removed.\nIf the pod takes longer than 30 seconds to shut down, which could be because you have increased <code>spring.lifecycle.timeout-per-shutdown-phase</code>, make sure to increase the termination grace period by setting the <code>terminationGracePeriodSeconds</code> option in the Pod YAML.\n</td>\n</tr>\n</tbody>",
-      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n当 Kubernetes 向 Pod 发送 SIGTERM 信号时，它会等待一段指定的时间，称为终止宽限期（默认值为 30 秒）。\n如果宽限期过后容器仍在运行，它们将收到 SIGKILL 信号并被强制移除。\n如果 Pod 的关闭时间超过 30 秒（这可能是因为你增加了 <code>spring.lifecycle.timeout-per-shutdown-phase`），请确保通过设置 Pod YAML 中的 `<code>terminationGracePeriodSeconds</code> 选项来增加终止宽限期。\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-note\" title=\"Note\"></i>\n</td>\n<td class=\"content\">\n当 Kubernetes 向 Pod 发送 SIGTERM 信号时，它会等待一段指定的时间，称为终止宽限期（默认值为 30 秒）。\n如果宽限期过后容器仍在运行，它们将收到 SIGKILL 信号并被强制移除。\n如果 Pod 的关闭时间超过 30 秒（这可能是因为你增加了 <code>spring.lifecycle.timeout-per-shutdown-phase`），请确保通过设置 Pod YAML 中的 <code>terminationGracePeriodSeconds</code> 选项来增加终止宽限期。\n</td>\n</tr>\n</tbody>",
       "count": 2
     },
     {

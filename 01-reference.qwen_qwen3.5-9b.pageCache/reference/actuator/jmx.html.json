@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "Java Management Extensions (JMX) provide a standard mechanism to monitor and manage applications.\nBy default, this feature is not enabled.\nYou can turn it on by setting the <code>spring.jmx.enabled</code> configuration property to <code>true</code>.\nSpring Boot exposes the most suitable <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html\"><code>MBeanServer</code></a> as a bean with an ID of <code>mbeanServer</code>.\nAny of your beans that are annotated with Spring JMX annotations (<code>@org.springframework.jmx.export.annotation.ManagedResource</code>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedAttribute.html\"><code>@ManagedAttribute</code></a>, or <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html\"><code>@ManagedOperation</code></a>) are exposed to it.",
-      "translation": "Java 管理扩展 (JMX) 提供了一种标准机制来监视和管理应用程序。默认情况下，此功能未启用。您可以通过将 <code>spring.jmx.enabled</code>` 配置属性设置为 `<code>true</code>` 来启用它。Spring Boot 会将最合适的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html\"><code>MBeanServer</code></a> 暴露为一个 ID 为 `<code>mbeanServer</code> 的 Bean。任何带有 Spring JMX 注解（<code>@org.springframework.jmx.export.annotation.ManagedResource</code>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedAttribute.html\"><code>@ManagedAttribute</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html\"><code>@ManagedOperation</code></a>）的 Bean 都会暴露给该 MBeanServer。",
+      "translation": "Java 管理扩展 (JMX) 提供了一种标准机制来监视和管理应用程序。默认情况下，此功能未启用。您可以通过将 <code>spring.jmx.enabled</code>` 配置属性设置为 <code>true</code>` 来启用它。Spring Boot 会将最合适的 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html\"><code>MBeanServer</code></a> 暴露为一个 ID 为 <code>mbeanServer</code> 的 Bean。任何带有 Spring JMX 注解（<code>@org.springframework.jmx.export.annotation.ManagedResource</code>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedAttribute.html\"><code>@ManagedAttribute</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/jmx/export/annotation/ManagedOperation.html\"><code>@ManagedOperation</code></a>）的 Bean 都会暴露给该 MBeanServer。",
       "count": 2
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "source": "The name of the MBean is usually generated from the <code>id</code> of the endpoint.\nFor example, the <code>health</code> endpoint is exposed as <code>org.springframework.boot:type=Endpoint,name=Health</code>.",
-      "translation": "MBean 的名称通常由端点的 <code>id</code>` 生成。例如，`<code>health</code>` 端点以 `<code>org.springframework.boot:type=Endpoint,name=Health</code> 的形式暴露。",
+      "translation": "MBean 的名称通常由端点的 <code>id</code>` 生成。例如，<code>health</code>` 端点以 <code>org.springframework.boot:type=Endpoint,name=Health</code> 的形式暴露。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "If you do not want to expose endpoints over JMX, you can set the <code>management.endpoints.jmx.exposure.exclude</code> property to <code>*</code>, as the following example shows:",
-      "translation": "如果您不想通过 JMX 暴露端点，可以将 <code>management.endpoints.jmx.exposure.exclude</code>` 属性设置为 `<code>*</code>，如下例所示：",
+      "translation": "如果您不想通过 JMX 暴露端点，可以将 <code>management.endpoints.jmx.exposure.exclude</code>` 属性设置为 <code>*</code>，如下例所示：",
       "count": 2
     },
     {

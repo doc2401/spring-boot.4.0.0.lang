@@ -227,7 +227,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setExceptionExcludes(java.util.List)">setExceptionExcludes</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util">List</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a>&gt;&gt; excludes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">将非适用的异常类型替换为给定 `<code>excludes</code>` 中指定的类型，以尝试重试。</div>
+<div class="block">将非适用的异常类型替换为给定 <code>excludes</code>` 中指定的类型，以尝试重试。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setExceptionIncludes(java.util.List)">setExceptionIncludes</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util">List</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a>&gt;&gt; includes)</code></div>
@@ -247,7 +247,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setJitter(java.time.Duration)">setJitter</a><wbr/>(@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time">Duration</a> jitter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">为基本重试尝试指定抖动周期，将其随机减去或加到计算出的延迟上，从而得到一个介于 `<code>delay - jitter</code>` 和 `<code>delay + jitter</code>` 之间的值，但永远不会低于 <a href="#getDelay()">基本延迟</a> 或高于 <a href="#getMaxDelay()">最大延迟</a>。</div>
+<div class="block">为基本重试尝试指定抖动周期，将其随机减去或加到计算出的延迟上，从而得到一个介于 <code>delay - jitter</code>` 和 <code>delay + jitter</code>` 之间的值，但永远不会低于 <a href="#getDelay()">基本延迟</a> 或高于 <a href="#getMaxDelay()">最大延迟</a>。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setMaxDelay(java.time.Duration)">setMaxDelay</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time">Duration</a> maxDelay)</code></div>
@@ -389,7 +389,7 @@ loadScripts(document, 'script');</script>
 <h3>setExceptionIncludes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setExceptionIncludes</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util">List</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a>&gt;&gt; includes)</span></div>
-<div class="block">将适用的异常类型替换为给定的 `<code>includes</code>` 以尝试重试。或者，可以考虑使用 <a href="#getExceptionIncludes()"><code>getExceptionIncludes()</code></a> 来修改现有列表。</div>
+<div class="block">将适用的异常类型替换为给定的 <code>includes</code>` 以尝试重试。或者，可以考虑使用 <a href="#getExceptionIncludes()"><code>getExceptionIncludes()</code></a> 来修改现有列表。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>includes</code> - 适用的异常类型</dd>
@@ -416,7 +416,7 @@ loadScripts(document, 'script');</script>
 <h3>setExceptionExcludes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setExceptionExcludes</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util">List</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;? extends <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a>&gt;&gt; excludes)</span></div>
-<div class="block">将非适用的异常类型替换为给定的 `<code>excludes` 以尝试重试。或者，考虑使用<a href="#getExceptionExcludes()"><code>getExceptionExcludes()</code></a>来修改现有列表。</code></div>
+<div class="block">将非适用的异常类型替换为给定的 <code>excludes` 以尝试重试。或者，考虑使用<a href="#getExceptionExcludes()"><code>getExceptionExcludes()</code></a>来修改现有列表。</code></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>excludes</code> - 不适用的类型</dd>
@@ -550,7 +550,7 @@ above the <a href="#getMaxDelay()">max delay</a>.
 <h3>getMultiplier</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang">Double</a></span> <span class="element-name">getMultiplier</span>()</div>
-<div class="block">返回每次尝试时用于将当前间隔相乘的值。默认值 `<code>1.0</code>` 实际上会导致固定延迟。</div>
+<div class="block">返回每次尝试时用于将当前间隔相乘的值。默认值 <code>1.0</code>` 实际上会导致固定延迟。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>每次尝试时用于将当前区间相乘的值</dd>

@@ -1126,7 +1126,7 @@ This generated password is for development use only. Your security configuration
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>您可以通过提供 <code>spring.security.user.name</code>` 和 `<code>spring.security.user.password</code> 来更改用户名和密码。</p>
+<p>您可以通过提供 <code>spring.security.user.name</code>` 和 <code>spring.security.user.password</code> 来更改用户名和密码。</p>
 </div>
 <div class="paragraph">
 <p>Web 应用程序默认提供的基本功能包括：</p>
@@ -1137,7 +1137,7 @@ This generated password is for development use only. Your security configuration
 <p>一个带有内存存储和单个用户（具有生成的密码）的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/UserDetailsService.html"><code>UserDetailsService</code></a>（或在 WebFlux 应用程序中为 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/ReactiveUserDetailsService.html"><code>ReactiveUserDetailsService</code></a>）bean（有关用户的属性，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/SecurityProperties.User.html"><code>SecurityProperties.User</code></a>）。</p>
 </li>
 <li>
-<p>基于表单的登录或 HTTP Basic 安全（取决于请求中的 `<code>Accept` 标头）适用于整个应用程序（包括类路径中包含 actuator 时的 actuator 端点）。</code></p>
+<p>基于表单的登录或 HTTP Basic 安全（取决于请求中的 <code>Accept` 标头）适用于整个应用程序（包括类路径中包含 actuator 时的 actuator 端点）。</code></p>
 </li>
 <li>
 <p>用于发布认证事件的<a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/authentication/DefaultAuthenticationEventPublisher.html"><code>DefaultAuthenticationEventPublisher</code></a>。</p>
@@ -1190,7 +1190,7 @@ This generated password is for development use only. Your security configuration
 <div class="paragraph">
 <p>与 Spring MVC 应用程序类似，您可以通过添加 <code>spring-boot-starter-security</code> 依赖项来保护您的 WebFlux 应用程序。
 默认安全配置在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/web/reactive/ReactiveWebSecurityAutoConfiguration.html"><code>ReactiveWebSecurityAutoConfiguration</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/ReactiveUserDetailsServiceAutoConfiguration.html"><code>ReactiveUserDetailsServiceAutoConfiguration</code></a> 中实现。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/web/reactive/ReactiveWebSecurityAutoConfiguration.html"><code>ReactiveWebSecurityAutoConfiguration</code></a> 导入 `<code>WebFluxSecurityConfiguration` 以进行 Web 安全配置，并导入 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/ReactiveUserDetailsServiceAutoConfiguration.html"><code>ReactiveUserDetailsServiceAutoConfiguration</code></a> 以进行身份验证。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/web/reactive/ReactiveWebSecurityAutoConfiguration.html"><code>ReactiveWebSecurityAutoConfiguration</code></a> 导入 <code>WebFluxSecurityConfiguration` 以进行 Web 安全配置，并导入 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/ReactiveUserDetailsServiceAutoConfiguration.html"><code>ReactiveUserDetailsServiceAutoConfiguration</code></a> 以进行身份验证。
 除了响应式 Web 应用程序外，当使用 RSocket 时，后者也会被自动配置。</code></p>
 </div>
 <div class="paragraph">

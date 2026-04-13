@@ -97,7 +97,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;
 implements <a href="ServletEndpointsSupplier.html" title="interface in org.springframework.boot.actuate.endpoint.web.annotation">ServletEndpointsSupplier</a></span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">自 3.3.0 版本起，推荐使用 `<code>@Endpoint</code>` 和 `<code>@WebEndpoint</code>`。</div>
+<div class="deprecation-comment">自 3.3.0 版本起，推荐使用 <code>@Endpoint</code>` 和 <code>@WebEndpoint</code>`。</div>
 </div>
 <div class="block"><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation"><code>EndpointDiscoverer</code></a> for <a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web"><code>servlet endpoints</code></a>.</div>
 <dl class="notes">
@@ -288,7 +288,7 @@ implements <a href="ServletEndpointsSupplier.html" title="interface in org.sprin
 <div class="block">工厂方法用于创建<a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint"><code>端点操作</code></a>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../../annotation/EndpointDiscoverer.html#createOperation(org.springframework.boot.actuate.endpoint.EndpointId,org.springframework.boot.actuate.endpoint.annotation.DiscoveredOperationMethod,org.springframework.boot.actuate.endpoint.invoke.OperationInvoker)">createOperation</a></code>` 在类 `<code><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;</code>` 中</dd>
+<dd><code><a href="../../annotation/EndpointDiscoverer.html#createOperation(org.springframework.boot.actuate.endpoint.EndpointId,org.springframework.boot.actuate.endpoint.annotation.DiscoveredOperationMethod,org.springframework.boot.actuate.endpoint.invoke.OperationInvoker)">createOperation</a></code>` 在类 <code><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;</code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>endpointId</code> - 端点 ID</dd>
 <dd><code>operationMethod</code> - 操作方法</dd>
@@ -309,7 +309,7 @@ implements <a href="ServletEndpointsSupplier.html" title="interface in org.sprin
 <div class="block">为给定的操作创建一个<a href="../../annotation/EndpointDiscoverer.OperationKey.html" title="class in org.springframework.boot.actuate.endpoint.annotation"><code>EndpointDiscoverer.OperationKey</code></a>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../../annotation/EndpointDiscoverer.html#createOperationKey(O)">createOperationKey</a></code>` 在类 `<code><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;</code>` 中。</dd>
+<dd><code><a href="../../annotation/EndpointDiscoverer.html#createOperationKey(O)">createOperationKey</a></code>` 在类 <code><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;</code>` 中。</dd>
 <dt>Parameters:</dt>
 <dd><code>operation</code> - 源操作</dd>
 <dt>Returns:</dt>
@@ -325,7 +325,7 @@ implements <a href="ServletEndpointsSupplier.html" title="interface in org.sprin
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">boolean</span> <span class="element-name">isInvocable</span><wbr/><span class="parameters">(<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a> endpoint)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block"><span class="description-from-type-label">描述从类复制：<code><a href="../../annotation/EndpointDiscoverer.html#isInvocable(E)">EndpointDiscoverer</a></code></span></div>
-<div class="block">返回该端点是否可调用且应包含在已发现的端点中。默认实现为：如果该端点具有任何操作，则返回 `<code>true</code>`；否则返回 `<code>false</code>`。</div>
+<div class="block">返回该端点是否可调用且应包含在已发现的端点中。默认实现为：如果该端点具有任何操作，则返回 <code>true</code>`；否则返回 <code>false</code>`。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../../annotation/EndpointDiscoverer.html#isInvocable(E)">isInvocable</a></code> 在类 <code><a href="../../annotation/EndpointDiscoverer.html" title="class in org.springframework.boot.actuate.endpoint.annotation">EndpointDiscoverer</a>&lt;<a href="../ExposableServletEndpoint.html" title="interface in org.springframework.boot.actuate.endpoint.web">ExposableServletEndpoint</a>, <a href="../../Operation.html" title="interface in org.springframework.boot.actuate.endpoint">Operation</a>&gt;</code> 中</dd>

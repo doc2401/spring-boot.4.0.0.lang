@@ -109,17 +109,17 @@ extends <a href="../../autoconfigure/service/connection/ConnectionDetails.html" 
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#getJdbcUrl()">getJdbcUrl</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">数据库的 JDBC URL，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的 JDBC URL，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#getPassword()">getPassword</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">数据库的密码，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的密码，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#getUsername()">getUsername</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">数据库的用户名，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的用户名，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 </div>
 </div>
 </div>
@@ -140,7 +140,7 @@ extends <a href="../../autoconfigure/service/connection/ConnectionDetails.html" 
 <h3>getUsername</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">getUsername</span>()</div>
-<div class="block">数据库的用户名，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的用户名，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>数据库的用户名或<code>null</code></dd>
@@ -153,7 +153,7 @@ extends <a href="../../autoconfigure/service/connection/ConnectionDetails.html" 
 <h3>getPassword</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">getPassword</span>()</div>
-<div class="block">数据库的密码，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的密码，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>数据库的密码或<code>null</code></dd>
@@ -166,7 +166,7 @@ extends <a href="../../autoconfigure/service/connection/ConnectionDetails.html" 
 <h3>getJdbcUrl</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">getJdbcUrl</span>()</div>
-<div class="block">数据库的 JDBC URL，或者如果不需要特定的 Flyway 配置则为 `<code>null</code>`。</div>
+<div class="block">数据库的 JDBC URL，或者如果不需要特定的 Flyway 配置则为 <code>null</code>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>数据库的 JDBC URL 或<code>null</code></dd>
@@ -179,7 +179,7 @@ extends <a href="../../autoconfigure/service/connection/ConnectionDetails.html" 
 <h3>getDriverClassName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">getDriverClassName</span>()</div>
-<div class="block">JDBC 驱动类的名称。默认值为 JDBC URL 中指定的驱动类名，或者在未配置 JDBC URL 时为 `<code>null</code>`。</div>
+<div class="block">JDBC 驱动类的名称。默认值为 JDBC URL 中指定的驱动类名，或者在未配置 JDBC URL 时为 <code>null</code>`。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>JDBC 驱动程序类名或<code>null</code></dd>

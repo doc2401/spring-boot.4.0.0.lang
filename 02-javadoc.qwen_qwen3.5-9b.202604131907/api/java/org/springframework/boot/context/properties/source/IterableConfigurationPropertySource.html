@@ -135,7 +135,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream">Stream</a><wbr/>&lt;<a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyName</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a class="member-name-link" href="#stream()">stream</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">返回一个按顺序的 `<code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
+<div class="block">返回一个按顺序的 <code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="IterableConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">IterableConfigurationPropertySource</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#withAliases(org.springframework.boot.context.properties.source.ConfigurationPropertyNameAliases)">withAliases</a><wbr/>(<a href="ConfigurationPropertyNameAliases.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyNameAliases</a> aliases)</code></div>
@@ -187,7 +187,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <h3>stream</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream">Stream</a>&lt;<a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source">ConfigurationPropertyName</a>&gt;</span> <span class="element-name">stream</span>()</div>
-<div class="block">返回一个按顺序的 `<code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
+<div class="block">返回一个按顺序的 <code>Stream</code>`，用于此源管理的 <a href="ConfigurationPropertyName.html" title="class in org.springframework.boot.context.properties.source"><code>names</code></a>。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>一个名称流（永远不为<code>null</code>）</dd>
@@ -204,7 +204,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <div class="block">如果源包含指定名称的任何后代，则返回。如果可以确定答案，可能返回 <a href="ConfigurationPropertyState.html#PRESENT"><code>ConfigurationPropertyState.PRESENT</code></a> 或 <a href="ConfigurationPropertyState.html#ABSENT"><code>ConfigurationPropertyState.ABSENT</code></a>；如果无法确定确切答案，则返回 <a href="ConfigurationPropertyState.html#UNKNOWN"><code>ConfigurationPropertyState.UNKNOWN</code></a>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#containsDescendantOf(org.springframework.boot.context.properties.source.ConfigurationPropertyName)">containsDescendantOf</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#containsDescendantOf(org.springframework.boot.context.properties.source.ConfigurationPropertyName)">containsDescendantOf</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 要检查的名称</dd>
 <dt>Returns:</dt>
@@ -222,7 +222,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <div class="block">返回此源的过滤变体，其中仅包含匹配给定<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function"><code>Predicate</code></a>的名称。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#filter(java.util.function.Predicate)">filter</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#filter(java.util.function.Predicate)">filter</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>filter</code> - 要匹配的过滤器</dd>
 <dt>Returns:</dt>
@@ -240,7 +240,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <div class="block">返回一个支持名称别名的此源变体。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#withAliases(org.springframework.boot.context.properties.source.ConfigurationPropertyNameAliases)">withAliases</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#withAliases(org.springframework.boot.context.properties.source.ConfigurationPropertyNameAliases)">withAliases</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>aliases</code> - 一个返回任何给定名称的别名流的函数</dd>
 <dt>Returns:</dt>
@@ -258,7 +258,7 @@ extends <a href="ConfigurationPropertySource.html" title="interface in org.sprin
 <div class="block">返回一个支持前缀的此源变体。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="ConfigurationPropertySource.html#withPrefix(java.lang.String)">withPrefix</a></code>` 接口 `<code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
+<dd><code><a href="ConfigurationPropertySource.html#withPrefix(java.lang.String)">withPrefix</a></code>` 接口 <code><a href="ConfigurationPropertySource.html" title="interface in org.springframework.boot.context.properties.source">ConfigurationPropertySource</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>prefix</code> - 源中属性的前缀</dd>
 <dt>Returns:</dt>

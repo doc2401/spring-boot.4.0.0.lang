@@ -1119,7 +1119,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>loader.home</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用于解析 <code>loader.path</code>` 中的相对路径。例如，给定 `<code>loader.path=lib</code>`，则 `${loader.home}/lib` 是一个类路径位置（连同该目录中的所有 jar 文件）。此属性还用于定位 `<code>loader.properties</code>` 文件，如下例所示：<code><a class="bare" href="file:///opt/app">/opt/app</a></code>。其默认值为 `<code>${user.dir}</code>。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于解析 <code>loader.path</code>` 中的相对路径。例如，给定 <code>loader.path=lib</code>`，则 `${loader.home}/lib` 是一个类路径位置（连同该目录中的所有 jar 文件）。此属性还用于定位 <code>loader.properties</code>` 文件，如下例所示：<code><a class="bare" href="file:///opt/app">/opt/app</a></code>。其默认值为 <code>${user.dir}</code>。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>loader.args</code></p></td>
@@ -1214,7 +1214,7 @@
 <p><code>loader.home</code> 是额外属性文件（覆盖默认值）的目录位置，但仅在未指定 <code>loader.config.location</code> 时有效。</p>
 </li>
 <li>
-<p>`loader.path` 可以包含目录（会递归扫描以查找 jar 和 zip 文件）、归档路径、归档内的子目录（用于扫描 jar 文件，例如 <code>dependencies.jar!/lib</code>`），或通配符模式（对应默认 JVM 行为）。归档路径可以相对于 `<code>loader.home</code>`，或者在文件系统的任何位置，只要带有 `<code>jar:file:</code> 前缀即可。</p>
+<p>`loader.path` 可以包含目录（会递归扫描以查找 jar 和 zip 文件）、归档路径、归档内的子目录（用于扫描 jar 文件，例如 <code>dependencies.jar!/lib</code>`），或通配符模式（对应默认 JVM 行为）。归档路径可以相对于 <code>loader.home</code>`，或者在文件系统的任何位置，只要带有 <code>jar:file:</code> 前缀即可。</p>
 </li>
 <li>
 <p><code>loader.path</code>（如果为空）默认为 <code>BOOT-INF/lib</code>（意味着本地目录或从归档中运行时嵌套的目录）。因此，在没有提供额外配置的情况下，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/loader/launch/PropertiesLauncher.html"><code>PropertiesLauncher</code></a> 的行为与 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/loader/launch/JarLauncher.html"><code>JarLauncher</code></a> 相同。</p>

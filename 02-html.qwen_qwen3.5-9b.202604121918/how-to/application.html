@@ -1146,7 +1146,7 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 <div class="paragraph">
 <p>有一个非常实用的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/condition/ConditionEvaluationReport.html"><code>ConditionEvaluationReport</code></a> 存在于任何 Spring Boot <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 中。
 如果您启用 <code>DEBUG</code>` 日志输出，就可以查看它。
-如果您使用 `<code>spring-boot-actuator</code>`（参见 <a class="xref page" href="actuator.html">Actuator</a> 部分），还有一个 `<code>conditions</code> 端点以 JSON 格式渲染该报告。
+如果您使用 <code>spring-boot-actuator</code>`（参见 <a class="xref page" href="actuator.html">Actuator</a> 部分），还有一个 <code>conditions</code> 端点以 JSON 格式渲染该报告。
 使用该端点来调试应用程序，查看 Spring Boot 在运行时添加了哪些功能（以及未添加哪些功能）。</p>
 </div>
 <div class="paragraph">
@@ -1156,15 +1156,15 @@ com.example.ProjectConstraintViolationFailureAnalyzer</code></pre>
 <ul>
 <li>
 <p>查找名为 <code>*AutoConfiguration</code>` 的类并阅读其源代码。
-特别注意 `<code>@Conditional*</code>` 注解，以了解它们启用了哪些功能以及何时启用。
-在命令行中添加 `<code>--debug</code>，或在系统属性中添加 `<code>-Ddebug</code>`，以便在控制台上记录应用程序中所有自动配置决策的日志。
-对于已启用 actuator 的运行中应用程序，查看 `<code>conditions</code>` 端点（`<code>/actuator/conditions</code> 或等价的 JMX 端点）以获取相同的信息。</p>
+特别注意 <code>@Conditional*</code>` 注解，以了解它们启用了哪些功能以及何时启用。
+在命令行中添加 <code>--debug</code>，或在系统属性中添加 <code>-Ddebug</code>`，以便在控制台上记录应用程序中所有自动配置决策的日志。
+对于已启用 actuator 的运行中应用程序，查看 <code>conditions</code>` 端点（<code>/actuator/conditions</code> 或等价的 JMX 端点）以获取相同的信息。</p>
 </li>
 <li>
 <p>查找带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 注解的类（例如 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a>），并从该类中读取可用的外部配置选项。
 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 注解具有一个 <code>name</code>` 属性，该属性作为外部属性的前缀。
-因此，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a> 具有 `<code>prefix="server"</code>`，其配置属性为 `<code>server.port</code>`、`<code>server.address</code>` 等。
-在启用了 actuator 的正在运行的应用程序中，查看 `<code>configprops</code> 端点。</p>
+因此，<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/server/autoconfigure/ServerProperties.html"><code>ServerProperties</code></a> 具有 <code>prefix="server"</code>`，其配置属性为 <code>server.port</code>`、<code>server.address</code>` 等。
+在启用了 actuator 的正在运行的应用程序中，查看 <code>configprops</code> 端点。</p>
 </li>
 <li>
 <p>查找对 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/Binder.html"><code>Binder</code></a> 的 <code>bind</code> 方法的使用，以轻松地从 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 中显式提取配置值。它通常与一个前缀一起使用。</p>
@@ -1193,7 +1193,7 @@ Spring Boot 会从 <code>META-INF/spring.factories</code> 加载多种此类自�
 <p>程序上，在运行应用程序之前，通过调用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 上的 <code>addListeners</code> 和 <code>addInitializers</code> 方法，按应用程序进行配置。</p>
 </li>
 <li>
-<p>声明式地，为所有应用程序添加一个 `<code>META-INF/spring.factories` 并打包一个所有应用程序都作为库使用的 jar 文件。</code></p>
+<p>声明式地，为所有应用程序添加一个 <code>META-INF/spring.factories` 并打包一个所有应用程序都作为库使用的 jar 文件。</code></p>
 </li>
 </ul>
 </div>

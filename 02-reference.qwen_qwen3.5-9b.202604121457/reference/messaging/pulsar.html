@@ -1139,7 +1139,7 @@
 <div class="sect2">
 <h3 id="messaging.pulsar.connecting.auth"><a class="anchor" href="#messaging.pulsar.connecting.auth"></a>Authentication</h3>
 <div class="paragraph">
-<p>要连接到需要身份验证的 Pulsar 集群，您需要通过设置 `<code>pluginClassName` 以及插件所需的任何参数来指定要使用的身份验证插件。
+<p>要连接到需要身份验证的 Pulsar 集群，您需要通过设置 <code>pluginClassName` 以及插件所需的任何参数来指定要使用的身份验证插件。
 您可以将参数设置为从参数名称到参数值的映射。
 以下示例展示了如何配置 <code>AuthenticationOAuth2</code> 插件。</code></p>
 </div>
@@ -1193,7 +1193,7 @@ spring.pulsar.client.authentication.param.audience=urn:sn:acme:dev:my-instance</
 <p>您需要确保在 <code>spring.pulsar.client.authentication.param.*</code> 下定义的名称与您的认证插件（通常为驼峰命名法）所期望的名称完全匹配。Spring Boot 不会对这些条目尝试任何形式的宽松绑定。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您想为 <code>AuthenticationOAuth2`》认证插件配置颁发者 URL，则必须使用 `<code>spring.pulsar.client.authentication.param.issuerUrl</code>`。如果使用其他形式，如 `<code>issuerurl</code>` 或 `<code>issuer-url</code>，该设置将不会应用到插件上。</code></p>
+<p>例如，如果您想为 <code>AuthenticationOAuth2`》认证插件配置颁发者 URL，则必须使用 <code>spring.pulsar.client.authentication.param.issuerUrl</code>`。如果使用其他形式，如 <code>issuerurl</code>` 或 <code>issuer-url</code>，该设置将不会应用到插件上。</code></p>
 </div>
 <div class="paragraph">
 <p>这种缺乏宽松绑定也使得使用环境变量进行身份验证参数变得有问题，因为在转换过程中会丢失大小写敏感性。
@@ -1312,7 +1312,7 @@ class MyBean(private val pulsarTemplate: PulsarTemplate&lt;String&gt;) {
 <div class="paragraph">
 <p>`PulsarTemplate` 依赖 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarProducerFactory.html"><code>PulsarProducerFactory</code></a> 来创建底层的 Pulsar 生产者。
 Spring Boot 自动配置也提供了该生产者工厂，默认情况下会缓存其创建的生产者。
-您可以通过指定任何以 <code>spring.pulsar.producer.*</code>` 和 `<code>spring.pulsar.producer.cache.*</code> 为前缀的应用程序属性来配置生产者工厂和缓存设置。</p>
+您可以通过指定任何以 <code>spring.pulsar.producer.*</code>` 和 <code>spring.pulsar.producer.cache.*</code> 为前缀的应用程序属性来配置生产者工厂和缓存设置。</p>
 </div>
 <div class="paragraph">
 <p>如果您需要对生产者工厂配置拥有更多控制权，请考虑注册一个或多个 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/ProducerBuilderCustomizer.html"><code>ProducerBuilderCustomizer</code></a> Bean。这些自定义器将应用于所有创建的生产者。此外，您也可以在使用 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/ProducerBuilderCustomizer.html"><code>ProducerBuilderCustomizer</code></a> 发送消息时传入该自定义器，以仅影响当前生产者。</p>
@@ -1480,7 +1480,7 @@ class MyBean {
 <p>Spring for Apache Pulsar 在使用 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/core/PulsarTemplate.html"><code>PulsarTemplate</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-pulsar/docs/2.0.x/api/org/springframework/pulsar/annotation/PulsarListener.html"><code>@PulsarListener</code></a> 时支持事务。</p>
 </div>
 <div class="paragraph">
-<p>设置 <code>spring.pulsar.transaction.enabled</code>` 属性为 `<code>true</code> 将：</p>
+<p>设置 <code>spring.pulsar.transaction.enabled</code>` 属性为 <code>true</code> 将：</p>
 </div>
 <div class="ulist">
 <ul>

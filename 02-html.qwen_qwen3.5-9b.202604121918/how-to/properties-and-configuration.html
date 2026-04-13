@@ -1112,7 +1112,7 @@
 <div class="sect2">
 <h3 id="howto.properties-and-configuration.expand-properties.maven"><a class="anchor" href="#howto.properties-and-configuration.expand-properties.maven"></a>使用 Maven 自动扩展属性</h3>
 <div class="paragraph">
-<p>您可以使用资源过滤自动展开 Maven 项目中的属性。如果您使用了 <code>spring-boot-starter-parent</code>`，则可以像以下示例中所示的那样，使用 `<code>@..@</code> 占位符来引用您的 Maven“项目属性”：</p>
+<p>您可以使用资源过滤自动展开 Maven 项目中的属性。如果您使用了 <code>spring-boot-starter-parent</code>`，则可以像以下示例中所示的那样，使用 <code>@..@</code> 占位符来引用您的 Maven“项目属性”：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1172,7 +1172,7 @@ app.java.version=@java.version@</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果您不使用启动器父项目，需要在您的 <code>pom.xml</code>` 中的 `<code>&lt;build/&gt;</code> 元素内包含以下元素：</p>
+<p>如果您不使用启动器父项目，需要在您的 <code>pom.xml</code>` 中的 <code>&lt;build/&gt;</code> 元素内包含以下元素：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1282,7 +1282,7 @@ Gradle 的 <code>expand</code> 方法使用 Groovy 的 <code>SimpleTemplateEngin
 <div class="paragraph">
 <p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。
 或者，您可以通过在 <code>spring.main.*</code>` 中设置属性来外部化配置。
-例如，在 `<code>application.properties</code> 中，您可能会有以下设置：</p>
+例如，在 <code>application.properties</code> 中，您可能会有以下设置：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_3">
 <div class="content">
@@ -1603,7 +1603,7 @@ server:
 </div>
 </div>
 <div class="paragraph">
-<p>创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 `<code>snakeyaml</code>`（Maven 坐标为 `<code>org.yaml:snakeyaml</code>`，如果您使用 `<code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java `<code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a> 文件一样。</p>
+<p>创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 <code>snakeyaml</code>`（Maven 坐标为 <code>org.yaml:snakeyaml</code>`，如果您使用 <code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java <code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a> 文件一样。</p>
 </div>
 <div class="paragraph">
 <p>前面的示例 YAML 对应于以下 <code>application.properties</code> 文件：</p>
@@ -1724,7 +1724,7 @@ server.port=9000</code></pre>
 <p>Spring Boot 支持多文档 YAML 和 Properties 文件（有关详细信息，请参阅<a class="xref page" href="../reference/features/external-config.html#features.external-config.files.multi-document">使用多文档文件</a>），这些文件可以根据激活的 Profile 有条件地激活。</p>
 </div>
 <div class="paragraph">
-<p>如果文档包含 <code>spring.config.activate.on-profile</code>` 键，则配置文件值（逗号分隔的配置文件列表或配置文件表达式）将传入 Spring 的 `<code>Environment.acceptsProfiles()</code> 方法。如果配置文件表达式匹配，则该文档会被包含在最终合并中（否则不会被包含），如下例所示：</p>
+<p>如果文档包含 <code>spring.config.activate.on-profile</code>` 键，则配置文件值（逗号分隔的配置文件列表或配置文件表达式）将传入 Spring 的 <code>Environment.acceptsProfiles()</code> 方法。如果配置文件表达式匹配，则该文档会被包含在最终合并中（否则不会被包含），如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_10">
 <div class="content">

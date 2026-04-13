@@ -49,7 +49,7 @@
     },
     {
       "source": "<code>constructorArgs</code> - custom argument values to be fed into Spring's constructor\nresolution algorithm, resolving either all arguments or just specific ones, with\nthe rest to be resolved through regular autowiring (may be <code>null</code> or empty)",
-      "translation": "<code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 `<code>null</code>` 或为空）。",
+      "translation": "<code>constructorArgs</code> - 要传入 Spring 构造函数解析算法的自定义参数值，用于解析所有参数或仅解析特定参数，其余参数将通过常规自动装配进行解析（可为 <code>null</code>` 或为空）。",
       "count": 3
     },
     {
@@ -74,17 +74,17 @@
     },
     {
       "source": "The test above has changed the <code>spring.foo</code> property to <code>biz</code> and is\nasserting that the context contains a single <code>MyBean</code> bean. The\n<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> method takes a <a href=\"ContextConsumer.html\" title=\"interface in org.springframework.boot.test.context.runner\"><code>ContextConsumer</code></a> that can apply\nassertions to the context. Upon completion, the context is automatically closed.",
-      "translation": "上面的测试已将 `<code>spring.foo</code>` 属性更改为 `<code>biz</code>`，并断言上下文包含单个 `<code>MyBean</code>` Bean。<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> 方法接受一个 <a href=\"ContextConsumer.html\" title=\"interface in org.springframework.boot.test.context.runner\"><code>ContextConsumer</code></a>，该对象可对上下文应用断言。完成后，上下文将自动关闭。",
+      "translation": "上面的测试已将 <code>spring.foo</code>` 属性更改为 <code>biz</code>`，并断言上下文包含单个 <code>MyBean</code>` Bean。<a href=\"#run(org.springframework.boot.test.context.runner.ContextConsumer)\"><code>run</code></a> 方法接受一个 <a href=\"ContextConsumer.html\" title=\"interface in org.springframework.boot.test.context.runner\"><code>ContextConsumer</code></a>，该对象可对上下文应用断言。完成后，上下文将自动关闭。",
       "count": 2
     },
     {
       "source": "If the application context fails to start the <code>#run(ContextConsumer)</code> method is\ncalled with a \"failed\" application context. Calls to the context will throw an\n<a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\"><code>IllegalStateException</code></a> and assertions that expect a running context will fail.\nThe <a href=\"../assertj/ApplicationContextAssert.html#getFailure()\"><code>getFailure()</code></a> assertion can be used if\nfurther checks are required on the cause of the failure:",
-      "translation": "如果应用程序上下文启动失败，则调用 `<code>#run(ContextConsumer)</code>` 方法时传入一个“失败”的应用程序上下文。对上下文的调用将抛出 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\"><code>IllegalStateException</code></a>，且期望运行中上下文的断言将会失败。如果需要对失败原因进行进一步检查，可以使用 <a href=\"../assertj/ApplicationContextAssert.html#getFailure()\"><code>getFailure()</code></a> 断言：",
+      "translation": "如果应用程序上下文启动失败，则调用 <code>#run(ContextConsumer)</code>` 方法时传入一个“失败”的应用程序上下文。对上下文的调用将抛出 <a class=\"external-link\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalStateException.html\" title=\"class or interface in java.lang\"><code>IllegalStateException</code></a>，且期望运行中上下文的断言将会失败。如果需要对失败原因进行进一步检查，可以使用 <a href=\"../assertj/ApplicationContextAssert.html#getFailure()\"><code>getFailure()</code></a> 断言：",
       "count": 2
     },
     {
       "source": "The initialization above makes sure to register <code>MyConfiguration</code> for all tests\nand set the <code>spring.foo</code> property to <code>bar</code> unless specified otherwise.",
-      "translation": "上面的初始化确保为所有测试注册了 `<code>MyConfiguration</code>`，并将 `<code>spring.foo</code>` 属性设置为 `<code>bar</code>`，除非另有指定。",
+      "translation": "上面的初始化确保为所有测试注册了 <code>MyConfiguration</code>`，并将 <code>spring.foo</code>` 属性设置为 <code>bar</code>`，除非另有指定。",
       "count": 2
     },
     {

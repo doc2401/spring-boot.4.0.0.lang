@@ -197,7 +197,7 @@ implements <a href="../../error/ErrorWebExceptionHandler.html" title="interface 
  <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse</a> response,
  <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a> throwable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">记录给定 `<code>request</code>` 和 `<code>response</code>` 交换中的 `<code>throwable</code>` 错误。</div>
+<div class="block">记录给定 <code>request</code>` 和 <code>response</code>` 交换中的 <code>throwable</code>` 错误。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected reactor.core.publisher.Mono<wbr/>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#renderDefaultErrorView(org.springframework.web.reactive.function.server.ServerResponse.BodyBuilder,java.util.Map)">renderDefaultErrorView</a><wbr/>(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.BodyBuilder.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse.BodyBuilder</a> responseBody,
@@ -407,7 +407,7 @@ implements <a href="../../error/ErrorWebExceptionHandler.html" title="interface 
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">reactor.core.publisher.Mono&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse</a>&gt;</span> <span class="element-name">renderErrorView</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> viewName,
  <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.BodyBuilder.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse.BodyBuilder</a> responseBody,
  <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util">Map</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>, @Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang">Object</a>&gt; error)</span></div>
-<div class="block">将给定的错误数据渲染为视图，如果可用则使用模板视图，否则使用静态 HTML 文件。如果以上均不可用，这将返回一个空的 `<code>Publisher`。</code></div>
+<div class="block">将给定的错误数据渲染为视图，如果可用则使用模板视图，否则使用静态 HTML 文件。如果以上均不可用，这将返回一个空的 <code>Publisher`。</code></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>viewName</code> - 视图名称</dd>
@@ -445,7 +445,7 @@ implements <a href="../../error/ErrorWebExceptionHandler.html" title="interface 
                         throws <span class="exceptions"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang">Exception</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html#afterPropertiesSet()" title="class or interface in org.springframework.beans.factory">afterPropertiesSet</a></code>` 接口 `<code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html" title="class or interface in org.springframework.beans.factory">InitializingBean</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html#afterPropertiesSet()" title="class or interface in org.springframework.beans.factory">afterPropertiesSet</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/InitializingBean.html" title="class or interface in org.springframework.beans.factory">InitializingBean</a></code>` 中</dd>
 <dt>Throws:</dt>
 <dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang">Exception</a></code></dd>
 </dl>
@@ -491,7 +491,7 @@ or HTML views.
 <div class="member-signature"><span class="modifiers">protected</span> <span class="return-type">void</span> <span class="element-name">logError</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerRequest.html" title="class or interface in org.springframework.web.reactive.function.server">ServerRequest</a> request,
  <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/ServerResponse.html" title="class or interface in org.springframework.web.reactive.function.server">ServerResponse</a> response,
  <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang">Throwable</a> throwable)</span></div>
-<div class="block">记录给定 `<code>request</code>` 和 `<code>response</code>` 交换中的 `<code>throwable</code>` 错误。默认实现以调试级别记录所有错误。此外，任何内部服务器错误（500）均以错误级别记录。</div>
+<div class="block">记录给定 <code>request</code>` 和 <code>response</code>` 交换中的 <code>throwable</code>` 错误。默认实现以调试级别记录所有错误。此外，任何内部服务器错误（500）均以错误级别记录。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>request</code> - 正在处理的请求</dd>

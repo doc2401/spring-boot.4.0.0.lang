@@ -19,17 +19,17 @@
     },
     {
       "source": "An <a href=\"AutoConfigurationImportFilter.html\" title=\"interface in org.springframework.boot.autoconfigure\"><code>AutoConfigurationImportFilter</code></a> may implement any of the following\n<a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/Aware.html\" title=\"class or interface in org.springframework.beans.factory\"><code>Aware</code></a> interfaces, and their respective\nmethods will be called prior to <a href=\"#match(java.lang.String%5B%5D,org.springframework.boot.autoconfigure.AutoConfigurationMetadata)\"><code>match(String[], AutoConfigurationMetadata)</code></a>:",
-      "translation": "`AutoConfigurationImportFilter` 接口可能实现以下任一 `<code>Aware</code>` 接口，其相应方法将在调用 <a href=\"#match(java.lang.String%5B%5D,org.springframework.boot.autoconfigure.AutoConfigurationMetadata)\"><code>match(String[], AutoConfigurationMetadata)</code></a> 之前被调用：",
+      "translation": "`AutoConfigurationImportFilter` 接口可能实现以下任一 <code>Aware</code>` 接口，其相应方法将在调用 <a href=\"#match(java.lang.String%5B%5D,org.springframework.boot.autoconfigure.AutoConfigurationMetadata)\"><code>match(String[], AutoConfigurationMetadata)</code></a> 之前被调用：",
       "count": 2
     },
     {
       "source": "<code>autoConfigurationClasses</code> - the auto-configuration classes being considered.\nThis array may contain <code>null</code> elements. Implementations should not change the\nvalues in this array.",
-      "translation": "`autoConfigurationClasses` - 正在考虑的自动配置类。此数组可能包含 `<code>null</code>` 元素。实现不应更改此数组中的值。",
+      "translation": "`autoConfigurationClasses` - 正在考虑的自动配置类。此数组可能包含 <code>null</code>` 元素。实现不应更改此数组中的值。",
       "count": 2
     },
     {
       "source": "a boolean array indicating which of the auto-configuration classes should\nbe imported. The returned array must be the same size as the incoming\n<code>autoConfigurationClasses</code> parameter. Entries containing <code>false</code> will\nnot be imported.",
-      "translation": "一个布尔数组，指示应导入哪些自动配置类。返回的数组大小必须与传入的 `<code>autoConfigurationClasses</code>` 参数相同。包含 `<code>false</code>` 的条目将不会被导入。",
+      "translation": "一个布尔数组，指示应导入哪些自动配置类。返回的数组大小必须与传入的 <code>autoConfigurationClasses</code>` 参数相同。包含 <code>false</code>` 的条目将不会被导入。",
       "count": 2
     },
     {

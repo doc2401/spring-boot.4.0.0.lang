@@ -173,12 +173,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#buildCache(org.gradle.api.Action)">buildCache</a><wbr/>(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">使用给定的 `<code>action</code>` 为构建缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为构建缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#buildWorkspace(org.gradle.api.Action)">buildWorkspace</a><wbr/>(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">使用给定的 `<code>action</code>` 为构建临时工作区自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为构建临时工作区自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#docker(org.gradle.api.Action)">docker</a><wbr/>(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="DockerSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">DockerSpec</a>&gt; action)</code></div>
@@ -298,7 +298,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#launchCache(org.gradle.api.Action)">launchCache</a><wbr/>(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">使用给定的 `<code>action</code>` 为启动缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为启动缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#setPullPolicy(java.lang.String)">setPullPolicy</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> pullPolicy)</code></div>
@@ -369,7 +369,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Input.html" title="class or interface in org.gradle.api.tasks">@Input</a>
 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Optional.html" title="class or interface in org.gradle.api.tasks">@Optional</a>
 </span><span class="modifiers">public abstract</span> <span class="return-type"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/provider/Property.html" title="class or interface in org.gradle.api.provider">Property</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</span> <span class="element-name">getImageName</span>()</div>
-<div class="block">返回将要构建的图像名称。当为 `<code>null</code>` 时，名称将从 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html" title="class or interface in org.gradle.api"><code>Project's</code></a> <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#getName()" title="class or interface in org.gradle.api"><code>name</code></a> 和
+<div class="block">返回将要构建的图像名称。当为 <code>null</code>` 时，名称将从 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html" title="class or interface in org.gradle.api"><code>Project's</code></a> <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#getName()" title="class or interface in org.gradle.api"><code>name</code></a> 和
 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Project.html#getVersion()" title="class or interface in org.gradle.api"><code>version</code></a> 派生。</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -385,7 +385,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Input.html" title="class or interface in org.gradle.api.tasks">@Input</a>
 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Optional.html" title="class or interface in org.gradle.api.tasks">@Optional</a>
 </span><span class="modifiers">public abstract</span> <span class="return-type"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/provider/Property.html" title="class or interface in org.gradle.api.provider">Property</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</span> <span class="element-name">getBuilder</span>()</div>
-<div class="block">返回用于构建镜像的构建器。当为 `<code>null</code>` 时，将使用默认构建器。</div>
+<div class="block">返回用于构建镜像的构建器。当为 <code>null</code>` 时，将使用默认构建器。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>构建器</dd>
@@ -596,7 +596,7 @@ loadScripts(document, 'script');</script>
 <h3>buildWorkspace</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">buildWorkspace</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</span></div>
-<div class="block">使用给定的 `<code>action</code>` 为构建临时工作区自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为构建临时工作区自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - 操作</dd>
@@ -625,7 +625,7 @@ loadScripts(document, 'script');</script>
 <h3>buildCache</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">buildCache</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</span></div>
-<div class="block">使用给定的 `<code>action</code>` 为构建缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为构建缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - 操作</dd>
@@ -652,7 +652,7 @@ loadScripts(document, 'script');</script>
 <h3>launchCache</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">launchCache</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/Action.html" title="class or interface in org.gradle.api">Action</a>&lt;<a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling">CacheSpec</a>&gt; action)</span></div>
-<div class="block">使用给定的 `<code>action</code>` 为启动缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
+<div class="block">使用给定的 <code>action</code>` 为启动缓存自定义 <a href="CacheSpec.html" title="class in org.springframework.boot.gradle.tasks.bundling"><code>CacheSpec</code></a>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - 操作</dd>
@@ -667,7 +667,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Input.html" title="class or interface in org.gradle.api.tasks">@Input</a>
 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Optional.html" title="class or interface in org.gradle.api.tasks">@Optional</a>
 </span><span class="modifiers">public abstract</span> <span class="return-type"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/provider/Property.html" title="class or interface in org.gradle.api.provider">Property</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</span> <span class="element-name">getCreatedDate</span>()</div>
-<div class="block">返回将用作图像 `<code>Created</code>` 日期的日期。当为`<code>null</code>`时，将使用一个固定的日期以确保构建的可重现性。</div>
+<div class="block">返回将用作图像 <code>Created</code>` 日期的日期。当为<code>null</code>`时，将使用一个固定的日期以确保构建的可重现性。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>创建日期</dd>
@@ -682,7 +682,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Input.html" title="class or interface in org.gradle.api.tasks">@Input</a>
 <a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/tasks/Optional.html" title="class or interface in org.gradle.api.tasks">@Optional</a>
 </span><span class="modifiers">public abstract</span> <span class="return-type"><a class="external-link" href="https://docs.gradle.org/9.2.1/javadoc/org/gradle/api/provider/Property.html" title="class or interface in org.gradle.api.provider">Property</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</span> <span class="element-name">getApplicationDirectory</span>()</div>
-<div class="block">返回包含镜像中应用程序内容的目录。当为 `<code>null</code>` 时，将使用默认位置。</div>
+<div class="block">返回包含镜像中应用程序内容的目录。当为 <code>null</code>` 时，将使用默认位置。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>应用程序目录</dd>

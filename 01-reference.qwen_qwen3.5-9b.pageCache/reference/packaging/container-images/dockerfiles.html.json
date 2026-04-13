@@ -14,27 +14,27 @@
   "items": [
     {
       "source": "Of course, a <code>Dockerfile</code> can be written without using the <code>jarmode</code>.\nYou can use some combination of <code>unzip</code> and <code>mv</code> to move things to the right layer but <code>jarmode</code> simplifies that.\nAdditionally, the layout created by the <code>jarmode</code> is AOT cache (and CDS) friendly out of the box.",
-      "translation": "当然，可以不用 <code>jarmode</code>` 来编写 `<code>Dockerfile</code>。\n您可以使用一些 `<code>unzip</code>` 和 `<code>mv</code>` 的组合将内容移动到正确的层，但 `<code>jarmode</code>` 简化了这一过程。\n此外，由 `<code>jarmode</code> 创建的布局开箱即用即可兼容 AOT 缓存（以及 CDS）。",
+      "translation": "当然，可以不用 <code>jarmode</code>` 来编写 <code>Dockerfile</code>。\n您可以使用一些 <code>unzip</code>` 和 <code>mv</code>` 的组合将内容移动到正确的层，但 <code>jarmode</code>` 简化了这一过程。\n此外，由 <code>jarmode</code> 创建的布局开箱即用即可兼容 AOT 缓存（以及 CDS）。",
       "count": 2
     },
     {
       "source": "The <code>extract</code> command can be used to easily split the application into layers to be added to the <code>Dockerfile</code>.\nHere is an example of a <code>Dockerfile</code> using <code>jarmode</code>.",
-      "translation": "`extract` 命令可用于轻松将应用程序拆分为层，以便添加到 <code>Dockerfile</code>` 中。\n以下是使用 `<code>jarmode</code>` 的 `<code>Dockerfile</code> 示例。",
+      "translation": "`extract` 命令可用于轻松将应用程序拆分为层，以便添加到 <code>Dockerfile</code>` 中。\n以下是使用 <code>jarmode</code>` 的 <code>Dockerfile</code> 示例。",
       "count": 2
     },
     {
       "source": "While it is possible to convert a Spring Boot uber jar into a Docker image with just a few lines in the <code>Dockerfile</code>, using the <a class=\"xref page\" href=\"efficient-images.html#packaging.container-images.efficient-images.layering\">layering feature</a> will result in an optimized image.\nWhen you create a jar containing the layers index file, the <code>spring-boot-jarmode-tools</code> jar will be added as a dependency to your jar.\nWith this jar on the classpath, you can launch your application in a special mode which allows the bootstrap code to run something entirely different from your application, for example, something that extracts the layers.",
-      "translation": "虽然只需在 `<code>Dockerfile</code> 中添加几行代码即可将 Spring Boot uber jar 转换为 Docker 镜像，但使用<a class=\"xref page\" href=\"efficient-images.html#packaging.container-images.efficient-images.layering\">分层功能</a>将生成优化后的镜像。\n当您创建一个包含层索引文件的 jar 时，`spring-boot-jarmode-tools` jar 将被添加为 jar 的依赖项。\n有了该 jar 在类路径中，您就可以以特殊模式启动应用程序，使引导代码能够执行与您应用程序完全不同的操作，例如提取层。",
+      "translation": "虽然只需在 <code>Dockerfile</code> 中添加几行代码即可将 Spring Boot uber jar 转换为 Docker 镜像，但使用<a class=\"xref page\" href=\"efficient-images.html#packaging.container-images.efficient-images.layering\">分层功能</a>将生成优化后的镜像。\n当您创建一个包含层索引文件的 jar 时，`spring-boot-jarmode-tools` jar 将被添加为 jar 的依赖项。\n有了该 jar 在类路径中，您就可以以特殊模式启动应用程序，使引导代码能够执行与您应用程序完全不同的操作，例如提取层。",
       "count": 2
     },
     {
       "source": "Assuming the above <code>Dockerfile</code> is in the current directory, your Docker image can be built with <code>docker build .</code>, or optionally specifying the path to your application jar, as shown in the following example:",
-      "translation": "假设上述 <code>Dockerfile</code>` 位于当前目录，您的 Docker 镜像可以使用 `<code>docker build .</code> 构建，或者如以下示例所示，可选地指定应用程序 jar 的路径：",
+      "translation": "假设上述 <code>Dockerfile</code>` 位于当前目录，您的 Docker 镜像可以使用 <code>docker build .</code> 构建，或者如以下示例所示，可选地指定应用程序 jar 的路径：",
       "count": 2
     },
     {
       "source": "This is a multi-stage <code>Dockerfile</code>.\nThe builder stage extracts the directories that are needed later.\nEach of the <code>COPY</code> commands relates to the layers extracted by the jarmode.",
-      "translation": "这是一个多阶段 <code>Dockerfile</code>`。构建器阶段提取了后续所需的目录。每个 `<code>COPY</code> 命令都与 jarmode 提取的层相关。",
+      "translation": "这是一个多阶段 <code>Dockerfile</code>`。构建器阶段提取了后续所需的目录。每个 <code>COPY</code> 命令都与 jarmode 提取的层相关。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "This is mostly the same as the above <code>Dockerfile</code>.\nAs the last steps, it creates the AOT cache file by doing a training run and passes the AOT cache parameter to <code>java -jar</code>.",
-      "translation": "这与上面的 <code>Dockerfile</code>` 基本相同。最后，它通过执行一次训练运行来创建 AOT 缓存文件，并将 AOT 缓存参数传递给 `<code>java -jar</code>。",
+      "translation": "这与上面的 <code>Dockerfile</code>` 基本相同。最后，它通过执行一次训练运行来创建 AOT 缓存文件，并将 AOT 缓存参数传递给 <code>java -jar</code>。",
       "count": 2
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "source": "This is mostly the same as the above <code>Dockerfile</code>.\nAs the last steps, it creates the CDS archive by doing a training run and passes the CDS parameter to <code>java -jar</code>.",
-      "translation": "这基本上与上面的 <code>Dockerfile</code>` 相同。在最后步骤中，它通过执行一次训练运行来创建 CDS 存档，并将 CDS 参数传递给 `<code>java -jar</code>。",
+      "translation": "这基本上与上面的 <code>Dockerfile</code>` 相同。在最后步骤中，它通过执行一次训练运行来创建 CDS 存档，并将 CDS 参数传递给 <code>java -jar</code>。",
       "count": 2
     },
     {

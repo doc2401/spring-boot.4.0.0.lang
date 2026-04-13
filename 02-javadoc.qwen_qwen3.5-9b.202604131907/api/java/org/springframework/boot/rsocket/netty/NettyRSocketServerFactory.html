@@ -135,7 +135,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#addRSocketServerCustomizers(org.springframework.boot.rsocket.server.RSocketServerCustomizer...)">addRSocketServerCustomizers</a><wbr/>(<a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server">RSocketServerCustomizer</a>... rSocketServerCustomizers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">添加用于配置 `<code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。</div>
+<div class="block">添加用于配置 <code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="NettyRSocketServer.html" title="class in org.springframework.boot.rsocket.netty">NettyRSocketServer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#create(io.rsocket.SocketAcceptor)">create</a><wbr/>(io.rsocket.SocketAcceptor socketAcceptor)</code></div>
@@ -232,7 +232,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">设置服务器应监听的端口。如果未指定，将使用端口 '9898'。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setPort(int)">setPort</a></code>` 在接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setPort(int)">setPort</a></code>` 在接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>port</code> - 要设置的端口</dd>
 </dl>
@@ -248,7 +248,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">指定最大传输单元。大于指定的 <code>fragmentSize</code> 的帧将被分片。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setFragmentSize(org.springframework.util.unit.DataSize)">setFragmentSize</a></code>` 接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setFragmentSize(org.springframework.util.unit.DataSize)">setFragmentSize</a></code>` 接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>fragmentSize</code> - 碎片大小</dd>
 </dl>
@@ -264,7 +264,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">设置服务器应绑定的特定网络地址。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setAddress(java.net.InetAddress)">setAddress</a></code>` 接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setAddress(java.net.InetAddress)">setAddress</a></code>` 接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>address</code> - 要设置的地址（默认为 <code>null</code>）</dd>
 </dl>
@@ -280,7 +280,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">设置 RSocket 服务器应使用的传输方式。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setTransport(org.springframework.boot.rsocket.server.RSocketServer.Transport)">setTransport</a></code>` 接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setTransport(org.springframework.boot.rsocket.server.RSocketServer.Transport)">setTransport</a></code>` 接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>transport</code> - 要使用的传输协议</dd>
 </dl>
@@ -296,7 +296,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">设置将应用于服务器默认连接器的 SSL 配置。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setSsl(org.springframework.boot.web.server.Ssl)">setSsl</a></code>` 接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setSsl(org.springframework.boot.web.server.Ssl)">setSsl</a></code>` 接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>ssl</code> - SSL 配置</dd>
 </dl>
@@ -312,7 +312,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">设置一个可用于获取 SSL 配置的 SSL 包。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/ConfigurableRSocketServerFactory.html#setSslBundles(org.springframework.boot.ssl.SslBundles)">setSslBundles</a></code>` 接口 `<code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/ConfigurableRSocketServerFactory.html#setSslBundles(org.springframework.boot.ssl.SslBundles)">setSslBundles</a></code>` 接口 <code><a href="../server/ConfigurableRSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">ConfigurableRSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>sslBundles</code> - SSL 证书包</dd>
 </dl>
@@ -337,7 +337,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <h3>setRSocketServerCustomizers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setRSocketServerCustomizers</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server">RSocketServerCustomizer</a>&gt; rSocketServerCustomizers)</span></div>
-<div class="block">设置应在构建服务器时调用以配置 `<code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。调用此方法将替换任何现有的自定义器。</div>
+<div class="block">设置应在构建服务器时调用以配置 <code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。调用此方法将替换任何现有的自定义器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>rSocketServerCustomizers</code> - 在服务器启动之前应用的自定义器</dd>
@@ -352,7 +352,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <h3>addRSocketServerCustomizers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">addRSocketServerCustomizers</span><wbr/><span class="parameters">(<a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server">RSocketServerCustomizer</a>... rSocketServerCustomizers)</span></div>
-<div class="block">添加用于配置 `<code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。</div>
+<div class="block">添加用于配置 <code>RSocketServer</code>` 的 <a href="../server/RSocketServerCustomizer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServerCustomizer</code></a>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>rSocketServerCustomizers</code> - 在服务器启动之前应用的自定义器</dd>
@@ -384,7 +384,7 @@ implements <a href="../server/RSocketServerFactory.html" title="interface in org
 <div class="block">获取一个新的已完全配置但处于暂停状态的 <a href="../server/RSocketServer.html" title="interface in org.springframework.boot.rsocket.server"><code>RSocketServer</code></a> 实例。在调用 <a href="../server/RSocketServer.html#start()"><code>RSocketServer.start()</code></a>（当 <code>ApplicationContext</code> 完全刷新时发生）之前，客户端不应能够连接到返回的服务器。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../server/RSocketServerFactory.html#create(io.rsocket.SocketAcceptor)">create</a></code>` 在接口 `<code><a href="../server/RSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">RSocketServerFactory</a></code>` 中</dd>
+<dd><code><a href="../server/RSocketServerFactory.html#create(io.rsocket.SocketAcceptor)">create</a></code>` 在接口 <code><a href="../server/RSocketServerFactory.html" title="interface in org.springframework.boot.rsocket.server">RSocketServerFactory</a></code>` 中</dd>
 <dt>Parameters:</dt>
 <dd><code>socketAcceptor</code> - 套接字接受器</dd>
 <dt>Returns:</dt>

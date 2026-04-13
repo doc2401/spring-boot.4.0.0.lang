@@ -226,9 +226,9 @@ loadScripts(document, 'script');</script>
 <div class="block">当元素绑定开始但尚未确定任何结果时调用。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../BindHandler.html#onStart(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext)">onStart</a></code>` 接口 `<code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
+<dd><code><a href="../BindHandler.html#onStart(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext)">onStart</a></code>` 接口 <code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
 <dt>Overrides:</dt>
-<dd>`<code><a href="../AbstractBindHandler.html#onStart(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext)">onStart</a></code>` 类中的 `<code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
+<dd><code><a href="../AbstractBindHandler.html#onStart(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext)">onStart</a></code>` 类中的 <code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="onStart(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext)-type-param-T"><code>T</code> - 可绑定源类型</span></dd>
 <dt>Parameters:</dt>
@@ -253,9 +253,9 @@ loadScripts(document, 'script');</script>
 <div class="block">当元素的绑定以成功结果结束时被调用。实现可以更改最终返回的结果或执行附加验证。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../BindHandler.html#onSuccess(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onSuccess</a></code>` 接口 `<code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
+<dd><code><a href="../BindHandler.html#onSuccess(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onSuccess</a></code>` 接口 <code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
 <dt>Overrides:</dt>
-<dd>`<code><a href="../AbstractBindHandler.html#onSuccess(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onSuccess</a></code>` 类中的 `<code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
+<dd><code><a href="../AbstractBindHandler.html#onSuccess(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onSuccess</a></code>` 类中的 <code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 被绑定元素的名称</dd>
 <dd><code>target</code> - 被绑定的项</dd>
@@ -280,9 +280,9 @@ loadScripts(document, 'script');</script>
 <div class="block">在因任何原因（包括来自<a href="../BindHandler.html#onSuccess(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)"><code>BindHandler.onSuccess(ConfigurationPropertyName, Bindable, BindContext, Object)</code></a> 或 <a href="../BindHandler.html#onCreate(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)"><code>BindHandler.onCreate(ConfigurationPropertyName, Bindable, BindContext, Object)</code></a> 调用的失败）绑定失败时调用。实现可以选择吞没异常并返回替代结果。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../BindHandler.html#onFailure(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Exception)">onFailure</a></code>` 接口 `<code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
+<dd><code><a href="../BindHandler.html#onFailure(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Exception)">onFailure</a></code>` 接口 <code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
 <dt>Overrides:</dt>
-<dd>`<code><a href="../AbstractBindHandler.html#onFailure(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Exception)">onFailure</a></code>` 类中的 `<code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
+<dd><code><a href="../AbstractBindHandler.html#onFailure(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Exception)">onFailure</a></code>` 类中的 <code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 被绑定元素的名称</dd>
 <dd><code>target</code> - 被绑定的项</dd>
@@ -309,9 +309,9 @@ loadScripts(document, 'script');</script>
 <div class="block">在绑定完成（无论结果是已绑定还是未绑定）时调用。如果绑定失败，即使处理器从<a href="../BindHandler.html#onFailure(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Exception)"><code>BindHandler.onFailure(ConfigurationPropertyName, Bindable, BindContext, Exception)</code></a>返回结果，此方法也不会被调用。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd>`<code><a href="../BindHandler.html#onFinish(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onFinish</a></code>` 接口 `<code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
+<dd><code><a href="../BindHandler.html#onFinish(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onFinish</a></code>` 接口 <code><a href="../BindHandler.html" title="interface in org.springframework.boot.context.properties.bind">BindHandler</a></code>` 中</dd>
 <dt>Overrides:</dt>
-<dd>`<code><a href="../AbstractBindHandler.html#onFinish(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onFinish</a></code>` 类中的 `<code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
+<dd><code><a href="../AbstractBindHandler.html#onFinish(org.springframework.boot.context.properties.source.ConfigurationPropertyName,org.springframework.boot.context.properties.bind.Bindable,org.springframework.boot.context.properties.bind.BindContext,java.lang.Object)">onFinish</a></code>` 类中的 <code><a href="../AbstractBindHandler.html" title="class in org.springframework.boot.context.properties.bind">AbstractBindHandler</a></code>`</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 被绑定元素的名称</dd>
 <dd><code>target</code> - 被绑定的项</dd>

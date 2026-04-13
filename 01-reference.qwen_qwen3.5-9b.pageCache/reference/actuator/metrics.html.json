@@ -94,7 +94,7 @@
     },
     {
       "source": "The request’s outcome, based on the status code of the response.\n  1xx is <code>INFORMATIONAL</code>, 2xx is <code>SUCCESS</code>, 3xx is <code>REDIRECTION</code>, 4xx is <code>CLIENT_ERROR</code>, and 5xx is <code>SERVER_ERROR</code>",
-      "translation": "请求的结果基于响应的状态码。1xx 为 `<code>INFORMATIONAL`，2xx 为 `<code>SUCCESS`，3xx 为 `<code>REDIRECTION`，4xx 为 `<code>CLIENT_ERROR`，5xx 为 `<code>SERVER_ERROR`。",
+      "translation": "请求的结果基于响应的状态码。1xx 为 <code>INFORMATIONAL`，2xx 为 <code>SUCCESS`，3xx 为 <code>REDIRECTION`，4xx 为 <code>CLIENT_ERROR`，5xx 为 <code>SERVER_ERROR`。",
       "count": 2
     },
     {
@@ -114,7 +114,7 @@
     },
     {
       "source": "When the Prometheus Pushgateway dependency is present on the classpath and the <code>management.prometheus.metrics.export.pushgateway.enabled</code> property is set to <code>true</code>, a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html\"><code>PrometheusPushGatewayManager</code></a> bean is auto-configured.\nThis manages the pushing of metrics to a Prometheus Pushgateway.",
-      "translation": "当类路径上存在 Prometheus Pushgateway 依赖，且 <code>management.prometheus.metrics.export.pushgateway.enabled</code>` 属性设置为 `<code>true</code> 时，会自动配置一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html\"><code>PrometheusPushGatewayManager</code></a> Bean。该 Bean 负责将指标推送到 Prometheus Pushgateway。",
+      "translation": "当类路径上存在 Prometheus Pushgateway 依赖，且 <code>management.prometheus.metrics.export.pushgateway.enabled</code>` 属性设置为 <code>true</code> 时，会自动配置一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/metrics/export/prometheus/PrometheusPushGatewayManager.html\"><code>PrometheusPushGatewayManager</code></a> Bean。该 Bean 负责将指标推送到 Prometheus Pushgateway。",
       "count": 2
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "source": "If <code>org.hibernate.orm:hibernate-micrometer</code> is on the classpath, all available Hibernate <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> instances that have statistics enabled are instrumented with a metric named <code>hibernate</code>.",
-      "translation": "如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> 实例都将使用名为 `<code>hibernate</code> 的指标进行仪器化。",
+      "translation": "如果 <code>org.hibernate.orm:hibernate-micrometer</code>` 在类路径中，所有已启用统计功能的 Hibernate <a class=\"apiref\" href=\"https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html\"><code>EntityManagerFactory</code></a> 实例都将使用名为 <code>hibernate</code> 的指标进行仪器化。",
       "count": 2
     },
     {
@@ -184,22 +184,22 @@
     },
     {
       "source": "The preceding example adds <code>region</code> and <code>stack</code> tags to all meters with a value of <code>us-east-1</code> and <code>prod</code>, respectively.",
-      "translation": "前面的示例为所有值为 <code>us-east-1</code>` 和 `<code>prod</code>` 的计量器添加了 `<code>region</code>` 和 `<code>stack</code> 标签。",
+      "translation": "前面的示例为所有值为 <code>us-east-1</code>` 和 <code>prod</code>` 的计量器添加了 <code>region</code>` 和 <code>stack</code> 标签。",
       "count": 2
     },
     {
       "source": "For more details on the concepts behind <code>percentiles-histogram</code>, <code>percentiles</code>, and <code>slo</code>, see the <a href=\"https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html\">Histograms and percentiles</a> section of the Micrometer documentation.",
-      "translation": "有关 <code>percentiles-histogram`、`<code>percentiles</code>` 和 `<code>slo</code> 背后概念的更多详细信息，请参阅 Micrometer 文档中的 <a href=\"https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html\">直方图和分位数</a> 部分。",
+      "translation": "有关 <code>percentiles-histogram`、<code>percentiles</code>` 和 <code>slo</code> 背后概念的更多详细信息，请参阅 Micrometer 文档中的 <a href=\"https://docs.micrometer.io/micrometer/reference/1.16/concepts/histogram-quantiles.html\">直方图和分位数</a> 部分。",
       "count": 2
     },
     {
       "source": "The name you use here should match the name used in the code, not the name after it has been naming-convention normalized for a monitoring system to which it is shipped.\nIn other words, if <code>jvm.memory.max</code> appears as <code>jvm_memory_max</code> in Prometheus because of its snake case naming convention, you should still use <code>jvm.memory.max</code> as the selector when inspecting the meter in the <code>metrics</code> endpoint.",
-      "translation": "此处使用的名称应与代码中使用的名称匹配，而不是与它被规范化命名约定后用于监控系统的名称匹配。换句话说，如果 <code>jvm.memory.max</code>` 在 Prometheus 中因蛇形命名约定而显示为 `<code>jvm_memory_max</code>`，您在检查 `<code>metrics</code>` 端点中的仪表时，仍应使用 `<code>jvm.memory.max</code> 作为选择器。",
+      "translation": "此处使用的名称应与代码中使用的名称匹配，而不是与它被规范化命名约定后用于监控系统的名称匹配。换句话说，如果 <code>jvm.memory.max</code>` 在 Prometheus 中因蛇形命名约定而显示为 <code>jvm_memory_max</code>`，您在检查 <code>metrics</code>` 端点中的仪表时，仍应使用 <code>jvm.memory.max</code> 作为选择器。",
       "count": 2
     },
     {
       "source": "The reported measurements are the <em>sum</em> of the statistics of all meters that match the meter name and any tags that have been applied.\nIn the preceding example, the returned <code>Value</code> statistic is the sum of the maximum memory footprints of the “Code Cache”, “Compressed Class Space”, and “Metaspace” areas of the heap.\nIf you wanted to see only the maximum size for the “Metaspace”, you could add an additional <code>tag=id:Metaspace</code> — that is, <code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>.",
-      "translation": "报告的测量值是匹配计量器名称和所有已应用标签的计量器的统计数据的<em>总和</em>。  \n在前面的示例中，返回的 <code>Value` 统计数据是堆中“Code Cache”、“Compressed Class Space\"和“Metaspace\"区域的最大内存占用量的总和。  \n如果您只想查看“Metaspace\"的最大大小，可以添加额外的 `<code>tag=id:Metaspace</code>`——即 `<code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>。",
+      "translation": "报告的测量值是匹配计量器名称和所有已应用标签的计量器的统计数据的<em>总和</em>。  \n在前面的示例中，返回的 <code>Value` 统计数据是堆中“Code Cache”、“Compressed Class Space\"和“Metaspace\"区域的最大内存占用量的总和。  \n如果您只想查看“Metaspace\"的最大大小，可以添加额外的 <code>tag=id:Metaspace</code>`——即 <code>/actuator/metrics/jvm.memory.max?tag=area:nonheap&amp;tag=id:Metaspace</code>。",
       "count": 2
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "source": "Auto-configuration enables system metrics by using core Micrometer classes.\nSystem metrics are published under the <code>system.</code>, <code>process.</code>, and <code>disk.</code> meter names.",
-      "translation": "自动配置通过核心 Micrometer 类启用系统指标。系统指标发布在 <code>system.</code>`、`<code>process.</code>` 和 `<code>disk.</code> 计量器名称下。",
+      "translation": "自动配置通过核心 Micrometer 类启用系统指标。系统指标发布在 <code>system.</code>`、<code>process.</code>` 和 <code>disk.</code> 计量器名称下。",
       "count": 2
     },
     {
@@ -344,12 +344,12 @@
     },
     {
       "source": "If an <code>OtlpMetricsSender</code> bean is available, it will be configured on the <code>OtlpMeterRegistry</code> that Spring Boot auto-configures.",
-      "translation": "如果存在 <code>OtlpMetricsSender</code> Bean，它将被配置在由 Spring Boot 自动配置的 `<code>OtlpMeterRegistry` 上。",
+      "translation": "如果存在 <code>OtlpMetricsSender</code> Bean，它将被配置在由 Spring Boot 自动配置的 <code>OtlpMeterRegistry` 上。",
       "count": 2
     },
     {
       "source": "The following example <code>scrape_config</code> adds to <code>prometheus.yml</code>:",
-      "translation": "以下示例会添加到 <code>prometheus.yml</code>` 中的 `<code>scrape_config</code>：",
+      "translation": "以下示例会添加到 <code>prometheus.yml</code>` 中的 <code>scrape_config</code>：",
       "count": 2
     },
     {
@@ -364,7 +364,7 @@
     },
     {
       "source": "Auto-configuration enables the event metrics for both Logback and Log4J2.\nThe details are published under the <code>log4j2.events.</code> or <code>logback.events.</code> meter names.",
-      "translation": "自动配置可启用 Logback 和 Log4J2 的事件指标。详细信息发布在 <code>log4j2.events.</code>` 或 `<code>logback.events.</code> 计量器名称下。",
+      "translation": "自动配置可启用 Logback 和 Log4J2 的事件指标。详细信息发布在 <code>log4j2.events.</code>` 或 <code>logback.events.</code> 计量器名称下。",
       "count": 2
     },
     {
@@ -374,12 +374,12 @@
     },
     {
       "source": "Auto-configuration enables the instrumentation of all requests handled by Spring WebFlux controllers and functional handlers.\nBy default, metrics are generated with the name, <code>http.server.requests</code>.\nYou can customize the name by setting the <code>management.observations.http.server.requests.name</code> property.",
-      "translation": "自动配置可启用对 Spring WebFlux 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。",
+      "translation": "自动配置可启用对 Spring WebFlux 控制器和函数式处理器处理的所有请求的仪器化。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 <code>management.observations.http.server.requests.name</code> 属性来自定义名称。",
       "count": 2
     },
     {
       "source": "Auto-configuration enables the instrumentation of all requests handled by the Jersey JAX-RS implementation.\nBy default, metrics are generated with the name, <code>http.server.requests</code>.\nYou can customize the name by setting the <code>management.observations.http.server.requests.name</code> property.",
-      "translation": "自动配置可启用对 Jersey JAX-RS 实现处理的所有请求的监控。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 `<code>management.observations.http.server.requests.name</code> 属性来自定义名称。",
+      "translation": "自动配置可启用对 Jersey JAX-RS 实现处理的所有请求的监控。默认情况下，指标的名称为 <code>http.server.requests</code>`。您可以通过设置 <code>management.observations.http.server.requests.name</code> 属性来自定义名称。",
       "count": 2
     },
     {
@@ -389,12 +389,12 @@
     },
     {
       "source": "The response’s HTTP status code (for example, <code>200</code> or <code>500</code>)",
-      "translation": "响应的 HTTP 状态码（例如 <code>200</code>` 或 `<code>500</code>）",
+      "translation": "响应的 HTTP 状态码（例如 <code>200</code>` 或 <code>500</code>）",
       "count": 2
     },
     {
       "source": "By default, metrics are generated with the name, <code>http.client.requests</code>.\nYou can customize the name by setting the <code>management.observations.http.client.requests.name</code> property.",
-      "translation": "默认情况下，指标生成的名称为 <code>http.client.requests</code>`。您可以通过设置 `<code>management.observations.http.client.requests.name</code> 属性来自定义该名称。",
+      "translation": "默认情况下，指标生成的名称为 <code>http.client.requests</code>`。您可以通过设置 <code>management.observations.http.client.requests.name</code> 属性来自定义该名称。",
       "count": 2
     },
     {
@@ -464,12 +464,12 @@
     },
     {
       "source": "Spring Boot provides a <code>metrics</code> endpoint that you can use diagnostically to examine the metrics collected by an application.\nThe endpoint is not available by default and must be exposed.\nSee <a class=\"xref page\" href=\"endpoints.html#actuator.endpoints.exposing\">exposing endpoints</a> for more details.",
-      "translation": "Spring Boot 提供了一个 `<code>metrics`</code> 端点，您可以使用它来诊断性地检查应用程序收集的指标。该端点默认不可用，必须将其暴露。有关更多详细信息，请参阅<a class=\"xref page\" href=\"endpoints.html#actuator.endpoints.exposing\">暴露端点</a>。",
+      "translation": "Spring Boot 提供了一个 <code>metrics`</code> 端点，您可以使用它来诊断性地检查应用程序收集的指标。该端点默认不可用，必须将其暴露。有关更多详细信息，请参阅<a class=\"xref page\" href=\"endpoints.html#actuator.endpoints.exposing\">暴露端点</a>。",
       "count": 2
     },
     {
       "source": "Navigating to <code>/actuator/metrics</code> displays a list of available meter names.\nYou can drill down to view information about a particular meter by providing its name as a selector — for example, <code>/actuator/metrics/jvm.memory.max</code>.",
-      "translation": "导航到 <code>/actuator/metrics</code>` 会显示可用计量器名称的列表。您可以通过提供其名称作为选择器来深入查看特定计量器的信息——例如，`<code>/actuator/metrics/jvm.memory.max</code>。",
+      "translation": "导航到 <code>/actuator/metrics</code>` 会显示可用计量器名称的列表。您可以通过提供其名称作为选择器来深入查看特定计量器的信息——例如，<code>/actuator/metrics/jvm.memory.max</code>。",
       "count": 2
     },
     {

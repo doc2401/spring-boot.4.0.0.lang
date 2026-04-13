@@ -1136,7 +1136,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>应用程序类应放置在嵌套的 <code>BOOT-INF/classes</code>` 目录中。依赖项应放置在嵌套的 `<code>BOOT-INF/lib</code> 目录中。</p>
+<p>应用程序类应放置在嵌套的 <code>BOOT-INF/classes</code>` 目录中。依赖项应放置在嵌套的 <code>BOOT-INF/lib</code> 目录中。</p>
 </div>
 </div>
 </div>
@@ -1172,7 +1172,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>依赖项应放置在嵌套的 <code>WEB-INF/lib</code>` 目录中。任何在嵌入式运行时需要但在部署到传统 Web 容器时不需要的依赖项，应放置在 `<code>WEB-INF/lib-provided</code> 中。</p>
+<p>依赖项应放置在嵌套的 <code>WEB-INF/lib</code>` 目录中。任何在嵌入式运行时需要但在部署到传统 Web 容器时不需要的依赖项，应放置在 <code>WEB-INF/lib-provided</code> 中。</p>
 </div>
 </div>
 </div>
@@ -1181,8 +1181,8 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot 兼容的 jar 和 war 归档文件可以在 <code>BOOT-INF/</code>` 目录下包含额外的索引文件。
-对于 jar 和 war，都可以提供 `<code>classpath.idx</code>` 文件，该文件定义了 jar 添加到类路径的顺序。
-`<code>layers.idx</code> 文件仅可用于 jar，它允许将 jar 拆分为逻辑层以用于 Docker/OCI 镜像创建。</p>
+对于 jar 和 war，都可以提供 <code>classpath.idx</code>` 文件，该文件定义了 jar 添加到类路径的顺序。
+<code>layers.idx</code> 文件仅可用于 jar，它允许将 jar 拆分为逻辑层以用于 Docker/OCI 镜像创建。</p>
 </div>
 <div class="paragraph">
 <p>索引文件遵循与 YAML 兼容的语法，以便第三方工具可以轻松解析。然而，这些文件在内部不会被解析为 YAML，必须严格按照以下描述的格式编写才能使用。</p>
