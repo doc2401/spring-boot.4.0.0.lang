@@ -8,6 +8,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      generate_sitemap:
+        description: 'Whether to generate sitemap.xml'
+        required: true
+        type: boolean
+        default: true
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -60,6 +66,7 @@ jobs:
             echo "config.json not found."
           fi
       - name: Generate sitemap.xml
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.generate_sitemap }}
         run: |
           BASE_URL="${{ steps.pages.outputs.base_url }}"
           BASE_URL="${BASE_URL%/}" # Remove trailing slash if present
