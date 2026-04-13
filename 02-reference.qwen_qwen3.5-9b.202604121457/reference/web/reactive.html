@@ -1402,7 +1402,7 @@ class MyUserHandler {
 <div class="ulist">
 <ul>
 <li>
-<p>配置用于 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html"><code>HttpMessageReader</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html"><code>HttpMessageWriter</code></a>` 实例的编解码器（在本文档<a href="#web.reactive.webflux.httpcodecs">稍后描述</a>）。</p>
+<p>配置用于 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html"><code>HttpMessageReader</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html"><code>HttpMessageWriter</code></a> 实例的编解码器（在本文档<a href="#web.reactive.webflux.httpcodecs">稍后描述</a>）。</p>
 </li>
 <li>
 <p>支持提供静态资源，包括对 WebJars 的支持（将在<a class="xref page" href="servlet.html#web.servlet.spring-mvc.static-content">本文档稍后部分</a>中描述）。</p>
@@ -1465,7 +1465,7 @@ class MyUserHandler {
 <p>Spring WebFlux 使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html"><code>HttpMessageReader</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html"><code>HttpMessageWriter</code></a> 接口来转换 HTTP 请求和响应。它们通过 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/CodecConfigurer.html"><code>CodecConfigurer</code></a> 进行配置，以便查看类路径中可用的库并设置合理的默认值。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a>` 实例来应用进一步的自定义。例如，`<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。</p>
+<p>Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a> 实例来应用进一步的自定义。例如，`<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。</p>
 </div>
 <div class="paragraph">
 <p>如果需要添加或自定义编解码器，可以创建一个自定义的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a> 组件，如下例所示：</p>
@@ -1596,7 +1596,7 @@ Spring WebFlux 应用程序并不严格依赖于 Servlet API，因此它们无�
 <p>Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 `<code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。</p>
 </div>
 <div class="paragraph">
-<p>这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html"><code>HandlerMapping</code></a>` 豆的顺序定义，默认顺序如下：</p>
+<p>这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html"><code>HandlerMapping</code></a> 豆的顺序定义，默认顺序如下：</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1606,11 +1606,11 @@ Spring WebFlux 应用程序并不严格依赖于 Servlet API，因此它们无�
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.springframework.web.reactive.function.server.support.RouterFunctionMapping</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html"><code>RouterFunction</code></a>` 声明的端点</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/server/RouterFunction.html"><code>RouterFunction</code></a> 声明的端点</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerMapping</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a>` 声明的 Bean 中定义的端点</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a> 声明的 Bean 中定义的端点</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>RouterFunctionMapping</code> 用于欢迎页面</p></td>
@@ -1659,7 +1659,7 @@ Spring WebFlux 应用程序并不严格依赖于 Servlet API，因此它们无�
 <div class="sect2">
 <h3 id="web.reactive.webflux.error-handling"><a class="anchor" href="#web.reactive.webflux.error-handling"></a>错误处理</h3>
 <div class="paragraph">
-<p>Spring Boot 提供了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html"><code>WebExceptionHandler</code></a>`，它以合理的方式处理所有错误。
+<p>Spring Boot 提供了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/server/WebExceptionHandler.html"><code>WebExceptionHandler</code></a>，它以合理的方式处理所有错误。
 它在处理顺序中的位置紧接在 WebFlux 提供的处理器之前，后者被视为最后执行。
 对于机器客户端，它会生成一个包含错误详情、HTTP 状态和异常消息的 JSON 响应。
 对于浏览器客户端，有一个“白标”错误处理器，以 HTML 格式渲染相同的数据。
@@ -1890,7 +1890,7 @@ Spring Boot 自动配置可能会为您配置 Web 过滤器。
 <p>已添加一个映射，您还需要配置 Spring WebFlux，以便它能够使用随请求发送的任何版本信息。通常，版本信息会作为 HTTP 标头、查询参数或路径的一部分发送。</p>
 </div>
 <div class="paragraph">
-<p>要配置 Spring WebFlux，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html"><code>WebFluxConfigurer</code></a>`  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。</p>
+<p>要配置 Spring WebFlux，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html"><code>WebFluxConfigurer</code></a>  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。</p>
 </div>
 <div class="paragraph">
 <p>例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 `<code>1.0.0</code>。</p>
@@ -1930,7 +1930,7 @@ spring.webflux.apiversion.use.header=X-Version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>为了获得更完整的控制，您还可以定义 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionResolver.html"><code>ApiVersionResolver</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionParser.html"><code>ApiVersionParser</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionDeprecationHandler.html"><code>ApiVersionDeprecationHandler</code></a>` Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。</p>
+<p>为了获得更完整的控制，您还可以定义 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionResolver.html"><code>ApiVersionResolver</code></a>、<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionParser.html"><code>ApiVersionParser</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/accept/ApiVersionDeprecationHandler.html"><code>ApiVersionDeprecationHandler</code></a> Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -2145,7 +2145,7 @@ class MyNettyWebServerFactoryCustomizer : WebServerFactoryCustomizer&lt;NettyRea
 <p>服务器和客户端使用相同的技术。</p>
 </li>
 <li>
-<p>客户端实例是使用由 Spring Boot 自动配置的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html"><code>WebClient.Builder</code></a>` Bean 构建的。</p>
+<p>客户端实例是使用由 Spring Boot 自动配置的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/function/client/WebClient.Builder.html"><code>WebClient.Builder</code></a> Bean 构建的。</p>
 </li>
 </ul>
 </div>

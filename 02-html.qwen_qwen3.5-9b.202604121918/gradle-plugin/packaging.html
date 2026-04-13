@@ -1108,7 +1108,7 @@
 <h2 id="packaging-executable.jars"><a class="anchor" href="#packaging-executable.jars"></a>打包可执行 Jar 文件</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>可以使用 `bootJar` 任务构建可执行的 jar 包。当应用 <code>java</code> 插件时，会自动创建该任务，它是 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html"><code>BootJar</code></a>` 的一个实例。<code>assemble</code> 任务会自动配置为依赖于 <code>bootJar</code> 任务，因此运行 <code>assemble</code>（或 <code>build</code>）也会执行 <code>bootJar</code> 任务。</p>
+<p>可以使用 `bootJar` 任务构建可执行的 jar 包。当应用 <code>java</code> 插件时，会自动创建该任务，它是 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html"><code>BootJar</code></a> 的一个实例。<code>assemble</code> 任务会自动配置为依赖于 <code>bootJar</code> 任务，因此运行 <code>assemble</code>（或 <code>build</code>）也会执行 <code>bootJar</code> 任务。</p>
 </div>
 </div>
 </div>
@@ -1116,7 +1116,7 @@
 <h2 id="packaging-executable.wars"><a class="anchor" href="#packaging-executable.wars"></a>打包可执行的 WAR 文件</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>可以使用 `bootWar` 任务构建可执行的 war 包。当应用 `war` 插件时会自动创建该任务，它是 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html"><code>BootWar</code></a>` 的一个实例。<code>assemble</code> 任务会自动配置为依赖于 <code>bootWar</code> 任务，因此运行 <code>assemble</code>（或 <code>build</code>）也会执行 <code>bootWar</code> 任务。</p>
+<p>可以使用 `bootWar` 任务构建可执行的 war 包。当应用 `war` 插件时会自动创建该任务，它是 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html"><code>BootWar</code></a> 的一个实例。<code>assemble</code> 任务会自动配置为依赖于 <code>bootWar</code> 任务，因此运行 <code>assemble</code>（或 <code>build</code>）也会执行 <code>bootWar</code> 任务。</p>
 </div>
 <div class="sect2">
 <h3 id="packaging-executable.wars.deployable"><a class="anchor" href="#packaging-executable.wars.deployable"></a>打包可执行和可部署的 WAR 文件</h3>
@@ -1277,7 +1277,7 @@ tasks.named&lt;Jar&gt;("jar") {
 <h2 id="packaging-executable.configuring"><a class="anchor" href="#packaging-executable.configuring"></a>配置可执行归档打包</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html"><code>BootJar</code></a>` 和 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html"><code>BootWar</code></a>` 任务分别是 Gradle 的 <code>Jar</code>` 和 `<code>War</code> 任务的子类。因此，在打包可执行 jar 或 war 时，所有可用于打包普通 jar 或 war 的标准配置选项也同样可用。此外，还提供了一些专门针对可执行 jar 和 war 的配置选项。</p>
+<p><a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html"><code>BootJar</code></a> 和 <a class="xref page" href="api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html"><code>BootWar</code></a> 任务分别是 Gradle 的 <code>Jar</code>` 和 `<code>War</code> 任务的子类。因此，在打包可执行 jar 或 war 时，所有可用于打包普通 jar 或 war 的标准配置选项也同样可用。此外，还提供了一些专门针对可执行 jar 和 war 的配置选项。</p>
 </div>
 <div class="sect2">
 <h3 id="packaging-executable.configuring.main-class"><a class="anchor" href="#packaging-executable.configuring.main-class"></a>配置主类</h3>

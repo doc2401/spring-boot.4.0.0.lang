@@ -39,7 +39,7 @@
     },
     {
       "source": "In an embedded container setup, the <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContext.html\"><code>ServletContext</code></a> is set as part of server startup which happens during application context initialization.\nBecause of this beans in the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> cannot be reliably initialized with a <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContext.html\"><code>ServletContext</code></a>.\nOne way to get around this is to inject <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> as a dependency of the bean and access the <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/ServletContext.html\"><code>ServletContext</code></a> only when it is needed.\nAnother way is to use a callback once the server has started.\nThis can be done using an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\"><code>ApplicationListener</code></a> which listens for the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a> as follows:",
-      "translation": "在嵌入式容器设置中，`ServletContext` 作为服务器启动的一部分被设置，而服务器启动发生在应用程序上下文初始化期间。因此，无法可靠地使用 `ServletContext` 来初始化 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 中的 Bean。解决此问题的一种方法是将 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 作为 Bean 的依赖项注入，并在需要时访问 `ServletContext`。另一种方法是使用服务器启动后的回调。这可以通过 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\"><code>ApplicationListener</code></a>` 来实现，该监听器监听 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a>`，如下所示：",
+      "translation": "在嵌入式容器设置中，`ServletContext` 作为服务器启动的一部分被设置，而服务器启动发生在应用程序上下文初始化期间。因此，无法可靠地使用 `ServletContext` 来初始化 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 中的 Bean。解决此问题的一种方法是将 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 作为 Bean 的依赖项注入，并在需要时访问 `ServletContext`。另一种方法是使用服务器启动后的回调。这可以通过 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html\"><code>ApplicationListener</code></a> 来实现，该监听器监听 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/event/ApplicationStartedEvent.html\"><code>ApplicationStartedEvent</code></a>，如下所示：",
       "count": 2
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "source": "Since the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a> is a Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\"><code>@Component</code></a>, its lifecycle is managed by Spring and you can use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a> annotation to inject dependencies and use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> annotation to inject external configuration.\nBy default, the Jersey servlet is registered and mapped to <code>/*</code>.\nYou can change the mapping by adding <a class=\"apiref\" href=\"https://jakarta.ee/specifications/restful-ws/4.0/apidocs/jakarta/ws/rs/ApplicationPath.html\"><code>@ApplicationPath</code></a> to your <a class=\"apiref\" href=\"https://javadoc.io/doc/org.glassfish.jersey.core/jersey-server/4.0.0/org/glassfish/jersey/server/ResourceConfig.html\"><code>ResourceConfig</code></a>.",
-      "translation": "由于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a>` 是一个 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\"><code>@Component</code></a>`，其生命周期由 Spring 管理，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a>` 注解注入依赖项，并使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a>` 注解注入外部配置。\n默认情况下，Jersey servlet 已注册并映射到 <code>/*</code>。\n您可以通过向您的 <a class=\"apiref\" href=\"https://javadoc.io/doc/org.glassfish.jersey.core/jersey-server/4.0.0/org/glassfish/jersey/server/ResourceConfig.html\"><code>ResourceConfig</code></a>` 添加 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/restful-ws/4.0/apidocs/jakarta/ws/rs/ApplicationPath.html\"><code>@ApplicationPath</code></a>` 来更改映射。",
+      "translation": "由于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a> 是一个 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Component.html\"><code>@Component</code></a>，其生命周期由 Spring 管理，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html\"><code>@Autowired</code></a> 注解注入依赖项，并使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html\"><code>@Value</code></a> 注解注入外部配置。\n默认情况下，Jersey servlet 已注册并映射到 <code>/*</code>。\n您可以通过向您的 <a class=\"apiref\" href=\"https://javadoc.io/doc/org.glassfish.jersey.core/jersey-server/4.0.0/org/glassfish/jersey/server/ResourceConfig.html\"><code>ResourceConfig</code></a> 添加 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/restful-ws/4.0/apidocs/jakarta/ws/rs/ApplicationPath.html\"><code>@ApplicationPath</code></a> 来更改映射。",
       "count": 2
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "source": "Automatic registration of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/Converter.html\"><code>Converter</code></a>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/GenericConverter.html\"><code>GenericConverter</code></a>, and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/format/Formatter.html\"><code>Formatter</code></a> beans.",
-      "translation": "自动注册 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/Converter.html\"><code>Converter</code></a>`、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/GenericConverter.html\"><code>GenericConverter</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/format/Formatter.html\"><code>Formatter</code></a>` Bean。",
+      "translation": "自动注册 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/Converter.html\"><code>Converter</code></a>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/converter/GenericConverter.html\"><code>GenericConverter</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/format/Formatter.html\"><code>Formatter</code></a> Bean。",
       "count": 2
     },
     {
@@ -149,12 +149,12 @@
     },
     {
       "source": "For more complete control, you can also define <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a> beans which will be injected into the auto-configured Spring MVC configuration.",
-      "translation": "为了获得更完整的控制，您还可以定义 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>`、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a>` Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。",
+      "translation": "为了获得更完整的控制，您还可以定义 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionResolver.html\"><code>ApiVersionResolver</code></a>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionParser.html\"><code>ApiVersionParser</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/accept/ApiVersionDeprecationHandler.html\"><code>ApiVersionDeprecationHandler</code></a> Bean，这些 Bean 将被注入到自动配置的 Spring MVC 配置中。",
       "count": 2
     },
     {
       "source": "Any <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>, <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>, or servlet <code>*Listener</code> instance that is a Spring bean is registered with the embedded container.\nThis can be particularly convenient if you want to refer to a value from your <code>application.properties</code> during configuration.",
-      "translation": "任何作为 Spring Bean 的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>`、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>` 或 servlet <code>*Listener</code>` 实例都会注册到嵌入式容器中。\n如果您希望在配置期间引用 `<code>application.properties</code> 中的值，这尤其方便。",
+      "translation": "任何作为 Spring Bean 的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a> 或 servlet <code>*Listener</code>` 实例都会注册到嵌入式容器中。\n如果您希望在配置期间引用 `<code>application.properties</code> 中的值，这尤其方便。",
       "count": 2
     },
     {
@@ -174,7 +174,7 @@
     },
     {
       "source": "Inclusion of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/ContentNegotiatingViewResolver.html\"><code>ContentNegotiatingViewResolver</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/BeanNameViewResolver.html\"><code>BeanNameViewResolver</code></a> beans.",
-      "translation": "包含 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/ContentNegotiatingViewResolver.html\"><code>ContentNegotiatingViewResolver</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/BeanNameViewResolver.html\"><code>BeanNameViewResolver</code></a>` Bean。",
+      "translation": "包含 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/ContentNegotiatingViewResolver.html\"><code>ContentNegotiatingViewResolver</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/view/BeanNameViewResolver.html\"><code>BeanNameViewResolver</code></a> Bean。",
       "count": 2
     },
     {
@@ -239,12 +239,12 @@
     },
     {
       "source": "Automatic registration of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/MessageCodesResolver.html\"><code>MessageCodesResolver</code></a> (covered <a href=\"#web.servlet.spring-mvc.message-codes\">later in this document</a>).",
-      "translation": "自动注册 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/MessageCodesResolver.html\"><code>MessageCodesResolver</code></a>`（将在本文档<a href=\"#web.servlet.spring-mvc.message-codes\">稍后部分</a>介绍）。",
+      "translation": "自动注册 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/validation/MessageCodesResolver.html\"><code>MessageCodesResolver</code></a>（将在本文档<a href=\"#web.servlet.spring-mvc.message-codes\">稍后部分</a>介绍）。",
       "count": 2
     },
     {
       "source": "Automatic use of a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/support/ConfigurableWebBindingInitializer.html\"><code>ConfigurableWebBindingInitializer</code></a> bean (covered <a href=\"#web.servlet.spring-mvc.binding-initializer\">later in this document</a>).",
-      "translation": "自动使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/support/ConfigurableWebBindingInitializer.html\"><code>ConfigurableWebBindingInitializer</code></a>`  Bean（将在本文档<a href=\"#web.servlet.spring-mvc.binding-initializer\">稍后部分</a>介绍）。",
+      "translation": "自动使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/support/ConfigurableWebBindingInitializer.html\"><code>ConfigurableWebBindingInitializer</code></a>  Bean（将在本文档<a href=\"#web.servlet.spring-mvc.binding-initializer\">稍后部分</a>介绍）。",
       "count": 2
     },
     {
@@ -284,7 +284,7 @@
     },
     {
       "source": "To configure Spring MVC, you can either use a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html\"><code>WebMvcConfigurer</code></a> bean and override the <code>configureApiVersioning(…​)</code> method, or you can use properties.",
-      "translation": "要配置 Spring MVC，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html\"><code>WebMvcConfigurer</code></a>`  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。",
+      "translation": "要配置 Spring MVC，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html\"><code>WebMvcConfigurer</code></a>  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。",
       "count": 2
     },
     {
@@ -319,7 +319,7 @@
     },
     {
       "source": "Spring Boot provides auto-configuration for Spring MVC that works well with most applications.\nIt replaces the need for <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html\"><code>@EnableWebMvc</code></a> and the two cannot be used together.\nIn addition to Spring MVC’s defaults, the auto-configuration provides the following features:",
-      "translation": "Spring Boot 为 Spring MVC 提供了自动配置功能，适用于大多数应用程序。它消除了对 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html\"><code>@EnableWebMvc</code></a>` 的需求，且两者不能同时使用。除了 Spring MVC 的默认配置外，自动配置还提供以下功能：",
+      "translation": "Spring Boot 为 Spring MVC 提供了自动配置功能，适用于大多数应用程序。它消除了对 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html\"><code>@EnableWebMvc</code></a> 的需求，且两者不能同时使用。除了 Spring MVC 的默认配置外，自动配置还提供以下功能：",
       "count": 2
     },
     {
@@ -344,12 +344,12 @@
     },
     {
       "source": "This only acts as a fallback for actual index routes defined by the application.\nThe ordering is defined by the order of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerMapping.html\"><code>HandlerMapping</code></a> beans which is by default the following:",
-      "translation": "这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerMapping.html\"><code>HandlerMapping</code></a>` 豆的顺序定义，默认顺序如下：",
+      "translation": "这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerMapping.html\"><code>HandlerMapping</code></a> 豆的顺序定义，默认顺序如下：",
       "count": 2
     },
     {
       "source": "Endpoints declared with <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/function/RouterFunction.html\"><code>RouterFunction</code></a> beans",
-      "translation": "使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/function/RouterFunction.html\"><code>RouterFunction</code></a>` 声明的端点 Bean",
+      "translation": "使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/function/RouterFunction.html\"><code>RouterFunction</code></a> 声明的端点 Bean",
       "count": 2
     },
     {
@@ -789,7 +789,7 @@
     },
     {
       "source": "Endpoints declared in <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a> beans",
-      "translation": "在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a>` 声明的 Bean 中定义的端点",
+      "translation": "在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/stereotype/Controller.html\"><code>@Controller</code></a> 声明的 Bean 中定义的端点",
       "count": 1
     },
     {

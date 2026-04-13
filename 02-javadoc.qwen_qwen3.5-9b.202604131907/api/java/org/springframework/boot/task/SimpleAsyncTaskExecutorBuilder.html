@@ -98,7 +98,7 @@ loadScripts(document, 'script');</script>
 Provides convenience methods to set common <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a> settings and
 register <a href="#taskDecorator(org.springframework.core.task.TaskDecorator)"><code>taskDecorator(TaskDecorator)</code></a>). For advanced configuration, consider
 using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>SimpleAsyncTaskExecutorCustomizer</code></a>.
-<p>在典型的自动配置的 Spring Boot 应用程序中，该构建器作为 Bean 可用，每当需要 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a>` 时，都可以注入它。</p></div>
+<p>在典型的自动配置的 Spring Boot 应用程序中，该构建器作为 Bean 可用，每当需要 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a> 时，都可以注入它。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>3.2.0</dd>
@@ -186,7 +186,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#taskDecorator(org.springframework.core.task.TaskDecorator)">taskDecorator</a><wbr/>(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a>` 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#taskTerminationTimeout(java.time.Duration)">taskTerminationTimeout</a><wbr/>(@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time">Duration</a> taskTerminationTimeout)</code></div>
@@ -320,7 +320,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <h3>taskDecorator</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></span> <span class="element-name">taskDecorator</span><wbr/><span class="parameters">(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</span></div>
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a>` 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>taskDecorator</code> - 要使用的任务装饰器</dd>
@@ -352,7 +352,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <h3>customizers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></span> <span class="element-name">customizers</span><wbr/><span class="parameters">(<a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task">SimpleAsyncTaskExecutorCustomizer</a>... customizers)</span></div>
-<div class="block">设置应应用于 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a>` 的 <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>customizers</code></a>`。自定义器在构建器配置应用后，按照添加顺序进行应用。设置此值将替换任何先前配置的自定义器。</div>
+<div class="block">设置应应用于 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a> 的 <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>customizers</code></a>。自定义器在构建器配置应用后，按照添加顺序进行应用。设置此值将替换任何先前配置的自定义器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>customizers</code> - 要设置的自定义器</dd>
@@ -373,7 +373,7 @@ using <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.s
 <h3>customizers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="SimpleAsyncTaskExecutorBuilder.html" title="class in org.springframework.boot.task">SimpleAsyncTaskExecutorBuilder</a></span> <span class="element-name">customizers</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang">Iterable</a>&lt;? extends <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task">SimpleAsyncTaskExecutorCustomizer</a>&gt; customizers)</span></div>
-<div class="block">设置应应用于 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a>` 的 <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>customizers</code></a>`。自定义器在构建器配置应用后，按照添加顺序进行应用。设置此值将替换任何先前配置的自定义器。</div>
+<div class="block">设置应应用于 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html" title="class or interface in org.springframework.core.task"><code>SimpleAsyncTaskExecutor</code></a> 的 <a href="SimpleAsyncTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>customizers</code></a>。自定义器在构建器配置应用后，按照添加顺序进行应用。设置此值将替换任何先前配置的自定义器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>customizers</code> - 要设置的自定义器</dd>

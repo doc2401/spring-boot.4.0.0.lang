@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 requirements are already contained in the <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a>. All the requirements
 must be met for the condition to match, but they do not have to be met by the same
 bean.
-<p>当放置在带有 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean</code></a>` 的方法上，且未指定任何 <a href="#value()"><code>value()</code></a>`、<a href="#type()"><code>type()</code></a>`、<a href="#name()"><code>name()</code></a>` 或 <a href="#annotation()"><code>annotation()</code></a>` 时，要匹配的 Bean 类型默认为 `<code>@Bean</code>` 方法的返回类型：</p><pre class="code">@Configuration
+<p>当放置在带有 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean</code></a> 的方法上，且未指定任何 <a href="#value()"><code>value()</code></a>、<a href="#type()"><code>type()</code></a>、<a href="#name()"><code>name()</code></a> 或 <a href="#annotation()"><code>annotation()</code></a> 时，要匹配的 Bean 类型默认为 `<code>@Bean</code>` 方法的返回类型：</p><pre class="code">@Configuration
 public class MyAutoConfiguration {
 
     @ConditionalOnBean
@@ -161,7 +161,7 @@ public class MyAutoConfiguration {
 <h3>value</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;?&gt;[]</span> <span class="element-name">value</span></div>
-<div class="block">应检查的 Bean 类类型。当所有指定的类 Bean 都包含在 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a>` 中时，该条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。</div>
+<div class="block">应检查的 Bean 类类型。当所有指定的类 Bean 都包含在 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a> 中时，该条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>要检查的 Bean 类类型</dd>
@@ -187,7 +187,7 @@ public class MyAutoConfiguration {
 <h3>type</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>[]</span> <span class="element-name">type</span></div>
-<div class="block">应检查的 Bean 类类型名称。当所有指定的类 Bean 都包含在 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a>` 中时，该条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。</div>
+<div class="block">应检查的 Bean 类类型名称。当所有指定的类 Bean 都包含在 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a> 中时，该条件匹配。不是自动装配候选项或不是默认候选项的 Bean 将被忽略。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>要检查的 Bean 类类型名称</dd>

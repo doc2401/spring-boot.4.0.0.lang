@@ -1479,7 +1479,7 @@ logging.include-application-name=false</code></pre>
 <h2 id="actuator.micrometer-tracing.micrometer-observation"><a class="anchor" href="#actuator.micrometer-tracing.micrometer-observation"></a>Micrometer 观察集成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-tracing/1.6.0/io/micrometer/tracing/handler/TracingAwareMeterObservationHandler.html"><code>TracingAwareMeterObservationHandler</code></a>` 会自动注册到 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>`，为每个完成的观察创建跨度。</p>
+<p><a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-tracing/1.6.0/io/micrometer/tracing/handler/TracingAwareMeterObservationHandler.html"><code>TracingAwareMeterObservationHandler</code></a> 会自动注册到 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>，为每个完成的观察创建跨度。</p>
 </div>
 </div>
 </div>
@@ -1487,7 +1487,7 @@ logging.include-application-name=false</code></pre>
 <h2 id="actuator.micrometer-tracing.creating-spans"><a class="anchor" href="#actuator.micrometer-tracing.creating-spans"></a>创建自定义 Span</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您可以通过开始观察来创建自己的 span。为此，将 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a>` 注入到您的组件中：</p>
+<p>您可以通过开始观察来创建自己的 span。为此，将 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-observation/1.16.0/io/micrometer/observation/ObservationRegistry.html"><code>ObservationRegistry</code></a> 注入到您的组件中：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_4">
 <div class="content">
@@ -1574,7 +1574,7 @@ class CustomObservation(private val observationRegistry: ObservationRegistry) {
 <h2 id="actuator.micrometer-tracing.baggage"><a class="anchor" href="#actuator.micrometer-tracing.baggage"></a>Baggage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您可以使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-tracing/1.6.0/io/micrometer/tracing/Tracer.html"><code>Tracer</code></a>` API 创建 baggage：</p>
+<p>您可以使用 <a class="apiref" href="https://javadoc.io/doc/io.micrometer/micrometer-tracing/1.6.0/io/micrometer/tracing/Tracer.html"><code>Tracer</code></a> API 创建 baggage：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">

@@ -128,12 +128,12 @@ extends <a href="../ConfigurableWebServerFactory.html" title="interface in org.s
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#addCookieSameSiteSuppliers(org.springframework.boot.web.server.servlet.CookieSameSiteSupplier...)">addCookieSameSiteSuppliers</a><wbr/>(<a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet">CookieSameSiteSupplier</a>... cookieSameSiteSuppliers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">添加 <a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet"><code>CookieSameSiteSuppliers</code></a>` 到用于获取任何已添加 Cookie 的 <a href="../Cookie.SameSite.html" title="enum class in org.springframework.boot.web.server"><code>Cookie.SameSite</code></a> 属性的列表中。</div>
+<div class="block">添加 <a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet"><code>CookieSameSiteSuppliers</code></a> 到用于获取任何已添加 Cookie 的 <a href="../Cookie.SameSite.html" title="enum class in org.springframework.boot.web.server"><code>Cookie.SameSite</code></a> 属性的列表中。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#addInitializers(org.springframework.boot.web.servlet.ServletContextInitializer...)">addInitializers</a><wbr/>(<a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet">ServletContextInitializer</a>... initializers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">添加 <a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet"><code>ServletContextInitializer</code></a>` 到那些应额外应用于 <a href="ServletWebServerFactory.html#getWebServer(org.springframework.boot.web.servlet.ServletContextInitializer...)"><code>ServletWebServerFactory.getWebServer(ServletContextInitializer...)</code></a>` 参数的初始化器中。</div>
+<div class="block">添加 <a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet"><code>ServletContextInitializer</code></a> 到那些应额外应用于 <a href="ServletWebServerFactory.html#getWebServer(org.springframework.boot.web.servlet.ServletContextInitializer...)"><code>ServletWebServerFactory.getWebServer(ServletContextInitializer...)</code></a> 参数的初始化器中。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#addMimeMappings(org.springframework.boot.web.server.MimeMappings)">addMimeMappings</a><wbr/>(<a href="../MimeMappings.html" title="class in org.springframework.boot.web.server">MimeMappings</a> mimeMappings)</code></div>
@@ -181,7 +181,7 @@ extends <a href="../ConfigurableWebServerFactory.html" title="interface in org.s
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#setInitParameters(java.util.Map)">setInitParameters</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util">Map</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>,<wbr/><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt; initParameters)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">设置应用于容器 <a class="external-link" href="https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html" title="class or interface in jakarta.servlet"><code>ServletContext</code></a>` 的初始化参数。</div>
+<div class="block">设置应用于容器 <a class="external-link" href="https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html" title="class or interface in jakarta.servlet"><code>ServletContext</code></a> 的初始化参数。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a class="member-name-link" href="#setJsp(org.springframework.boot.web.server.servlet.Jsp)">setJsp</a><wbr/>(<a href="Jsp.html" title="class in org.springframework.boot.web.server.servlet">Jsp</a> jsp)</code></div>
@@ -367,7 +367,7 @@ extends <a href="../ConfigurableWebServerFactory.html" title="interface in org.s
 <h3>addInitializers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">addInitializers</span><wbr/><span class="parameters">(<a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet">ServletContextInitializer</a>... initializers)</span></div>
-<div class="block">添加 <a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet"><code>ServletContextInitializer</code></a>` 到那些应额外应用于 <a href="ServletWebServerFactory.html#getWebServer(org.springframework.boot.web.servlet.ServletContextInitializer...)"><code>ServletWebServerFactory.getWebServer(ServletContextInitializer...)</code></a>` 参数的初始化器中。</div>
+<div class="block">添加 <a href="../../servlet/ServletContextInitializer.html" title="interface in org.springframework.boot.web.servlet"><code>ServletContextInitializer</code></a> 到那些应额外应用于 <a href="ServletWebServerFactory.html#getWebServer(org.springframework.boot.web.servlet.ServletContextInitializer...)"><code>ServletWebServerFactory.getWebServer(ServletContextInitializer...)</code></a> 参数的初始化器中。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>initializers</code> - 要添加的初始化器</dd>
@@ -412,7 +412,7 @@ extends <a href="../ConfigurableWebServerFactory.html" title="interface in org.s
 <h3>setInitParameters</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">setInitParameters</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util">Map</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>,<wbr/><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt; initParameters)</span></div>
-<div class="block">设置应用于容器 <a class="external-link" href="https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html" title="class or interface in jakarta.servlet"><code>ServletContext</code></a>` 的初始化参数。</div>
+<div class="block">设置应用于容器 <a class="external-link" href="https://jakarta.ee/specifications/platform/11/apidocs/jakarta/servlet/ServletContext.html" title="class or interface in jakarta.servlet"><code>ServletContext</code></a> 的初始化参数。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>initParameters</code> - 初始化参数</dd>
@@ -444,7 +444,7 @@ extends <a href="../ConfigurableWebServerFactory.html" title="interface in org.s
 <h3>addCookieSameSiteSuppliers</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">addCookieSameSiteSuppliers</span><wbr/><span class="parameters">(<a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet">CookieSameSiteSupplier</a>... cookieSameSiteSuppliers)</span></div>
-<div class="block">添加 <a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet"><code>CookieSameSiteSuppliers</code></a>` 到用于获取任何已添加 Cookie 的 <a href="../Cookie.SameSite.html" title="enum class in org.springframework.boot.web.server"><code>Cookie.SameSite</code></a> 属性的列表中。</div>
+<div class="block">添加 <a href="CookieSameSiteSupplier.html" title="interface in org.springframework.boot.web.server.servlet"><code>CookieSameSiteSuppliers</code></a> 到用于获取任何已添加 Cookie 的 <a href="../Cookie.SameSite.html" title="enum class in org.springframework.boot.web.server"><code>Cookie.SameSite</code></a> 属性的列表中。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cookieSameSiteSuppliers</code> - 要添加的供应者</dd>

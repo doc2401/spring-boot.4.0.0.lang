@@ -1280,7 +1280,7 @@ Gradle 的 <code>expand</code> 方法使用 Groovy 的 <code>SimpleTemplateEngin
 <h2 id="howto.properties-and-configuration.externalize-configuration"><a class="anchor" href="#howto.properties-and-configuration.externalize-configuration"></a>外部化 SpringApplication 的配置</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a>` 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。
 或者，您可以通过在 <code>spring.main.*</code>` 中设置属性来外部化配置。
 例如，在 `<code>application.properties</code> 中，您可能会有以下设置：</p>
 </div>
@@ -1378,7 +1378,7 @@ object MyApplication {
 </div>
 </div>
 <div class="paragraph">
-<p>或到 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html"><code>SpringApplicationBuilder</code></a>` 的 `sources(…​)` 方法：</p>
+<p>或到 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html"><code>SpringApplicationBuilder</code></a> 的 `sources(…​)` 方法：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">
@@ -1603,7 +1603,7 @@ server:
 </div>
 </div>
 <div class="paragraph">
-<p>创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 `<code>snakeyaml</code>`（Maven 坐标为 `<code>org.yaml:snakeyaml</code>`，如果您使用 `<code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java `<code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a>` 文件一样。</p>
+<p>创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 `<code>snakeyaml</code>`（Maven 坐标为 `<code>org.yaml:snakeyaml</code>`，如果您使用 `<code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java `<code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html"><code>Properties</code></a> 文件一样。</p>
 </div>
 <div class="paragraph">
 <p>前面的示例 YAML 对应于以下 <code>application.properties</code> 文件：</p>
@@ -1802,7 +1802,7 @@ server:
 <p>带有 Actuator 功能的运行中应用程序具有一个 <code>configprops</code> 端点，该端点显示通过 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 可用的所有已绑定和可绑定属性。</p>
 </div>
 <div class="paragraph">
-<p>附录包含一个 <a class="xref page" href="../appendix/application-properties/index.html"><code>application.properties</code></a>` 示例，列出了 Spring Boot 支持的最常见属性。
+<p>附录包含一个 <a class="xref page" href="../appendix/application-properties/index.html"><code>application.properties</code></a> 示例，列出了 Spring Boot 支持的最常见属性。
 权威列表来自搜索源代码中的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/annotation/Value.html"><code>@Value</code></a> 注解，以及偶尔使用的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/bind/Binder.html"><code>Binder</code></a>。
 有关属性加载确切顺序的更多信息，请参阅 <a class="xref page" href="../reference/features/external-config.html">外部化配置</a>。</p>
 </div>

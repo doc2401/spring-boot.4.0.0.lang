@@ -24,7 +24,7 @@
     },
     {
       "source": "If a <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a> bean is defined, it is automatically associated to the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/caffeine/CaffeineCacheManager.html\"><code>CaffeineCacheManager</code></a>.\nSince the <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a> is going to be associated with <em>all</em> caches managed by the cache manager, it must be defined as <code>CacheLoader&lt;Object, Object&gt;</code>.\nThe auto-configuration ignores any other generic type.",
-      "translation": "如果定义了 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a>` Bean，它将自动关联到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/caffeine/CaffeineCacheManager.html\"><code>CaffeineCacheManager</code></a>`。\n由于 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a>` 将与缓存管理器管理的<em>所有</em>缓存关联，因此必须将其定义为 <code>CacheLoader&lt;Object, Object&gt;</code>。\n自动配置会忽略任何其他泛型类型。",
+      "translation": "如果定义了 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a> Bean，它将自动关联到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/caffeine/CaffeineCacheManager.html\"><code>CaffeineCacheManager</code></a>。\n由于 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html\"><code>CacheLoader</code></a> 将与缓存管理器管理的<em>所有</em>缓存关联，因此必须将其定义为 <code>CacheLoader&lt;Object, Object&gt;</code>。\n自动配置会忽略任何其他泛型类型。",
       "count": 2
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "source": "When <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html\"><code>@EnableCaching</code></a> is present in your configuration, a suitable cache configuration is expected as well.\nIf you have a custom ` org.springframework.cache.CacheManager`, consider defining it in a separate <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> class so that you can override it if necessary.\nNone uses a no-op implementation that is useful in tests, and slice tests use that by default through <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/test/autoconfigure/AutoConfigureCache.html\"><code>@AutoConfigureCache</code></a> when the <code>spring-boot-cache-test</code> module is present.",
-      "translation": "当您的配置中存在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html\"><code>@EnableCaching</code></a>` 时，也期望存在合适的缓存配置。\n如果您拥有自定义的 `org.springframework.cache.CacheManager`，请考虑将其定义在一个单独的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a>` 类中，以便在必要时进行覆盖。\nNone 使用一个无操作实现，这在测试中非常有用；当存在 `spring-boot-cache-test` 模块时，切片测试会通过 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/test/autoconfigure/AutoConfigureCache.html\"><code>@AutoConfigureCache</code></a>` 默认使用该实现。",
+      "translation": "当您的配置中存在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html\"><code>@EnableCaching</code></a> 时，也期望存在合适的缓存配置。\n如果您拥有自定义的 `org.springframework.cache.CacheManager`，请考虑将其定义在一个单独的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> 类中，以便在必要时进行覆盖。\nNone 使用一个无操作实现，这在测试中非常有用；当存在 `spring-boot-cache-test` 模块时，切片测试会通过 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/test/autoconfigure/AutoConfigureCache.html\"><code>@AutoConfigureCache</code></a> 默认使用该实现。",
       "count": 2
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "source": "The cache abstraction does not provide an actual store and relies on abstraction materialized by the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\"><code>Cache</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html\"><code>CacheManager</code></a> interfaces.",
-      "translation": "缓存抽象不提供实际的存储，而是依赖于由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\"><code>Cache</code></a>` 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html\"><code>CacheManager</code></a>` 接口实现的抽象。",
+      "translation": "缓存抽象不提供实际的存储，而是依赖于由 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html\"><code>Cache</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html\"><code>CacheManager</code></a> 接口实现的抽象。",
       "count": 2
     },
     {
@@ -84,12 +84,12 @@
     },
     {
       "source": "If you need more control over the configuration, consider registering a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html\"><code>CouchbaseCacheManagerBuilderCustomizer</code></a> bean.\nThe following example shows a customizer that configures a specific entry expiration for <code>cache1</code> and <code>cache2</code>:",
-      "translation": "如果您需要更灵活地控制配置，可以考虑注册一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html\"><code>CouchbaseCacheManagerBuilderCustomizer</code></a>` Bean。\n以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的条目过期时间：",
+      "translation": "如果您需要更灵活地控制配置，可以考虑注册一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html\"><code>CouchbaseCacheManagerBuilderCustomizer</code></a> Bean。\n以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的条目过期时间：",
       "count": 2
     },
     {
       "source": "If you need more control over the configuration, consider registering a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html\"><code>RedisCacheManagerBuilderCustomizer</code></a> bean.\nThe following example shows a customizer that configures a specific time to live for <code>cache1</code> and <code>cache2</code>:",
-      "translation": "如果您需要更精细地控制配置，请考虑注册一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html\"><code>RedisCacheManagerBuilderCustomizer</code></a>` Bean。\n以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的生存时间：",
+      "translation": "如果您需要更精细地控制配置，请考虑注册一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html\"><code>RedisCacheManagerBuilderCustomizer</code></a> Bean。\n以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的生存时间：",
       "count": 2
     },
     {
@@ -119,7 +119,7 @@
     },
     {
       "source": "Caches can be created on startup by setting the <code>spring.cache.cache-names</code> property.\nCache defaults can be customized using a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/Cache2kBuilderCustomizer.html\"><code>Cache2kBuilderCustomizer</code></a> bean.\nThe following example shows a customizer that configures the capacity of the cache to 200 entries, with an expiration of 5 minutes:",
-      "translation": "可以通过设置 <code>spring.cache.cache-names</code> 属性在启动时创建缓存。可以使用一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/Cache2kBuilderCustomizer.html\"><code>Cache2kBuilderCustomizer</code></a>` Bean 来自定义缓存默认值。以下示例展示了一个自定义器，它将缓存容量配置为 200 个条目，过期时间为 5 分钟：",
+      "translation": "可以通过设置 <code>spring.cache.cache-names</code> 属性在启动时创建缓存。可以使用一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/Cache2kBuilderCustomizer.html\"><code>Cache2kBuilderCustomizer</code></a> Bean 来自定义缓存默认值。以下示例展示了一个自定义器，它将缓存容量配置为 200 个条目，过期时间为 5 分钟：",
       "count": 2
     },
     {
@@ -139,12 +139,12 @@
     },
     {
       "source": "A <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CaffeineSpec.html\"><code>CaffeineSpec</code></a> bean is defined",
-      "translation": "已定义一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CaffeineSpec.html\"><code>CaffeineSpec</code></a>` 类型的 bean。",
+      "translation": "已定义一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CaffeineSpec.html\"><code>CaffeineSpec</code></a> 类型的 bean。",
       "count": 2
     },
     {
       "source": "A <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/Caffeine.html\"><code>Caffeine</code></a> bean is defined",
-      "translation": "已定义一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/Caffeine.html\"><code>Caffeine</code></a>`  Bean。",
+      "translation": "已定义一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/Caffeine.html\"><code>Caffeine</code></a>  Bean。",
       "count": 2
     },
     {

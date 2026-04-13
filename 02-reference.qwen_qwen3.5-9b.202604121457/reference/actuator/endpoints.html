@@ -1155,7 +1155,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>configprops</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">显示所有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a>` 的汇总列表。
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示所有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 的汇总列表。
 受<a href="#actuator.endpoints.sanitization">清理</a>约束。</p></td>
 </tr>
 <tr>
@@ -1164,7 +1164,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>flyway</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的任何 Flyway 数据库迁移。需要一个或多个 <a class="apiref" href="https://javadoc.io/doc/org.flywaydb/flyway-core/11.14.1/org/flywaydb/core/Flyway.html"><code>Flyway</code></a>` Bean。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的任何 Flyway 数据库迁移。需要一个或多个 <a class="apiref" href="https://javadoc.io/doc/org.flywaydb/flyway-core/11.14.1/org/flywaydb/core/Flyway.html"><code>Flyway</code></a> Bean。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>health</code></p></td>
@@ -1172,7 +1172,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>httpexchanges</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">显示 HTTP 交换信息（默认情况下，显示最后 100 次 HTTP 请求 - 响应交换）。需要 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/web/exchanges/HttpExchangeRepository.html"><code>HttpExchangeRepository</code></a>` Bean。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示 HTTP 交换信息（默认情况下，显示最后 100 次 HTTP 请求 - 响应交换）。需要 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/web/exchanges/HttpExchangeRepository.html"><code>HttpExchangeRepository</code></a> Bean。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>info</code></p></td>
@@ -1189,7 +1189,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>liquibase</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的 Liquibase 数据库迁移。需要一个或多个 <a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/Liquibase.html"><code>Liquibase</code></a>` Bean。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示已应用的 Liquibase 数据库迁移。需要一个或多个 <a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/Liquibase.html"><code>Liquibase</code></a> Bean。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>metrics</code></p></td>
@@ -1355,9 +1355,9 @@ management.endpoint.loggers.access=read-only</code></pre>
 <p>可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code>` 可使所有端点不可访问。将其设置为 `<code>read-only</code> 则仅允许对端点进行只读访问。</p>
 </div>
 <div class="paragraph">
-<p>对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html"><code>@JmxEndpoint</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>`，读访问权限等同于带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>` 注解的端点方法。
-对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html"><code>@ControllerEndpoint</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html"><code>@RestControllerEndpoint</code></a>`，读访问权限等同于能够处理 <code>GET</code>` 和 `<code>HEAD</code> 请求的请求映射。
-对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html"><code>@ServletEndpoint</code></a>`，读访问权限等同于 <code>GET</code>` 和 `<code>HEAD</code> 请求。</p>
+<p>对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html"><code>@JmxEndpoint</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>，读访问权限等同于带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 注解的端点方法。
+对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html"><code>@ControllerEndpoint</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html"><code>@RestControllerEndpoint</code></a>，读访问权限等同于能够处理 <code>GET</code>` 和 `<code>HEAD</code> 请求的请求映射。
+对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html"><code>@ServletEndpoint</code></a>，读访问权限等同于 <code>GET</code>` 和 `<code>HEAD</code> 请求。</p>
 </div>
 </div>
 </div>
@@ -1609,7 +1609,7 @@ class MySecurityConfiguration {
 </div>
 <div class="paragraph">
 <p>前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code>` 将请求匹配到任意端点，然后确保所有端点都具有 `<code>ENDPOINT_ADMIN</code> 角色。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html"><code>EndpointRequest</code></a>` 上还提供其他几种匹配器方法。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html"><code>EndpointRequest</code></a> 上还提供其他几种匹配器方法。
 有关详细信息，请参阅 <a class="xref page" href="../../api/rest/actuator/index.html">API 文档</a>。</p>
 </div>
 <div class="paragraph">
@@ -2000,7 +2000,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <h2 id="actuator.endpoints.implementing-custom"><a class="anchor" href="#actuator.endpoints.implementing-custom"></a>实现自定义端点</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您添加了一个带有 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 注解且该注解上标注了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>` 的类，那么任何带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>` 注解的方法都会自动通过 JMX 暴露，并且在 Web 应用程序中也会通过 HTTP 暴露。
+<p>如果您添加了一个带有 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 注解且该注解上标注了 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a> 的类，那么任何带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a> 注解的方法都会自动通过 JMX 暴露，并且在 Web 应用程序中也会通过 HTTP 暴露。
 可以通过使用 Jersey、Spring MVC 或 Spring WebFlux 将端点通过 HTTP 暴露。
 如果同时存在 Jersey 和 Spring MVC，则使用 Spring MVC。</p>
 </div>
@@ -2146,7 +2146,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <div class="sect2">
 <h3 id="actuator.endpoints.implementing-custom.web"><a class="anchor" href="#actuator.endpoints.implementing-custom.web"></a>自定义 Web 端点</h3>
 <div class="paragraph">
-<p>对 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/EndpointWebExtension.html"><code>@EndpointWebExtension</code></a>` 的操作会自动通过 Jersey、Spring MVC 或 Spring WebFlux 以 HTTP 形式暴露。如果同时存在 Jersey 和 Spring MVC，则使用 Spring MVC。</p>
+<p>对 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/EndpointWebExtension.html"><code>@EndpointWebExtension</code></a> 的操作会自动通过 Jersey、Spring MVC 或 Spring WebFlux 以 HTTP 形式暴露。如果同时存在 Jersey 和 Spring MVC，则使用 Spring MVC。</p>
 </div>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.request-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.request-predicates"></a>Web 端点请求谓词</h4>
@@ -2199,14 +2199,14 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.consumes-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.consumes-predicates"></a>Consumes</h4>
 <div class="paragraph">
-<p>对于使用请求体的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>`（HTTP <code>POST</code>`），谓词的 `consumes` 子句为 `<code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。
+<p>对于使用请求体的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>（HTTP <code>POST</code>`），谓词的 `consumes` 子句为 `<code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。
 对于所有其他操作，`consumes` 子句为空。</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.produces-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.produces-predicates"></a>Produces</h4>
 <div class="paragraph">
-<p>谓词的 `produces` 子句可由 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a> 注解的 `produces` 属性确定。
+<p>谓词的 `produces` 子句可由 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a> 注解的 `produces` 属性确定。
 该属性为可选。
 如果未使用，则自动确定 `produces` 子句。</p>
 </div>
@@ -2222,10 +2222,10 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <p>端点操作的默认响应状态取决于操作类型（读取、写入或删除）以及该操作返回的内容（如果有）。</p>
 </div>
 <div class="paragraph">
-<p>如果 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a>` 返回一个值，响应状态码将为 200 (OK)。如果它不返回任何值，响应状态码将为 404 (Not Found)。</p>
+<p>如果 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 返回一个值，响应状态码将为 200 (OK)。如果它不返回任何值，响应状态码将为 404 (Not Found)。</p>
 </div>
 <div class="paragraph">
-<p>如果 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a>` 返回了值，响应状态码将为 200 (OK)。如果未返回值，响应状态码将为 204 (No Content)。</p>
+<p>如果 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/DeleteOperation.html"><code>@DeleteOperation</code></a> 返回了值，响应状态码将为 200 (OK)。如果未返回值，响应状态码将为 204 (No Content)。</p>
 </div>
 <div class="paragraph">
 <p>如果调用操作时缺少必需参数，或提供的参数无法转换为所需类型，则不会调用操作方法，响应状态码将为 400（请求无效）。</p>
@@ -2251,8 +2251,8 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.security"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.security"></a>Web 端点安全</h4>
 <div class="paragraph">
-<p>对 Web 端点或特定于 Web 的端点扩展的操作可以将当前的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Principal.html"><code>Principal</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/SecurityContext.html"><code>SecurityContext</code></a>` 作为方法参数接收。
-前者通常与 <a class="apiref" href="https://jspecify.dev/docs/api/org/jspecify/annotations/Nullable.html"><code>@Nullable</code></a>` 结合使用，以针对已认证和未认证用户提供不同的行为。
+<p>对 Web 端点或特定于 Web 的端点扩展的操作可以将当前的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Principal.html"><code>Principal</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/SecurityContext.html"><code>SecurityContext</code></a> 作为方法参数接收。
+前者通常与 <a class="apiref" href="https://jspecify.dev/docs/api/org/jspecify/annotations/Nullable.html"><code>@Nullable</code></a> 结合使用，以针对已认证和未认证用户提供不同的行为。
 后者通常用于通过其 <code>isUserInRole(String)</code> 方法执行授权检查。</p>
 </div>
 </div>
@@ -2312,9 +2312,9 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <p>健康信息是从<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/health/registry/HealthContributorRegistry.html"><code>HealthContributorRegistry</code></a>的内容中收集的（默认情况下，收集您在<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>中定义的所有<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>实例）。Spring Boot 包含一些自动配置的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>Bean，您也可以编写自己的 Bean。</p>
 </div>
 <div class="paragraph">
-<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>` 可以是 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>`。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` 提供实际的健康信息，包括 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>`。
-<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>` 提供其他 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a>` 实例的复合体。
+<p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a> 可以是 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a>。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> 提供实际的健康信息，包括 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/Status.html"><code>Status</code></a>。
+<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/CompositeHealthContributor.html"><code>CompositeHealthContributor</code></a> 提供其他 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthContributor.html"><code>HealthContributor</code></a> 实例的复合体。
 综合起来，贡献者形成一棵树结构，以表示整个系统的健康状况。</p>
 </div>
 <div class="paragraph">
@@ -2455,7 +2455,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>默认情况下，会启用额外的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a>` Bean：</p>
+<p>默认情况下，会启用额外的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HealthIndicator.html"><code>HealthIndicator</code></a> Bean：</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3054,7 +3054,7 @@ management.endpoint.health.group.custom.exclude="test/primary/b"</code></pre>
 <div class="sect2">
 <h3 id="actuator.endpoints.health.datasource"><a class="anchor" href="#actuator.endpoints.health.datasource"></a>数据源健康状态</h3>
 <div class="paragraph">
-<p><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。
+<p><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。
 路由数据源的健康状况包括其每个目标数据源的健康状况。
 在健康端点的响应中，路由数据源的每个目标均通过其路由键命名。
 如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code>` 设置为 `<code>true</code>。</p>
@@ -3486,7 +3486,7 @@ info.app.java.target=@java.version@</code></pre>
 <div class="sect2">
 <h3 id="actuator.endpoints.info.git-commit-information"><a class="anchor" href="#actuator.endpoints.info.git-commit-information"></a>Git 提交信息</h3>
 <div class="paragraph">
-<p>`info` 端点的另一个有用功能是，当构建项目时，它可以发布有关您的 `git` 源代码仓库状态的信息。如果存在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/GitProperties.html"><code>GitProperties</code></a>` Bean，您可以使用 `info` 端点来公开这些属性。</p>
+<p>`info` 端点的另一个有用功能是，当构建项目时，它可以发布有关您的 `git` 源代码仓库状态的信息。如果存在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/GitProperties.html"><code>GitProperties</code></a> Bean，您可以使用 `info` 端点来公开这些属性。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -3572,7 +3572,7 @@ info.app.java.target=@java.version@</code></pre>
 <div class="sect2">
 <h3 id="actuator.endpoints.info.build-information"><a class="anchor" href="#actuator.endpoints.info.build-information"></a>构建信息</h3>
 <div class="paragraph">
-<p>如果存在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html"><code>BuildProperties</code></a>` Bean，<code>info</code> 端点还可以发布有关构建的信息。
+<p>如果存在 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html"><code>BuildProperties</code></a> Bean，<code>info</code> 端点还可以发布有关构建的信息。
 如果类路径中存在 <code>META-INF/build-info.properties</code> 文件，就会发生这种情况。</p>
 </div>
 <div class="admonitionblock tip">

@@ -1103,7 +1103,7 @@
 <p>如果类路径中包含<a href="https://spring.io/projects/spring-security">Spring Security</a>，则 Web 应用程序默认启用安全保护。这包括保护 Spring Boot 的<code>/error</code>端点。Spring Boot 依赖 Spring Security 的内容协商策略来确定是使用<code>httpBasic</code>还是<code>formLogin</code>。若要为 Web 应用程序添加方法级别的安全保护，您还可以结合所需的设置添加<a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/config/annotation/method/configuration/EnableMethodSecurity.html"><code>@EnableMethodSecurity</code></a>。更多信息请参阅<a href="https://docs.spring.io/spring-security/reference/7.0/servlet/authorization/method-security.html">Spring Security 参考指南</a>。</p>
 </div>
 <div class="paragraph">
-<p>默认的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/UserDetailsService.html"><code>UserDetailsService</code></a>` 仅包含一个用户。
+<p>默认的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/UserDetailsService.html"><code>UserDetailsService</code></a> 仅包含一个用户。
 该用户的名称为 <code>user</code>，密码是随机生成的，并在应用程序启动时以 WARN 级别打印出来，如下例所示：</p>
 </div>
 <div class="listingblock">
@@ -1134,7 +1134,7 @@ This generated password is for development use only. Your security configuration
 <div class="ulist">
 <ul>
 <li>
-<p>一个带有内存存储和单个用户（具有生成的密码）的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/UserDetailsService.html"><code>UserDetailsService</code></a>`（或在 WebFlux 应用程序中为 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/ReactiveUserDetailsService.html"><code>ReactiveUserDetailsService</code></a>）bean（有关用户的属性，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/SecurityProperties.User.html"><code>SecurityProperties.User</code></a>）。</p>
+<p>一个带有内存存储和单个用户（具有生成的密码）的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/UserDetailsService.html"><code>UserDetailsService</code></a>（或在 WebFlux 应用程序中为 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/ReactiveUserDetailsService.html"><code>ReactiveUserDetailsService</code></a>）bean（有关用户的属性，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/SecurityProperties.User.html"><code>SecurityProperties.User</code></a>）。</p>
 </li>
 <li>
 <p>基于表单的登录或 HTTP Basic 安全（取决于请求中的 `<code>Accept` 标头）适用于整个应用程序（包括类路径中包含 actuator 时的 actuator 端点）。</code></p>
@@ -1214,9 +1214,9 @@ This generated password is for development use only. Your security configuration
 <p>若要在使用这些依赖之一或多个的同时使用 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/ReactiveUserDetailsService.html"><code>ReactiveUserDetailsService</code></a>，请定义您自己的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/core/userdetails/MapReactiveUserDetailsService.html"><code>MapReactiveUserDetailsService</code></a>  bean。</p>
 </div>
 <div class="paragraph">
-<p>访问规则以及多个 Spring Security 组件（如 OAuth 2 Client 和资源服务器）的使用，可以通过添加自定义的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/SecurityWebFilterChain.html"><code>SecurityWebFilterChain</code></a>` Bean 进行配置。
+<p>访问规则以及多个 Spring Security 组件（如 OAuth 2 Client 和资源服务器）的使用，可以通过添加自定义的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/SecurityWebFilterChain.html"><code>SecurityWebFilterChain</code></a> Bean 进行配置。
 Spring Boot 提供了便捷方法，可用于覆盖 actuator 端点和静态资源的访问规则。
-可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/reactive/EndpointRequest.html"><code>EndpointRequest</code></a>` 创建一个基于 <code>management.endpoints.web.base-path</code> 属性的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html"><code>ServerWebExchangeMatcher</code></a>`。</p>
+可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/reactive/EndpointRequest.html"><code>EndpointRequest</code></a> 创建一个基于 <code>management.endpoints.web.base-path</code> 属性的 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html"><code>ServerWebExchangeMatcher</code></a>。</p>
 </div>
 <div class="paragraph">
 <p><a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/security/autoconfigure/PathRequest.html"><code>PathRequest</code></a> 可用于为常用位置的资源创建 <a class="apiref" href="https://docs.spring.io/spring-security/site/docs/7.0.x/api/org/springframework/security/web/server/util/matcher/ServerWebExchangeMatcher.html"><code>ServerWebExchangeMatcher</code></a>。</p>

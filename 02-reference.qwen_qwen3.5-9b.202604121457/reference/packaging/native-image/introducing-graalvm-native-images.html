@@ -1247,7 +1247,7 @@ Bean 实例是实际已创建并可注入到其他 Bean 中的实例。
 还有 Bean 定义，用于定义 Bean 的属性以及其实例应如何创建。</p>
 </div>
 <div class="paragraph">
-<p>如果我们采用一个典型的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类：</p>
+<p>如果我们采用一个典型的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 类：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1266,9 +1266,9 @@ public class MyConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>bean 定义是通过解析包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 的类并查找其中包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 的方法来创建的。
-在上述示例中，我们定义了一个名为 <code>myBean</code> 的单例 bean 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html"><code>BeanDefinition</code></a>`。
-我们还为 <code>MyConfiguration</code> 类本身创建了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html"><code>BeanDefinition</code></a>`。</p>
+<p>bean 定义是通过解析包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 的类并查找其中包含 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 的方法来创建的。
+在上述示例中，我们定义了一个名为 <code>myBean</code> 的单例 bean 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html"><code>BeanDefinition</code></a>。
+我们还为 <code>MyConfiguration</code> 类本身创建了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html"><code>BeanDefinition</code></a>。</p>
 </div>
 <div class="paragraph">
 <p>当需要 <code>myBean</code>` 实例时，Spring 知道必须调用 `<code>myBean()</code> 方法并使用其结果。

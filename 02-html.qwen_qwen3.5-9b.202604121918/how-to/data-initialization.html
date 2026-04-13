@@ -1107,7 +1107,7 @@
 <h2 id="howto.data-initialization.using-hibernate"><a class="anchor" href="#howto.data-initialization.using-hibernate"></a>使用 Hibernate 初始化数据库</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>您可以将 <code>spring.jpa.hibernate.ddl-auto</code>` 设置为控制 Hibernate 的数据库初始化。支持的值为 `<code>none</code>`、`<code>validate</code>`、`<code>update</code>`、`<code>create</code>` 和 `<code>create-drop</code>`。Spring Boot 会根据您是否使用嵌入式数据库为您选择一个默认值。嵌入式数据库是通过检查 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html"><code>Connection</code></a>` 类型和 JDBC URL 来识别的。<code>hsqldb</code>、`<code>h2</code>` 或 `<code>derby</code>` 是嵌入式数据库，其他则不是。如果检测到嵌入式数据库且未检测到任何架构管理工具（Flyway 或 Liquibase），则 `<code>ddl-auto</code>` 的默认值为 `<code>create-drop</code>`。在所有其他情况下，其默认值为 `<code>none</code>。</p>
+<p>您可以将 <code>spring.jpa.hibernate.ddl-auto</code>` 设置为控制 Hibernate 的数据库初始化。支持的值为 `<code>none</code>`、`<code>validate</code>`、`<code>update</code>`、`<code>create</code>` 和 `<code>create-drop</code>`。Spring Boot 会根据您是否使用嵌入式数据库为您选择一个默认值。嵌入式数据库是通过检查 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html"><code>Connection</code></a> 类型和 JDBC URL 来识别的。<code>hsqldb</code>、`<code>h2</code>` 或 `<code>derby</code>` 是嵌入式数据库，其他则不是。如果检测到嵌入式数据库且未检测到任何架构管理工具（Flyway 或 Liquibase），则 `<code>ddl-auto</code>` 的默认值为 `<code>create-drop</code>`。在所有其他情况下，其默认值为 `<code>none</code>。</p>
 </div>
 <div class="paragraph">
 <p>在从内存切换到“真实”数据库时，请务必注意不要对新平台中表和数据的存在性做出假设。您必须显式设置 <code>ddl-auto</code> 或使用其他机制之一来初始化数据库。</p>
@@ -1151,10 +1151,10 @@
 您可以通过设置 `<code>spring.sql.init.continue-on-error</code> 来调整此行为。</p>
 </div>
 <div class="paragraph">
-<p>基于脚本的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 初始化默认会在任何 JPA <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` Bean 创建之前执行。
+<p>基于脚本的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 初始化默认会在任何 JPA <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> Bean 创建之前执行。
 可以使用 <code>schema.sql</code>` 为 JPA 管理的实体创建架构，并使用 `<code>data.sql</code>` 填充数据。
-虽然我们不推荐使用多种数据源初始化技术，但如果您希望基于脚本的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 初始化能够建立在 Hibernate 执行的架构创建之上，请将 `<code>spring.jpa.defer-datasource-initialization</code>` 设置为 `<code>true</code>`。
-这将把数据源初始化推迟到任何 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` Bean 创建并初始化之后执行。
+虽然我们不推荐使用多种数据源初始化技术，但如果您希望基于脚本的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 初始化能够建立在 Hibernate 执行的架构创建之上，请将 `<code>spring.jpa.defer-datasource-initialization</code>` 设置为 `<code>true</code>`。
+这将把数据源初始化推迟到任何 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> Bean 创建并初始化之后执行。
 此时，可以使用 `<code>schema.sql</code>` 对 Hibernate 执行的任何架构创建进行增补，并使用 `<code>data.sql</code> 填充数据。</p>
 </div>
 <div class="admonitionblock note">
@@ -1401,7 +1401,7 @@
 <p>有关可用设置（如上下文、默认模式等）的详细信息，请参阅<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/liquibase/autoconfigure/LiquibaseProperties.html"><code>LiquibaseProperties</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>您也可以使用一个 <code>Customizer&lt;Liquibase&gt;</code> 类型的 Bean，以便在使用之前自定义 <a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/Liquibase.html"><code>Liquibase</code></a>` 实例。</p>
+<p>您也可以使用一个 <code>Customizer&lt;Liquibase&gt;</code> 类型的 Bean，以便在使用之前自定义 <a class="apiref" href="https://javadoc.io/doc/org.liquibase/liquibase-core/5.0.1/liquibase/Liquibase.html"><code>Liquibase</code></a> 实例。</p>
 </div>
 </div>
 <div class="sect2">
@@ -1515,7 +1515,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>如果您使用第三方数据库初始化库启动器，它可能会提供检测器以自动检测其他类型的 Bean。若要使其他 Bean 被检测到，请在 `META-INF/spring.factories` 中注册 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/sql/init/dependency/DatabaseInitializerDetector.html"><code>DatabaseInitializerDetector</code></a>` 的实现。</p>
+<p>如果您使用第三方数据库初始化库启动器，它可能会提供检测器以自动检测其他类型的 Bean。若要使其他 Bean 被检测到，请在 `META-INF/spring.factories` 中注册 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/sql/init/dependency/DatabaseInitializerDetector.html"><code>DatabaseInitializerDetector</code></a> 的实现。</p>
 </div>
 </div>
 <div class="sect2">

@@ -101,7 +101,7 @@ loadScripts(document, 'script');</script>
 Provides convenience methods to set common <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html" title="class or interface in org.springframework.scheduling.concurrent"><code>ThreadPoolTaskExecutor</code></a> settings and
 register <a href="#taskDecorator(org.springframework.core.task.TaskDecorator)"><code>taskDecorator(TaskDecorator)</code></a>). For advanced configuration, consider
 using <a href="ThreadPoolTaskExecutorCustomizer.html" title="interface in org.springframework.boot.task"><code>ThreadPoolTaskExecutorCustomizer</code></a>.
-<p>在典型的自动配置的 Spring Boot 应用程序中，该构建器作为 Bean 可用，每当需要 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html" title="class or interface in org.springframework.scheduling.concurrent"><code>ThreadPoolTaskExecutor</code></a>` 时，都可以注入它。</p></div>
+<p>在典型的自动配置的 Spring Boot 应用程序中，该构建器作为 Bean 可用，每当需要 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html" title="class or interface in org.springframework.scheduling.concurrent"><code>ThreadPoolTaskExecutor</code></a> 时，都可以注入它。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>3.2.0</dd>
@@ -214,7 +214,7 @@ using <a href="ThreadPoolTaskExecutorCustomizer.html" title="interface in org.sp
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ThreadPoolTaskExecutorBuilder.html" title="class in org.springframework.boot.task">ThreadPoolTaskExecutorBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#taskDecorator(org.springframework.core.task.TaskDecorator)">taskDecorator</a><wbr/>(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a>` 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ThreadPoolTaskExecutorBuilder.html" title="class in org.springframework.boot.task">ThreadPoolTaskExecutorBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#threadNamePrefix(java.lang.String)">threadNamePrefix</a><wbr/>(@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> threadNamePrefix)</code></div>
@@ -259,7 +259,7 @@ using <a href="ThreadPoolTaskExecutorCustomizer.html" title="interface in org.sp
 <h3>queueCapacity</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="ThreadPoolTaskExecutorBuilder.html" title="class in org.springframework.boot.task">ThreadPoolTaskExecutorBuilder</a></span> <span class="element-name">queueCapacity</span><wbr/><span class="parameters">(int queueCapacity)</span></div>
-<div class="block">设置队列的容量。无界容量不会增加池的大小，因此会忽略 <a href="#maxPoolSize(int)"><code>maxPoolSize</code></a>`。</div>
+<div class="block">设置队列的容量。无界容量不会增加池的大小，因此会忽略 <a href="#maxPoolSize(int)"><code>maxPoolSize</code></a>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>queueCapacity</code> - 要设置的队列容量</dd>
@@ -405,7 +405,7 @@ as the queue is not full.
 <h3>taskDecorator</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="ThreadPoolTaskExecutorBuilder.html" title="class in org.springframework.boot.task">ThreadPoolTaskExecutorBuilder</a></span> <span class="element-name">taskDecorator</span><wbr/><span class="parameters">(@Nullable <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task">TaskDecorator</a> taskDecorator)</span></div>
-<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a>` 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
+<div class="block">将 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/TaskDecorator.html" title="class or interface in org.springframework.core.task"><code>TaskDecorator</code></a> 设置为使用，或设置为 `<code>null</code>` 以不使用任何装饰器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>taskDecorator</code> - 要使用的任务装饰器</dd>

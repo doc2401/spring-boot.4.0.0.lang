@@ -1200,10 +1200,10 @@ spring.rabbitmq.password=secret</code></pre>
 <p>有关更多支持的基于属性的配置选项，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitProperties.html"><code>RabbitProperties</code></a>。若要配置 Spring AMQP 所使用的 RabbitMQ <a class="apiref" href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/ConnectionFactory.html"><code>ConnectionFactory</code></a> 的更底层细节，请定义一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/ConnectionFactoryCustomizer.html"><code>ConnectionFactoryCustomizer</code></a> Bean。</p>
 </div>
 <div class="paragraph">
-<p>如果上下文中存在一个 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/ConnectionNameStrategy.html"><code>ConnectionNameStrategy</code></a>` Bean，它将自动用于命名由自动配置的 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/CachingConnectionFactory.html"><code>CachingConnectionFactory</code></a>` 创建的连接。</p>
+<p>如果上下文中存在一个 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/ConnectionNameStrategy.html"><code>ConnectionNameStrategy</code></a> Bean，它将自动用于命名由自动配置的 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/CachingConnectionFactory.html"><code>CachingConnectionFactory</code></a> 创建的连接。</p>
 </div>
 <div class="paragraph">
-<p>要对 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html"><code>RabbitTemplate</code></a>` 进行应用程序范围的累加自定义，请使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitTemplateCustomizer.html"><code>RabbitTemplateCustomizer</code></a>` Bean。</p>
+<p>要对 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html"><code>RabbitTemplate</code></a> 进行应用程序范围的累加自定义，请使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitTemplateCustomizer.html"><code>RabbitTemplateCustomizer</code></a> Bean。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1393,7 +1393,7 @@ spring.rabbitmq.template.retry.initial-interval=2s</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>如果定义了 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/support/converter/MessageConverter.html"><code>MessageConverter</code></a>`、<a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/support/converter/StreamMessageConverter.html"><code>StreamMessageConverter</code></a>` 或 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/ProducerCustomizer.html"><code>ProducerCustomizer</code></a>` Bean，它将自动关联到自动配置的 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html"><code>RabbitStreamTemplate</code></a>`。</p>
+<p>如果定义了 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/support/converter/MessageConverter.html"><code>MessageConverter</code></a>、<a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/support/converter/StreamMessageConverter.html"><code>StreamMessageConverter</code></a> 或 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/ProducerCustomizer.html"><code>ProducerCustomizer</code></a> Bean，它将自动关联到自动配置的 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html"><code>RabbitStreamTemplate</code></a>。</p>
 </div>
 <div class="paragraph">
 <p>如果您需要创建更多 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html"><code>RabbitStreamTemplate</code></a> 实例，或者想要覆盖默认配置，Spring Boot 提供了一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitStreamTemplateConfigurer.html"><code>RabbitStreamTemplateConfigurer</code></a> Bean，您可以使用它来初始化一个 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html"><code>RabbitStreamTemplate</code></a>，使其具有与自动配置所使用的工厂相同的设置。</p>
@@ -1564,7 +1564,7 @@ class MyRabbitConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>然后，您可以在任何带有 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html"><code>@RabbitListener</code></a>` 注解的方法中使用该工厂，如下所示：</p>
+<p>然后，您可以在任何带有 <a class="apiref" href="https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html"><code>@RabbitListener</code></a> 注解的方法中使用该工厂，如下所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">

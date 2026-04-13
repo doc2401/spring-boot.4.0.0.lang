@@ -1206,7 +1206,7 @@ class MyMathService {
 <h2 id="io.caching.provider"><a class="anchor" href="#io.caching.provider"></a>支持的缓存提供者</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>缓存抽象不提供实际的存储，而是依赖于由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html"><code>Cache</code></a>` 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a>` 接口实现的抽象。</p>
+<p>缓存抽象不提供实际的存储，而是依赖于由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html"><code>Cache</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a> 接口实现的抽象。</p>
 </div>
 <div class="paragraph">
 <p>如果您未定义类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>CacheManager</code></a> 的 Bean，或未定义名为 <code>cacheResolver</code> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/interceptor/CacheResolver.html"><code>CacheResolver</code></a>（参见 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/CachingConfigurer.html"><code>CachingConfigurer</code></a>），Spring Boot 将尝试按以下顺序检测提供程序：</p>
@@ -1544,7 +1544,7 @@ spring.cache.couchbase.expiration=10m</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>如果您需要更灵活地控制配置，可以考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html"><code>CouchbaseCacheManagerBuilderCustomizer</code></a>` Bean。
+<p>如果您需要更灵活地控制配置，可以考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html"><code>CouchbaseCacheManagerBuilderCustomizer</code></a> Bean。
 以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的条目过期时间：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_6">
@@ -1683,7 +1683,7 @@ spring.cache.redis.time-to-live=10m</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果您需要更精细地控制配置，请考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html"><code>RedisCacheManagerBuilderCustomizer</code></a>` Bean。
+<p>如果您需要更精细地控制配置，请考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html"><code>RedisCacheManagerBuilderCustomizer</code></a> Bean。
 以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 `<code>cache2</code> 配置了特定的生存时间：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
@@ -1770,10 +1770,10 @@ class MyRedisCacheManagerConfiguration {
 <p>由 <code>spring.cache.caffeine.spec</code> 定义的缓存规范</p>
 </li>
 <li>
-<p>已定义一个 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CaffeineSpec.html"><code>CaffeineSpec</code></a>` 类型的 bean。</p>
+<p>已定义一个 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CaffeineSpec.html"><code>CaffeineSpec</code></a> 类型的 bean。</p>
 </li>
 <li>
-<p>已定义一个 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/Caffeine.html"><code>Caffeine</code></a>`  Bean。</p>
+<p>已定义一个 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/Caffeine.html"><code>Caffeine</code></a>  Bean。</p>
 </li>
 </ol>
 </div>
@@ -1814,8 +1814,8 @@ spring.cache.caffeine.spec=maximumSize=500,expireAfterAccess=600s</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>如果定义了 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html"><code>CacheLoader</code></a>` Bean，它将自动关联到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/caffeine/CaffeineCacheManager.html"><code>CaffeineCacheManager</code></a>`。
-由于 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html"><code>CacheLoader</code></a>` 将与缓存管理器管理的<em>所有</em>缓存关联，因此必须将其定义为 <code>CacheLoader&lt;Object, Object&gt;</code>。
+<p>如果定义了 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html"><code>CacheLoader</code></a> Bean，它将自动关联到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/caffeine/CaffeineCacheManager.html"><code>CaffeineCacheManager</code></a>。
+由于 <a class="apiref" href="https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/3.2.3/com/github/benmanes/caffeine/cache/CacheLoader.html"><code>CacheLoader</code></a> 将与缓存管理器管理的<em>所有</em>缓存关联，因此必须将其定义为 <code>CacheLoader&lt;Object, Object&gt;</code>。
 自动配置会忽略任何其他泛型类型。</p>
 </div>
 </div>
@@ -1825,7 +1825,7 @@ spring.cache.caffeine.spec=maximumSize=500,expireAfterAccess=600s</code></pre>
 <p><a href="https://cache2k.org/">Cache2k</a> 是一个内存缓存。如果存在 Cache2k Spring 集成，将自动配置一个 <code>SpringCache2kCacheManager</code>。</p>
 </div>
 <div class="paragraph">
-<p>可以通过设置 <code>spring.cache.cache-names</code> 属性在启动时创建缓存。可以使用一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/Cache2kBuilderCustomizer.html"><code>Cache2kBuilderCustomizer</code></a>` Bean 来自定义缓存默认值。以下示例展示了一个自定义器，它将缓存容量配置为 200 个条目，过期时间为 5 分钟：</p>
+<p>可以通过设置 <code>spring.cache.cache-names</code> 属性在启动时创建缓存。可以使用一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/Cache2kBuilderCustomizer.html"><code>Cache2kBuilderCustomizer</code></a> Bean 来自定义缓存默认值。以下示例展示了一个自定义器，它将缓存容量配置为 200 个条目，过期时间为 5 分钟：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_10">
 <div class="content">
@@ -1932,9 +1932,9 @@ class MyCache2kDefaultsConfiguration {
 <div class="sect2">
 <h3 id="io.caching.provider.none"><a class="anchor" href="#io.caching.provider.none"></a>None</h3>
 <div class="paragraph">
-<p>当您的配置中存在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html"><code>@EnableCaching</code></a>` 时，也期望存在合适的缓存配置。
-如果您拥有自定义的 `org.springframework.cache.CacheManager`，请考虑将其定义在一个单独的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>` 类中，以便在必要时进行覆盖。
-None 使用一个无操作实现，这在测试中非常有用；当存在 `spring-boot-cache-test` 模块时，切片测试会通过 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/test/autoconfigure/AutoConfigureCache.html"><code>@AutoConfigureCache</code></a>` 默认使用该实现。</p>
+<p>当您的配置中存在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html"><code>@EnableCaching</code></a> 时，也期望存在合适的缓存配置。
+如果您拥有自定义的 `org.springframework.cache.CacheManager`，请考虑将其定义在一个单独的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 类中，以便在必要时进行覆盖。
+None 使用一个无操作实现，这在测试中非常有用；当存在 `spring-boot-cache-test` 模块时，切片测试会通过 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/test/autoconfigure/AutoConfigureCache.html"><code>@AutoConfigureCache</code></a> 默认使用该实现。</p>
 </div>
 <div class="paragraph">
 <p>如果您需要在特定环境中使用空操作缓存（no-op cache）而非自动配置的缓存管理器，请将缓存类型设置为 <code>none</code>，如下例所示：</p>

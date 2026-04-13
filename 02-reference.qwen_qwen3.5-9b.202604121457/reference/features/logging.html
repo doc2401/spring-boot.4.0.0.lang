@@ -1687,7 +1687,7 @@ logging.level.org.hibernate=error</code></pre>
 <p>各种日志系统可以通过在类路径中包含相应的库来激活，并可以通过在类路径根目录或以下 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 属性指定的位置提供合适的配置文件来进一步自定义：<code>logging.config</code>。</p>
 </div>
 <div class="paragraph">
-<p>您可以通过使用 `org.springframework.boot.logging.LoggingSystem` 系统属性来强制 Spring Boot 使用特定的日志系统。该值应为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/LoggingSystem.html"><code>LoggingSystem</code></a>` 实现的完全限定类名。您还可以通过使用 `none` 值来完全禁用 Spring Boot 的日志配置。</p>
+<p>您可以通过使用 `org.springframework.boot.logging.LoggingSystem` 系统属性来强制 Spring Boot 使用特定的日志系统。该值应为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/LoggingSystem.html"><code>LoggingSystem</code></a> 实现的完全限定类名。您还可以通过使用 `none` 值来完全禁用 Spring Boot 的日志配置。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2484,7 +2484,7 @@ logging.structured.json.stacktrace.include-hashes=true</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果您需要对堆栈跟踪打印进行完全控制，可以将 <code>logging.structured.json.stacktrace.printer</code> 设置为一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/StackTracePrinter.html"><code>StackTracePrinter</code></a>` 实现类的名称。
+<p>如果您需要对堆栈跟踪打印进行完全控制，可以将 <code>logging.structured.json.stacktrace.printer</code> 设置为一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/StackTracePrinter.html"><code>StackTracePrinter</code></a> 实现类的名称。
 您也可以将其设置为 <code>logging-system</code>，以强制使用常规日志系统的堆栈跟踪输出。</p>
 </div>
 <div class="paragraph">

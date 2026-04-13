@@ -1206,7 +1206,7 @@ app.datasource.pool-size=30</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>假设 <code>SomeDataSource</code> 具有用于 URL、用户名和连接池大小的常规 JavaBean 属性，则在向其他组件提供 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 之前会自动绑定这些设置。</p>
+<p>假设 <code>SomeDataSource</code> 具有用于 URL、用户名和连接池大小的常规 JavaBean 属性，则在向其他组件提供 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 之前会自动绑定这些设置。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 还提供了一个名为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a> 的实用程序构建器类，可用于创建标准数据源之一（如果它在类路径中）。
@@ -1319,7 +1319,7 @@ app.datasource.pool-size=30</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>然而，由于该方法的返回类型为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>`，存在一个限制。这隐藏了连接池的实际类型，因此不会为您的自定义 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 生成配置属性元数据，且您的 IDE 中无法提供自动补全功能。为解决此问题，请使用构建器的 <code>type(Class)</code> 方法指定要构建的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` 类型，并更新该方法的返回类型。例如，以下代码展示了如何使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a>` 创建 <a class="apiref" href="https://javadoc.io/doc/com.zaxxer/HikariCP/7.0.2/com.zaxxer.hikari/com/zaxxer/hikari/HikariDataSource.html"><code>HikariDataSource</code></a>`：</p>
+<p>然而，由于该方法的返回类型为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>，存在一个限制。这隐藏了连接池的实际类型，因此不会为您的自定义 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 生成配置属性元数据，且您的 IDE 中无法提供自动补全功能。为解决此问题，请使用构建器的 <code>type(Class)</code> 方法指定要构建的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 类型，并更新该方法的返回类型。例如，以下代码展示了如何使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jdbc/DataSourceBuilder.html"><code>DataSourceBuilder</code></a> 创建 <a class="apiref" href="https://javadoc.io/doc/com.zaxxer/HikariCP/7.0.2/com.zaxxer.hikari/com/zaxxer/hikari/HikariDataSource.html"><code>HikariDataSource</code></a>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">
@@ -1873,7 +1873,7 @@ class MyApplication {
 <h2 id="howto.data-access.filter-scanned-entity-definitions"><a class="anchor" href="#howto.data-access.filter-scanned-entity-definitions"></a>过滤扫描的 @Entity 定义</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>可以使用 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a>` 定义过滤器，通过一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/persistenceunit/ManagedClassNameFilter.html"><code>ManagedClassNameFilter</code></a>` Bean 实现。
+<p>可以使用 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/Entity.html"><code>@Entity</code></a> 定义过滤器，通过一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/orm/jpa/persistenceunit/ManagedClassNameFilter.html"><code>ManagedClassNameFilter</code></a> Bean 实现。
 这在测试中很有用，因为此时可能只需要考虑可用实体子集。
 在以下示例中，仅包含来自 <code>com.example.app.customer</code> 包的实体：</p>
 </div>
@@ -1939,7 +1939,7 @@ class MyEntityScanConfiguration {
 <p>Spring Data JPA 已经提供了一些与供应商无关的配置选项（例如用于 SQL 日志记录的选项），而 Spring Boot 将这些选项以及针对 Hibernate 的更多选项暴露为外部配置属性。其中一些会根据上下文自动检测，因此您无需手动设置它们。</p>
 </div>
 <div class="paragraph">
-<p>`spring.jpa.hibernate.ddl-auto` 是一个特殊情况，因为根据运行时条件，它具有不同的默认值。如果使用了嵌入式数据库，且没有架构管理器（如 Liquibase 或 Flyway）来管理 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>`，则默认值为 `create-drop`。在所有其他情况下，它默认值为 `none`。</p>
+<p>`spring.jpa.hibernate.ddl-auto` 是一个特殊情况，因为根据运行时条件，它具有不同的默认值。如果使用了嵌入式数据库，且没有架构管理器（如 Liquibase 或 Flyway）来管理 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>，则默认值为 `create-drop`。在所有其他情况下，它默认值为 `none`。</p>
 </div>
 <div class="paragraph">
 <p>使用的方言由 JPA 提供程序自动检测。如果您希望自行设置方言，请配置 <code>spring.jpa.database-platform</code> 属性。</p>
@@ -2201,7 +2201,7 @@ internal class MyHibernateConfiguration {
 <p>Hibernate <a href="https://docs.jboss.org/hibernate/orm/7.1/userguide/html_single/Hibernate_User_Guide.html#caching">二级缓存</a>可以针对多种缓存提供者进行配置。与其让 Hibernate 再次查找缓存提供者，不如在可能的情况下提供上下文中可用的那个。</p>
 </div>
 <div class="paragraph">
-<p>要使用 JCache，首先确保 `org.hibernate.orm:hibernate-jcache` 在类路径中可用。然后，添加一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/hibernate/HibernatePropertiesCustomizer.html"><code>HibernatePropertiesCustomizer</code></a>` Bean，如下例所示：</p>
+<p>要使用 JCache，首先确保 `org.hibernate.orm:hibernate-jcache` 在类路径中可用。然后，添加一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/hibernate/HibernatePropertiesCustomizer.html"><code>HibernatePropertiesCustomizer</code></a> Bean，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_18">
 <div class="content">
@@ -2276,10 +2276,10 @@ class MyHibernateSecondLevelCacheConfiguration {
 <h2 id="howto.data-access.dependency-injection-in-hibernate-components"><a class="anchor" href="#howto.data-access.dependency-injection-in-hibernate-components"></a>在 Hibernate 组件中使用依赖注入</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>默认情况下，Spring Boot 注册了一个 <a class="apiref" href="https://docs.jboss.org/hibernate/orm/7.1/javadocs/org/hibernate/resource/beans/container/spi/BeanContainer.html"><code>BeanContainer</code></a>` 实现，该实现使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html"><code>BeanFactory</code></a>`，以便转换器和实体监听器可以使用常规的依赖注入。</p>
+<p>默认情况下，Spring Boot 注册了一个 <a class="apiref" href="https://docs.jboss.org/hibernate/orm/7.1/javadocs/org/hibernate/resource/beans/container/spi/BeanContainer.html"><code>BeanContainer</code></a> 实现，该实现使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html"><code>BeanFactory</code></a>，以便转换器和实体监听器可以使用常规的依赖注入。</p>
 </div>
 <div class="paragraph">
-<p>您可以通过注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/hibernate/HibernatePropertiesCustomizer.html"><code>HibernatePropertiesCustomizer</code></a>` 来禁用或调整此行为，该自定义器会移除或更改 <code>hibernate.resource.beans.container</code> 属性。</p>
+<p>您可以通过注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/hibernate/HibernatePropertiesCustomizer.html"><code>HibernatePropertiesCustomizer</code></a> 来禁用或调整此行为，该自定义器会移除或更改 <code>hibernate.resource.beans.container</code> 属性。</p>
 </div>
 </div>
 </div>
@@ -2444,7 +2444,7 @@ class MyAdditionalEntityManagerFactoryConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>上面的示例使用带有 <code>@Qualifier("second")</code>` 限定符的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a>` Bean 创建了一个 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>`。
+<p>上面的示例使用带有 <code>@Qualifier("second")</code>` 限定符的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> Bean 创建了一个 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>。
 它扫描与 `<code>Order</code>` 位于同一包中的实体。
 可以使用 `<code>app.jpa</code>` 命名空间来映射额外的 JPA 属性。
 使用 `<code>@Bean(defaultCandidate=false)</code>` 允许定义 `<code>secondJpaProperties</code>` 和 `<code>secondEntityManagerFactory</code> Bean，而不会干扰同类型的自动配置 Bean。</p>
@@ -2614,7 +2614,7 @@ Spring Boot 在 <code>spring.data.web</code>` 命名空间中提供了属性，�
 <p>如果您要配置 JPA 使用的组件，则需确保该组件在 JPA 之前初始化。当组件进行自动配置时，Spring Boot 会为您处理此问题。例如，当 Flyway 被自动配置时，Hibernate 会被配置为依赖于 Flyway，以便 Hibernate 尝试使用数据库之前，Flyway 有机会先初始化数据库。</p>
 </div>
 <div class="paragraph">
-<p>如果您自行配置组件，可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/EntityManagerFactoryDependsOnPostProcessor.html"><code>EntityManagerFactoryDependsOnPostProcessor</code></a>` 子类作为设置必要依赖的便捷方式。例如，如果您使用 Hibernate Search 并将 Elasticsearch 用作其索引管理器，则任何 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a>` Bean 都必须配置为依赖于 <code>elasticsearchClient</code> Bean，如下例所示：</p>
+<p>如果您自行配置组件，可以使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/autoconfigure/EntityManagerFactoryDependsOnPostProcessor.html"><code>EntityManagerFactoryDependsOnPostProcessor</code></a> 子类作为设置必要依赖的便捷方式。例如，如果您使用 Hibernate Search 并将 Elasticsearch 用作其索引管理器，则任何 <a class="apiref" href="https://jakarta.ee/specifications/persistence/3.2/apidocs/jakarta.persistence/jakarta/persistence/EntityManagerFactory.html"><code>EntityManagerFactory</code></a> Bean 都必须配置为依赖于 <code>elasticsearchClient</code> Bean，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_22">
 <div class="content">

@@ -24,7 +24,7 @@
     },
     {
       "source": "If a <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/support/converter/MessageConverter.html\"><code>MessageConverter</code></a>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/support/converter/StreamMessageConverter.html\"><code>StreamMessageConverter</code></a>, or <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/ProducerCustomizer.html\"><code>ProducerCustomizer</code></a> bean is defined, it is associated automatically to the auto-configured <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html\"><code>RabbitStreamTemplate</code></a>.",
-      "translation": "如果定义了 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/support/converter/MessageConverter.html\"><code>MessageConverter</code></a>`、<a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/support/converter/StreamMessageConverter.html\"><code>StreamMessageConverter</code></a>` 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/ProducerCustomizer.html\"><code>ProducerCustomizer</code></a>` Bean，它将自动关联到自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html\"><code>RabbitStreamTemplate</code></a>`。",
+      "translation": "如果定义了 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/support/converter/MessageConverter.html\"><code>MessageConverter</code></a>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/support/converter/StreamMessageConverter.html\"><code>StreamMessageConverter</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/ProducerCustomizer.html\"><code>ProducerCustomizer</code></a> Bean，它将自动关联到自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/rabbit/stream/producer/RabbitStreamTemplate.html\"><code>RabbitStreamTemplate</code></a>。",
       "count": 2
     },
     {
@@ -49,12 +49,12 @@
     },
     {
       "source": "If a <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/ConnectionNameStrategy.html\"><code>ConnectionNameStrategy</code></a> bean exists in the context, it will be automatically used to name connections created by the auto-configured <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/CachingConnectionFactory.html\"><code>CachingConnectionFactory</code></a>.",
-      "translation": "如果上下文中存在一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/ConnectionNameStrategy.html\"><code>ConnectionNameStrategy</code></a>` Bean，它将自动用于命名由自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/CachingConnectionFactory.html\"><code>CachingConnectionFactory</code></a>` 创建的连接。",
+      "translation": "如果上下文中存在一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/ConnectionNameStrategy.html\"><code>ConnectionNameStrategy</code></a> Bean，它将自动用于命名由自动配置的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/connection/CachingConnectionFactory.html\"><code>CachingConnectionFactory</code></a> 创建的连接。",
       "count": 2
     },
     {
       "source": "To make an application-wide, additive customization to the <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html\"><code>RabbitTemplate</code></a>, use a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitTemplateCustomizer.html\"><code>RabbitTemplateCustomizer</code></a> bean.",
-      "translation": "要对 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html\"><code>RabbitTemplate</code></a>` 进行应用程序范围的累加自定义，请使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitTemplateCustomizer.html\"><code>RabbitTemplateCustomizer</code></a>` Bean。",
+      "translation": "要对 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html\"><code>RabbitTemplate</code></a> 进行应用程序范围的累加自定义，请使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/amqp/autoconfigure/RabbitTemplateCustomizer.html\"><code>RabbitTemplateCustomizer</code></a> Bean。",
       "count": 2
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "source": "Then you can use the factory in any <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html\"><code>@RabbitListener</code></a>-annotated method, as follows:",
-      "translation": "然后，您可以在任何带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html\"><code>@RabbitListener</code></a>` 注解的方法中使用该工厂，如下所示：",
+      "translation": "然后，您可以在任何带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-amqp/docs/4.0.x/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html\"><code>@RabbitListener</code></a> 注解的方法中使用该工厂，如下所示：",
       "count": 2
     },
     {

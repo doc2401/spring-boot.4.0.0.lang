@@ -93,7 +93,7 @@ map.from(source::isEnabled)
   .whenFalse().
   .toCall(destination::disable);
 </pre>
-<p>映射最终可以应用于 <a href="PropertyMapper.Source.html#to(java.util.function.Consumer)"><code>setter</code></a>`，触发一个 <a href="PropertyMapper.Source.html#toCall(java.lang.Runnable)"><code>方法调用</code></a>` 或创建一个 <a href="PropertyMapper.Source.html#toInstance(java.util.function.Function)"><code>新实例</code></a>`。</p><p>默认情况下，<code>null</code> 值以及由供应者抛出的任何<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang"><code>NullPointerException</code></a>都会被过滤掉，不会应用到消费者。如果您希望应用 null 值，可以使用<a href="PropertyMapper.Source.html#always()"><code>PropertyMapper.Source.always()</code></a>。</p></div>
+<p>映射最终可以应用于 <a href="PropertyMapper.Source.html#to(java.util.function.Consumer)"><code>setter</code></a>，触发一个 <a href="PropertyMapper.Source.html#toCall(java.lang.Runnable)"><code>方法调用</code></a> 或创建一个 <a href="PropertyMapper.Source.html#toInstance(java.util.function.Function)"><code>新实例</code></a>。</p><p>默认情况下，<code>null</code> 值以及由供应者抛出的任何<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang"><code>NullPointerException</code></a>都会被过滤掉，不会应用到消费者。如果您希望应用 null 值，可以使用<a href="PropertyMapper.Source.html#always()"><code>PropertyMapper.Source.always()</code></a>。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2.0.0</dd>
@@ -121,7 +121,7 @@ map.from(source::isEnabled)
 <div class="col-first odd-row-color"><code>static interface </code></div>
 <div class="col-second odd-row-color"><code><a class="type-name-link" href="PropertyMapper.SourceOperator.html" title="interface in org.springframework.boot.context.properties">PropertyMapper.SourceOperator</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">可应用于 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>` 的操作。</div>
+<div class="block">可应用于 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a> 的操作。</div>
 </div>
 </div>
 </section>
@@ -145,12 +145,12 @@ map.from(source::isEnabled)
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt; <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties">PropertyMapper.Source</a><wbr/>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#from(T)">from</a><wbr/>(@Nullable T value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>`，该对象可从指定的值创建，并可用于执行映射。</div>
+<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>，该对象可从指定的值创建，并可用于执行映射。</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt; <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties">PropertyMapper.Source</a><wbr/>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#from(java.util.function.Supplier)">from</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function">Supplier</a>&lt;? extends @Nullable T&gt; supplier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>`，该对象可从指定的值供应器中获取，并可用于执行映射。</div>
+<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>，该对象可从指定的值供应器中获取，并可用于执行映射。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PropertyMapper.html" title="class in org.springframework.boot.context.properties">PropertyMapper</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a class="member-name-link" href="#get()">get</a>()</code></div>
@@ -194,7 +194,7 @@ map.from(source::isEnabled)
 <h3 id="from(java.lang.Object)">from</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="type-parameters">&lt;T&gt;</span> <span class="return-type"><a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties">PropertyMapper.Source</a>&lt;T&gt;</span> <span class="element-name">from</span><wbr/><span class="parameters">(@Nullable T value)</span></div>
-<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>`，该对象可从指定的值创建，并可用于执行映射。</div>
+<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>，该对象可从指定的值创建，并可用于执行映射。</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="from(T)-type-param-T"><code>T</code> - 源类型</span></dd>
@@ -211,7 +211,7 @@ map.from(source::isEnabled)
 <h3>from</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="type-parameters">&lt;T&gt;</span> <span class="return-type"><a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties">PropertyMapper.Source</a>&lt;T&gt;</span> <span class="element-name">from</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function">Supplier</a>&lt;? extends @Nullable T&gt; supplier)</span></div>
-<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>`，该对象可从指定的值供应器中获取，并可用于执行映射。</div>
+<div class="block">返回一个新的 <a href="PropertyMapper.Source.html" title="class in org.springframework.boot.context.properties"><code>PropertyMapper.Source</code></a>，该对象可从指定的值供应器中获取，并可用于执行映射。</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="from(java.util.function.Supplier)-type-param-T"><code>T</code> - 源类型</span></dd>

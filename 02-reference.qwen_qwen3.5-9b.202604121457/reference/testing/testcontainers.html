@@ -1262,7 +1262,7 @@ class MyIntegrationTests {
 <p>然后，您可以在静态容器字段上使用 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/junit-jupiter/2.0.2/org/testcontainers/junit/jupiter/Container.html"><code>@Container</code></a> 注解。</p>
 </div>
 <div class="paragraph">
-<p><a class="apiref" href="https://javadoc.io/doc/org.testcontainers/junit-jupiter/2.0.2/org/testcontainers/junit/jupiter/Testcontainers.html"><code>@Testcontainers</code></a>` 注解可用于普通的 JUnit 测试，也可以与 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/test/context/SpringBootTest.html"><code>@SpringBootTest</code></a>` 结合使用：</p>
+<p><a class="apiref" href="https://javadoc.io/doc/org.testcontainers/junit-jupiter/2.0.2/org/testcontainers/junit/jupiter/Testcontainers.html"><code>@Testcontainers</code></a> 注解可用于普通的 JUnit 测试，也可以与 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/test/context/SpringBootTest.html"><code>@SpringBootTest</code></a> 结合使用：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_3">
 <div class="content">
@@ -1745,13 +1745,13 @@ class MyIntegrationTests {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>默认情况下，使用 <code>Container.getDockerImageName().getRepository()</code>` 来获取用于查找连接详情的名称。Docker 镜像名称中的仓库部分会忽略任何注册表和版本信息。只要 Spring Boot 能够获取到 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/testcontainers/2.0.2/org/testcontainers/containers/Container.html"><code>Container</code></a>` 的实例，此方法即可正常工作，例如在使用上述示例中的 `<code>static</code> 字段时便是如此。</p>
+<p>默认情况下，使用 <code>Container.getDockerImageName().getRepository()</code>` 来获取用于查找连接详情的名称。Docker 镜像名称中的仓库部分会忽略任何注册表和版本信息。只要 Spring Boot 能够获取到 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/testcontainers/2.0.2/org/testcontainers/containers/Container.html"><code>Container</code></a> 的实例，此方法即可正常工作，例如在使用上述示例中的 `<code>static</code> 字段时便是如此。</p>
 </div>
 <div class="paragraph">
-<p>如果您使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a>` 方法，Spring Boot 不会调用该 bean 方法来获取 Docker 镜像名称，因为这会导致急切初始化问题。
+<p>如果您使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 方法，Spring Boot 不会调用该 bean 方法来获取 Docker 镜像名称，因为这会导致急切初始化问题。
 相反，bean 方法的返回类型用于确定应使用哪个连接详细信息。
-只要您使用类型化容器（例如 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/neo4j/2.0.2/org/testcontainers/neo4j/Neo4jContainer.html"><code>Neo4jContainer</code></a>` 或 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/rabbitmq/2.0.2/org/testcontainers/rabbitmq/RabbitMQContainer.html"><code>RabbitMQContainer</code></a>`），此方法即可正常工作。
-如果您使用 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/testcontainers/2.0.2/org/testcontainers/containers/GenericContainer.html"><code>GenericContainer</code></a>`（例如如下例中所示的 Redis），则此方法将不再有效：</p>
+只要您使用类型化容器（例如 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/neo4j/2.0.2/org/testcontainers/neo4j/Neo4jContainer.html"><code>Neo4jContainer</code></a> 或 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/rabbitmq/2.0.2/org/testcontainers/rabbitmq/RabbitMQContainer.html"><code>RabbitMQContainer</code></a>），此方法即可正常工作。
+如果您使用 <a class="apiref" href="https://javadoc.io/doc/org.testcontainers/testcontainers/2.0.2/org/testcontainers/containers/GenericContainer.html"><code>GenericContainer</code></a>（例如如下例中所示的 Redis），则此方法将不再有效：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_7">
 <div class="content">
@@ -1858,7 +1858,7 @@ class MyRedisWithSslIntegrationTests {
 </div>
 </div>
 <div class="paragraph">
-<p>上述代码使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/testcontainers/service/connection/PemKeyStore.html"><code>@PemKeyStore</code></a>` 注解将客户端证书和密钥加载到密钥库中，并使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/testcontainers/service/connection/PemTrustStore.html"><code>@PemTrustStore</code></a>` 注解将 CA 证书加载到信任库中。这将使客户端能够验证服务器，而信任库中的 CA 证书可确保服务器证书有效且受信任。</p>
+<p>上述代码使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/testcontainers/service/connection/PemKeyStore.html"><code>@PemKeyStore</code></a> 注解将客户端证书和密钥加载到密钥库中，并使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/testcontainers/service/connection/PemTrustStore.html"><code>@PemTrustStore</code></a> 注解将 CA 证书加载到信任库中。这将使客户端能够验证服务器，而信任库中的 CA 证书可确保服务器证书有效且受信任。</p>
 </div>
 <div class="paragraph">
 <p>此示例中的 <code>SecureRedisContainer</code>` 是 `<code>RedisContainer</code>` 的自定义子类，它将证书复制到正确的位置，并使用启用 SSL 的命令参数调用 `<code>redis-server</code>。</p>

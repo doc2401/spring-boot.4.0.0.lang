@@ -78,7 +78,7 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">ConditionalOnClass</span></div>
 <div class="block"><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Conditional.html" title="class or interface in org.springframework.context.annotation"><code>@Conditional</code></a> that only matches when the specified classes are on
 the classpath.
-<p>`Class` 类型的 <a href="#value()"><code>value</code></a>` 可以安全地指定在 `<code>@Configuration</code>` 类上，因为注解元数据是使用 ASM 解析的，而这是在类加载之前进行的。如果无法使用类引用，则可以使用 <a href="#name()"><code>name</code></a>` `String` 属性。</p><p><b>注意：</b>在使用 `@ConditionalOnClass` 注解于通常以目标类型作为条件的 `@Bean` 方法时，必须格外小心。在方法的条件生效之前，JVM 将已加载该类并可能处理了方法引用；若该类不存在，这些操作将会失败。为处理此场景，应使用单独的 `<code>@Configuration</code>` 类来隔离该条件。例如：</p><pre class="code">@AutoConfiguration
+<p>`Class` 类型的 <a href="#value()"><code>value</code></a> 可以安全地指定在 `<code>@Configuration</code>` 类上，因为注解元数据是使用 ASM 解析的，而这是在类加载之前进行的。如果无法使用类引用，则可以使用 <a href="#name()"><code>name</code></a> `String` 属性。</p><p><b>注意：</b>在使用 `@ConditionalOnClass` 注解于通常以目标类型作为条件的 `@Bean` 方法时，必须格外小心。在方法的条件生效之前，JVM 将已加载该类并可能处理了方法引用；若该类不存在，这些操作将会失败。为处理此场景，应使用单独的 `<code>@Configuration</code>` 类来隔离该条件。例如：</p><pre class="code">@AutoConfiguration
 public class MyAutoConfiguration {
 
         @Configuration(proxyBeanMethods = false)

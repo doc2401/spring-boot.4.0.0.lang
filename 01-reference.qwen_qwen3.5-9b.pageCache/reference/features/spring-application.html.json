@@ -29,12 +29,12 @@
     },
     {
       "source": "If you need to access the application arguments that were passed to <code>SpringApplication.run(…​)</code>, you can inject a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> bean.\nThe <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> interface provides access to both the raw <code>String[]</code> arguments as well as parsed <code>option</code> and <code>non-option</code> arguments, as shown in the following example:",
-      "translation": "如果您需要访问传递给 <code>SpringApplication.run(…​)</code>` 的应用程序参数，可以注入一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a>` Bean。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a>` 接口提供了对原始 `<code>String[]</code>` 参数以及解析后的 `<code>option</code>` 和 `<code>non-option</code> 参数的访问，如下例所示：",
+      "translation": "如果您需要访问传递给 <code>SpringApplication.run(…​)</code>` 的应用程序参数，可以注入一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> Bean。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationArguments.html\"><code>ApplicationArguments</code></a> 接口提供了对原始 `<code>String[]</code>` 参数以及解析后的 `<code>option</code>` 和 `<code>non-option</code> 参数的访问，如下例所示：",
       "count": 2
     },
     {
       "source": "If you need to run some specific code once the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> has started, you can implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> or <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> interfaces.\nBoth interfaces work in the same way and offer a single <code>run</code> method, which is called just before <code>SpringApplication.run(…​)</code> completes.",
-      "translation": "如果您需要在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 启动后运行一些特定代码，可以实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 接口。这两个接口的工作方式相同，都提供一个单独的 <code>run</code> 方法，该方法在 <code>SpringApplication.run(…​)</code> 完成之前立即调用。",
+      "translation": "如果您需要在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 启动后运行一些特定代码，可以实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ApplicationRunner.html\"><code>ApplicationRunner</code></a> 或 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/CommandLineRunner.html\"><code>CommandLineRunner</code></a> 接口。这两个接口的工作方式相同，都提供一个单独的 <code>run</code> 方法，该方法在 <code>SpringApplication.run(…​)</code> 完成之前立即调用。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "Each <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> registers a shutdown hook with the JVM to ensure that the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> closes gracefully on exit.\nAll the standard Spring lifecycle callbacks (such as the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/DisposableBean.html\"><code>DisposableBean</code></a> interface or the <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PreDestroy.html\"><code>@PreDestroy</code></a> annotation) can be used.",
-      "translation": "每个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 都会向 JVM 注册一个关闭钩子，以确保在退出时 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 能够优雅地关闭。\n可以使用所有标准的 Spring 生命周期回调（例如 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/DisposableBean.html\"><code>DisposableBean</code></a>` 接口或 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PreDestroy.html\"><code>@PreDestroy</code></a>` 注解）。",
+      "translation": "每个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 都会向 JVM 注册一个关闭钩子，以确保在退出时 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 能够优雅地关闭。\n可以使用所有标准的 Spring 生命周期回调（例如 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/DisposableBean.html\"><code>DisposableBean</code></a> 接口或 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/annotations/3.0/apidocs/jakarta/annotation/PreDestroy.html\"><code>@PreDestroy</code></a> 注解）。",
       "count": 2
     },
     {
@@ -79,7 +79,7 @@
     },
     {
       "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> attempts to create the right type of <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> on your behalf.\nThe algorithm used to determine a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html\"><code>WebApplicationType</code></a> is the following:",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 会尝试为您创建正确类型的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>`。\n用于确定 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html\"><code>WebApplicationType</code></a>` 的算法如下：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 会尝试为您创建正确类型的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>。\n用于确定 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/WebApplicationType.html\"><code>WebApplicationType</code></a> 的算法如下：",
       "count": 2
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> class provides a convenient way to bootstrap a Spring application that is started from a <code>main()</code> method.\nIn many situations, you can delegate to the static <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#run(java.lang.Class,java.lang.String…​)\"><code>SpringApplication.run(Class, String…​)</code></a> method, as shown in the following example:",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 类提供了一种便捷的方式来引导从 <code>main()</code> 方法启动的 Spring 应用程序。\n在许多情况下，您可以委托给静态 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#run(java.lang.Class,java.lang.String…​)\"><code>SpringApplication.run(Class, String…​)</code></a>` 方法，如下例所示：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 类提供了一种便捷的方式来引导从 <code>main()</code> 方法启动的 Spring 应用程序。\n在许多情况下，您可以委托给静态 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html#run(java.lang.Class,java.lang.String…​)\"><code>SpringApplication.run(Class, String…​)</code></a> 方法，如下例所示：",
       "count": 2
     },
     {
@@ -119,12 +119,12 @@
     },
     {
       "source": "If you need to build an <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> hierarchy (multiple contexts with a parent/child relationship) or if you prefer using a fluent builder API, you can use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>.",
-      "translation": "如果您需要构建一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 层次结构（具有父/子关系的多重上下文），或者您更喜欢使用流式构建器 API，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>`。",
+      "translation": "如果您需要构建一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 层次结构（具有父/子关系的多重上下文），或者您更喜欢使用流式构建器 API，您可以使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>。",
       "count": 2
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> lets you chain together multiple method calls and includes <code>parent</code> and <code>child</code> methods that let you create a hierarchy, as shown in the following example:",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a>` 允许您链接多个方法调用，并包含 <code>parent</code>` 和 `<code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/builder/SpringApplicationBuilder.html\"><code>SpringApplicationBuilder</code></a> 允许您链接多个方法调用，并包含 <code>parent</code>` 和 `<code>child</code> 方法，这些方法可用于创建层次结构，如下例所示：",
       "count": 2
     },
     {
@@ -169,7 +169,7 @@
     },
     {
       "source": "In addition, beans may implement the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a> interface if they wish to return a specific exit code when <code>SpringApplication.exit()</code> is called.\nThis exit code can then be passed to <code>System.exit()</code> to return it as a status code, as shown in the following example:",
-      "translation": "此外，如果希望在使用 `SpringApplication.exit()` 时返回特定的退出码，Bean 可以实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a>` 接口。\n随后可以将该退出码传递给 `System.exit()` 作为状态码返回，如下例所示：",
+      "translation": "此外，如果希望在使用 `SpringApplication.exit()` 时返回特定的退出码，Bean 可以实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/ExitCodeGenerator.html\"><code>ExitCodeGenerator</code></a> 接口。\n随后可以将该退出码传递给 `System.exit()` 作为状态码返回，如下例所示：",
       "count": 2
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "source": "It is also possible to take complete control of the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> type that is used by calling <code>setApplicationContextFactory(…​)</code>.",
-      "translation": "也可以通过调用 `setApplicationContextFactory(…)` 方法，完全控制由 Spring Framework 使用的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a>` 类型。",
+      "translation": "也可以通过调用 `setApplicationContextFactory(…)` 方法，完全控制由 Spring Framework 使用的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html\"><code>ApplicationContext</code></a> 类型。",
       "count": 2
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "source": "If the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> defaults are not to your taste, you can instead create a local instance and customize it.\nFor example, to turn off the banner, you could write:",
-      "translation": "如果 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a>` 的默认设置不符合您的要求，您可以创建一个本地实例并进行自定义。\n例如，要关闭横幅，您可以编写如下代码：",
+      "translation": "如果 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 的默认设置不符合您的要求，您可以创建一个本地实例并进行自定义。\n例如，要关闭横幅，您可以编写如下代码：",
       "count": 2
     },
     {
@@ -309,27 +309,27 @@
     },
     {
       "source": "If Spring MVC is present, an <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/AnnotationConfigServletWebServerApplicationContext.html\"><code>AnnotationConfigServletWebServerApplicationContext</code></a> is used",
-      "translation": "如果存在 Spring MVC，则使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/AnnotationConfigServletWebServerApplicationContext.html\"><code>AnnotationConfigServletWebServerApplicationContext</code></a>`。",
+      "translation": "如果存在 Spring MVC，则使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/servlet/context/AnnotationConfigServletWebServerApplicationContext.html\"><code>AnnotationConfigServletWebServerApplicationContext</code></a>。",
       "count": 2
     },
     {
       "source": "If Spring MVC is not present and Spring WebFlux is present, an <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/AnnotationConfigReactiveWebServerApplicationContext.html\"><code>AnnotationConfigReactiveWebServerApplicationContext</code></a> is used",
-      "translation": "如果不存在 Spring MVC 而存在 Spring WebFlux，则使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/AnnotationConfigReactiveWebServerApplicationContext.html\"><code>AnnotationConfigReactiveWebServerApplicationContext</code></a>`。",
+      "translation": "如果不存在 Spring MVC 而存在 Spring WebFlux，则使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/context/AnnotationConfigReactiveWebServerApplicationContext.html\"><code>AnnotationConfigReactiveWebServerApplicationContext</code></a>。",
       "count": 2
     },
     {
       "source": "Otherwise, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html\"><code>AnnotationConfigApplicationContext</code></a> is used",
-      "translation": "否则，将使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html\"><code>AnnotationConfigApplicationContext</code></a>`。",
+      "translation": "否则，将使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html\"><code>AnnotationConfigApplicationContext</code></a>。",
       "count": 2
     },
     {
       "source": "The first available implementation, <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/jfr/FlightRecorderApplicationStartup.html\"><code>FlightRecorderApplicationStartup</code></a> is provided by Spring Framework.\nIt adds Spring-specific startup events to a Java Flight Recorder session and is meant for profiling applications and correlating their Spring context lifecycle with JVM events (such as allocations, GCs, class loading…​).\nOnce configured, you can record data by running the application with the Flight Recorder enabled:",
-      "translation": "第一个可用的实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/jfr/FlightRecorderApplicationStartup.html\"><code>FlightRecorderApplicationStartup</code></a>` 由 Spring Framework 提供。它向 Java Flight Recorder 会话添加 Spring 特定的启动事件，旨在用于分析应用程序并将其 Spring 上下文生命周期与 JVM 事件（例如分配、GC、类加载等）进行关联。配置完成后，您可以通过启用 Flight Recorder 运行应用程序来记录数据：",
+      "translation": "第一个可用的实现 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/metrics/jfr/FlightRecorderApplicationStartup.html\"><code>FlightRecorderApplicationStartup</code></a> 由 Spring Framework 提供。它向 Java Flight Recorder 会话添加 Spring 特定的启动事件，旨在用于分析应用程序并将其 Spring 上下文生命周期与 JVM 事件（例如分配、GC、类加载等）进行关联。配置完成后，您可以通过启用 Flight Recorder 运行应用程序来记录数据：",
       "count": 2
     },
     {
       "source": "Spring Boot can also be configured to expose a <a class=\"xref page\" href=\"../../api/rest/actuator/startup.html\"><code>startup</code> endpoint</a> that provides this information as a JSON document.",
-      "translation": "Spring Boot 还可以配置为暴露一个 <a class=\"xref page\" href=\"../../api/rest/actuator/startup.html\"><code>startup</code></a>` 端点，该端点以 JSON 文档的形式提供此信息。",
+      "translation": "Spring Boot 还可以配置为暴露一个 <a class=\"xref page\" href=\"../../api/rest/actuator/startup.html\"><code>startup</code></a> 端点，该端点以 JSON 文档的形式提供此信息。",
       "count": 2
     },
     {
