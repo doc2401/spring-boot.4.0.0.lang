@@ -1252,7 +1252,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>logfile</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">返回日志文件的内容（如果已设置 <code>logging.file.name</code>` 或 <code>logging.file.path</code>` 属性）。支持使用 HTTP <code>Range</code> 头来获取日志文件的部分内容。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">返回日志文件的内容（如果已设置 <code>logging.file.name</code> 或 <code>logging.file.path</code> 属性）。支持使用 HTTP <code>Range</code> 头来获取日志文件的部分内容。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>prometheus</code></p></td>
@@ -1266,7 +1266,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 <h2 id="actuator.endpoints.controlling-access"><a class="anchor" href="#actuator.endpoints.controlling-access"></a>控制端点访问</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>默认情况下，除 <code>shutdown</code>` 和 <code>heapdump</code>` 之外的所有端点访问均不受限制。要配置对某个端点的允许访问权限，请使用其 <code>management.endpoint.&lt;id&gt;.access</code>` 属性。以下示例允许对 <code>shutdown</code> 端点进行无限制访问：</p>
+<p>默认情况下，除 <code>shutdown</code> 和 <code>heapdump</code> 之外的所有端点访问均不受限制。要配置对某个端点的允许访问权限，请使用其 <code>management.endpoint.&lt;id&gt;.access</code> 属性。以下示例允许对 <code>shutdown</code> 端点进行无限制访问：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1300,7 +1300,7 @@ Spring Boot 包含多个内置端点，并允许您添加自己的端点。
 </div>
 </div>
 <div class="paragraph">
-<p>如果您希望采用“显式允许”而非“默认拒绝”的访问模式，请将 <code>management.endpoints.access.default</code>` 属性设置为 <code>none</code>`，并使用各个端点的 <code>access</code>` 属性来重新启用访问。以下示例允许对 <code>loggers</code> 端点进行只读访问，并拒绝所有其他端点的访问：</p>
+<p>如果您希望采用“显式允许”而非“默认拒绝”的访问模式，请将 <code>management.endpoints.access.default</code> 属性设置为 <code>none</code>，并使用各个端点的 <code>access</code> 属性来重新启用访问。以下示例允许对 <code>loggers</code> 端点进行只读访问，并拒绝所有其他端点的访问：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_2">
 <div class="content">
@@ -1352,12 +1352,12 @@ management.endpoint.loggers.access=read-only</code></pre>
 <div class="sect2">
 <h3 id="actuator.endpoints.controlling-access.limiting"><a class="anchor" href="#actuator.endpoints.controlling-access.limiting"></a>限制访问</h3>
 <div class="paragraph">
-<p>可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code>` 可使所有端点不可访问。将其设置为 <code>read-only</code> 则仅允许对端点进行只读访问。</p>
+<p>可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code> 可使所有端点不可访问。将其设置为 <code>read-only</code> 则仅允许对端点进行只读访问。</p>
 </div>
 <div class="paragraph">
 <p>对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html"><code>@Endpoint</code></a>、<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html"><code>@JmxEndpoint</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html"><code>@WebEndpoint</code></a>，读访问权限等同于带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html"><code>@ReadOperation</code></a> 注解的端点方法。
-对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html"><code>@ControllerEndpoint</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html"><code>@RestControllerEndpoint</code></a>，读访问权限等同于能够处理 <code>GET</code>` 和 <code>HEAD</code> 请求的请求映射。
-对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html"><code>@ServletEndpoint</code></a>，读访问权限等同于 <code>GET</code>` 和 <code>HEAD</code> 请求。</p>
+对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html"><code>@ControllerEndpoint</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html"><code>@RestControllerEndpoint</code></a>，读访问权限等同于能够处理 <code>GET</code> 和 <code>HEAD</code> 请求的请求映射。
+对于 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html"><code>@ServletEndpoint</code></a>，读访问权限等同于 <code>GET</code> 和 <code>HEAD</code> 请求。</p>
 </div>
 </div>
 </div>
@@ -1369,7 +1369,7 @@ management.endpoint.loggers.access=read-only</code></pre>
 <p>默认情况下，仅通过 HTTP 和 JMX 暴露健康端点。由于端点可能包含敏感信息，您应仔细考虑何时暴露它们。</p>
 </div>
 <div class="paragraph">
-<p>要更改暴露的端点，请使用以下特定于技术的 <code>include</code>` 和 <code>exclude</code> 属性：</p>
+<p>要更改暴露的端点，请使用以下特定于技术的 <code>include</code> 和 <code>exclude</code> 属性：</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1408,7 +1408,7 @@ management.endpoint.loggers.access=read-only</code></pre>
 您可以使用端点 ID 列表同时配置 <code>include</code> 和 <code>exclude</code> 属性。</p>
 </div>
 <div class="paragraph">
-<p>例如，要仅通过 JMX 暴露 <code>health</code>` 和 <code>info</code> 端点，请使用以下属性：</p>
+<p>例如，要仅通过 JMX 暴露 <code>health</code> 和 <code>info</code> 端点，请使用以下属性：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_3">
 <div class="content">
@@ -1518,7 +1518,7 @@ management.endpoints.web.exposure.exclude=env,beans</code></pre>
 <h2 id="actuator.endpoints.security"><a class="anchor" href="#actuator.endpoints.security"></a>Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>出于安全考虑，默认情况下仅通过 HTTP 公开 <code>/health</code>` 端点。您可以使用 <code>management.endpoints.web.exposure.include</code> 属性来配置要公开的端点。</p>
+<p>出于安全考虑，默认情况下仅通过 HTTP 公开 <code>/health</code> 端点。您可以使用 <code>management.endpoints.web.exposure.include</code> 属性来配置要公开的端点。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -1608,7 +1608,7 @@ class MySecurityConfiguration {
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code>` 将请求匹配到任意端点，然后确保所有端点都具有 <code>ENDPOINT_ADMIN</code> 角色。
+<p>前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code> 将请求匹配到任意端点，然后确保所有端点都具有 <code>ENDPOINT_ADMIN</code> 角色。
 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html"><code>EndpointRequest</code></a> 上还提供其他几种匹配器方法。
 有关详细信息，请参阅 <a class="xref page" href="../../api/rest/actuator/index.html">API 文档</a>。</p>
 </div>
@@ -1748,7 +1748,7 @@ class MySecurityConfiguration {
 <h2 id="actuator.endpoints.caching"><a class="anchor" href="#actuator.endpoints.caching"></a>配置端点</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>端点会自动缓存不带任何参数的读取操作的响应。要配置端点缓存响应的时长，请使用其 <code>cache.time-to-live</code>` 属性。以下示例将 <code>beans</code> 端点的缓存时间设置为 10 秒：</p>
+<p>端点会自动缓存不带任何参数的读取操作的响应。要配置端点缓存响应的时长，请使用其 <code>cache.time-to-live</code> 属性。以下示例将 <code>beans</code> 端点的缓存时间设置为 10 秒：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">
@@ -1837,7 +1837,7 @@ class MySecurityConfiguration {
 <p>对于 JMX 端点，所有用户始终具有授权。</p>
 </div>
 <div class="paragraph">
-<p>以下示例允许所有具有 <code>admin</code>` 角色的用户以原始形式查看来自 `/env` 端点的值。未授权的用户或没有 <code>admin</code> 角色的用户将仅看到经过清理的值。</p>
+<p>以下示例允许所有具有 <code>admin</code> 角色的用户以原始形式查看来自 `/env` 端点的值。未授权的用户或没有 <code>admin</code> 角色的用户将仅看到经过清理的值。</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_9">
 <div class="content">
@@ -1927,7 +1927,7 @@ management.endpoint.env.roles=admin</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>当配置了自定义管理上下文路径时，“发现页面”会自动从 <code>/actuator</code>` 移动到管理上下文的根目录。例如，如果管理上下文路径为 <code>/management</code>`，则发现页面可从 <code>/management</code>` 访问。当管理上下文路径设置为 <code>/</code> 时，会禁用发现页面，以防止与其他映射发生冲突。</p>
+<p>当配置了自定义管理上下文路径时，“发现页面”会自动从 <code>/actuator</code> 移动到管理上下文的根目录。例如，如果管理上下文路径为 <code>/management</code>，则发现页面可从 <code>/management</code> 访问。当管理上下文路径设置为 <code>/</code> 时，会禁用发现页面，以防止与其他映射发生冲突。</p>
 </div>
 </div>
 </div>
@@ -1939,7 +1939,7 @@ management.endpoint.env.roles=admin</code></pre>
 如果您使用 Spring MVC 或 Spring WebFlux，可以配置 Actuator 的 Web 端点以支持此类场景。</p>
 </div>
 <div class="paragraph">
-<p>CORS 支持默认处于禁用状态，只有在设置了 <code>management.endpoints.web.cors.allowed-origins</code>` 属性后才启用。以下配置允许来自 <code>example.com</code>` 域的 <code>GET</code>` 和 <code>POST</code> 调用：</p>
+<p>CORS 支持默认处于禁用状态，只有在设置了 <code>management.endpoints.web.cors.allowed-origins</code> 属性后才启用。以下配置允许来自 <code>example.com</code> 域的 <code>GET</code> 和 <code>POST</code> 调用：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_11">
 <div class="content">
@@ -2075,7 +2075,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>您可以使用此方法调用一个写操作，该操作接受 <code>String name</code>` 和 <code>int counter</code> 参数，如下例所示：</p>
+<p>您可以使用此方法调用一个写操作，该操作接受 <code>String name</code> 和 <code>int counter</code> 参数，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_13">
 <div class="content">
@@ -2157,7 +2157,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.path-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.path-predicates"></a>Path</h4>
 <div class="paragraph">
-<p>谓词的路径由端点的 ID 和 Web 暴露端点的基础路径决定。默认基础路径为 <code>/actuator</code>`。例如，ID 为 <code>sessions</code>` 的端点在谓词中使用 <code>/actuator/sessions</code> 作为其路径。</p>
+<p>谓词的路径由端点的 ID 和 Web 暴露端点的基础路径决定。默认基础路径为 <code>/actuator</code>。例如，ID 为 <code>sessions</code> 的端点在谓词中使用 <code>/actuator/sessions</code> 作为其路径。</p>
 </div>
 <div class="paragraph">
 <p>您可以通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Selector.html"><code>@Selector</code></a> 注解操作方法的参数来进一步自定义路径。
@@ -2199,7 +2199,7 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 <div class="sect3">
 <h4 id="actuator.endpoints.implementing-custom.web.consumes-predicates"><a class="anchor" href="#actuator.endpoints.implementing-custom.web.consumes-predicates"></a>Consumes</h4>
 <div class="paragraph">
-<p>对于使用请求体的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>（HTTP <code>POST</code>`），谓词的 `consumes` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。
+<p>对于使用请求体的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html"><code>@WriteOperation</code></a>（HTTP <code>POST</code>），谓词的 `consumes` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。
 对于所有其他操作，`consumes` 子句为空。</p>
 </div>
 </div>
@@ -2211,9 +2211,9 @@ management.endpoints.web.cors.allowed-methods=GET,POST</code></pre>
 如果未使用，则自动确定 `produces` 子句。</p>
 </div>
 <div class="paragraph">
-<p>如果操作方法的返回类型为 <code>void</code>` 或 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html"><code>Void</code></a>，则 <code>produces</code> 子句为空。
-如果操作方法的返回类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html"><code>Resource</code></a>，则 <code>produces</code>` 子句为 <code>application/octet-stream</code>。
-对于其他所有操作，<code>produces</code>` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。</p>
+<p>如果操作方法的返回类型为 <code>void</code> 或 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html"><code>Void</code></a>，则 <code>produces</code> 子句为空。
+如果操作方法的返回类型为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html"><code>Resource</code></a>，则 <code>produces</code> 子句为 <code>application/octet-stream</code>。
+对于其他所有操作，<code>produces</code> 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。</p>
 </div>
 </div>
 <div class="sect3">
@@ -2889,7 +2889,7 @@ class MyReactiveHealthIndicator : ReactiveHealthIndicator {
 <p>有时将健康指标组织成组，以便用于不同的目的，会很有用。</p>
 </div>
 <div class="paragraph">
-<p>要创建健康指示器组，您可以使用 <code>management.endpoint.health.group.&lt;name&gt;</code>` 属性，并指定要 <code>include</code>` 或 <code>exclude</code> 的健康指示器 ID 列表。例如，要创建一个仅包含数据库指示器的组，可以定义如下内容：</p>
+<p>要创建健康指示器组，您可以使用 <code>management.endpoint.health.group.&lt;name&gt;</code> 属性，并指定要 <code>include</code> 或 <code>exclude</code> 的健康指示器 ID 列表。例如，要创建一个仅包含数据库指示器的组，可以定义如下内容：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_18">
 <div class="content">
@@ -2964,7 +2964,7 @@ class MyReactiveHealthIndicator : ReactiveHealthIndicator {
 </div>
 </div>
 <div class="paragraph">
-<p>默认情况下，如果健康组包含或排除了不存在的健康指示器，启动将失败。要禁用此行为，请将 <code>management.endpoint.health.validate-group-membership</code>` 设置为 <code>false</code>。</p>
+<p>默认情况下，如果健康组包含或排除了不存在的健康指示器，启动将失败。要禁用此行为，请将 <code>management.endpoint.health.validate-group-membership</code> 设置为 <code>false</code>。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下，组继承与系统健康相同的<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/StatusAggregator.html"><code>StatusAggregator</code></a>和<a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/health/HttpCodeStatusMapper.html"><code>HttpCodeStatusMapper</code></a>设置。
@@ -3048,7 +3048,7 @@ management.endpoint.health.group.custom.exclude="test/primary/b"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>这将使 <code>live</code>` 健康组在主服务器端口上的 `/healthz` 处可用。前缀是强制性的，必须是 <code>server:</code>`（代表主服务器端口）或 <code>management:</code>（如果已配置，则代表管理端口）。路径必须是一个单一的路径段。</p>
+<p>这将使 <code>live</code> 健康组在主服务器端口上的 `/healthz` 处可用。前缀是强制性的，必须是 <code>server:</code>（代表主服务器端口）或 <code>management:</code>（如果已配置，则代表管理端口）。路径必须是一个单一的路径段。</p>
 </div>
 </div>
 <div class="sect2">
@@ -3057,7 +3057,7 @@ management.endpoint.health.group.custom.exclude="test/primary/b"</code></pre>
 <p><a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html"><code>DataSource</code></a> 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。
 路由数据源的健康状况包括其每个目标数据源的健康状况。
 在健康端点的响应中，路由数据源的每个目标均通过其路由键命名。
-如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code>` 设置为 <code>true</code>。</p>
+如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code> 设置为 <code>true</code>。</p>
 </div>
 </div>
 </div>
@@ -3122,7 +3122,7 @@ readinessProbe:
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果您的 Actuator 端点部署在独立的管理上下文中，则这些端点不会使用与主应用程序相同的 Web 基础设施（端口、连接池、框架组件）。在这种情况下，探针检查可能会在主应用程序无法正常工作（例如，无法接受新连接）时仍然成功。因此，建议将 <code>liveness</code>` 和 <code>readiness</code> 健康组在主服务器端口上可用。可以通过设置以下属性来实现：</p>
+<p>如果您的 Actuator 端点部署在独立的管理上下文中，则这些端点不会使用与主应用程序相同的 Web 基础设施（端口、连接池、框架组件）。在这种情况下，探针检查可能会在主应用程序无法正常工作（例如，无法接受新连接）时仍然成功。因此，建议将 <code>liveness</code> 和 <code>readiness</code> 健康组在主服务器端口上可用。可以通过设置以下属性来实现：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3130,7 +3130,7 @@ readinessProbe:
 </div>
 </div>
 <div class="paragraph">
-<p>这将使 <code>liveness</code>` 组在主要服务器端口上可用，路径为 `/livez`，而 <code>readiness</code>` 组的路径为 `/readyz`。可以使用每个组上的 <code>additional-path</code> 属性来自定义路径，有关详细信息请参阅 <a href="#actuator.endpoints.health.groups">健康检查组</a>。</p>
+<p>这将使 <code>liveness</code> 组在主要服务器端口上可用，路径为 `/livez`，而 <code>readiness</code> 组的路径为 `/readyz`。可以使用每个组上的 <code>additional-path</code> 属性来自定义路径，有关详细信息请参阅 <a href="#actuator.endpoints.health.groups">健康检查组</a>。</p>
 </div>
 <div class="sect2">
 <h3 id="actuator.endpoints.kubernetes-probes.external-state"><a class="anchor" href="#actuator.endpoints.kubernetes-probes.external-state"></a>使用 Kubernetes 探针检查外部状态</h3>
@@ -3382,16 +3382,16 @@ readinessProbe:
 <p>个人贡献者是否启用由其 <code>management.info.&lt;id&gt;.enabled</code> 属性控制。不同的贡献者根据其先决条件及其所公开信息的性质，对该属性具有不同的默认值。</p>
 </div>
 <div class="paragraph">
-<p>在没有指示需要启用它们的前置条件时，`env`、`java`、`os` 和 `process` 贡献者默认处于禁用状态。`ssl` 贡献者的前置条件是已配置一个 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL Bundle</a>，但它默认也是禁用的。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 <code>true</code> 来启用每一个贡献者。</p>
+<p>在没有指示需要启用它们的前置条件时，`env`、`java`、`os` 和 `process` 贡献者默认处于禁用状态。`ssl` 贡献者的前置条件是已配置一个 <a class="xref page" href="../features/ssl.html#features.ssl.bundles">SSL Bundle</a>，但它默认也是禁用的。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code> 属性设置为 <code>true</code> 来启用每一个贡献者。</p>
 </div>
 <div class="paragraph">
-<p><code>build</code> 和 <code>git</code> 信息贡献者默认已启用。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 <code>false</code>` 来禁用每一个贡献者。或者，要禁用所有通常默认启用的贡献者，请将 <code>management.info.defaults.enabled</code>` 属性设置为 <code>false</code>。</p>
+<p><code>build</code> 和 <code>git</code> 信息贡献者默认已启用。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code> 属性设置为 <code>false</code> 来禁用每一个贡献者。或者，要禁用所有通常默认启用的贡献者，请将 <code>management.info.defaults.enabled</code> 属性设置为 <code>false</code>。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="actuator.endpoints.info.custom-application-information"><a class="anchor" href="#actuator.endpoints.info.custom-application-information"></a>自定义应用程序信息</h3>
 <div class="paragraph">
-<p>当启用 <code>env`</code> 贡献器时，您可以通过设置 <code>info.*</code>` Spring 属性来自定义由 <code>info</code> 端点暴露的数据。
+<p>当启用 <code>env`</code> 贡献器时，您可以通过设置 <code>info.*</code> Spring 属性来自定义由 <code>info</code> 端点暴露的数据。
 所有位于 <code>info</code> 键下的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 属性都会自动暴露。
 例如，您可以在 <code>application.properties</code> 文件中添加以下设置：</p>
 </div>
@@ -3535,7 +3535,7 @@ info.app.java.target=@java.version@</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>要完全禁用来自 <code>info</code>` 端点的 git 提交信息，请将 <code>management.info.git.enabled</code> 属性设置为 <code>false</code>，如下所示：</p>
+<p>要完全禁用来自 <code>info</code> 端点的 git 提交信息，请将 <code>management.info.git.enabled</code> 属性设置为 <code>false</code>，如下所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_25">
 <div class="content">
@@ -3715,7 +3715,7 @@ class MyInfoContributor : InfoContributor {
 <p>如果您要以不同的格式发布 SBOM，可以使用一些配置属性。</p>
 </div>
 <div class="paragraph">
-<p>配置属性 <code>management.endpoint.sbom.application.location</code>` 用于设置应用程序 SBOM 的位置。例如，将其设置为 <code>classpath:sbom.json</code> 将使用类路径上 `/sbom.json` 资源的内容。</p>
+<p>配置属性 <code>management.endpoint.sbom.application.location</code> 用于设置应用程序 SBOM 的位置。例如，将其设置为 <code>classpath:sbom.json</code> 将使用类路径上 `/sbom.json` 资源的内容。</p>
 </div>
 <div class="paragraph">
 <p>CycloneDX、SPDX 和 Syft 格式的 SBOM 媒体类型会自动检测。若要覆盖自动检测的媒体类型，请使用配置属性 <code>management.endpoint.sbom.application.media-type</code>。</p>
@@ -3762,7 +3762,7 @@ management.endpoint.sbom.additional.system.media-type=application/spdx+json</cod
 </div>
 </div>
 <div class="paragraph">
-<p>这将添加一个名为"system"的 SBOM，存储在 <code>/system.spdx.json</code>` 中。可以使用 <code>optional:</code> 前缀来防止文件不存在时启动失败。</p>
+<p>这将添加一个名为"system"的 SBOM，存储在 <code>/system.spdx.json</code> 中。可以使用 <code>optional:</code> 前缀来防止文件不存在时启动失败。</p>
 </div>
 </div>
 </div>

@@ -1099,7 +1099,7 @@
 </nav></div><h1 class="page" id="page-title">任务执行与调度</h1>
 <div class="paragraph">
 <p>如果上下文中没有 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> Bean，Spring Boot 会自动配置一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>。
-当启用虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code>` 设置为 <code>true</code>）时，这将是一个使用虚拟线程的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html"><code>SimpleAsyncTaskExecutor</code></a>。
+当启用虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code> 设置为 <code>true</code>）时，这将是一个使用虚拟线程的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html"><code>SimpleAsyncTaskExecutor</code></a>。
 否则，它将是一个具有合理默认值的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html"><code>ThreadPoolTaskExecutor</code></a>。</p>
 </div>
 <div class="paragraph">
@@ -1587,7 +1587,7 @@ class MyTaskExecutorConfiguration {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>根据您的目标配置，您可以将 <code>spring.task.execution.mode</code>` 设置为 <code>force</code>` 以自动配置 <code>applicationTaskExecutor</code>，将您的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 转换为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>，或者同时定义一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a> 和一个包装您自定义 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a>。</p>
+<p>根据您的目标配置，您可以将 <code>spring.task.execution.mode</code> 设置为 <code>force</code> 以自动配置 <code>applicationTaskExecutor</code>，将您的 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 转换为 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>，或者同时定义一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a> 和一个包装您自定义 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a>。</p>
 </div>
 </td>
 </tr>
@@ -1601,7 +1601,7 @@ class MyTaskExecutorConfiguration {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>当启用 <code>force</code>` 模式时，即使存在类型为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a> Bean 或名为 <code>taskExecutor</code> 的 Bean，<code>applicationTaskExecutor</code> 也会使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a> 配置用于常规任务执行。
+<p>当启用 <code>force</code> 模式时，即使存在类型为 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/Executor.html"><code>Executor</code></a> 的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Primary.html"><code>@Primary</code></a> Bean 或名为 <code>taskExecutor</code> 的 Bean，<code>applicationTaskExecutor</code> 也会使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a> 配置用于常规任务执行。
 覆盖常规任务的 <code>Executor</code> 的唯一方法是注册一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/AsyncConfigurer.html"><code>AsyncConfigurer</code></a> Bean。</p>
 </div>
 </td>
@@ -1655,7 +1655,7 @@ spring.task.execution.pool.keep-alive=10s</code></pre>
 <p>如果调度器需要与定时任务执行关联（例如使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/annotation/EnableScheduling.html"><code>@EnableScheduling</code></a>），也可以对其进行自动配置。</p>
 </div>
 <div class="paragraph">
-<p>如果启用了虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code>` 设置为 <code>true</code>），这将是一个使用虚拟线程的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html"><code>SimpleAsyncTaskScheduler</code></a>。
+<p>如果启用了虚拟线程（使用 Java 21+ 并将 <code>spring.threads.virtual.enabled</code> 设置为 <code>true</code>），这将是一个使用虚拟线程的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html"><code>SimpleAsyncTaskScheduler</code></a>。
 此 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html"><code>SimpleAsyncTaskScheduler</code></a> 将忽略任何与线程池相关的属性。</p>
 </div>
 <div class="paragraph">

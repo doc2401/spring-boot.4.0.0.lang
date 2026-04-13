@@ -92,7 +92,7 @@ loadScripts(document, 'script');</script>
 when a test focuses <strong>only</strong> on beans that use
 <a href="../../../client/WebServiceTemplateBuilder.html" title="class in org.springframework.boot.webservices.client"><code>WebServiceTemplateBuilder</code></a>. By default, tests annotated with
 <code>WebServiceClientTest</code> will also auto-configure a <code>MockWebServiceServer</code>.
-<p>如果您正在测试一个未使用 <a href="../../../client/WebServiceTemplateBuilder.html" title="class in org.springframework.boot.webservices.client"><code>WebServiceTemplateBuilder</code></a> 而是直接注入 <code>WebServiceTemplate</code>` 的 Bean，您可以添加 <code>@AutoConfigureWebServiceClient(registerWebServiceTemplate=true)</code>`。</p><p>在使用 JUnit 4 时，此注解应与 <code>@RunWith(SpringRunner.class)</code>` 结合使用。</p></div>
+<p>如果您正在测试一个未使用 <a href="../../../client/WebServiceTemplateBuilder.html" title="class in org.springframework.boot.webservices.client"><code>WebServiceTemplateBuilder</code></a> 而是直接注入 <code>WebServiceTemplate</code> 的 Bean，您可以添加 <code>@AutoConfigureWebServiceClient(registerWebServiceTemplate=true)</code>。</p><p>在使用 JUnit 4 时，此注解应与 <code>@RunWith(SpringRunner.class)</code> 结合使用。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2.3.0</dd>

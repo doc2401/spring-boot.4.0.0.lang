@@ -1259,7 +1259,7 @@
 <h2 id="running-your-application.passing-arguments"><a class="anchor" href="#running-your-application.passing-arguments"></a>向应用程序传递参数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>与所有 <code>JavaExec</code>` 任务一样，在使用 Gradle 4.9 或更高版本时，可以使用 <code>--args='&lt;arguments&gt;'</code>` 从命令行向 <code>bootRun</code>` 传递参数。例如，要运行具有名为 <code>dev</code> 的激活 profile 的应用程序，可使用以下命令：</p>
+<p>与所有 <code>JavaExec</code> 任务一样，在使用 Gradle 4.9 或更高版本时，可以使用 <code>--args='&lt;arguments&gt;'</code> 从命令行向 <code>bootRun</code> 传递参数。例如，要运行具有名为 <code>dev</code> 的激活 profile 的应用程序，可使用以下命令：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1275,9 +1275,9 @@
 <h2 id="running-your-application.passing-system-properties"><a class="anchor" href="#running-your-application.passing-system-properties"></a>向您的应用程序传递系统属性</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>由于 <code>bootRun</code>` 是一个标准的 <code>JavaExec</code>` 任务，可以通过在构建脚本中指定它们来将系统属性传递给应用程序的 JVM。
+<p>由于 <code>bootRun</code> 是一个标准的 <code>JavaExec</code> 任务，可以通过在构建脚本中指定它们来将系统属性传递给应用程序的 JVM。
 若要使该系统属性的值可配置，请使用 <a href="https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#N14FE1">project property</a> 设置其值。
-若要允许项目属性为可选，请使用 <code>findProperty</code>` 引用它。
+若要允许项目属性为可选，请使用 <code>findProperty</code> 引用它。
 这样做还允许使用 <code>?:</code> Elvis 运算符提供默认值，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
@@ -1313,7 +1313,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例将 <code>com.example.property</code>` 系统属性设置为 <code>example</code>` 项目属性的值。如果未设置 <code>example</code>` 项目属性，则系统属性的值为 <code>default</code>。</p>
+<p>前面的示例将 <code>com.example.property</code> 系统属性设置为 <code>example</code> 项目属性的值。如果未设置 <code>example</code> 项目属性，则系统属性的值为 <code>default</code>。</p>
 </div>
 <div class="paragraph">
 <p>Gradle 允许以多种方式设置项目属性，包括在命令行中使用 `-P` 标志，如下例所示：</p>
@@ -1324,8 +1324,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例将 <code>example</code>` 项目属性的值设置为 <code>custom</code>`。
-随后，<code>bootRun</code>` 将使用此值作为 <code>com.example.property</code> 系统属性的值。</p>
+<p>前面的示例将 <code>example</code> 项目属性的值设置为 <code>custom</code>。
+随后，<code>bootRun</code> 将使用此值作为 <code>com.example.property</code> 系统属性的值。</p>
 </div>
 </div>
 </div>
@@ -1379,10 +1379,10 @@
 <h2 id="running-your-application.using-a-test-main-class"><a class="anchor" href="#running-your-application.using-a-test-main-class"></a>使用测试主类</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>除了 <code>bootRun</code>` 之外，还会注册一个 <code>bootTestRun</code>` 任务。
-与 <code>bootRun</code>` 类似，<code>bootTestRun</code>` 也是 <code>BootRun</code>` 的一个实例，但它被配置为使用测试源集输出中的主类，而不是主源集中的主类。
+<p>除了 <code>bootRun</code> 之外，还会注册一个 <code>bootTestRun</code> 任务。
+与 <code>bootRun</code> 类似，<code>bootTestRun</code> 也是 <code>BootRun</code> 的一个实例，但它被配置为使用测试源集输出中的主类，而不是主源集中的主类。
 它同样使用测试源集的运行时类路径，而不是主源集的运行时类路径。
-由于 <code>bootTestRun</code>` 是 <code>BootRun</code>` 的一个实例，因此上述针对 <code>bootRun</code>` 描述的所有配置选项也可以用于 <code>bootTestRun</code>。</p>
+由于 <code>bootTestRun</code> 是 <code>BootRun</code> 的一个实例，因此上述针对 <code>bootRun</code> 描述的所有配置选项也可以用于 <code>bootTestRun</code>。</p>
 </div>
 </div>
 </div>

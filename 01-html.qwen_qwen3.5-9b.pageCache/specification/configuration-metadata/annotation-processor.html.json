@@ -19,12 +19,12 @@
     },
     {
       "source": "This exposes three properties where <code>my.server.name</code> has no default and <code>my.server.ip</code> and <code>my.server.port</code> defaults to <code>\"127.0.0.1\"</code> and <code>9797</code> respectively.\nThe Javadoc on fields is used to populate the <code>description</code> attribute.\nFor instance, the description of <code>my.server.ip</code> is \"IP address to listen to.\".",
-      "translation": "这暴露了三个属性，其中 <code>my.server.name</code>` 没有默认值，而 <code>my.server.ip</code>` 和 <code>my.server.port</code>` 的默认值分别为 <code>\"127.0.0.1\"</code>` 和 <code>9797</code>`。\n字段的 Javadoc 用于填充 <code>description</code>` 属性。\n例如，<code>my.server.ip</code> 的描述为 \"IP address to listen to.\"。",
+      "translation": "这暴露了三个属性，其中 <code>my.server.name</code> 没有默认值，而 <code>my.server.ip</code> 和 <code>my.server.port</code> 的默认值分别为 <code>\"127.0.0.1\"</code> 和 <code>9797</code>。\n字段的 Javadoc 用于填充 <code>description</code> 属性。\n例如，<code>my.server.ip</code> 的描述为 \"IP address to listen to.\"。",
       "count": 2
     },
     {
       "source": "The preceding example produces metadata information for <code>my.server.name</code>, <code>my.server.host.ip</code>, and <code>my.server.host.port</code> properties.\nYou can use the <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> annotation on a field or a getter method to indicate that a regular (non-inner) class should be treated as if it were nested.",
-      "translation": "前面的示例为 <code>my.server.name</code>`、<code>my.server.host.ip</code>` 和 <code>my.server.host.port</code> 属性生成元数据信息。您可以在字段或 getter 方法上使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> 注解，以指示应将普通（非内部）类视为嵌套类。",
+      "translation": "前面的示例为 <code>my.server.name</code>、<code>my.server.host.ip</code> 和 <code>my.server.host.port</code> 属性生成元数据信息。您可以在字段或 getter 方法上使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html\"><code>@NestedConfigurationProperty</code></a> 注解，以指示应将普通（非内部）类视为嵌套类。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "If you are using an <code>additional-spring-configuration-metadata.json</code> file, the <code>compileJava</code> task should be configured to depend on the <code>processResources</code> task, as shown in the following example:",
-      "translation": "如果您使用 <code>additional-spring-configuration-metadata.json</code>` 文件，则应将 <code>compileJava</code>` 任务配置为依赖于 <code>processResources</code> 任务，如下例所示：",
+      "translation": "如果您使用 <code>additional-spring-configuration-metadata.json</code> 文件，则应将 <code>compileJava</code> 任务配置为依赖于 <code>processResources</code> 任务，如下例所示：",
       "count": 2
     },
     {
@@ -74,17 +74,17 @@
     },
     {
       "source": "If you are using AspectJ in your project, you need to make sure that the annotation processor runs only once.\nThere are several ways to do this.\nWith Maven, you can configure the <code>maven-apt-plugin</code> explicitly and add the dependency to the annotation processor only there.\nYou could also let the AspectJ plugin run all the processing and disable annotation processing in the <code>maven-compiler-plugin</code> configuration, as follows:",
-      "translation": "如果您在项目中使用了 AspectJ，请确保注解处理器仅运行一次。\n有几种方法可以实现这一点。\n使用 Maven 时，您可以显式配置 <code>maven-apt-plugin</code>`，并仅在该项目中为注解处理器添加依赖项。\n您也可以让 AspectJ 插件执行所有处理工作，并在 <code>maven-compiler-plugin</code> 配置中禁用注解处理，如下所示：",
+      "translation": "如果您在项目中使用了 AspectJ，请确保注解处理器仅运行一次。\n有几种方法可以实现这一点。\n使用 Maven 时，您可以显式配置 <code>maven-apt-plugin</code>，并仅在该项目中为注解处理器添加依赖项。\n您也可以让 AspectJ 插件执行所有处理工作，并在 <code>maven-compiler-plugin</code> 配置中禁用注解处理，如下所示：",
       "count": 2
     },
     {
       "source": "The annotation processor automatically considers inner classes as nested properties.\nRather than documenting the <code>ip</code> and <code>port</code> at the root of the namespace, we could create a sub-namespace for it.\nConsider the updated example:",
-      "translation": "注解处理器会自动将内部类视为嵌套属性。\n与其在命名空间的根节点处记录 <code>ip</code>` 和 <code>port</code>，我们可以为其创建一个子命名空间。\n请考虑以下更新后的示例：",
+      "translation": "注解处理器会自动将内部类视为嵌套属性。\n与其在命名空间的根节点处记录 <code>ip</code> 和 <code>port</code>，我们可以为其创建一个子命名空间。\n请考虑以下更新后的示例：",
       "count": 2
     },
     {
       "source": "This generates the metadata for <code>Host</code> in <code>META-INF/spring/configuration-metadata/com.example.Host.json</code> and is reused automatically by the annotation processor when it handles such type.",
-      "translation": "这为 <code>Host</code>` 在 <code>META-INF/spring/configuration-metadata/com.example.Host.json</code> 中生成元数据，并且当注解处理器处理此类类型时会自动重用。",
+      "translation": "这为 <code>Host</code> 在 <code>META-INF/spring/configuration-metadata/com.example.Host.json</code> 中生成元数据，并且当注解处理器处理此类类型时会自动重用。",
       "count": 2
     },
     {
@@ -94,12 +94,12 @@
     },
     {
       "source": "When generating source metadata for a type, you can also craft custom metadata for that type, for example <code>com.example.SomeType</code>, in <code>META-INF/spring/configuration/metadata/com.example.SomeType.json</code>.",
-      "translation": "在为类型生成源元数据时，您还可以为该类型（例如 <code>com.example.SomeType</code>`）在 <code>META-INF/spring/configuration/metadata/com.example.SomeType.json</code> 中创建自定义元数据。",
+      "translation": "在为类型生成源元数据时，您还可以为该类型（例如 <code>com.example.SomeType</code>）在 <code>META-INF/spring/configuration/metadata/com.example.SomeType.json</code> 中创建自定义元数据。",
       "count": 2
     },
     {
       "source": "The format of the additional metadata file is exactly the same as the regular <code>spring-configuration-metadata.json</code>.\nThe items contained in the “ignored.properties” section are removed from the “properties” section of the generated  <code>spring-configuration-metadata.json</code> file.",
-      "translation": "附加元数据文件的格式与常规的 <code>spring-configuration-metadata.json</code>` 完全相同。\n“ignored.properties”部分中包含的项目将从生成的 <code>spring-configuration-metadata.json</code> 文件的“properties”部分中移除。",
+      "translation": "附加元数据文件的格式与常规的 <code>spring-configuration-metadata.json</code> 完全相同。\n“ignored.properties”部分中包含的项目将从生成的 <code>spring-configuration-metadata.json</code> 文件的“properties”部分中移除。",
       "count": 2
     },
     {

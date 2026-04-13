@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Utility class that can be used to format a correlation identifier for logging based on
 <a href="https://www.w3.org/TR/trace-context/#examples-of-http-traceparent-headers">W3C</a>
 recommendations.
-<p>Formatter 可通过逗号分隔的名称列表及其解析值的预期长度进行配置。每个项目应以 <code>"&lt;name&gt;(length)"</code>` 的形式指定。例如，<code>"traceId(32),spanId(16)"</code>` 指定了名称 <code>"traceId"</code>` 和 <code>"spanId"</code>，其预期长度分别为 <code>32</code>` 和 <code>16</code>`。</p><p>相关 ID 格式为用连字符分隔的字符串，并用方括号包围。格式化输出始终具有固定宽度且带有尾部空格。如果无法解析任何命名项，则省略连字符。</p><p>以下示例将返回格式化的结果：
+<p>Formatter 可通过逗号分隔的名称列表及其解析值的预期长度进行配置。每个项目应以 <code>"&lt;name&gt;(length)"</code> 的形式指定。例如，<code>"traceId(32),spanId(16)"</code> 指定了名称 <code>"traceId"</code> 和 <code>"spanId"</code>，其预期长度分别为 <code>32</code> 和 <code>16</code>。</p><p>相关 ID 格式为用连字符分隔的字符串，并用方括号包围。格式化输出始终具有固定宽度且带有尾部空格。如果无法解析任何命名项，则省略连字符。</p><p>以下示例将返回格式化的结果：
 <code>"[01234567890123456789012345678901-0123456789012345] "</code></p><pre class="code">CorrelationIdFormatter formatter = CorrelationIdFormatter.of("traceId(32),spanId(16)");
 Map&lt;String, String&gt; mdc = Map.of("traceId", "01234567890123456789012345678901", "spanId", "0123456789012345");
 return formatter.format(mdc::get);
@@ -240,7 +240,7 @@ return formatter.format(mdc::get);
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">toString</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang">toString</a></code>` 在类 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang">Object</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang">toString</a></code> 在类 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang">Object</a></code> 中</dd>
 </dl>
 </div>
 </section>

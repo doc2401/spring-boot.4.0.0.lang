@@ -140,7 +140,7 @@ are located using <a href="../context/annotation/ImportCandidates.html" title="c
 <div class="col-first even-row-color"><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></code></div>
 <div class="col-second even-row-color"><code><a class="member-name-link" href="#value()">value</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">显式指定与 <code>@AutoConfiguration</code>` 类关联的 Spring  Bean 定义的名称。</div>
+<div class="block">显式指定与 <code>@AutoConfiguration</code> 类关联的 Spring  Bean 定义的名称。</div>
 </div>
 </div>
 </section>
@@ -163,7 +163,7 @@ are located using <a href="../context/annotation/ImportCandidates.html" title="c
 <div class="block">Explicitly specify the name of the Spring bean definition associated with the
 <code>@AutoConfiguration</code> class. If left unspecified (the common case), a bean
 name will be automatically generated.
-<p>自定义名称仅在通过组件扫描拾取 <code>@AutoConfiguration</code>` 类或直接向其提供该类的情况下适用，即向 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html" title="class or interface in org.springframework.context.annotation"><code>AnnotationConfigApplicationContext</code></a> 提供。如果 <code>@AutoConfiguration</code>` 类注册为传统的 XML  bean 定义，则 bean 元素的名称/id将优先采用。</p></div>
+<p>自定义名称仅在通过组件扫描拾取 <code>@AutoConfiguration</code> 类或直接向其提供该类的情况下适用，即向 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html" title="class or interface in org.springframework.context.annotation"><code>AnnotationConfigApplicationContext</code></a> 提供。如果 <code>@AutoConfiguration</code> 类注册为传统的 XML  bean 定义，则 bean 元素的名称/id将优先采用。</p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>显式组件名称（如果有），否则为空字符串。</dd>
@@ -247,7 +247,7 @@ name will be automatically generated.
           <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/annotation/AliasFor.html#attribute()" title="class or interface in org.springframework.core.annotation">attribute</a>="name")
 </span><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>[]</span> <span class="element-name">afterName</span></div>
 <div class="block">应该已经应用的自动配置类的名称。
-在罕见的情况下，如果自动配置类不是顶层类，其类名应使用 <code>$</code>` 将其与包含类分隔开，例如 <code>com.example.Outer$NestedAutoConfiguration</code>`。</div>
+在罕见的情况下，如果自动配置类不是顶层类，其类名应使用 <code>$</code> 将其与包含类分隔开，例如 <code>com.example.Outer$NestedAutoConfiguration</code>。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>类名</dd>

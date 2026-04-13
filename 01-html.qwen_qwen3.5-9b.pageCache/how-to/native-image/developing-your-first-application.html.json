@@ -34,7 +34,7 @@
     },
     {
       "source": "To build a native image container using Maven you should ensure that your <code>pom.xml</code> file uses the <code>spring-boot-starter-parent</code> and the <code>org.graalvm.buildtools:native-maven-plugin</code>.\nYou should have a <code>&lt;parent&gt;</code> section that looks like this:",
-      "translation": "要使用 Maven 构建原生镜像容器，请确保您的 <code>pom.xml</code>` 文件使用了 <code>spring-boot-starter-parent</code>` 和 <code>org.graalvm.buildtools:native-maven-plugin</code>`。\n您应该有一个类似于以下的 <code>&lt;parent&gt;</code> 部分：",
+      "translation": "要使用 Maven 构建原生镜像容器，请确保您的 <code>pom.xml</code> 文件使用了 <code>spring-boot-starter-parent</code> 和 <code>org.graalvm.buildtools:native-maven-plugin</code>。\n您应该有一个类似于以下的 <code>&lt;parent&gt;</code> 部分：",
       "count": 2
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "source": "With the <code>native</code> profile active, you can invoke the <code>native:compile</code> goal to trigger <code>native-image</code> compilation:",
-      "translation": "启用 <code>native</code>` 配置后，您可以调用 <code>native:compile</code>` 目标来触发 <code>native-image</code> 编译：",
+      "translation": "启用 <code>native</code> 配置后，您可以调用 <code>native:compile</code> 目标来触发 <code>native-image</code> 编译：",
       "count": 2
     },
     {
@@ -74,12 +74,12 @@
     },
     {
       "source": "The Spring Boot Gradle plugin automatically configures AOT tasks when the GraalVM Native Image plugin is applied.\nYou should check that your Gradle build contains a <code>plugins</code> block that includes <code>org.graalvm.buildtools.native</code>.",
-      "translation": "Spring Boot Gradle 插件在应用 GraalVM Native Image 插件时会自动配置 AOT 任务。\n您应检查您的 Gradle 构建是否包含一个包含 <code>org.graalvm.buildtools.native</code>` 的 <code>plugins</code> 块。",
+      "translation": "Spring Boot Gradle 插件在应用 GraalVM Native Image 插件时会自动配置 AOT 任务。\n您应检查您的 Gradle 构建是否包含一个包含 <code>org.graalvm.buildtools.native</code> 的 <code>plugins</code> 块。",
       "count": 2
     },
     {
       "source": "As long as the <code>org.graalvm.buildtools.native</code> plugin is applied, the <code>bootBuildImage</code> task will generate a native image rather than a JVM one.\nYou can run the task using:",
-      "translation": "只要应用了 <code>org.graalvm.buildtools.native</code>` 插件，<code>bootBuildImage</code> 任务将生成原生镜像而非 JVM 镜像。您可以使用以下命令运行该任务：",
+      "translation": "只要应用了 <code>org.graalvm.buildtools.native</code> 插件，<code>bootBuildImage</code> 任务将生成原生镜像而非 JVM 镜像。您可以使用以下命令运行该任务：",
       "count": 2
     },
     {

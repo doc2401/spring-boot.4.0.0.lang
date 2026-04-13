@@ -100,7 +100,7 @@ implements <a href="PropertySourceInfo.html" title="interface in org.springframe
 The <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/PropertySource.html" title="class or interface in org.springframework.core.env"><code>PropertySource</code></a> will recursively scan a given source directory and expose a
 property for each file found. The property name will be the filename, and the property
 value will be the contents of the file.
-<p>目录仅在源首次创建时进行扫描。该目录不会监控更新，因此不应添加或删除文件。但是，只要属性源是使用 <a href="ConfigTreePropertySource.Option.html#ALWAYS_READ"><code>ConfigTreePropertySource.Option.ALWAYS_READ</code></a> 选项创建的，就可以更新文件的内容。嵌套目录包含在源中，但使用 `'.'` 而不是 `'/'` 作为路径分隔符。</p><p>属性值以 <a href="ConfigTreePropertySource.Value.html" title="interface in org.springframework.boot.env"><code>ConfigTreePropertySource.Value</code></a> 实例的形式返回，这使得它们既可以作为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/InputStreamSource.html" title="class or interface in org.springframework.core.io"><code>InputStreamSource</code></a> 处理，也可以作为 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang"><code>CharSequence</code></a> 处理。此外，如果与配置了 <a href="../convert/ApplicationConversionService.html" title="class in org.springframework.boot.convert"><code>ApplicationConversionService</code></a> 的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html" title="class or interface in org.springframework.core.env"><code>Environment</code></a> 一起使用，属性值可以转换为 <code>String</code>` 或 <code>byte[]</code>`。</p><p>此属性源通常用于读取 Kubernetes <code>configMap</code> 卷挂载。</p></div>
+<p>目录仅在源首次创建时进行扫描。该目录不会监控更新，因此不应添加或删除文件。但是，只要属性源是使用 <a href="ConfigTreePropertySource.Option.html#ALWAYS_READ"><code>ConfigTreePropertySource.Option.ALWAYS_READ</code></a> 选项创建的，就可以更新文件的内容。嵌套目录包含在源中，但使用 `'.'` 而不是 `'/'` 作为路径分隔符。</p><p>属性值以 <a href="ConfigTreePropertySource.Value.html" title="interface in org.springframework.boot.env"><code>ConfigTreePropertySource.Value</code></a> 实例的形式返回，这使得它们既可以作为 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/InputStreamSource.html" title="class or interface in org.springframework.core.io"><code>InputStreamSource</code></a> 处理，也可以作为 <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang"><code>CharSequence</code></a> 处理。此外，如果与配置了 <a href="../convert/ApplicationConversionService.html" title="class in org.springframework.boot.convert"><code>ApplicationConversionService</code></a> 的 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html" title="class or interface in org.springframework.core.env"><code>Environment</code></a> 一起使用，属性值可以转换为 <code>String</code> 或 <code>byte[]</code>。</p><p>此属性源通常用于读取 Kubernetes <code>configMap</code> 卷挂载。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>2.4.0</dd>
@@ -181,7 +181,7 @@ value will be the contents of the file.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="../origin/Origin.html" title="interface in org.springframework.boot.origin">Origin</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getOrigin(java.lang.String)">getOrigin</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">返回给定键的源，如果无法确定源则返回 <code>null</code>`。</div>
+<div class="block">返回给定键的源，如果无法确定源则返回 <code>null</code>。</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@Nullable <a href="ConfigTreePropertySource.Value.html" title="interface in org.springframework.boot.env">ConfigTreePropertySource.Value</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a class="member-name-link" href="#getProperty(java.lang.String)">getProperty</a><wbr/>(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> name)</code></div>
@@ -290,10 +290,10 @@ value will be the contents of the file.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">@Nullable <a href="../origin/Origin.html" title="interface in org.springframework.boot.origin">Origin</a></span> <span class="element-name">getOrigin</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a> name)</span></div>
 <div class="block"><span class="description-from-type-label">描述从接口复制：<code><a href="../origin/OriginLookup.html#getOrigin(K)">OriginLookup</a></code></span></div>
-<div class="block">返回给定键的源，如果无法确定源则返回 <code>null</code>`。</div>
+<div class="block">返回给定键的源，如果无法确定源则返回 <code>null</code>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><a href="../origin/OriginLookup.html#getOrigin(K)">getOrigin</a> 在接口 <code><a href="../origin/OriginLookup.html" title="interface in org.springframework.boot.origin">OriginLookup</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</code>` 中</dd>
+<dd><a href="../origin/OriginLookup.html#getOrigin(K)">getOrigin</a> 在接口 <code><a href="../origin/OriginLookup.html" title="interface in org.springframework.boot.origin">OriginLookup</a>&lt;<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a>&gt;</code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>name</code> - 查找键</dd>
 <dt>Returns:</dt>
@@ -311,7 +311,7 @@ value will be the contents of the file.
 <div class="block">如果此查找是不可变的且其内容将永远不会改变，则返回<code>true</code>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="PropertySourceInfo.html#isImmutable()">isImmutable</a></code>` 接口 <code><a href="PropertySourceInfo.html" title="interface in org.springframework.boot.env">PropertySourceInfo</a></code>` 中</dd>
+<dd><code><a href="PropertySourceInfo.html#isImmutable()">isImmutable</a></code> 接口 <code><a href="PropertySourceInfo.html" title="interface in org.springframework.boot.env">PropertySourceInfo</a></code> 中</dd>
 <dt>Returns:</dt>
 <dd>如果查找是不可变的</dd>
 </dl>

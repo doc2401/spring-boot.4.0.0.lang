@@ -1116,7 +1116,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例展示了如何在 `myapp.jar` 的 `/BOOT-INF/classes` 路径下，在位置 `0063` 找到 <code>A.class</code>`。嵌套 jar 中的 <code>B.class</code>` 实际上可以在 `myapp.jar` 的位置 `3452` 找到，而 <code>C.class</code> 位于位置 `3980`。</p>
+<p>前面的示例展示了如何在 `myapp.jar` 的 `/BOOT-INF/classes` 路径下，在位置 `0063` 找到 <code>A.class</code>。嵌套 jar 中的 <code>B.class</code> 实际上可以在 `myapp.jar` 的位置 `3452` 找到，而 <code>C.class</code> 位于位置 `3980`。</p>
 </div>
 <div class="paragraph">
 <p>利用这些信息，我们可以通过定位到外部 JAR 的相应部分来加载特定的嵌套条目。我们无需解压缩归档，也无需将所有条目数据读入内存。</p>

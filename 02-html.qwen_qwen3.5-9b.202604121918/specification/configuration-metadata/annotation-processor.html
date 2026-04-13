@@ -1144,7 +1144,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>如果您使用 <code>additional-spring-configuration-metadata.json</code>` 文件，则应将 <code>compileJava</code>` 任务配置为依赖于 <code>processResources</code> 任务，如下例所示：</p>
+<p>如果您使用 <code>additional-spring-configuration-metadata.json</code> 文件，则应将 <code>compileJava</code> 任务配置为依赖于 <code>processResources</code> 任务，如下例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1166,7 +1166,7 @@
 <div class="paragraph">
 <p>如果您在项目中使用了 AspectJ，请确保注解处理器仅运行一次。
 有几种方法可以实现这一点。
-使用 Maven 时，您可以显式配置 <code>maven-apt-plugin</code>`，并仅在该项目中为注解处理器添加依赖项。
+使用 Maven 时，您可以显式配置 <code>maven-apt-plugin</code>，并仅在该项目中为注解处理器添加依赖项。
 您也可以让 AspectJ 插件执行所有处理工作，并在 <code>maven-compiler-plugin</code> 配置中禁用注解处理，如下所示：</p>
 </div>
 <div class="listingblock">
@@ -1321,8 +1321,8 @@ class MyServerProperties(
 </div>
 </div>
 <div class="paragraph">
-<p>这暴露了三个属性，其中 <code>my.server.name</code>` 没有默认值，而 <code>my.server.ip</code>` 和 <code>my.server.port</code>` 的默认值分别为 <code>"127.0.0.1"</code>` 和 <code>9797</code>`。
-字段的 Javadoc 用于填充 <code>description</code>` 属性。
+<p>这暴露了三个属性，其中 <code>my.server.name</code> 没有默认值，而 <code>my.server.ip</code> 和 <code>my.server.port</code> 的默认值分别为 <code>"127.0.0.1"</code> 和 <code>9797</code>。
+字段的 Javadoc 用于填充 <code>description</code> 属性。
 例如，<code>my.server.ip</code> 的描述为 "IP address to listen to."。</p>
 </div>
 <div class="paragraph">
@@ -1459,7 +1459,7 @@ class MyMessagingProperties(
 <h3 id="appendix.configuration-metadata.annotation-processor.automatic-metadata-generation.nested-properties"><a class="anchor" href="#appendix.configuration-metadata.annotation-processor.automatic-metadata-generation.nested-properties"></a>嵌套属性</h3>
 <div class="paragraph">
 <p>注解处理器会自动将内部类视为嵌套属性。
-与其在命名空间的根节点处记录 <code>ip</code>` 和 <code>port</code>，我们可以为其创建一个子命名空间。
+与其在命名空间的根节点处记录 <code>ip</code> 和 <code>port</code>，我们可以为其创建一个子命名空间。
 请考虑以下更新后的示例：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_3">
@@ -1553,7 +1553,7 @@ class MyServerProperties(
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例为 <code>my.server.name</code>`、<code>my.server.host.ip</code>` 和 <code>my.server.host.port</code> 属性生成元数据信息。您可以在字段或 getter 方法上使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html"><code>@NestedConfigurationProperty</code></a> 注解，以指示应将普通（非内部）类视为嵌套类。</p>
+<p>前面的示例为 <code>my.server.name</code>、<code>my.server.host.ip</code> 和 <code>my.server.host.port</code> 属性生成元数据信息。您可以在字段或 getter 方法上使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/NestedConfigurationProperty.html"><code>@NestedConfigurationProperty</code></a> 注解，以指示应将普通（非内部）类视为嵌套类。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1653,7 +1653,7 @@ class Host {
 </div>
 </div>
 <div class="paragraph">
-<p>这为 <code>Host</code>` 在 <code>META-INF/spring/configuration-metadata/com.example.Host.json</code> 中生成元数据，并且当注解处理器处理此类类型时会自动重用。</p>
+<p>这为 <code>Host</code> 在 <code>META-INF/spring/configuration-metadata/com.example.Host.json</code> 中生成元数据，并且当注解处理器处理此类类型时会自动重用。</p>
 </div>
 <div class="paragraph">
 <p>您还可以注解位于另一个模块中的父类，该父类被一个带有 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/context/properties/ConfigurationProperties.html"><code>@ConfigurationProperties</code></a> 注解的类型继承。</p>
@@ -1681,13 +1681,13 @@ class Host {
 为了支持此类情况并让您提供自定义“提示”，注解处理器会自动将 <code>META-INF/additional-spring-configuration-metadata.json</code> 中的项合并到主元数据文件中。</p>
 </div>
 <div class="paragraph">
-<p>在为类型生成源元数据时，您还可以为该类型（例如 <code>com.example.SomeType</code>`）在 <code>META-INF/spring/configuration/metadata/com.example.SomeType.json</code> 中创建自定义元数据。</p>
+<p>在为类型生成源元数据时，您还可以为该类型（例如 <code>com.example.SomeType</code>）在 <code>META-INF/spring/configuration/metadata/com.example.SomeType.json</code> 中创建自定义元数据。</p>
 </div>
 <div class="paragraph">
 <p>如果引用了自动检测到的属性，则描述、默认值和弃用信息（如果已指定）将被覆盖。如果当前模块中未识别到手动属性声明，则将其作为新属性添加。</p>
 </div>
 <div class="paragraph">
-<p>附加元数据文件的格式与常规的 <code>spring-configuration-metadata.json</code>` 完全相同。
+<p>附加元数据文件的格式与常规的 <code>spring-configuration-metadata.json</code> 完全相同。
 “ignored.properties”部分中包含的项目将从生成的 <code>spring-configuration-metadata.json</code> 文件的“properties”部分中移除。</p>
 </div>
 <div class="paragraph">

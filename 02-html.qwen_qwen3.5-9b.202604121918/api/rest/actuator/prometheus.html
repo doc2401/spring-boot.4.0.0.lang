@@ -1108,7 +1108,7 @@
 <h2 id="prometheus.retrieving"><a class="anchor" href="#prometheus.retrieving"></a>检索所有指标</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要获取所有指标，请向 <code>/actuator/prometheus</code>` 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要获取所有指标，请向 <code>/actuator/prometheus</code> 发送一个 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1172,8 +1172,8 @@ jvm_memory_used_bytes{area="nonheap",id="Metaspace"} 8.0669328E7</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>默认响应内容类型为 <code>text/plain;version=0.0.4</code>`。
-当使用适当的 <code>Accept</code>` 头调用该端点时，它也可以生成 <code>application/openmetrics-text;version=1.0.0</code>，如下面的基于 curl 的示例所示：</p>
+<p>默认响应内容类型为 <code>text/plain;version=0.0.4</code>。
+当使用适当的 <code>Accept</code> 头调用该端点时，它也可以生成 <code>application/openmetrics-text;version=1.0.0</code>，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1268,7 +1268,7 @@ jvm_memory_used_bytes{area="nonheap",id="Metaspace"} 8.046556E7
 <h2 id="prometheus.retrieving-names"><a class="anchor" href="#prometheus.retrieving-names"></a>检索过滤后的指标</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要检索匹配特定名称的指标，请向带有 <code>includedNames</code>` 查询参数的 <code>/actuator/prometheus</code>` 发出 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
+<p>要检索匹配特定名称的指标，请向带有 <code>includedNames</code> 查询参数的 <code>/actuator/prometheus</code> 发出 <code>GET</code> 请求，如下面的基于 curl 的示例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">

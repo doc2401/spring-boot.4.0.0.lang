@@ -98,7 +98,7 @@ implements <a class="external-link" href="https://docs.oracle.com/en/java/javase
 the low level parsing of a zip file and provide access to raw entry data that it
 contains. Unlike <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/zip/ZipFile.html" title="class or interface in java.util.zip"><code>ZipFile</code></a>, this implementation can load content
 from a zip file nested inside another file as long as the entry is not compressed.
-<p>为了减少内存消耗，此实现仅存储条目名称的哈希值、中央目录偏移量和原始位置。条目在内部按 <code>hashCode</code>` 顺序存储，以便使用二分查找快速通过名称查找条目或确定 zip 文件是否包含给定条目。</p><p><a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> 对于典型的 Spring Boot 应用程序 JAR，将包含大约 10,500 个条目，占用约 122K。</p><p><a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> 的结果会被缓存，并且假定 zip 内容在加载后不会改变。条目和字符串不会被缓存，每次访问时都会重新创建，这可能会产生大量垃圾对象。</p><p>此实现未使用<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/Cleaner.Cleanable.html" title="class or interface in java.lang.ref"><code>Cleaner.Cleanable</code></a>，因此必须小心释放<a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a>资源。应显式调用<a href="#close()"><code>close()</code></a>方法或通过 try-with-resources 调用。务必确保仅调用一次 close 方法。</p></div>
+<p>为了减少内存消耗，此实现仅存储条目名称的哈希值、中央目录偏移量和原始位置。条目在内部按 <code>hashCode</code> 顺序存储，以便使用二分查找快速通过名称查找条目或确定 zip 文件是否包含给定条目。</p><p><a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> 对于典型的 Spring Boot 应用程序 JAR，将包含大约 10,500 个条目，占用约 122K。</p><p><a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> 的结果会被缓存，并且假定 zip 内容在加载后不会改变。条目和字符串不会被缓存，每次访问时都会重新创建，这可能会产生大量垃圾对象。</p><p>此实现未使用<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ref/Cleaner.Cleanable.html" title="class or interface in java.lang.ref"><code>Cleaner.Cleanable</code></a>，因此必须小心释放<a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a>资源。应显式调用<a href="#close()"><code>close()</code></a>方法或通过 try-with-resources 调用。务必确保仅调用一次 close 方法。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>3.2.0</dd>
@@ -261,7 +261,7 @@ nest zip.
 <dt>Returns:</dt>
 <dd>zip 数据</dd>
 <dt>Throws:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code>` - 在 I/O 错误时</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code> - 在 I/O 错误时</dd>
 </dl>
 </div>
 </section>
@@ -399,9 +399,9 @@ nest zip.
 <div class="block">关闭此 jar 文件，如果这是最后一个引用，则释放底层文件。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang">close</a></code>` 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang">AutoCloseable</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang">close</a></code> 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang">AutoCloseable</a></code> 中</dd>
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()" title="class or interface in java.io">close</a></code>` 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html" title="class or interface in java.io">Closeable</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html#close()" title="class or interface in java.io">close</a></code> 接口 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html" title="class or interface in java.io">Closeable</a></code> 中</dd>
 <dt>Throws:</dt>
 <dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code></dd>
 <dt>See Also:</dt>
@@ -421,7 +421,7 @@ nest zip.
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">toString</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang">toString</a></code>` 在类 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang">Object</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang">toString</a></code> 在类 <code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang">Object</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -439,7 +439,7 @@ nest zip.
 <dt>Returns:</dt>
 <dd>a <a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> instance</dd>
 <dt>Throws:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code>` - 在 I/O 错误时</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code> - 在 I/O 错误时</dd>
 </dl>
 </div>
 </section>
@@ -459,7 +459,7 @@ nest zip.
 <dt>Returns:</dt>
 <dd>a <a href="ZipContent.html" title="class in org.springframework.boot.loader.zip"><code>ZipContent</code></a> instance</dd>
 <dt>Throws:</dt>
-<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code>` - 在 I/O 错误时</dd>
+<dd><code><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io">IOException</a></code> - 在 I/O 错误时</dd>
 </dl>
 </div>
 </section>

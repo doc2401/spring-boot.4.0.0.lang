@@ -1465,7 +1465,7 @@ class MyUserHandler {
 <p>Spring WebFlux 使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageReader.html"><code>HttpMessageReader</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/HttpMessageWriter.html"><code>HttpMessageWriter</code></a> 接口来转换 HTTP 请求和响应。它们通过 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/http/codec/CodecConfigurer.html"><code>CodecConfigurer</code></a> 进行配置，以便查看类路径中可用的库并设置合理的默认值。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>`。它还通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a> 实例来应用进一步的自定义。例如，<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。</p>
+<p>Spring Boot 为编解码器提供了专用的配置属性，即 <code>spring.http.codecs.*</code>。它还通过使用 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a> 实例来应用进一步的自定义。例如，<code>spring.jackson.*</code> 配置键会应用于 Jackson 编解码器。</p>
 </div>
 <div class="paragraph">
 <p>如果需要添加或自定义编解码器，可以创建一个自定义的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/codec/CodecCustomizer.html"><code>CodecCustomizer</code></a> 组件，如下例所示：</p>
@@ -1573,7 +1573,7 @@ import org.springframework.http.codec.ServerSentEventHttpMessageReader
 </div>
 </div>
 <div class="paragraph">
-<p>您还可以通过使用 <code>spring.web.resources.static-locations</code>` 来自定义静态资源位置。这样做会用目录位置列表替换默认值。如果这样做了，默认的欢迎页面检测将切换到您的自定义位置。因此，如果在启动时您的任何位置中存在 <code>index.html</code>，它将是应用程序的主页。</p>
+<p>您还可以通过使用 <code>spring.web.resources.static-locations</code> 来自定义静态资源位置。这样做会用目录位置列表替换默认值。如果这样做了，默认的欢迎页面检测将切换到您的自定义位置。因此，如果在启动时您的任何位置中存在 <code>index.html</code>，它将是应用程序的主页。</p>
 </div>
 <div class="paragraph">
 <p>除了前面列出的“标准”静态资源位置外，还为<a href="https://www.webjars.org/">Webjars 内容</a>提供了特殊处理。默认情况下，任何路径在<code>/webjars/**</code>的资源，如果以 Webjars 格式打包，则从 jar 文件中提供。该路径可以通过<code>spring.webflux.webjars-path-pattern</code>属性进行自定义。</p>
@@ -1593,7 +1593,7 @@ Spring WebFlux 应用程序并不严格依赖于 Servlet API，因此它们无�
 <div class="sect2">
 <h3 id="web.reactive.webflux.welcome-page"><a class="anchor" href="#web.reactive.webflux.welcome-page"></a>欢迎页</h3>
 <div class="paragraph">
-<p>Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。</p>
+<p>Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code> 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。</p>
 </div>
 <div class="paragraph">
 <p>这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/HandlerMapping.html"><code>HandlerMapping</code></a> 豆的顺序定义，默认顺序如下：</p>
@@ -1681,7 +1681,7 @@ Spring WebFlux 可以使用<code>application/problem+json</code>媒体类型生�
 </div>
 </div>
 <div class="paragraph">
-<p>此支持可通过将 <code>spring.webflux.problemdetails.enabled</code>` 设置为 <code>true</code> 来启用。</p>
+<p>此支持可通过将 <code>spring.webflux.problemdetails.enabled</code> 设置为 <code>true</code> 来启用。</p>
 </div>
 <div class="paragraph">
 <p>自定义此功能的第一步通常涉及使用现有机制，但替换或增强错误内容。为此，您可以添加一个类型为 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/web/reactive/error/ErrorAttributes.html"><code>ErrorAttributes</code></a> 的 Bean。</p>
@@ -1807,10 +1807,10 @@ class MyErrorWebExceptionHandler(
 <div class="sect3">
 <h4 id="web.reactive.webflux.error-handling.error-pages"><a class="anchor" href="#web.reactive.webflux.error-handling.error-pages"></a>自定义错误页面</h4>
 <div class="paragraph">
-<p>如果您想为特定状态码显示自定义 HTML 错误页面，可以添加从 <code>error/*</code>` 解析的视图，例如向 <code>/error</code> 目录添加文件。
+<p>如果您想为特定状态码显示自定义 HTML 错误页面，可以添加从 <code>error/*</code> 解析的视图，例如向 <code>/error</code> 目录添加文件。
 错误页面可以是静态 HTML（即添加到任何静态资源目录中），也可以使用模板构建。
 文件的名称应为确切的状态码、状态码系列掩码，或者如果其他内容都不匹配则为 <code>error</code> 作为默认值。
-请注意，默认错误视图的路径是 <code>error/error</code>`，而在 Spring MVC 中默认错误视图是 <code>error</code>。</p>
+请注意，默认错误视图的路径是 <code>error/error</code>，而在 Spring MVC 中默认错误视图是 <code>error</code>。</p>
 </div>
 <div class="paragraph">
 <p>例如，要将 <code>404</code> 映射到静态 HTML 文件，您的目录结构应如下所示：</p>
@@ -1893,7 +1893,7 @@ Spring Boot 自动配置可能会为您配置 Web 过滤器。
 <p>要配置 Spring WebFlux，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/reactive/config/WebFluxConfigurer.html"><code>WebFluxConfigurer</code></a>  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。</p>
 </div>
 <div class="paragraph">
-<p>例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。</p>
+<p>例如，以下示例将使用 <code>X-Version</code> HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_7">
 <div class="content">

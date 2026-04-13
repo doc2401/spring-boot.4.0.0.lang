@@ -431,7 +431,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">设置 Tomcat 基础目录。如果未指定，将使用临时目录。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setBaseDirectory(java.io.File)">setBaseDirectory</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setBaseDirectory(java.io.File)">setBaseDirectory</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>baseDirectory</code> - Tomcat 基础目录</dd>
 </dl>
@@ -481,7 +481,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">添加应应用于 Tomcat <a class="external-link" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/Engine.html" title="class or interface in org.apache.catalina"><code>Engine</code></a> 的 <a class="external-link" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/Valve.html" title="class or interface in org.apache.catalina"><code>Valve</code></a>s。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addEngineValves(org.apache.catalina.Valve...)">addEngineValves</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addEngineValves(org.apache.catalina.Valve...)">addEngineValves</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>engineValves</code> - 要添加的阀门</dd>
 </dl>
@@ -505,7 +505,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">设置用于 URL 解码的字符编码。如果未指定，将使用 'UTF-8'。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setUriEncoding(java.nio.charset.Charset)">setUriEncoding</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setUriEncoding(java.nio.charset.Charset)">setUriEncoding</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>uriEncoding</code> - 要设置的 URI 编码</dd>
 </dl>
@@ -529,7 +529,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">设置后台处理器的延迟（以秒为单位）。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setBackgroundProcessorDelay(int)">setBackgroundProcessorDelay</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>delay</code> - 秒延迟</dd>
 </dl>
@@ -682,7 +682,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">添加应添加到 Tomcat <a class="external-link" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/Context.html" title="class or interface in org.apache.catalina"><code>Context</code></a> 的<a href="TomcatContextCustomizer.html" title="interface in org.springframework.boot.tomcat"><code>TomcatContextCustomizer</code></a>s。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addContextCustomizers(org.springframework.boot.tomcat.TomcatContextCustomizer...)">addContextCustomizers</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addContextCustomizers(org.springframework.boot.tomcat.TomcatContextCustomizer...)">addContextCustomizers</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>contextCustomizers</code> - 要添加的自定义器</dd>
 </dl>
@@ -724,7 +724,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">添加应添加到 Tomcat <a class="external-link" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/connector/Connector.html" title="class or interface in org.apache.catalina.connector"><code>Connector</code></a> 的<a href="TomcatConnectorCustomizer.html" title="interface in org.springframework.boot.tomcat"><code>TomcatConnectorCustomizer</code></a>s。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addConnectorCustomizers(org.springframework.boot.tomcat.TomcatConnectorCustomizer...)">addConnectorCustomizers</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addConnectorCustomizers(org.springframework.boot.tomcat.TomcatConnectorCustomizer...)">addConnectorCustomizers</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>connectorCustomizers</code> - 要添加的自定义器</dd>
 </dl>
@@ -766,7 +766,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">添加应添加到 Tomcat <a class="external-link" href="https://tomcat.apache.org/tomcat-11.0-doc/api/org/apache/catalina/connector/Connector.html" title="class or interface in org.apache.catalina.connector"><code>Connector</code></a> 的<a href="TomcatProtocolHandlerCustomizer.html" title="interface in org.springframework.boot.tomcat"><code>TomcatProtocolHandlerCustomizer</code></a>s。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addProtocolHandlerCustomizers(org.springframework.boot.tomcat.TomcatProtocolHandlerCustomizer...)">addProtocolHandlerCustomizers</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>` 中</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#addProtocolHandlerCustomizers(org.springframework.boot.tomcat.TomcatProtocolHandlerCustomizer...)">addProtocolHandlerCustomizers</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>protocolHandlerCustomizers</code> - 要添加的自定义器</dd>
 </dl>
@@ -834,7 +834,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">设置是否在创建服务器之前禁用 Tomcat 的 MBean 注册表。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setDisableMBeanRegistry(boolean)">setDisableMBeanRegistry</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>`</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setDisableMBeanRegistry(boolean)">setDisableMBeanRegistry</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>disableMBeanRegistry</code> - 是否禁用 MBean 注册表</dd>
 </dl>
@@ -849,7 +849,7 @@ implements <a href="ConfigurableTomcatWebServerFactory.html" title="interface in
 <div class="block">是否使用 APR。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setUseApr(boolean)">setUseApr</a></code>` 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code>`</dd>
+<dd><code><a href="ConfigurableTomcatWebServerFactory.html#setUseApr(boolean)">setUseApr</a></code> 接口 <code><a href="ConfigurableTomcatWebServerFactory.html" title="interface in org.springframework.boot.tomcat">ConfigurableTomcatWebServerFactory</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>useApr</code> - 是否使用 APR</dd>
 </dl>

@@ -1332,8 +1332,8 @@ dependencyManagement {
 <h2 id="managing-dependencies.gradle-bom-support"><a class="anchor" href="#managing-dependencies.gradle-bom-support"></a>使用 Gradle 的 BOM 支持管理依赖项</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Gradle 允许通过将其声明为 <code>platform</code>` 或 <code>enforcedPlatform</code>` 依赖项来使用 BOM 管理项目的版本。
-<code>platform</code>` 依赖项将 BOM 中的版本视为建议，依赖图中的其他版本和约束可能导致使用不同于 BOM 中声明版本的依赖项版本。
+<p>Gradle 允许通过将其声明为 <code>platform</code> 或 <code>enforcedPlatform</code> 依赖项来使用 BOM 管理项目的版本。
+<code>platform</code> 依赖项将 BOM 中的版本视为建议，依赖图中的其他版本和约束可能导致使用不同于 BOM 中声明版本的依赖项版本。
 <code>enforcedPlatform</code> 依赖项将 BOM 中的版本视为要求，并将覆盖在依赖图中找到的任何其他版本。</p>
 </div>
 <div class="paragraph">
@@ -1377,7 +1377,7 @@ dependencyManagement {
 <div class="sect2">
 <h3 id="managing-dependencies.gradle-bom-support.customizing"><a class="anchor" href="#managing-dependencies.gradle-bom-support.customizing"></a>自定义托管版本</h3>
 <div class="paragraph">
-<p>在使用 Gradle 的 BOM 支持时，无法使用 <code>spring-boot-dependencies</code>` 中的属性来控制其管理的依赖项的版本。
+<p>在使用 Gradle 的 BOM 支持时，无法使用 <code>spring-boot-dependencies</code> 中的属性来控制其管理的依赖项的版本。
 相反，您必须使用 Gradle 提供的机制之一。
 其中一种机制是解析策略。
 SLF4J 的所有模块都属于 <code>org.slf4j</code> 组，因此可以通过配置该组中的每个依赖项以使用特定版本来控制它们的版本，如下例所示：</p>

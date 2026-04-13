@@ -1411,7 +1411,7 @@ class MyUserHandler {
 <div class="sect2">
 <h3 id="web.servlet.spring-mvc.conversion-service"><a class="anchor" href="#web.servlet.spring-mvc.conversion-service"></a>Spring MVC 类型转换器服务</h3>
 <div class="paragraph">
-<p>Spring MVC 使用与从您的 <code>application.properties</code>` 或 <code>application.yaml</code> 文件转换值时所使用的不同的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/ConversionService.html"><code>ConversionService</code></a>。
+<p>Spring MVC 使用与从您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件转换值时所使用的不同的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/ConversionService.html"><code>ConversionService</code></a>。
 这意味着 <a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html"><code>Period</code></a>、<a class="apiref" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html"><code>Duration</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/unit/DataSize.html"><code>DataSize</code></a> 转换器不可用，并且 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html"><code>@DurationUnit</code></a> 和 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DataSizeUnit.html"><code>@DataSizeUnit</code></a> 注解将被忽略。</p>
 </div>
 <div class="paragraph">
@@ -1550,7 +1550,7 @@ class MyHttpMessageConvertersConfiguration {
 大多数情况下，这种情况不会发生（除非您修改了默认的 MVC 配置），因为 Spring 总是可以通过 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/DispatcherServlet.html"><code>DispatcherServlet</code></a> 处理请求。</p>
 </div>
 <div class="paragraph">
-<p>默认情况下，资源映射在 <code>/**</code>` 上，但您可以通过 <code>spring.mvc.static-path-pattern</code>` 属性进行调整。例如，将所有资源重定位到 <code>/resources/**</code> 可按如下方式实现：</p>
+<p>默认情况下，资源映射在 <code>/**</code> 上，但您可以通过 <code>spring.mvc.static-path-pattern</code> 属性进行调整。例如，将所有资源重定位到 <code>/resources/**</code> 可按如下方式实现：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">
@@ -1604,7 +1604,7 @@ class MyHttpMessageConvertersConfiguration {
 <p>Spring Boot 还支持 Spring MVC 提供的先进资源处理功能，允许使用诸如清除静态资源的缓存或使用与版本无关的 URL 来引用 Webjars 等用例。</p>
 </div>
 <div class="paragraph">
-<p>要使用与版本无关的 Webjar URL，请添加 <code>org.webjars:webjars-locator-lite</code>` 依赖。然后声明您的 Webjar。以 jQuery 为例，添加 <code>/webjars/jquery/jquery.min.js</code>` 会导致结果为 <code>/webjars/jquery/x.y.z/jquery.min.js</code>`，其中 <code>x.y.z</code> 是 Webjar 版本。</p>
+<p>要使用与版本无关的 Webjar URL，请添加 <code>org.webjars:webjars-locator-lite</code> 依赖。然后声明您的 Webjar。以 jQuery 为例，添加 <code>/webjars/jquery/jquery.min.js</code> 会导致结果为 <code>/webjars/jquery/x.y.z/jquery.min.js</code>，其中 <code>x.y.z</code> 是 Webjar 版本。</p>
 </div>
 <div class="paragraph">
 <p>要使用缓存清除，以下配置为所有静态资源配置了缓存清除解决方案，有效地在 URL 中添加了内容哈希，例如 <code>&lt;link href="/css/spring-2a2d595e6ed9a0b24f027f2b63b134d6.css"/&gt;</code>：</p>
@@ -1728,7 +1728,7 @@ spring.web.resources.chain.strategy.fixed.version=v12</code></pre>
 <div class="sect2">
 <h3 id="web.servlet.spring-mvc.welcome-page"><a class="anchor" href="#web.servlet.spring-mvc.welcome-page"></a>欢迎页</h3>
 <div class="paragraph">
-<p>Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。</p>
+<p>Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code> 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。</p>
 </div>
 <div class="paragraph">
 <p>这仅作为应用程序定义的真正索引路由的后备方案。排序由 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/HandlerMapping.html"><code>HandlerMapping</code></a> 豆的顺序定义，默认顺序如下：</p>
@@ -1766,13 +1766,13 @@ spring.web.resources.chain.strategy.fixed.version=v12</code></pre>
 <p>Spring MVC 可以通过查看请求路径并将其与应用程序中定义的映射（例如控制器方法上的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/bind/annotation/GetMapping.html"><code>@GetMapping</code></a> 注解）进行匹配，将传入的 HTTP 请求映射到处理器。</p>
 </div>
 <div class="paragraph">
-<p>Spring Boot 默认禁用后缀模式匹配，这意味着类似 <code>"GET /projects/spring-boot.json"</code>` 的请求将无法匹配到 <code>@GetMapping("/projects/spring-boot")</code> 映射。
+<p>Spring Boot 默认禁用后缀模式匹配，这意味着类似 <code>"GET /projects/spring-boot.json"</code> 的请求将无法匹配到 <code>@GetMapping("/projects/spring-boot")</code> 映射。
 这被视为 <a href="https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-suffix-pattern-match">Spring MVC 应用程序的最佳实践</a>。
 该功能过去主要用于那些未发送正确 "Accept" 请求头的 HTTP 客户端；我们需要确保向客户端发送正确的 Content Type。
 如今，内容协商已更加可靠。</p>
 </div>
 <div class="paragraph">
-<p>对于不能始终发送正确的 "Accept" 请求头的 HTTP 客户端，还有其他处理方法。与其使用后缀匹配，不如使用查询参数来确保像 <code>"GET /projects/spring-boot?format=json"</code>` 这样的请求会被映射到 <code>@GetMapping("/projects/spring-boot")</code>：</p>
+<p>对于不能始终发送正确的 "Accept" 请求头的 HTTP 客户端，还有其他处理方法。与其使用后缀匹配，不如使用查询参数来确保像 <code>"GET /projects/spring-boot?format=json"</code> 这样的请求会被映射到 <code>@GetMapping("/projects/spring-boot")</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">
@@ -1984,7 +1984,7 @@ spring.mvc.contentnegotiation.parameter-name=myparam</code></pre>
 <div class="sect2">
 <h3 id="web.servlet.spring-mvc.error-handling"><a class="anchor" href="#web.servlet.spring-mvc.error-handling"></a>错误处理</h3>
 <div class="paragraph">
-<p>默认情况下，Spring Boot 提供了一个 <code>/error</code>` 映射，它以合理的方式处理所有错误，并在 Servlet 容器中注册为“全局”错误页面。对于机器客户端，它会生成包含错误详情、HTTP 状态和异常消息的 JSON 响应。对于浏览器客户端，则有一个“白标”错误视图，以 HTML 格式渲染相同的数据（若要自定义它，请添加一个解析到 <code>error</code> 的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html"><code>View</code></a>）。</p>
+<p>默认情况下，Spring Boot 提供了一个 <code>/error</code> 映射，它以合理的方式处理所有错误，并在 Servlet 容器中注册为“全局”错误页面。对于机器客户端，它会生成包含错误详情、HTTP 状态和异常消息的 JSON 响应。对于浏览器客户端，则有一个“白标”错误视图，以 HTML 格式渲染相同的数据（若要自定义它，请添加一个解析到 <code>error</code> 的<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html"><code>View</code></a>）。</p>
 </div>
 <div class="paragraph">
 <p>如果希望自定义默认的错误处理行为，可以设置一些 <code>server.error</code> 属性。请参见附录中的 <a class="xref page" href="../../appendix/application-properties/index.html#appendix.application-properties.server">服务器属性</a> 部分。</p>
@@ -2376,7 +2376,7 @@ class MyFilterConfiguration {
 <p>当部署到 Servlet 容器时，Spring Boot 会使用其错误页面过滤器，将具有错误状态码的请求转发到相应的错误页面。这是必要的，因为 Servlet 规范未提供注册错误页面的 API。根据您部署 WAR 文件的容器以及应用程序所使用的技术，可能需要进行一些额外的配置。</p>
 </div>
 <div class="paragraph">
-<p>错误页面过滤器仅在响应尚未提交时，才能将请求转发到正确的错误页面。默认情况下，WebSphere Application Server 8.0 及更高版本会在 servlet 的 service 方法成功完成后提交响应。您应通过将 <code>com.ibm.ws.webcontainer.invokeFlushAfterService</code>` 设置为 <code>false</code> 来禁用此行为。</p>
+<p>错误页面过滤器仅在响应尚未提交时，才能将请求转发到正确的错误页面。默认情况下，WebSphere Application Server 8.0 及更高版本会在 servlet 的 service 方法成功完成后提交响应。您应通过将 <code>com.ibm.ws.webcontainer.invokeFlushAfterService</code> 设置为 <code>false</code> 来禁用此行为。</p>
 </div>
 </div>
 </div>
@@ -2469,7 +2469,7 @@ class MyCorsConfiguration {
 <p>要配置 Spring MVC，您可以使用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html"><code>WebMvcConfigurer</code></a>  Bean 并覆盖 `configureApiVersioning(…​)` 方法，或者使用属性。</p>
 </div>
 <div class="paragraph">
-<p>例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。</p>
+<p>例如，以下示例将使用 <code>X-Version</code> HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_17">
 <div class="content">
@@ -2788,12 +2788,12 @@ import org.springframework.web.context.WebApplicationContext;
 <p><code>SameSite</code> Cookie 属性可由 Web 浏览器用于控制跨站请求中是否以及如何提交 Cookie。该属性对于现代 Web 浏览器尤为重要，因为这些浏览器已开始更改在缺少该属性时使用的默认值。</p>
 </div>
 <div class="paragraph">
-<p>如果您想更改会话 Cookie 的 <code>SameSite</code>` 属性，可以使用 <code>server.servlet.session.cookie.same-site</code> 属性。
+<p>如果您想更改会话 Cookie 的 <code>SameSite</code> 属性，可以使用 <code>server.servlet.session.cookie.same-site</code> 属性。
 该属性受自动配置的 Tomcat 和 Jetty 服务器支持。
 它还用于配置基于 Servlet 的 Spring Session <a class="apiref" href="https://docs.spring.io/spring-session/docs/4.0.x/api/org/springframework/session/SessionRepository.html"><code>SessionRepository</code></a> Bean。</p>
 </div>
 <div class="paragraph">
-<p>例如，如果您希望会话 Cookie 的 <code>SameSite</code>` 属性为 <code>None</code>`，可以在您的 <code>application.properties</code>` 或 <code>application.yaml</code> 文件中添加以下内容：</p>
+<p>例如，如果您希望会话 Cookie 的 <code>SameSite</code> 属性为 <code>None</code>，可以在您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件中添加以下内容：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_18">
 <div class="content">
@@ -2892,7 +2892,7 @@ class MySameSiteConfiguration {
 <p>嵌入式 Servlet 容器用于请求和响应处理的字符编码行为，可以通过 <code>server.servlet.encoding.*</code> 配置属性进行设置。</p>
 </div>
 <div class="paragraph">
-<p>当请求的 <code>Accept-Language</code>` 头指示了请求的区域设置时，servlet 容器会自动将其映射到字符集。每个容器都提供了默认的区域设置到字符集的映射，您应验证这些映射是否符合应用程序的需求。如果不符合，请使用 <code>server.servlet.encoding.mapping</code> 配置属性来自定义映射，如下例所示：</p>
+<p>当请求的 <code>Accept-Language</code> 头指示了请求的区域设置时，servlet 容器会自动将其映射到字符集。每个容器都提供了默认的区域设置到字符集的映射，您应验证这些映射是否符合应用程序的需求。如果不符合，请使用 <code>server.servlet.encoding.mapping</code> 配置属性来自定义映射，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_20">
 <div class="content">

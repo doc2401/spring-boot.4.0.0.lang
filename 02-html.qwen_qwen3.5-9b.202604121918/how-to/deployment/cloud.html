@@ -1122,7 +1122,7 @@ Cloud Foundry <a href="https://github.com/cloudfoundry/java-buildpack">Java 构�
 您可以部署独立的可执行 jar 应用程序以及传统的<code>.war</code>打包应用程序。</p>
 </div>
 <div class="paragraph">
-<p>构建完应用程序（例如使用 <code>mvn clean package</code>`）并<a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">安装了<code>cf</code>命令行工具</a>后，请使用 <code>cf push</code>` 命令部署您的应用程序，并将编译后的 <code>.jar</code>` 路径作为参数替换。
+<p>构建完应用程序（例如使用 <code>mvn clean package</code>）并<a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">安装了<code>cf</code>命令行工具</a>后，请使用 <code>cf push</code> 命令部署您的应用程序，并将编译后的 <code>.jar</code> 路径作为参数替换。
 在推送应用程序之前，请确保已通过 <code>cf</code> 命令行客户端<a href="https://docs.cloudfoundry.org/cf-cli/getting-started.html#login">登录</a>。
 以下行展示了如何使用 <code>cf push</code> 命令部署应用程序：</p>
 </div>
@@ -1284,7 +1284,7 @@ class MyBean : EnvironmentAware {
 <h2 id="howto.deployment.cloud.kubernetes"><a class="anchor" href="#howto.deployment.cloud.kubernetes"></a>Kubernetes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code>` 和 <code>*_SERVICE_PORT</code>` 变量来自动检测 Kubernetes 部署环境。您可以通过 <code>spring.main.cloud-platform</code> 配置属性覆盖此检测。</p>
+<p>Spring Boot 通过检查环境中是否存在 <code>*_SERVICE_HOST</code> 和 <code>*_SERVICE_PORT</code> 变量来自动检测 Kubernetes 部署环境。您可以通过 <code>spring.main.cloud-platform</code> 配置属性覆盖此检测。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 帮助您<a class="xref page" href="../../reference/features/spring-application.html#features.spring-application.application-availability">管理应用程序的状态</a>，并使用 <a class="xref page" href="../../reference/actuator/endpoints.html#actuator.endpoints.kubernetes-probes">Actuator 导出 HTTP Kubernetes Probes</a>。</p>
@@ -1615,7 +1615,7 @@ Deployment completed successfully. axelfontaine/myapp:1.0 is up and running at h
 <p>要将您的第一个应用程序部署到 App Engine 标准环境，请遵循<a href="https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot#0">此教程</a>。</p>
 </div>
 <div class="paragraph">
-<p>或者，App Engine Flex 需要您创建一个 <code>app.yaml</code>` 文件来描述应用程序所需的资源。通常，您将此文件放在 <code>src/main/appengine</code> 中，其内容应类似于以下文件：</p>
+<p>或者，App Engine Flex 需要您创建一个 <code>app.yaml</code> 文件来描述应用程序所需的资源。通常，您将此文件放在 <code>src/main/appengine</code> 中，其内容应类似于以下文件：</p>
 </div>
 <div class="listingblock">
 <div class="content">

@@ -14,27 +14,27 @@
   "items": [
     {
       "source": "The AOT engine can be applied to JUnit 5 tests that use Spring’s Test Context Framework.\nSuitable tests are processed by the <code>processTestAot</code> task to generate <code>ApplicationContextInitializer</code> code.\nAs with application AOT processing, the <code>BeanFactory</code> is fully prepared at build-time.\nAs with <code>processAot</code>, the <code>processTestAot</code> task is <code>JavaExec</code> subclass and can be configured as needed to influence this processing.",
-      "translation": "AOT 引擎可应用于使用 Spring Test Context Framework 的 JUnit 5 测试。\n合适的测试将由 <code>processTestAot</code>` 任务处理，以生成 <code>ApplicationContextInitializer</code>` 代码。\n与应用 AOT 处理一样，<code>BeanFactory</code>` 将在构建时完全准备就绪。\n与 <code>processAot</code>` 类似，<code>processTestAot</code>` 任务是 <code>JavaExec</code> 的子类，可根据需要进行配置以影响此处理过程。",
+      "translation": "AOT 引擎可应用于使用 Spring Test Context Framework 的 JUnit 5 测试。\n合适的测试将由 <code>processTestAot</code> 任务处理，以生成 <code>ApplicationContextInitializer</code> 代码。\n与应用 AOT 处理一样，<code>BeanFactory</code> 将在构建时完全准备就绪。\n与 <code>processAot</code> 类似，<code>processTestAot</code> 任务是 <code>JavaExec</code> 的子类，可根据需要进行配置以影响此处理过程。",
       "count": 2
     },
     {
       "source": "As the <code>BeanFactory</code> is fully prepared at build-time, conditions are also evaluated.\nThis has an important difference compared to what a regular Spring Boot application does at runtime.\nFor instance, if you want to opt-in or opt-out for certain features, you need to configure the environment used at build time to do so.\nTo this end, the <code>processAot</code> task is a <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html\"><code>JavaExec</code></a> task and can be configured with environment variables, system properties, and arguments as needed.",
-      "translation": "由于 <code>BeanFactory</code>` 在构建时已完全准备就绪，因此条件也会在构建时进行评估。这与常规 Spring Boot 应用在运行时执行的操作存在重要差异。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。为此，<code>processAot</code> 任务是一个 <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html\"><code>JavaExec</code></a> 任务，可以根据需要配置环境变量、系统属性和参数。",
+      "translation": "由于 <code>BeanFactory</code> 在构建时已完全准备就绪，因此条件也会在构建时进行评估。这与常规 Spring Boot 应用在运行时执行的操作存在重要差异。例如，如果您想启用或禁用某些功能，则需要配置构建时使用的环境来实现此目的。为此，<code>processAot</code> 任务是一个 <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html\"><code>JavaExec</code></a> 任务，可以根据需要配置环境变量、系统属性和参数。",
       "count": 2
     },
     {
       "source": "The <code>nativeTest</code> task of the GraalVM Native Image plugin is automatically configured to use the output of the <code>processAot</code> and <code>processTestAot</code> tasks.",
-      "translation": "GraalVM Native Image 插件的 <code>nativeTest</code>` 任务已自动配置为使用 <code>processAot</code>` 和 <code>processTestAot</code> 任务的输出。",
+      "translation": "GraalVM Native Image 插件的 <code>nativeTest</code> 任务已自动配置为使用 <code>processAot</code> 和 <code>processTestAot</code> 任务的输出。",
       "count": 2
     },
     {
       "source": "Based on your <code>@SpringBootApplication</code>-annotated main class, the <code>processAot</code> task generates a persistent view of the beans that are going to be contributed at runtime in a way that bean instantiation is as straightforward as possible.\nAdditional post-processing of the factory is possible using callbacks.\nFor instance, these are used to generate the necessary reflection configuration that GraalVM needs to initialize the context in a native image.",
-      "translation": "基于带有 <code>@SpringBootApplication</code>` 注解的主类，<code>processAot</code> 任务以尽可能简化 Bean 实例化的方式，生成了运行时将要贡献的 Bean 的持久化视图。\n可以使用回调对工厂进行额外的后处理。\n例如，这些回调用于生成 GraalVM 在原生镜像中初始化上下文所需的反射配置。",
+      "translation": "基于带有 <code>@SpringBootApplication</code> 注解的主类，<code>processAot</code> 任务以尽可能简化 Bean 实例化的方式，生成了运行时将要贡献的 Bean 的持久化视图。\n可以使用回调对工厂进行额外的后处理。\n例如，这些回调用于生成 GraalVM 在原生镜像中初始化上下文所需的反射配置。",
       "count": 2
     },
     {
       "source": "The <code>nativeCompile</code> task of the GraalVM Native Image plugin is automatically configured to use the output of the <code>processAot</code> task.",
-      "translation": "GraalVM Native Image 插件的 <code>nativeCompile</code>` 任务会自动配置为使用 <code>processAot</code> 任务的输出。",
+      "translation": "GraalVM Native Image 插件的 <code>nativeCompile</code> 任务会自动配置为使用 <code>processAot</code> 任务的输出。",
       "count": 2
     },
     {

@@ -49,7 +49,7 @@
     },
     {
       "source": "Static resources can be moved to <code>/public</code> (or <code>/static</code> or <code>/resources</code> or <code>/META-INF/resources</code>) in the classpath root.\nThe same applies to <code>messages.properties</code> (which Spring Boot automatically detects in the root of the classpath).",
-      "translation": "静态资源可以移动到类路径根目录下的 <code>/public</code>`（或 <code>/static</code>` 或 <code>/resources</code>` 或 <code>/META-INF/resources</code>）。\n`messages.properties` 也适用此规则（Spring Boot 会自动在类路径根目录下检测该文件）。",
+      "translation": "静态资源可以移动到类路径根目录下的 <code>/public</code>（或 <code>/static</code> 或 <code>/resources</code> 或 <code>/META-INF/resources</code>）。\n`messages.properties` 也适用此规则（Spring Boot 会自动在类路径根目录下检测该文件）。",
       "count": 2
     },
     {
@@ -59,7 +59,7 @@
     },
     {
       "source": "If you use the Spring Boot <a class=\"xref page\" href=\"../../build-tool-plugin/index.html\">Build Tool Plugins</a>, marking the embedded servlet container dependency as provided produces an executable war file with the provided dependencies packaged in a <code>lib-provided</code> directory.\nThis means that, in addition to being deployable to a servlet container, you can also run your application by using <code>java -jar</code> on the command line.",
-      "translation": "如果您使用 Spring Boot <a class=\"xref page\" href=\"../../build-tool-plugin/index.html\">构建工具插件</a>，将嵌入式 Servlet 容器依赖标记为 provided 会生成一个可执行的 war 文件，其中提供的依赖被打包在 <code>lib-provided</code>` 目录中。\n这意味着，除了可以部署到 Servlet 容器之外，您还可以在命令行中使用 <code>java -jar</code> 运行您的应用程序。",
+      "translation": "如果您使用 Spring Boot <a class=\"xref page\" href=\"../../build-tool-plugin/index.html\">构建工具插件</a>，将嵌入式 Servlet 容器依赖标记为 provided 会生成一个可执行的 war 文件，其中提供的依赖被打包在 <code>lib-provided</code> 目录中。\n这意味着，除了可以部署到 Servlet 容器之外，您还可以在命令行中使用 <code>java -jar</code> 运行您的应用程序。",
       "count": 2
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "source": "The next step is to update your build configuration such that your project produces a war file rather than a jar file.\nIf you use Maven and <code>spring-boot-starter-parent</code> (which configures Maven’s war plugin for you), all you need to do is to modify <code>pom.xml</code> to change the packaging to war, as follows:",
-      "translation": "下一步是更新构建配置，使项目生成 WAR 文件而不是 JAR 文件。\n如果您使用 Maven 和 <code>spring-boot-starter-parent</code>`（它会自动配置 Maven 的 WAR 插件），您只需修改 <code>pom.xml</code> 将打包方式改为 war，如下所示：",
+      "translation": "下一步是更新构建配置，使项目生成 WAR 文件而不是 JAR 文件。\n如果您使用 Maven 和 <code>spring-boot-starter-parent</code>（它会自动配置 Maven 的 WAR 插件），您只需修改 <code>pom.xml</code> 将打包方式改为 war，如下所示：",
       "count": 2
     },
     {
       "source": "Once the war file is working, you can make it executable by adding a <code>main</code> method to your <code>Application</code>, as shown in the following example:",
-      "translation": "一旦 WAR 文件可以正常运行，您可以通过在 <code>Application</code>` 中添加一个 <code>main</code> 方法使其可执行，如下例所示：",
+      "translation": "一旦 WAR 文件可以正常运行，您可以通过在 <code>Application</code> 中添加一个 <code>main</code> 方法使其可执行，如下例所示：",
       "count": 2
     },
     {

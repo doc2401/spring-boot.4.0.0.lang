@@ -238,7 +238,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">向注册表注册特定类型。如果指定的类型已经注册且未作为<a href="BootstrapRegistry.Scope.html#SINGLETON"><code>singleton</code></a>获取，则将被替换。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapRegistry.html#register(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)">register</a></code>` 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code>` 中</dd>
+<dd><code><a href="BootstrapRegistry.html#register(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)">register</a></code> 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code> 中</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="register(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -258,7 +258,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果尚未注册，则向注册表注册特定类型。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapRegistry.html#registerIfAbsent(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)">registerIfAbsent</a></code>` 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code>`</dd>
+<dd><code><a href="BootstrapRegistry.html#registerIfAbsent(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)">registerIfAbsent</a></code> 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code></dd>
 <dt>Type Parameters:</dt>
 <dd><span id="registerIfAbsent(java.lang.Class,org.springframework.boot.bootstrap.BootstrapRegistry.InstanceSupplier)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -277,9 +277,9 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果给定类型存在注册，则返回。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapContext.html#isRegistered(java.lang.Class)">isRegistered</a></code>` 在接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code>` 中</dd>
+<dd><code><a href="BootstrapContext.html#isRegistered(java.lang.Class)">isRegistered</a></code> 在接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code> 中</dd>
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapRegistry.html#isRegistered(java.lang.Class)">isRegistered</a></code>` 在接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code>` 中</dd>
+<dd><code><a href="BootstrapRegistry.html#isRegistered(java.lang.Class)">isRegistered</a></code> 在接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code> 中</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="isRegistered(java.lang.Class)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -300,7 +300,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">返回给定类型的任何现有<a href="BootstrapRegistry.InstanceSupplier.html" title="interface in org.springframework.boot.bootstrap"><code>BootstrapRegistry.InstanceSupplier</code></a>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapRegistry.html#getRegisteredInstanceSupplier(java.lang.Class)">getRegisteredInstanceSupplier</a></code>` 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code>` 中</dd>
+<dd><code><a href="BootstrapRegistry.html#getRegisteredInstanceSupplier(java.lang.Class)">getRegisteredInstanceSupplier</a></code> 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code> 中</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="getRegisteredInstanceSupplier(java.lang.Class)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -320,7 +320,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">添加一个 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context"><code>ApplicationListener</code></a>，当 <a href="BootstrapContextClosedEvent.html" title="class in org.springframework.boot.bootstrap"><code>BootstrapContextClosedEvent</code></a> 被调用时，该监听器将在 <a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap"><code>BootstrapContext</code></a> 关闭且 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html" title="class or interface in org.springframework.context"><code>ApplicationContext</code></a> 已准备就绪时被调用。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapRegistry.html#addCloseListener(org.springframework.context.ApplicationListener)">addCloseListener</a></code>` 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code>` 中</dd>
+<dd><code><a href="BootstrapRegistry.html#addCloseListener(org.springframework.context.ApplicationListener)">addCloseListener</a></code> 接口 <code><a href="BootstrapRegistry.html" title="interface in org.springframework.boot.bootstrap">BootstrapRegistry</a></code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>listener</code> - 要添加的监听器</dd>
 </dl>
@@ -337,7 +337,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果该类型已注册，则从上下文中返回一个实例。如果之前尚未访问过，将创建该实例。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapContext.html#get(java.lang.Class)">get</a></code>` 在接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code>` 中</dd>
+<dd><code><a href="BootstrapContext.html#get(java.lang.Class)">get</a></code> 在接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code> 中</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="get(java.lang.Class)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -360,7 +360,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果该类型已注册，则从上下文中返回一个实例。如果之前尚未访问过，将创建该实例。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapContext.html#getOrElse(java.lang.Class,T)">getOrElse</a></code>` 接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code>` 中</dd>
+<dd><code><a href="BootstrapContext.html#getOrElse(java.lang.Class,T)">getOrElse</a></code> 接口 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code> 中</dd>
 <dt>Type Parameters:</dt>
 <dd><span id="getOrElse(java.lang.Class,T)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -382,7 +382,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果该类型已注册，则从上下文中返回一个实例。如果之前尚未访问过，将创建该实例。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapContext.html#getOrElseSupply(java.lang.Class,java.util.function.Supplier)">getOrElseSupply</a></code>` 接口中的 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code>`</dd>
+<dd><code><a href="BootstrapContext.html#getOrElseSupply(java.lang.Class,java.util.function.Supplier)">getOrElseSupply</a></code> 接口中的 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code></dd>
 <dt>Type Parameters:</dt>
 <dd><span id="getOrElseSupply(java.lang.Class,java.util.function.Supplier)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dt>Parameters:</dt>
@@ -405,7 +405,7 @@ implements <a href="ConfigurableBootstrapContext.html" title="interface in org.s
 <div class="block">如果该类型已注册，则从上下文中返回一个实例。如果之前尚未访问过，将创建该实例。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BootstrapContext.html#getOrElseThrow(java.lang.Class,java.util.function.Supplier)">getOrElseThrow</a></code>` 接口中的 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code>`</dd>
+<dd><code><a href="BootstrapContext.html#getOrElseThrow(java.lang.Class,java.util.function.Supplier)">getOrElseThrow</a></code> 接口中的 <code><a href="BootstrapContext.html" title="interface in org.springframework.boot.bootstrap">BootstrapContext</a></code></dd>
 <dt>Type Parameters:</dt>
 <dd><span id="getOrElseThrow(java.lang.Class,java.util.function.Supplier)-type-param-T"><code>T</code> - 实例类型</span></dd>
 <dd><span id="getOrElseThrow(java.lang.Class,java.util.function.Supplier)-type-param-X"><code>X</code> - 如果类型未注册则抛出的异常</span></dd>

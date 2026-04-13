@@ -111,7 +111,7 @@ environment contains a <code>logging.config</code> property it will be used to b
 logging system, otherwise a default configuration is used. Regardless, logging levels
 will be customized if the environment contains <code>logging.level.*</code> entries and
 logging groups can be defined with <code>logging.group</code>.
-<p>Spring、Tomcat、Jetty 和 Hibernate 的调试和跟踪日志将在环境包含未设置为 <code>"false"</code>` 的 <code>debug</code>` 或 <code>trace</code>` 属性时启用（即，如果您使用 `java -jar myapp.jar [--debug | --trace]` 启动应用程序）。如果您希望忽略这些属性，可以将 <a href="#setParseArgs(boolean)"><code>parseArgs</code></a> 设置为 <code>false</code>`。</p><p>默认情况下，日志输出仅写入控制台。如果需要日志文件，可以使用`logging.file.path`和`logging.file.name`属性。</p><p>某些系统属性可能作为副作用被设置，如果日志配置支持占位符（即 log4j 或 logback），这些属性将非常有用：</p><ul>
+<p>Spring、Tomcat、Jetty 和 Hibernate 的调试和跟踪日志将在环境包含未设置为 <code>"false"</code> 的 <code>debug</code> 或 <code>trace</code> 属性时启用（即，如果您使用 `java -jar myapp.jar [--debug | --trace]` 启动应用程序）。如果您希望忽略这些属性，可以将 <a href="#setParseArgs(boolean)"><code>parseArgs</code></a> 设置为 <code>false</code>。</p><p>默认情况下，日志输出仅写入控制台。如果需要日志文件，可以使用`logging.file.path`和`logging.file.name`属性。</p><p>某些系统属性可能作为副作用被设置，如果日志配置支持占位符（即 log4j 或 logback），这些属性将非常有用：</p><ul>
 <li><code>LOG_FILE</code> 设置为应写入的日志文件的路径值（如果有）。</li>
 <li>如果可确定，<code>PID</code> 设置为当前进程 ID 的值。</li>
 </ul></div>
@@ -405,7 +405,7 @@ logging groups can be defined with <code>logging.group</code>.
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">boolean</span> <span class="element-name">supportsEventType</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/ResolvableType.html" title="class or interface in org.springframework.core">ResolvableType</a> resolvableType)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/GenericApplicationListener.html#supportsEventType(org.springframework.core.ResolvableType)" title="class or interface in org.springframework.context.event">supportsEventType</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/GenericApplicationListener.html" title="class or interface in org.springframework.context.event">GenericApplicationListener</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/GenericApplicationListener.html#supportsEventType(org.springframework.core.ResolvableType)" title="class or interface in org.springframework.context.event">supportsEventType</a></code> 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/GenericApplicationListener.html" title="class or interface in org.springframework.context.event">GenericApplicationListener</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -417,7 +417,7 @@ logging groups can be defined with <code>logging.group</code>.
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">boolean</span> <span class="element-name">supportsSourceType</span><wbr/><span class="parameters">(@Nullable <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;?&gt; sourceType)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html#supportsSourceType(java.lang.Class)" title="class or interface in org.springframework.context.event">supportsSourceType</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html" title="class or interface in org.springframework.context.event">SmartApplicationListener</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html#supportsSourceType(java.lang.Class)" title="class or interface in org.springframework.context.event">supportsSourceType</a></code> 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html" title="class or interface in org.springframework.context.event">SmartApplicationListener</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -429,7 +429,7 @@ logging groups can be defined with <code>logging.group</code>.
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">onApplicationEvent</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationEvent.html" title="class or interface in org.springframework.context">ApplicationEvent</a> event)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html#onApplicationEvent(E)" title="class or interface in org.springframework.context">onApplicationEvent</a> 在接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context">ApplicationListener</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationEvent.html" title="class or interface in org.springframework.context">ApplicationEvent</a>&gt;</code>` 中。</dd>
+<dd><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html#onApplicationEvent(E)" title="class or interface in org.springframework.context">onApplicationEvent</a> 在接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationListener.html" title="class or interface in org.springframework.context">ApplicationListener</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationEvent.html" title="class or interface in org.springframework.context">ApplicationEvent</a>&gt;</code> 中。</dd>
 </dl>
 </div>
 </section>
@@ -498,9 +498,9 @@ logging groups can be defined with <code>logging.group</code>.
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">int</span> <span class="element-name">getOrder</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()" title="class or interface in org.springframework.core">getOrder</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html" title="class or interface in org.springframework.core">Ordered</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html#getOrder()" title="class or interface in org.springframework.core">getOrder</a></code> 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/Ordered.html" title="class or interface in org.springframework.core">Ordered</a></code> 中</dd>
 <dt>Specified by:</dt>
-<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html#getOrder()" title="class or interface in org.springframework.context.event">getOrder</a></code>` 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html" title="class or interface in org.springframework.context.event">SmartApplicationListener</a></code>` 中</dd>
+<dd><code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html#getOrder()" title="class or interface in org.springframework.context.event">getOrder</a></code> 接口 <code><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/event/SmartApplicationListener.html" title="class or interface in org.springframework.context.event">SmartApplicationListener</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -523,7 +523,7 @@ logging groups can be defined with <code>logging.group</code>.
 <h3>setParseArgs</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type">void</span> <span class="element-name">setParseArgs</span><wbr/><span class="parameters">(boolean parseArgs)</span></div>
-<div class="block">设置是否解析初始化参数以获取调试和跟踪属性（通常由 `--debug` 或 `--trace` 命令行参数定义）。默认为 <code>true</code>`。</div>
+<div class="block">设置是否解析初始化参数以获取调试和跟踪属性（通常由 `--debug` 或 `--trace` 命令行参数定义）。默认为 <code>true</code>。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>parseArgs</code> - 如果应该解析参数</dd>

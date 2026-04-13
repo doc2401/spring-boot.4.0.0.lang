@@ -14,7 +14,7 @@
   "items": [
     {
       "source": "In addition to <code>bootRun</code> a <code>bootTestRun</code> task is also registered.\nLike <code>bootRun</code>, <code>bootTestRun</code> is an instance of <code>BootRun</code> but it’s configured to use a main class found in the output of the test source set rather than the main source set.\nIt also uses the test source set’s runtime classpath rather than the main source set’s runtime classpath.\nAs <code>bootTestRun</code> is an instance of <code>BootRun</code>, all of the configuration options described above for <code>bootRun</code> can also be used with <code>bootTestRun</code>.",
-      "translation": "除了 <code>bootRun</code>` 之外，还会注册一个 <code>bootTestRun</code>` 任务。\n与 <code>bootRun</code>` 类似，<code>bootTestRun</code>` 也是 <code>BootRun</code>` 的一个实例，但它被配置为使用测试源集输出中的主类，而不是主源集中的主类。\n它同样使用测试源集的运行时类路径，而不是主源集的运行时类路径。\n由于 <code>bootTestRun</code>` 是 <code>BootRun</code>` 的一个实例，因此上述针对 <code>bootRun</code>` 描述的所有配置选项也可以用于 <code>bootTestRun</code>。",
+      "translation": "除了 <code>bootRun</code> 之外，还会注册一个 <code>bootTestRun</code> 任务。\n与 <code>bootRun</code> 类似，<code>bootTestRun</code> 也是 <code>BootRun</code> 的一个实例，但它被配置为使用测试源集输出中的主类，而不是主源集中的主类。\n它同样使用测试源集的运行时类路径，而不是主源集的运行时类路径。\n由于 <code>bootTestRun</code> 是 <code>BootRun</code> 的一个实例，因此上述针对 <code>bootRun</code> 描述的所有配置选项也可以用于 <code>bootTestRun</code>。",
       "count": 2
     },
     {
@@ -24,22 +24,22 @@
     },
     {
       "source": "Since <code>bootRun</code> is a standard <code>JavaExec</code> task, system properties can be passed to the application’s JVM by specifying them in the build script.\nTo make that value of a system property to be configurable set its value using a <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#N14FE1\">project property</a>.\nTo allow a project property to be optional, reference it using <code>findProperty</code>.\nDoing so also allows a default value to be provided using the <code>?:</code> Elvis operator, as shown in the following example:",
-      "translation": "由于 <code>bootRun</code>` 是一个标准的 <code>JavaExec</code>` 任务，可以通过在构建脚本中指定它们来将系统属性传递给应用程序的 JVM。\n若要使该系统属性的值可配置，请使用 <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#N14FE1\">project property</a> 设置其值。\n若要允许项目属性为可选，请使用 <code>findProperty</code>` 引用它。\n这样做还允许使用 <code>?:</code> Elvis 运算符提供默认值，如下例所示：",
+      "translation": "由于 <code>bootRun</code> 是一个标准的 <code>JavaExec</code> 任务，可以通过在构建脚本中指定它们来将系统属性传递给应用程序的 JVM。\n若要使该系统属性的值可配置，请使用 <a href=\"https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#N14FE1\">project property</a> 设置其值。\n若要允许项目属性为可选，请使用 <code>findProperty</code> 引用它。\n这样做还允许使用 <code>?:</code> Elvis 运算符提供默认值，如下例所示：",
       "count": 2
     },
     {
       "source": "Like all <code>JavaExec</code> tasks, arguments can be passed into <code>bootRun</code> from the command line using <code>--args='&lt;arguments&gt;'</code> when using Gradle 4.9 or later.\nFor example, to run your application with a profile named <code>dev</code> active the following command can be used:",
-      "translation": "与所有 <code>JavaExec</code>` 任务一样，在使用 Gradle 4.9 或更高版本时，可以使用 <code>--args='&lt;arguments&gt;'</code>` 从命令行向 <code>bootRun</code>` 传递参数。例如，要运行具有名为 <code>dev</code> 的激活 profile 的应用程序，可使用以下命令：",
+      "translation": "与所有 <code>JavaExec</code> 任务一样，在使用 Gradle 4.9 或更高版本时，可以使用 <code>--args='&lt;arguments&gt;'</code> 从命令行向 <code>bootRun</code> 传递参数。例如，要运行具有名为 <code>dev</code> 的激活 profile 的应用程序，可使用以下命令：",
       "count": 2
     },
     {
       "source": "The preceding example sets that <code>com.example.property</code> system property to the value of the <code>example</code> project property.\nIf the <code>example</code> project property has not been set, the value of the system property will be <code>default</code>.",
-      "translation": "前面的示例将 <code>com.example.property</code>` 系统属性设置为 <code>example</code>` 项目属性的值。如果未设置 <code>example</code>` 项目属性，则系统属性的值为 <code>default</code>。",
+      "translation": "前面的示例将 <code>com.example.property</code> 系统属性设置为 <code>example</code> 项目属性的值。如果未设置 <code>example</code> 项目属性，则系统属性的值为 <code>default</code>。",
       "count": 2
     },
     {
       "source": "The preceding example sets the value of the <code>example</code> project property to <code>custom</code>.\n<code>bootRun</code> will then use this as the value of the <code>com.example.property</code> system property.",
-      "translation": "前面的示例将 <code>example</code>` 项目属性的值设置为 <code>custom</code>`。\n随后，<code>bootRun</code>` 将使用此值作为 <code>com.example.property</code> 系统属性的值。",
+      "translation": "前面的示例将 <code>example</code> 项目属性的值设置为 <code>custom</code>。\n随后，<code>bootRun</code> 将使用此值作为 <code>com.example.property</code> 系统属性的值。",
       "count": 2
     },
     {

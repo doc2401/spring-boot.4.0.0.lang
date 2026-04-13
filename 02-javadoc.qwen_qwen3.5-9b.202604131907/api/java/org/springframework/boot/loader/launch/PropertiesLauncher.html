@@ -104,9 +104,9 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></span></div>
 <div class="block"><a href="Launcher.html" title="class in org.springframework.boot.loader.launch"><code>Launcher</code></a> for archives with user-configured classpath and main class through a
 properties file.
-<p>在多个位置查找属性文件以提取加载器设置，默认情况下在当前类路径或当前工作目录中查找 <code>loader.properties</code>`。可以通过设置系统属性 <code>loader.config.name</code>` 来更改属性文件的名称（例如，<code>-Dloader.config.name=my</code>` 将查找 <code>my.properties</code>`）。如果该文件不存在，则尝试使用 <code>loader.config.location</code>`（允许的前缀为 <code>classpath:</code>` 和 <code>file:</code>` 或任何有效的 URL）。一旦找到该文件，将其转换为 Properties 对象并提取可选值（如果文件不存在，这些值也可以作为系统属性提供覆盖）：</p><ul>
+<p>在多个位置查找属性文件以提取加载器设置，默认情况下在当前类路径或当前工作目录中查找 <code>loader.properties</code>。可以通过设置系统属性 <code>loader.config.name</code> 来更改属性文件的名称（例如，<code>-Dloader.config.name=my</code> 将查找 <code>my.properties</code>）。如果该文件不存在，则尝试使用 <code>loader.config.location</code>（允许的前缀为 <code>classpath:</code> 和 <code>file:</code> 或任何有效的 URL）。一旦找到该文件，将其转换为 Properties 对象并提取可选值（如果文件不存在，这些值也可以作为系统属性提供覆盖）：</p><ul>
 <li><code>loader.path</code>：一个逗号分隔的目录列表（包含文件资源，和/或嵌套在 *.jar 或 *.zip 或归档中的归档），用于追加到类路径。应用程序归档中的 <code>BOOT-INF/classes,BOOT-INF/lib</code> 始终被使用。</li>
-<li>`loader.main`：类加载器设置好后，将委托执行的主方法。没有默认值，但如果 `${loader.home}/META-INF` 中存在一个 `MANIFEST.MF`，则会回退到查找其中的 <code>Start-Class</code>`。</li>
+<li>`loader.main`：类加载器设置好后，将委托执行的主方法。没有默认值，但如果 `${loader.home}/META-INF` 中存在一个 `MANIFEST.MF`，则会回退到查找其中的 <code>Start-Class</code>。</li>
 </ul></div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -249,7 +249,7 @@ properties file.
 <h3>MAIN</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span> <span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang">String</a></span> <span class="element-name">MAIN</span></div>
-<div class="block">主类的属性键。作为清单条目，也可指定为 <code>Start-Class</code>`。</div>
+<div class="block">主类的属性键。作为清单条目，也可指定为 <code>Start-Class</code>。</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -415,7 +415,7 @@ properties file.
 <div class="block">为指定的归档文件创建类加载器。</div>
 <dl class="notes">
 <dt>Overrides:</dt>
-<dd><code><a href="Launcher.html#createClassLoader(java.util.Collection)">createClassLoader</a></code>` 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code>`</dd>
+<dd><code><a href="Launcher.html#createClassLoader(java.util.Collection)">createClassLoader</a></code> 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>urls</code> - 类路径 URL</dd>
 <dt>Returns:</dt>
@@ -435,7 +435,7 @@ properties file.
 <div class="block">返回正在启动的存档，或者如果没有存档则返回<code>null</code>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Launcher.html#getArchive()">getArchive</a></code>` 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code>`</dd>
+<dd><code><a href="Launcher.html#getArchive()">getArchive</a></code> 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code></dd>
 <dt>Returns:</dt>
 <dd>已启动的归档</dd>
 </dl>
@@ -452,7 +452,7 @@ properties file.
 <div class="block">返回应启动的主类。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Launcher.html#getMainClass()">getMainClass</a></code>` 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code>`</dd>
+<dd><code><a href="Launcher.html#getMainClass()">getMainClass</a></code> 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code></dd>
 <dt>Returns:</dt>
 <dd>主类的名称</dd>
 <dt>Throws:</dt>
@@ -492,7 +492,7 @@ properties file.
 <div class="block">返回将用于构建类路径的归档文件。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Launcher.html#getClassPathUrls()">getClassPathUrls</a></code>` 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code>`</dd>
+<dd><code><a href="Launcher.html#getClassPathUrls()">getClassPathUrls</a></code> 类中的 <code><a href="Launcher.html" title="class in org.springframework.boot.loader.launch">Launcher</a></code></dd>
 <dt>Returns:</dt>
 <dd>类路径归档</dd>
 <dt>Throws:</dt>

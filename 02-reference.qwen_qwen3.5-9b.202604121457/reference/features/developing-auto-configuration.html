@@ -1814,7 +1814,7 @@ import org.springframework.boot.test.context.runner.ApplicationContextRunner
 <div class="sect2">
 <h3 id="features.developing-auto-configuration.custom-starter.configuration-keys"><a class="anchor" href="#features.developing-auto-configuration.custom-starter.configuration-keys"></a>配置键</h3>
 <div class="paragraph">
-<p>如果您的启动器提供配置键，请使用唯一的命名空间。特别是，不要将您的键包含在 Spring Boot 使用的命名空间中（例如 <code>server</code>`、<code>management</code>`、<code>spring</code>` 等）。如果使用相同的命名空间，我们未来可能会以破坏您模块的方式修改这些命名空间。作为一般规则，请用一个您拥有的命名空间（例如 <code>acme</code>）前缀所有键。</p>
+<p>如果您的启动器提供配置键，请使用唯一的命名空间。特别是，不要将您的键包含在 Spring Boot 使用的命名空间中（例如 <code>server</code>、<code>management</code>、<code>spring</code> 等）。如果使用相同的命名空间，我们未来可能会以破坏您模块的方式修改这些命名空间。作为一般规则，请用一个您拥有的命名空间（例如 <code>acme</code>）前缀所有键。</p>
 </div>
 <div class="paragraph">
 <p>确保通过为每个属性添加字段 Javadoc 来记录配置键，如下例所示：</p>

@@ -1114,7 +1114,7 @@
 <p>使用 <code>-parameters</code> 进行编译。</p>
 </li>
 <li>
-<p>一个从 <code>spring-boot-dependencies</code>` POM 继承的依赖管理部分，用于管理常见依赖的版本。此依赖管理允许您在自己的 POM 中使用这些依赖时省略 <code>&lt;version&gt;</code> 标签。</p>
+<p>一个从 <code>spring-boot-dependencies</code> POM 继承的依赖管理部分，用于管理常见依赖的版本。此依赖管理允许您在自己的 POM 中使用这些依赖时省略 <code>&lt;version&gt;</code> 标签。</p>
 </li>
 <li>
 <p>带有 <code>repackage</code> 执行 ID 的 <a class="xref page" href="packaging.html#packaging.repackage-goal"><code>repackage</code> goal</a> 的执行。</p>
@@ -1129,7 +1129,7 @@
 <p>合理的插件配置（<a href="https://github.com/git-commit-id/git-commit-id-maven-plugin"><code>Git Commit Id Plugin</code></a> 和 <a href="https://maven.apache.org/plugins/maven-shade-plugin/">shade</a>）。</p>
 </li>
 <li>
-<p>针对 <code>application.properties</code>` 和 <code>application.yml</code>` 的合理资源过滤，包括特定配置文件（例如 <code>application-dev.properties</code>` 和 <code>application-dev.yml</code>）。</p>
+<p>针对 <code>application.properties</code> 和 <code>application.yml</code> 的合理资源过滤，包括特定配置文件（例如 <code>application-dev.properties</code> 和 <code>application-dev.yml</code>）。</p>
 </li>
 </ul>
 </div>
@@ -1180,7 +1180,7 @@
 <h2 id="using.parent-pom"><a class="anchor" href="#using.parent-pom"></a>继承 Starter 父 POM</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要将您的项目配置为继承自 <code>spring-boot-starter-parent</code>`，请按如下方式设置 <code>parent</code>：</p>
+<p>要将您的项目配置为继承自 <code>spring-boot-starter-parent</code>，请按如下方式设置 <code>parent</code>：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1258,7 +1258,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>前面的示例配置无法通过属性覆盖单个依赖项，如上所述。若要实现相同的结果，需要在项目中的 `<strong>` 标签之前，在 <code>dependencyManagement</code>` 部分添加条目。例如，若要使用不同版本的 SLF4J 库和 Spring Data 发行版列车，您可以在 <code>pom.xml</code> 中添加以下元素：</strong></p>
+<p>前面的示例配置无法通过属性覆盖单个依赖项，如上所述。若要实现相同的结果，需要在项目中的 `<strong>` 标签之前，在 <code>dependencyManagement</code> 部分添加条目。例如，若要使用不同版本的 SLF4J 库和 Spring Data 发行版列车，您可以在 <code>pom.xml</code> 中添加以下元素：</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1329,7 +1329,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>上述内容确保默认启用 <code>local</code>` 和 <code>dev</code>。现在已暴露专用属性，该属性也可在命令行中覆盖：</p>
+<p>上述内容确保默认启用 <code>local</code> 和 <code>dev</code>。现在已暴露专用属性，该属性也可在命令行中覆盖：</p>
 </div>
 <div class="listingblock">
 <div class="content">

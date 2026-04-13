@@ -1209,7 +1209,7 @@ Logback 没有 <code>FATAL</code> 级别。
 <i class="fa icon-tip" title="提示"></i>
 </td>
 <td class="content">
-如果您有 <code>spring.application.name`</code> 属性但不希望记录它，可以将 <code>logging.include-application-name</code>` 设置为 <code>false</code>。
+如果您有 <code>spring.application.name`</code> 属性但不希望记录它，可以将 <code>logging.include-application-name</code> 设置为 <code>false</code>。
 </td>
 </tr>
 </tbody></table>
@@ -1220,7 +1220,7 @@ Logback 没有 <code>FATAL</code> 级别。
 <i class="fa icon-tip" title="提示"></i>
 </td>
 <td class="content">
-如果您有 <code>spring.application.group`</code> 属性但不希望记录它，可以将 <code>logging.include-application-group</code>` 设置为 <code>false</code>。
+如果您有 <code>spring.application.group`</code> 属性但不希望记录它，可以将 <code>logging.include-application-group</code> 设置为 <code>false</code>。
 </td>
 </tr>
 </tbody></table>
@@ -1243,7 +1243,7 @@ Logback 没有 <code>FATAL</code> 级别。
 <div class="sectionbody">
 <div class="paragraph">
 <p>默认日志配置会在写入时将消息回显到控制台。
-默认情况下，会记录 <code>ERROR</code>` 级别、<code>WARN</code>` 级别和 <code>INFO</code> 级别的消息。
+默认情况下，会记录 <code>ERROR</code> 级别、<code>WARN</code> 级别和 <code>INFO</code> 级别的消息。
 您也可以通过使用 <code>--debug</code> 标志启动应用程序来启用“调试”模式。</p>
 </div>
 <div class="listingblock">
@@ -1267,10 +1267,10 @@ Logback 没有 <code>FATAL</code> 级别。
 启用调试模式并<strong>不</strong>会将您的应用程序配置为记录所有级别为<code>DEBUG</code>的消息。</p>
 </div>
 <div class="paragraph">
-<p>或者，您可以通过使用 <code>--trace</code>` 标志启动应用程序（或在您的 <code>application.properties</code>` 中设置 <code>trace=true</code>）来启用“跟踪”模式。这样做将为部分核心记录器（嵌入式容器、Hibernate 架构生成以及整个 Spring 系列）启用跟踪日志记录。</p>
+<p>或者，您可以通过使用 <code>--trace</code> 标志启动应用程序（或在您的 <code>application.properties</code> 中设置 <code>trace=true</code>）来启用“跟踪”模式。这样做将为部分核心记录器（嵌入式容器、Hibernate 架构生成以及整个 Spring 系列）启用跟踪日志记录。</p>
 </div>
 <div class="paragraph">
-<p>如果您想禁用基于控制台的日志记录，可以将 <code>logging.console.enabled</code>` 属性设置为 <code>false</code>。</p>
+<p>如果您想禁用基于控制台的日志记录，可以将 <code>logging.console.enabled</code> 属性设置为 <code>false</code>。</p>
 </div>
 <div class="sect2">
 <h3 id="features.logging.console-output.color-coded"><a class="anchor" href="#features.logging.console-output.color-coded"></a>彩色编码输出</h3>
@@ -1370,8 +1370,8 @@ Logback 没有 <code>FATAL</code> 级别。
 <div class="sectionbody">
 <div class="paragraph">
 <p>默认情况下，Spring Boot 仅向控制台记录日志，不写入日志文件。
-如果您希望在控制台输出之外写入日志文件，需要设置 <code>logging.file.name</code>` 或 <code>logging.file.path</code>` 属性（例如在您的 <code>application.properties</code> 中）。
-如果同时设置了这两个属性，则忽略 <code>logging.file.path</code>`，仅使用 <code>logging.file.name</code>。</p>
+如果您希望在控制台输出之外写入日志文件，需要设置 <code>logging.file.name</code> 或 <code>logging.file.path</code> 属性（例如在您的 <code>application.properties</code> 中）。
+如果同时设置了这两个属性，则忽略 <code>logging.file.path</code>，仅使用 <code>logging.file.name</code>。</p>
 </div>
 <div class="paragraph">
 <p>下表展示了如何组合使用<code>logging.*</code>属性：</p>
@@ -1409,12 +1409,12 @@ Logback 没有 <code>FATAL</code> 级别。
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">特定文件</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">特定目录</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">写入由 <code>logging.file.name</code>` 指定的位置，并忽略 <code>logging.file.path</code>。该位置可以是绝对路径或相对于当前目录的路径。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">写入由 <code>logging.file.name</code> 指定的位置，并忽略 <code>logging.file.path</code>。该位置可以是绝对路径或相对于当前目录的路径。</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>日志文件在达到 10 MB 时会进行轮转，并且与控制台输出一样，默认记录 <code>ERROR</code>` 级别、<code>WARN</code>` 级别和 <code>INFO</code> 级别的消息。</p>
+<p>日志文件在达到 10 MB 时会进行轮转，并且与控制台输出一样，默认记录 <code>ERROR</code> 级别、<code>WARN</code> 级别和 <code>INFO</code> 级别的消息。</p>
 </div>
 <div class="admonitionblock tip">
 <table><tbody><tr>
@@ -1434,7 +1434,7 @@ Logback 没有 <code>FATAL</code> 级别。
 <h2 id="features.logging.file-rotation"><a class="anchor" href="#features.logging.file-rotation"></a>文件轮转</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您使用的是 Logback，可以通过您的 <code>application.properties</code>` 或 <code>application.yaml</code>` 文件微调日志轮转设置。对于其他所有日志系统，您需要自行配置轮转设置（例如，如果您使用 Log4j2，则可以添加一个 <code>log4j2.xml</code>` 或 <code>log4j2-spring.xml</code> 文件）。</p>
+<p>如果您使用的是 Logback，可以通过您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件微调日志轮转设置。对于其他所有日志系统，您需要自行配置轮转设置（例如，如果您使用 Log4j2，则可以添加一个 <code>log4j2.xml</code> 或 <code>log4j2-spring.xml</code> 文件）。</p>
 </div>
 <div class="paragraph">
 <p>支持以下轮转策略属性：</p>
@@ -1922,7 +1922,7 @@ Java 实用程序日志 (Java Util Logging) 存在已知的类加载问题，导
 </td>
 <td class="content">
 <div class="paragraph">
-<p>您可以通过仅覆盖 <code>LOG_LEVEL_PATTERN</code>`（或使用 Logback 的 <code>logging.pattern.level</code>`）来向日志行添加 MDC 和其他临时内容。例如，如果您使用 <code>logging.pattern.level=user:%X{user} %5p</code>，则默认日志格式将包含 "user" 的 MDC 条目（如果存在），如下例所示。</p>
+<p>您可以通过仅覆盖 <code>LOG_LEVEL_PATTERN</code>（或使用 Logback 的 <code>logging.pattern.level</code>）来向日志行添加 MDC 和其他临时内容。例如，如果您使用 <code>logging.pattern.level=user:%X{user} %5p</code>，则默认日志格式将包含 "user" 的 MDC 条目（如果存在），如下例所示。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1956,7 +1956,7 @@ Handling authenticated request</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>要启用结构化日志，请将属性 <code>logging.structured.format.console</code>`（用于控制台输出）或 <code>logging.structured.format.file</code>（用于文件输出）设置为要使用的格式的 ID。</p>
+<p>要启用结构化日志，请将属性 <code>logging.structured.format.console</code>（用于控制台输出）或 <code>logging.structured.format.file</code>（用于文件输出）设置为要使用的格式的 ID。</p>
 </div>
 <div class="paragraph">
 <p>如果您正在使用<a href="#features.logging.custom-log-configuration">自定义日志配置</a>，请更新您的配置以尊重<code>CONSOLE_LOG_STRUCTURED_FORMAT</code>和<code>FILE_LOG_STRUCTURED_FORMAT</code>系统属性。
@@ -2027,7 +2027,7 @@ Handling authenticated request</code></pre>
 <p><a href="https://www.elastic.co/guide/en/ecs/8.11/ecs-reference.html">Elastic Common Schema</a> 是一种基于 JSON 的日志格式。</p>
 </div>
 <div class="paragraph">
-<p>要启用 Elastic Common Schema 日志格式，请将相应的 <code>format</code>` 属性设置为 <code>ecs</code>：</p>
+<p>要启用 Elastic Common Schema 日志格式，请将相应的 <code>format</code> 属性设置为 <code>ecs</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_6">
 <div class="content">
@@ -2143,7 +2143,7 @@ logging.structured.ecs.service.node-name=Primary</code></pre>
 <p><a href="https://go2docs.graylog.org/current/getting_in_log_data/gelf.html">Graylog 扩展日志格式</a> 是用于 Graylog 日志分析平台的基于 JSON 的日志格式。</p>
 </div>
 <div class="paragraph">
-<p>要启用 Graylog 扩展日志格式，请将相应的 <code>format</code>` 属性设置为 <code>gelf</code>：</p>
+<p>要启用 Graylog 扩展日志格式，请将相应的 <code>format</code> 属性设置为 <code>gelf</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">
@@ -2255,7 +2255,7 @@ logging.structured.gelf.service.version=1</code></pre>
 <p><a href="https://github.com/logfellow/logstash-logback-encoder?tab=readme-ov-file#standard-fields">Logstash JSON 格式</a> 是一种基于 JSON 的日志格式。</p>
 </div>
 <div class="paragraph">
-<p>要启用 Logstash JSON 日志格式，请将相应的 <code>format</code>` 属性设置为 <code>logstash</code>：</p>
+<p>要启用 Logstash JSON 日志格式，请将相应的 <code>format</code> 属性设置为 <code>logstash</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_10">
 <div class="content">
@@ -2340,7 +2340,7 @@ logging.structured.format.file=logstash</code></pre>
 </tbody>
 </table>
 <div class="paragraph">
-<p>例如，以下配置将排除 <code>log.level</code>`，将 <code>process.id</code>` 重命名为 <code>procid</code>`，并添加一个固定的 <code>corpname</code> 字段：</p>
+<p>例如，以下配置将排除 <code>log.level</code>，将 <code>process.id</code> 重命名为 <code>procid</code>，并添加一个固定的 <code>corpname</code> 字段：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_11">
 <div class="content">
@@ -2415,7 +2415,7 @@ logging.structured.json.add.corpname=mycorp</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>logging.structured.json.stacktrace.root</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">使用 <code>last</code>` 将根项最后打印（与 Java 相同），或使用 <code>first</code> 将根项首先打印。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用 <code>last</code> 将根项最后打印（与 Java 相同），或使用 <code>first</code> 将根项首先打印。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>logging.structured.json.stacktrace.max-length</code></p></td>
@@ -2552,7 +2552,7 @@ import org.springframework.boot.logging.structured.StructuredLogFormatter
 <p>正如示例所示，您可以返回任何格式，不必是 JSON。</p>
 </div>
 <div class="paragraph">
-<p>要启用您的自定义格式，请将属性 <code>logging.structured.format.console</code>` 或 <code>logging.structured.format.file</code> 设置为您的实现的完全限定类名。</p>
+<p>要启用您的自定义格式，请将属性 <code>logging.structured.format.console</code> 或 <code>logging.structured.format.file</code> 设置为您的实现的完全限定类名。</p>
 </div>
 <div class="paragraph">
 <p>您的实现可以使用一些自动注入的构造函数参数。有关详细信息，请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/structured/StructuredLogFormatter.html"><code>StructuredLogFormatter</code></a> 的 JavaDoc。</p>
@@ -2630,7 +2630,7 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:71 - no applicable action f
 如果您想在 Logback 配置中访问 <code>application.properties</code> 文件中的值，这样做会很有用。
 该标签的工作方式与 Logback 的标准 `<property>` 标签类似。
 但是，您不是指定直接的 <code>value</code>，而是指定属性的 <code>source`（来自 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>）。
-如果您需要将属性存储到 <code>local</code>` 范围之外的某个位置，可以使用 <code>scope</code> 属性。
+如果您需要将属性存储到 <code>local</code> 范围之外的某个位置，可以使用 <code>scope</code> 属性。
 如果您需要一个备用值（以防属性未在 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 中设置），可以使用 <code>defaultValue</code> 属性。
 以下示例展示了如何在 Logback 中暴露属性：</code></property></springproperty></p>
 </div>
@@ -2722,7 +2722,7 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:71 - no applicable action f
 <p>如果您想在 Log4j2 配置中引用 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 的属性，可以使用带有 <code>spring:</code> 前缀的<a href="https://logging.apache.org/log4j/2.x/manual/lookups.html">lookups</a>。这样做在 Log4j2 配置中访问<code>application.properties</code>文件中的值时非常有用。</p>
 </div>
 <div class="paragraph">
-<p>下面的示例展示了如何设置名为 <code>applicationName</code>` 和 <code>applicationGroup</code>` 的 Log4j2 属性，以从 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 读取 <code>spring.application.name</code>` 和 <code>spring.application.group</code>：</p>
+<p>下面的示例展示了如何设置名为 <code>applicationName</code> 和 <code>applicationGroup</code> 的 Log4j2 属性，以从 Spring <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a> 读取 <code>spring.application.name</code> 和 <code>spring.application.group</code>：</p>
 </div>
 <div class="listingblock">
 <div class="content">

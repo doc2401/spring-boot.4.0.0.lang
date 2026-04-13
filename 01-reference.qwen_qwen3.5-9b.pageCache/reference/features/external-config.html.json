@@ -49,12 +49,12 @@
     },
     {
       "source": "When binding to scalar values, keys with <code>.</code> in them do not need to be surrounded by <code>[]</code>.\nScalar values include enums and all types in the <code>java.lang</code> package except for <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\"><code>Object</code></a>.\nBinding <code>a.b=c</code> to <code>Map&lt;String, String&gt;</code> will preserve the <code>.</code> in the key and return a Map with the entry <code>{\"a.b\"=\"c\"}</code>.\nFor any other types you need to use the bracket notation if your <code>key</code> contains a <code>.</code>.\nFor example, binding <code>a.b=c</code> to <code>Map&lt;String, Object&gt;</code> will return a Map with the entry <code>{\"a\"={\"b\"=\"c\"}}</code> whereas <code>[a.b]=c</code> will return a Map with the entry <code>{\"a.b\"=\"c\"}</code>.",
-      "translation": "绑定标量值时，键中包含 <code>.</code>` 的无需被 <code>[]</code>` 包围。标量值包括枚举以及 <code>java.lang</code>` 包中的所有类型，但 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\"><code>Object</code></a> 除外。将 <code>a.b=c</code>` 绑定到 <code>Map&lt;String, String&gt;</code>` 会保留键中的 <code>.</code>`，并返回包含条目 <code>{\"a.b\"=\"c\"}</code>` 的 Map。对于任何其他类型，如果您的 <code>key</code>` 包含 <code>.</code>`，则需要使用方括号表示法。例如，将 <code>a.b=c</code>` 绑定到 <code>Map&lt;String, Object&gt;</code>` 会返回包含条目 <code>{\"a\"={\"b\"=\"c\"}}</code>` 的 Map，而 <code>[a.b]=c</code>` 则会返回包含条目 <code>{\"a.b\"=\"c\"}</code> 的 Map。",
+      "translation": "绑定标量值时，键中包含 <code>.</code> 的无需被 <code>[]</code> 包围。标量值包括枚举以及 <code>java.lang</code> 包中的所有类型，但 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html\"><code>Object</code></a> 除外。将 <code>a.b=c</code> 绑定到 <code>Map&lt;String, String&gt;</code> 会保留键中的 <code>.</code>，并返回包含条目 <code>{\"a.b\"=\"c\"}</code> 的 Map。对于任何其他类型，如果您的 <code>key</code> 包含 <code>.</code>，则需要使用方括号表示法。例如，将 <code>a.b=c</code> 绑定到 <code>Map&lt;String, Object&gt;</code> 会返回包含条目 <code>{\"a\"={\"b\"=\"c\"}}</code> 的 Map，而 <code>[a.b]=c</code> 则会返回包含条目 <code>{\"a.b\"=\"c\"}</code> 的 Map。",
       "count": 2
     },
     {
       "source": "If the <code>dev</code> profile is not active, <code>MyProperties.map</code> contains one entry with key <code>key1</code> (with a name of <code>my name 1</code> and a description of <code>my description 1</code>).\nIf the <code>dev</code> profile is enabled, however, <code>map</code> contains two entries with keys <code>key1</code> (with a name of <code>dev name 1</code> and a description of <code>my description 1</code>) and <code>key2</code> (with a name of <code>dev name 2</code> and a description of <code>dev description 2</code>).",
-      "translation": "如果未激活 <code>dev</code>` 配置文件，则 <code>MyProperties.map</code>` 包含一个条目，其键为 <code>key1</code>`（名称为 <code>my name 1</code>`，描述为 <code>my description 1</code>`）。\n然而，如果启用了 <code>dev</code>` 配置文件，则 <code>map</code>` 包含两个条目：键为 <code>key1</code>`（名称为 <code>dev name 1</code>`，描述为 <code>my description 1</code>`）和键为 <code>key2</code>`（名称为 <code>dev name 2</code>`，描述为 <code>dev description 2</code>）。",
+      "translation": "如果未激活 <code>dev</code> 配置文件，则 <code>MyProperties.map</code> 包含一个条目，其键为 <code>key1</code>（名称为 <code>my name 1</code>，描述为 <code>my description 1</code>）。\n然而，如果启用了 <code>dev</code> 配置文件，则 <code>map</code> 包含两个条目：键为 <code>key1</code>（名称为 <code>dev name 1</code>，描述为 <code>my description 1</code>）和键为 <code>key2</code>（名称为 <code>dev name 2</code>，描述为 <code>dev description 2</code>）。",
       "count": 2
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "source": "If the <code>dev</code> profile is not active, <code>MyProperties.list</code> contains one <code>MyPojo</code> entry, as previously defined.\nIf the <code>dev</code> profile is enabled, however, the <code>list</code> <em>still</em> contains only one entry (with a name of <code>my another name</code> and a description of <code>null</code>).\nThis configuration <em>does not</em> add a second <code>MyPojo</code> instance to the list, and it does not merge the items.",
-      "translation": "如果未激活 <code>dev</code>` 配置文件，则 <code>MyProperties.list</code>` 包含一个先前定义的 <code>MyPojo</code>` 条目。然而，如果启用了 <code>dev</code>` 配置文件，<code>list</code>` <em>仍然</em>仅包含一个条目（名称为 <code>my another name</code>`，描述为 <code>null</code>`）。此配置 <em>不会</em>向列表添加第二个 <code>MyPojo</code> 实例，也不会合并项目。",
+      "translation": "如果未激活 <code>dev</code> 配置文件，则 <code>MyProperties.list</code> 包含一个先前定义的 <code>MyPojo</code> 条目。然而，如果启用了 <code>dev</code> 配置文件，<code>list</code> <em>仍然</em>仅包含一个条目（名称为 <code>my another name</code>，描述为 <code>null</code>）。此配置 <em>不会</em>向列表添加第二个 <code>MyPojo</code> 实例，也不会合并项目。",
       "count": 2
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "source": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html\"><code>@PropertySource</code></a> annotations on your <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> classes.\nPlease note that such property sources are not added to the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> until the application context is being refreshed.\nThis is too late to configure certain properties such as <code>logging.*</code> and <code>spring.main.*</code> which are read before refresh begins.",
-      "translation": "在您的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> 类上使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html\"><code>@PropertySource</code></a> 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code>` 和 <code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。",
+      "translation": "在您的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html\"><code>@Configuration</code></a> 类上使用 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/PropertySource.html\"><code>@PropertySource</code></a> 注解。请注意，此类属性源仅在刷新应用程序上下文时才会添加到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中。这太晚了，无法配置某些属性，例如 <code>logging.*</code> 和 <code>spring.main.*</code>，因为这些属性在刷新开始之前就会被读取。",
       "count": 2
     },
     {
@@ -139,7 +139,7 @@
     },
     {
       "source": "The <code>random.int*</code> syntax is <code>OPEN value (,max) CLOSE</code> where the <code>OPEN,CLOSE</code> are any character and <code>value,max</code> are integers.\nIf <code>max</code> is provided, then <code>value</code> is the minimum value and <code>max</code> is the maximum value (exclusive).",
-      "translation": "`random.int*` 语法为 <code>OPEN value (,max) CLOSE</code>`，其中 <code>OPEN,CLOSE</code>` 可以是任意字符，而 <code>value,max</code>` 是整数。如果提供了 <code>max</code>`，则 <code>value</code>` 是最小值，<code>max</code> 是最大值（不包含）。",
+      "translation": "`random.int*` 语法为 <code>OPEN value (,max) CLOSE</code>，其中 <code>OPEN,CLOSE</code> 可以是任意字符，而 <code>value,max</code> 是整数。如果提供了 <code>max</code>，则 <code>value</code> 是最小值，<code>max</code> 是最大值（不包含）。",
       "count": 2
     },
     {
@@ -159,7 +159,7 @@
     },
     {
       "source": "When binding to <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> properties you may need to use a special bracket notation so that the original <code>key</code> value is preserved.\nIf the key is not surrounded by <code>[]</code>, any characters that are not alpha-numeric, <code>-</code> or <code>.</code> are removed.",
-      "translation": "绑定到 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code>` 值。如果键未被 <code>[]</code>` 包围，任何非字母数字、<code>-</code>` 或 <code>.</code> 的字符都将被移除。",
+      "translation": "绑定到 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 属性时，您可能需要使用特殊的括号表示法以保留原始 <code>key</code> 值。如果键未被 <code>[]</code> 包围，任何非字母数字、<code>-</code> 或 <code>.</code> 的字符都将被移除。",
       "count": 2
     },
     {
@@ -169,7 +169,7 @@
     },
     {
       "source": "Only the environment variable <strong>name</strong> is lower-cased, not the value.\nWhen setting <code>MY_PROPS_VALUES_KEY=VALUE</code>, the <code>values</code> <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> contains a <code>{\"key\"=\"VALUE\"}</code> entry.",
-      "translation": "只有环境变量名 `<strong>name</strong>` 会被转换为小写，而值不会。当设置 <code>MY_PROPS_VALUES_KEY=VALUE</code>` 时，<code>values</code>` <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 包含一个 <code>{\"key\"=\"VALUE\"}</code> 条目。",
+      "translation": "只有环境变量名 `<strong>name</strong>` 会被转换为小写，而值不会。当设置 <code>MY_PROPS_VALUES_KEY=VALUE</code> 时，<code>values</code> <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 包含一个 <code>{\"key\"=\"VALUE\"}</code> 条目。",
       "count": 2
     },
     {
@@ -179,7 +179,7 @@
     },
     {
       "source": "In the preceding example, if the <code>dev</code> profile is active, <code>MyProperties.list</code> contains <em>one</em> <code>MyPojo</code> entry (with a name of <code>my another name</code> and a description of <code>null</code>).\nFor YAML, both comma-separated lists and YAML lists can be used for completely overriding the contents of the list.",
-      "translation": "在前面的示例中，如果激活了 <code>dev</code>` 配置文件，则 <code>MyProperties.list</code>` 包含 <em>一个</em> <code>MyPojo</code>` 条目（名称为 <code>my another name</code>`，描述为 <code>null</code>）。\n对于 YAML，可以使用逗号分隔列表或 YAML 列表来完全覆盖列表的内容。",
+      "translation": "在前面的示例中，如果激活了 <code>dev</code> 配置文件，则 <code>MyProperties.list</code> 包含 <em>一个</em> <code>MyPojo</code> 条目（名称为 <code>my another name</code>，描述为 <code>null</code>）。\n对于 YAML，可以使用逗号分隔列表或 YAML 列表来完全覆盖列表的内容。",
       "count": 2
     },
     {
@@ -194,12 +194,12 @@
     },
     {
       "source": "On your application classpath (for example, inside your jar) you can have an <code>application.properties</code> file that provides a sensible default property value for <code>name</code>.\nWhen running in a new environment, an <code>application.properties</code> file can be provided outside of your jar that overrides the <code>name</code>.\nFor one-off testing, you can launch with a specific command line switch (for example, <code>java -jar app.jar --name=\"Spring\"</code>).",
-      "translation": "在您的应用程序类路径中（例如，在您的 jar 内部），可以包含一个 <code>application.properties</code>` 文件，为 <code>name</code>` 提供合理的默认属性值。\n在新环境中运行时，可以在 jar 外部提供一个 <code>application.properties</code>` 文件来覆盖 <code>name</code>`。\n对于一次性测试，您可以使用特定的命令行开关启动（例如，<code>java -jar app.jar --name=\"Spring\"</code>）。",
+      "translation": "在您的应用程序类路径中（例如，在您的 jar 内部），可以包含一个 <code>application.properties</code> 文件，为 <code>name</code> 提供合理的默认属性值。\n在新环境中运行时，可以在 jar 外部提供一个 <code>application.properties</code> 文件来覆盖 <code>name</code>。\n对于一次性测试，您可以使用特定的命令行开关启动（例如，<code>java -jar app.jar --name=\"Spring\"</code>）。",
       "count": 2
     },
     {
       "source": "If you want to specify a location, but you do not mind if it does not always exist, you can use the <code>optional:</code> prefix.\nYou can use this prefix with the <code>spring.config.location</code> and <code>spring.config.additional-location</code> properties, as well as with <a href=\"#features.external-config.files.importing\"><code>spring.config.import</code></a> declarations.",
-      "translation": "如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code>` 前缀。您可以将此前缀与 <code>spring.config.location</code>` 和 <code>spring.config.additional-location</code> 属性一起使用，也可以与 <a href=\"#features.external-config.files.importing\"><code>spring.config.import</code></a> 声明一起使用。",
+      "translation": "如果您想指定一个位置，但不介意该位置不一定存在，可以使用 <code>optional:</code> 前缀。您可以将此前缀与 <code>spring.config.location</code> 和 <code>spring.config.additional-location</code> 属性一起使用，也可以与 <a href=\"#features.external-config.files.importing\"><code>spring.config.import</code></a> 声明一起使用。",
       "count": 2
     },
     {
@@ -209,12 +209,12 @@
     },
     {
       "source": "For example, if you have some Redis configuration and some MySQL configuration, you might want to keep those two pieces of configuration separate, while requiring that both those are present in an <code>application.properties</code> file.\nThis might result in two separate <code>application.properties</code> files mounted at different locations such as <code>/config/redis/application.properties</code> and <code>/config/mysql/application.properties</code>.\nIn such a case, having a wildcard location of <code>config/*/</code>, will result in both files being processed.",
-      "translation": "例如，如果您有一些 Redis 配置和一些 MySQL 配置，您可能希望将这两部分配置分开，同时要求它们都存在于 <code>application.properties</code>` 文件中。这可能会导致两个独立的 <code>application.properties</code>` 文件挂载在不同的位置，如 <code>/config/redis/application.properties</code>` 和 <code>/config/mysql/application.properties</code>`。在这种情况下，使用通配符位置 <code>config/*/</code> 将导致这两个文件都被处理。",
+      "translation": "例如，如果您有一些 Redis 配置和一些 MySQL 配置，您可能希望将这两部分配置分开，同时要求它们都存在于 <code>application.properties</code> 文件中。这可能会导致两个独立的 <code>application.properties</code> 文件挂载在不同的位置，如 <code>/config/redis/application.properties</code> 和 <code>/config/mysql/application.properties</code>。在这种情况下，使用通配符位置 <code>config/*/</code> 将导致这两个文件都被处理。",
       "count": 2
     },
     {
       "source": "As well as <code>application</code> property files, Spring Boot will also attempt to load profile-specific files using the naming convention <code>application-{profile}</code>.\nFor example, if your application activates a profile named <code>prod</code> and uses YAML files, then both <code>application.yaml</code> and <code>application-prod.yaml</code> will be considered.",
-      "translation": "除了 <code>application</code>` 属性文件外，Spring Boot 还将尝试使用命名约定 <code>application-{profile}</code>` 加载特定于配置文件的文件。例如，如果您的应用程序激活了名为 <code>prod</code>` 的配置 profile 并使用 YAML 文件，那么 <code>application.yaml</code>` 和 <code>application-prod.yaml</code> 都将被考虑。",
+      "translation": "除了 <code>application</code> 属性文件外，Spring Boot 还将尝试使用命名约定 <code>application-{profile}</code> 加载特定于配置文件的文件。例如，如果您的应用程序激活了名为 <code>prod</code> 的配置 profile 并使用 YAML 文件，那么 <code>application.yaml</code> 和 <code>application-prod.yaml</code> 都将被考虑。",
       "count": 2
     },
     {
@@ -224,7 +224,7 @@
     },
     {
       "source": "It will attempt to load <code>/demo/core/extra/extra.properties</code>.\nThe <code>optional:extra/extra.properties</code> is relative to <code>/demo/core/core.properties</code> so the full directory is <code>/demo/core/</code> + <code>extra/extra.properties</code>.",
-      "translation": "它将尝试加载 <code>/demo/core/extra/extra.properties</code>`。\n<code>optional:extra/extra.properties</code>` 相对于 <code>/demo/core/core.properties</code>`，因此完整目录为 <code>/demo/core/</code>` + <code>extra/extra.properties</code>。",
+      "translation": "它将尝试加载 <code>/demo/core/extra/extra.properties</code>。\n<code>optional:extra/extra.properties</code> 相对于 <code>/demo/core/core.properties</code>，因此完整目录为 <code>/demo/core/</code> + <code>extra/extra.properties</code>。",
       "count": 2
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "source": "When setting <code>MY_PROPS_VALUES_KEY=value</code>, the <code>values</code> <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> contains a <code>{\"key\"=\"value\"}</code> entry.",
-      "translation": "设置 <code>MY_PROPS_VALUES_KEY=value</code>` 时，<code>values</code>` <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 包含一个 <code>{\"key\"=\"value\"}</code> 条目。",
+      "translation": "设置 <code>MY_PROPS_VALUES_KEY=value</code> 时，<code>values</code> <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html\"><code>Map</code></a> 包含一个 <code>{\"key\"=\"value\"}</code> 条目。",
       "count": 2
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "source": "When your application starts, any <code>spring.application.json</code> or <code>SPRING_APPLICATION_JSON</code> properties will be parsed and added to the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>.",
-      "translation": "当您的应用程序启动时，任何 <code>spring.application.json</code>` 或 <code>SPRING_APPLICATION_JSON</code> 属性都将被解析并添加到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>。",
+      "translation": "当您的应用程序启动时，任何 <code>spring.application.json</code> 或 <code>SPRING_APPLICATION_JSON</code> 属性都将被解析并添加到 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>。",
       "count": 2
     },
     {
@@ -264,12 +264,12 @@
     },
     {
       "source": "If you do not like <code>application</code> as the configuration file name, you can switch to another file name by specifying a <code>spring.config.name</code> environment property.\nFor example, to look for <code>myproject.properties</code> and <code>myproject.yaml</code> files you can run your application as follows:",
-      "translation": "如果您不喜欢将配置文件命名为 <code>application</code>`，可以通过指定 <code>spring.config.name</code>` 环境变量属性来切换到其他文件名。例如，若要查找 <code>myproject.properties</code>` 和 <code>myproject.yaml</code> 文件，可以按以下方式运行应用程序：",
+      "translation": "如果您不喜欢将配置文件命名为 <code>application</code>，可以通过指定 <code>spring.config.name</code> 环境变量属性来切换到其他文件名。例如，若要查找 <code>myproject.properties</code> 和 <code>myproject.yaml</code> 文件，可以按以下方式运行应用程序：",
       "count": 2
     },
     {
       "source": "If <code>spring.config.location</code> contains directories (as opposed to files), they should end in <code>/</code>.\nAt runtime they will be appended with the names generated from <code>spring.config.name</code> before being loaded.\nFiles specified in <code>spring.config.location</code> are imported directly.",
-      "translation": "如果 <code>spring.config.location</code>` 包含目录（而非文件），则它们应以 <code>/</code>` 结尾。在运行时，这些目录将附加由 <code>spring.config.name</code>` 生成的名称，然后再被加载。<code>spring.config.location</code> 中指定的文件将被直接导入。",
+      "translation": "如果 <code>spring.config.location</code> 包含目录（而非文件），则它们应以 <code>/</code> 结尾。在运行时，这些目录将附加由 <code>spring.config.name</code> 生成的名称，然后再被加载。<code>spring.config.location</code> 中指定的文件将被直接导入。",
       "count": 2
     },
     {
@@ -284,17 +284,17 @@
     },
     {
       "source": "When we have <code>classpath:/cfg/;classpath:/ext/</code> instead (with a <code>;</code> delimiter) we process <code>/cfg</code> and <code>/ext</code> at the same level:",
-      "translation": "当使用 <code>classpath:/cfg/;classpath:/ext/</code>`（以 <code>;</code>` 作为分隔符）时，我们会在同一级别处理 <code>/cfg</code>` 和 <code>/ext</code>：",
+      "translation": "当使用 <code>classpath:/cfg/;classpath:/ext/</code>（以 <code>;</code> 作为分隔符）时，我们会在同一级别处理 <code>/cfg</code> 和 <code>/ext</code>：",
       "count": 2
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> has a set of default profiles (by default, <code>[default]</code>) that are used if no active profiles are set.\nIn other words, if no profiles are explicitly activated, then properties from <code>application-default</code> are considered.",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 具有一组默认配置文件（默认为 <code>[default]</code>`），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 <code>application-default</code> 的属性。",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 具有一组默认配置文件（默认为 <code>[default]</code>），当未设置任何活动配置文件时使用。换句话说，如果没有显式激活任何配置文件，则会考虑来自 <code>application-default</code> 的属性。",
       "count": 2
     },
     {
       "source": "This will trigger the import of a <code>dev.properties</code> file in current directory (if such a file exists).\nValues from the imported <code>dev.properties</code> will take precedence over the file that triggered the import.\nIn the above example, the <code>dev.properties</code> could redefine <code>spring.application.name</code> to a different value.",
-      "translation": "这将触发在当前目录中导入 <code>dev.properties</code>` 文件（如果存在该文件）。\n从导入的 <code>dev.properties</code>` 中获取的值将覆盖触发导入的文件中的值。\n在上述示例中，<code>dev.properties</code>` 可以将 <code>spring.application.name</code> 重新定义为不同的值。",
+      "translation": "这将触发在当前目录中导入 <code>dev.properties</code> 文件（如果存在该文件）。\n从导入的 <code>dev.properties</code> 中获取的值将覆盖触发导入的文件中的值。\n在上述示例中，<code>dev.properties</code> 可以将 <code>spring.application.name</code> 重新定义为不同的值。",
       "count": 2
     },
     {
@@ -314,7 +314,7 @@
     },
     {
       "source": "This will add <code>db.username</code>, <code>db.password</code>, <code>mq.username</code> and <code>mq.password</code> properties.",
-      "translation": "这将添加 <code>db.username</code>`、<code>db.password</code>`、<code>mq.username</code>` 和 <code>mq.password</code> 属性。",
+      "translation": "这将添加 <code>db.username</code>、<code>db.password</code>、<code>mq.username</code> 和 <code>mq.password</code> 属性。",
       "count": 2
     },
     {
@@ -384,12 +384,12 @@
     },
     {
       "source": "Locations configured by using <code>spring.config.location</code> replace the default locations.\nFor example, if <code>spring.config.location</code> is configured with the value <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>, the complete set of locations considered is:",
-      "translation": "使用 <code>spring.config.location</code>` 配置的 Locations 会替换默认 Locations。例如，如果 <code>spring.config.location</code>` 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整 Locations 集合为：",
+      "translation": "使用 <code>spring.config.location</code> 配置的 Locations 会替换默认 Locations。例如，如果 <code>spring.config.location</code> 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整 Locations 集合为：",
       "count": 2
     },
     {
       "source": "If you prefer to add additional locations, rather than replacing them, you can use <code>spring.config.additional-location</code>.\nProperties loaded from additional locations can override those in the default locations.\nFor example, if <code>spring.config.additional-location</code> is configured with the value <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>, the complete set of locations considered is:",
-      "translation": "如果您希望添加额外位置而不是替换它们，可以使用 <code>spring.config.additional-location</code>`。从额外位置加载的属性可以覆盖默认位置的属性。例如，如果 <code>spring.config.additional-location</code>` 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整位置集为：",
+      "translation": "如果您希望添加额外位置而不是替换它们，可以使用 <code>spring.config.additional-location</code>。从额外位置加载的属性可以覆盖默认位置的属性。例如，如果 <code>spring.config.additional-location</code> 配置为值 <code>optional:classpath:/custom-config/,optional:file:./custom-config/</code>，则考虑的完整位置集为：",
       "count": 2
     },
     {
@@ -404,7 +404,7 @@
     },
     {
       "source": "As an example, say we have a <code>/demo</code> directory containing our <code>application.jar</code> file.\nWe might add a <code>/demo/application.properties</code> file with the following content:",
-      "translation": "例如，假设我们有一个包含 `application.jar` 文件的 <code>/demo</code>` 目录。我们可以添加一个 <code>/demo/application.properties</code> 文件，内容如下：",
+      "translation": "例如，假设我们有一个包含 `application.jar` 文件的 <code>/demo</code> 目录。我们可以添加一个 <code>/demo/application.properties</code> 文件，内容如下：",
       "count": 2
     },
     {
@@ -414,12 +414,12 @@
     },
     {
       "source": "Configuration trees can also be used for Docker secrets.\nWhen a Docker swarm service is granted access to a secret, the secret gets mounted into the container.\nFor example, if a secret named <code>db.password</code> is mounted at location <code>/run/secrets/</code>, you can make <code>db.password</code> available to the Spring environment using the following:",
-      "translation": "配置树也可用于 Docker 机密。当授予 Docker Swarm 服务访问某个机密的权限时，该机密会被挂载到容器中。例如，如果名为 <code>db.password</code>` 的机密被挂载到位置 <code>/run/secrets/</code>，您可以使用以下方法将其提供给 Spring 环境：",
+      "translation": "配置树也可用于 Docker 机密。当授予 Docker Swarm 服务访问某个机密的权限时，该机密会被挂载到容器中。例如，如果名为 <code>db.password</code> 的机密被挂载到位置 <code>/run/secrets/</code>，您可以使用以下方法将其提供给 Spring 环境：",
       "count": 2
     },
     {
       "source": "Assuming that the <code>username</code> property has not been set elsewhere, <code>app.description</code> will have the value <code>MyApp is a Spring Boot application written by Unknown</code>.",
-      "translation": "假设 <code>username</code>` 属性未在别处设置，则 <code>app.description</code>` 的值将为 <code>MyApp is a Spring Boot application written by Unknown</code>。",
+      "translation": "假设 <code>username</code> 属性未在别处设置，则 <code>app.description</code> 的值将为 <code>MyApp is a Spring Boot application written by Unknown</code>。",
       "count": 2
     },
     {
@@ -429,7 +429,7 @@
     },
     {
       "source": "For <code>application.properties</code> files a special <code>#---</code> or <code>!---</code> comment is used to mark the document splits:",
-      "translation": "对于 <code>application.properties</code>` 文件，使用特殊的 <code>#---</code>` 或 <code>!---</code> 注释来标记文档分割：",
+      "translation": "对于 <code>application.properties</code> 文件，使用特殊的 <code>#---</code> 或 <code>!---</code> 注释来标记文档分割：",
       "count": 2
     },
     {
@@ -439,7 +439,7 @@
     },
     {
       "source": "For example, if you set the prefix to <code>input</code>, a property such as <code>remote.timeout</code> will be resolved as <code>INPUT_REMOTE_TIMEOUT</code> in the system environment.",
-      "translation": "例如，如果您将前缀设置为 <code>input</code>`，则属性如 <code>remote.timeout</code>` 将在系统环境中解析为 <code>INPUT_REMOTE_TIMEOUT</code>。",
+      "translation": "例如，如果您将前缀设置为 <code>input</code>，则属性如 <code>remote.timeout</code> 将在系统环境中解析为 <code>INPUT_REMOTE_TIMEOUT</code>。",
       "count": 2
     },
     {
@@ -459,12 +459,12 @@
     },
     {
       "source": "Assuming that it is in the <code>com.example.app</code> package, the bean name of the <code>SomeProperties</code> example above is <code>some.properties-com.example.app.SomeProperties</code>.",
-      "translation": "假设其位于 <code>com.example.app</code>` 包中，上述 <code>SomeProperties</code>` 示例的 Bean 名称为 <code>some.properties-com.example.app.SomeProperties</code>。",
+      "translation": "假设其位于 <code>com.example.app</code> 包中，上述 <code>SomeProperties</code> 示例的 Bean 名称为 <code>some.properties-com.example.app.SomeProperties</code>。",
       "count": 2
     },
     {
       "source": "Any JavaBean property defined with the <code>another</code> prefix is mapped onto that <code>AnotherComponent</code> bean in manner similar to the preceding <code>SomeProperties</code> example.",
-      "translation": "任何带有 <code>another</code>` 前缀的 JavaBean 属性都将以与前述 <code>SomeProperties</code>` 示例类似的方式映射到该 <code>AnotherComponent</code> Bean。",
+      "translation": "任何带有 <code>another</code> 前缀的 JavaBean 属性都将以与前述 <code>SomeProperties</code> 示例类似的方式映射到该 <code>AnotherComponent</code> Bean。",
       "count": 2
     },
     {
@@ -554,7 +554,7 @@
     },
     {
       "source": "Spring Boot will automatically find and load <code>application.properties</code> and <code>application.yaml</code> files from the following locations when your application starts:",
-      "translation": "当您的应用程序启动时，Spring Boot 会自动从以下位置查找并加载 <code>application.properties</code>` 和 <code>application.yaml</code> 文件：",
+      "translation": "当您的应用程序启动时，Spring Boot 会自动从以下位置查找并加载 <code>application.properties</code> 和 <code>application.yaml</code> 文件：",
       "count": 2
     },
     {
@@ -564,7 +564,7 @@
     },
     {
       "source": "This search ordering lets you specify default values in one configuration file and then selectively override those values in another.\nYou can provide default values for your application in <code>application.properties</code> (or whatever other basename you choose with <code>spring.config.name</code>) in one of the default locations.\nThese default values can then be overridden at runtime with a different file located in one of the custom locations.",
-      "translation": "此搜索顺序允许您在其中一个配置文件指定默认值，然后在另一个配置文件中选择性地覆盖这些值。您可以在默认位置之一的 <code>application.properties</code>`（或您通过 <code>spring.config.name</code> 选择的任何其他基名）中提供应用程序的默认值。这些默认值可以在运行时通过位于自定义位置之一的不同文件进行覆盖。",
+      "translation": "此搜索顺序允许您在其中一个配置文件指定默认值，然后在另一个配置文件中选择性地覆盖这些值。您可以在默认位置之一的 <code>application.properties</code>（或您通过 <code>spring.config.name</code> 选择的任何其他基名）中提供应用程序的默认值。这些默认值可以在运行时通过位于自定义位置之一的不同文件进行覆盖。",
       "count": 2
     },
     {
@@ -579,17 +579,17 @@
     },
     {
       "source": "You can use wildcard locations yourself with the <code>spring.config.location</code> and <code>spring.config.additional-location</code> properties.",
-      "translation": "您可以使用 <code>spring.config.location</code>` 和 <code>spring.config.additional-location</code> 属性自行配置通配符位置。",
+      "translation": "您可以使用 <code>spring.config.location</code> 和 <code>spring.config.additional-location</code> 属性自行配置通配符位置。",
       "count": 2
     },
     {
       "source": "For example, suppose you have a <code>/etc/config/myconfig</code> file that you wish to import as yaml.\nYou can import it from your <code>application.properties</code> using the following:",
-      "translation": "例如，假设您有一个希望作为 YAML 导入的 <code>/etc/config/myconfig</code>` 文件。您可以使用以下内容从您的 <code>application.properties</code> 中导入它：",
+      "translation": "例如，假设您有一个希望作为 YAML 导入的 <code>/etc/config/myconfig</code> 文件。您可以使用以下内容从您的 <code>application.properties</code> 中导入它：",
       "count": 2
     },
     {
       "source": "You can even store whole configurations in properties or yaml format in (multiline) environment variables and load them using the <code>env:</code> prefix.\nAssume there’s an environment variable called <code>MY_CONFIGURATION</code> with this content:",
-      "translation": "您甚至可以将整个配置以属性或 YAML 格式存储在（多行）环境变量中，并使用 <code>env:</code>` 前缀加载它们。假设有一个名为 <code>MY_CONFIGURATION</code> 的环境变量，其内容如下：",
+      "translation": "您甚至可以将整个配置以属性或 YAML 格式存储在（多行）环境变量中，并使用 <code>env:</code> 前缀加载它们。假设有一个名为 <code>MY_CONFIGURATION</code> 的环境变量，其内容如下：",
       "count": 2
     },
     {
@@ -599,7 +599,7 @@
     },
     {
       "source": "To import these properties, you can add the following to your <code>application.properties</code> or <code>application.yaml</code> file:",
-      "translation": "要导入这些属性，您可以在 <code>application.properties</code>` 或 <code>application.yaml</code> 文件中添加以下内容：",
+      "translation": "要导入这些属性，您可以在 <code>application.properties</code> 或 <code>application.yaml</code> 文件中添加以下内容：",
       "count": 2
     },
     {
@@ -674,7 +674,7 @@
     },
     {
       "source": "For example, the configuration property <code>spring.main.log-startup-info</code> would be an environment variable named <code>SPRING_MAIN_LOGSTARTUPINFO</code>.",
-      "translation": "例如，配置属性 <code>spring.main.log-startup-info</code>` 将对应名为 <code>SPRING_MAIN_LOGSTARTUPINFO</code> 的环境变量。",
+      "translation": "例如，配置属性 <code>spring.main.log-startup-info</code> 将对应名为 <code>SPRING_MAIN_LOGSTARTUPINFO</code> 的环境变量。",
       "count": 2
     },
     {
@@ -684,12 +684,12 @@
     },
     {
       "source": "For example, the configuration property <code>my.service[0].other</code> would use an environment variable named <code>MY_SERVICE_0_OTHER</code>.",
-      "translation": "例如，配置属性 <code>my.service[0].other</code>` 会使用名为 <code>MY_SERVICE_0_OTHER</code> 的环境变量。",
+      "translation": "例如，配置属性 <code>my.service[0].other</code> 会使用名为 <code>MY_SERVICE_0_OTHER</code> 的环境变量。",
       "count": 2
     },
     {
       "source": "Support for binding from environment variables is applied to the <code>systemEnvironment</code> property source and to any additional property source whose name ends with <code>-systemEnvironment</code>.",
-      "translation": "支持从环境变量进行绑定，适用于 <code>systemEnvironment</code>` 属性源以及任何名称以 <code>-systemEnvironment</code> 结尾的附加属性源。",
+      "translation": "支持从环境变量进行绑定，适用于 <code>systemEnvironment</code> 属性源以及任何名称以 <code>-systemEnvironment</code> 结尾的附加属性源。",
       "count": 2
     },
     {
@@ -739,7 +739,7 @@
     },
     {
       "source": "Spring Boot supports resolving binary data that have been Base64 encoded.\nIf you expose a <code>Resource</code> property, the base64 encoded text can be provided as the value with a <code>base64:</code> prefix, as shown in the following example:",
-      "translation": "Spring Boot 支持解析经过 Base64 编码的二进制数据。如果您公开一个 <code>Resource</code>` 属性，则可以提供带有 <code>base64:</code> 前缀的 Base64 编码文本作为其值，如下例所示：",
+      "translation": "Spring Boot 支持解析经过 Base64 编码的二进制数据。如果您公开一个 <code>Resource</code> 属性，则可以提供带有 <code>base64:</code> 前缀的 Base64 编码文本作为其值，如下例所示：",
       "count": 2
     },
     {

@@ -24,7 +24,7 @@
     },
     {
       "source": "By default, when the <code>bootJar</code> or <code>bootWar</code> tasks are configured, the <code>jar</code> or <code>war</code> tasks are configured to use <code>plain</code> as the convention for their archive classifier.\nThis ensures that <code>bootJar</code> and <code>jar</code> or <code>bootWar</code> and <code>war</code> have different output locations, allowing both the executable archive and the plain archive to be built at the same time.",
-      "translation": "默认情况下，当配置了 <code>bootJar</code>` 或 <code>bootWar</code>` 任务时，<code>jar</code>` 或 <code>war</code>` 任务会被配置为使用 <code>plain</code>` 作为其归档分类器约定。\n这确保了 <code>bootJar</code>` 和 <code>jar</code>` 或 <code>bootWar</code>` 和 <code>war</code> 具有不同的输出位置，从而允许同时构建可执行归档和普通归档。",
+      "translation": "默认情况下，当配置了 <code>bootJar</code> 或 <code>bootWar</code> 任务时，<code>jar</code> 或 <code>war</code> 任务会被配置为使用 <code>plain</code> 作为其归档分类器约定。\n这确保了 <code>bootJar</code> 和 <code>jar</code> 或 <code>bootWar</code> 和 <code>war</code> 具有不同的输出位置，从而允许同时构建可执行归档和普通归档。",
       "count": 2
     },
     {
@@ -39,22 +39,22 @@
     },
     {
       "source": "Looking at the <code>dependencies</code> closure in the example above, we can see that the first <code>intoLayer</code> will claim all project dependencies for the <code>application</code> layer.\nThe next <code>intoLayer</code> will claim all SNAPSHOT dependencies for the <code>snapshot-dependencies</code> layer.\nThe third and final <code>intoLayer</code> will claim anything left (in this case, any dependency that is not a project dependency or a SNAPSHOT) for the <code>dependencies</code> layer.",
-      "translation": "查看上面的示例中的 <code>dependencies</code>` 闭包，我们可以看到第一个 <code>intoLayer</code>` 将声明所有属于 <code>application</code>` 层的项目依赖。\n下一个 <code>intoLayer</code>` 将声明所有属于 <code>snapshot-dependencies</code>` 层的 SNAPSHOT 依赖。\n第三个也是最后一个 <code>intoLayer</code>` 将声明剩余的任何内容（在这种情况下，任何不是项目依赖或 SNAPSHOT 的依赖）用于 <code>dependencies</code> 层。",
+      "translation": "查看上面的示例中的 <code>dependencies</code> 闭包，我们可以看到第一个 <code>intoLayer</code> 将声明所有属于 <code>application</code> 层的项目依赖。\n下一个 <code>intoLayer</code> 将声明所有属于 <code>snapshot-dependencies</code> 层的 SNAPSHOT 依赖。\n第三个也是最后一个 <code>intoLayer</code> 将声明剩余的任何内容（在这种情况下，任何不是项目依赖或 SNAPSHOT 的依赖）用于 <code>dependencies</code> 层。",
       "count": 2
     },
     {
       "source": "The <a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html\"><code>BootJar</code></a> and <a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html\"><code>BootWar</code></a> tasks are subclasses of Gradle’s <code>Jar</code> and <code>War</code> tasks respectively.\nAs a result, all of the standard configuration options that are available when packaging a jar or war are also available when packaging an executable jar or war.\nA number of configuration options that are specific to executable jars and wars are also provided.",
-      "translation": "<a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html\"><code>BootJar</code></a> 和 <a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html\"><code>BootWar</code></a> 任务分别是 Gradle 的 <code>Jar</code>` 和 <code>War</code> 任务的子类。因此，在打包可执行 jar 或 war 时，所有可用于打包普通 jar 或 war 的标准配置选项也同样可用。此外，还提供了一些专门针对可执行 jar 和 war 的配置选项。",
+      "translation": "<a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootJar.html\"><code>BootJar</code></a> 和 <a class=\"xref page\" href=\"api/java/org/springframework/boot/gradle/tasks/bundling/BootWar.html\"><code>BootWar</code></a> 任务分别是 Gradle 的 <code>Jar</code> 和 <code>War</code> 任务的子类。因此，在打包可执行 jar 或 war 时，所有可用于打包普通 jar 或 war 的标准配置选项也同样可用。此外，还提供了一些专门针对可执行 jar 和 war 的配置选项。",
       "count": 2
     },
     {
       "source": "The layers order is important as it determines how likely previous layers can be cached when part of the application changes.\nThe default order is <code>dependencies</code>, <code>spring-boot-loader</code>, <code>snapshot-dependencies</code>, <code>application</code>.\nContent that is least likely to change should be added first, followed by layers that are more likely to change.",
-      "translation": "层顺序很重要，因为它决定了当应用程序的一部分发生变化时，前一层被缓存的可能性。默认顺序为 <code>dependencies</code>`、<code>spring-boot-loader</code>`、<code>snapshot-dependencies</code>` 和 <code>application</code>。最不可能变化的内容应首先添加，随后是更可能变化的层。",
+      "translation": "层顺序很重要，因为它决定了当应用程序的一部分发生变化时，前一层被缓存的可能性。默认顺序为 <code>dependencies</code>、<code>spring-boot-loader</code>、<code>snapshot-dependencies</code> 和 <code>application</code>。最不可能变化的内容应首先添加，随后是更可能变化的层。",
       "count": 2
     },
     {
       "source": "Nested <code>intoLayer</code> closures are used within <code>application</code> and <code>dependencies</code> sections to claim content for a layer.\nThese closures are evaluated in the order that they are defined, from top to bottom.\nAny content not claimed by an earlier <code>intoLayer</code> closure remains available for subsequent ones to consider.",
-      "translation": "嵌套的 <code>intoLayer</code>` 闭包用于在 <code>application</code>` 和 <code>dependencies</code>` 部分中声明层内容。这些闭包的评估顺序与其定义顺序一致，从上到下执行。任何未被较早的 <code>intoLayer</code> 闭包声明的内容，仍可供后续的闭包考虑。",
+      "translation": "嵌套的 <code>intoLayer</code> 闭包用于在 <code>application</code> 和 <code>dependencies</code> 部分中声明层内容。这些闭包的评估顺序与其定义顺序一致，从上到下执行。任何未被较早的 <code>intoLayer</code> 闭包声明的内容，仍可供后续的闭包考虑。",
       "count": 2
     },
     {
@@ -69,22 +69,22 @@
     },
     {
       "source": "A war file can be packaged such that it can be executed using <code>java -jar</code> and deployed to an external container.\nTo do so, the embedded servlet container runtime should be added to the <code>providedRuntime</code> configuration, for example:",
-      "translation": "WAR 文件可以打包为使用 <code>java -jar</code>` 执行并部署到外部容器的形式。为此，应将嵌入式 Servlet 容器运行时添加到 <code>providedRuntime</code> 配置中，例如：",
+      "translation": "WAR 文件可以打包为使用 <code>java -jar</code> 执行并部署到外部容器的形式。为此，应将嵌入式 Servlet 容器运行时添加到 <code>providedRuntime</code> 配置中，例如：",
       "count": 2
     },
     {
       "source": "If you prefer that the executable archive, rather than the plain archive, uses a classifier, configure the classifiers as shown in the following example for the <code>jar</code> and <code>bootJar</code> tasks:",
-      "translation": "如果您希望可执行归档（而非普通归档）使用分类器，请按照以下示例为 <code>jar</code>` 和 <code>bootJar</code> 任务配置分类器：",
+      "translation": "如果您希望可执行归档（而非普通归档）使用分类器，请按照以下示例为 <code>jar</code> 和 <code>bootJar</code> 任务配置分类器：",
       "count": 2
     },
     {
       "source": "If you want to include dependencies declared in the <code>developmentOnly</code> configuration in your archive, configure the classpath of its task to include the configuration, as shown in the following example for the <code>bootWar</code> task:",
-      "translation": "如果您想在归档中包含 <code>developmentOnly</code>` 配置中声明的依赖项，请配置该任务的类路径以包含此配置，如下面的 <code>bootWar</code> 任务示例所示：",
+      "translation": "如果您想在归档中包含 <code>developmentOnly</code> 配置中声明的依赖项，请配置该任务的类路径以包含此配置，如下面的 <code>bootWar</code> 任务示例所示：",
       "count": 2
     },
     {
       "source": "For more control a closure can also be used.\nThe closure is passed a <code>FileTreeElement</code> and should return a <code>boolean</code> indicating whether or not unpacking is required.",
-      "translation": "为了获得更精细的控制，也可以使用闭包。该闭包接收一个 <code>FileTreeElement</code>` 作为参数，并应返回一个 <code>boolean</code> 值，以指示是否需要解压缩。",
+      "translation": "为了获得更精细的控制，也可以使用闭包。该闭包接收一个 <code>FileTreeElement</code> 作为参数，并应返回一个 <code>boolean</code> 值，以指示是否需要解压缩。",
       "count": 2
     },
     {

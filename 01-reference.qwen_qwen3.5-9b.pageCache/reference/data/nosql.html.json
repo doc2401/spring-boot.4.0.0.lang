@@ -54,7 +54,7 @@
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html\"><code>ReactiveElasticsearchClient</code></a> uses a transport that depends upon the previously described <a class=\"apiref\" href=\"https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/low_level/Rest5Client.html\"><code>Rest5Client</code></a>.\nTherefore, the properties described previously can be used to configure the <a class=\"apiref\" href=\"https://docs.spring.io/spring-data/elasticsearch/docs/6.0.x/api/org/springframework/data/elasticsearch/client/elc/ReactiveElasticsearchClient.html\"><code>ReactiveElasticsearchClient</code></a>.\nFurthermore, you can define a <a class=\"apiref\" href=\"https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/transport/rest5_client/Rest5ClientOptions.html\"><code>Rest5ClientOptions</code></a> bean to take further control of the behavior of the transport.",
-      "translation": "`ReactiveElasticsearchClient` 使用依赖于前述 <code>Rest5Client</code>` 的传输层。因此，可以以前述所述属性来配置 <code>ReactiveElasticsearchClient``。此外，您可以定义一个 <code>Rest5ClientOptions</code> Bean 以进一步控制传输的行为。",
+      "translation": "`ReactiveElasticsearchClient` 使用依赖于前述 <code>Rest5Client</code> 的传输层。因此，可以以前述所述属性来配置 <code>ReactiveElasticsearchClient``。此外，您可以定义一个 <code>Rest5ClientOptions</code> Bean 以进一步控制传输的行为。",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "If you use the <code>spring-boot-starter-elasticsearch</code> or have added <code>co.elastic.clients:elasticsearch-java</code> to the classpath, Spring Boot will auto-configure and register an <a class=\"apiref\" href=\"https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html\"><code>ElasticsearchClient</code></a> bean.",
-      "translation": "如果您使用 <code>spring-boot-starter-elasticsearch</code>` 或已将 <code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html\"><code>ElasticsearchClient</code></a> Bean。",
+      "translation": "如果您使用 <code>spring-boot-starter-elasticsearch</code> 或已将 <code>co.elastic.clients:elasticsearch-java</code> 添加到类路径中，Spring Boot 将自动配置并注册一个 <a class=\"apiref\" href=\"https://javadoc.io/doc/co.elastic.clients/elasticsearch-java/9.2.1/index.html/co/elastic/clients/elasticsearch/ElasticsearchClient.html\"><code>ElasticsearchClient</code></a> Bean。",
       "count": 2
     },
     {
@@ -249,7 +249,7 @@
     },
     {
       "source": "Spring Boot does not look for such a file by default but can load one using <code>spring.cassandra.config</code>.\nIf a property is both present in <code>spring.cassandra.*</code> and the configuration file, the value in <code>spring.cassandra.*</code> takes precedence.",
-      "translation": "Spring Boot 默认不会查找此类文件，但可以使用 <code>spring.cassandra.config</code>` 加载一个。如果某个属性同时存在于 <code>spring.cassandra.*</code>` 和配置文件中，则 <code>spring.cassandra.*</code> 中的值优先。",
+      "translation": "Spring Boot 默认不会查找此类文件，但可以使用 <code>spring.cassandra.config</code> 加载一个。如果某个属性同时存在于 <code>spring.cassandra.*</code> 和配置文件中，则 <code>spring.cassandra.*</code> 中的值优先。",
       "count": 2
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "source": "By default, a standard schema is used to validate <code>LDIF</code> files.\nYou can turn off validation altogether by setting the <code>spring.ldap.embedded.validation.enabled</code> property.\nIf you have custom attributes, you can use <code>spring.ldap.embedded.validation.schema</code> to define your custom attribute types or object classes.",
-      "translation": "默认情况下，使用标准模式来验证 <code>LDIF</code>` 文件。您可以通过设置 <code>spring.ldap.embedded.validation.enabled</code>` 属性来完全关闭验证。如果您有自定义属性，可以使用 <code>spring.ldap.embedded.validation.schema</code> 来定义自定义属性类型或对象类。",
+      "translation": "默认情况下，使用标准模式来验证 <code>LDIF</code> 文件。您可以通过设置 <code>spring.ldap.embedded.validation.enabled</code> 属性来完全关闭验证。如果您有自定义属性，可以使用 <code>spring.ldap.embedded.validation.schema</code> 来定义自定义属性类型或对象类。",
       "count": 2
     },
     {
@@ -289,12 +289,12 @@
     },
     {
       "source": "If <code>spring.mongodb.port</code> is not specified, the default of <code>27017</code> is used.\nYou could delete this line from the example shown earlier.",
-      "translation": "如果未指定 <code>spring.mongodb.port</code>`，则使用默认值 <code>27017</code>。您可以从前面显示的示例中删除此行。",
+      "translation": "如果未指定 <code>spring.mongodb.port</code>，则使用默认值 <code>27017</code>。您可以从前面显示的示例中删除此行。",
       "count": 2
     },
     {
       "source": "You can also specify the port as part of the host address by using the <code>host:port</code> syntax.\nThis format should be used if you need to change the port of an <code>additional-hosts</code> entry.",
-      "translation": "您也可以使用 <code>host:port</code>` 语法将端口作为主机地址的一部分进行指定。如果您需要更改 <code>additional-hosts</code> 条目的端口，则应使用此格式。",
+      "translation": "您也可以使用 <code>host:port</code> 语法将端口作为主机地址的一部分进行指定。如果您需要更改 <code>additional-hosts</code> 条目的端口，则应使用此格式。",
       "count": 2
     },
     {
@@ -349,12 +349,12 @@
     },
     {
       "source": "To connect to an LDAP server, make sure you declare a dependency on the <code>spring-boot-starter-data-ldap</code> starter or <code>spring-ldap-core</code> and then declare the URLs of your server in your application.properties, as shown in the following example:",
-      "translation": "要连接到 LDAP 服务器，请确保声明了对 <code>spring-boot-starter-data-ldap</code>` 启动器或 <code>spring-ldap-core</code> 的依赖，然后在您的 `application.properties` 中声明服务器的 URL，如下面的示例所示：",
+      "translation": "要连接到 LDAP 服务器，请确保声明了对 <code>spring-boot-starter-data-ldap</code> 启动器或 <code>spring-ldap-core</code> 的依赖，然后在您的 `application.properties` 中声明服务器的 URL，如下面的示例所示：",
       "count": 2
     },
     {
       "source": "If you need to customize connection settings, you can use the <code>spring.ldap.base</code> and <code>spring.ldap.base-environment</code> properties.",
-      "translation": "如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code>` 和 <code>spring.ldap.base-environment</code> 属性。",
+      "translation": "如果需要自定义连接设置，可以使用 <code>spring.ldap.base</code> 和 <code>spring.ldap.base-environment</code> 属性。",
       "count": 2
     },
     {
@@ -364,7 +364,7 @@
     },
     {
       "source": "If there is a <code>schema.ldif</code> file on your classpath, it is used to initialize the server.\nIf you want to load the initialization script from a different resource, you can also use the <code>spring.ldap.embedded.ldif</code> property.",
-      "translation": "如果您的类路径上存在 <code>schema.ldif</code>` 文件，它将用于初始化服务器。如果您想从不同的资源加载初始化脚本，也可以使用 <code>spring.ldap.embedded.ldif</code> 属性。",
+      "translation": "如果您的类路径上存在 <code>schema.ldif</code> 文件，它将用于初始化服务器。如果您想从不同的资源加载初始化脚本，也可以使用 <code>spring.ldap.embedded.ldif</code> 属性。",
       "count": 2
     },
     {

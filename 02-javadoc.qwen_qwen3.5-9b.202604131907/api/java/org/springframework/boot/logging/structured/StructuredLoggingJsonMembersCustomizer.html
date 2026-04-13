@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">StructuredLoggingJsonMembersCustomizer&lt;T&gt;</span></div>
 <div class="block">Customizer that can be injected into <a href="StructuredLogFormatter.html" title="interface in org.springframework.boot.logging.structured"><code>StructuredLogFormatter</code></a> implementations to
 customize <a href="../../json/JsonWriter.html" title="interface in org.springframework.boot.json"><code>JsonWriter</code></a> <a href="../../json/JsonWriter.Members.html" title="class in org.springframework.boot.json"><code>JsonWriter.Members</code></a>.
-<p>可以使用 `logging.structured.json.customizer` 属性提供实现。或者，可以在 <code>META-INF/spring.factories</code>` 下通过键 <code>org.springframework.boot.logging.structured.StructuredLoggingJsonMembersCustomizer</code>` 注册实现。</p><p>实现类可以在构造函数中声明以下参数类型：</p><ul>
+<p>可以使用 `logging.structured.json.customizer` 属性提供实现。或者，可以在 <code>META-INF/spring.factories</code> 下通过键 <code>org.springframework.boot.logging.structured.StructuredLoggingJsonMembersCustomizer</code> 注册实现。</p><p>实现类可以在构造函数中声明以下参数类型：</p><ul>
 <li><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html" title="class or interface in org.springframework.core.env"><code>Environment</code></a></li>
 </ul>
 When using Logback, implementing classes can also use the following parameter types in

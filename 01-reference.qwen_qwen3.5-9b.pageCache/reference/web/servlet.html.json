@@ -24,7 +24,7 @@
     },
     {
       "source": "Spring MVC uses a different <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/ConversionService.html\"><code>ConversionService</code></a> to the one used to convert values from your <code>application.properties</code> or <code>application.yaml</code> file.\nIt means that <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html\"><code>Period</code></a>, <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html\"><code>Duration</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/unit/DataSize.html\"><code>DataSize</code></a> converters are not available and that <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html\"><code>@DurationUnit</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DataSizeUnit.html\"><code>@DataSizeUnit</code></a> annotations will be ignored.",
-      "translation": "Spring MVC 使用与从您的 <code>application.properties</code>` 或 <code>application.yaml</code> 文件转换值时所使用的不同的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/ConversionService.html\"><code>ConversionService</code></a>。\n这意味着 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html\"><code>Period</code></a>、<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html\"><code>Duration</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/unit/DataSize.html\"><code>DataSize</code></a> 转换器不可用，并且 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html\"><code>@DurationUnit</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DataSizeUnit.html\"><code>@DataSizeUnit</code></a> 注解将被忽略。",
+      "translation": "Spring MVC 使用与从您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件转换值时所使用的不同的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/convert/ConversionService.html\"><code>ConversionService</code></a>。\n这意味着 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html\"><code>Period</code></a>、<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html\"><code>Duration</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/util/unit/DataSize.html\"><code>DataSize</code></a> 转换器不可用，并且 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DurationUnit.html\"><code>@DurationUnit</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/convert/DataSizeUnit.html\"><code>@DataSizeUnit</code></a> 注解将被忽略。",
       "count": 2
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "source": "Any <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>, <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a>, or servlet <code>*Listener</code> instance that is a Spring bean is registered with the embedded container.\nThis can be particularly convenient if you want to refer to a value from your <code>application.properties</code> during configuration.",
-      "translation": "任何作为 Spring Bean 的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a> 或 servlet <code>*Listener</code>` 实例都会注册到嵌入式容器中。\n如果您希望在配置期间引用 <code>application.properties</code> 中的值，这尤其方便。",
+      "translation": "任何作为 Spring Bean 的 <a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Servlet.html\"><code>Servlet</code></a>、<a class=\"apiref\" href=\"https://jakarta.ee/specifications/servlet/6.1/apidocs/jakarta.servlet/jakarta/servlet/Filter.html\"><code>Filter</code></a> 或 servlet <code>*Listener</code> 实例都会注册到嵌入式容器中。\n如果您希望在配置期间引用 <code>application.properties</code> 中的值，这尤其方便。",
       "count": 2
     },
     {
@@ -189,12 +189,12 @@
     },
     {
       "source": "To use version agnostic URLs for Webjars, add the <code>org.webjars:webjars-locator-lite</code> dependency.\nThen declare your Webjar.\nUsing jQuery as an example, adding <code>\"/webjars/jquery/jquery.min.js\"</code> results in <code>\"/webjars/jquery/x.y.z/jquery.min.js\"</code> where <code>x.y.z</code> is the Webjar version.",
-      "translation": "要使用与版本无关的 Webjar URL，请添加 <code>org.webjars:webjars-locator-lite</code>` 依赖。然后声明您的 Webjar。以 jQuery 为例，添加 <code>/webjars/jquery/jquery.min.js</code>` 会导致结果为 <code>/webjars/jquery/x.y.z/jquery.min.js</code>`，其中 <code>x.y.z</code> 是 Webjar 版本。",
+      "translation": "要使用与版本无关的 Webjar URL，请添加 <code>org.webjars:webjars-locator-lite</code> 依赖。然后声明您的 Webjar。以 jQuery 为例，添加 <code>/webjars/jquery/jquery.min.js</code> 会导致结果为 <code>/webjars/jquery/x.y.z/jquery.min.js</code>，其中 <code>x.y.z</code> 是 Webjar 版本。",
       "count": 2
     },
     {
       "source": "By default, Spring Boot provides an <code>/error</code> mapping that handles all errors in a sensible way, and it is registered as a “global” error page in the servlet container.\nFor machine clients, it produces a JSON response with details of the error, the HTTP status, and the exception message.\nFor browser clients, there is a “whitelabel” error view that renders the same data in HTML format (to customize it, add a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html\"><code>View</code></a> that resolves to <code>error</code>).",
-      "translation": "默认情况下，Spring Boot 提供了一个 <code>/error</code>` 映射，它以合理的方式处理所有错误，并在 Servlet 容器中注册为“全局”错误页面。对于机器客户端，它会生成包含错误详情、HTTP 状态和异常消息的 JSON 响应。对于浏览器客户端，则有一个“白标”错误视图，以 HTML 格式渲染相同的数据（若要自定义它，请添加一个解析到 <code>error</code> 的<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html\"><code>View</code></a>）。",
+      "translation": "默认情况下，Spring Boot 提供了一个 <code>/error</code> 映射，它以合理的方式处理所有错误，并在 Servlet 容器中注册为“全局”错误页面。对于机器客户端，它会生成包含错误详情、HTTP 状态和异常消息的 JSON 响应。对于浏览器客户端，则有一个“白标”错误视图，以 HTML 格式渲染相同的数据（若要自定义它，请添加一个解析到 <code>error</code> 的<a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/web/servlet/View.html\"><code>View</code></a>）。",
       "count": 2
     },
     {
@@ -219,12 +219,12 @@
     },
     {
       "source": "If you want to change the <code>SameSite</code> attribute of your session cookie, you can use the <code>server.servlet.session.cookie.same-site</code> property.\nThis property is supported by auto-configured Tomcat and Jetty servers.\nIt is also used to configure Spring Session servlet based <a class=\"apiref\" href=\"https://docs.spring.io/spring-session/docs/4.0.x/api/org/springframework/session/SessionRepository.html\"><code>SessionRepository</code></a> beans.",
-      "translation": "如果您想更改会话 Cookie 的 <code>SameSite</code>` 属性，可以使用 <code>server.servlet.session.cookie.same-site</code> 属性。\n该属性受自动配置的 Tomcat 和 Jetty 服务器支持。\n它还用于配置基于 Servlet 的 Spring Session <a class=\"apiref\" href=\"https://docs.spring.io/spring-session/docs/4.0.x/api/org/springframework/session/SessionRepository.html\"><code>SessionRepository</code></a> Bean。",
+      "translation": "如果您想更改会话 Cookie 的 <code>SameSite</code> 属性，可以使用 <code>server.servlet.session.cookie.same-site</code> 属性。\n该属性受自动配置的 Tomcat 和 Jetty 服务器支持。\n它还用于配置基于 Servlet 的 Spring Session <a class=\"apiref\" href=\"https://docs.spring.io/spring-session/docs/4.0.x/api/org/springframework/session/SessionRepository.html\"><code>SessionRepository</code></a> Bean。",
       "count": 2
     },
     {
       "source": "For example, if you want your session cookie to have a <code>SameSite</code> attribute of <code>None</code>, you can add the following to your <code>application.properties</code> or <code>application.yaml</code> file:",
-      "translation": "例如，如果您希望会话 Cookie 的 <code>SameSite</code>` 属性为 <code>None</code>`，可以在您的 <code>application.properties</code>` 或 <code>application.yaml</code> 文件中添加以下内容：",
+      "translation": "例如，如果您希望会话 Cookie 的 <code>SameSite</code> 属性为 <code>None</code>，可以在您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件中添加以下内容：",
       "count": 2
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "source": "By default, resources are mapped on <code>/**</code>, but you can tune that with the <code>spring.mvc.static-path-pattern</code> property.\nFor instance, relocating all resources to <code>/resources/**</code> can be achieved as follows:",
-      "translation": "默认情况下，资源映射在 <code>/**</code>` 上，但您可以通过 <code>spring.mvc.static-path-pattern</code>` 属性进行调整。例如，将所有资源重定位到 <code>/resources/**</code> 可按如下方式实现：",
+      "translation": "默认情况下，资源映射在 <code>/**</code> 上，但您可以通过 <code>spring.mvc.static-path-pattern</code> 属性进行调整。例如，将所有资源重定位到 <code>/resources/**</code> 可按如下方式实现：",
       "count": 2
     },
     {
@@ -269,7 +269,7 @@
     },
     {
       "source": "Spring Boot chooses to disable suffix pattern matching by default, which means that requests like <code>\"GET /projects/spring-boot.json\"</code> will not be matched to <code>@GetMapping(\"/projects/spring-boot\")</code> mappings.\nThis is considered as a <a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-suffix-pattern-match\">best practice for Spring MVC applications</a>.\nThis feature was mainly useful in the past for HTTP clients which did not send proper \"Accept\" request headers; we needed to make sure to send the correct Content Type to the client.\nNowadays, Content Negotiation is much more reliable.",
-      "translation": "Spring Boot 默认禁用后缀模式匹配，这意味着类似 <code>\"GET /projects/spring-boot.json\"</code>` 的请求将无法匹配到 <code>@GetMapping(\"/projects/spring-boot\")</code> 映射。\n这被视为 <a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-suffix-pattern-match\">Spring MVC 应用程序的最佳实践</a>。\n该功能过去主要用于那些未发送正确 \"Accept\" 请求头的 HTTP 客户端；我们需要确保向客户端发送正确的 Content Type。\n如今，内容协商已更加可靠。",
+      "translation": "Spring Boot 默认禁用后缀模式匹配，这意味着类似 <code>\"GET /projects/spring-boot.json\"</code> 的请求将无法匹配到 <code>@GetMapping(\"/projects/spring-boot\")</code> 映射。\n这被视为 <a href=\"https://docs.spring.io/spring-framework/reference/7.0/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-suffix-pattern-match\">Spring MVC 应用程序的最佳实践</a>。\n该功能过去主要用于那些未发送正确 \"Accept\" 请求头的 HTTP 客户端；我们需要确保向客户端发送正确的 Content Type。\n如今，内容协商已更加可靠。",
       "count": 2
     },
     {
@@ -359,7 +359,7 @@
     },
     {
       "source": "There are other ways to deal with HTTP clients that do not consistently send proper \"Accept\" request headers.\nInstead of using suffix matching, we can use a query parameter to ensure that requests like <code>\"GET /projects/spring-boot?format=json\"</code> will be mapped to <code>@GetMapping(\"/projects/spring-boot\")</code>:",
-      "translation": "对于不能始终发送正确的 \"Accept\" 请求头的 HTTP 客户端，还有其他处理方法。与其使用后缀匹配，不如使用查询参数来确保像 <code>\"GET /projects/spring-boot?format=json\"</code>` 这样的请求会被映射到 <code>@GetMapping(\"/projects/spring-boot\")</code>：",
+      "translation": "对于不能始终发送正确的 \"Accept\" 请求头的 HTTP 客户端，还有其他处理方法。与其使用后缀匹配，不如使用查询参数来确保像 <code>\"GET /projects/spring-boot?format=json\"</code> 这样的请求会被映射到 <code>@GetMapping(\"/projects/spring-boot\")</code>：",
       "count": 2
     },
     {
@@ -394,7 +394,7 @@
     },
     {
       "source": "The error page filter can only forward the request to the correct error page if the response has not already been committed.\nBy default, WebSphere Application Server 8.0 and later commits the response upon successful completion of a servlet’s service method.\nYou should disable this behavior by setting <code>com.ibm.ws.webcontainer.invokeFlushAfterService</code> to <code>false</code>.",
-      "translation": "错误页面过滤器仅在响应尚未提交时，才能将请求转发到正确的错误页面。默认情况下，WebSphere Application Server 8.0 及更高版本会在 servlet 的 service 方法成功完成后提交响应。您应通过将 <code>com.ibm.ws.webcontainer.invokeFlushAfterService</code>` 设置为 <code>false</code> 来禁用此行为。",
+      "translation": "错误页面过滤器仅在响应尚未提交时，才能将请求转发到正确的错误页面。默认情况下，WebSphere Application Server 8.0 及更高版本会在 servlet 的 service 方法成功完成后提交响应。您应通过将 <code>com.ibm.ws.webcontainer.invokeFlushAfterService</code> 设置为 <code>false</code> 来禁用此行为。",
       "count": 2
     },
     {
@@ -419,7 +419,7 @@
     },
     {
       "source": "When a request’s <code>Accept-Language</code> header indicates a locale for the request it will be automatically mapped to a charset by the servlet container.\nEach container provides default locale to charset mappings and you should verify that they meet your application’s needs.\nWhen they do not, use the <code>server.servlet.encoding.mapping</code> configuration property to customize the mappings, as shown in the following example:",
-      "translation": "当请求的 <code>Accept-Language</code>` 头指示了请求的区域设置时，servlet 容器会自动将其映射到字符集。每个容器都提供了默认的区域设置到字符集的映射，您应验证这些映射是否符合应用程序的需求。如果不符合，请使用 <code>server.servlet.encoding.mapping</code> 配置属性来自定义映射，如下例所示：",
+      "translation": "当请求的 <code>Accept-Language</code> 头指示了请求的区域设置时，servlet 容器会自动将其映射到字符集。每个容器都提供了默认的区域设置到字符集的映射，您应验证这些映射是否符合应用程序的需求。如果不符合，请使用 <code>server.servlet.encoding.mapping</code> 配置属性来自定义映射，如下例所示：",
       "count": 2
     },
     {
@@ -784,7 +784,7 @@
     },
     {
       "source": "Spring Boot supports both static and templated welcome pages.\nIt first looks for an <code>index.html</code> file in the configured static content locations.\nIf one is not found, it then looks for an <code>index</code> template.\nIf either is found, it is automatically used as the welcome page of the application.",
-      "translation": "Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code>` 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。",
+      "translation": "Spring Boot 支持静态和模板化的欢迎页面。它首先在配置的静态内容位置中查找 <code>index.html</code> 文件。如果未找到，则接着查找 <code>index</code> 模板。如果找到任一文件，它将自动将其用作应用程序的欢迎页面。",
       "count": 1
     },
     {
@@ -794,7 +794,7 @@
     },
     {
       "source": "For example, the following will use an <code>X-Version</code> HTTP header to obtain version information and default to <code>1.0.0</code> when no header is sent.",
-      "translation": "例如，以下示例将使用 <code>X-Version</code>` HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。",
+      "translation": "例如，以下示例将使用 <code>X-Version</code> HTTP 头获取版本信息，并在未发送该头时默认为 <code>1.0.0</code>。",
       "count": 1
     },
     {

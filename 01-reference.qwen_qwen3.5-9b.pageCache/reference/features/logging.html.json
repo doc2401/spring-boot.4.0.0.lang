@@ -39,7 +39,7 @@
     },
     {
       "source": "The <code>&lt;springProperty&gt;</code> tag lets you expose properties from the Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> for use within Logback.\nDoing so can be useful if you want to access values from your <code>application.properties</code> file in your Logback configuration.\nThe tag works in a similar way to Logback’s standard <code>&lt;property&gt;</code> tag.\nHowever, rather than specifying a direct <code>value</code>, you specify the <code>source</code> of the property (from the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>).\nIf you need to store the property somewhere other than in <code>local</code> scope, you can use the <code>scope</code> attribute.\nIf you need a fallback value (in case the property is not set in the <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>), you can use the <code>defaultValue</code> attribute.\nThe following example shows how to expose properties for use within Logback:",
-      "translation": "`<springProperty>` 标签允许您暴露来自 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 的属性，以便在 Logback 中使用。\n如果您想在 Logback 配置中访问 <code>application.properties</code>` 文件中的值，这样做会很有用。\n该标签的工作方式与 Logback 的标准 `<property>` 标签类似。\n但是，您不是指定直接的 <code>value</code>`，而是指定属性的 <code>source`（来自 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>）。\n如果您需要将属性存储到 <code>local</code>` 范围之外的某个位置，可以使用 <code>scope</code>` 属性。\n如果您需要一个备用值（以防属性未在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中设置），可以使用 <code>defaultValue</code> 属性。\n以下示例展示了如何在 Logback 中暴露属性：",
+      "translation": "`<springProperty>` 标签允许您暴露来自 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 的属性，以便在 Logback 中使用。\n如果您想在 Logback 配置中访问 <code>application.properties</code> 文件中的值，这样做会很有用。\n该标签的工作方式与 Logback 的标准 `<property>` 标签类似。\n但是，您不是指定直接的 <code>value</code>，而是指定属性的 <code>source`（来自 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>）。\n如果您需要将属性存储到 <code>local</code> 范围之外的某个位置，可以使用 <code>scope</code> 属性。\n如果您需要一个备用值（以防属性未在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 中设置），可以使用 <code>defaultValue</code> 属性。\n以下示例展示了如何在 Logback 中暴露属性：",
       "count": 2
     },
     {
@@ -69,7 +69,7 @@
     },
     {
       "source": "The following example shows how to set Log4j2 properties named <code>applicationName</code> and <code>applicationGroup</code> that read <code>spring.application.name</code> and <code>spring.application.group</code> from the Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a>:",
-      "translation": "下面的示例展示了如何设置名为 <code>applicationName</code>` 和 <code>applicationGroup</code>` 的 Log4j2 属性，以从 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 读取 <code>spring.application.name</code>` 和 <code>spring.application.group</code>：",
+      "translation": "下面的示例展示了如何设置名为 <code>applicationName</code> 和 <code>applicationGroup</code> 的 Log4j2 属性，以从 Spring <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 读取 <code>spring.application.name</code> 和 <code>spring.application.group</code>：",
       "count": 2
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "source": "By default, Spring Boot logs only to the console and does not write log files.\nIf you want to write log files in addition to the console output, you need to set a <code>logging.file.name</code> or <code>logging.file.path</code> property (for example, in your <code>application.properties</code>).\nIf both properties are set, <code>logging.file.path</code> is ignored and only <code>logging.file.name</code> is used.",
-      "translation": "默认情况下，Spring Boot 仅向控制台记录日志，不写入日志文件。\n如果您希望在控制台输出之外写入日志文件，需要设置 <code>logging.file.name</code>` 或 <code>logging.file.path</code>` 属性（例如在您的 <code>application.properties</code>` 中）。\n如果同时设置了这两个属性，则忽略 <code>logging.file.path</code>`，仅使用 <code>logging.file.name</code>。",
+      "translation": "默认情况下，Spring Boot 仅向控制台记录日志，不写入日志文件。\n如果您希望在控制台输出之外写入日志文件，需要设置 <code>logging.file.name</code> 或 <code>logging.file.path</code> 属性（例如在您的 <code>application.properties</code> 中）。\n如果同时设置了这两个属性，则忽略 <code>logging.file.path</code>，仅使用 <code>logging.file.name</code>。",
       "count": 2
     },
     {
@@ -109,12 +109,12 @@
     },
     {
       "source": "The default log configuration echoes messages to the console as they are written.\nBy default, <code>ERROR</code>-level, <code>WARN</code>-level, and <code>INFO</code>-level messages are logged.\nYou can also enable a “debug” mode by starting your application with a <code>--debug</code> flag.",
-      "translation": "默认日志配置会在写入时将消息回显到控制台。\n默认情况下，会记录 <code>ERROR</code>` 级别、<code>WARN</code>` 级别和 <code>INFO</code>` 级别的消息。\n您也可以通过使用 <code>--debug</code> 标志启动应用程序来启用“调试”模式。",
+      "translation": "默认日志配置会在写入时将消息回显到控制台。\n默认情况下，会记录 <code>ERROR</code> 级别、<code>WARN</code> 级别和 <code>INFO</code> 级别的消息。\n您也可以通过使用 <code>--debug</code> 标志启动应用程序来启用“调试”模式。",
       "count": 2
     },
     {
       "source": "If you are using the Logback, it is possible to fine-tune log rotation settings using your <code>application.properties</code> or <code>application.yaml</code> file.\nFor all other logging system, you will need to configure rotation settings directly yourself (for example, if you use Log4j2 then you could add a <code>log4j2.xml</code> or <code>log4j2-spring.xml</code> file).",
-      "translation": "如果您使用的是 Logback，可以通过您的 <code>application.properties</code>` 或 <code>application.yaml</code>` 文件微调日志轮转设置。对于其他所有日志系统，您需要自行配置轮转设置（例如，如果您使用 Log4j2，则可以添加一个 <code>log4j2.xml</code>` 或 <code>log4j2-spring.xml</code> 文件）。",
+      "translation": "如果您使用的是 Logback，可以通过您的 <code>application.properties</code> 或 <code>application.yaml</code> 文件微调日志轮转设置。对于其他所有日志系统，您需要自行配置轮转设置（例如，如果您使用 Log4j2，则可以添加一个 <code>log4j2.xml</code> 或 <code>log4j2-spring.xml</code> 文件）。",
       "count": 2
     },
     {
@@ -129,22 +129,22 @@
     },
     {
       "source": "For example, the following will exclude <code>log.level</code>, rename <code>process.id</code> to <code>procid</code> and add a fixed <code>corpname</code> field:",
-      "translation": "例如，以下配置将排除 <code>log.level</code>`，将 <code>process.id</code>` 重命名为 <code>procid</code>`，并添加一个固定的 <code>corpname</code> 字段：",
+      "translation": "例如，以下配置将排除 <code>log.level</code>，将 <code>process.id</code> 重命名为 <code>procid</code>，并添加一个固定的 <code>corpname</code> 字段：",
       "count": 2
     },
     {
       "source": "If you need complete control over stack trace printing you can set <code>logging.structured.json.stacktrace.printer</code> to the name of a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/StackTracePrinter.html\"><code>StackTracePrinter</code></a> implementation.\nYou can also set it to <code>logging-system</code> to force regular logging system stack trace output to be used.",
-      "translation": "如果您需要对堆栈跟踪打印进行完全控制，可以将 <code>logging.structured.json.stacktrace.printer</code>` 设置为一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/StackTracePrinter.html\"><code>StackTracePrinter</code></a> 实现类的名称。\n您也可以将其设置为 <code>logging-system</code>，以强制使用常规日志系统的堆栈跟踪输出。",
+      "translation": "如果您需要对堆栈跟踪打印进行完全控制，可以将 <code>logging.structured.json.stacktrace.printer</code> 设置为一个 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/logging/StackTracePrinter.html\"><code>StackTracePrinter</code></a> 实现类的名称。\n您也可以将其设置为 <code>logging-system</code>，以强制使用常规日志系统的堆栈跟踪输出。",
       "count": 2
     },
     {
       "source": "Alternatively, you can enable a “trace” mode by starting your application with a <code>--trace</code> flag (or <code>trace=true</code> in your <code>application.properties</code>).\nDoing so enables trace logging for a selection of core loggers (embedded container, Hibernate schema generation, and the whole Spring portfolio).",
-      "translation": "或者，您可以通过使用 <code>--trace</code>` 标志启动应用程序（或在您的 <code>application.properties</code>` 中设置 <code>trace=true</code>）来启用“跟踪”模式。这样做将为部分核心记录器（嵌入式容器、Hibernate 架构生成以及整个 Spring 系列）启用跟踪日志记录。",
+      "translation": "或者，您可以通过使用 <code>--trace</code> 标志启动应用程序（或在您的 <code>application.properties</code> 中设置 <code>trace=true</code>）来启用“跟踪”模式。这样做将为部分核心记录器（嵌入式容器、Hibernate 架构生成以及整个 Spring 系列）启用跟踪日志记录。",
       "count": 2
     },
     {
       "source": "Log files rotate when they reach 10 MB and, as with console output, <code>ERROR</code>-level, <code>WARN</code>-level, and <code>INFO</code>-level messages are logged by default.",
-      "translation": "日志文件在达到 10 MB 时会进行轮转，并且与控制台输出一样，默认记录 <code>ERROR</code>` 级别、<code>WARN</code>` 级别和 <code>INFO</code> 级别的消息。",
+      "translation": "日志文件在达到 10 MB 时会进行轮转，并且与控制台输出一样，默认记录 <code>ERROR</code> 级别、<code>WARN</code> 级别和 <code>INFO</code> 级别的消息。",
       "count": 2
     },
     {
@@ -169,7 +169,7 @@
     },
     {
       "source": "You can add MDC and other ad-hoc content to log lines by overriding only the <code>LOG_LEVEL_PATTERN</code> (or <code>logging.pattern.level</code> with Logback).\nFor example, if you use <code>logging.pattern.level=user:%X{user} %5p</code>, then the default log format contains an MDC entry for \"user\", if it exists, as shown in the following example.",
-      "translation": "您可以通过仅覆盖 <code>LOG_LEVEL_PATTERN</code>`（或使用 Logback 的 <code>logging.pattern.level</code>`）来向日志行添加 MDC 和其他临时内容。例如，如果您使用 <code>logging.pattern.level=user:%X{user} %5p</code>，则默认日志格式将包含 \"user\" 的 MDC 条目（如果存在），如下例所示。",
+      "translation": "您可以通过仅覆盖 <code>LOG_LEVEL_PATTERN</code>（或使用 Logback 的 <code>logging.pattern.level</code>）来向日志行添加 MDC 和其他临时内容。例如，如果您使用 <code>logging.pattern.level=user:%X{user} %5p</code>，则默认日志格式将包含 \"user\" 的 MDC 条目（如果存在），如下例所示。",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "If you want to disable console-based logging, you can set the <code>logging.console.enabled</code> property to <code>false</code>.",
-      "translation": "如果您想禁用基于控制台的日志记录，可以将 <code>logging.console.enabled</code>` 属性设置为 <code>false</code>。",
+      "translation": "如果您想禁用基于控制台的日志记录，可以将 <code>logging.console.enabled</code> 属性设置为 <code>false</code>。",
       "count": 2
     },
     {
@@ -199,17 +199,17 @@
     },
     {
       "source": "Writes to the location specified by <code>logging.file.name</code> and ignores <code>logging.file.path</code>.\n  The location can be absolute or relative to the current directory.",
-      "translation": "写入由 <code>logging.file.name</code>` 指定的位置，并忽略 <code>logging.file.path</code>。该位置可以是绝对路径或相对于当前目录的路径。",
+      "translation": "写入由 <code>logging.file.name</code> 指定的位置，并忽略 <code>logging.file.path</code>。该位置可以是绝对路径或相对于当前目录的路径。",
       "count": 2
     },
     {
       "source": "To enable structured logging, set the property <code>logging.structured.format.console</code> (for console output) or <code>logging.structured.format.file</code> (for file output) to the id of the format you want to use.",
-      "translation": "要启用结构化日志，请将属性 <code>logging.structured.format.console</code>`（用于控制台输出）或 <code>logging.structured.format.file</code>（用于文件输出）设置为要使用的格式的 ID。",
+      "translation": "要启用结构化日志，请将属性 <code>logging.structured.format.console</code>（用于控制台输出）或 <code>logging.structured.format.file</code>（用于文件输出）设置为要使用的格式的 ID。",
       "count": 2
     },
     {
       "source": "To enable the Elastic Common Schema log format, set the appropriate <code>format</code> property to <code>ecs</code>:",
-      "translation": "要启用 Elastic Common Schema 日志格式，请将相应的 <code>format</code>` 属性设置为 <code>ecs</code>：",
+      "translation": "要启用 Elastic Common Schema 日志格式，请将相应的 <code>format</code> 属性设置为 <code>ecs</code>：",
       "count": 2
     },
     {
@@ -219,12 +219,12 @@
     },
     {
       "source": "To enable the Graylog Extended Log Format, set the appropriate <code>format</code> property to <code>gelf</code>:",
-      "translation": "要启用 Graylog 扩展日志格式，请将相应的 <code>format</code>` 属性设置为 <code>gelf</code>：",
+      "translation": "要启用 Graylog 扩展日志格式，请将相应的 <code>format</code> 属性设置为 <code>gelf</code>：",
       "count": 2
     },
     {
       "source": "To enable the Logstash JSON log format, set the appropriate <code>format</code> property to <code>logstash</code>:",
-      "translation": "要启用 Logstash JSON 日志格式，请将相应的 <code>format</code>` 属性设置为 <code>logstash</code>：",
+      "translation": "要启用 Logstash JSON 日志格式，请将相应的 <code>format</code> 属性设置为 <code>logstash</code>：",
       "count": 2
     },
     {
@@ -234,12 +234,12 @@
     },
     {
       "source": "Use <code>last</code> to print the root item last (same as Java) or <code>first</code> to print the root item first.",
-      "translation": "使用 <code>last</code>` 将根项最后打印（与 Java 相同），或使用 <code>first</code> 将根项首先打印。",
+      "translation": "使用 <code>last</code> 将根项最后打印（与 Java 相同），或使用 <code>first</code> 将根项首先打印。",
       "count": 2
     },
     {
       "source": "To enable your custom format, set the property <code>logging.structured.format.console</code> or <code>logging.structured.format.file</code> to the fully qualified class name of your implementation.",
-      "translation": "要启用您的自定义格式，请将属性 <code>logging.structured.format.console</code>` 或 <code>logging.structured.format.file</code> 设置为您的实现的完全限定类名。",
+      "translation": "要启用您的自定义格式，请将属性 <code>logging.structured.format.console</code> 或 <code>logging.structured.format.file</code> 设置为您的实现的完全限定类名。",
       "count": 2
     },
     {
@@ -689,12 +689,12 @@
     },
     {
       "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you have a <code>spring.application.name</code> property but don’t want it logged you can set <code>logging.include-application-name</code> to <code>false</code>.\n</td>\n</tr>\n</tbody>",
-      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您有 <code>spring.application.name`</code> 属性但不希望记录它，可以将 <code>logging.include-application-name</code>` 设置为 <code>false</code>。\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您有 <code>spring.application.name`</code> 属性但不希望记录它，可以将 <code>logging.include-application-name</code> 设置为 <code>false</code>。\n</td>\n</tr>\n</tbody>",
       "count": 2
     },
     {
       "source": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"Tip\"></i>\n</td>\n<td class=\"content\">\nIf you have a <code>spring.application.group</code> property but don’t want it logged you can set <code>logging.include-application-group</code> to <code>false</code>.\n</td>\n</tr>\n</tbody>",
-      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您有 <code>spring.application.group`</code> 属性但不希望记录它，可以将 <code>logging.include-application-group</code>` 设置为 <code>false</code>。\n</td>\n</tr>\n</tbody>",
+      "translation": "<tbody><tr>\n<td class=\"icon\">\n<i class=\"fa icon-tip\" title=\"提示\"></i>\n</td>\n<td class=\"content\">\n如果您有 <code>spring.application.group`</code> 属性但不希望记录它，可以将 <code>logging.include-application-group</code> 设置为 <code>false</code>。\n</td>\n</tr>\n</tbody>",
       "count": 2
     },
     {

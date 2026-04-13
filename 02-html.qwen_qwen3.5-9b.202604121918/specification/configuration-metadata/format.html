@@ -1222,7 +1222,7 @@ server.address=127.0.0.1</code></pre>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>“提示”是用于协助用户配置特定属性的附加信息。例如，当开发人员正在配置 <code>spring.jpa.hibernate.ddl-auto</code>` 属性时，工具可以使用这些提示为 <code>none</code>`、<code>validate</code>`、<code>update</code>`、<code>create</code>` 和 <code>create-drop</code> 值提供自动完成帮助。</p>
+<p>“提示”是用于协助用户配置特定属性的附加信息。例如，当开发人员正在配置 <code>spring.jpa.hibernate.ddl-auto</code> 属性时，工具可以使用这些提示为 <code>none</code>、<code>validate</code>、<code>update</code>、<code>create</code> 和 <code>create-drop</code> 值提供自动完成帮助。</p>
 </div>
 <div class="paragraph">
 <p>最后，“ignored”用于那些被故意忽略的项目。本节的内容通常来自<a class="xref page" href="annotation-processor.html#appendix.configuration-metadata.annotation-processor.adding-additional-metadata">附加元数据</a>。</p>
@@ -1483,9 +1483,9 @@ class MyProperties(val name: String?) {
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>前面的代码确保弃用的属性仍然有效（在幕后委托给 <code>name</code>` 属性）。  
-一旦可以从公共 API 中移除 <code>getTarget</code>` 和 <code>setTarget</code>` 方法，元数据中的自动弃用提示也会随之消失。  
-如果您希望保留提示，可以添加带有 <code>error</code>` 弃用级别的手动元数据，以确保用户仍会收到关于该属性的通知。  
+<p>前面的代码确保弃用的属性仍然有效（在幕后委托给 <code>name</code> 属性）。  
+一旦可以从公共 API 中移除 <code>getTarget</code> 和 <code>setTarget</code> 方法，元数据中的自动弃用提示也会随之消失。  
+如果您希望保留提示，可以添加带有 <code>error</code> 弃用级别的手动元数据，以确保用户仍会收到关于该属性的通知。  
 这样做在提供 <code>replacement</code> 时尤其有用。</p>
 </div>
 </div>
@@ -1514,8 +1514,8 @@ class MyProperties(val name: String?) {
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">该提示所引用的属性的完整名称。
-名称采用小写点分隔形式（例如 <code>spring.mvc.servlet.path</code>`）。
-如果该属性引用一个 Map（例如 <code>system.contexts</code>`），则该提示适用于该 Map 的 <em>键</em>（<code>system.contexts.keys</code>`）或 <em>值</em>（<code>system.contexts.values</code>）。
+名称采用小写点分隔形式（例如 <code>spring.mvc.servlet.path</code>）。
+如果该属性引用一个 Map（例如 <code>system.contexts</code>），则该提示适用于该 Map 的 <em>键</em>（<code>system.contexts.keys</code>）或 <em>值</em>（<code>system.contexts.values</code>）。
 此属性为必选。</p></td>
 </tr>
 <tr>

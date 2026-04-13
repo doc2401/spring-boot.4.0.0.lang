@@ -243,7 +243,7 @@ implements <a href="../web/server/WebServer.html" title="interface in org.spring
 <div class="block">启动 Web 服务器。在已启动的服务器上调用此方法没有任何效果。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../web/server/WebServer.html#start()">start</a></code>` 在接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code>` 中</dd>
+<dd><code><a href="../web/server/WebServer.html#start()">start</a></code> 在接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code> 中</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../web/server/WebServerException.html" title="class in org.springframework.boot.web.server">WebServerException</a></code> - 如果无法启动服务器</dd>
 </dl>
@@ -275,7 +275,7 @@ implements <a href="../web/server/WebServer.html" title="interface in org.spring
 <div class="block">停止 Web 服务器。对已停止的服务器调用此方法没有效果。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../web/server/WebServer.html#stop()">stop</a></code>` 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code>` 中</dd>
+<dd><code><a href="../web/server/WebServer.html#stop()">stop</a></code> 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -289,7 +289,7 @@ implements <a href="../web/server/WebServer.html" title="interface in org.spring
 <div class="block">销毁 Web 服务器，使其无法再次启动。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../web/server/WebServer.html#destroy()">destroy</a></code>` 在接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code>` 中</dd>
+<dd><code><a href="../web/server/WebServer.html#destroy()">destroy</a></code> 在接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code> 中</dd>
 </dl>
 </div>
 </section>
@@ -303,7 +303,7 @@ implements <a href="../web/server/WebServer.html" title="interface in org.spring
 <div class="block">返回此服务器监听的端口。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../web/server/WebServer.html#getPort()">getPort</a></code>` 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code>` 中</dd>
+<dd><code><a href="../web/server/WebServer.html#getPort()">getPort</a></code> 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code> 中</dd>
 <dt>Returns:</dt>
 <dd>端口（若无则为 -1）</dd>
 </dl>
@@ -318,10 +318,10 @@ implements <a href="../web/server/WebServer.html" title="interface in org.spring
 <div class="block">Initiates a graceful shutdown of the Jetty web server. Handling of new requests is
 prevented and the given <code>callback</code> is invoked at the end of the attempt. The
 attempt can be explicitly ended by invoking <a href="#stop()"><code>stop()</code></a>.
-<p>一旦启动关闭，Jetty 将拒绝任何新连接。现有连接上的请求将被接受，但响应中将返回 <code>Connection: close</code>` 标头。</p></div>
+<p>一旦启动关闭，Jetty 将拒绝任何新连接。现有连接上的请求将被接受，但响应中将返回 <code>Connection: close</code> 标头。</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../web/server/WebServer.html#shutDownGracefully(org.springframework.boot.web.server.GracefulShutdownCallback)">shutDownGracefully</a></code>` 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code>`</dd>
+<dd><code><a href="../web/server/WebServer.html#shutDownGracefully(org.springframework.boot.web.server.GracefulShutdownCallback)">shutDownGracefully</a></code> 接口 <code><a href="../web/server/WebServer.html" title="interface in org.springframework.boot.web.server">WebServer</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>callback</code> - 优雅关闭完成时调用的回调</dd>
 </dl>

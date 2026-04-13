@@ -2380,7 +2380,7 @@ class MyJmxTests(@Autowired val mBeanServer: MBeanServer) {
 <p>Spring Boot 的自动配置系统适用于应用程序，但在测试时有时可能过于复杂。通常，只需加载测试应用“切片”所需的配置部分即可有所帮助。例如，您可能希望测试 Spring MVC 控制器是否正确映射 URL，而不希望这些测试涉及数据库调用；或者您可能希望测试 JPA 实体，而在运行这些测试时对 Web 层不感兴趣。</p>
 </div>
 <div class="paragraph">
-<p>与 <code>spring-boot-test-autoconfigure`` 结合使用时，Spring Boot 的 <a class="xref page" href="test-modules.html">测试模块</a> 包含若干注解，可用于自动配置此类“切片”。它们的工作原理相似，均提供一个 <code>@…​Test</code>` 注解以加载 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>，以及一个或多个 <code>@AutoConfigure…​</code> 注解，可用于自定义自动配置设置。</code></p>
+<p>与 <code>spring-boot-test-autoconfigure`` 结合使用时，Spring Boot 的 <a class="xref page" href="test-modules.html">测试模块</a> 包含若干注解，可用于自动配置此类“切片”。它们的工作原理相似，均提供一个 <code>@…​Test</code> 注解以加载 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a>，以及一个或多个 <code>@AutoConfigure…​</code> 注解，可用于自定义自动配置设置。</code></p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2561,7 +2561,7 @@ JSON 辅助类也可以直接在标准单元测试中使用。为此，如果您
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>如果您使用 Spring Boot 的基于 AssertJ 的辅助类来断言给定 JSON 路径处的数值，则可能无法根据类型使用 <code>isEqualTo`。相反，您可以使用 AssertJ 的 <code>satisfies` 来断言该值是否符合给定的条件。例如，以下示例断言实际数值是一个接近 <code>0.15</code>` 的浮点数值，且偏移量在 <code>0.01</code> 以内。</code></code></p>
+<p>如果您使用 Spring Boot 的基于 AssertJ 的辅助类来断言给定 JSON 路径处的数值，则可能无法根据类型使用 <code>isEqualTo`。相反，您可以使用 AssertJ 的 <code>satisfies` 来断言该值是否符合给定的条件。例如，以下示例断言实际数值是一个接近 <code>0.15</code> 的浮点数值，且偏移量在 <code>0.01</code> 以内。</code></code></p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_15">
 <div class="content">
@@ -5111,7 +5111,7 @@ class MyWebServiceServerTests(@Autowired val client: MockWebServiceClient) {
 <h2 id="testing.spring-boot-applications.additional-autoconfiguration-and-slicing"><a class="anchor" href="#testing.spring-boot-applications.additional-autoconfiguration-and-slicing"></a>额外的自动配置和切片</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>每个切片提供一个或多个 <code>@AutoConfigure…​</code>` 注解，这些注解专门定义了应作为切片一部分包含的自动配置。可以通过创建自定义 <code>@AutoConfigure…​</code> 注解或在测试中添加 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/ImportAutoConfiguration.html"><code>@ImportAutoConfiguration</code></a>，按每个测试单独添加额外的自动配置，如下例所示：</p>
+<p>每个切片提供一个或多个 <code>@AutoConfigure…​</code> 注解，这些注解专门定义了应作为切片一部分包含的自动配置。可以通过创建自定义 <code>@AutoConfigure…​</code> 注解或在测试中添加 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/autoconfigure/ImportAutoConfiguration.html"><code>@ImportAutoConfiguration</code></a>，按每个测试单独添加额外的自动配置，如下例所示：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_44">
 <div class="content">

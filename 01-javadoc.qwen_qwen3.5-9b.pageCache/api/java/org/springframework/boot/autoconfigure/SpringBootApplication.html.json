@@ -59,12 +59,12 @@
     },
     {
       "source": "Turning off bean method interception effectively processes <code>@Bean</code> methods\nindividually like when declared on non-<code>@Configuration</code> classes, a.k.a.\n\"@Bean Lite Mode\" (see <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Bean's javadoc</code></a>). It is therefore behaviorally\nequivalent to removing the <code>@Configuration</code> stereotype.",
-      "translation": "关闭 Bean 方法拦截可单独处理 <code>@Bean</code>` 方法，就像在非 <code>@Configuration</code>` 类上声明时一样，即所谓的\"@Bean Lite Mode\"（参见 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Bean 的 javadoc</code></a>）。因此，其行为等效于移除 <code>@Configuration</code>` 元数据。",
+      "translation": "关闭 Bean 方法拦截可单独处理 <code>@Bean</code> 方法，就像在非 <code>@Configuration</code> 类上声明时一样，即所谓的\"@Bean Lite Mode\"（参见 <a class=\"external-link\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html\" title=\"class or interface in org.springframework.context.annotation\"><code>@Bean 的 javadoc</code></a>）。因此，其行为等效于移除 <code>@Configuration</code> 元数据。",
       "count": 2
     },
     {
       "source": "The default is <code>true</code>, allowing for 'inter-bean references' within the\nconfiguration class as well as for external calls to this configuration's\n<code>@Bean</code> methods, e.g. from another configuration class. If this is not needed\nsince each of this particular configuration's <code>@Bean</code> methods is\nself-contained and designed as a plain factory method for container use, switch\nthis flag to <code>false</code> in order to avoid CGLIB subclass processing.",
-      "translation": "默认值为 <code>true</code>`，允许在配置类内部使用“bean 之间的引用”，也允许外部调用此配置的<code>@Bean</code>`方法（例如从另一个配置类中调用）。如果不需要此功能，因为该特定配置的每个<code>@Bean</code>`方法都是自包含的，并设计为容器使用的普通工厂方法，请将此标志切换为 <code>false</code>` 以避免 CGLIB 子类处理。",
+      "translation": "默认值为 <code>true</code>，允许在配置类内部使用“bean 之间的引用”，也允许外部调用此配置的<code>@Bean</code>方法（例如从另一个配置类中调用）。如果不需要此功能，因为该特定配置的每个<code>@Bean</code>方法都是自包含的，并设计为容器使用的普通工厂方法，请将此标志切换为 <code>false</code> 以避免 CGLIB 子类处理。",
       "count": 2
     },
     {
@@ -89,7 +89,7 @@
     },
     {
       "source": "whether to proxy <code>@Bean</code> methods",
-      "translation": "是否代理 <code>@Bean</code>` 方法",
+      "translation": "是否代理 <code>@Bean</code> 方法",
       "count": 2
     },
     {

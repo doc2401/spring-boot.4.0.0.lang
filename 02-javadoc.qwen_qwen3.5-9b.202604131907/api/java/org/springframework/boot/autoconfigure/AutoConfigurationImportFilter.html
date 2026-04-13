@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Filter that can be registered in <code>spring.factories</code> to limit the
 auto-configuration classes considered. This interface is designed to allow fast removal
 of auto-configuration classes before their bytecode is even read.
-<p>`AutoConfigurationImportFilter` 接口可能实现以下任一 <code>Aware</code>` 接口，其相应方法将在调用 <a href="#match(java.lang.String%5B%5D,org.springframework.boot.autoconfigure.AutoConfigurationMetadata)"><code>match(String[], AutoConfigurationMetadata)</code></a> 之前被调用：</p><ul>
+<p>`AutoConfigurationImportFilter` 接口可能实现以下任一 <code>Aware</code> 接口，其相应方法将在调用 <a href="#match(java.lang.String%5B%5D,org.springframework.boot.autoconfigure.AutoConfigurationMetadata)"><code>match(String[], AutoConfigurationMetadata)</code></a> 之前被调用：</p><ul>
 <li><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/EnvironmentAware.html" title="class or interface in org.springframework.context"><code>EnvironmentAware</code></a></li>
 <li><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactoryAware.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactoryAware</code></a></li>
 <li><a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanClassLoaderAware.html" title="class or interface in org.springframework.beans.factory"><code>BeanClassLoaderAware</code></a></li>
@@ -135,10 +135,10 @@ of auto-configuration classes before their bytecode is even read.
 <div class="block">对给定的自动配置类候选项应用过滤器。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd>`autoConfigurationClasses` - 正在考虑的自动配置类。此数组可能包含 <code>null</code>` 元素。实现不应更改此数组中的值。</dd>
+<dd>`autoConfigurationClasses` - 正在考虑的自动配置类。此数组可能包含 <code>null</code> 元素。实现不应更改此数组中的值。</dd>
 <dd><code>autoConfigurationMetadata</code> - 访问由 auto-configure 注解处理器生成的元数据。</dd>
 <dt>Returns:</dt>
-<dd>一个布尔数组，指示应导入哪些自动配置类。返回的数组大小必须与传入的 <code>autoConfigurationClasses</code>` 参数相同。包含 <code>false</code>` 的条目将不会被导入。</dd>
+<dd>一个布尔数组，指示应导入哪些自动配置类。返回的数组大小必须与传入的 <code>autoConfigurationClasses</code> 参数相同。包含 <code>false</code> 的条目将不会被导入。</dd>
 </dl>
 </div>
 </section>

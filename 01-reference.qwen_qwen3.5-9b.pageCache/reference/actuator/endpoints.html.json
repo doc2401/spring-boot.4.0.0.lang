@@ -54,7 +54,7 @@
     },
     {
       "source": "For <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a>, <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html\"><code>@JmxEndpoint</code></a>, and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html\"><code>@WebEndpoint</code></a>, read access equates to the endpoint methods annotated with <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html\"><code>@ReadOperation</code></a>.\nFor <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html\"><code>@ControllerEndpoint</code></a> and <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html\"><code>@RestControllerEndpoint</code></a>, read access equates to request mappings that can handle <code>GET</code> and <code>HEAD</code> requests.\nFor <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html\"><code>@ServletEndpoint</code></a>, read access equates to <code>GET</code> and <code>HEAD</code> requests.",
-      "translation": "对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html\"><code>@JmxEndpoint</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html\"><code>@WebEndpoint</code></a>，读访问权限等同于带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html\"><code>@ReadOperation</code></a> 注解的端点方法。\n对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html\"><code>@ControllerEndpoint</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html\"><code>@RestControllerEndpoint</code></a>，读访问权限等同于能够处理 <code>GET</code>` 和 <code>HEAD</code>` 请求的请求映射。\n对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html\"><code>@ServletEndpoint</code></a>，读访问权限等同于 <code>GET</code>` 和 <code>HEAD</code> 请求。",
+      "translation": "对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/Endpoint.html\"><code>@Endpoint</code></a>、<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/jmx/annotation/JmxEndpoint.html\"><code>@JmxEndpoint</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/WebEndpoint.html\"><code>@WebEndpoint</code></a>，读访问权限等同于带有 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/ReadOperation.html\"><code>@ReadOperation</code></a> 注解的端点方法。\n对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ControllerEndpoint.html\"><code>@ControllerEndpoint</code></a> 和 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/RestControllerEndpoint.html\"><code>@RestControllerEndpoint</code></a>，读访问权限等同于能够处理 <code>GET</code> 和 <code>HEAD</code> 请求的请求映射。\n对于 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/web/annotation/ServletEndpoint.html\"><code>@ServletEndpoint</code></a>，读访问权限等同于 <code>GET</code> 和 <code>HEAD</code> 请求。",
       "count": 2
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "source": "If the operation method returns <code>void</code> or <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html\"><code>Void</code></a>, the <code>produces</code> clause is empty.\nIf the operation method returns a <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html\"><code>Resource</code></a>, the <code>produces</code> clause is <code>application/octet-stream</code>.\nFor all other operations, the <code>produces</code> clause is <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>.",
-      "translation": "如果操作方法的返回类型为 <code>void</code>` 或 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html\"><code>Void</code></a>，则 <code>produces</code>` 子句为空。\n如果操作方法的返回类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html\"><code>Resource</code></a>，则 <code>produces</code>` 子句为 <code>application/octet-stream</code>`。\n对于其他所有操作，<code>produces</code>` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。",
+      "translation": "如果操作方法的返回类型为 <code>void</code> 或 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Void.html\"><code>Void</code></a>，则 <code>produces</code> 子句为空。\n如果操作方法的返回类型为 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/io/Resource.html\"><code>Resource</code></a>，则 <code>produces</code> 子句为 <code>application/octet-stream</code>。\n对于其他所有操作，<code>produces</code> 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。",
       "count": 2
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "source": "With no prerequisites to indicate that they should be enabled, the <code>env</code>, <code>java</code>, <code>os</code>, and <code>process</code> contributors are disabled by default. The <code>ssl</code> contributor has a prerequisite of having an <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL Bundle</a> configured but it is disabled by default.\nEach can be enabled by setting its <code>management.info.&lt;id&gt;.enabled</code> property to <code>true</code>.",
-      "translation": "在没有指示需要启用它们的前置条件时，`env`、`java`、`os` 和 `process` 贡献者默认处于禁用状态。`ssl` 贡献者的前置条件是已配置一个 <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL Bundle</a>，但它默认也是禁用的。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 <code>true</code> 来启用每一个贡献者。",
+      "translation": "在没有指示需要启用它们的前置条件时，`env`、`java`、`os` 和 `process` 贡献者默认处于禁用状态。`ssl` 贡献者的前置条件是已配置一个 <a class=\"xref page\" href=\"../features/ssl.html#features.ssl.bundles\">SSL Bundle</a>，但它默认也是禁用的。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code> 属性设置为 <code>true</code> 来启用每一个贡献者。",
       "count": 2
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "source": "When the <code>env</code> contributor is enabled, you can customize the data exposed by the <code>info</code> endpoint by setting <code>info.*</code> Spring properties.\nAll <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> properties under the <code>info</code> key are automatically exposed.\nFor example, you could add the following settings to your <code>application.properties</code> file:",
-      "translation": "当启用 <code>env`</code> 贡献器时，您可以通过设置 <code>info.*</code>` Spring 属性来自定义由 <code>info</code>` 端点暴露的数据。\n所有位于 <code>info</code>` 键下的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性都会自动暴露。\n例如，您可以在 <code>application.properties</code> 文件中添加以下设置：",
+      "translation": "当启用 <code>env`</code> 贡献器时，您可以通过设置 <code>info.*</code> Spring 属性来自定义由 <code>info</code> 端点暴露的数据。\n所有位于 <code>info</code> 键下的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/env/Environment.html\"><code>Environment</code></a> 属性都会自动暴露。\n例如，您可以在 <code>application.properties</code> 文件中添加以下设置：",
       "count": 2
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "source": "For a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html\"><code>@WriteOperation</code></a> (HTTP <code>POST</code>) that uses the request body, the <code>consumes</code> clause of the predicate is <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>.\nFor all other operations, the <code>consumes</code> clause is empty.",
-      "translation": "对于使用请求体的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html\"><code>@WriteOperation</code></a>（HTTP <code>POST</code>`），谓词的 `consumes` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。\n对于所有其他操作，`consumes` 子句为空。",
+      "translation": "对于使用请求体的 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/endpoint/annotation/WriteOperation.html\"><code>@WriteOperation</code></a>（HTTP <code>POST</code>），谓词的 `consumes` 子句为 <code>application/vnd.spring-boot.actuator.v2+json, application/json</code>。\n对于所有其他操作，`consumes` 子句为空。",
       "count": 2
     },
     {
@@ -174,7 +174,7 @@
     },
     {
       "source": "This would make the <code>liveness</code> group available at <code>/livez</code> and the <code>readiness</code> group available at <code>/readyz</code> on the main server port.\nPaths can be customized using the <code>additional-path</code> property on each group, see <a href=\"#actuator.endpoints.health.groups\">health groups</a> for details.",
-      "translation": "这将使 <code>liveness</code>` 组在主要服务器端口上可用，路径为 `/livez`，而 <code>readiness</code>` 组的路径为 `/readyz`。可以使用每个组上的 <code>additional-path</code> 属性来自定义路径，有关详细信息请参阅 <a href=\"#actuator.endpoints.health.groups\">健康检查组</a>。",
+      "translation": "这将使 <code>liveness</code> 组在主要服务器端口上可用，路径为 `/livez`，而 <code>readiness</code> 组的路径为 `/readyz`。可以使用每个组上的 <code>additional-path</code> 属性来自定义路径，有关详细信息请参阅 <a href=\"#actuator.endpoints.health.groups\">健康检查组</a>。",
       "count": 2
     },
     {
@@ -184,7 +184,7 @@
     },
     {
       "source": "The <code>build</code> and <code>git</code> info contributors are enabled by default.\nEach can be disabled by setting its <code>management.info.&lt;id&gt;.enabled</code> property to <code>false</code>.\nAlternatively, to disable every contributor that is usually enabled by default, set the <code>management.info.defaults.enabled</code> property to <code>false</code>.",
-      "translation": "<code>build</code> 和 <code>git</code> 信息贡献者默认已启用。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code>` 属性设置为 <code>false</code>` 来禁用每一个贡献者。或者，要禁用所有通常默认启用的贡献者，请将 <code>management.info.defaults.enabled</code>` 属性设置为 <code>false</code>。",
+      "translation": "<code>build</code> 和 <code>git</code> 信息贡献者默认已启用。可以通过将其 <code>management.info.&lt;id&gt;.enabled</code> 属性设置为 <code>false</code> 来禁用每一个贡献者。或者，要禁用所有通常默认启用的贡献者，请将 <code>management.info.defaults.enabled</code> 属性设置为 <code>false</code>。",
       "count": 2
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "source": "The preceding example uses <code>EndpointRequest.toAnyEndpoint()</code> to match a request to any endpoint and then ensures that all have the <code>ENDPOINT_ADMIN</code> role.\nSeveral other matcher methods are also available on <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html\"><code>EndpointRequest</code></a>.\nSee the <a class=\"xref page\" href=\"../../api/rest/actuator/index.html\">API documentation</a> for details.",
-      "translation": "前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code>` 将请求匹配到任意端点，然后确保所有端点都具有 <code>ENDPOINT_ADMIN</code> 角色。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html\"><code>EndpointRequest</code></a> 上还提供其他几种匹配器方法。\n有关详细信息，请参阅 <a class=\"xref page\" href=\"../../api/rest/actuator/index.html\">API 文档</a>。",
+      "translation": "前面的示例使用 <code>EndpointRequest.toAnyEndpoint()</code> 将请求匹配到任意端点，然后确保所有端点都具有 <code>ENDPOINT_ADMIN</code> 角色。\n<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.html\"><code>EndpointRequest</code></a> 上还提供其他几种匹配器方法。\n有关详细信息，请参阅 <a class=\"xref page\" href=\"../../api/rest/actuator/index.html\">API 文档</a>。",
       "count": 2
     },
     {
@@ -219,12 +219,12 @@
     },
     {
       "source": "By default, access to all endpoints except for <code>shutdown</code> and <code>heapdump</code> is unrestricted.\nTo configure the permitted access to an endpoint, use its <code>management.endpoint.&lt;id&gt;.access</code> property.\nThe following example allows unrestricted access to the <code>shutdown</code> endpoint:",
-      "translation": "默认情况下，除 <code>shutdown</code>` 和 <code>heapdump</code>` 之外的所有端点访问均不受限制。要配置对某个端点的允许访问权限，请使用其 <code>management.endpoint.&lt;id&gt;.access</code>` 属性。以下示例允许对 <code>shutdown</code> 端点进行无限制访问：",
+      "translation": "默认情况下，除 <code>shutdown</code> 和 <code>heapdump</code> 之外的所有端点访问均不受限制。要配置对某个端点的允许访问权限，请使用其 <code>management.endpoint.&lt;id&gt;.access</code> 属性。以下示例允许对 <code>shutdown</code> 端点进行无限制访问：",
       "count": 2
     },
     {
       "source": "If you prefer access to be opt-in rather than opt-out, set the <code>management.endpoints.access.default</code> property to <code>none</code> and use individual endpoint <code>access</code> properties to opt back in.\nThe following example allows read-only access to the <code>loggers</code> endpoint and denies access to all other endpoints:",
-      "translation": "如果您希望采用“显式允许”而非“默认拒绝”的访问模式，请将 <code>management.endpoints.access.default</code>` 属性设置为 <code>none</code>`，并使用各个端点的 <code>access</code>` 属性来重新启用访问。以下示例允许对 <code>loggers</code> 端点进行只读访问，并拒绝所有其他端点的访问：",
+      "translation": "如果您希望采用“显式允许”而非“默认拒绝”的访问模式，请将 <code>management.endpoints.access.default</code> 属性设置为 <code>none</code>，并使用各个端点的 <code>access</code> 属性来重新启用访问。以下示例允许对 <code>loggers</code> 端点进行只读访问，并拒绝所有其他端点的访问：",
       "count": 2
     },
     {
@@ -234,12 +234,12 @@
     },
     {
       "source": "When a custom management context path is configured, the “discovery page” automatically moves from <code>/actuator</code> to the root of the management context.\nFor example, if the management context path is <code>/management</code>, the discovery page is available from <code>/management</code>.\nWhen the management context path is set to <code>/</code>, the discovery page is disabled to prevent the possibility of a clash with other mappings.",
-      "translation": "当配置了自定义管理上下文路径时，“发现页面”会自动从 <code>/actuator</code>` 移动到管理上下文的根目录。例如，如果管理上下文路径为 <code>/management</code>`，则发现页面可从 <code>/management</code>` 访问。当管理上下文路径设置为 <code>/</code> 时，会禁用发现页面，以防止与其他映射发生冲突。",
+      "translation": "当配置了自定义管理上下文路径时，“发现页面”会自动从 <code>/actuator</code> 移动到管理上下文的根目录。例如，如果管理上下文路径为 <code>/management</code>，则发现页面可从 <code>/management</code> 访问。当管理上下文路径设置为 <code>/</code> 时，会禁用发现页面，以防止与其他映射发生冲突。",
       "count": 2
     },
     {
       "source": "CORS support is disabled by default and is only enabled once you have set the <code>management.endpoints.web.cors.allowed-origins</code> property.\nThe following configuration permits <code>GET</code> and <code>POST</code> calls from the <code>example.com</code> domain:",
-      "translation": "CORS 支持默认处于禁用状态，只有在设置了 <code>management.endpoints.web.cors.allowed-origins</code>` 属性后才启用。以下配置允许来自 <code>example.com</code>` 域的 <code>GET</code>` 和 <code>POST</code> 调用：",
+      "translation": "CORS 支持默认处于禁用状态，只有在设置了 <code>management.endpoints.web.cors.allowed-origins</code> 属性后才启用。以下配置允许来自 <code>example.com</code> 域的 <code>GET</code> 和 <code>POST</code> 调用：",
       "count": 2
     },
     {
@@ -279,17 +279,17 @@
     },
     {
       "source": "This would make the <code>live</code> health group available on the main server port at <code>/healthz</code>.\nThe prefix is mandatory and must be either <code>server:</code> (represents the main server port) or <code>management:</code> (represents the management port, if configured.)\nThe path must be a single path segment.",
-      "translation": "这将使 <code>live</code>` 健康组在主服务器端口上的 `/healthz` 处可用。前缀是强制性的，必须是 <code>server:</code>`（代表主服务器端口）或 <code>management:</code>（如果已配置，则代表管理端口）。路径必须是一个单一的路径段。",
+      "translation": "这将使 <code>live</code> 健康组在主服务器端口上的 `/healthz` 处可用。前缀是强制性的，必须是 <code>server:</code>（代表主服务器端口）或 <code>management:</code>（如果已配置，则代表管理端口）。路径必须是一个单一的路径段。",
       "count": 2
     },
     {
       "source": "The <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> health indicator shows the health of both standard data sources and routing data source beans.\nThe health of a routing data source includes the health of each of its target data sources.\nIn the health endpoint’s response, each of a routing data source’s targets is named by using its routing key.\nIf you prefer not to include routing data sources in the indicator’s output, set <code>management.health.db.ignore-routing-data-sources</code> to <code>true</code>.",
-      "translation": "<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。\n路由数据源的健康状况包括其每个目标数据源的健康状况。\n在健康端点的响应中，路由数据源的每个目标均通过其路由键命名。\n如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code>` 设置为 <code>true</code>。",
+      "translation": "<a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html\"><code>DataSource</code></a> 健康指示器显示标准数据源和路由数据源 Bean 的健康状况。\n路由数据源的健康状况包括其每个目标数据源的健康状况。\n在健康端点的响应中，路由数据源的每个目标均通过其路由键命名。\n如果您不希望将路由数据源包含在指示器的输出中，请将 <code>management.health.db.ignore-routing-data-sources</code> 设置为 <code>true</code>。",
       "count": 2
     },
     {
       "source": "If a <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html\"><code>BuildProperties</code></a> bean is available, the <code>info</code> endpoint can also publish information about your build.\nThis happens if a <code>META-INF/build-info.properties</code> file is available in the classpath.",
-      "translation": "如果存在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html\"><code>BuildProperties</code></a> Bean，<code>info</code>` 端点还可以发布有关构建的信息。\n如果类路径中存在 <code>META-INF/build-info.properties</code> 文件，就会发生这种情况。",
+      "translation": "如果存在 <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/info/BuildProperties.html\"><code>BuildProperties</code></a> Bean，<code>info</code> 端点还可以发布有关构建的信息。\n如果类路径中存在 <code>META-INF/build-info.properties</code> 文件，就会发生这种情况。",
       "count": 2
     },
     {
@@ -309,12 +309,12 @@
     },
     {
       "source": "Returns the contents of the logfile (if the <code>logging.file.name</code> or the <code>logging.file.path</code> property has been set).\n  Supports the use of the HTTP <code>Range</code> header to retrieve part of the log file’s content.",
-      "translation": "返回日志文件的内容（如果已设置 <code>logging.file.name</code>` 或 <code>logging.file.path</code>` 属性）。支持使用 HTTP <code>Range</code> 头来获取日志文件的部分内容。",
+      "translation": "返回日志文件的内容（如果已设置 <code>logging.file.name</code> 或 <code>logging.file.path</code> 属性）。支持使用 HTTP <code>Range</code> 头来获取日志文件的部分内容。",
       "count": 2
     },
     {
       "source": "Application-wide endpoint access can be limited using the <code>management.endpoints.access.max-permitted</code> property.\nThis property takes precedence over the default access or an individual endpoint’s access level.\nSet it to <code>none</code> to make all endpoints inaccessible.\nSet it to <code>read-only</code> to only allow read access to endpoints.",
-      "translation": "可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code>` 可使所有端点不可访问。将其设置为 <code>read-only</code> 则仅允许对端点进行只读访问。",
+      "translation": "可以使用 `management.endpoints.access.max-permitted` 属性来限制应用程序范围的端点访问。该属性的优先级高于默认访问权限或单个端点的访问级别。将其设置为 <code>none</code> 可使所有端点不可访问。将其设置为 <code>read-only</code> 则仅允许对端点进行只读访问。",
       "count": 2
     },
     {
@@ -339,12 +339,12 @@
     },
     {
       "source": "The following example allows all users with the <code>admin</code> role to view values from the <code>/env</code> endpoint in their original form.\nUnauthorized users, or users without the <code>admin</code> role, will see only sanitized values.",
-      "translation": "以下示例允许所有具有 <code>admin</code>` 角色的用户以原始形式查看来自 `/env` 端点的值。未授权的用户或没有 <code>admin</code> 角色的用户将仅看到经过清理的值。",
+      "translation": "以下示例允许所有具有 <code>admin</code> 角色的用户以原始形式查看来自 `/env` 端点的值。未授权的用户或没有 <code>admin</code> 角色的用户将仅看到经过清理的值。",
       "count": 2
     },
     {
       "source": "The path of the predicate is determined by the ID of the endpoint and the base path of the web-exposed endpoints.\nThe default base path is <code>/actuator</code>.\nFor example, an endpoint with an ID of <code>sessions</code> uses <code>/actuator/sessions</code> as its path in the predicate.",
-      "translation": "谓词的路径由端点的 ID 和 Web 暴露端点的基础路径决定。默认基础路径为 <code>/actuator</code>`。例如，ID 为 <code>sessions</code>` 的端点在谓词中使用 <code>/actuator/sessions</code> 作为其路径。",
+      "translation": "谓词的路径由端点的 ID 和 Web 暴露端点的基础路径决定。默认基础路径为 <code>/actuator</code>。例如，ID 为 <code>sessions</code> 的端点在谓词中使用 <code>/actuator/sessions</code> 作为其路径。",
       "count": 2
     },
     {
@@ -354,7 +354,7 @@
     },
     {
       "source": "To create a health indicator group, you can use the <code>management.endpoint.health.group.&lt;name&gt;</code> property and specify a list of health indicator IDs to <code>include</code> or <code>exclude</code>.\nFor example, to create a group that includes only database indicators you can define the following:",
-      "translation": "要创建健康指示器组，您可以使用 <code>management.endpoint.health.group.&lt;name&gt;</code>` 属性，并指定要 <code>include</code>` 或 <code>exclude</code> 的健康指示器 ID 列表。例如，要创建一个仅包含数据库指示器的组，可以定义如下内容：",
+      "translation": "要创建健康指示器组，您可以使用 <code>management.endpoint.health.group.&lt;name&gt;</code> 属性，并指定要 <code>include</code> 或 <code>exclude</code> 的健康指示器 ID 列表。例如，要创建一个仅包含数据库指示器的组，可以定义如下内容：",
       "count": 2
     },
     {
@@ -369,7 +369,7 @@
     },
     {
       "source": "To disable the git commit information from the <code>info</code> endpoint completely, set the <code>management.info.git.enabled</code> property to <code>false</code>, as follows:",
-      "translation": "要完全禁用来自 <code>info</code>` 端点的 git 提交信息，请将 <code>management.info.git.enabled</code> 属性设置为 <code>false</code>，如下所示：",
+      "translation": "要完全禁用来自 <code>info</code> 端点的 git 提交信息，请将 <code>management.info.git.enabled</code> 属性设置为 <code>false</code>，如下所示：",
       "count": 2
     },
     {
@@ -389,7 +389,7 @@
     },
     {
       "source": "The configuration property <code>management.endpoint.sbom.application.location</code> sets the location for the application SBOM.\nFor example, setting this to <code>classpath:sbom.json</code> will use the contents of the <code>/sbom.json</code> resource on the classpath.",
-      "translation": "配置属性 <code>management.endpoint.sbom.application.location</code>` 用于设置应用程序 SBOM 的位置。例如，将其设置为 <code>classpath:sbom.json</code> 将使用类路径上 `/sbom.json` 资源的内容。",
+      "translation": "配置属性 <code>management.endpoint.sbom.application.location</code> 用于设置应用程序 SBOM 的位置。例如，将其设置为 <code>classpath:sbom.json</code> 将使用类路径上 `/sbom.json` 资源的内容。",
       "count": 2
     },
     {
@@ -424,17 +424,17 @@
     },
     {
       "source": "To change which endpoints are exposed, use the following technology-specific <code>include</code> and <code>exclude</code> properties:",
-      "translation": "要更改暴露的端点，请使用以下特定于技术的 <code>include</code>` 和 <code>exclude</code> 属性：",
+      "translation": "要更改暴露的端点，请使用以下特定于技术的 <code>include</code> 和 <code>exclude</code> 属性：",
       "count": 2
     },
     {
       "source": "For example, to only expose the <code>health</code> and <code>info</code> endpoints over JMX, use the following property:",
-      "translation": "例如，要仅通过 JMX 暴露 <code>health</code>` 和 <code>info</code> 端点，请使用以下属性：",
+      "translation": "例如，要仅通过 JMX 暴露 <code>health</code> 和 <code>info</code> 端点，请使用以下属性：",
       "count": 2
     },
     {
       "source": "For security purposes, only the <code>/health</code> endpoint is exposed over HTTP by default.\nYou can use the <code>management.endpoints.web.exposure.include</code> property to configure the endpoints that are exposed.",
-      "translation": "出于安全考虑，默认情况下仅通过 HTTP 公开 <code>/health</code>` 端点。您可以使用 <code>management.endpoints.web.exposure.include</code> 属性来配置要公开的端点。",
+      "translation": "出于安全考虑，默认情况下仅通过 HTTP 公开 <code>/health</code> 端点。您可以使用 <code>management.endpoints.web.exposure.include</code> 属性来配置要公开的端点。",
       "count": 2
     },
     {
@@ -444,7 +444,7 @@
     },
     {
       "source": "Endpoints automatically cache responses to read operations that do not take any parameters.\nTo configure the amount of time for which an endpoint caches a response, use its <code>cache.time-to-live</code> property.\nThe following example sets the time-to-live of the <code>beans</code> endpoint’s cache to 10 seconds:",
-      "translation": "端点会自动缓存不带任何参数的读取操作的响应。要配置端点缓存响应的时长，请使用其 <code>cache.time-to-live</code>` 属性。以下示例将 <code>beans</code> 端点的缓存时间设置为 10 秒：",
+      "translation": "端点会自动缓存不带任何参数的读取操作的响应。要配置端点缓存响应的时长，请使用其 <code>cache.time-to-live</code> 属性。以下示例将 <code>beans</code> 端点的缓存时间设置为 10 秒：",
       "count": 2
     },
     {
@@ -474,7 +474,7 @@
     },
     {
       "source": "You can use this to invoke a write operation that takes <code>String name</code> and <code>int counter</code> parameters, as the following example shows:",
-      "translation": "您可以使用此方法调用一个写操作，该操作接受 <code>String name</code>` 和 <code>int counter</code> 参数，如下例所示：",
+      "translation": "您可以使用此方法调用一个写操作，该操作接受 <code>String name</code> 和 <code>int counter</code> 参数，如下例所示：",
       "count": 2
     },
     {
@@ -489,7 +489,7 @@
     },
     {
       "source": "The default value is <code>never</code>.\nA user is considered to be authorized when they are in one or more of the endpoint’s roles.\nIf the endpoint has no configured roles (the default), all authenticated users are considered to be authorized.\nYou can configure the roles by using the <code>management.endpoint.health.roles</code> property.",
-      "translation": "默认值为 <code>never</code>`。\n当用户处于端点的一个或多个角色中时，该用户被视为已授权。\n如果端点未配置任何角色（即默认情况），则所有经过身份验证的用户均被视为已授权。\n您可以通过使用 <code>management.endpoint.health.roles</code> 属性来配置角色。",
+      "translation": "默认值为 <code>never</code>。\n当用户处于端点的一个或多个角色中时，该用户被视为已授权。\n如果端点未配置任何角色（即默认情况），则所有经过身份验证的用户均被视为已授权。\n您可以通过使用 <code>management.endpoint.health.roles</code> 属性来配置角色。",
       "count": 2
     },
     {
@@ -514,7 +514,7 @@
     },
     {
       "source": "By default, startup will fail if a health group includes or excludes a health indicator that does not exist.\nTo disable this behavior set <code>management.endpoint.health.validate-group-membership</code> to <code>false</code>.",
-      "translation": "默认情况下，如果健康组包含或排除了不存在的健康指示器，启动将失败。要禁用此行为，请将 <code>management.endpoint.health.validate-group-membership</code>` 设置为 <code>false</code>。",
+      "translation": "默认情况下，如果健康组包含或排除了不存在的健康指示器，启动将失败。要禁用此行为，请将 <code>management.endpoint.health.validate-group-membership</code> 设置为 <code>false</code>。",
       "count": 2
     },
     {
@@ -524,7 +524,7 @@
     },
     {
       "source": "If your Actuator endpoints are deployed on a separate management context, the endpoints do not use the same web infrastructure (port, connection pools, framework components) as the main application.\nIn this case, a probe check could be successful even if the main application does not work properly (for example, it cannot accept new connections).\nFor this reason, it is a good idea to make the <code>liveness</code> and <code>readiness</code> health groups available on the main server port.\nThis can be done by setting the following property:",
-      "translation": "如果您的 Actuator 端点部署在独立的管理上下文中，则这些端点不会使用与主应用程序相同的 Web 基础设施（端口、连接池、框架组件）。在这种情况下，探针检查可能会在主应用程序无法正常工作（例如，无法接受新连接）时仍然成功。因此，建议将 <code>liveness</code>` 和 <code>readiness</code> 健康组在主服务器端口上可用。可以通过设置以下属性来实现：",
+      "translation": "如果您的 Actuator 端点部署在独立的管理上下文中，则这些端点不会使用与主应用程序相同的 Web 基础设施（端口、连接池、框架组件）。在这种情况下，探针检查可能会在主应用程序无法正常工作（例如，无法接受新连接）时仍然成功。因此，建议将 <code>liveness</code> 和 <code>readiness</code> 健康组在主服务器端口上可用。可以通过设置以下属性来实现：",
       "count": 2
     },
     {
@@ -554,7 +554,7 @@
     },
     {
       "source": "This will add an SBOM called \"system\", which is stored in <code>/system.spdx.json</code>.\nThe <code>optional:</code> prefix can be used to prevent a startup failure if the file doesn’t exist.",
-      "translation": "这将添加一个名为\"system\"的 SBOM，存储在 <code>/system.spdx.json</code>` 中。可以使用 <code>optional:</code> 前缀来防止文件不存在时启动失败。",
+      "translation": "这将添加一个名为\"system\"的 SBOM，存储在 <code>/system.spdx.json</code> 中。可以使用 <code>optional:</code> 前缀来防止文件不存在时启动失败。",
       "count": 2
     },
     {

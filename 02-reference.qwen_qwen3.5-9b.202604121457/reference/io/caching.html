@@ -1502,7 +1502,7 @@ Hazelcast 可作为符合 JCache 规范的缓存，或作为符合 Spring <a cla
 <p>可以通过设置 <code>spring.cache.cache-names</code> 属性在启动时创建缓存。如果定义了自定义的 <a class="apiref" href="https://docs.jboss.org/infinispan/15.2/apidocs/org/infinispan/configuration/cache/ConfigurationBuilder.html"><code>ConfigurationBuilder</code></a> Bean，则使用它来定制缓存。</p>
 </div>
 <div class="paragraph">
-<p>为了与 Spring Boot 的 Jakarta EE 9 基线兼容，必须使用 Infinispan 的 <code>-jakarta</code>` 模块。对于每个具有 <code>-jakarta</code>` 变体的模块，必须使用该变体来替代标准模块。例如，必须分别使用 <code>infinispan-core-jakarta</code>` 和 <code>infinispan-commons-jakarta</code>` 来替代 <code>infinispan-core</code>` 和 <code>infinispan-commons</code>。</p>
+<p>为了与 Spring Boot 的 Jakarta EE 9 基线兼容，必须使用 Infinispan 的 <code>-jakarta</code> 模块。对于每个具有 <code>-jakarta</code> 变体的模块，必须使用该变体来替代标准模块。例如，必须分别使用 <code>infinispan-core-jakarta</code> 和 <code>infinispan-commons-jakarta</code> 来替代 <code>infinispan-core</code> 和 <code>infinispan-commons</code>。</p>
 </div>
 </div>
 <div class="sect2">
@@ -1545,7 +1545,7 @@ spring.cache.couchbase.expiration=10m</code></pre>
 </div>
 <div class="paragraph">
 <p>如果您需要更灵活地控制配置，可以考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/CouchbaseCacheManagerBuilderCustomizer.html"><code>CouchbaseCacheManagerBuilderCustomizer</code></a> Bean。
-以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 <code>cache2</code> 配置了特定的条目过期时间：</p>
+以下示例展示了一个自定义器，它为 <code>cache1</code> 和 <code>cache2</code> 配置了特定的条目过期时间：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_6">
 <div class="content">
@@ -1684,7 +1684,7 @@ spring.cache.redis.time-to-live=10m</code></pre>
 </div>
 <div class="paragraph">
 <p>如果您需要更精细地控制配置，请考虑注册一个 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/cache/autoconfigure/RedisCacheManagerBuilderCustomizer.html"><code>RedisCacheManagerBuilderCustomizer</code></a> Bean。
-以下示例展示了一个自定义器，它为 <code>cache1</code>` 和 <code>cache2</code> 配置了特定的生存时间：</p>
+以下示例展示了一个自定义器，它为 <code>cache1</code> 和 <code>cache2</code> 配置了特定的生存时间：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_8">
 <div class="content">

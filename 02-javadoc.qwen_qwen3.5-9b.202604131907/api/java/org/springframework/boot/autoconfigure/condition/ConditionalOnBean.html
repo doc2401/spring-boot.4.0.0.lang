@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 requirements are already contained in the <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html" title="class or interface in org.springframework.beans.factory"><code>BeanFactory</code></a>. All the requirements
 must be met for the condition to match, but they do not have to be met by the same
 bean.
-<p>当放置在带有 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean</code></a> 的方法上，且未指定任何 <a href="#value()"><code>value()</code></a>、<a href="#type()"><code>type()</code></a>、<a href="#name()"><code>name()</code></a> 或 <a href="#annotation()"><code>annotation()</code></a> 时，要匹配的 Bean 类型默认为 <code>@Bean</code>` 方法的返回类型：</p><pre class="code">@Configuration
+<p>当放置在带有 <a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html" title="class or interface in org.springframework.context.annotation"><code>@Bean</code></a> 的方法上，且未指定任何 <a href="#value()"><code>value()</code></a>、<a href="#type()"><code>type()</code></a>、<a href="#name()"><code>name()</code></a> 或 <a href="#annotation()"><code>annotation()</code></a> 时，要匹配的 Bean 类型默认为 <code>@Bean</code> 方法的返回类型：</p><pre class="code">@Configuration
 public class MyAutoConfiguration {
 
     @ConditionalOnBean
@@ -273,7 +273,7 @@ public class MyAutoConfiguration {
 <h3>parameterizedContainer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang">Class</a>&lt;?&gt;[]</span> <span class="element-name">parameterizedContainer</span></div>
-<div class="block">包含指定 Bean 类型在其泛型参数中的其他类。例如，一个声明了 <code>value=Name.class</code>` 和 <code>parameterizedContainer=NameRegistration.class</code>` 的注解将同时检测到 <code>Name</code>` 和 <code>NameRegistration&lt;Name&gt;</code>`。</div>
+<div class="block">包含指定 Bean 类型在其泛型参数中的其他类。例如，一个声明了 <code>value=Name.class</code> 和 <code>parameterizedContainer=NameRegistration.class</code> 的注解将同时检测到 <code>Name</code> 和 <code>NameRegistration&lt;Name&gt;</code>。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>容器类型</dd>

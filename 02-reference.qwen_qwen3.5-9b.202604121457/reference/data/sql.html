@@ -1153,7 +1153,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.datasource.generate-unique-name</code>` 设置为 <code>true</code>。</p>
+<p>如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.datasource.generate-unique-name</code> 设置为 <code>true</code>。</p>
 </div>
 </td>
 </tr>
@@ -1211,7 +1211,7 @@
 <div class="sect2">
 <h3 id="data.sql.datasource.configuration"><a class="anchor" href="#data.sql.datasource.configuration"></a>数据源配置</h3>
 <div class="paragraph">
-<p>数据源配置由 <code>spring.datasource.*</code>` 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：</p>
+<p>数据源配置由 <code>spring.datasource.*</code> 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1859,7 +1859,7 @@ import org.springframework.data.repository.Repository
 </div>
 <div class="paragraph">
 <p>Spring Data JPA 仓库支持三种不同的引导模式：默认、延迟和惰性。
-要启用延迟或惰性引导，请将 <code>spring.data.jpa.repositories.bootstrap-mode</code>` 属性设置为 <code>deferred</code>` 或 <code>lazy</code>。
+要启用延迟或惰性引导，请将 <code>spring.data.jpa.repositories.bootstrap-mode</code> 属性设置为 <code>deferred</code> 或 <code>lazy</code>。
 在使用延迟或惰性引导时，自动配置的 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/jpa/EntityManagerFactoryBuilder.html"><code>EntityManagerFactoryBuilder</code></a> 将使用上下文中存在的 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html"><code>AsyncTaskExecutor</code></a>（如果有）作为引导执行器。
 如果存在多个，将使用名为 <code>applicationTaskExecutor</code> 的那个。</p>
 </div>
@@ -2043,7 +2043,7 @@ Hibernate 自身用于此属性的内部属性名称（如果您恰好记得更�
 </div>
 </div>
 <div class="paragraph">
-<p>前例中的行向 Hibernate 实体管理器传递了值为 <code>true</code>` 的 <code>hibernate.globally_quoted_identifiers</code> 属性。</p>
+<p>前例中的行向 Hibernate 实体管理器传递了值为 <code>true</code> 的 <code>hibernate.globally_quoted_identifiers</code> 属性。</p>
 </div>
 <div class="paragraph">
 <p>默认情况下，DDL 执行（或验证）会推迟到 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> 启动之后进行。</p>
@@ -2138,7 +2138,7 @@ H2 控制台仅用于开发期间，因此您应确保在生产环境中未将 <
 <p>禁用针对控制台的请求的 CSRF 保护，</p>
 </li>
 <li>
-<p>在来自控制台的响应中，将标头 <code>X-Frame-Options</code>` 设置为 <code>SAMEORIGIN</code>。</p>
+<p>在来自控制台的响应中，将标头 <code>X-Frame-Options</code> 设置为 <code>SAMEORIGIN</code>。</p>
 </li>
 </ul>
 </div>
@@ -2260,7 +2260,7 @@ H2 控制台仅用于开发期间。在生产环境中，禁用 CSRF 保护或�
 <div class="sect2">
 <h3 id="data.sql.jooq.codegen"><a class="anchor" href="#data.sql.jooq.codegen"></a>代码生成</h3>
 <div class="paragraph">
-<p>为了使用 jOOQ 的类型安全查询，您需要从数据库架构生成 Java 类。您可以遵循<a href="https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3">jOOQ 用户手册</a>中的说明。如果您使用 <code>jooq-codegen-maven</code>` 插件，并且也使用了 <code>spring-boot-starter-parent</code>`“父 POM"，则可以安全地省略插件的<code>&lt;version&gt;</code>`标签。您还可以使用 Spring Boot 定义版本变量（例如 <code>h2.version</code>）来声明插件的数据库依赖项。以下示例展示了这一点：</p>
+<p>为了使用 jOOQ 的类型安全查询，您需要从数据库架构生成 Java 类。您可以遵循<a href="https://www.jooq.org/doc/3.19.28/manual-single-page/#jooq-in-7-steps-step3">jOOQ 用户手册</a>中的说明。如果您使用 <code>jooq-codegen-maven</code> 插件，并且也使用了 <code>spring-boot-starter-parent</code>“父 POM"，则可以安全地省略插件的<code>&lt;version&gt;</code>标签。您还可以使用 Spring Boot 定义版本变量（例如 <code>h2.version</code>）来声明插件的数据库依赖项。以下示例展示了这一点：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2403,7 +2403,7 @@ jOOQ 手册倾向于使用名为 <code>create</code> 的变量来保存 <a class
 <div class="sect2">
 <h3 id="data.sql.jooq.sqldialect"><a class="anchor" href="#data.sql.jooq.sqldialect"></a>jOOQ SQL 方言</h3>
 <div class="paragraph">
-<p>除非已配置 <code>spring.jooq.sql-dialect</code>` 属性，否则 Spring Boot 将确定用于数据源的 SQL 方言。如果 Spring Boot 无法检测到方言，它将使用 <code>DEFAULT</code>。</p>
+<p>除非已配置 <code>spring.jooq.sql-dialect</code> 属性，否则 Spring Boot 将确定用于数据源的 SQL 方言。如果 Spring Boot 无法检测到方言，它将使用 <code>DEFAULT</code>。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>
@@ -2661,7 +2661,7 @@ class MyPostgresR2dbcConfiguration {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.r2dbc.generate-unique-name</code>` 设置为 <code>true</code>。</p>
+<p>如果您在测试中使用此功能，可能会发现无论使用多少个应用程序上下文，整个测试套件都会重用同一个数据库。如果您希望确保每个上下文都拥有独立的嵌入式数据库，请将 <code>spring.r2dbc.generate-unique-name</code> 设置为 <code>true</code>。</p>
 </div>
 </td>
 </tr>

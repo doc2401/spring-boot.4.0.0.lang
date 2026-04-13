@@ -1103,7 +1103,7 @@
 <p><a href="https://kafka.apache.org/">Apache Kafka</a> 通过提供 <code>spring-kafka</code> 项目的自动配置得到支持。</p>
 </div>
 <div class="paragraph">
-<p>Kafka 配置由 <code>spring.kafka.*</code>` 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：</p>
+<p>Kafka 配置由 <code>spring.kafka.*</code> 中的外部配置属性控制。例如，您可以在 <code>application.properties</code> 中声明以下部分：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_1">
 <div class="content">
@@ -1320,7 +1320,7 @@ class MyBean {
 <p>Spring for Apache Kafka 提供了一个工厂 Bean，用于创建 <a class="apiref" href="https://kafka.apache.org/41/javadoc/org/apache/kafka/streams/StreamsBuilder.html"><code>StreamsBuilder</code></a> 对象并管理其流的生命周期。只要 <code>kafka-streams</code> 在类路径中，并且 Kafka Streams 由 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/annotation/EnableKafkaStreams.html"><code>@EnableKafkaStreams</code></a> 注解启用，Spring Boot 就会自动配置所需的 <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/config/KafkaStreamsConfiguration.html"><code>KafkaStreamsConfiguration</code></a> Bean。</p>
 </div>
 <div class="paragraph">
-<p>启用 Kafka Streams 意味着必须设置 application id 和 bootstrap servers。前者可以通过 <code>spring.kafka.streams.application-id</code>` 进行配置，如果未设置则默认为 <code>spring.application.name</code>。后者可以全局设置，或者仅针对 streams 进行特定覆盖。</p>
+<p>启用 Kafka Streams 意味着必须设置 application id 和 bootstrap servers。前者可以通过 <code>spring.kafka.streams.application-id</code> 进行配置，如果未设置则默认为 <code>spring.application.name</code>。后者可以全局设置，或者仅针对 streams 进行特定覆盖。</p>
 </div>
 <div class="paragraph">
 <p>可以使用专用属性访问几个附加属性；其他任意 Kafka 属性可以通过 <code>spring.kafka.streams.properties</code> 命名空间进行设置。有关更多信息，请参阅<a href="#messaging.kafka.additional-properties">附加 Kafka 属性</a>。</p>
@@ -1490,7 +1490,7 @@ spring.kafka.streams.properties[prop.five]=fifth</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>这将公共 Kafka 属性 <code>prop.one</code>` 设置为 <code>first</code>`（适用于生产者、消费者、管理员和流），将 <code>prop.two</code>` 管理属性设置为 <code>second</code>`，将 <code>prop.three</code>` 消费者属性设置为 <code>third</code>`，将 <code>prop.four</code>` 生产者属性设置为 <code>fourth</code>`，并将 <code>prop.five</code>` 流属性设置为 <code>fifth</code>。</p>
+<p>这将公共 Kafka 属性 <code>prop.one</code> 设置为 <code>first</code>（适用于生产者、消费者、管理员和流），将 <code>prop.two</code> 管理属性设置为 <code>second</code>，将 <code>prop.three</code> 消费者属性设置为 <code>third</code>，将 <code>prop.four</code> 生产者属性设置为 <code>fourth</code>，并将 <code>prop.five</code> 流属性设置为 <code>fifth</code>。</p>
 </div>
 <div class="paragraph">
 <p>您还可以按如下方式配置 Spring Kafka <a class="apiref" href="https://docs.spring.io/spring-kafka/docs/4.0.x/api/org/springframework/kafka/support/serializer/JsonDeserializer.html"><code>JsonDeserializer</code></a>：</p>

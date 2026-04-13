@@ -44,7 +44,7 @@
     },
     {
       "source": "In addition you can use the <code>spring.docker.compose.start.command</code> property to change whether <code>docker compose up</code> or <code>docker compose start</code> is used.\nThe <code>spring.docker.compose.stop.command</code> allows you to configure if <code>docker compose down</code> or <code>docker compose stop</code> is used.",
-      "translation": "此外，您可以使用 <code>spring.docker.compose.start.command</code>` 属性来更改是使用 <code>docker compose up</code>` 还是 <code>docker compose start</code>`。\n<code>spring.docker.compose.stop.command</code>` 允许您配置是使用 <code>docker compose down</code>` 还是 <code>docker compose stop</code>。",
+      "translation": "此外，您可以使用 <code>spring.docker.compose.start.command</code> 属性来更改是使用 <code>docker compose up</code> 还是 <code>docker compose start</code>。\n<code>spring.docker.compose.stop.command</code> 允许您配置是使用 <code>docker compose down</code> 还是 <code>docker compose stop</code>。",
       "count": 2
     },
     {
@@ -59,12 +59,12 @@
     },
     {
       "source": "You need to have the <code>docker</code> and <code>docker compose</code> (or <code>docker-compose</code>) CLI applications on your path.\nThe minimum supported Docker Compose version is 2.2.0.",
-      "translation": "您需要将 <code>docker</code>` 和 <code>docker compose</code>`（或 <code>docker-compose</code>）CLI 应用程序添加到您的路径中。最低支持的 Docker Compose 版本为 2.2.0。",
+      "translation": "您需要将 <code>docker</code> 和 <code>docker compose</code>（或 <code>docker-compose</code>）CLI 应用程序添加到您的路径中。最低支持的 Docker Compose 版本为 2.2.0。",
       "count": 2
     },
     {
       "source": "If your compose file is not in the same directory as your application, or if it’s named differently, you can use <code>spring.docker.compose.file</code> in your <code>application.properties</code> or <code>application.yaml</code> to point to a different file.\nProperties can be defined as an exact path or a path that’s relative to your application.",
-      "translation": "如果您的 compose 文件不在应用程序的同一目录中，或者名称不同，您可以在 <code>application.properties</code>` 或 <code>application.yaml</code>` 中使用 <code>spring.docker.compose.file</code> 指向不同的文件。属性可以定义为确切路径或相对于应用程序的路径。",
+      "translation": "如果您的 compose 文件不在应用程序的同一目录中，或者名称不同，您可以在 <code>application.properties</code> 或 <code>application.yaml</code> 中使用 <code>spring.docker.compose.file</code> 指向不同的文件。属性可以定义为确切路径或相对于应用程序的路径。",
       "count": 2
     },
     {
@@ -79,22 +79,22 @@
     },
     {
       "source": "When using Gradle, you also need to change the configuration of the <code>spring-boot-docker-compose</code> dependency from <code>developmentOnly</code> to <code>testAndDevelopmentOnly</code>:",
-      "translation": "使用 Gradle 时，您还需要将 <code>spring-boot-docker-compose</code>` 依赖的配置从 <code>developmentOnly</code>` 更改为 <code>testAndDevelopmentOnly</code>：",
+      "translation": "使用 Gradle 时，您还需要将 <code>spring-boot-docker-compose</code> 依赖的配置从 <code>developmentOnly</code> 更改为 <code>testAndDevelopmentOnly</code>：",
       "count": 2
     },
     {
       "source": "To create a test launchable version of your application you should create an “Application” class in the <code>src/test</code> directory.\nFor example, if your main application is in <code>src/main/java/com/example/MyApplication.java</code>, you should create <code>src/test/java/com/example/TestMyApplication.java</code>",
-      "translation": "要创建应用程序的可测试发布版本，您应在 <code>src/test</code>` 目录中创建一个“Application”类。例如，如果您的主应用程序位于 <code>src/main/java/com/example/MyApplication.java</code>`，则应创建 <code>src/test/java/com/example/TestMyApplication.java</code>。",
+      "translation": "要创建应用程序的可测试发布版本，您应在 <code>src/test</code> 目录中创建一个“Application”类。例如，如果您的主应用程序位于 <code>src/main/java/com/example/MyApplication.java</code>，则应创建 <code>src/test/java/com/example/TestMyApplication.java</code>。",
       "count": 2
     },
     {
       "source": "For example, the following <code>MyContainers</code> interface declares <code>mongo</code> and <code>neo4j</code> containers:",
-      "translation": "例如，以下 <code>MyContainers</code>` 接口声明了 <code>mongo</code>` 和 <code>neo4j</code> 容器：",
+      "translation": "例如，以下 <code>MyContainers</code> 接口声明了 <code>mongo</code> 和 <code>neo4j</code> 容器：",
       "count": 2
     },
     {
       "source": "A typical workflow with Docker Compose is to run <code>docker compose up</code>, work on your application with it connecting to started services, then run <code>docker compose down</code> when you are finished.",
-      "translation": "使用 Docker Compose 的典型工作流程是运行 <code>docker compose up</code>`，通过连接到已启动的服务来开发您的应用程序，然后在完成后运行 <code>docker compose down</code>。",
+      "translation": "使用 Docker Compose 的典型工作流程是运行 <code>docker compose up</code>，通过连接到已启动的服务来开发您的应用程序，然后在完成后运行 <code>docker compose down</code>。",
       "count": 2
     },
     {
@@ -104,27 +104,27 @@
     },
     {
       "source": "If the Docker Compose services are already running when starting the application, Spring Boot will only create the service connection beans for each supported container.\nIt will not call <code>docker compose up</code> again and it will not call <code>docker compose stop</code> when the application is shutdown.",
-      "translation": "如果启动应用程序时 Docker Compose 服务已经在运行，Spring Boot 将为每个支持的容器仅创建服务连接 Bean。它不会再次调用 <code>docker compose up</code>`，并且在应用程序关闭时也不会调用 <code>docker compose stop</code>。",
+      "translation": "如果启动应用程序时 Docker Compose 服务已经在运行，Spring Boot 将为每个支持的容器仅创建服务连接 Bean。它不会再次调用 <code>docker compose up</code>，并且在应用程序关闭时也不会调用 <code>docker compose stop</code>。",
       "count": 2
     },
     {
       "source": "If your image uses a different name, you can use a label in your <code>compose.yml</code> file so that Spring Boot can provide a service connection.\nUse a label named <code>org.springframework.boot.service-connection</code> to provide the service name.",
-      "translation": "如果您的镜像使用了不同的名称，您可以在 <code>compose.yml</code>` 文件中使用标签，以便 Spring Boot 提供服务连接。使用名为 <code>org.springframework.boot.service-connection</code> 的标签来提供服务名称。",
+      "translation": "如果您的镜像使用了不同的名称，您可以在 <code>compose.yml</code> 文件中使用标签，以便 Spring Boot 提供服务连接。使用名为 <code>org.springframework.boot.service-connection</code> 的标签来提供服务名称。",
       "count": 2
     },
     {
       "source": "If you have a container image defined in your <code>compose.yml</code> that you don’t want connected to your application you can use a label to ignore it.\nAny container with labeled with <code>org.springframework.boot.ignore</code> will be ignored by Spring Boot.",
-      "translation": "如果您在 <code>compose.yml</code>` 中定义了一个容器镜像，但不希望将其与您的应用程序连接，可以使用标签来忽略它。任何标记有 <code>org.springframework.boot.ignore</code> 的容器都将被 Spring Boot 忽略。",
+      "translation": "如果您在 <code>compose.yml</code> 中定义了一个容器镜像，但不希望将其与您的应用程序连接，可以使用标签来忽略它。任何标记有 <code>org.springframework.boot.ignore</code> 的容器都将被 Spring Boot 忽略。",
       "count": 2
     },
     {
       "source": "Containers started by Docker Compose may take some time to become fully ready.\nThe recommended way of checking for readiness is to add a <code>healthcheck</code> section under the service definition in your <code>compose.yml</code> file.",
-      "translation": "Docker Compose 启动的容器可能需要一些时间才能完全就绪。检查就绪状态的最佳方法是在您的 <code>compose.yml</code>` 文件中的服务定义下添加一个 <code>healthcheck</code> 部分。",
+      "translation": "Docker Compose 启动的容器可能需要一些时间才能完全就绪。检查就绪状态的最佳方法是在您的 <code>compose.yml</code> 文件中的服务定义下添加一个 <code>healthcheck</code> 部分。",
       "count": 2
     },
     {
       "source": "Since it’s not uncommon for <code>healthcheck</code> configuration to be omitted from <code>compose.yml</code> files, Spring Boot also checks directly for service readiness.\nBy default, a container is considered ready when a TCP/IP connection can be established to its mapped port.",
-      "translation": "由于在 <code>compose.yml</code>` 文件中省略 <code>healthcheck</code> 配置的情况很常见，Spring Boot 还会直接检查服务的就绪状态。默认情况下，当能够与其映射端口建立 TCP/IP 连接时，容器即被视为已就绪。",
+      "translation": "由于在 <code>compose.yml</code> 文件中省略 <code>healthcheck</code> 配置的情况很常见，Spring Boot 还会直接检查服务的就绪状态。默认情况下，当能够与其映射端口建立 TCP/IP 连接时，容器即被视为已就绪。",
       "count": 2
     },
     {

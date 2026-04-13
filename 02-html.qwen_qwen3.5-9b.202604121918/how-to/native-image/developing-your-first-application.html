@@ -1228,7 +1228,7 @@ public class MyApplication {
 <div class="sect2">
 <h3 id="howto.native-image.developing-your-first-application.buildpacks.maven"><a class="anchor" href="#howto.native-image.developing-your-first-application.buildpacks.maven"></a>使用 Maven</h3>
 <div class="paragraph">
-<p>要使用 Maven 构建原生镜像容器，请确保您的 <code>pom.xml</code>` 文件使用了 <code>spring-boot-starter-parent</code>` 和 <code>org.graalvm.buildtools:native-maven-plugin</code>`。
+<p>要使用 Maven 构建原生镜像容器，请确保您的 <code>pom.xml</code> 文件使用了 <code>spring-boot-starter-parent</code> 和 <code>org.graalvm.buildtools:native-maven-plugin</code>。
 您应该有一个类似于以下的 <code>&lt;parent&gt;</code> 部分：</p>
 </div>
 <div class="listingblock">
@@ -1278,10 +1278,10 @@ public class MyApplication {
 <h3 id="howto.native-image.developing-your-first-application.buildpacks.gradle"><a class="anchor" href="#howto.native-image.developing-your-first-application.buildpacks.gradle"></a>使用 Gradle</h3>
 <div class="paragraph">
 <p>Spring Boot Gradle 插件在应用 GraalVM Native Image 插件时会自动配置 AOT 任务。
-您应检查您的 Gradle 构建是否包含一个包含 <code>org.graalvm.buildtools.native</code>` 的 <code>plugins</code> 块。</p>
+您应检查您的 Gradle 构建是否包含一个包含 <code>org.graalvm.buildtools.native</code> 的 <code>plugins</code> 块。</p>
 </div>
 <div class="paragraph">
-<p>只要应用了 <code>org.graalvm.buildtools.native</code>` 插件，<code>bootBuildImage</code> 任务将生成原生镜像而非 JVM 镜像。您可以使用以下命令运行该任务：</p>
+<p>只要应用了 <code>org.graalvm.buildtools.native</code> 插件，<code>bootBuildImage</code> 任务将生成原生镜像而非 JVM 镜像。您可以使用以下命令运行该任务：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1390,7 +1390,7 @@ OpenJDK 64-Bit Server VM Liberica-NIK-25.0.0-1 (build 25+37-LTS, mixed mode, sha
 <p>与<a href="#howto.native-image.developing-your-first-application.buildpacks.maven">构建包支持</a>一样，您需要确保使用<code>spring-boot-starter-parent</code>以继承<code>native</code>配置文件，并且使用了<code>org.graalvm.buildtools:native-maven-plugin</code>插件。</p>
 </div>
 <div class="paragraph">
-<p>启用 <code>native</code>` 配置后，您可以调用 <code>native:compile</code>` 目标来触发 <code>native-image</code> 编译：</p>
+<p>启用 <code>native</code> 配置后，您可以调用 <code>native:compile</code> 目标来触发 <code>native-image</code> 编译：</p>
 </div>
 <div class="listingblock">
 <div class="content">

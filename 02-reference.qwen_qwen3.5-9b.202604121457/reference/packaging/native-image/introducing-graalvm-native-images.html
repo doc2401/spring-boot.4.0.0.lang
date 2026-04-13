@@ -1271,7 +1271,7 @@ public class MyConfiguration {
 我们还为 <code>MyConfiguration</code> 类本身创建了一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html"><code>BeanDefinition</code></a>。</p>
 </div>
 <div class="paragraph">
-<p>当需要 <code>myBean</code>` 实例时，Spring 知道必须调用 <code>myBean()</code> 方法并使用其结果。
+<p>当需要 <code>myBean</code> 实例时，Spring 知道必须调用 <code>myBean()</code> 方法并使用其结果。
 在 JVM 上运行时，<a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a> 类的解析会在应用程序启动时进行，并使用反射调用 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/context/annotation/Bean.html"><code>@Bean</code></a> 方法。</p>
 </div>
 <div class="paragraph">
@@ -1339,7 +1339,7 @@ public class MyConfiguration__BeanDefinitions {
 <div class="paragraph">
 <p>存在一个针对 <code>myConfiguration`</code> 的 Bean 定义，以及一个针对 <code>myBean</code> 的定义。
 当需要 <code>myBean</code> 实例时，会调用一个 <a class="apiref" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/beans/factory/aot/BeanInstanceSupplier.html"><code>BeanInstanceSupplier</code></a>。
-该供应器将调用 <code>myConfiguration</code>` 上的 <code>myBean()</code> 方法。</p>
+该供应器将调用 <code>myConfiguration</code> 上的 <code>myBean()</code> 方法。</p>
 </div>
 <div class="admonitionblock note">
 <table><tbody><tr>

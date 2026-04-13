@@ -34,7 +34,7 @@
     },
     {
       "source": "The type of archive (which corresponds to how the dependencies are laid out inside it). Possible values are <code>JAR</code>, <code>WAR</code>, <code>ZIP</code>, <code>DIR</code>, <code>NONE</code>. Defaults to a guess based on the archive type.",
-      "translation": "归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>`、<code>WAR</code>`、<code>ZIP</code>`、<code>DIR</code>` 和 <code>NONE</code>。默认值基于归档类型进行猜测。",
+      "translation": "归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>、<code>WAR</code>、<code>ZIP</code>、<code>DIR</code> 和 <code>NONE</code>。默认值基于归档类型进行猜测。",
       "count": 3
     },
     {
@@ -189,7 +189,7 @@
     },
     {
       "source": "If the Docker images specified by the <code>builder</code> or <code>runImage</code> parameters are stored in a private Docker image registry that requires authentication, the authentication credentials can be provided using <code>docker.builderRegistry</code> parameters.",
-      "translation": "如果由 <code>builder</code>` 或 <code>runImage</code>` 参数指定的 Docker 镜像存储在需要身份验证的私有 Docker 镜像注册表中，可以使用 <code>docker.builderRegistry</code> 参数提供身份验证凭据。",
+      "translation": "如果由 <code>builder</code> 或 <code>runImage</code> 参数指定的 Docker 镜像存储在需要身份验证的私有 Docker 镜像注册表中，可以使用 <code>docker.builderRegistry</code> 参数提供身份验证凭据。",
       "count": 2
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "source": "By default, the image name is inferred from the <code>artifactId</code> and the <code>version</code> of the project, something like <code>docker.io/library/${project.artifactId}:${project.version}</code>.\nYou can take control over the name, as shown in the following example:",
-      "translation": "默认情况下，镜像名称是从项目的 <code>artifactId</code>` 和 <code>version</code>` 推断出来的，类似于 <code>docker.io/library/${project.artifactId}:${project.version}</code>。您可以像以下示例中所示那样控制名称：",
+      "translation": "默认情况下，镜像名称是从项目的 <code>artifactId</code> 和 <code>version</code> 推断出来的，类似于 <code>docker.io/library/${project.artifactId}:${project.version}</code>。您可以像以下示例中所示那样控制名称：",
       "count": 2
     },
     {
@@ -224,7 +224,7 @@
     },
     {
       "source": "If the Docker registry requires authentication, the credentials can be configured using <code>docker.publishRegistry</code> parameters.\nIf the Docker registry does not require authentication, the <code>docker.publishRegistry</code> configuration can be omitted.",
-      "translation": "如果 Docker 注册表需要身份验证，可以使用 <code>docker.publishRegistry</code>` 参数配置凭据。\n如果 Docker 注册表不需要身份验证，可以省略 <code>docker.publishRegistry</code> 配置。",
+      "translation": "如果 Docker 注册表需要身份验证，可以使用 <code>docker.publishRegistry</code> 参数配置凭据。\n如果 Docker 注册表不需要身份验证，可以省略 <code>docker.publishRegistry</code> 配置。",
       "count": 2
     },
     {
@@ -394,7 +394,7 @@
     },
     {
       "source": "The platform (operating system and architecture) of any builder, run, and buildpack images that are pulled.\nMust be in the form of <code>OS[/architecture[/variant]]</code>, such as <code>linux/amd64</code>, <code>linux/arm64</code>, or <code>linux/arm/v5</code>.\nRefer to documentation of the builder being used to determine the image OS and architecture options available.",
-      "translation": "拉取的构建器、运行和构建包镜像的平台（操作系统和架构）必须采用 <code>OS[/architecture[/variant]]</code>` 格式，例如 <code>linux/amd64</code>`、<code>linux/arm64</code>` 或 <code>linux/arm/v5</code>。请参考所用构建器的文档以确定可用的镜像操作系统和架构选项。",
+      "translation": "拉取的构建器、运行和构建包镜像的平台（操作系统和架构）必须采用 <code>OS[/architecture[/variant]]</code> 格式，例如 <code>linux/amd64</code>、<code>linux/arm64</code> 或 <code>linux/arm/v5</code>。请参考所用构建器的文档以确定可用的镜像操作系统和架构选项。",
       "count": 2
     },
     {
@@ -404,7 +404,7 @@
     },
     {
       "source": "This configuration will use a builder image with the name <code>mine/java-cnb-builder</code> and the tag <code>latest</code>, and the run image named <code>mine/java-cnb-run</code> and the tag <code>latest</code>.",
-      "translation": "此配置将使用名为 <code>mine/java-cnb-builder</code>` 且标签为 <code>latest</code>` 的构建镜像，以及名为 <code>mine/java-cnb-run</code>` 且标签为 <code>latest</code> 的运行镜像。",
+      "translation": "此配置将使用名为 <code>mine/java-cnb-builder</code> 且标签为 <code>latest</code> 的构建镜像，以及名为 <code>mine/java-cnb-run</code> 且标签为 <code>latest</code> 的运行镜像。",
       "count": 2
     },
     {
@@ -414,17 +414,17 @@
     },
     {
       "source": "The values provided to the <code>tags</code> option should be <strong>full</strong> image references.\nThe accepted format is <code>[domainHost:port/][path/]name[:tag][@digest]</code>.",
-      "translation": "提供给 <code>tags</code>` 选项的值应为<strong>完整</strong>的图像引用。\n接受的格式为 <code>[domainHost:port/][path/]name[:tag][@digest]</code>。",
+      "translation": "提供给 <code>tags</code> 选项的值应为<strong>完整</strong>的图像引用。\n接受的格式为 <code>[domainHost:port/][path/]name[:tag][@digest]</code>。",
       "count": 2
     },
     {
       "source": "If the domain is missing, it defaults to <code>docker.io</code>.\nIf the path is missing, it defaults to <code>library</code>.\nIf the tag is missing, it defaults to <code>latest</code>.",
-      "translation": "如果缺少域名，则默认为 <code>docker.io</code>`。\n如果缺少路径，则默认为 <code>library</code>`。\n如果缺少标签，则默认为 <code>latest</code>。",
+      "translation": "如果缺少域名，则默认为 <code>docker.io</code>。\n如果缺少路径，则默认为 <code>library</code>。\n如果缺少标签，则默认为 <code>latest</code>。",
       "count": 2
     },
     {
       "source": "Paketo Java buildpacks <a href=\"https://paketo.io/docs/buildpacks/language-family-buildpacks/java/#runtime-jvm-configuration\">configure the JVM runtime environment</a> by setting the <code>JAVA_TOOL_OPTIONS</code> environment variable.\nThe buildpack-provided <code>JAVA_TOOL_OPTIONS</code> value can be modified to customize JVM runtime behavior when the application image is launched in a container.",
-      "translation": "Paketo Java 构建包通过设置 <code>JAVA_TOOL_OPTIONS</code>` 环境变量来<a href=\"https://paketo.io/docs/buildpacks/language-family-buildpacks/java/#runtime-jvm-configuration\">配置 JVM 运行时环境</a>。当应用程序镜像在容器中启动时，可以修改由构建包提供的 <code>JAVA_TOOL_OPTIONS</code> 值以自定义 JVM 运行时行为。",
+      "translation": "Paketo Java 构建包通过设置 <code>JAVA_TOOL_OPTIONS</code> 环境变量来<a href=\"https://paketo.io/docs/buildpacks/language-family-buildpacks/java/#runtime-jvm-configuration\">配置 JVM 运行时环境</a>。当应用程序镜像在容器中启动时，可以修改由构建包提供的 <code>JAVA_TOOL_OPTIONS</code> 值以自定义 JVM 运行时行为。",
       "count": 2
     },
     {
@@ -449,7 +449,7 @@
     },
     {
       "source": "When <code>true</code>, the value of the <code>host</code> property will be provided to the container that is created for the CNB builder (optional)",
-      "translation": "当 <code>true</code>` 时，<code>host</code> 属性的值将提供给为 CNB 构建器创建的容器（可选）",
+      "translation": "当 <code>true</code> 时，<code>host</code> 属性的值将提供给为 CNB 构建器创建的容器（可选）",
       "count": 2
     },
     {
@@ -469,12 +469,12 @@
     },
     {
       "source": "A date that will be used to set the <code>Created</code> field in the generated image’s metadata.\nThe value must be a string in the ISO 8601 instant format, or <code>now</code> to use the current date and time.",
-      "translation": "用于在生成的图像的元数据中设置 <code>Created</code>` 字段的日期。该值必须是 ISO 8601 瞬时格式的字符串，或为 <code>now</code> 以使用当前日期和时间。",
+      "translation": "用于在生成的图像的元数据中设置 <code>Created</code> 字段的日期。该值必须是 ISO 8601 瞬时格式的字符串，或为 <code>now</code> 以使用当前日期和时间。",
       "count": 2
     },
     {
       "source": "<code>[\"label=disable\"]</code> on Linux and macOS, <code>[]</code> on Windows",
-      "translation": "在 Linux 和 macOS 上为 <code>[\"label=disable\"]</code>`，在 Windows 上为 <code>[]</code>。",
+      "translation": "在 Linux 和 macOS 上为 <code>[\"label=disable\"]</code>，在 Windows 上为 <code>[]</code>。",
       "count": 2
     },
     {

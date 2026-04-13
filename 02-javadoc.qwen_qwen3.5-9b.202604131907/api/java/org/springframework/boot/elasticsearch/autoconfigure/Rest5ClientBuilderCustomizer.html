@@ -147,7 +147,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span> <span class="element-name">customize</span><wbr/><span class="parameters">(co.elastic.clients.transport.rest5_client.low_level.Rest5ClientBuilder builder)</span></div>
 <div class="block">Customize the <code>Rest5ClientBuilder</code>.
-<p>可能会覆盖使用 <code>"spring.elasticsearch.rest"</code>` 配置属性命名空间所做的自定义。如需更针对性的更改，请参阅：</p><ul>
+<p>可能会覆盖使用 <code>"spring.elasticsearch.rest"</code> 配置属性命名空间所做的自定义。如需更针对性的更改，请参阅：</p><ul>
 <li><a href="#customize(org.apache.hc.client5.http.impl.async.HttpAsyncClientBuilder)"><code>customize(HttpAsyncClientBuilder)</code></a></li>
 <li><a href="#customize(org.apache.hc.client5.http.config.RequestConfig.Builder)"><code>customize(RequestConfig.Builder)</code></a></li>
 <li><a href="#customize(org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder)"><code>customize(PoolingAsyncClientConnectionManagerBuilder)</code></a></li>
@@ -165,7 +165,7 @@ loadScripts(document, 'script');</script>
 <h3>customize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">customize</span><wbr/><span class="parameters">(org.apache.hc.client5.http.impl.async.HttpAsyncClientBuilder httpAsyncClientBuilder)</span></div>
-<div class="block">自定义 <code>HttpAsyncClientBuilder</code>`。与 <code>Rest5ClientBuilder.setHttpClientConfigCallback(Consumer)</code>` 不同，实现此方法不会替换对 HTTP 客户端构建器的其他自定义操作。</div>
+<div class="block">自定义 <code>HttpAsyncClientBuilder</code>。与 <code>Rest5ClientBuilder.setHttpClientConfigCallback(Consumer)</code> 不同，实现此方法不会替换对 HTTP 客户端构建器的其他自定义操作。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>httpAsyncClientBuilder</code> - HTTP 客户端构建器</dd>
@@ -178,7 +178,7 @@ loadScripts(document, 'script');</script>
 <h3>customize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">customize</span><wbr/><span class="parameters">(org.apache.hc.client5.http.config.RequestConfig.Builder requestConfigBuilder)</span></div>
-<div class="block">自定义 <code>RequestConfig.Builder</code>`。与 <code>Rest5ClientBuilder.setRequestConfigCallback(Consumer)</code>` 不同，实现此方法不会替换对其他请求配置构建器的自定义。</div>
+<div class="block">自定义 <code>RequestConfig.Builder</code>。与 <code>Rest5ClientBuilder.setRequestConfigCallback(Consumer)</code> 不同，实现此方法不会替换对其他请求配置构建器的自定义。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>requestConfigBuilder</code> - 请求配置构建器</dd>
@@ -191,7 +191,7 @@ loadScripts(document, 'script');</script>
 <h3>customize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">customize</span><wbr/><span class="parameters">(org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder connectionManagerBuilder)</span></div>
-<div class="block">自定义 <code>PoolingAsyncClientConnectionManagerBuilder</code>`。与 <code>Rest5ClientBuilder.setConnectionManagerCallback(Consumer)</code>` 不同，实现此方法不会替换对连接管理器构建器的其他自定义操作。</div>
+<div class="block">自定义 <code>PoolingAsyncClientConnectionManagerBuilder</code>。与 <code>Rest5ClientBuilder.setConnectionManagerCallback(Consumer)</code> 不同，实现此方法不会替换对连接管理器构建器的其他自定义操作。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>connectionManagerBuilder</code> - 连接管理器构建器</dd>
@@ -204,8 +204,8 @@ loadScripts(document, 'script');</script>
 <h3>customize</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span> <span class="return-type">void</span> <span class="element-name">customize</span><wbr/><span class="parameters">(org.apache.hc.client5.http.config.ConnectionConfig.Builder connectionConfigBuilder)</span></div>
-<div class="block">自定义 <code>ConnectionConfig.Builder</code>`。
-与 <code>Rest5ClientBuilder.setConnectionConfigCallback(Consumer)</code>` 不同，实现此方法不会替换对连接配置构建器的其他自定义操作。</div>
+<div class="block">自定义 <code>ConnectionConfig.Builder</code>。
+与 <code>Rest5ClientBuilder.setConnectionConfigCallback(Consumer)</code> 不同，实现此方法不会替换对连接配置构建器的其他自定义操作。</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>connectionConfigBuilder</code> - 连接配置构建器</dd>

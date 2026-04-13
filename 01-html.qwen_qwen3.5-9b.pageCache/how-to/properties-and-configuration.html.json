@@ -24,7 +24,7 @@
     },
     {
       "source": "Create a file called <code>application.yaml</code> and put it in the root of your classpath.\nThen add <code>snakeyaml</code> to your dependencies (Maven coordinates <code>org.yaml:snakeyaml</code>, already included if you use the <code>spring-boot-starter</code>).\nA YAML file is parsed to a Java <code>Map&lt;String,Object&gt;</code> (like a JSON object), and Spring Boot flattens the map so that it is one level deep and has period-separated keys, as many people are used to with <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html\"><code>Properties</code></a> files in Java.",
-      "translation": "创建一个名为 <code>application.yaml</code>` 的文件并将其放在类路径的根目录中。然后在依赖项中添加 <code>snakeyaml</code>`（Maven 坐标为 <code>org.yaml:snakeyaml</code>`，如果您使用 <code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java <code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html\"><code>Properties</code></a> 文件一样。",
+      "translation": "创建一个名为 <code>application.yaml</code> 的文件并将其放在类路径的根目录中。然后在依赖项中添加 <code>snakeyaml</code>（Maven 坐标为 <code>org.yaml:snakeyaml</code>，如果您使用 <code>spring-boot-starter</code>，则已包含）。YAML 文件会被解析为 Java <code>Map&lt;String,Object&gt;</code>（类似于 JSON 对象），Spring Boot 会将该映射展平，使其只有一层深度并使用点分隔的键，就像许多人所习惯的 Java 中 <a class=\"apiref\" href=\"https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html\"><code>Properties</code></a> 文件一样。",
       "count": 2
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "source": "A <a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> has bean property setters, so you can use its Java API as you create the application to modify its behavior.\nAlternatively, you can externalize the configuration by setting properties in <code>spring.main.*</code>.\nFor example, in <code>application.properties</code>, you might have the following settings:",
-      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。\n或者，您可以通过在 <code>spring.main.*</code>` 中设置属性来外部化配置。\n例如，在 <code>application.properties</code> 中，您可能会有以下设置：",
+      "translation": "<a class=\"apiref\" href=\"https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html\"><code>SpringApplication</code></a> 具有 Bean 属性设置器，因此您可以在创建应用程序时使用其 Java API 来修改其行为。\n或者，您可以通过在 <code>spring.main.*</code> 中设置属性来外部化配置。\n例如，在 <code>application.properties</code> 中，您可能会有以下设置：",
       "count": 2
     },
     {
@@ -74,12 +74,12 @@
     },
     {
       "source": "You can automatically expand properties in the Maven project by using resource filtering.\nIf you use the <code>spring-boot-starter-parent</code>, you can then refer to your Maven ‘project properties’ with <code>@..@</code> placeholders, as shown in the following example:",
-      "translation": "您可以使用资源过滤自动展开 Maven 项目中的属性。如果您使用了 <code>spring-boot-starter-parent</code>`，则可以像以下示例中所示的那样，使用 <code>@..@</code> 占位符来引用您的 Maven“项目属性”：",
+      "translation": "您可以使用资源过滤自动展开 Maven 项目中的属性。如果您使用了 <code>spring-boot-starter-parent</code>，则可以像以下示例中所示的那样，使用 <code>@..@</code> 占位符来引用您的 Maven“项目属性”：",
       "count": 2
     },
     {
       "source": "If you do not use the starter parent, you need to include the following  element inside the <code>&lt;build/&gt;</code> element of your <code>pom.xml</code>:",
-      "translation": "如果您不使用启动器父项目，需要在您的 <code>pom.xml</code>` 中的 <code>&lt;build/&gt;</code> 元素内包含以下元素：",
+      "translation": "如果您不使用启动器父项目，需要在您的 <code>pom.xml</code> 中的 <code>&lt;build/&gt;</code> 元素内包含以下元素：",
       "count": 2
     },
     {
@@ -94,7 +94,7 @@
     },
     {
       "source": "If a document contains a <code>spring.config.activate.on-profile</code> key, then the profiles value (a comma-separated list of profiles or a profile expression) is fed into the Spring <code>Environment.acceptsProfiles()</code> method.\nIf the profile expression matches, then that document is included in the final merge (otherwise, it is not), as shown in the following example:",
-      "translation": "如果文档包含 <code>spring.config.activate.on-profile</code>` 键，则配置文件值（逗号分隔的配置文件列表或配置文件表达式）将传入 Spring 的 <code>Environment.acceptsProfiles()</code> 方法。如果配置文件表达式匹配，则该文档会被包含在最终合并中（否则不会被包含），如下例所示：",
+      "translation": "如果文档包含 <code>spring.config.activate.on-profile</code> 键，则配置文件值（逗号分隔的配置文件列表或配置文件表达式）将传入 Spring 的 <code>Environment.acceptsProfiles()</code> 方法。如果配置文件表达式匹配，则该文档会被包含在最终合并中（否则不会被包含），如下例所示：",
       "count": 2
     },
     {

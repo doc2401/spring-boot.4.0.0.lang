@@ -1100,7 +1100,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果存在 <code>META-INF/build-info.properties</code>` 文件，Spring Boot Actuator 将显示与构建相关的信息。<code>build-info</code> 目标会生成包含项目坐标和构建时间的此类文件。它还允许您添加任意数量的额外属性，如下例所示：</p>
+<p>如果存在 <code>META-INF/build-info.properties</code> 文件，Spring Boot Actuator 将显示与构建相关的信息。<code>build-info</code> 目标会生成包含项目坐标和构建时间的此类文件。它还允许您添加任意数量的额外属性，如下例所示：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1207,7 +1207,7 @@
 <div class="sect3">
 <h4 id="build-info.build-info-goal.parameter-details.additional-properties"><a class="anchor" href="#build-info.build-info-goal.parameter-details.additional-properties"></a><code>additionalProperties</code></h4>
 <div class="paragraph">
-<p>要存储在 <code>build-info.properties</code>` 文件中的附加属性。在生成的 <code>build-info.properties</code>` 中，每个条目都以 <code>build.</code> 作为前缀。</p>
+<p>要存储在 <code>build-info.properties</code> 文件中的附加属性。在生成的 <code>build-info.properties</code> 中，每个条目都以 <code>build.</code> 作为前缀。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1343,7 +1343,7 @@
 <div class="sect3">
 <h4 id="build-info.build-info-goal.parameter-details.time"><a class="anchor" href="#build-info.build-info-goal.parameter-details.time"></a><code>time</code></h4>
 <div class="paragraph">
-<p>用于 <code>build.time</code>` 属性的值，其格式适合通过 `Instant#parse(CharSequence)` 进行解析。如果未设置前者，则默认为 <code>project.build.outputTimestamp</code>` 或 <code>session.request.startTime</code>`。若要完全禁用 <code>build.time</code>` 属性，请使用 <code>'off'</code>` 或将其添加到 <code>excludeInfoProperties</code> 中。</p>
+<p>用于 <code>build.time</code> 属性的值，其格式适合通过 `Instant#parse(CharSequence)` 进行解析。如果未设置前者，则默认为 <code>project.build.outputTimestamp</code> 或 <code>session.request.startTime</code>。若要完全禁用 <code>build.time</code> 属性，请使用 <code>'off'</code> 或将其添加到 <code>excludeInfoProperties</code> 中。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>

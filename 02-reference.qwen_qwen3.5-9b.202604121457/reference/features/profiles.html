@@ -1304,7 +1304,7 @@ spring:
 <p>默认情况下，Spring Boot 中的配置文件名可以包含字母、数字或允许的字符（<code>-</code>、<code>_</code>、<code>.</code>、<code>+</code>、<code>@</code>）。此外，它们只能以字母或数字开头和结尾。</p>
 </div>
 <div class="paragraph">
-<p>此限制有助于防止常见的解析问题。如果，不过，您更喜欢更灵活的配置文件名称，您可以在 `application.properties` 或 `application.yaml` 文件中将 <code>spring.profiles.validate</code>` 设置为 <code>false</code>：</p>
+<p>此限制有助于防止常见的解析问题。如果，不过，您更喜欢更灵活的配置文件名称，您可以在 `application.properties` 或 `application.yaml` 文件中将 <code>spring.profiles.validate</code> 设置为 <code>false</code>：</p>
 </div>
 <div class="openblock tabs is-sync is-loading" id="_tabs_5">
 <div class="content">
@@ -1347,7 +1347,7 @@ spring:
 <div class="sectionbody">
 <div class="paragraph">
 <p>有时，拥有能够<strong>添加</strong>到活动配置文件而非替换它们的属性是有用的。
-可以使用 <code>spring.profiles.include</code>` 属性在由 <code>spring.profiles.active</code> 属性激活的配置文件之上添加活动配置文件。
+可以使用 <code>spring.profiles.include</code> 属性在由 <code>spring.profiles.active</code> 属性激活的配置文件之上添加活动配置文件。
 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 入口点也提供了用于设置额外配置文件的 Java API。
 请参阅 <a class="apiref" href="https://docs.spring.io/spring-boot/4.0.0/api/java/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> 中的 <code>setAdditionalProfiles()</code> 方法。</p>
 </div>
@@ -1473,7 +1473,7 @@ spring.profiles.group.production[1]=prodmq</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>我们的应用程序现在可以使用 <code>--spring.profiles.active=production</code>` 一次性激活 <code>production</code>`、<code>proddb</code>` 和 <code>prodmq</code> 配置文件。</p>
+<p>我们的应用程序现在可以使用 <code>--spring.profiles.active=production</code> 一次性激活 <code>production</code>、<code>proddb</code> 和 <code>prodmq</code> 配置文件。</p>
 </div>
 <div class="admonitionblock warning">
 <table><tbody><tr>

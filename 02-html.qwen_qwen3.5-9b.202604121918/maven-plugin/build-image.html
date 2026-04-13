@@ -1238,7 +1238,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bindHostToBuilder</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">当 <code>true</code>` 时，<code>host</code> 属性的值将提供给为 CNB 构建器创建的容器（可选）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">当 <code>true</code> 时，<code>host</code> 属性的值将提供给为 CNB 构建器创建的容器（可选）</p></td>
 </tr>
 </tbody>
 </table>
@@ -1251,7 +1251,7 @@
 <h2 id="build-image.docker-registry"><a class="anchor" href="#build-image.docker-registry"></a>Docker 注册表</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果由 <code>builder</code>` 或 <code>runImage</code>` 参数指定的 Docker 镜像存储在需要身份验证的私有 Docker 镜像注册表中，可以使用 <code>docker.builderRegistry</code> 参数提供身份验证凭据。</p>
+<p>如果由 <code>builder</code> 或 <code>runImage</code> 参数指定的 Docker 镜像存储在需要身份验证的私有 Docker 镜像注册表中，可以使用 <code>docker.builderRegistry</code> 参数提供身份验证凭据。</p>
 </div>
 <div class="paragraph">
 <p>如果生成的 Docker 镜像要发布到 Docker 镜像注册表，可以使用 <code>docker.publishRegistry</code> 参数提供身份验证凭据。</p>
@@ -1371,7 +1371,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>imagePlatform</code><br/>
 (<code>spring-boot.build-image.imagePlatform</code>)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>拉取的构建器、运行和构建包镜像的平台（操作系统和架构）必须采用 <code>OS[/architecture[/variant]]</code>` 格式，例如 <code>linux/amd64</code>`、<code>linux/arm64</code>` 或 <code>linux/arm/v5</code>。请参考所用构建器的文档以确定可用的镜像操作系统和架构选项。</p>
+<p>拉取的构建器、运行和构建包镜像的平台（操作系统和架构）必须采用 <code>OS[/architecture[/variant]]</code> 格式，例如 <code>linux/amd64</code>、<code>linux/arm64</code> 或 <code>linux/arm/v5</code>。请参考所用构建器的文档以确定可用的镜像操作系统和架构选项。</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">无默认值，表示应使用主机机器的平台。</p></td>
 </tr>
@@ -1503,7 +1503,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>createdDate</code><br/>
 (<code>spring-boot.build-image.createdDate</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用于在生成的图像的元数据中设置 <code>Created</code>` 字段的日期。该值必须是 ISO 8601 瞬时格式的字符串，或为 <code>now</code> 以使用当前日期和时间。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用于在生成的图像的元数据中设置 <code>Created</code> 字段的日期。该值必须是 ISO 8601 瞬时格式的字符串，或为 <code>now</code> 以使用当前日期和时间。</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">一个固定日期，可实现<a href="https://buildpacks.io/docs/for-app-developers/concepts/reproducibility/">构建可重现性</a>。</p></td>
 </tr>
 <tr>
@@ -1515,7 +1515,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityOptions</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.docker.com/reference/cli/docker/container/run/#security-opt">安全选项</a>，将应用于构建器容器，以字符串值数组的形式提供。</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">在 Linux 和 macOS 上为 <code>["label=disable"]</code>`，在 Windows 上为 <code>[]</code>。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在 Linux 和 macOS 上为 <code>["label=disable"]</code>，在 Windows 上为 <code>[]</code>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1538,12 +1538,12 @@
 <div class="sect2">
 <h3 id="build-image.customization.tags"><a class="anchor" href="#build-image.customization.tags"></a>标签格式</h3>
 <div class="paragraph">
-<p>提供给 <code>tags</code>` 选项的值应为<strong>完整</strong>的图像引用。
+<p>提供给 <code>tags</code> 选项的值应为<strong>完整</strong>的图像引用。
 接受的格式为 <code>[domainHost:port/][path/]name[:tag][@digest]</code>。</p>
 </div>
 <div class="paragraph">
-<p>如果缺少域名，则默认为 <code>docker.io</code>`。
-如果缺少路径，则默认为 <code>library</code>`。
+<p>如果缺少域名，则默认为 <code>docker.io</code>。
+如果缺少路径，则默认为 <code>library</code>。
 如果缺少标签，则默认为 <code>latest</code>。</p>
 </div>
 <div class="paragraph">
@@ -2369,7 +2369,7 @@
 <div class="sect3">
 <h4 id="build-image.build-image-goal.parameter-details.layout"><a class="anchor" href="#build-image.build-image-goal.parameter-details.layout"></a><code>layout</code></h4>
 <div class="paragraph">
-<p>归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>`、<code>WAR</code>`、<code>ZIP</code>`、<code>DIR</code>` 和 <code>NONE</code>。默认值基于归档类型进行猜测。</p>
+<p>归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>、<code>WAR</code>、<code>ZIP</code>、<code>DIR</code> 和 <code>NONE</code>。默认值基于归档类型进行猜测。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3513,7 +3513,7 @@
 <div class="sect3">
 <h4 id="build-image.build-image-no-fork-goal.parameter-details.layout"><a class="anchor" href="#build-image.build-image-no-fork-goal.parameter-details.layout"></a><code>layout</code></h4>
 <div class="paragraph">
-<p>归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>`、<code>WAR</code>`、<code>ZIP</code>`、<code>DIR</code>` 和 <code>NONE</code>。默认值基于归档类型进行猜测。</p>
+<p>归档类型（对应其内部依赖的布局方式）。可能的值为 <code>JAR</code>、<code>WAR</code>、<code>ZIP</code>、<code>DIR</code> 和 <code>NONE</code>。默认值基于归档类型进行猜测。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3882,7 +3882,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>此配置将使用名为 <code>mine/java-cnb-builder</code>` 且标签为 <code>latest</code>` 的构建镜像，以及名为 <code>mine/java-cnb-run</code>` 且标签为 <code>latest</code> 的运行镜像。</p>
+<p>此配置将使用名为 <code>mine/java-cnb-builder</code> 且标签为 <code>latest</code> 的构建镜像，以及名为 <code>mine/java-cnb-run</code> 且标签为 <code>latest</code> 的运行镜像。</p>
 </div>
 <div class="paragraph">
 <p>构建器和运行镜像也可以在命令行中指定，如下例所示：</p>
@@ -3951,7 +3951,7 @@
 <div class="sect2">
 <h3 id="build-image.examples.runtime-jvm-configuration"><a class="anchor" href="#build-image.examples.runtime-jvm-configuration"></a>运行时 JVM 配置</h3>
 <div class="paragraph">
-<p>Paketo Java 构建包通过设置 <code>JAVA_TOOL_OPTIONS</code>` 环境变量来<a href="https://paketo.io/docs/buildpacks/language-family-buildpacks/java/#runtime-jvm-configuration">配置 JVM 运行时环境</a>。当应用程序镜像在容器中启动时，可以修改由构建包提供的 <code>JAVA_TOOL_OPTIONS</code> 值以自定义 JVM 运行时行为。</p>
+<p>Paketo Java 构建包通过设置 <code>JAVA_TOOL_OPTIONS</code> 环境变量来<a href="https://paketo.io/docs/buildpacks/language-family-buildpacks/java/#runtime-jvm-configuration">配置 JVM 运行时环境</a>。当应用程序镜像在容器中启动时，可以修改由构建包提供的 <code>JAVA_TOOL_OPTIONS</code> 值以自定义 JVM 运行时行为。</p>
 </div>
 <div class="paragraph">
 <p>应存储在镜像中并应用于每次部署的环境变量修改，可按照<a href="https://paketo.io/docs/buildpacks/configuration/#environment-variables">Paketo 文档</a>中的描述进行设置，示例如下：</p>
@@ -3982,7 +3982,7 @@
 <div class="sect2">
 <h3 id="build-image.examples.custom-image-name"><a class="anchor" href="#build-image.examples.custom-image-name"></a>自定义镜像名称</h3>
 <div class="paragraph">
-<p>默认情况下，镜像名称是从项目的 <code>artifactId</code>` 和 <code>version</code>` 推断出来的，类似于 <code>docker.io/library/${project.artifactId}:${project.version}</code>。您可以像以下示例中所示那样控制名称：</p>
+<p>默认情况下，镜像名称是从项目的 <code>artifactId</code> 和 <code>version</code> 推断出来的，类似于 <code>docker.io/library/${project.artifactId}:${project.version}</code>。您可以像以下示例中所示那样控制名称：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4136,7 +4136,7 @@
 <p>生成的图像可以通过启用 <code>publish`</code> 选项发布到 Docker 注册表。</p>
 </div>
 <div class="paragraph">
-<p>如果 Docker 注册表需要身份验证，可以使用 <code>docker.publishRegistry</code>` 参数配置凭据。
+<p>如果 Docker 注册表需要身份验证，可以使用 <code>docker.publishRegistry</code> 参数配置凭据。
 如果 Docker 注册表不需要身份验证，可以省略 <code>docker.publishRegistry</code> 配置。</p>
 </div>
 <div class="admonitionblock note">

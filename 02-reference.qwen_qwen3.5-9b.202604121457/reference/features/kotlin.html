@@ -1117,7 +1117,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Boot 至少需要 Kotlin 2.2.x，并通过依赖管理来管理合适的 Kotlin 版本。
-要使用 Kotlin，类路径上必须包含 <code>org.jetbrains.kotlin:kotlin-stdlib</code>` 和 <code>org.jetbrains.kotlin:kotlin-reflect</code>。</p>
+要使用 Kotlin，类路径上必须包含 <code>org.jetbrains.kotlin:kotlin-stdlib</code> 和 <code>org.jetbrains.kotlin:kotlin-reflect</code>。</p>
 </div>
 <div class="paragraph">
 <p>Kotlin 2.2.x 引入了<a href="https://kotlinlang.org/docs/whatsnew22.html#new-defaulting-rules-for-use-site-annotation-targets">用于将注解传播到参数、字段和属性的新默认规则</a>。为了避免相关警告并使用即将成为 Kotlin 未来版本默认行为的功能，建议配置 <code>-Xannotation-default-target=param-property</code> 编译器标志。</p>
@@ -1205,7 +1205,7 @@ fun main(args: Array&lt;String&gt;) {
 <p>为避免在类路径上混用不同版本的 Kotlin 依赖，Spring Boot 导入了 Kotlin BOM。</p>
 </div>
 <div class="paragraph">
-<p>使用 Maven 时，可以通过设置 <code>kotlin.version</code>` 属性来自定义 Kotlin 版本，并为 <code>kotlin-maven-plugin</code>` 提供插件管理。使用 Gradle 时，Spring Boot 插件会自动将 <code>kotlin.version</code> 与 Kotlin 插件的版本对齐。</p>
+<p>使用 Maven 时，可以通过设置 <code>kotlin.version</code> 属性来自定义 Kotlin 版本，并为 <code>kotlin-maven-plugin</code> 提供插件管理。使用 Gradle 时，Spring Boot 插件会自动将 <code>kotlin.version</code> 与 Kotlin 插件的版本对齐。</p>
 </div>
 <div class="paragraph">
 <p>Spring Boot 还通过导入 Kotlin Coroutines BOM 来管理 Coroutines 依赖的版本。可以通过设置 <code>kotlin-coroutines.version</code> 属性来自定义版本。</p>

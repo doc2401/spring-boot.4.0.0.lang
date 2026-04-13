@@ -108,11 +108,11 @@ implements <a href="CacheMeterBinderProvider.html" title="interface in org.sprin
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a class="member-name-link" href="#%3Cinit%3E()">JCacheCacheMeterBinderProvider</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider</code>`，将缓存移除注册为 <code>Gauge</code>`。</div>
+<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider</code>，将缓存移除注册为 <code>Gauge</code>。</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a class="member-name-link" href="#%3Cinit%3E(boolean)">JCacheCacheMeterBinderProvider</a><wbr/>(boolean registerCacheRemovalsAsFunctionCounter)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider`》，该提供者根据 <code>registerCacheRemovalsAsFunctionCounter</code>` 的值，将缓存移除注册为相应的计量类型。</code></div>
+<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider`》，该提供者根据 <code>registerCacheRemovalsAsFunctionCounter</code> 的值，将缓存移除注册为相应的计量类型。</code></div>
 </div>
 </div>
 </section>
@@ -156,7 +156,7 @@ implements <a href="CacheMeterBinderProvider.html" title="interface in org.sprin
 <h3>JCacheCacheMeterBinderProvider</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="element-name">JCacheCacheMeterBinderProvider</span>()</div>
-<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider</code>`，将缓存移除注册为 <code>Gauge</code>`。</div>
+<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider</code>，将缓存移除注册为 <code>Gauge</code>。</div>
 </div>
 </section>
 </li>
@@ -165,7 +165,7 @@ implements <a href="CacheMeterBinderProvider.html" title="interface in org.sprin
 <h3>JCacheCacheMeterBinderProvider</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="element-name">JCacheCacheMeterBinderProvider</span><wbr/><span class="parameters">(boolean registerCacheRemovalsAsFunctionCounter)</span></div>
-<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider`》，该提供者根据 <code>registerCacheRemovalsAsFunctionCounter</code>` 的值将缓存移除注册为相应的计量类型。当值为 <code>false</code>` 时，缓存移除被注册为 <code>Gauge`；当值为 <code>true</code>` 时，缓存移除被注册为 <code>FunctionCounter`。</code></code></code></div>
+<div class="block">创建一个 <code>JCacheCacheMeterBinderProvider`》，该提供者根据 <code>registerCacheRemovalsAsFunctionCounter</code> 的值将缓存移除注册为相应的计量类型。当值为 <code>false</code> 时，缓存移除被注册为 <code>Gauge`；当值为 <code>true</code> 时，缓存移除被注册为 <code>FunctionCounter`。</code></code></code></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>registerCacheRemovalsAsFunctionCounter</code> - 是否将移除操作注册为监控指标（gauge）或函数计数器。</dd>
@@ -193,7 +193,7 @@ implements <a href="CacheMeterBinderProvider.html" title="interface in org.sprin
 <div class="block">返回管理指定<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html" title="class or interface in org.springframework.cache"><code>Cache</code></a>的<code>MeterBinder</code>，或者如果指定的<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/Cache.html" title="class or interface in org.springframework.cache"><code>Cache</code></a>不受支持，则返回<code>null</code>。</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)">getMeterBinder</a></code>` 在接口 <code><a href="CacheMeterBinderProvider.html" title="interface in org.springframework.boot.cache.metrics">CacheMeterBinderProvider</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/jcache/JCacheCache.html" title="class or interface in org.springframework.cache.jcache">JCacheCache</a>&gt;</code>` 中</dd>
+<dd><code><a href="CacheMeterBinderProvider.html#getMeterBinder(C,java.lang.Iterable)">getMeterBinder</a></code> 在接口 <code><a href="CacheMeterBinderProvider.html" title="interface in org.springframework.boot.cache.metrics">CacheMeterBinderProvider</a>&lt;<a class="external-link" href="https://docs.spring.io/spring-framework/docs/7.0.x/javadoc-api/org/springframework/cache/jcache/JCacheCache.html" title="class or interface in org.springframework.cache.jcache">JCacheCache</a>&gt;</code> 中</dd>
 <dt>Parameters:</dt>
 <dd><code>cache</code> - 要添加监控的缓存</dd>
 <dd><code>tags</code> - 应用于所有已记录指标的标签</dd>

@@ -14,12 +14,12 @@
   "items": [
     {
       "source": "Of course, a <code>Dockerfile</code> can be written without using the <code>jarmode</code>.\nYou can use some combination of <code>unzip</code> and <code>mv</code> to move things to the right layer but <code>jarmode</code> simplifies that.\nAdditionally, the layout created by the <code>jarmode</code> is AOT cache (and CDS) friendly out of the box.",
-      "translation": "当然，可以不用 <code>jarmode</code>` 来编写 <code>Dockerfile</code>。\n您可以使用一些 <code>unzip</code>` 和 <code>mv</code>` 的组合将内容移动到正确的层，但 <code>jarmode</code>` 简化了这一过程。\n此外，由 <code>jarmode</code> 创建的布局开箱即用即可兼容 AOT 缓存（以及 CDS）。",
+      "translation": "当然，可以不用 <code>jarmode</code> 来编写 <code>Dockerfile</code>。\n您可以使用一些 <code>unzip</code> 和 <code>mv</code> 的组合将内容移动到正确的层，但 <code>jarmode</code> 简化了这一过程。\n此外，由 <code>jarmode</code> 创建的布局开箱即用即可兼容 AOT 缓存（以及 CDS）。",
       "count": 2
     },
     {
       "source": "The <code>extract</code> command can be used to easily split the application into layers to be added to the <code>Dockerfile</code>.\nHere is an example of a <code>Dockerfile</code> using <code>jarmode</code>.",
-      "translation": "`extract` 命令可用于轻松将应用程序拆分为层，以便添加到 <code>Dockerfile</code>` 中。\n以下是使用 <code>jarmode</code>` 的 <code>Dockerfile</code> 示例。",
+      "translation": "`extract` 命令可用于轻松将应用程序拆分为层，以便添加到 <code>Dockerfile</code> 中。\n以下是使用 <code>jarmode</code> 的 <code>Dockerfile</code> 示例。",
       "count": 2
     },
     {
@@ -29,12 +29,12 @@
     },
     {
       "source": "Assuming the above <code>Dockerfile</code> is in the current directory, your Docker image can be built with <code>docker build .</code>, or optionally specifying the path to your application jar, as shown in the following example:",
-      "translation": "假设上述 <code>Dockerfile</code>` 位于当前目录，您的 Docker 镜像可以使用 <code>docker build .</code> 构建，或者如以下示例所示，可选地指定应用程序 jar 的路径：",
+      "translation": "假设上述 <code>Dockerfile</code> 位于当前目录，您的 Docker 镜像可以使用 <code>docker build .</code> 构建，或者如以下示例所示，可选地指定应用程序 jar 的路径：",
       "count": 2
     },
     {
       "source": "This is a multi-stage <code>Dockerfile</code>.\nThe builder stage extracts the directories that are needed later.\nEach of the <code>COPY</code> commands relates to the layers extracted by the jarmode.",
-      "translation": "这是一个多阶段 <code>Dockerfile</code>`。构建器阶段提取了后续所需的目录。每个 <code>COPY</code> 命令都与 jarmode 提取的层相关。",
+      "translation": "这是一个多阶段 <code>Dockerfile</code>。构建器阶段提取了后续所需的目录。每个 <code>COPY</code> 命令都与 jarmode 提取的层相关。",
       "count": 2
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "source": "This is mostly the same as the above <code>Dockerfile</code>.\nAs the last steps, it creates the AOT cache file by doing a training run and passes the AOT cache parameter to <code>java -jar</code>.",
-      "translation": "这与上面的 <code>Dockerfile</code>` 基本相同。最后，它通过执行一次训练运行来创建 AOT 缓存文件，并将 AOT 缓存参数传递给 <code>java -jar</code>。",
+      "translation": "这与上面的 <code>Dockerfile</code> 基本相同。最后，它通过执行一次训练运行来创建 AOT 缓存文件，并将 AOT 缓存参数传递给 <code>java -jar</code>。",
       "count": 2
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "source": "This is mostly the same as the above <code>Dockerfile</code>.\nAs the last steps, it creates the CDS archive by doing a training run and passes the CDS parameter to <code>java -jar</code>.",
-      "translation": "这基本上与上面的 <code>Dockerfile</code>` 相同。在最后步骤中，它通过执行一次训练运行来创建 CDS 存档，并将 CDS 参数传递给 <code>java -jar</code>。",
+      "translation": "这基本上与上面的 <code>Dockerfile</code> 相同。在最后步骤中，它通过执行一次训练运行来创建 CDS 存档，并将 CDS 参数传递给 <code>java -jar</code>。",
       "count": 2
     },
     {

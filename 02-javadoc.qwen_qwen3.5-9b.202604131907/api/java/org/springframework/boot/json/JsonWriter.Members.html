@@ -101,7 +101,7 @@ the various <code>add(...)</code> methods. Typically, members are declared with 
 instance. Members can also be declared using a static value or a <a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function"><code>Supplier</code></a>.
 The <a href="#add(java.lang.String)"><code>add(String)</code></a> and <a href="#add()"><code>add()</code></a> methods may be used to access the
 actual instance being written.
-<p>当使用 <code>Member.using(...)</code>` 方法完成定义时，可以在没有 <code>name</code>` 的情况下添加成员。</p><p>成员可以使用 <code>Member.when</code>` 方法进行过滤，并使用 <a href="JsonWriter.Member.html#as(org.springframework.boot.json.JsonWriter.Extractor)"><code>Member.as(...)</code></a> 适配为不同的类型。</p></div>
+<p>当使用 <code>Member.using(...)</code> 方法完成定义时，可以在没有 <code>name</code> 的情况下添加成员。</p><p>成员可以使用 <code>Member.when</code> 方法进行过滤，并使用 <a href="JsonWriter.Member.html#as(org.springframework.boot.json.JsonWriter.Extractor)"><code>Member.as(...)</code></a> 适配为不同的类型。</p></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>3.4.0</dd>
@@ -280,7 +280,7 @@ actual instance being written.
 <h3>add</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="return-type"><a href="JsonWriter.Member.html" title="class in org.springframework.boot.json">JsonWriter.Member</a>&lt;<a href="#type-param-T" title="type parameter in JsonWriter.Members">T</a>&gt;</span> <span class="element-name">add</span>()</div>
-<div class="block">添加一个新成员，使其能够访问正在写入的实例。该成员在添加时没有名称，因此必须使用其中一个 <code>Member.using(...)</code>` 方法来完成配置。</div>
+<div class="block">添加一个新成员，使其能够访问正在写入的实例。该成员在添加时没有名称，因此必须使用其中一个 <code>Member.using(...)</code> 方法来完成配置。</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>新增的<a href="JsonWriter.Member.html" title="class in org.springframework.boot.json"><code>JsonWriter.Member</code></a>，可进一步配置。</dd>
@@ -313,7 +313,7 @@ actual instance being written.
 <h3 id="from(java.lang.Object)">from</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="type-parameters">&lt;V&gt;</span> <span class="return-type"><a href="JsonWriter.Member.html" title="class in org.springframework.boot.json">JsonWriter.Member</a>&lt;V&gt;</span> <span class="element-name">from</span><wbr/><span class="parameters">(@Nullable V value)</span></div>
-<div class="block">从静态值添加成员。必须使用其中一个 <code>Member.using(...)</code>` 方法来完成配置。</div>
+<div class="block">从静态值添加成员。必须使用其中一个 <code>Member.using(...)</code> 方法来完成配置。</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="from(V)-type-param-V"><code>V</code> - 值类型</span></dd>
@@ -330,7 +330,7 @@ actual instance being written.
 <h3>from</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="type-parameters">&lt;V&gt;</span> <span class="return-type"><a href="JsonWriter.Member.html" title="class in org.springframework.boot.json">JsonWriter.Member</a>&lt;V&gt;</span> <span class="element-name">from</span><wbr/><span class="parameters">(<a class="external-link" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function">Supplier</a>&lt;@Nullable V&gt; supplier)</span></div>
-<div class="block">从提供的值添加成员。必须使用其中一个 <code>Member.using(...)</code>` 方法来完成配置。</div>
+<div class="block">从提供的值添加成员。必须使用其中一个 <code>Member.using(...)</code> 方法来完成配置。</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="from(java.util.function.Supplier)-type-param-V"><code>V</code> - 值类型</span></dd>
@@ -347,7 +347,7 @@ actual instance being written.
 <h3>from</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span> <span class="type-parameters">&lt;V&gt;</span> <span class="return-type"><a href="JsonWriter.Member.html" title="class in org.springframework.boot.json">JsonWriter.Member</a>&lt;V&gt;</span> <span class="element-name">from</span><wbr/><span class="parameters">(<a href="JsonWriter.Extractor.html" title="interface in org.springframework.boot.json">JsonWriter.Extractor</a>&lt;<a href="#type-param-T" title="type parameter in JsonWriter.Members">T</a>,<wbr/>V&gt; extractor)</span></div>
-<div class="block">从提取的值添加成员。必须使用其中一个 <code>Member.using(...)</code>` 方法来完成配置。</div>
+<div class="block">从提取的值添加成员。必须使用其中一个 <code>Member.using(...)</code> 方法来完成配置。</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="from(org.springframework.boot.json.JsonWriter.Extractor)-type-param-V"><code>V</code> - 值类型</span></dd>
